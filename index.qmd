@@ -1,0 +1,14 @@
+---
+title: "Por una Ciencia Reproducible"
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: cloud
+  sort-ui: false
+  filter-ui: false
+page-layout: full
+title-block-banner: true
+---
+
+

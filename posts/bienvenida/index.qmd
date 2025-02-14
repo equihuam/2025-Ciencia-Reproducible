@@ -1,0 +1,19 @@
+---
+title: "Blog de Reproducibilidad Científica"
+author: "Miguel Equihua"
+date: 14/feb/2025
+
+lang: es
+
+lightbox: true
+comments:
+  hypothesis: true
+---
+
+Este es un espacio para conversar sobre Ciencia Reproducible. La figura ilustra los pilares de la reproducibilidad de acuerdo con lo expresado en este artículo de [González-Rayas, et al., 2020](https://www.revistabiomedica.mx/index.php/revbiomed/article/view/840/845)
+
+![](images/840-2404-1-PB-A.png){width=60% fig-align="center"}
+
+
+
+

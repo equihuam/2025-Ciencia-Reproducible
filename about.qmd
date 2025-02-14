@@ -1,0 +1,13 @@
+---
+title: "Acerca de"
+image: lonely.jpg
+about:
+  template: jolla
+  links:
+    - icon: github
+      text: Github
+      href: https://github.com/equihuam/ciencia-reproducible
+
+---
+
+Este es un **blog** de reflexión sobre actitudes que conviene cultivar y formas sobre como se puede escribir para propiciar una ciencia más reproducible.
