@@ -98,7 +98,7 @@ Si interesa verificar la publicación Web de documentos hay que prever que no es
 
 library(qrcode)
 
-code <- qr_code("https://ciencia-reproducible.netlify.app/")
+code <- qr_code("https://2025-ciencia-reproducible.netlify.app/")
 plot(code, col = c("white", "#2268bb"))
 ```
 :::
