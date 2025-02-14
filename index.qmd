@@ -1,5 +1,5 @@
 ---
-title: "Por una Ciencia Reproducible"
+title: "Por una Ciencia Reproducible 2025"
 listing:
   contents: posts
   sort: "date desc"
