@@ -5,6 +5,9 @@ lang: es
 date: 14/feb/2025
 categories: [taller]
 image: "Poster-r-ciencia.png"
+code-fold: true
+code-summary: "muestra el escript:"
+fig-cap-location: top
 format: 
   html:
     toc: true
@@ -15,21 +18,6 @@ lightbox: true
 
 Curso-taller para iniciarse en las habilidades que promueve la ciencia abierta. La apertura invita a ampliar la colaboración, pero también la eficacia con la que se colabora Hay mucho que ya se puede hacer con el apoyo de Dropbox®, GoogleDocs® y con las mismas aplicaciones de Microsoft® ¿Qué significa que esto esté ocurriendo? ¿Qué implicaciones podría tener sobre la forma como se hace y comunica la ciencia?
 
-::: {.content-visible when-format="html"}
-```{r}
-#| label: codigo_qr_html
-#| echo: false
-#| out-width: "40mm"
-#| column: margin
-
-# devtools::install_github("benjcunningham/googlecalendar", force=TRUE)
-
-library(qrcode)
-
-code <- qr_code("https://2025-ciencia-reproducible.netlify.app/")
-plot(code, col = c("white", "#2268bb"))
-```
-:::
 
 El curso-taller se propone acercar al estudiante a la increíble evolución mundial de las capacidades de cómputo y de comunicación que ya está en marcha. No sólo porque cada vez hay mayores facilidades para colaborar, sino por la capacidad actual para producir documentos que combinan el texto con el procesamiento estadístico de datos y las gráficas resultantes. El que la secuencia completa **datos→análisis→texto** se pueda unificar, da todo un nuevo significado al proceso de comunicación en favor de la *reproducibilidad* científica.
 
@@ -101,6 +89,23 @@ plot(code, col = c("white", "#2268bb"))
 ```
 :::
 
+
 **Quarto** es un sistema de *fuente abierta* para la autoría de documentos científicos y técnicos. Puedes aprender más sobre lo que ofrece [**Quarto** en este enlace.](https://quarto.org/)
 
 La construcción de *comunidades de aprendizaje* requiere compartir intereses y actitudes. Al respecto pongo a su consideración el [*Pacto del Contribuyente*](../../images/pacto-contribuyente.qmd), que busca exponer ideas y conceptos que hace la convivencia grata y productiva. Pienso que el espíritu de este documento es muy adecuado para estimular la reflexión que buscamos propicie lo que estaremos haciendo en este taller.
+
+::: {.content-visible when-format="html"}
+```{r}
+#| label: codigo_qr_html
+#| echo: true
+#| out-width: "40mm"
+#| fig-cap: "Código QR del blog"
+
+# devtools::install_github("benjcunningham/googlecalendar", force=TRUE)
+
+library(qrcode)
+
+code <- qr_code("https://2025-ciencia-reproducible.netlify.app/")
+plot(code, col = c("white", "#2268bb"))
+```
+:::

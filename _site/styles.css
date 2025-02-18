@@ -10,3 +10,7 @@ ul ul ul {
   list-style-type: square;
 }
 
+figcaption {
+  margin: auto;
+  text-align: center;
+}

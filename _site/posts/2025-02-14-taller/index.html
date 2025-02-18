@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -161,28 +195,19 @@ ul.task-list li input[type="checkbox"] {
 </nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
 <p>Curso-taller para iniciarse en las habilidades que promueve la ciencia abierta. La apertura invita a ampliar la colaboración, pero también la eficacia con la que se colabora Hay mucho que ya se puede hacer con el apoyo de Dropbox®, GoogleDocs® y con las mismas aplicaciones de Microsoft® ¿Qué significa que esto esté ocurriendo? ¿Qué implicaciones podría tener sobre la forma como se hace y comunica la ciencia?</p>
-<div class="cell page-columns page-full">
-
-<div class="no-row-height column-margin column-container"><div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><a href="index_files/figure-html/codigo_qr_html-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="index_files/figure-html/codigo_qr_html-1.png" class="img-fluid figure-img" style="width:40mm"></a></p>
-</figure>
-</div>
-</div></div></div>
 <p>El curso-taller se propone acercar al estudiante a la increíble evolución mundial de las capacidades de cómputo y de comunicación que ya está en marcha. No sólo porque cada vez hay mayores facilidades para colaborar, sino por la capacidad actual para producir documentos que combinan el texto con el procesamiento estadístico de datos y las gráficas resultantes. El que la secuencia completa <strong>datos→análisis→texto</strong> se pueda unificar, da todo un nuevo significado al proceso de comunicación en favor de la <em>reproducibilidad</em> científica.</p>
 <p><br>
 </p>
 <div class="quarto-figure quarto-figure-right">
 <figure class="figure">
-<p><a href="Poster-r-ciencia.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="Poster-r-ciencia.png" class="img-fluid quarto-figure quarto-figure-right figure-img" style="width:79.0%" data-fig-pos="h"></a></p>
+<p><a href="Poster-r-ciencia.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="Poster-r-ciencia.png" class="img-fluid quarto-figure quarto-figure-right figure-img" style="width:79.0%" data-fig-pos="h"></a></p>
 </figure>
 </div>
 <p>Los estudiantes aprenderán a producir reportes académicos en distintos formatos: páginas web, documentos tipo Word®, PDF, carteles, presentaciones e incluso artículos o libros. Todo esto sin que se requiera un conocimiento previo de <strong>R</strong> o <strong>RStudio</strong>. Lo haremos paso a paso y con un enfoque de <em>manos a la obra</em>. El estudiante podrá elegir los materiales, datos y textos que le interese ensayar.</p>
@@ -236,6 +261,25 @@ ul.task-list li input[type="checkbox"] {
 <p>Si interesa verificar la publicación Web de documentos hay que prever que no estén bloqueados en el <em>Firewall</em> de la institución los sitios con terminación <code>.netlify.app</code>, pues es la que utilizará el servicio <strong>Netlify</strong> por defecto.</p>
 <p><strong>Quarto</strong> es un sistema de <em>fuente abierta</em> para la autoría de documentos científicos y técnicos. Puedes aprender más sobre lo que ofrece <a href="https://quarto.org/"><strong>Quarto</strong> en este enlace.</a></p>
 <p>La construcción de <em>comunidades de aprendizaje</em> requiere compartir intereses y actitudes. Al respecto pongo a su consideración el <a href="../../images/pacto-contribuyente.html"><em>Pacto del Contribuyente</em></a>, que busca exponer ideas y conceptos que hace la convivencia grata y productiva. Pienso que el espíritu de este documento es muy adecuado para estimular la reflexión que buscamos propicie lo que estaremos haciendo en este taller.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>muestra el escript:</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># devtools::install_github("benjcunningham/googlecalendar", force=TRUE)</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(qrcode)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>code <span class="ot">&lt;-</span> <span class="fu">qr_code</span>(<span class="st">"https://2025-ciencia-reproducible.netlify.app/"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(code, <span class="at">col =</span> <span class="fu">c</span>(<span class="st">"white"</span>, <span class="st">"#2268bb"</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<figcaption>Código QR del blog</figcaption>
+<p><a href="index_files/figure-html/codigo_qr_html-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Código QR del blog"><img src="index_files/figure-html/codigo_qr_html-1.png" class="img-fluid figure-img" style="width:40mm" alt="Código QR del blog"></a></p>
+</figure>
+</div>
+</div>
+</div>
 
 
 </section>
@@ -662,7 +706,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"loop":false,"openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom","selector":".lightbox"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
