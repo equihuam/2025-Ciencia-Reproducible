@@ -41,7 +41,7 @@ El curso-taller se propone acercar al estudiante a la increíble evolución mund
 
 Los estudiantes aprenderán a producir reportes académicos en distintos formatos: páginas web, documentos tipo Word®, PDF, carteles, presentaciones e incluso artículos o libros. Todo esto sin que se requiera un conocimiento previo de **R** o **RStudio**. Lo haremos paso a paso y con un enfoque de *manos a la obra*. El estudiante podrá elegir los materiales, datos y textos que le interese ensayar.
 
-Las actividades se desarrollarán a lo largo de 4 semanas teórico prácticas. Habrá sesiones presenciales de 3 horas martes y jueves. El resto de la semana el estudiante desarrollará actividades a su paso, con un carga de trabajo que se estima requerirá 9 horas adicionales cada semana.
+Las actividades se desarrollarán a lo largo de 4 semanas teórico prácticas. Habrá sesiones presenciales de 3 horas los viernesde 10 am a 1pm. Se espera que el estudiante desarrollará actividades a su paso para desarrollar el producto que será la entrega final al término del taller. La carga de trabajo se estima requerirá 9 horas adicionales cada semana.
 
 ## Temario
 
@@ -70,7 +70,7 @@ El curso-taller introducirá al estudiante a los siguientes temas:
 
 ## Actividades presenciales
 
-Las sesiones presenciales se llevarán a cabo en el **Aula 9** (por confirmar), aunque los detalles de la calendarización todavía habrá de ser acordada.
+Las sesiones presenciales se llevarán a cabo en el **Aula 16**, aunque los detalles de la calendarización todavía habrá de ser acordada.
 
 ## Requisitos previos
 
