@@ -8,8 +8,6 @@ image: "Poster-r-ciencia.png"
 format: 
   html:
     toc: true
-    html-math-method: katex
-    css: styles.css
 xeditor_options: 
   chunk_output_type: console
 lightbox: true
@@ -28,7 +26,7 @@ Curso-taller para iniciarse en las habilidades que promueve la ciencia abierta. 
 
 library(qrcode)
 
-code <- qr_code("https://ciencia-reproducible.netlify.app/")
+code <- qr_code("https://2025-ciencia-reproducible.netlify.app/")
 plot(code, col = c("white", "#2268bb"))
 ```
 :::
@@ -98,11 +96,11 @@ Si interesa verificar la publicación Web de documentos hay que prever que no es
 
 library(qrcode)
 
-code <- qr_code("https://ciencia-reproducible.netlify.app/")
+code <- qr_code("https://2025-ciencia-reproducible.netlify.app/")
 plot(code, col = c("white", "#2268bb"))
 ```
 :::
 
 **Quarto** es un sistema de *fuente abierta* para la autoría de documentos científicos y técnicos. Puedes aprender más sobre lo que ofrece [**Quarto** en este enlace.](https://quarto.org/)
 
-La construcción de *comunidades de aprendizaje* requiere compartir intereses y actitudes. Al respecto pongo a su consideración el [*Pacto del Contribuyente*](https://www.contributor-covenant.org/es/version/1/4/code-of-conduct/), que busca exponer ideas y conceptos que hace la convivencia grata y productiva. Pienso que el espíritu de este documento es muy adecuado para estimular la reflexión que buscamos propicie lo que estaremos haciendo en este taller.
+La construcción de *comunidades de aprendizaje* requiere compartir intereses y actitudes. Al respecto pongo a su consideración el [*Pacto del Contribuyente*](../../images/pacto-contribuyente.qmd), que busca exponer ideas y conceptos que hace la convivencia grata y productiva. Pienso que el espíritu de este documento es muy adecuado para estimular la reflexión que buscamos propicie lo que estaremos haciendo en este taller.

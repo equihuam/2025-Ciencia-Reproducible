@@ -1,16 +1,22 @@
 ---
 title: "Pacto del contribuyente"
 output: html_document
-date: "2024-11-14"
+
+lang: es
+date: 14/feb/2025
+categories: [taller]
+format: 
+  html:
+    toc: true
 ---
 
-# Código de Conducta convenido para Contribuyentes
+## Código de Conducta Convenido 
 
-## Nuestro compromiso
+### Nuestro compromiso
 
 En el interés de fomentar una comunidad abierta y acogedora, nosotros como participantes y facilitadores nos comprometemos a hacer de la participación en nuestro taller y nuestra comunidad una experiencia libre de acoso para todos, independientemente de la edad, dimensión corporal, discapacidad, etnia, identidad y expresión de género, nivel de experiencia, nacionalidad, apariencia física, raza, religión, identidad u orientación sexual. 
 
-## Nuestros estándares
+### Nuestros estándares
 
 Ejemplos de comportamiento que contribuyen a crear un ambiente positivo:
 
@@ -28,22 +34,22 @@ Ejemplos de comportamiento inaceptable por participantes:
 * Publicación de información privada de terceros sin su consentimiento, como direcciones físicas o electrónicas
 * Otros tipos de conducta que pudieran considerarse inapropiadas en un entorno profesional.
 
-## Nuestras responsabilidades
+### Nuestras responsabilidades
 
 Los facilitadores del taller son responsables de clarificar los estándares de comportamiento aceptable y se espera que tomen medidas correctivas y apropiadas en respuesta a situaciones de conducta inaceptable. 
 
 Los facilitadores del taller tienen el derecho y la responsabilidad de eliminar en los productos para la Web que se elaboren, editar o rechazar comentarios, *commits*, código, ediciones de documentación, *issues*, y otras contribuciones que no estén alineadas con este Código de Conducta, o de prohibir temporal o permanentemente a cualquier participante cuyo comportamiento sea inapropiado, amenazante, ofensivo o perjudicial.
 
-## Alcance
+### Alcance
 
 Este código de conducta aplica tanto a espacios del taller como a espacios públicos donde un individuo presente intereses del taller o comunidad UV. Ejemplos de esto incluye el uso de correo electrónico a nombre del grupo, publicaciones a través de las redes sociales, o presentaciones en eventos *online* u *offline*. La representación del taller puede ser clarificada explicitamente por los facilitadores del proyecto.
  
-## Aplicación
+### Aplicación
 
 Ejemplos de abuso, acoso u otro tipo de comportamiento inaceptable puede ser reportado al conductor del taller en [M. Equihua](mailto:equihuam@gmail.com). Todas las quejas serán revisadas e investigadas, generando un resultado apropiado a las circunstancias. El equipo del proyecto está obligado a mantener confidencialidad de la persona que reportó el incidente. Detalles específicos acerca de las políticas de aplicación pueden ser publicadas por separado.
 
 Facilitadores que no sigan o que no hagan cumplir este Código de Conducta pueden ser eliminados de forma temporal o permanente del equipo. 
 
-## Atribución
+### Atribución
 
 Este Código de Conducta es una adaptación del Contributor Covenant, versión 1.4, disponible en [https://www.contributor-covenant.org/es/version/1/4/code-of-conduct.html](https://www.contributor-covenant.org/es/version/1/4/code-of-conduct.html)
