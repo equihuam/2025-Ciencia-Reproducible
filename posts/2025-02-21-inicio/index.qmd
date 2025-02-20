@@ -1,0 +1,56 @@
+---
+title: "Los primeros pasos"
+author: "Miguel Equihua"
+lang: es
+date: 21/feb/2025
+categories: [taller, inicio, markdown, rstudio, git]
+image: "images/Image by Mojca-Peter from Pixabay - seeds-1217133_1280.jpg"
+code-fold: true
+code-summary: "muestra el escript:"
+fig-cap-location: top
+format: 
+  html:
+    toc: true
+---
+
+
+Lo que haremos es:
+
+1. Arrancar _RStudio_
+2. Crear un nuevo proyecto
+3. [!!!Empezar a escribir!!!]{style="color: oro"}
+
+##  Quarto
+
+_Rstudio_ tiene en su menu **file** la opción de preparar documentos en _Quarto_.
+
+![](images/proyecto-blog.png)
+  
+
+
+
+## Markdown
+
+Tan simple como escribir en la página en blanco con pequeñas marcas de intención.
+
+        -   *pandoc*
+        -   *ecuaciones Latex*
+-   Tematica 2
+    -   Leer datos desde distintos orígenes: *Excel®*, *Google Sheets®*, *OneCloud®*
+    -   Colaboración y control de versiones
+    -   Publicación en línea.
+-   Tematica 3
+        -   Un Blog como libreta colaborativa de trabajo
+            -  Organización del contenido
+            -  Producción de Diapositivas para presentaciones *Web*
+            -  Documentos abiertos a [comentarios desde la *web*](https://web.hypothes.is/)
+
+\
+
+
+El estudiante tiene familiaridad con el uso de computadoras y el uso de Internet. Para algunas de las actividades será provechoso tener cuentas activas en los servicios en línea **Github** (como sistema de control de versiones) y **Netlify** (para publicar blogs y sitios web personales). El estudiante tendrá que generar su cuenta personal en cada uno de estos servicios. Se recomienda hacerlo con antelación.
+
+1.  [git for windows](https://gitforwindows.org/)
+2.  [Instalar Github Desktop](https://desktop.github.com/?ref_cta=download+desktop&ref_loc=about+github+desktop&ref_page=docs)
+2.  [Instalar R](https://cran.rstudio.com/)
+3.  [Instalar RStudio](https://download1.rstudio.org/electron/windows/RStudio-2024.04.1-748.exe)

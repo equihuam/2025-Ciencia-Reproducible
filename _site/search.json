@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "Por una Ciencia Reproducible 2025",
     "section": "",
-    "text": "Una Nueva Manera de Escribir\n\n\n\n\n\n\ntaller\n\n\n\n\n\n\n\n\n\nXalapa, Ver., 14 de febrero, 2025\n\n\nMiguel Equihua\n\n\n\n\n\n\n\n\n\n\n\n\nBlog de Reproducibilidad Científica\n\n\n\n\n\n\n\n\n\n\n\nXalapa, Ver., 14 de febrero, 2025\n\n\nMiguel Equihua\n\n\n\n\n\n\nNo hay resultados"
+    "text": "Los primeros pasos\n\n\n\n\n\n\ntaller\n\n\ninicio\n\n\nmarkdown\n\n\nrstudio\n\n\ngit\n\n\n\n\n\n\n\n\n\nXalapa, Ver., 21 de febrero, 2025\n\n\nMiguel Equihua\n\n\n\n\n\n\n\n\n\n\n\n\nUna Nueva Manera de Escribir\n\n\n\n\n\n\ntaller\n\n\n\n\n\n\n\n\n\nXalapa, Ver., 14 de febrero, 2025\n\n\nMiguel Equihua\n\n\n\n\n\n\n\n\n\n\n\n\nBlog de Reproducibilidad Científica\n\n\n\n\n\n\n\n\n\n\n\nXalapa, Ver., 14 de febrero, 2025\n\n\nMiguel Equihua\n\n\n\n\n\n\nNo hay resultados"
   },
   {
     "objectID": "about.html",
@@ -61,5 +61,26 @@
     "title": "Una Nueva Manera de Escribir",
     "section": "Requisitos previos",
     "text": "Requisitos previos\nEl estudiante tiene familiaridad con el uso de computadoras y el uso de Internet. Para algunas de las actividades será provechoso tener cuentas activas en los servicios en línea Github (como sistema de control de versiones) y Netlify (para publicar blogs y sitios web personales). El estudiante tendrá que generar su cuenta personal en cada uno de estos servicios. Se recomienda hacerlo con antelación.\n\nAlta en Github.\nAlta en Netlify.\nAlta en hypothesis\n\nPara las actividades en clase se espera que tendrá ya instalado en su máquina el sistema de control de versiones Git (windows requiere instalarlo. Linux y macOS normalmente ya tienen git instalado. Además, para quienes prefieren el mundo gráfico de windows y desean evitar el uso de terminales y comandos, se sugiere utilizar Github Desktop o TortoiseGit). También habrá que tener listo el interprete del lenguaje de computo R y la interface de desarrollo RStudio. Las instrucciones para estos dós últimos están aquí, en el caso de ambiente MS-Windows® pueden usarse los siguientes enlaces:\n\ngit for windows\nInstalar Github Desktop\nInstalar R\nInstalar RStudio\n\nSi interesa verificar la publicación Web de documentos hay que prever que no estén bloqueados en el Firewall de la institución los sitios con terminación .netlify.app, pues es la que utilizará el servicio Netlify por defecto.\nQuarto es un sistema de fuente abierta para la autoría de documentos científicos y técnicos. Puedes aprender más sobre lo que ofrece Quarto en este enlace.\nLa construcción de comunidades de aprendizaje requiere compartir intereses y actitudes. Al respecto pongo a su consideración el Pacto del Contribuyente, que busca exponer ideas y conceptos que hace la convivencia grata y productiva. Pienso que el espíritu de este documento es muy adecuado para estimular la reflexión que buscamos propicie lo que estaremos haciendo en este taller.\n\n\nmuestra el escript:\n# devtools::install_github(\"benjcunningham/googlecalendar\", force=TRUE)\n\nlibrary(qrcode)\n\ncode &lt;- qr_code(\"https://2025-ciencia-reproducible.netlify.app/\")\nplot(code, col = c(\"white\", \"#2268bb\"))\n\n\n\n\nCódigo QR del blog"
+  },
+  {
+    "objectID": "posts/2025-02-21-inicio/index.html",
+    "href": "posts/2025-02-21-inicio/index.html",
+    "title": "Los primeros pasos",
+    "section": "",
+    "text": "Lo que haremos es:"
+  },
+  {
+    "objectID": "posts/2025-02-21-inicio/index.html#quarto",
+    "href": "posts/2025-02-21-inicio/index.html#quarto",
+    "title": "Los primeros pasos",
+    "section": "Quarto",
+    "text": "Quarto\nRstudio tiene en su menu file la opción de preparar documentos en Quarto."
+  },
+  {
+    "objectID": "posts/2025-02-21-inicio/index.html#markdown",
+    "href": "posts/2025-02-21-inicio/index.html#markdown",
+    "title": "Los primeros pasos",
+    "section": "Markdown",
+    "text": "Markdown\nTan simple como escribir en la página en blanco con pequeñas marcas de intención.\n    -   *pandoc*\n    -   *ecuaciones Latex*\n\nTematica 2\n\nLeer datos desde distintos orígenes: Excel®, Google Sheets®, OneCloud®\nColaboración y control de versiones\nPublicación en línea.\n\nTematica 3 - Un Blog como libreta colaborativa de trabajo - Organización del contenido - Producción de Diapositivas para presentaciones Web - Documentos abiertos a comentarios desde la web\n\n\n\nEl estudiante tiene familiaridad con el uso de computadoras y el uso de Internet. Para algunas de las actividades será provechoso tener cuentas activas en los servicios en línea Github (como sistema de control de versiones) y Netlify (para publicar blogs y sitios web personales). El estudiante tendrá que generar su cuenta personal en cada uno de estos servicios. Se recomienda hacerlo con antelación.\n\ngit for windows\nInstalar Github Desktop\nInstalar R\nInstalar RStudio"
   }
 ]

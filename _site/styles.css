@@ -1,3 +1,16 @@
+// Colores
+
+$oro:      #fd7e14 !default;
+$gris-100: #f8f9fa !default;
+$gris-200: #eee !default;
+$gris-300: #dee2e6 !default;
+$gris-400: #ced4da !default;
+$gris-500: #999 !default;
+$gris-600: #777 !default;
+$gris-700: #495057 !default;
+$gris-800: #333 !default;
+$gris-900: #2d2d2d !default;
+
 ul {
   list-style-type: disc;
 }
@@ -14,3 +27,4 @@ figcaption {
   margin: auto;
   text-align: center;
 }
+
