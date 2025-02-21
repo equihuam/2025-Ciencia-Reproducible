@@ -14,41 +14,51 @@ format:
 ---
 
 
-Lo que haremos es:
+## Markdown
 
-1. Arrancar _RStudio_
-2. Crear un nuevo proyecto
-3. [!!!Empezar a escribir!!!]{style="color: oro"}
+_Tan simple como escribir en la página en blanco con pequeñas marcas de intención_. Se ha inventado varias veces y el columpio se mueve entre el interés en ver y controlar las marcas directamente sobre el texto y la preferencia de ver sólo el producto terminado **WYSIWYG** (_lo que ves es lo que tienes_, aunque el marcado existe, pero lo hace la máquina por ti). 
+
+::: {layout="[1, 1.5]"}
+
+![](images/900-el-infinito-en-un-junco-irene-vallejo-alfa.png){width=200px}
+
+El trabajo del científico, el ingeniero, el estudiante o el creador de contenidos transita por el proceso de escribir, almacenar y dar formato presentable a los documentos. La escritura da origen a la historia y deja atras la prehistoria. Un largo proceso de evolución cultural apasionante que tiene un hermoso recuento en el libro de Irene Vallejo _El infinito en un Junco_. Hemos explorado las rocas, la arcilla, los pigmentos vegetales y minerales, las pieles de animales y los tejidos vegetales para escribbir. 
+
+:::
+
+Hoy lo hacemos sobre el éter y nos apoyamos en procesos electromagnéticos. Hacer esto ha involucrado a incontables inventores y lo hacemos recurriendo a herramientas y formatos que tienen registro de propiedad a nombre de lucrativas empresas particulares. Lo hacemos así y el hecho no nos merece ni un suspiro reflexivo sobre sus implicaciones. 
+
+A veces nos incomodan detalles o grandes fallas que obstaculizan la expresividad que requiere la escritura académica creativa. En general, la práctica actual se opone a lograr un flujo ágil y transparente a lo largo del proceso completo que involucra organizar los datos, analizarlos, sintetizarlos y publicar los hallazgos obtenidos. 
+
+Por la fuerza del hábito, y a pesar de inconvenientes, la mayoría de las revistas aún insisten en recibir textos en formato **docx**.
+
+En el movimiento social que nos invita a reflexionar sobre la _Ciencia Abierta_, hay quienes sostenemos que el conocimiento y el proceso creativo que lo impulsa debe ser lo más libre posible. El talento y la sabiduría su núcleo. Sobre todo en áreas como la salud y la calidad del entorno ecológico en el que vivimos.
+
+::: {layout="[1.5, -0.1, 1]"}
+
+Markdown fue desarrollado en 2004 por **John Gruber**. Ideo una manera de poner marcas de formato en un texto cómun y corriente (lo llamaremos _texto plano_). También construyó un programa de cómputo (lo escribió en el lenguaje Perl), para convertir los archivos ya marcados en _Markdown_ a algo conveniente para que las computadoras nos los pudieran presentar a través de la **Web**. Hacer esto implica recontruir y transforrmar el documento original a un nuevo formato, el **HTML** (_HyperText Markup Language_).
+
+![](images/John_Gruber,_2009_(cropped) - By Randy Stewart, CC BY-SA 3.0, httpscommons.wikimedia.orgwindex.phpcurid=10682505.jpg){width=200px}
+
+:::
+
+He aquí uno de los grande valores que busca el movimiento en favor de una _ciencia abierta_: **romper las barreras que limmitan el acceso a los textos  y a los datos**. El uso de _texto plano_ para escribir y organizar archivos de datos tienen muchas ventajas. Para empezar se pueden leer prácticamente en cualquier dispositivo, independientemente de _sistema operativo_ e intereses comerciales de los fabricantes. Los archivos escritos así han superado la _dura prueba del paso del tiempo_ mejor que otros tipos de archivos.
+
+El día de hoy empezaremos a utilizar la idea del _Markdown_. Producirás tus primeros archivos que serán legibles como texto plano y que a la vez estárán listos para ser producidos en una variedad de presentaciones que usualmente requerimos para nuestro propio registro de actividades y para interactuar con colegas o maestros. Además, de lo que hizo en su moemnto _Gruber_, ahora existen herramientas como **Pandoc**, que pueden convertir archivos desde _Markdown_ a una variedad de otros formatos que seguramente serán de tu interés en algún momento. Otro de los valores de la _ciencia abierta_: **favorecer el reuso los productos de información y conocimiento** 
+
 
 ##  Quarto
 
 _Rstudio_ tiene en su menu **file** la opción de preparar documentos en _Quarto_.
 
 ![](images/proyecto-blog.png)
-  
+Lo que haremos es:
+
+1. Arrancar _RStudio_
+2. Crear un nuevo proyecto
+3. [!!!Empezar a escribir!!!]{style="color: oro"}
 
 
-
-## Markdown
-
-Tan simple como escribir en la página en blanco con pequeñas marcas de intención.
-
-        -   *pandoc*
-        -   *ecuaciones Latex*
--   Tematica 2
-    -   Leer datos desde distintos orígenes: *Excel®*, *Google Sheets®*, *OneCloud®*
-    -   Colaboración y control de versiones
-    -   Publicación en línea.
--   Tematica 3
-        -   Un Blog como libreta colaborativa de trabajo
-            -  Organización del contenido
-            -  Producción de Diapositivas para presentaciones *Web*
-            -  Documentos abiertos a [comentarios desde la *web*](https://web.hypothes.is/)
-
-\
-
-
-El estudiante tiene familiaridad con el uso de computadoras y el uso de Internet. Para algunas de las actividades será provechoso tener cuentas activas en los servicios en línea **Github** (como sistema de control de versiones) y **Netlify** (para publicar blogs y sitios web personales). El estudiante tendrá que generar su cuenta personal en cada uno de estos servicios. Se recomienda hacerlo con antelación.
 
 1.  [git for windows](https://gitforwindows.org/)
 2.  [Instalar Github Desktop](https://desktop.github.com/?ref_cta=download+desktop&ref_loc=about+github+desktop&ref_page=docs)
