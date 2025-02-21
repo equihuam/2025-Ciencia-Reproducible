@@ -194,5 +194,26 @@
     "title": "Los primeros pasos",
     "section": "",
     "text": "Tan simple como escribir en la página en blanco con pequeñas marcas de intención. Se ha inventado varias veces y el columpio ha ido y venido entre el interés en ver y controlar las marcas directamente sobre el texto y la preferencia de ver sólo el producto terminado WYSIWYG (lo que ves es lo que tienes, aunque el marcado existe, pero lo hace la máquina por ti).\n\n\n\n\n\n\n\n\n\nEl trabajo del científico, el ingeniero, el estudiante o el creador de contenidos transita por el proceso de escribir, almacenar y dar formato presentable a los documentos. La escritura da origen a la historia y deja atras la prehistoria. Un largo proceso de evolución cultural apasionante que tiene un hermoso recuento en el libro de Irene Vallejo El infinito en un Junco. Hemos explorado las rocas, la arcilla, los pigmentos vegetales y minerales, las pieles de animales y los tejidos vegetales para escribir.\n\n\n\nHoy lo hacemos sobre el éter y nos apoyamos en procesos electromagnéticos. Hacer esto ha involucrado a incontables inventores y lo hacemos recurriendo a herramientas y formatos que tienen registro de propiedad a nombre de lucrativas empresas particulares. Lo hacemos así y el hecho no nos merece ni un suspiro reflexivo sobre sus implicaciones.\nA veces nos incomodan detalles o grandes fallas que obstaculizan la expresividad que requiere la escritura académica creativa. En general, la práctica actual se opone a lograr un flujo ágil y transparente a lo largo del proceso completo que involucra organizar los datos, analizarlos, sintetizarlos y publicar los hallazgos obtenidos.\nPor la fuerza del hábito, y a pesar de inconvenientes, la mayoría de las revistas aún insisten en recibir textos en formato docx.\nEn el movimiento social que nos invita a reflexionar sobre la Ciencia Abierta, hay quienes sostenemos que el conocimiento y el proceso creativo que lo impulsa debe ser lo más libre posible. El talento y la sabiduría su núcleo. Sobre todo en áreas como la salud y la calidad del entorno ecológico en el que vivimos.\n\n\n\n\n\n\nMarkdown fue desarrollado en 2004 por John Gruber. Ideo una manera de poner marcas de formato en un texto cómun y corriente (lo llamaremos texto plano). También construyó un programa de cómputo (lo escribió en el lenguaje Perl), para convertir los archivos ya marcados en Markdown a algo conveniente para que las computadoras nos los pudieran presentar a través de la Web. Hacer esto implica recontruir y transforrmar el documento original a un nuevo formato, el HTML (HyperText Markup Language).\n\n\n \n\n\n\n\n\n\nHe aquí uno de los grande valores que busca el movimiento en favor de una ciencia abierta: romper las barreras que limitan el acceso a los textos y a los datos. El uso de texto plano para escribir y organizar archivos de datos tienen muchas ventajas. Para empezar se pueden leer prácticamente en cualquier dispositivo, independientemente de sistema operativo e intereses comerciales de los fabricantes. Los archivos escritos así han superado la dura prueba del paso del tiempo mejor que otros tipos de archivos.\nEl día de hoy empezaremos a utilizar la idea del Markdown. Producirás tus primeros archivos que serán legibles como texto plano y que a la vez estarán listos para ser producidos en una variedad de presentaciones que usualmente requerimos para nuestro propio registro de actividades y para interactuar con colegas o maestros. Además, de lo que hizo en su momento Gruber, ahora existen herramientas como Pandoc, que pueden convertir archivos desde Markdown a una variedad de otros formatos que seguramente serán de tu interés en algún momento. Otro de los valores de la ciencia abierta: favorecer el reuso los productos de información y conocimiento"
+  },
+  {
+    "objectID": "posts/2025-02-21-inicio/pres-ciencia-abierta.html#section-4",
+    "href": "posts/2025-02-21-inicio/pres-ciencia-abierta.html#section-4",
+    "title": "Ciencia Abierta:",
+    "section": "",
+    "text": "Ciencia abierta y bienestar sustentable\n\n\n\n\n\n\n\nBienestar sustentable\nArticulación de saberes, capacidades y compromisos\nInteligencia artificial interpretable\n\n\n\n\n\n\n\n\n\n\n\n\nFuente: Costanza, R. (2020). Ecological Economics, 168, 106484."
+  },
+  {
+    "objectID": "posts/2025-02-21-inicio/pres-ciencia-abierta.html#section-7",
+    "href": "posts/2025-02-21-inicio/pres-ciencia-abierta.html#section-7",
+    "title": "Ciencia Abierta:",
+    "section": "",
+    "text": "i-Gamma"
+  },
+  {
+    "objectID": "posts/2025-02-21-inicio/pres-ciencia-abierta.html#section-2",
+    "href": "posts/2025-02-21-inicio/pres-ciencia-abierta.html#section-2",
+    "title": "Ciencia Abierta:",
+    "section": "",
+    "text": "https://www.softwareheritage.org/"
   }
 ]

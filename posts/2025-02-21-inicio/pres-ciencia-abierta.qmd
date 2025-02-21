@@ -69,6 +69,11 @@ Sócrates temía que, por culpa de la escritura se abandonaría el esfuerzo de l
 ## {background-image="images/pres-ciencia-abierta-chiapas-final.png" background-size="80%"}
 
 
+## {background-image="images/software-heritage.png" background-size="70%"}
+
+::: {layout="[-1, 4, -1]" .fragment}
+[https://www.softwareheritage.org/](https://www.softwareheritage.org/)
+:::
 
 ## ¿Preocupados?: *Doomsday clock*
 
