@@ -8,6 +8,9 @@ image: "images/Image by Mojca-Peter from Pixabay - seeds-1217133_1280.jpg"
 code-fold: true
 code-summary: "muestra el escript:"
 fig-cap-location: top
+
+lightbox: true
+
 format: 
   html:
     toc: true
@@ -49,18 +52,171 @@ El día de hoy empezaremos a utilizar la idea del _Markdown_. Producirás tus pr
 
 ##  Quarto
 
-_Rstudio_ tiene en su menu **file** la opción de preparar documentos en _Quarto_.
-
-![](images/proyecto-blog.png)
 Lo que haremos es:
 
 1. Arrancar _RStudio_
 2. Crear un nuevo proyecto
 3. [!!!Empezar a escribir!!!]{style="color: oro"}
 
+_Rstudio_ tiene en su menu **file** la opción de preparar documentos en _Quarto_.
+
+![](images/proyecto-blog.png)
+
+## Guardar con la intención de colaborar
+
+Ahora ya tenemos el texto en nuestras máquinas, almacenado en casa. ¿Podemos hacer algo más para asegurar esos materiales y facilitar compartirlos con quienes queramos? Te sugiero considerar **git** y **github** para eso. Podemos imaginar que el espacio de almacenamiento en tu máquina es como una parcela de siembra, cada dato tiene coordenadas de localización y así los recuperas cuando los quieres. Lo que hace *git* es agregar una _ventana de tiempo_ que te permite asomarte a la historia de lo que pasó en esas ubicaciones que te interesan.
 
 
-1.  [git for windows](https://gitforwindows.org/)
-2.  [Instalar Github Desktop](https://desktop.github.com/?ref_cta=download+desktop&ref_loc=about+github+desktop&ref_page=docs)
-2.  [Instalar R](https://cran.rstudio.com/)
-3.  [Instalar RStudio](https://download1.rstudio.org/electron/windows/RStudio-2024.04.1-748.exe)
+![Fuente: _Final.doc_ en **Piled Higher and Deeper** por Jorge Cham, http://www.phdcomics.com](images/version_control_motivation_comics.png){width=60%}
+
+### ¿Qué es Git?
+
+Es una aplicación diseñada por el iniciador del desarrollo de Linux [Linus Torvalds](https://es.wikipedia.org/wiki/Linus_Torvalds). [Git](https://git-scm.com/) es un sistema eficiente confiable y distribuido de control de versiones. El control de versiones es simplemente el seguimiento y registro de los cambios que va teniendo un documento a lo largo del tiempo. El concepto _distribuido_  se refiere a que el registro local que tengas en tu máquina o para el caso en cualquier número de máquinas, es un registro completo, **clonado** del proyecto. Estos repositorios locales plenamente funcionales permiten trabajar aún cuando no tengas acceso a Internet. Los autores realizan y registran su trabajo localmente y, cuando lo encuentren conveniente, sincronizan la copia local del repositorio con la del servidor. En la actualidad _Git_ se ha convertido en el estándar mundial _de facto_ para el control de versiones.
+
+Para activar git en tu proyecto tienes dos opciones:
+
+1. Hacerlo desde el principio marcando la casilla respectiva al momento de crear el proyecto.
+2. Utilizar la biblioteca de herramientas auxiliares [`usethis`](https://usethis.r-lib.org/articles/git-credentials.html).
+
+
+Con este comando creas lo necesario para usar **git** en tu proyecto.
+
+```{r}
+#| eval: false
+
+
+usethis::use_git()
+
+```
+
+
+En cualquier caso, ahora conviene verificar como está configurado el espacio de trabajo. En la ventana de **consola** puedes escribir los siguientes comandos para averiguar detalles de tu configuración.
+
+
+Esto te dirá como se llama la _ventana de tiempo_ que has elegido definir como base de trabajo, puedes tener tantas ramas distintas como consideres, pero conviene que una sea la principal. Se solía llamar a esta rama **master**, pero ahora se ha considerado que la !esclavitud ya ha sido abolida!, así que hay una tendencia mejor llamarle **main**. En realidad puedes llamarla como quieras.
+
+```{r}
+#| eval: false
+
+usethis::git_default_branch()
+
+```
+Si quieres configurar tu instalación de **RStudio** para que siempre defina la rama base como _main_, puedes usar elsiguiente comando. Aunque esto sólo actuará para futuros proyectos, no cambiará nada en los que tienes ya creados hasta este momento.
+
+```{r}
+#| eval: false
+
+usethis::git_default_branch_configure(name = "main")
+
+```
+Si lo que quieres es modificar la rama principal del proyecto con el que estas trabajando y que ya tienes abierto, este es el comando que te ayudará. En este ejemplo uso lo que es práctica común, de migrar de _master_ a _main_, pero puedes tomar tus propias preferencias sin ningún problema, aunque obviamente la parte **from** debe ser la existente que deseas modificar.
+
+```{r}
+#| eval: false
+
+usethis::git_default_branch_rename(from = "master", to = "main")
+
+```
+
+No todos los archivos que están en el espacio de trabajo son realmente de interés como para seguir su historia en el tiempo y podría haber también cosas que nunca deberían estar registradas en un sistema que te expone al acceso público generalizado: claves personales, tokens, identificadores de archivos privados, etc. Aunque ante esto no hay mejor cosa que ser prudente y estar atentos, existe la función `vacunar` que busca ayudarte a evitar estos problemas. Para activar esta ayuda en tu proyecto puedes usar este comando.
+
+```{r}
+#| eval: false
+
+usethis::git_vaccinate()
+```
+
+Esto en operación las capacidades de **git** sólo en tu máquina. Para usarlas debes operar en la pestaña respectiva con la función **Commit**: genera el registro del estado de los archivos del proyecto al momento de activar el comando. Para operar esto debes decidir que archivos enviar al registro histórico, marcados como _staged_. Al apretar el botón **Commit** aparecerá una ventana en donde se reportan los detalles de lo que estas registrando. Cada **Commit** requiere anotar un mensaje descriptivo breve de lo que contiene el "corte". Una vez que está todo resuelto, hay que apretar el botón **Commit** en esa pantalla y esperar algunos segundos a que termine el proceso de registro en la base de datos respectiva.
+
+
+
+## Enviar el _repositorio_ **git** a la nube
+
+Ahora estas preparada o preparado para enviar tu trabajo a _la nube_, lo haremos con el servicio de **Github**, aunque hay varias opciones (como **gitlab** por ejemplo).
+
+Nuevamente nos ayudará `usethis`para hacer esto. Lo primero es que para comunicar **RStudio** con  **Github** necesitas registrar un **token** de ese servicio en tu equipo. El comando para esto es:
+
+```{r}
+#| eval: false
+
+usethis::create_github_token()
+```
+
+Esto te lleva a la página de **Github** en la que hay que generar el **token**. Hay que responder las preguntas que te haga la página, aunque todo estará _prellenado_ con lo normalmente necesario. Cuando esté a tu gusto, aprieta el botón respectivo. Aparecerá una nueva pantalla con el **token** que habrá que copiar al _portapapeles_ (**ctr-c** en Windows). Este **token** que aparece, es la única vez que lo verás, por lo que conviene copiarlo al _portapapeles_ de tu máquina (**ctrl-c** en windows) y tenerlo a buen resguardo por lo pronto. En seguida hay que ejecutar este otro comando en la consola de _RStudio_
+
+```{r}
+#| eval: false
+
+gitcreds::gitcreds_set()
+```
+
+Si es la primeta vez que registras un **token** te pedirá que lo registres, dale _paste_ (**ctrl-v** en Windows). Si ya tienes un registro dado de alta, te informará sobre lo que tiene anotado y te dará oprotunidad de decidir qué quieres hacer en seguida.
+. 
+```{r}
+#| eval: false
+
+usethis::create_github_token()
+```
+
+
+::: {layout="[2,1]"}
+Una vez teminada esta tarea puedes ir a la pestaña **git** cuando lo consideres conveniente y ordenar a **RStudio** que envié todos los **commits** que están pendientes hasta el momento a **Github**. Para hacerlo deberás apretar el botón **Push**. Antes de hacerlo siempre es conveniente pedirle a **git** que se ponga al día con lo que ya está registrado en la _nube_, esto lo logras con el botón **pull**.  Esto nos lleva a una rutina de operación con **git** que se resume en la figura siguiente.
+
+
+![](images/En caso de incendio.png){width=150px}
+
+:::
+
+## Asociar Github con Netlify para publicar tu Blog
+
+Hay que preparar a _Github_ dando acceso a _Netlify_ para que tome lo necesario. La meta es que construya un sitio Web con tu contenido y lo publique en Internet. Los pasos que hay que seguir para esta primera interacción son los siguiente.
+
+
+Iniciar la vinculación con Github seleccionando la opción que ofrece importar los documentos desde un _repo_ Git. Esto dará la opción de utilizar _Github_ como origen de datos, entre otras posibilidades.
+
+![](images/Netlify-1.png)
+
+El Siguiente paso es autorizar a Netlify a acceder a Github a través de tu cuenta, así como los específicos del repositorio que te interesa vincular. Esto también implica instalar una **aplicación** de vínculo entre _Netlify_ y _Github_ dentro de tu cuenta.   
+
+![](images/Netlify-2.png)
+
+Si todo ocurrió sin problemas, tendrás ahora en _Github_, en el menú de aplicaciones (Avatar&rarr; Settings&rarr; Applications), un botón que te permitirá configurar el vínculo con _Netlify_ según tus requerimientos. También podrás ver los _repos_ que hayas autorizado desde _Netlify_.
+
+## Creación de un nuevo sitio a publicar
+
+1. **En Netlify**:
+
+   + Desde la opción _team_ o _site_ puedes generar un nuevo sitio.
+   
+::: {layout="[1,1]"}
+   ![](images/Netlify-new-site.png)
+   
+   ![](images/Netlify-new-site-team.png)
+:::   
+
+Cuando aprietas el boton de _añadir sitio_, aparecerá una nueva pantalla que tiene tres secciones. Se trata de los atributos que tendrás que proporcionar para darle presencia en Internet a tu proyecto y algunos otros atributos que definen como se producirá y actualizará continuamente. Estas operaciones es poco probable que las vuelvas a ver, una vez que tu proyecto esté en producción, aunque desde luego estarán siempre ahí por si deseas hacer ajustes.  
+
+
+#### ¿Qué nombre le daras?
+
+Deberás elegir un nombre que se convertirá en una URL para acceder a tu proyecto. Puede ser cualquier cosa que desees, pero debe ser único. En esta sección puedes escribir nombres y verificar que estén disponibles
+
+![](images/Netlify-config-site-1.png){width=50%}
+
+#### ¿Qué hará Netlify para operar tu sitio?
+
+Es una colección de atributos para indicarle a _Netlify_ dónde conseguir los documentos y como manejarlos. En nuestro caso, muy simple, básicamente hay que decirle en donde están los documentos que _Quarto_, con ayuda de _pandoc_, ha _renderizado_. Si no has cambiado nada en `_quarto.yml` la rama que estamos usando aquí para que _Git_ los registre es **main** y, en ella el directorio de producción se llama **_site**. Por favor verifica el contenido de esto para ayudarte a comprender mejor lo que estás haciendo.
+
+![](images/Netlify-config-site-2.png){width=50%}
+
+#### ¿Todo listo? ¡a producción!
+
+En nuestro caso no hay más que hacer, _Netlify_ tiene información suficiente para encargarse de publicar tu proyecto continuamente. Incorporará los cambios que hagas en _RStudio_ en la rama principal. Lo hará automáticamente cada vez que envíes tus cambios a _Github_. 
+
+![](images/Netlify-config-site-3.png){width=50%}
+
+Si todo salió bien, en este momento ya debe estar tu proyecto publicado y accesible para cualquier lector del mundo que lo localice y se interese en su contenido. 
+
+
+
+
