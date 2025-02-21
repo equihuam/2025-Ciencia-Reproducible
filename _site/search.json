@@ -7,6 +7,27 @@
     "text": "Este es un espacio para conversar sobre Ciencia Reproducible. La figura ilustra los pilares de la reproducibilidad de acuerdo con lo expresado en este artículo de González-Rayas, et al., 2020"
   },
   {
+    "objectID": "posts/2025-02-21-inicio/index.html",
+    "href": "posts/2025-02-21-inicio/index.html",
+    "title": "Los primeros pasos",
+    "section": "",
+    "text": "Tan simple como escribir en la página en blanco con pequeñas marcas de intención. Se ha inventado varias veces y el columpio ha ido y venido entre el interés en ver y controlar las marcas directamente sobre el texto y la preferencia de ver sólo el producto terminado WYSIWYG (lo que ves es lo que tienes, aunque el marcado existe, pero lo hace la máquina por ti).\n\n\n\n\n\n\n\n\n\nEl trabajo del científico, el ingeniero, el estudiante o el creador de contenidos transita por el proceso de escribir, almacenar y dar formato presentable a los documentos. La escritura da origen a la historia y deja atras la prehistoria. Un largo proceso de evolución cultural apasionante que tiene un hermoso recuento en el libro de Irene Vallejo El infinito en un Junco. Hemos explorado las rocas, la arcilla, los pigmentos vegetales y minerales, las pieles de animales y los tejidos vegetales para escribir.\n\n\n\nHoy lo hacemos sobre el éter y nos apoyamos en procesos electromagnéticos. Hacer esto ha involucrado a incontables inventores y lo hacemos recurriendo a herramientas y formatos que tienen registro de propiedad a nombre de lucrativas empresas particulares. Lo hacemos así y el hecho no nos merece ni un suspiro reflexivo sobre sus implicaciones.\nA veces nos incomodan detalles o grandes fallas que obstaculizan la expresividad que requiere la escritura académica creativa. En general, la práctica actual se opone a lograr un flujo ágil y transparente a lo largo del proceso completo que involucra organizar los datos, analizarlos, sintetizarlos y publicar los hallazgos obtenidos.\nPor la fuerza del hábito, y a pesar de inconvenientes, la mayoría de las revistas aún insisten en recibir textos en formato docx.\nEn el movimiento social que nos invita a reflexionar sobre la Ciencia Abierta, hay quienes sostenemos que el conocimiento y el proceso creativo que lo impulsa debe ser lo más libre posible. El talento y la sabiduría su núcleo. Sobre todo en áreas como la salud y la calidad del entorno ecológico en el que vivimos.\n\n\n\n\n\n\nMarkdown fue desarrollado en 2004 por John Gruber. Ideo una manera de poner marcas de formato en un texto cómun y corriente (lo llamaremos texto plano). También construyó un programa de cómputo (lo escribió en el lenguaje Perl), para convertir los archivos ya marcados en Markdown a algo conveniente para que las computadoras nos los pudieran presentar a través de la Web. Hacer esto implica recontruir y transforrmar el documento original a un nuevo formato, el HTML (HyperText Markup Language).\n\n\n \n\n\n\n\n\n\nHe aquí uno de los grande valores que busca el movimiento en favor de una ciencia abierta: romper las barreras que limitan el acceso a los textos y a los datos. El uso de texto plano para escribir y organizar archivos de datos tienen muchas ventajas. Para empezar se pueden leer prácticamente en cualquier dispositivo, independientemente de sistema operativo e intereses comerciales de los fabricantes. Los archivos escritos así han superado la dura prueba del paso del tiempo mejor que otros tipos de archivos.\nEl día de hoy empezaremos a utilizar la idea del Markdown. Producirás tus primeros archivos que serán legibles como texto plano y que a la vez estarán listos para ser producidos en una variedad de presentaciones que usualmente requerimos para nuestro propio registro de actividades y para interactuar con colegas o maestros. Además, de lo que hizo en su momento Gruber, ahora existen herramientas como Pandoc, que pueden convertir archivos desde Markdown a una variedad de otros formatos que seguramente serán de tu interés en algún momento. Otro de los valores de la ciencia abierta: favorecer el reuso los productos de información y conocimiento"
+  },
+  {
+    "objectID": "posts/2025-02-21-inicio/index.html#markdown",
+    "href": "posts/2025-02-21-inicio/index.html#markdown",
+    "title": "Los primeros pasos",
+    "section": "",
+    "text": "Tan simple como escribir en la página en blanco con pequeñas marcas de intención. Se ha inventado varias veces y el columpio ha ido y venido entre el interés en ver y controlar las marcas directamente sobre el texto y la preferencia de ver sólo el producto terminado WYSIWYG (lo que ves es lo que tienes, aunque el marcado existe, pero lo hace la máquina por ti).\n\n\n\n\n\n\n\n\n\nEl trabajo del científico, el ingeniero, el estudiante o el creador de contenidos transita por el proceso de escribir, almacenar y dar formato presentable a los documentos. La escritura da origen a la historia y deja atras la prehistoria. Un largo proceso de evolución cultural apasionante que tiene un hermoso recuento en el libro de Irene Vallejo El infinito en un Junco. Hemos explorado las rocas, la arcilla, los pigmentos vegetales y minerales, las pieles de animales y los tejidos vegetales para escribbir.\n\n\n\nHoy lo hacemos sobre el éter y nos apoyamos en procesos electromagnéticos. Hacer esto ha involucrado a incontables inventores y lo hacemos recurriendo a herramientas y formatos que tienen registro de propiedad a nombre de lucrativas empresas particulares. Lo hacemos así y el hecho no nos merece ni un suspiro reflexivo sobre sus implicaciones.\nA veces nos incomodan detalles o grandes fallas que obstaculizan la expresividad que requiere la escritura académica creativa. En general, la práctica actual se opone a lograr un flujo ágil y transparente a lo largo del proceso completo que involucra organizar los datos, analizarlos, sintetizarlos y publicar los hallazgos obtenidos.\nPor la fuerza del hábito, y a pesar de inconvenientes, la mayoría de las revistas aún insisten en recibir textos en formato docx.\nEn el movimiento social que nos invita a reflexionar sobre la Ciencia Abierta, hay quienes sostenemos que el conocimiento y el proceso creativo que lo impulsa debe ser lo más libre posible. El talento y la sabiduría su núcleo. Sobre todo en áreas como la salud y la calidad del entorno ecológico en el que vivimos.\n\n\n\n\n\n\nMarkdown fue desarrollado en 2004 por John Gruber. Ideo una manera de poner marcas de formato en un texto cómun y corriente (lo llamaremos texto plano). También construyó un programa de cómputo (lo escribió en el lenguaje Perl), para convertir los archivos ya marcados en Markdown a algo conveniente para que las computadoras nos los pudieran presentar a través de la Web. Hacer esto implica recontruir y transforrmar el documento original a un nuevo formato, el HTML (HyperText Markup Language).\n\n\n \n\n\n\n\n\n\nHe aquí uno de los grande valores que busca el movimiento en favor de una ciencia abierta: romper las barreras que limitan el acceso a los textos y a los datos. El uso de texto plano para escribir y organizar archivos de datos tienen muchas ventajas. Para empezar se pueden leer prácticamente en cualquier dispositivo, independientemente de sistema operativo e intereses comerciales de los fabricantes. Los archivos escritos así han superado la dura prueba del paso del tiempo mejor que otros tipos de archivos.\nEl día de hoy empezaremos a utilizar la idea del Markdown. Producirás tus primeros archivos que serán legibles como texto plano y que a la vez estarán listos para ser producidos en una variedad de presentaciones que usualmente requerimos para nuestro propio registro de actividades y para interactuar con colegas o maestros. Además, de lo que hizo en su momento Gruber, ahora existen herramientas como Pandoc, que pueden convertir archivos desde Markdown a una variedad de otros formatos que seguramente serán de tu interés en algún momento. Otro de los valores de la ciencia abierta: favorecer el reuso los productos de información y conocimiento"
+  },
+  {
+    "objectID": "posts/2025-02-21-inicio/index.html#quarto",
+    "href": "posts/2025-02-21-inicio/index.html#quarto",
+    "title": "Los primeros pasos",
+    "section": "Quarto",
+    "text": "Quarto\nRstudio tiene en su menu file la opción de preparar documentos en Quarto.\n Lo que haremos es:\n\nArrancar RStudio\nCrear un nuevo proyecto\n!!!Empezar a escribir!!!\ngit for windows\nInstalar Github Desktop\nInstalar R\nInstalar RStudio"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Por una Ciencia Reproducible 2025",
@@ -63,192 +84,115 @@
     "text": "Requisitos previos\nEl estudiante tiene familiaridad con el uso de computadoras y el uso de Internet. Para algunas de las actividades será provechoso tener cuentas activas en los servicios en línea Github (como sistema de control de versiones) y Netlify (para publicar blogs y sitios web personales). El estudiante tendrá que generar su cuenta personal en cada uno de estos servicios. Se recomienda hacerlo con antelación.\n\nAlta en Github.\nAlta en Netlify.\nAlta en hypothesis\n\nPara las actividades en clase se espera que tendrá ya instalado en su máquina el sistema de control de versiones Git (windows requiere instalarlo. Linux y macOS normalmente ya tienen git instalado. Además, para quienes prefieren el mundo gráfico de windows y desean evitar el uso de terminales y comandos, se sugiere utilizar Github Desktop o TortoiseGit). También habrá que tener listo el interprete del lenguaje de computo R y la interface de desarrollo RStudio. Las instrucciones para estos dós últimos están aquí, en el caso de ambiente MS-Windows® pueden usarse los siguientes enlaces:\n\ngit for windows\nInstalar Github Desktop\nInstalar R\nInstalar RStudio\n\nSi interesa verificar la publicación Web de documentos hay que prever que no estén bloqueados en el Firewall de la institución los sitios con terminación .netlify.app, pues es la que utilizará el servicio Netlify por defecto.\nQuarto es un sistema de fuente abierta para la autoría de documentos científicos y técnicos. Puedes aprender más sobre lo que ofrece Quarto en este enlace.\nLa construcción de comunidades de aprendizaje requiere compartir intereses y actitudes. Al respecto pongo a su consideración el Pacto del Contribuyente, que busca exponer ideas y conceptos que hace la convivencia grata y productiva. Pienso que el espíritu de este documento es muy adecuado para estimular la reflexión que buscamos propicie lo que estaremos haciendo en este taller.\n\n\nmuestra el escript:\n# devtools::install_github(\"benjcunningham/googlecalendar\", force=TRUE)\n\nlibrary(qrcode)\n\ncode &lt;- qr_code(\"https://2025-ciencia-reproducible.netlify.app/\")\nplot(code, col = c(\"white\", \"#2268bb\"))\n\n\n\n\nCódigo QR del blog"
   },
   {
-    "objectID": "posts/2025-02-21-inicio/index.html",
-    "href": "posts/2025-02-21-inicio/index.html",
-    "title": "Los primeros pasos",
-    "section": "",
-    "text": "Tan simple como escribir en la página en blanco con pequeñas marcas de intención. Se ha inventado varias veces y el columpio ha ido y venido entre el interés en ver y controlar las marcas directamente sobre el texto y la preferencia de ver sólo el producto terminado WYSIWYG (lo que ves es lo que tienes, aunque el marcado existe, pero lo hace la máquina por ti).\n\n\n\n\n\n\n\n\n\nEl trabajo del científico, el ingeniero, el estudiante o el creador de contenidos transita por el proceso de escribir, almacenar y dar formato presentable a los documentos. La escritura da origen a la historia y deja atras la prehistoria. Un largo proceso de evolución cultural apasionante que tiene un hermoso recuento en el libro de Irene Vallejo El infinito en un Junco. Hemos explorado las rocas, la arcilla, los pigmentos vegetales y minerales, las pieles de animales y los tejidos vegetales para escribbir.\n\n\n\nHoy lo hacemos sobre el éter y nos apoyamos en procesos electromagnéticos. Hacer esto ha involucrado a incontables inventores y lo hacemos recurriendo a herramientas y formatos que tienen registro de propiedad a nombre de lucrativas empresas particulares. Lo hacemos así y el hecho no nos merece ni un suspiro reflexivo sobre sus implicaciones.\nA veces nos incomodan detalles o grandes fallas que obstaculizan la expresividad que requiere la escritura académica creativa. En general, la práctica actual se opone a lograr un flujo ágil y transparente a lo largo del proceso completo que involucra organizar los datos, analizarlos, sintetizarlos y publicar los hallazgos obtenidos.\nPor la fuerza del hábito, y a pesar de inconvenientes, la mayoría de las revistas aún insisten en recibir textos en formato docx.\nEn el movimiento social que nos invita a reflexionar sobre la Ciencia Abierta, hay quienes sostenemos que el conocimiento y el proceso creativo que lo impulsa debe ser lo más libre posible. El talento y la sabiduría su núcleo. Sobre todo en áreas como la salud y la calidad del entorno ecológico en el que vivimos.\n\n\n\n\n\n\nMarkdown fue desarrollado en 2004 por John Gruber. Ideo una manera de poner marcas de formato en un texto cómun y corriente (lo llamaremos texto plano). También construyó un programa de cómputo (lo escribió en el lenguaje Perl), para convertir los archivos ya marcados en Markdown a algo conveniente para que las computadoras nos los pudieran presentar a través de la Web. Hacer esto implica recontruir y transforrmar el documento original a un nuevo formato, el HTML (HyperText Markup Language).\n\n\n \n\n\n\n\n\n\nHe aquí uno de los grande valores que busca el movimiento en favor de una ciencia abierta: romper las barreras que limitan el acceso a los textos y a los datos. El uso de texto plano para escribir y organizar archivos de datos tienen muchas ventajas. Para empezar se pueden leer prácticamente en cualquier dispositivo, independientemente de sistema operativo e intereses comerciales de los fabricantes. Los archivos escritos así han superado la dura prueba del paso del tiempo mejor que otros tipos de archivos.\nEl día de hoy empezaremos a utilizar la idea del Markdown. Producirás tus primeros archivos que serán legibles como texto plano y que a la vez estarán listos para ser producidos en una variedad de presentaciones que usualmente requerimos para nuestro propio registro de actividades y para interactuar con colegas o maestros. Además, de lo que hizo en su momento Gruber, ahora existen herramientas como Pandoc, que pueden convertir archivos desde Markdown a una variedad de otros formatos que seguramente serán de tu interés en algún momento. Otro de los valores de la ciencia abierta: favorecer el reuso los productos de información y conocimiento"
-  },
-  {
-    "objectID": "posts/2025-02-21-inicio/index.html#quarto",
-    "href": "posts/2025-02-21-inicio/index.html#quarto",
-    "title": "Los primeros pasos",
-    "section": "Quarto",
-    "text": "Quarto\nRstudio tiene en su menu file la opción de preparar documentos en Quarto.\n Lo que haremos es:\n\nArrancar RStudio\nCrear un nuevo proyecto\n!!!Empezar a escribir!!!\ngit for windows\nInstalar Github Desktop\nInstalar R\nInstalar RStudio"
-  },
-  {
-    "objectID": "posts/2025-02-21-inicio/index.html#markdown",
-    "href": "posts/2025-02-21-inicio/index.html#markdown",
-    "title": "Los primeros pasos",
-    "section": "",
-    "text": "Tan simple como escribir en la página en blanco con pequeñas marcas de intención. Se ha inventado varias veces y el columpio ha ido y venido entre el interés en ver y controlar las marcas directamente sobre el texto y la preferencia de ver sólo el producto terminado WYSIWYG (lo que ves es lo que tienes, aunque el marcado existe, pero lo hace la máquina por ti).\n\n\n\n\n\n\n\n\n\nEl trabajo del científico, el ingeniero, el estudiante o el creador de contenidos transita por el proceso de escribir, almacenar y dar formato presentable a los documentos. La escritura da origen a la historia y deja atras la prehistoria. Un largo proceso de evolución cultural apasionante que tiene un hermoso recuento en el libro de Irene Vallejo El infinito en un Junco. Hemos explorado las rocas, la arcilla, los pigmentos vegetales y minerales, las pieles de animales y los tejidos vegetales para escribbir.\n\n\n\nHoy lo hacemos sobre el éter y nos apoyamos en procesos electromagnéticos. Hacer esto ha involucrado a incontables inventores y lo hacemos recurriendo a herramientas y formatos que tienen registro de propiedad a nombre de lucrativas empresas particulares. Lo hacemos así y el hecho no nos merece ni un suspiro reflexivo sobre sus implicaciones.\nA veces nos incomodan detalles o grandes fallas que obstaculizan la expresividad que requiere la escritura académica creativa. En general, la práctica actual se opone a lograr un flujo ágil y transparente a lo largo del proceso completo que involucra organizar los datos, analizarlos, sintetizarlos y publicar los hallazgos obtenidos.\nPor la fuerza del hábito, y a pesar de inconvenientes, la mayoría de las revistas aún insisten en recibir textos en formato docx.\nEn el movimiento social que nos invita a reflexionar sobre la Ciencia Abierta, hay quienes sostenemos que el conocimiento y el proceso creativo que lo impulsa debe ser lo más libre posible. El talento y la sabiduría su núcleo. Sobre todo en áreas como la salud y la calidad del entorno ecológico en el que vivimos.\n\n\n\n\n\n\nMarkdown fue desarrollado en 2004 por John Gruber. Ideo una manera de poner marcas de formato en un texto cómun y corriente (lo llamaremos texto plano). También construyó un programa de cómputo (lo escribió en el lenguaje Perl), para convertir los archivos ya marcados en Markdown a algo conveniente para que las computadoras nos los pudieran presentar a través de la Web. Hacer esto implica recontruir y transforrmar el documento original a un nuevo formato, el HTML (HyperText Markup Language).\n\n\n \n\n\n\n\n\n\nHe aquí uno de los grande valores que busca el movimiento en favor de una ciencia abierta: romper las barreras que limitan el acceso a los textos y a los datos. El uso de texto plano para escribir y organizar archivos de datos tienen muchas ventajas. Para empezar se pueden leer prácticamente en cualquier dispositivo, independientemente de sistema operativo e intereses comerciales de los fabricantes. Los archivos escritos así han superado la dura prueba del paso del tiempo mejor que otros tipos de archivos.\nEl día de hoy empezaremos a utilizar la idea del Markdown. Producirás tus primeros archivos que serán legibles como texto plano y que a la vez estarán listos para ser producidos en una variedad de presentaciones que usualmente requerimos para nuestro propio registro de actividades y para interactuar con colegas o maestros. Además, de lo que hizo en su momento Gruber, ahora existen herramientas como Pandoc, que pueden convertir archivos desde Markdown a una variedad de otros formatos que seguramente serán de tu interés en algún momento. Otro de los valores de la ciencia abierta: favorecer el reuso los productos de información y conocimiento"
-  },
-  {
-    "objectID": "posts/2025-02-21-inicio/index.html#quarto-1",
-    "href": "posts/2025-02-21-inicio/index.html#quarto-1",
-    "title": "Los primeros pasos",
-    "section": "Quarto",
-    "text": "Quarto\nRstudio tiene en su menu file la opción de preparar documentos en Quarto.\n\n\ngit for windows\nInstalar Github Desktop\nInstalar R\nInstalar RStudio"
-  },
-  {
-    "objectID": "posts/2025-02-21-inicio/pres-ciencia-abierta-chiapas.html#antecedentes---ciencia-y-cooperación",
-    "href": "posts/2025-02-21-inicio/pres-ciencia-abierta-chiapas.html#antecedentes---ciencia-y-cooperación",
+    "objectID": "posts/2025-02-21-inicio/pres-ciencia-abierta.html#antecedentes---ciencia-y-cooperación",
+    "href": "posts/2025-02-21-inicio/pres-ciencia-abierta.html#antecedentes---ciencia-y-cooperación",
     "title": "Ciencia Abierta:",
     "section": "Antecedentes - ciencia y cooperación",
     "text": "Antecedentes - ciencia y cooperación"
   },
   {
-    "objectID": "posts/2025-02-21-inicio/pres-ciencia-abierta-chiapas.html#narrar-y-escribir",
-    "href": "posts/2025-02-21-inicio/pres-ciencia-abierta-chiapas.html#narrar-y-escribir",
+    "objectID": "posts/2025-02-21-inicio/pres-ciencia-abierta.html#narrar-y-escribir",
+    "href": "posts/2025-02-21-inicio/pres-ciencia-abierta.html#narrar-y-escribir",
     "title": "Ciencia Abierta:",
     "section": "Narrar y Escribir",
     "text": "Narrar y Escribir\n\nFrente a la oralidad, que favorece las formas e ideas tradicionales, reconocibles para el que escucha, el discurso alfabetizado puede abrirse a horizontes desconocidos porque el lector tiene tiempo para asimilar y meditar con tranquilidad las ideas novedosas. En los libros caben planteamientos excéntricos, voces de identidades individuales, desafíos a la tradición.\n\n\n\n\n\n\n\n \n\n\nIrene Vallejo"
   },
   {
-    "objectID": "posts/2025-02-21-inicio/pres-ciencia-abierta-chiapas.html#escribir-y-la-importancia-de-reflexionar",
-    "href": "posts/2025-02-21-inicio/pres-ciencia-abierta-chiapas.html#escribir-y-la-importancia-de-reflexionar",
+    "objectID": "posts/2025-02-21-inicio/pres-ciencia-abierta.html#escribir-y-la-importancia-de-reflexionar",
+    "href": "posts/2025-02-21-inicio/pres-ciencia-abierta.html#escribir-y-la-importancia-de-reflexionar",
     "title": "Ciencia Abierta:",
     "section": "Escribir y la importancia de reflexionar",
     "text": "Escribir y la importancia de reflexionar\nSócrates temía que, por culpa de la escritura se abandonaría el esfuerzo de la propia reflexión. Lo dice mediante la conversación entre Thamus (rey de Egipto) y el dios Theuth:\n\niOh Theuth!, por ser el padre de la escritura le atribuyes ventajas que no tiene. Es olvido lo que producirán las letras en quienes las aprendan, descuidarán la memoria. Fiándose de los libros, llegarán al recuerdo desde fuera. Será, por tanto, apariencia de sabiduría, no autenticidad lo que la escritura dará a los hombres; y, cuando haya hecho de ellos entendidos en todo sin verdadera instrucción, su compañía será difícil de soportar, porque se creerán sabios en lugar de serlo.\n\n\n\n\n\n\n\n \n\n\nIrene Vallejo"
   },
   {
-    "objectID": "posts/2025-02-21-inicio/pres-ciencia-abierta-chiapas.html#preocupados-doomsday-clock",
-    "href": "posts/2025-02-21-inicio/pres-ciencia-abierta-chiapas.html#preocupados-doomsday-clock",
+    "objectID": "posts/2025-02-21-inicio/pres-ciencia-abierta.html#preocupados-doomsday-clock",
+    "href": "posts/2025-02-21-inicio/pres-ciencia-abierta.html#preocupados-doomsday-clock",
     "title": "Ciencia Abierta:",
     "section": "¿Preocupados?: Doomsday clock",
     "text": "¿Preocupados?: Doomsday clock"
   },
   {
-    "objectID": "posts/2025-02-21-inicio/pres-ciencia-abierta-chiapas.html#ciencia-en-crisis",
-    "href": "posts/2025-02-21-inicio/pres-ciencia-abierta-chiapas.html#ciencia-en-crisis",
-    "title": "Ciencia Abierta:",
-    "section": "Ciencia en crisis",
-    "text": "Ciencia en crisis\n\nPublicar o morir\nPertinencia de la ciencia y Transdisciplina\nRendición de cuentas: transparencia\nInteligencia artificial"
-  },
-  {
-    "objectID": "posts/2025-02-21-inicio/pres-ciencia-abierta-chiapas.html#crisis-de-reproducibiliad",
-    "href": "posts/2025-02-21-inicio/pres-ciencia-abierta-chiapas.html#crisis-de-reproducibiliad",
+    "objectID": "posts/2025-02-21-inicio/pres-ciencia-abierta.html#crisis-de-reproducibiliad",
+    "href": "posts/2025-02-21-inicio/pres-ciencia-abierta.html#crisis-de-reproducibiliad",
     "title": "Ciencia Abierta:",
     "section": "Crisis de reproducibiliad",
     "text": "Crisis de reproducibiliad\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFuente: 1,500 scientists lift the lid on reproducibility. Nature (2016)"
   },
   {
-    "objectID": "posts/2025-02-21-inicio/pres-ciencia-abierta-chiapas.html#significados-de-ciencia-abierta",
-    "href": "posts/2025-02-21-inicio/pres-ciencia-abierta-chiapas.html#significados-de-ciencia-abierta",
+    "objectID": "posts/2025-02-21-inicio/pres-ciencia-abierta.html#significados-de-ciencia-abierta",
+    "href": "posts/2025-02-21-inicio/pres-ciencia-abierta.html#significados-de-ciencia-abierta",
     "title": "Ciencia Abierta:",
     "section": "Significados de ciencia abierta",
     "text": "Significados de ciencia abierta\n\n\n\n\n\n\n\nPublicación abierta\nDatos abiertos\nPre-registro\nConsentimiento libre, previo e informado\nCiencia ciudadana\nInvestigación acción"
   },
   {
-    "objectID": "posts/2025-02-21-inicio/pres-ciencia-abierta-chiapas.html#ciencia-abierta-institucionalizada",
-    "href": "posts/2025-02-21-inicio/pres-ciencia-abierta-chiapas.html#ciencia-abierta-institucionalizada",
+    "objectID": "posts/2025-02-21-inicio/pres-ciencia-abierta.html#ciencia-abierta-institucionalizada",
+    "href": "posts/2025-02-21-inicio/pres-ciencia-abierta.html#ciencia-abierta-institucionalizada",
     "title": "Ciencia Abierta:",
     "section": "Ciencia abierta institucionalizada",
     "text": "Ciencia abierta institucionalizada\n\n\n\n\n\n\n\nDerecho humano a la ciencia\nRepositorios nacionales de publicaciones abiertas\nRepositorios nacionales de datos abiertos\nMétricas y reconocimiento a las personas\nAcuerdo de Escazú"
   },
   {
-    "objectID": "posts/2025-02-21-inicio/pres-ciencia-abierta-chiapas.html#declaración-de-panamá",
-    "href": "posts/2025-02-21-inicio/pres-ciencia-abierta-chiapas.html#declaración-de-panamá",
+    "objectID": "posts/2025-02-21-inicio/pres-ciencia-abierta.html#declaración-de-panamá",
+    "href": "posts/2025-02-21-inicio/pres-ciencia-abierta.html#declaración-de-panamá",
     "title": "Ciencia Abierta:",
     "section": "Declaración de Panamá",
     "text": "Declaración de Panamá\n\n\n\n\n\n\n\nEntiende que el conocimiento es un bien común.\nConfía en el papel de la ciencia como motor de la democracia, la libertad y la justicia social en el momento histórico actual.\nQuiere más ciencia, que debe ser abierta.\nAvanza hacia modelos de colaboración entre Academia-Ciudadanía-Estado-Empresa.\nAfirma que abrir la ciencia exige ir más allá del acceso abierto.\nInsta a que la sociedad recupere el liderazgo.\nAfirma que los ciudadanos tienen derecho a producir y beneficiarse de la ciencia, la tecnología y la innovación.\n\n\n\n \n\n\n\n\n\n\nFuente: Declaración de Panamá"
   },
   {
-    "objectID": "posts/2025-02-21-inicio/pres-ciencia-abierta-chiapas.html#section-2",
-    "href": "posts/2025-02-21-inicio/pres-ciencia-abierta-chiapas.html#section-2",
-    "title": "Ciencia Abierta:",
-    "section": "",
-    "text": "Ciencia abierta y bienestar sustentable\n\n\n\n\n\n\n\nBienestar sustentable\nArticulación de saberes, capacidades y compromisos\nInteligencia artificial interpretable\n\n\n\n\n\n\n\n\n\n\n\nFuente:Costanza, R. (2020). Ecological economics in 2049: Getting beyond the argument culture to the world we all want. Ecological Economics, 168, 106484."
-  },
-  {
-    "objectID": "posts/2025-02-21-inicio/pres-ciencia-abierta-chiapas.html#la-ciencia-abierta-que-queremos",
-    "href": "posts/2025-02-21-inicio/pres-ciencia-abierta-chiapas.html#la-ciencia-abierta-que-queremos",
-    "title": "Ciencia Abierta:",
-    "section": "La ciencia abierta que queremos",
-    "text": "La ciencia abierta que queremos\n\n\n\n\n\n\n\nCooperativa\nTrazable\nreproducible\nVerificable con datos\nIncluyente (científicos y no científicos)\nDatos abiertos\nReflexiva\n\n\n\n\n\n\nFuente: Equihua, M. y Pérez-Maqueo, O. (2024).Ciencia abierta desde el Inecol. Eco-lógico"
-  },
-  {
-    "objectID": "posts/2025-02-21-inicio/pres-ciencia-abierta-chiapas.html#cómo-ponerla-en-práctica",
-    "href": "posts/2025-02-21-inicio/pres-ciencia-abierta-chiapas.html#cómo-ponerla-en-práctica",
-    "title": "Ciencia Abierta:",
-    "section": "Cómo ponerla en práctica",
-    "text": "Cómo ponerla en práctica\n\n\n\n\n\n\n\nCambio cultural profundo\nTransformar viejos hábitos\nAprender nuevas habilidades\nReaprender a cooperar\nCambios institucionales\nAbierta y no monopólica\nDatos abiertos FAIR"
-  },
-  {
-    "objectID": "posts/2025-02-21-inicio/pres-ciencia-abierta-chiapas.html#consecuencias-imprevistas",
-    "href": "posts/2025-02-21-inicio/pres-ciencia-abierta-chiapas.html#consecuencias-imprevistas",
-    "title": "Ciencia Abierta:",
-    "section": "¿Consecuencias imprevistas?",
-    "text": "¿Consecuencias imprevistas?\n\n\n\n\n\nFuente: https://www.nature.com/articles/d41586-022-00724-0"
-  },
-  {
-    "objectID": "posts/2025-02-21-inicio/pres-ciencia-abierta-chiapas.html#costos-de-procesamiento-de-artículos-apc",
-    "href": "posts/2025-02-21-inicio/pres-ciencia-abierta-chiapas.html#costos-de-procesamiento-de-artículos-apc",
-    "title": "Ciencia Abierta:",
-    "section": "Costos de Procesamiento de Artículos (APC)",
-    "text": "Costos de Procesamiento de Artículos (APC)\n\n\n\n\n\n\n\nEl modelo APC demolió parte del muro de pago que bloqueaba el acceso de los lectores a las publicaciones.\nAhora a levantado un nuevo muro de pago en el otro extremo de la cadena, al bloquear el acceso de los autores menos privilegiados a la publicación."
-  },
-  {
-    "objectID": "posts/2025-02-21-inicio/pres-ciencia-abierta-chiapas.html#lo-no-fair",
-    "href": "posts/2025-02-21-inicio/pres-ciencia-abierta-chiapas.html#lo-no-fair",
-    "title": "Ciencia Abierta:",
-    "section": "Lo No-FAIR",
-    "text": "Lo No-FAIR\n\n\n\n\n\n\nDebemos ser especialmente sensibles a las formas en que las políticas de Ciencia Abierta pueden en realidad empeorar las desigualdades existentes."
-  },
-  {
-    "objectID": "posts/2025-02-21-inicio/pres-ciencia-abierta-chiapas.html#section-4",
-    "href": "posts/2025-02-21-inicio/pres-ciencia-abierta-chiapas.html#section-4",
-    "title": "Ciencia Abierta:",
-    "section": "",
-    "text": "Puedes encontrar esta presentación en el blog: https://pe-ciencia-abierta.netlify.app\n\n\n\n\n\n\ni-Gamma"
-  },
-  {
-    "objectID": "posts/2025-02-21-inicio/pres-ciencia-abierta-chiapas.html#antecedentes---ciencia-y-cooperaciónh2a",
-    "href": "posts/2025-02-21-inicio/pres-ciencia-abierta-chiapas.html#antecedentes---ciencia-y-cooperaciónh2a",
-    "title": "Ciencia Abierta:",
-    "section": "[Antecedentes - ciencia y cooperación]{h2a}",
-    "text": "[Antecedentes - ciencia y cooperación]{h2a}"
-  },
-  {
-    "objectID": "posts/2025-02-21-inicio/pres-ciencia-abierta-chiapas.html#section",
-    "href": "posts/2025-02-21-inicio/pres-ciencia-abierta-chiapas.html#section",
-    "title": "Ciencia Abierta:",
-    "section": "",
-    "text": ":::"
-  },
-  {
-    "objectID": "posts/2025-02-21-inicio/pres-ciencia-abierta-chiapas.html#section-6",
-    "href": "posts/2025-02-21-inicio/pres-ciencia-abierta-chiapas.html#section-6",
-    "title": "Ciencia Abierta:",
-    "section": "",
-    "text": "i-Gamma"
-  },
-  {
-    "objectID": "posts/2025-02-21-inicio/pres-ciencia-abierta-chiapas.html#section-3",
-    "href": "posts/2025-02-21-inicio/pres-ciencia-abierta-chiapas.html#section-3",
+    "objectID": "posts/2025-02-21-inicio/pres-ciencia-abierta.html#section-3",
+    "href": "posts/2025-02-21-inicio/pres-ciencia-abierta.html#section-3",
     "title": "Ciencia Abierta:",
     "section": "",
     "text": "Ciencia abierta y bienestar sustentable\n\n\n\n\n\n\n\nBienestar sustentable\nArticulación de saberes, capacidades y compromisos\nInteligencia artificial interpretable\n\n\n\n\n\n\n\n\n\n\n\n\nFuente: Costanza, R. (2020). Ecological Economics, 168, 106484."
   },
   {
-    "objectID": "posts/2025-02-21-inicio/pres-ciencia-abierta-chiapas.html#section-5",
-    "href": "posts/2025-02-21-inicio/pres-ciencia-abierta-chiapas.html#section-5",
+    "objectID": "posts/2025-02-21-inicio/pres-ciencia-abierta.html#la-ciencia-abierta-que-queremos",
+    "href": "posts/2025-02-21-inicio/pres-ciencia-abierta.html#la-ciencia-abierta-que-queremos",
+    "title": "Ciencia Abierta:",
+    "section": "La ciencia abierta que queremos",
+    "text": "La ciencia abierta que queremos\n\n\n\n\n\n\n\nCooperativa\nTrazable\nreproducible\nVerificable con datos\nIncluyente (científicos y no científicos)\nDatos abiertos\nReflexiva\n\n\n\n\n\n\nFuente: Equihua, M. y Pérez-Maqueo, O. (2024).Ciencia abierta desde el Inecol. Eco-lógico"
+  },
+  {
+    "objectID": "posts/2025-02-21-inicio/pres-ciencia-abierta.html#cómo-ponerla-en-práctica",
+    "href": "posts/2025-02-21-inicio/pres-ciencia-abierta.html#cómo-ponerla-en-práctica",
+    "title": "Ciencia Abierta:",
+    "section": "Cómo ponerla en práctica",
+    "text": "Cómo ponerla en práctica\n\n\n\n\n\n\n\nCambio cultural profundo\nTransformar viejos hábitos\nAprender nuevas habilidades\nReaprender a cooperar\nCambios institucionales\nAbierta y no monopólica\nDatos abiertos FAIR"
+  },
+  {
+    "objectID": "posts/2025-02-21-inicio/pres-ciencia-abierta.html#consecuencias-imprevistas",
+    "href": "posts/2025-02-21-inicio/pres-ciencia-abierta.html#consecuencias-imprevistas",
+    "title": "Ciencia Abierta:",
+    "section": "¿Consecuencias imprevistas?",
+    "text": "¿Consecuencias imprevistas?\n\n\n\n\n\nFuente: https://www.nature.com/articles/d41586-022-00724-0"
+  },
+  {
+    "objectID": "posts/2025-02-21-inicio/pres-ciencia-abierta.html#costos-de-procesamiento-de-artículos-apc",
+    "href": "posts/2025-02-21-inicio/pres-ciencia-abierta.html#costos-de-procesamiento-de-artículos-apc",
+    "title": "Ciencia Abierta:",
+    "section": "Costos de Procesamiento de Artículos (APC)",
+    "text": "Costos de Procesamiento de Artículos (APC)\n\n\n\n\n\n\n\nEl modelo APC demolió parte del muro de pago que bloqueaba el acceso de los lectores a las publicaciones.\nAhora a levantado un nuevo muro de pago en el otro extremo de la cadena, al bloquear el acceso de los autores menos privilegiados a la publicación."
+  },
+  {
+    "objectID": "posts/2025-02-21-inicio/pres-ciencia-abierta.html#lo-no-fair",
+    "href": "posts/2025-02-21-inicio/pres-ciencia-abierta.html#lo-no-fair",
+    "title": "Ciencia Abierta:",
+    "section": "Lo No-FAIR",
+    "text": "Lo No-FAIR\n\n\n\n\n\n\nDebemos ser especialmente sensibles a las formas en que las políticas de Ciencia Abierta pueden en realidad empeorar las desigualdades existentes."
+  },
+  {
+    "objectID": "posts/2025-02-21-inicio/pres-ciencia-abierta.html#section-6",
+    "href": "posts/2025-02-21-inicio/pres-ciencia-abierta.html#section-6",
     "title": "Ciencia Abierta:",
     "section": "",
     "text": "i-Gamma"
   },
   {
-    "objectID": "posts/2025-02-21-inicio/pres-ciencia-abierta-chiapas.html#background-image-imagespres-ciencia-abierta-chiapas-final.png",
-    "href": "posts/2025-02-21-inicio/pres-ciencia-abierta-chiapas.html#background-image-imagespres-ciencia-abierta-chiapas-final.png",
-    "title": "Ciencia Abierta:",
-    "section": "{background-image = “images/pres-ciencia-abierta-chiapas-final.png”}",
-    "text": "{background-image = “images/pres-ciencia-abierta-chiapas-final.png”}"
-  },
-  {
-    "objectID": "posts/2025-02-21-inicio/pres-ciencia-abierta-chiapas.html#background-image-imagespres-ciencia-abierta-chiapas-final.png-background-size90",
-    "href": "posts/2025-02-21-inicio/pres-ciencia-abierta-chiapas.html#background-image-imagespres-ciencia-abierta-chiapas-final.png-background-size90",
-    "title": "Ciencia Abierta:",
-    "section": "{background-image = “images/pres-ciencia-abierta-chiapas-final.png” background-size=“90%”}",
-    "text": "{background-image = “images/pres-ciencia-abierta-chiapas-final.png” background-size=“90%”}"
+    "objectID": "posts/2025-02-21-inicio/index.html#markdown-y-la-ciencia-abierta",
+    "href": "posts/2025-02-21-inicio/index.html#markdown-y-la-ciencia-abierta",
+    "title": "Los primeros pasos",
+    "section": "",
+    "text": "Tan simple como escribir en la página en blanco con pequeñas marcas de intención. Se ha inventado varias veces y el columpio ha ido y venido entre el interés en ver y controlar las marcas directamente sobre el texto y la preferencia de ver sólo el producto terminado WYSIWYG (lo que ves es lo que tienes, aunque el marcado existe, pero lo hace la máquina por ti).\n\n\n\n\n\n\n\n\n\nEl trabajo del científico, el ingeniero, el estudiante o el creador de contenidos transita por el proceso de escribir, almacenar y dar formato presentable a los documentos. La escritura da origen a la historia y deja atras la prehistoria. Un largo proceso de evolución cultural apasionante que tiene un hermoso recuento en el libro de Irene Vallejo El infinito en un Junco. Hemos explorado las rocas, la arcilla, los pigmentos vegetales y minerales, las pieles de animales y los tejidos vegetales para escribir.\n\n\n\nHoy lo hacemos sobre el éter y nos apoyamos en procesos electromagnéticos. Hacer esto ha involucrado a incontables inventores y lo hacemos recurriendo a herramientas y formatos que tienen registro de propiedad a nombre de lucrativas empresas particulares. Lo hacemos así y el hecho no nos merece ni un suspiro reflexivo sobre sus implicaciones.\nA veces nos incomodan detalles o grandes fallas que obstaculizan la expresividad que requiere la escritura académica creativa. En general, la práctica actual se opone a lograr un flujo ágil y transparente a lo largo del proceso completo que involucra organizar los datos, analizarlos, sintetizarlos y publicar los hallazgos obtenidos.\nPor la fuerza del hábito, y a pesar de inconvenientes, la mayoría de las revistas aún insisten en recibir textos en formato docx.\nEn el movimiento social que nos invita a reflexionar sobre la Ciencia Abierta, hay quienes sostenemos que el conocimiento y el proceso creativo que lo impulsa debe ser lo más libre posible. El talento y la sabiduría su núcleo. Sobre todo en áreas como la salud y la calidad del entorno ecológico en el que vivimos.\n\n\n\n\n\n\nMarkdown fue desarrollado en 2004 por John Gruber. Ideo una manera de poner marcas de formato en un texto cómun y corriente (lo llamaremos texto plano). También construyó un programa de cómputo (lo escribió en el lenguaje Perl), para convertir los archivos ya marcados en Markdown a algo conveniente para que las computadoras nos los pudieran presentar a través de la Web. Hacer esto implica recontruir y transforrmar el documento original a un nuevo formato, el HTML (HyperText Markup Language).\n\n\n \n\n\n\n\n\n\nHe aquí uno de los grande valores que busca el movimiento en favor de una ciencia abierta: romper las barreras que limitan el acceso a los textos y a los datos. El uso de texto plano para escribir y organizar archivos de datos tienen muchas ventajas. Para empezar se pueden leer prácticamente en cualquier dispositivo, independientemente de sistema operativo e intereses comerciales de los fabricantes. Los archivos escritos así han superado la dura prueba del paso del tiempo mejor que otros tipos de archivos.\nEl día de hoy empezaremos a utilizar la idea del Markdown. Producirás tus primeros archivos que serán legibles como texto plano y que a la vez estarán listos para ser producidos en una variedad de presentaciones que usualmente requerimos para nuestro propio registro de actividades y para interactuar con colegas o maestros. Además, de lo que hizo en su momento Gruber, ahora existen herramientas como Pandoc, que pueden convertir archivos desde Markdown a una variedad de otros formatos que seguramente serán de tu interés en algún momento. Otro de los valores de la ciencia abierta: favorecer el reuso los productos de información y conocimiento"
   }
 ]

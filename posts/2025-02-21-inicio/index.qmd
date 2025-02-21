@@ -14,7 +14,7 @@ format:
 ---
 
 
-## Markdown
+## Markdown y la [ciencia abierta](pres-ciencia-abierta.qmd)
 
 _Tan simple como escribir en la página en blanco con pequeñas marcas de intención_. Se ha inventado varias veces y el columpio ha ido y venido entre el interés en ver y controlar las marcas directamente sobre el texto y la preferencia de ver sólo el producto terminado **WYSIWYG** (_lo que ves es lo que tienes_, aunque el marcado existe, pero lo hace la máquina por ti). 
 
@@ -22,7 +22,7 @@ _Tan simple como escribir en la página en blanco con pequeñas marcas de intenc
 
 ![](images/900-el-infinito-en-un-junco-irene-vallejo-alfa.png){width=200px}
 
-El trabajo del científico, el ingeniero, el estudiante o el creador de contenidos transita por el proceso de escribir, almacenar y dar formato presentable a los documentos. La escritura da origen a la historia y deja atras la prehistoria. Un largo proceso de evolución cultural apasionante que tiene un hermoso recuento en el libro de Irene Vallejo _El infinito en un Junco_. Hemos explorado las rocas, la arcilla, los pigmentos vegetales y minerales, las pieles de animales y los tejidos vegetales para escribbir. 
+El trabajo del científico, el ingeniero, el estudiante o el creador de contenidos transita por el proceso de escribir, almacenar y dar formato presentable a los documentos. La escritura da origen a la historia y deja atras la prehistoria. Un largo proceso de evolución cultural apasionante que tiene un hermoso recuento en el libro de Irene Vallejo _El infinito en un Junco_. Hemos explorado las rocas, la arcilla, los pigmentos vegetales y minerales, las pieles de animales y los tejidos vegetales para escribir. 
 
 :::
 
