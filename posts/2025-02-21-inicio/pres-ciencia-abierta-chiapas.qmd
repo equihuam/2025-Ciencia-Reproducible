@@ -6,8 +6,8 @@ author: Miguel Equihua, Griselda Benítez, Octavio Pérez Maqueo
 lang: es
 
   
-date: "9/oct/2024"
-date-format: "[San Cristobal, Chis.,] D MMMM YYYY"
+date: "21/oct/2025"
+date-format: "[Xalapa, Ver.,] D MMMM YYYY"
 categories: [antecedentes, presentación, conceptos, propuestas]
 transition: convex
 format: 
