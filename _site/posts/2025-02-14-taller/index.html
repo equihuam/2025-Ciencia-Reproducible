@@ -106,6 +106,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -258,18 +287,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="https://cran.rstudio.com/">Instalar R</a></li>
 <li><a href="https://download1.rstudio.org/electron/windows/RStudio-2024.04.1-748.exe">Instalar RStudio</a></li>
 </ol>
+<p>Para las actividdades de preparación es importante verrificar que las siguientes bibliotecas estén instaladas en <strong>R</strong>. Para hacerlo puedes usar el menú <em>Tools</em> <span class="math inline">\(\rightarrow\)</span> <em>Install packages…</em> o el siguiente commando en la pestaña <em>Consola</em>.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>muestra el escript:</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"rmarkdown"</span>, <span class="st">"usethis"</span>, <span class="st">"knitter"</span>, <span class="st">"tinytex"</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<ol type="1">
+<li><code>rmarkdown</code></li>
+<li><code>knitter</code></li>
+<li><code>usethis</code></li>
+<li><code>tinytex</code></li>
+</ol>
 <p>Si interesa verificar la publicación Web de documentos hay que prever que no estén bloqueados en el <em>Firewall</em> de la institución los sitios con terminación <code>.netlify.app</code>, pues es la que utilizará el servicio <strong>Netlify</strong> por defecto.</p>
 <p><strong>Quarto</strong> es un sistema de <em>fuente abierta</em> para la autoría de documentos científicos y técnicos. Puedes aprender más sobre lo que ofrece <a href="https://quarto.org/"><strong>Quarto</strong> en este enlace.</a></p>
 <p>La construcción de <em>comunidades de aprendizaje</em> requiere compartir intereses y actitudes. Al respecto pongo a su consideración el <a href="../../images/pacto-contribuyente.html"><em>Pacto del Contribuyente</em></a>, que busca exponer ideas y conceptos que hace la convivencia grata y productiva. Pienso que el espíritu de este documento es muy adecuado para estimular la reflexión que buscamos propicie lo que estaremos haciendo en este taller.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>muestra el escript:</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># devtools::install_github("benjcunningham/googlecalendar", force=TRUE)</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(qrcode)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>code <span class="ot">&lt;-</span> <span class="fu">qr_code</span>(<span class="st">"https://2025-ciencia-reproducible.netlify.app/"</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(code, <span class="at">col =</span> <span class="fu">c</span>(<span class="st">"white"</span>, <span class="st">"#2268bb"</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># devtools::install_github("benjcunningham/googlecalendar", force=TRUE)</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(qrcode)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>code <span class="ot">&lt;-</span> <span class="fu">qr_code</span>(<span class="st">"https://2025-ciencia-reproducible.netlify.app/"</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(code, <span class="at">col =</span> <span class="fu">c</span>(<span class="st">"white"</span>, <span class="st">"#2268bb"</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -706,7 +748,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"loop":false,"descPosition":"bottom","selector":".lightbox","openEffect":"zoom","closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {

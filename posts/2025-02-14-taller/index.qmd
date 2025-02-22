@@ -74,6 +74,23 @@ Para las actividades en clase se espera que tendrá ya instalado en su máquina 
 2.  [Instalar R](https://cran.rstudio.com/)
 3.  [Instalar RStudio](https://download1.rstudio.org/electron/windows/RStudio-2024.04.1-748.exe)
 
+Para las actividdades de preparación es importante verrificar que las siguientes bibliotecas estén instaladas en **R**. Para hacerlo puedes usar el menú _Tools_ $\rightarrow$ _Install packages..._ o el siguiente commando en la pestaña _Consola_.
+
+```{r}
+#| eval: false
+
+install.packages(c("rmarkdown", "usethis", "knitter", "tinytex"))
+
+```
+
+
+1. `rmarkdown`
+2. `knitter`
+3. `usethis`
+4. `tinytex`
+
+
+
 Si interesa verificar la publicación Web de documentos hay que prever que no estén bloqueados en el *Firewall* de la institución los sitios con terminación `.netlify.app`, pues es la que utilizará el servicio **Netlify** por defecto.
 
 ::: {.content-visible when-format="pdf"}
