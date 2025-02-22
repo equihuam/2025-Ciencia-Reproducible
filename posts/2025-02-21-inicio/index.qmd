@@ -47,7 +47,7 @@ Markdown fue desarrollado en 2004 por **John Gruber**. Ideo una manera de poner 
 
 He aquí uno de los grande valores que busca el movimiento en favor de una _ciencia abierta_: **romper las barreras que limitan el acceso a los textos  y a los datos**. El uso de _texto plano_ para escribir y organizar archivos de datos tienen muchas ventajas. Para empezar se pueden leer prácticamente en cualquier dispositivo, independientemente de _sistema operativo_ e intereses comerciales de los fabricantes. Los archivos escritos así han superado la _dura prueba del paso del tiempo_ mejor que otros tipos de archivos.
 
-El día de hoy empezaremos a utilizar la idea del _Markdown_. Producirás tus primeros archivos que serán legibles como texto plano y que a la vez estarán listos para ser producidos en una variedad de presentaciones que usualmente requerimos para nuestro propio registro de actividades y para interactuar con colegas o maestros. Además, de lo que hizo en su momento _Gruber_, ahora existen herramientas como **Pandoc**, que pueden convertir archivos desde _Markdown_ a una variedad de otros formatos que seguramente serán de tu interés en algún momento. Otro de los valores de la _ciencia abierta_: **favorecer el reuso los productos de información y conocimiento** 
+El día de hoy empezaremos a utilizar la idea del _Markdown_. Producirás tus primeros archivos que serán legibles como texto plano y que a la vez estarán listos para ser producidos en una variedad de presentaciones que usualmente requerimos para nuestro propio registro de actividades y para interactuar con colegas o maestros. Además, de lo que hizo en su momento _Gruber_, ahora existen herramientas como **Pandoc**, que pueden convertir archivos desde _Markdown_ a una variedad de otros formatos que seguramente serán de tu interés en algún momento. Otro de los valores de la _ciencia abierta_: **favorecer el reuso de los productos de información y conocimiento** 
 
 
 ##  Quarto
@@ -127,7 +127,7 @@ No todos los archivos que están en el espacio de trabajo son realmente de inter
 usethis::git_vaccinate()
 ```
 
-Esto pone ya en operación las capacidades de **git** en tu máquina. Para usarlas debes dirigirte a la pestaña respectiva con la función **Commit**: genera el registro del estado de los archivos del proyecto al momento de activar el comando. Para operar esto debes decidir que archivos enviar al registro histórico, marcados como _staged_. Al apretar el botón **Commit** aparecerá una ventana en donde se reportan los detalles de lo que estas registrando. Cada **Commit** requiere anotar un mensaje descriptivo breve de lo que contiene el "corte". Una vez que está todo resuelto, hay que apretar el botón **Commit** en esa pantalla y esperar algunos segundos a que termine el proceso de registro en la base de datos respectiva.
+Esto pone ya en operación las capacidades de **git** en tu máquina. Para usarlas debes dirigirte a la pestaña respectiva. Con la función **Commit** generas el registro del estado de los archivos del proyecto al momento de activar el comando. Para operar esto debes decidir que archivos enviar al registro histórico, marcados como _staged_. Al apretar el botón **Commit** aparecerá una ventana en donde se reportan los detalles de lo que estas registrando. Cada **Commit** requiere anotar un mensaje descriptivo breve de lo que contiene el "corte". Una vez que está todo resuelto, hay que apretar el botón **Commit** en esa pantalla y esperar algunos segundos a que termine el proceso de registro en la base de datos respectiva.
 
 
 
@@ -162,6 +162,7 @@ usethis::use_github()
 
 ```
 
+Por cierto, este es el comando qe necesitarán en lo sucesivo para vincular cualquier nuevo proyecto a tt centta ed **Github**, siempre y cuando tu **token** este vigente. 
 
 ::: {layout="[2,1]"}
 Una vez teminadas estas tarea puedes ir a la pestaña **git** cuando lo consideres conveniente y ordenar a **RStudio** que envié todos los **commits** que están pendientes hasta el momento a **Github**. Para hacerlo deberás apretar el botón **Push**. Antes de hacerlo siempre es conveniente pedirle a **git** que se ponga al día con lo que ya está registrado en la _nube_, esto lo logras con el botón **pull**.  Esto nos lleva a una rutina de operación con **git** que se resume en la figura siguiente.

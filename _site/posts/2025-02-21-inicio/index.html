@@ -277,7 +277,7 @@ window.Quarto = {
 </div>
 </div>
 <p>He aquí uno de los grande valores que busca el movimiento en favor de una <em>ciencia abierta</em>: <strong>romper las barreras que limitan el acceso a los textos y a los datos</strong>. El uso de <em>texto plano</em> para escribir y organizar archivos de datos tienen muchas ventajas. Para empezar se pueden leer prácticamente en cualquier dispositivo, independientemente de <em>sistema operativo</em> e intereses comerciales de los fabricantes. Los archivos escritos así han superado la <em>dura prueba del paso del tiempo</em> mejor que otros tipos de archivos.</p>
-<p>El día de hoy empezaremos a utilizar la idea del <em>Markdown</em>. Producirás tus primeros archivos que serán legibles como texto plano y que a la vez estarán listos para ser producidos en una variedad de presentaciones que usualmente requerimos para nuestro propio registro de actividades y para interactuar con colegas o maestros. Además, de lo que hizo en su momento <em>Gruber</em>, ahora existen herramientas como <strong>Pandoc</strong>, que pueden convertir archivos desde <em>Markdown</em> a una variedad de otros formatos que seguramente serán de tu interés en algún momento. Otro de los valores de la <em>ciencia abierta</em>: <strong>favorecer el reuso los productos de información y conocimiento</strong></p>
+<p>El día de hoy empezaremos a utilizar la idea del <em>Markdown</em>. Producirás tus primeros archivos que serán legibles como texto plano y que a la vez estarán listos para ser producidos en una variedad de presentaciones que usualmente requerimos para nuestro propio registro de actividades y para interactuar con colegas o maestros. Además, de lo que hizo en su momento <em>Gruber</em>, ahora existen herramientas como <strong>Pandoc</strong>, que pueden convertir archivos desde <em>Markdown</em> a una variedad de otros formatos que seguramente serán de tu interés en algún momento. Otro de los valores de la <em>ciencia abierta</em>: <strong>favorecer el reuso de los productos de información y conocimiento</strong></p>
 </section>
 <section id="quarto" class="level2">
 <h2 class="anchored" data-anchor-id="quarto">Quarto</h2>
@@ -343,7 +343,7 @@ window.Quarto = {
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">git_vaccinate</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<p>Esto pone ya en operación las capacidades de <strong>git</strong> en tu máquina. Para usarlas debes dirigirte a la pestaña respectiva con la función <strong>Commit</strong>: genera el registro del estado de los archivos del proyecto al momento de activar el comando. Para operar esto debes decidir que archivos enviar al registro histórico, marcados como <em>staged</em>. Al apretar el botón <strong>Commit</strong> aparecerá una ventana en donde se reportan los detalles de lo que estas registrando. Cada <strong>Commit</strong> requiere anotar un mensaje descriptivo breve de lo que contiene el “corte”. Una vez que está todo resuelto, hay que apretar el botón <strong>Commit</strong> en esa pantalla y esperar algunos segundos a que termine el proceso de registro en la base de datos respectiva.</p>
+<p>Esto pone ya en operación las capacidades de <strong>git</strong> en tu máquina. Para usarlas debes dirigirte a la pestaña respectiva. Con la función <strong>Commit</strong> generas el registro del estado de los archivos del proyecto al momento de activar el comando. Para operar esto debes decidir que archivos enviar al registro histórico, marcados como <em>staged</em>. Al apretar el botón <strong>Commit</strong> aparecerá una ventana en donde se reportan los detalles de lo que estas registrando. Cada <strong>Commit</strong> requiere anotar un mensaje descriptivo breve de lo que contiene el “corte”. Una vez que está todo resuelto, hay que apretar el botón <strong>Commit</strong> en esa pantalla y esperar algunos segundos a que termine el proceso de registro en la base de datos respectiva.</p>
 </section>
 </section>
 <section id="enviar-el-repositorio-git-a-la-nube" class="level2">
@@ -371,6 +371,7 @@ window.Quarto = {
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
+<p>Por cierto, este es el comando qe necesitarán en lo sucesivo para vincular cualquier nuevo proyecto a tt centta ed <strong>Github</strong>, siempre y cuando tu <strong>token</strong> este vigente.</p>
 <div>
 
 </div>
@@ -858,7 +859,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","loop":false,"descPosition":"bottom","openEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","loop":false,"descPosition":"bottom","closeEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
