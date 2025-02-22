@@ -227,7 +227,10 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#qué-es-git" id="toc-qué-es-git" class="nav-link" data-scroll-target="#qué-es-git">¿Qué es Git?</a></li>
   </ul></li>
-  <li><a href="#enviar-el-repositorio-git-a-la-nube" id="toc-enviar-el-repositorio-git-a-la-nube" class="nav-link" data-scroll-target="#enviar-el-repositorio-git-a-la-nube">Enviar el <em>repositorio</em> <strong>git</strong> a la nube</a></li>
+  <li><a href="#enviar-el-repositorio-git-a-la-nube" id="toc-enviar-el-repositorio-git-a-la-nube" class="nav-link" data-scroll-target="#enviar-el-repositorio-git-a-la-nube">Enviar el <em>repositorio</em> <strong>git</strong> a la nube</a>
+  <ul class="collapse">
+  <li><a href="#resumen-rutinario-para-usar-git" id="toc-resumen-rutinario-para-usar-git" class="nav-link" data-scroll-target="#resumen-rutinario-para-usar-git">Resumen rutinario para usar <strong>git</strong></a></li>
+  </ul></li>
   <li><a href="#asociar-github-con-netlify-para-publicar-tu-blog" id="toc-asociar-github-con-netlify-para-publicar-tu-blog" class="nav-link" data-scroll-target="#asociar-github-con-netlify-para-publicar-tu-blog">Asociar Github con Netlify para publicar tu Blog</a></li>
   <li><a href="#creación-de-un-nuevo-sitio-a-publicar" id="toc-creación-de-un-nuevo-sitio-a-publicar" class="nav-link" data-scroll-target="#creación-de-un-nuevo-sitio-a-publicar">Creación de un nuevo sitio a publicar</a></li>
   </ul>
@@ -385,14 +388,30 @@ window.Quarto = {
 </div>
 </div>
 </div>
+<section id="resumen-rutinario-para-usar-git" class="level3">
+<h3 class="anchored" data-anchor-id="resumen-rutinario-para-usar-git">Resumen rutinario para usar <strong>git</strong></h3>
+<p>Claro está que configurar todo la primera vez es un poco complicado, pero si todo está listo: git instalado, cuenta de Github, token activado, etc. la operación cotidiana es mucho más sencilla.</p>
+<p>En la figura se ilustran las dos rutas para hacerlo en <em>RStudio</em>.</p>
+<p><a href="images/proyecto-con-git.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="images/proyecto-con-git.png" class="img-fluid"></a></p>
+<p>Evidentemete, si seguiste la ruta azul, tu repositorio ya existe en <em>Github</em>, una vez qe hayas <strong>clonado</strong> el repositorio en t máquina todo queda listo para concentrarte en escriibir. Si optaste por la ruta verde, entonces deberás crear un nuevo repositorio en <em>Github</em>. Para hacerlo Utiliza <code>usethis</code> en la pestaña de consola.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>muestra el escript:</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Eso es todo.</p>
+<div class="line-block"><br>
+</div>
+</section>
 </section>
 <section id="asociar-github-con-netlify-para-publicar-tu-blog" class="level2">
 <h2 class="anchored" data-anchor-id="asociar-github-con-netlify-para-publicar-tu-blog">Asociar Github con Netlify para publicar tu Blog</h2>
 <p>Hay que preparar a <em>Github</em> dando acceso a <em>Netlify</em> para que tome lo necesario. La meta es que construya un sitio Web con tu contenido y lo publique en Internet. Los pasos que hay que seguir para esta primera interacción son los siguiente.</p>
 <p>Iniciar la vinculación con Github seleccionando la opción que ofrece importar los documentos desde un <em>repo</em> Git. Esto dará la opción de utilizar <em>Github</em> como origen de datos, entre otras posibilidades.</p>
-<p><a href="images/Netlify-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="images/Netlify-1.png" class="img-fluid"></a></p>
+<p><a href="images/Netlify-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="images/Netlify-1.png" class="img-fluid"></a></p>
 <p>El Siguiente paso es autorizar a Netlify a acceder a Github a través de tu cuenta, así como los específicos del repositorio que te interesa vincular. Esto también implica instalar una <strong>aplicación</strong> de vínculo entre <em>Netlify</em> y <em>Github</em> dentro de tu cuenta.</p>
-<p><a href="images/Netlify-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="images/Netlify-2.png" class="img-fluid"></a></p>
+<p><a href="images/Netlify-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="images/Netlify-2.png" class="img-fluid"></a></p>
 <p>Si todo ocurrió sin problemas, tendrás ahora en <em>Github</em>, en el menú de aplicaciones (Avatar→ Settings→ Applications), un botón que te permitirá configurar el vínculo con <em>Netlify</em> según tus requerimientos. También podrás ver los <em>repos</em> que hayas autorizado desde <em>Netlify</em>.</p>
 </section>
 <section id="creación-de-un-nuevo-sitio-a-publicar" class="level2">
@@ -409,10 +428,10 @@ window.Quarto = {
 <div class="quarto-layout-panel" data-layout="[1,1]">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><a href="images/Netlify-new-site.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="images/Netlify-new-site.png" class="img-fluid"></a></p>
+<p><a href="images/Netlify-new-site.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="images/Netlify-new-site.png" class="img-fluid"></a></p>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><a href="images/Netlify-new-site-team.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="images/Netlify-new-site-team.png" class="img-fluid"></a></p>
+<p><a href="images/Netlify-new-site-team.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="images/Netlify-new-site-team.png" class="img-fluid"></a></p>
 </div>
 </div>
 </div>
@@ -420,17 +439,17 @@ window.Quarto = {
 <section id="qué-nombre-le-daras" class="level4">
 <h4 class="anchored" data-anchor-id="qué-nombre-le-daras">¿Qué nombre le daras?</h4>
 <p>Deberás elegir un nombre que se convertirá en una URL para acceder a tu proyecto. Puede ser cualquier cosa que desees, pero debe ser único. En esta sección puedes escribir nombres y verificar que estén disponibles</p>
-<p><a href="images/Netlify-config-site-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="images/Netlify-config-site-1.png" class="img-fluid" style="width:50.0%"></a></p>
+<p><a href="images/Netlify-config-site-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="images/Netlify-config-site-1.png" class="img-fluid" style="width:50.0%"></a></p>
 </section>
 <section id="qué-hará-netlify-para-operar-tu-sitio" class="level4">
 <h4 class="anchored" data-anchor-id="qué-hará-netlify-para-operar-tu-sitio">¿Qué hará Netlify para operar tu sitio?</h4>
 <p>Es una colección de atributos para indicarle a <em>Netlify</em> dónde conseguir los documentos y como manejarlos. En nuestro caso, muy simple, básicamente hay que decirle en donde están los documentos que <em>Quarto</em>, con ayuda de <em>pandoc</em>, ha <em>renderizado</em>. Si no has cambiado nada en <code>_quarto.yml</code> la rama que estamos usando aquí para que <em>Git</em> los registre es <strong>main</strong> y, en ella el directorio de producción se llama **_site**. Por favor verifica el contenido de esto para ayudarte a comprender mejor lo que estás haciendo.</p>
-<p><a href="images/Netlify-config-site-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="images/Netlify-config-site-2.png" class="img-fluid" style="width:50.0%"></a></p>
+<p><a href="images/Netlify-config-site-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img src="images/Netlify-config-site-2.png" class="img-fluid" style="width:50.0%"></a></p>
 </section>
 <section id="todo-listo-a-producción" class="level4">
 <h4 class="anchored" data-anchor-id="todo-listo-a-producción">¿Todo listo? ¡a producción!</h4>
 <p>En nuestro caso no hay más que hacer, <em>Netlify</em> tiene información suficiente para encargarse de publicar tu proyecto continuamente. Incorporará los cambios que hagas en <em>RStudio</em> en la rama principal. Lo hará automáticamente cada vez que envíes tus cambios a <em>Github</em>.</p>
-<p><a href="images/Netlify-config-site-3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img src="images/Netlify-config-site-3.png" class="img-fluid" style="width:50.0%"></a></p>
+<p><a href="images/Netlify-config-site-3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13"><img src="images/Netlify-config-site-3.png" class="img-fluid" style="width:50.0%"></a></p>
 <p>Si todo salió bien, en este momento ya debe estar tu proyecto publicado y accesible para cualquier lector del mundo que lo localice y se interese en su contenido.</p>
 
 
@@ -859,7 +878,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","loop":false,"descPosition":"bottom","closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom","loop":false});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {

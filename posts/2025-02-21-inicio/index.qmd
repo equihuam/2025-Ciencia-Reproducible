@@ -172,6 +172,29 @@ Una vez teminadas estas tarea puedes ir a la pestaña **git** cuando lo consider
 
 :::
 
+### Resumen rutinario para usar **git**
+
+Claro está que configurar todo la primera vez es un poco complicado, pero si todo está listo: git instalado, cuenta de Github, token activado, etc. la operación cotidiana es mucho más sencilla.
+
+En la figura se ilustran las dos rutas para hacerlo en _RStudio_.
+
+![](images/proyecto-con-git.png)
+
+Evidentemete, si seguiste la ruta azul, tu repositorio ya existe en _Github_, una vez qe hayas **clonado** el repositorio en t máquina todo queda listo para concentrarte en escriibir. Si optaste por la ruta verde, entonces deberás crear un nuevo repositorio en _Github_. Para hacerlo Utiliza `usethis` en la pestaña de consola.
+
+```{r}
+#| eval: false
+
+usethis::use_github()
+
+```
+
+Eso es todo. 
+
+|
+|
+
+
 ## Asociar Github con Netlify para publicar tu Blog
 
 Hay que preparar a _Github_ dando acceso a _Netlify_ para que tome lo necesario. La meta es que construya un sitio Web con tu contenido y lo publique en Internet. Los pasos que hay que seguir para esta primera interacción son los siguiente.
