@@ -150,17 +150,20 @@ Esto te lleva a la página de **Github** en la que hay que generar el **token**.
 gitcreds::gitcreds_set()
 ```
 
-Si es la primeta vez que registras un **token** te pedirá que lo registres, dale _paste_ (**ctrl-v** en Windows). Si ya tienes un registro dado de alta, te informará sobre lo que tiene anotado y te dará oprotunidad de decidir qué quieres hacer en seguida.
-. 
+Si es la primeta vez que registras un **token** te pedirá que lo registres, dale _paste_ (**ctrl-v** en Windows). Si ya tienes un registro dado de alta, te informará sobre lo que tiene anotado y te dará oportunidad de decidir qué quieres hacer en seguida. 
+
+Todo está ya preparado, sólo falta poner en uso el vínculo que acabamos de crear. Para eso bastará con decir: 
+
 ```{r}
 #| eval: false
 
-usethis::create_github_token()
+usethis::use_github()
+
 ```
 
 
 ::: {layout="[2,1]"}
-Una vez teminada esta tarea puedes ir a la pestaña **git** cuando lo consideres conveniente y ordenar a **RStudio** que envié todos los **commits** que están pendientes hasta el momento a **Github**. Para hacerlo deberás apretar el botón **Push**. Antes de hacerlo siempre es conveniente pedirle a **git** que se ponga al día con lo que ya está registrado en la _nube_, esto lo logras con el botón **pull**.  Esto nos lleva a una rutina de operación con **git** que se resume en la figura siguiente.
+Una vez teminadas estas tarea puedes ir a la pestaña **git** cuando lo consideres conveniente y ordenar a **RStudio** que envié todos los **commits** que están pendientes hasta el momento a **Github**. Para hacerlo deberás apretar el botón **Push**. Antes de hacerlo siempre es conveniente pedirle a **git** que se ponga al día con lo que ya está registrado en la _nube_, esto lo logras con el botón **pull**.  Esto nos lleva a una rutina de operación con **git** que se resume en la figura siguiente.
 
 
 ![](images/En caso de incendio.png){width=150px}

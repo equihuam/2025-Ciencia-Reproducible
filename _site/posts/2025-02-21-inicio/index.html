@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.5.45">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -334,11 +334,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>gitcreds<span class="sc">::</span><span class="fu">gitcreds_set</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<p>Si es la primeta vez que registras un <strong>token</strong> te pedirá que lo registres, dale <em>paste</em> (<strong>ctrl-v</strong> en Windows). Si ya tienes un registro dado de alta, te informará sobre lo que tiene anotado y te dará oprotunidad de decidir qué quieres hacer en seguida. .</p>
+<p>Si es la primeta vez que registras un <strong>token</strong> te pedirá que lo registres, dale <em>paste</em> (<strong>ctrl-v</strong> en Windows). Si ya tienes un registro dado de alta, te informará sobre lo que tiene anotado y te dará oportunidad de decidir qué quieres hacer en seguida.</p>
+<p>Todo está ya preparado, sólo falta poner en uso el vínculo que acabamos de crear. Para eso bastará con decir:</p>
 <div class="cell">
 <details class="code-fold">
 <summary>muestra el escript:</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">create_github_token</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div>
@@ -347,7 +348,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-layout-panel" data-layout="[2,1]">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 66.7%;justify-content: flex-start;">
-<p>Una vez teminada esta tarea puedes ir a la pestaña <strong>git</strong> cuando lo consideres conveniente y ordenar a <strong>RStudio</strong> que envié todos los <strong>commits</strong> que están pendientes hasta el momento a <strong>Github</strong>. Para hacerlo deberás apretar el botón <strong>Push</strong>. Antes de hacerlo siempre es conveniente pedirle a <strong>git</strong> que se ponga al día con lo que ya está registrado en la <em>nube</em>, esto lo logras con el botón <strong>pull</strong>. Esto nos lleva a una rutina de operación con <strong>git</strong> que se resume en la figura siguiente.</p>
+<p>Una vez teminadas estas tarea puedes ir a la pestaña <strong>git</strong> cuando lo consideres conveniente y ordenar a <strong>RStudio</strong> que envié todos los <strong>commits</strong> que están pendientes hasta el momento a <strong>Github</strong>. Para hacerlo deberás apretar el botón <strong>Push</strong>. Antes de hacerlo siempre es conveniente pedirle a <strong>git</strong> que se ponga al día con lo que ya está registrado en la <em>nube</em>, esto lo logras con el botón <strong>pull</strong>. Esto nos lleva a una rutina de operación con <strong>git</strong> que se resume en la figura siguiente.</p>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
 <p><a href="images/En caso de incendio.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="images/En caso de incendio.png" class="img-fluid" width="150"></a></p>
@@ -828,7 +829,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","selector":".lightbox","loop":false,"openEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","closeEffect":"zoom","loop":false,"openEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
