@@ -106,6 +106,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -212,7 +241,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <section id="markdown-y-la-ciencia-abierta" class="level2">
-<h2 class="anchored" data-anchor-id="markdown-y-la-ciencia-abierta">Markdown y la <a href="../../posts/2025-02-21-inicio/pres-ciencia-abierta.html">ciencia abierta</a></h2>
+<h2 class="anchored" data-anchor-id="markdown-y-la-ciencia-abierta"><a href="https://rstudio.github.io/cheatsheets/quarto.pdf">Markdown</a> y la <a href="../../posts/2025-02-21-inicio/pres-ciencia-abierta.html">ciencia abierta</a></h2>
 <p><em>Tan simple como escribir en la página en blanco con pequeñas marcas de intención</em>. Se ha inventado varias veces y el columpio ha ido y venido entre el interés en ver y controlar las marcas directamente sobre el texto y la preferencia de ver sólo el producto terminado <strong>WYSIWYG</strong> (<em>lo que ves es lo que tienes</em>, aunque el marcado existe, pero lo hace la máquina por ti).</p>
 <div>
 
@@ -230,14 +259,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Hoy lo hacemos sobre el éter y nos apoyamos en procesos electromagnéticos. Hacer esto ha involucrado a incontables inventores y lo hacemos recurriendo a herramientas y formatos que tienen registro de propiedad a nombre de lucrativas empresas particulares. Lo hacemos así y el hecho no nos merece ni un suspiro reflexivo sobre sus implicaciones.</p>
 <p>A veces nos incomodan detalles o grandes fallas que obstaculizan la expresividad que requiere la escritura académica creativa. En general, la práctica actual se opone a lograr un flujo ágil y transparente a lo largo del proceso completo que involucra organizar los datos, analizarlos, sintetizarlos y publicar los hallazgos obtenidos.</p>
 <p>Por la fuerza del hábito, y a pesar de inconvenientes, la mayoría de las revistas aún insisten en recibir textos en formato <strong>docx</strong>.</p>
-<p>En el movimiento social que nos invita a reflexionar sobre la <em>Ciencia Abierta</em>, hay quienes sostenemos que el conocimiento y el proceso creativo que lo impulsa debe ser lo más libre posible. El talento y la sabiduría su núcleo. Sobre todo en áreas como la salud y la calidad del entorno ecológico en el que vivimos.</p>
+<p>En el movimiento social que nos invita a reflexionar sobre la <em>ciencia abierta</em>, hay quienes sostenemos que el conocimiento y el proceso creativo que lo impulsa debe ser lo más libre posible. El talento y la sabiduría su núcleo. Sobre todo en áreas como la salud y la calidad del entorno ecológico en el que vivimos.</p>
 <div>
 
 </div>
 <div class="quarto-layout-panel" data-layout="[1.5, -0.1, 1]">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 57.7%;justify-content: flex-start;">
-<p>Markdown fue desarrollado en 2004 por <strong>John Gruber</strong>. Ideo una manera de poner marcas de formato en un texto cómun y corriente (lo llamaremos <em>texto plano</em>). También construyó un programa de cómputo (lo escribió en el lenguaje Perl), para convertir los archivos ya marcados en <em>Markdown</em> a algo conveniente para que las computadoras nos los pudieran presentar a través de la <strong>Web</strong>. Hacer esto implica recontruir y transforrmar el documento original a un nuevo formato, el <strong>HTML</strong> (<em>HyperText Markup Language</em>).</p>
+<p>Markdown fue desarrollado en 2004 por <strong>John Gruber</strong>. Ideo una manera de poner marcas de formato en un texto cómun y corriente (lo llamaremos <em>texto plano</em>). También construyó un programa de cómputo (lo escribió en el lenguaje Perl), para convertir los archivos ya marcados en <em>Markdown</em> a algo conveniente para que las computadoras nos los pudieran presentar a través de la <strong>Web</strong>. Hacer esto implica recontruir y transforrmar el documento original a un nuevo formato, el <strong>HTML</strong> (<em>HyperText Markup Language</em>). Encontrarás ayuda sobre como usar <em>Markdown</em> en el menú de ayuda de <strong>RStudio</strong>: <em>Help</em> <span class="math inline">\(\rightarrow\)</span> <em>Markdown Quick Reference</em>.</p>
 </div>
 <div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 3.9%;justify-content: flex-start;">
 <p>&nbsp;</p>
@@ -273,7 +302,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="qué-es-git" class="level3">
 <h3 class="anchored" data-anchor-id="qué-es-git">¿Qué es Git?</h3>
 <p>Es una aplicación diseñada por el iniciador del desarrollo de Linux <a href="https://es.wikipedia.org/wiki/Linus_Torvalds">Linus Torvalds</a>. <a href="https://git-scm.com/">Git</a> es un sistema eficiente confiable y distribuido de control de versiones. El control de versiones es simplemente el seguimiento y registro de los cambios que va teniendo un documento a lo largo del tiempo. El concepto <em>distribuido</em> se refiere a que el registro local que tengas en tu máquina o para el caso en cualquier número de máquinas, es un registro completo, <strong>clonado</strong> del proyecto. Estos repositorios locales plenamente funcionales permiten trabajar aún cuando no tengas acceso a Internet. Los autores realizan y registran su trabajo localmente y, cuando lo encuentren conveniente, sincronizan la copia local del repositorio con la del servidor. En la actualidad <em>Git</em> se ha convertido en el estándar mundial <em>de facto</em> para el control de versiones.</p>
-<p>Para activar git en tu proyecto tienes dos opciones:</p>
+<p>Para activar <strong>git</strong> en tu proyecto tienes dos opciones:</p>
 <ol type="1">
 <li>Hacerlo desde el principio marcando la casilla respectiva al momento de crear el proyecto.</li>
 <li>Utilizar la biblioteca de herramientas auxiliares <a href="https://usethis.r-lib.org/articles/git-credentials.html"><code>usethis</code></a>.</li>
@@ -286,7 +315,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 <p>En cualquier caso, ahora conviene verificar como está configurado el espacio de trabajo. En la ventana de <strong>consola</strong> puedes escribir los siguientes comandos para averiguar detalles de tu configuración.</p>
-<p>Esto te dirá como se llama la <em>ventana de tiempo</em> que has elegido definir como base de trabajo, puedes tener tantas ramas distintas como consideres, pero conviene que una sea la principal. Se solía llamar a esta rama <strong>master</strong>, pero ahora se ha considerado que la !esclavitud ya ha sido abolida!, así que hay una tendencia mejor llamarle <strong>main</strong>. En realidad puedes llamarla como quieras.</p>
+<p>Esto te dirá como se llama la <em>ventana de tiempo</em> que has elegido definir como base de trabajo, puedes tener tantas ramas distintas como consideres, pero conviene que una sea la principal. Se solía llamar a esta rama <strong>master</strong>, pero ahora se ha considerado que la !esclavitud ya ha sido abolida!, así que hay una tendencia a mejor llamarle <strong>main</strong>. En realidad puedes llamarla como quieras.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>muestra el escript:</summary>
@@ -300,7 +329,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">git_default_branch_configure</span>(<span class="at">name =</span> <span class="st">"main"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<p>Si lo que quieres es modificar la rama principal del proyecto con el que estas trabajando y que ya tienes abierto, este es el comando que te ayudará. En este ejemplo uso lo que es práctica común, de migrar de <em>master</em> a <em>main</em>, pero puedes tomar tus propias preferencias sin ningún problema, aunque obviamente la parte <strong>from</strong> debe ser la existente que deseas modificar.</p>
+<p>Si lo que quieres es modificar la rama principal del proyecto con el que estas trabajando y que ya tienes abierto, este es el comando que te ayudará. En este ejemplo uso lo que es ya práctica común, migrar de <em>master</em> a <em>main</em>, pero puedes tomar tus propias preferencias sin ningún problema, aunque obviamente la parte <strong>from</strong> debe ser la existente que deseas modificar.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>muestra el escript:</summary>
@@ -314,7 +343,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">git_vaccinate</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<p>Esto en operación las capacidades de <strong>git</strong> sólo en tu máquina. Para usarlas debes operar en la pestaña respectiva con la función <strong>Commit</strong>: genera el registro del estado de los archivos del proyecto al momento de activar el comando. Para operar esto debes decidir que archivos enviar al registro histórico, marcados como <em>staged</em>. Al apretar el botón <strong>Commit</strong> aparecerá una ventana en donde se reportan los detalles de lo que estas registrando. Cada <strong>Commit</strong> requiere anotar un mensaje descriptivo breve de lo que contiene el “corte”. Una vez que está todo resuelto, hay que apretar el botón <strong>Commit</strong> en esa pantalla y esperar algunos segundos a que termine el proceso de registro en la base de datos respectiva.</p>
+<p>Esto pone ya en operación las capacidades de <strong>git</strong> en tu máquina. Para usarlas debes dirigirte a la pestaña respectiva con la función <strong>Commit</strong>: genera el registro del estado de los archivos del proyecto al momento de activar el comando. Para operar esto debes decidir que archivos enviar al registro histórico, marcados como <em>staged</em>. Al apretar el botón <strong>Commit</strong> aparecerá una ventana en donde se reportan los detalles de lo que estas registrando. Cada <strong>Commit</strong> requiere anotar un mensaje descriptivo breve de lo que contiene el “corte”. Una vez que está todo resuelto, hay que apretar el botón <strong>Commit</strong> en esa pantalla y esperar algunos segundos a que termine el proceso de registro en la base de datos respectiva.</p>
 </section>
 </section>
 <section id="enviar-el-repositorio-git-a-la-nube" class="level2">
@@ -829,7 +858,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"loop":false,"closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom","selector":".lightbox"});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","loop":false,"descPosition":"bottom","selector":".lightbox"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {

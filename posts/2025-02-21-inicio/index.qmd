@@ -17,7 +17,7 @@ format:
 ---
 
 
-## Markdown y la [ciencia abierta](pres-ciencia-abierta.qmd)
+## [Markdown](https://rstudio.github.io/cheatsheets/quarto.pdf) y la [ciencia abierta](pres-ciencia-abierta.qmd)
 
 _Tan simple como escribir en la página en blanco con pequeñas marcas de intención_. Se ha inventado varias veces y el columpio ha ido y venido entre el interés en ver y controlar las marcas directamente sobre el texto y la preferencia de ver sólo el producto terminado **WYSIWYG** (_lo que ves es lo que tienes_, aunque el marcado existe, pero lo hace la máquina por ti). 
 
@@ -35,11 +35,11 @@ A veces nos incomodan detalles o grandes fallas que obstaculizan la expresividad
 
 Por la fuerza del hábito, y a pesar de inconvenientes, la mayoría de las revistas aún insisten en recibir textos en formato **docx**.
 
-En el movimiento social que nos invita a reflexionar sobre la _Ciencia Abierta_, hay quienes sostenemos que el conocimiento y el proceso creativo que lo impulsa debe ser lo más libre posible. El talento y la sabiduría su núcleo. Sobre todo en áreas como la salud y la calidad del entorno ecológico en el que vivimos.
+En el movimiento social que nos invita a reflexionar sobre la _ciencia abierta_, hay quienes sostenemos que el conocimiento y el proceso creativo que lo impulsa debe ser lo más libre posible. El talento y la sabiduría su núcleo. Sobre todo en áreas como la salud y la calidad del entorno ecológico en el que vivimos.
 
 ::: {layout="[1.5, -0.1, 1]"}
 
-Markdown fue desarrollado en 2004 por **John Gruber**. Ideo una manera de poner marcas de formato en un texto cómun y corriente (lo llamaremos _texto plano_). También construyó un programa de cómputo (lo escribió en el lenguaje Perl), para convertir los archivos ya marcados en _Markdown_ a algo conveniente para que las computadoras nos los pudieran presentar a través de la **Web**. Hacer esto implica recontruir y transforrmar el documento original a un nuevo formato, el **HTML** (_HyperText Markup Language_).
+Markdown fue desarrollado en 2004 por **John Gruber**. Ideo una manera de poner marcas de formato en un texto cómun y corriente (lo llamaremos _texto plano_). También construyó un programa de cómputo (lo escribió en el lenguaje Perl), para convertir los archivos ya marcados en _Markdown_ a algo conveniente para que las computadoras nos los pudieran presentar a través de la **Web**. Hacer esto implica recontruir y transforrmar el documento original a un nuevo formato, el **HTML** (_HyperText Markup Language_). Encontrarás ayuda sobre como usar _Markdown_ en el menú de ayuda de **RStudio**: _Help_ $\rightarrow$ _Markdown Quick Reference_.
 
 ![](images/John_Gruber,_2009_(cropped) - By Randy Stewart, CC BY-SA 3.0, httpscommons.wikimedia.orgwindex.phpcurid=10682505.jpg){width=200px}
 
@@ -73,7 +73,7 @@ Ahora ya tenemos el texto en nuestras máquinas, almacenado en casa. ¿Podemos h
 
 Es una aplicación diseñada por el iniciador del desarrollo de Linux [Linus Torvalds](https://es.wikipedia.org/wiki/Linus_Torvalds). [Git](https://git-scm.com/) es un sistema eficiente confiable y distribuido de control de versiones. El control de versiones es simplemente el seguimiento y registro de los cambios que va teniendo un documento a lo largo del tiempo. El concepto _distribuido_  se refiere a que el registro local que tengas en tu máquina o para el caso en cualquier número de máquinas, es un registro completo, **clonado** del proyecto. Estos repositorios locales plenamente funcionales permiten trabajar aún cuando no tengas acceso a Internet. Los autores realizan y registran su trabajo localmente y, cuando lo encuentren conveniente, sincronizan la copia local del repositorio con la del servidor. En la actualidad _Git_ se ha convertido en el estándar mundial _de facto_ para el control de versiones.
 
-Para activar git en tu proyecto tienes dos opciones:
+Para activar **git** en tu proyecto tienes dos opciones:
 
 1. Hacerlo desde el principio marcando la casilla respectiva al momento de crear el proyecto.
 2. Utilizar la biblioteca de herramientas auxiliares [`usethis`](https://usethis.r-lib.org/articles/git-credentials.html).
@@ -93,7 +93,7 @@ usethis::use_git()
 En cualquier caso, ahora conviene verificar como está configurado el espacio de trabajo. En la ventana de **consola** puedes escribir los siguientes comandos para averiguar detalles de tu configuración.
 
 
-Esto te dirá como se llama la _ventana de tiempo_ que has elegido definir como base de trabajo, puedes tener tantas ramas distintas como consideres, pero conviene que una sea la principal. Se solía llamar a esta rama **master**, pero ahora se ha considerado que la !esclavitud ya ha sido abolida!, así que hay una tendencia mejor llamarle **main**. En realidad puedes llamarla como quieras.
+Esto te dirá como se llama la _ventana de tiempo_ que has elegido definir como base de trabajo, puedes tener tantas ramas distintas como consideres, pero conviene que una sea la principal. Se solía llamar a esta rama **master**, pero ahora se ha considerado que la !esclavitud ya ha sido abolida!, así que hay una tendencia a mejor llamarle **main**. En realidad puedes llamarla como quieras.
 
 ```{r}
 #| eval: false
@@ -109,7 +109,8 @@ Si quieres configurar tu instalación de **RStudio** para que siempre defina la 
 usethis::git_default_branch_configure(name = "main")
 
 ```
-Si lo que quieres es modificar la rama principal del proyecto con el que estas trabajando y que ya tienes abierto, este es el comando que te ayudará. En este ejemplo uso lo que es práctica común, de migrar de _master_ a _main_, pero puedes tomar tus propias preferencias sin ningún problema, aunque obviamente la parte **from** debe ser la existente que deseas modificar.
+
+Si lo que quieres es modificar la rama principal del proyecto con el que estas trabajando y que ya tienes abierto, este es el comando que te ayudará. En este ejemplo uso lo que es ya práctica común, migrar de _master_ a _main_, pero puedes tomar tus propias preferencias sin ningún problema, aunque obviamente la parte **from** debe ser la existente que deseas modificar.
 
 ```{r}
 #| eval: false
@@ -126,7 +127,7 @@ No todos los archivos que están en el espacio de trabajo son realmente de inter
 usethis::git_vaccinate()
 ```
 
-Esto en operación las capacidades de **git** sólo en tu máquina. Para usarlas debes operar en la pestaña respectiva con la función **Commit**: genera el registro del estado de los archivos del proyecto al momento de activar el comando. Para operar esto debes decidir que archivos enviar al registro histórico, marcados como _staged_. Al apretar el botón **Commit** aparecerá una ventana en donde se reportan los detalles de lo que estas registrando. Cada **Commit** requiere anotar un mensaje descriptivo breve de lo que contiene el "corte". Una vez que está todo resuelto, hay que apretar el botón **Commit** en esa pantalla y esperar algunos segundos a que termine el proceso de registro en la base de datos respectiva.
+Esto pone ya en operación las capacidades de **git** en tu máquina. Para usarlas debes dirigirte a la pestaña respectiva con la función **Commit**: genera el registro del estado de los archivos del proyecto al momento de activar el comando. Para operar esto debes decidir que archivos enviar al registro histórico, marcados como _staged_. Al apretar el botón **Commit** aparecerá una ventana en donde se reportan los detalles de lo que estas registrando. Cada **Commit** requiere anotar un mensaje descriptivo breve de lo que contiene el "corte". Una vez que está todo resuelto, hay que apretar el botón **Commit** en esa pantalla y esperar algunos segundos a que termine el proceso de registro en la base de datos respectiva.
 
 
 
