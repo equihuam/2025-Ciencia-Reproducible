@@ -17,7 +17,7 @@ fig-cap-location: top
 ::: {layout="[1, 1.5]"}
 ![Libro de Irene Vallejo](images/900-el-infinito-en-un-junco-irene-vallejo-alfa.png){width="200px" #fig-junco}
 
-El trabajo del científico, el ingeniero, el estudiante o el creador de contenidos transita por el proceso de escribir, almacenar y dar formato presentable a los documentos. La escritura da origen a la historia y deja atras la prehistoria. Un largo proceso de evolución cultural apasionante que tiene un hermoso recuento en el libro de Irene Vallejo *El infinito en un Junco* [Fig. @fig-junco]). Hemos explorado las rocas, la arcilla, los pigmentos vegetales y minerales, las pieles de animales y los tejidos vegetales para escribir. Hoy lo hacemos sobre el éter y nos apoyamos en procesos electromagnéticos.
+El trabajo del científico, el ingeniero, el estudiante o el creador de contenidos transita por el proceso de escribir, almacenar y dar formato presentable a los documentos. La escritura da origen a la historia y deja atras la prehistoria. Un largo proceso de evolución cultural apasionante que tiene un hermoso recuento en el libro de Irene Vallejo *El infinito en un Junco* ([Fig. @fig-junco]). Hemos explorado las rocas, la arcilla, los pigmentos vegetales y minerales, las pieles de animales y los tejidos vegetales para escribir. Hoy lo hacemos sobre el éter y nos apoyamos en procesos electromagnéticos.
 :::
 
 Hacer esto ha involucrado a incontables inventores y lo hacemos recurriendo a herramientas y formatos que tienen registro de propiedad a nombre de lucrativas empresas particulares. Lo hacemos así y el hecho no nos merece ni un suspiro reflexivo sobre sus implicaciones.
