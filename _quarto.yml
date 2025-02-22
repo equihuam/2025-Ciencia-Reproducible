@@ -29,5 +29,8 @@ format:
 
 prefer-html: true
 
+editor: source    
+
 execute: 
   freeze: true
+  
