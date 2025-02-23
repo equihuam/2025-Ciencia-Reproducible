@@ -224,7 +224,7 @@ Deberás elegir un nombre que se convertirá en una URL para acceder a tu proyec
 
 #### ¿Qué hará Netlify para operar tu sitio?
 
-Es una colección de atributos para indicarle a *Netlify* dónde conseguir los documentos y como manejarlos. En nuestro caso, muy simple, básicamente hay que decirle en donde están los documentos que *Quarto*, con ayuda de *pandoc*, ha *renderizado*. Si no has cambiado nada en `_quarto.yml` la rama que estamos usando aquí para que *Git* los registre es **main** y, en ella el directorio de producción se llama \*\*\_site\*\*. Por favor verifica el contenido de esto para ayudarte a comprender mejor lo que estás haciendo.
+Es una colección de atributos para indicarle a *Netlify* dónde conseguir los documentos y como manejarlos. En nuestro caso, muy simple, básicamente hay que decirle en donde están los documentos que *Quarto*, con ayuda de *pandoc*, ha *renderizado*. Si no has cambiado nada en `_quarto.yml` la rama que estamos usando aquí para que *Git* los registre es **main** y, en ella el directorio de producción se llama **_site**. Por favor verifica el contenido de esto para ayudarte a comprender mejor lo que estás haciendo.
 
 ![](images/Netlify-config-site-2.png){width="50%"}
 
@@ -244,9 +244,9 @@ Si todo salió bien, en este momento ya debe estar tu proyecto publicado y acces
 2.  Está vinculado con tu cuenta en **Github**
 3.  Están vinculados **Github** y **Netlify**
 
-Ahora, sólo queda crear el contenido del Blog. Recuerda usar un directorio para cada nueva contribución dentro de la carpeta *posts*. Te sugiero usar un esquema *fecha-tema* para llamar esos archivos. Evita usar espacios y caracteres latinos en esos temas. Para trabajar hay que crear un archivo *index.qmd*. Puedes hacerlo desde el menu: *File* \$ \$ *New Quarto document...*
+Ahora, sólo queda crear el contenido del *Blog*. Recuerda usar un directorio para cada nueva contribución dentro de la carpeta *posts*. Te sugiero usar un esquema *fecha-tema* para llamar esos archivos. Evita usar espacios y caracteres latinos en los temas. Para trabajar hay que crear un archivo *index.qmd*. Puedes hacerlo desde el menú: *File* $ \rightarrow $ *New Quarto document...*.  
 
-Configura el encabezaddo de control con algo así como:
+Configura el encabezado de control con algo así como:
 
 ``` md
 ---
