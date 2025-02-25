@@ -85,7 +85,7 @@ install.packages(c("rmarkdown", "usethis", "knitter", "tinytex"))
 
 
 1. `rmarkdown`
-2. `knitter`
+2. `knitr`
 3. `usethis`
 4. `tinytex`
 

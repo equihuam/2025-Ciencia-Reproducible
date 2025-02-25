@@ -1,0 +1,20 @@
+---
+title: "¿Qúe puedo incluir en mis documentos?"
+author: "Miguel Equihua"
+image: "images/Image by Mojca-Peter from Pixabay - seeds-1217133_1280.jpg"
+lang: es
+date: 28/feb/2025
+
+categories: [mapas, tablas, gráficas, galería]
+
+code-fold: true
+code-summary: "muestra el escript:"
+fig-cap-location: top
+---
+
+
+
+
+```{=html}
+<iframe width="780" height="500" src="https://quarto.org/docs/gallery/" title="Webpage example"></iframe>
+```

@@ -60,7 +60,7 @@
     "href": "index.html",
     "title": "Por una Ciencia Reproducible 2025",
     "section": "",
-    "text": "Ciencia Abierta:\n\n\nRetos y Perspectivas\n\n\n\nantecedentes\n\n\npresentación\n\n\nconceptos\n\n\npropuestas\n\n\n\nLa ciencia abierta surge como un movimiento que nos invita a reconsiderar como se desarrolla la actividad científica, como se accede a sus resultado e incluso como se pueden gestionar oportunidades para que el público general se pueddda involucra en sus procesos y apropiarrse de sus beneficios con mayor facilidad y confianza. \n\n\n\n\n\nXalapa, Ver., 21 de octubre, 2025\n\n\nMiguel Equihua, Griselda Benítez, Octavio Pérez Maqueo\n\n\n\n\n\n\n\n\n\n\n\n\nLos primeros pasos\n\n\n\n\n\n\ntaller\n\n\ninicio\n\n\nmarkdown\n\n\nrstudio\n\n\ngit\n\n\n\n\n\n\n\n\n\nXalapa, Ver., 21 de febrero, 2025\n\n\nMiguel Equihua\n\n\n\n\n\n\n\n\n\n\n\n\nUna Nueva Manera de Escribir\n\n\n\n\n\n\ntaller\n\n\n\n\n\n\n\n\n\nXalapa, Ver., 14 de febrero, 2025\n\n\nMiguel Equihua\n\n\n\n\n\n\n\n\n\n\n\n\nBlog de Reproducibilidad Científica\n\n\n\n\n\n\n\n\n\n\n\nXalapa, Ver., 14 de febrero, 2025\n\n\nMiguel Equihua\n\n\n\n\n\n\nNo hay resultados"
+    "text": "Ciencia Abierta:\n\n\nRetos y Perspectivas\n\n\n\nantecedentes\n\n\npresentación\n\n\nconceptos\n\n\npropuestas\n\n\n\nLa ciencia abierta surge como un movimiento que nos invita a reconsiderar como se desarrolla la actividad científica, como se accede a sus resultado e incluso como se pueden gestionar oportunidades para que el público general se pueddda involucra en sus procesos y apropiarrse de sus beneficios con mayor facilidad y confianza. \n\n\n\n\n\nXalapa, Ver., 21 de octubre, 2025\n\n\nMiguel Equihua, Griselda Benítez, Octavio Pérez Maqueo\n\n\n\n\n\n\n\n\n\n\n\n\nCiencia Abierta:\n\n\nRetos y Perspectivas\n\n\n\nantecedentes\n\n\npresentación\n\n\nconceptos\n\n\npropuestas\n\n\n\nLa ciencia abierta surge como un movimiento que nos invita a reconsiderar como se desarrolla la actividad científica, como se accede a sus resultado e incluso como se pueden gestionar oportunidades para que el público general se pueddda involucra en sus procesos y apropiarrse de sus beneficios con mayor facilidad y confianza. \n\n\n\n\n\nXalapa, Ver., 21 de octubre, 2025\n\n\nMiguel Equihua, Griselda Benítez, Octavio Pérez Maqueo\n\n\n\n\n\n\n\n\n\n\n\n\n¿Qúe puedo incluir en mis documentos?\n\n\n\n\n\n\nmapas\n\n\ntablas\n\n\ngráficas\n\n\ngalería\n\n\n\n\n\n\n\n\n\nXalapa, Ver., 28 de febrero, 2025\n\n\nMiguel Equihua\n\n\n\n\n\n\n\n\n\n\n\n\nLos primeros pasos\n\n\n\n\n\n\ntaller\n\n\ninicio\n\n\nmarkdown\n\n\nrstudio\n\n\ngit\n\n\n\n\n\n\n\n\n\nXalapa, Ver., 21 de febrero, 2025\n\n\nMiguel Equihua\n\n\n\n\n\n\n\n\n\n\n\n\nUna Nueva Manera de Escribir\n\n\n\n\n\n\ntaller\n\n\n\n\n\n\n\n\n\nXalapa, Ver., 14 de febrero, 2025\n\n\nMiguel Equihua\n\n\n\n\n\n\n\n\n\n\n\n\nBlog de Reproducibilidad Científica\n\n\n\n\n\n\n\n\n\n\n\nXalapa, Ver., 14 de febrero, 2025\n\n\nMiguel Equihua\n\n\n\n\n\n\nNo hay resultados"
   },
   {
     "objectID": "about.html",
@@ -109,7 +109,7 @@
     "href": "posts/2025-02-14-taller/index.html#requisitos-previos",
     "title": "Una Nueva Manera de Escribir",
     "section": "Requisitos previos",
-    "text": "Requisitos previos\nEl estudiante tiene familiaridad con el uso de computadoras y el uso de Internet. Para algunas de las actividades será provechoso tener cuentas activas en los servicios en línea Github (como sistema de control de versiones) y Netlify (para publicar blogs y sitios web personales). El estudiante tendrá que generar su cuenta personal en cada uno de estos servicios. Se recomienda hacerlo con antelación.\n\nAlta en Github.\nAlta en Netlify.\nAlta en hypothesis\n\nPara las actividades en clase se espera que tendrá ya instalado en su máquina el sistema de control de versiones Git (windows requiere instalarlo. Linux y macOS normalmente ya tienen git instalado. Además, para quienes prefieren el mundo gráfico de windows y desean evitar el uso de terminales y comandos, se sugiere utilizar Github Desktop o TortoiseGit). También habrá que tener listo el interprete del lenguaje de computo R y la interface de desarrollo RStudio. Las instrucciones para estos dós últimos están aquí, en el caso de ambiente MS-Windows® pueden usarse los siguientes enlaces:\n\ngit for windows\nInstalar Github Desktop\nInstalar R\nInstalar RStudio\n\nPara las actividdades de preparación es importante verrificar que las siguientes bibliotecas estén instaladas en R. Para hacerlo puedes usar el menú Tools \\(\\rightarrow\\) Install packages… o el siguiente commando en la pestaña Consola.\n\n\nmuestra el escript:\ninstall.packages(c(\"rmarkdown\", \"usethis\", \"knitter\", \"tinytex\"))\n\n\n\nrmarkdown\nknitter\nusethis\ntinytex\n\nSi interesa verificar la publicación Web de documentos hay que prever que no estén bloqueados en el Firewall de la institución los sitios con terminación .netlify.app, pues es la que utilizará el servicio Netlify por defecto.\nQuarto es un sistema de fuente abierta para la autoría de documentos científicos y técnicos. Puedes aprender más sobre lo que ofrece Quarto en este enlace.\nLa construcción de comunidades de aprendizaje requiere compartir intereses y actitudes. Al respecto pongo a su consideración el Pacto del Contribuyente, que busca exponer ideas y conceptos que hace la convivencia grata y productiva. Pienso que el espíritu de este documento es muy adecuado para estimular la reflexión que buscamos propicie lo que estaremos haciendo en este taller.\n\n\nmuestra el escript:\n# devtools::install_github(\"benjcunningham/googlecalendar\", force=TRUE)\n\nlibrary(qrcode)\n\ncode &lt;- qr_code(\"https://2025-ciencia-reproducible.netlify.app/\")\nplot(code, col = c(\"white\", \"#2268bb\"))\n\n\n\n\nCódigo QR del blog"
+    "text": "Requisitos previos\nEl estudiante tiene familiaridad con el uso de computadoras y el uso de Internet. Para algunas de las actividades será provechoso tener cuentas activas en los servicios en línea Github (como sistema de control de versiones) y Netlify (para publicar blogs y sitios web personales). El estudiante tendrá que generar su cuenta personal en cada uno de estos servicios. Se recomienda hacerlo con antelación.\n\nAlta en Github.\nAlta en Netlify.\nAlta en hypothesis\n\nPara las actividades en clase se espera que tendrá ya instalado en su máquina el sistema de control de versiones Git (windows requiere instalarlo. Linux y macOS normalmente ya tienen git instalado. Además, para quienes prefieren el mundo gráfico de windows y desean evitar el uso de terminales y comandos, se sugiere utilizar Github Desktop o TortoiseGit). También habrá que tener listo el interprete del lenguaje de computo R y la interface de desarrollo RStudio. Las instrucciones para estos dós últimos están aquí, en el caso de ambiente MS-Windows® pueden usarse los siguientes enlaces:\n\ngit for windows\nInstalar Github Desktop\nInstalar R\nInstalar RStudio\n\nPara las actividdades de preparación es importante verrificar que las siguientes bibliotecas estén instaladas en R. Para hacerlo puedes usar el menú Tools \\(\\rightarrow\\) Install packages… o el siguiente commando en la pestaña Consola.\n\n\nmuestra el escript:\ninstall.packages(c(\"rmarkdown\", \"usethis\", \"knitter\", \"tinytex\"))\n\n\n\nrmarkdown\nknitr\nusethis\ntinytex\n\nSi interesa verificar la publicación Web de documentos hay que prever que no estén bloqueados en el Firewall de la institución los sitios con terminación .netlify.app, pues es la que utilizará el servicio Netlify por defecto.\nQuarto es un sistema de fuente abierta para la autoría de documentos científicos y técnicos. Puedes aprender más sobre lo que ofrece Quarto en este enlace.\nLa construcción de comunidades de aprendizaje requiere compartir intereses y actitudes. Al respecto pongo a su consideración el Pacto del Contribuyente, que busca exponer ideas y conceptos que hace la convivencia grata y productiva. Pienso que el espíritu de este documento es muy adecuado para estimular la reflexión que buscamos propicie lo que estaremos haciendo en este taller.\n\n\nmuestra el escript:\n# devtools::install_github(\"benjcunningham/googlecalendar\", force=TRUE)\n\nlibrary(qrcode)\n\ncode &lt;- qr_code(\"https://2025-ciencia-reproducible.netlify.app/\")\nplot(code, col = c(\"white\", \"#2268bb\"))\n\n\n\n\nCódigo QR del blog"
   },
   {
     "objectID": "posts/2025-02-21-inicio/pres-ciencia-abierta.html#antecedentes---ciencia-y-cooperación",
@@ -250,5 +250,103 @@
     "title": "Los primeros pasos",
     "section": "Resumen rutinario para usar git",
     "text": "Resumen rutinario para usar git\nClaro está que configurar todo la primera vez es un poco complicado, pero si todo está listo: git instalado, cuenta de Github, token activado, etc. la operación cotidiana es mucho más sencilla.\nEn la figura se ilustran las dos rutas para hacerlo en RStudio.\n\nEvidentemete, si seguiste la ruta azul, tu repositorio ya existe en Github, una vez qe hayas clonado el repositorio en t máquina todo queda listo para concentrarte en escriibir. Si optaste por la ruta verde, entonces deberás crear un nuevo repositorio en Github. Para hacerlo Utiliza usethis en la pestaña de consola.\n\n\nmuestra el escript:\nusethis::use_github()\n\n\nEso es todo."
+  },
+  {
+    "objectID": "posts/2025-02-28-contenido/pres-ciencia-abierta.html#narrar-y-escribir",
+    "href": "posts/2025-02-28-contenido/pres-ciencia-abierta.html#narrar-y-escribir",
+    "title": "Ciencia Abierta:",
+    "section": "Narrar y Escribir",
+    "text": "Narrar y Escribir\n\nFrente a la oralidad, que favorece las formas e ideas tradicionales, reconocibles para el que escucha, el discurso alfabetizado puede abrirse a horizontes desconocidos porque el lector tiene tiempo para asimilar y meditar con tranquilidad las ideas novedosas. En los libros caben planteamientos excéntricos, voces de identidades individuales, desafíos a la tradición.\n\n\n\n\n\n\n\n \n\n\nIrene Vallejo"
+  },
+  {
+    "objectID": "posts/2025-02-28-contenido/pres-ciencia-abierta.html#escribir-y-la-importancia-de-reflexionar",
+    "href": "posts/2025-02-28-contenido/pres-ciencia-abierta.html#escribir-y-la-importancia-de-reflexionar",
+    "title": "Ciencia Abierta:",
+    "section": "Escribir y la importancia de reflexionar",
+    "text": "Escribir y la importancia de reflexionar\nSócrates temía que, por culpa de la escritura se abandonaría el esfuerzo de la propia reflexión. Lo dice mediante la conversación entre Thamus (rey de Egipto) y el dios Theuth:\n\niOh Theuth!, por ser el padre de la escritura le atribuyes ventajas que no tiene. Es olvido lo que producirán las letras en quienes las aprendan, descuidarán la memoria. Fiándose de los libros, llegarán al recuerdo desde fuera. Será, por tanto, apariencia de sabiduría, no autenticidad lo que la escritura dará a los hombres; y, cuando haya hecho de ellos entendidos en todo sin verdadera instrucción, su compañía será difícil de soportar, porque se creerán sabios en lugar de serlo.\n\n\n\n\n\n\n\n \n\n\nIrene Vallejo"
+  },
+  {
+    "objectID": "posts/2025-02-28-contenido/pres-ciencia-abierta.html#section-2",
+    "href": "posts/2025-02-28-contenido/pres-ciencia-abierta.html#section-2",
+    "title": "Ciencia Abierta:",
+    "section": "",
+    "text": "https://www.softwareheritage.org/"
+  },
+  {
+    "objectID": "posts/2025-02-28-contenido/pres-ciencia-abierta.html#preocupados-doomsday-clock",
+    "href": "posts/2025-02-28-contenido/pres-ciencia-abierta.html#preocupados-doomsday-clock",
+    "title": "Ciencia Abierta:",
+    "section": "¿Preocupados?: Doomsday clock",
+    "text": "¿Preocupados?: Doomsday clock"
+  },
+  {
+    "objectID": "posts/2025-02-28-contenido/pres-ciencia-abierta.html#crisis-de-reproducibiliad",
+    "href": "posts/2025-02-28-contenido/pres-ciencia-abierta.html#crisis-de-reproducibiliad",
+    "title": "Ciencia Abierta:",
+    "section": "Crisis de reproducibiliad",
+    "text": "Crisis de reproducibiliad\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFuente: 1,500 scientists lift the lid on reproducibility. Nature (2016)"
+  },
+  {
+    "objectID": "posts/2025-02-28-contenido/pres-ciencia-abierta.html#significados-de-ciencia-abierta",
+    "href": "posts/2025-02-28-contenido/pres-ciencia-abierta.html#significados-de-ciencia-abierta",
+    "title": "Ciencia Abierta:",
+    "section": "Significados de ciencia abierta",
+    "text": "Significados de ciencia abierta\n\n\n\n\n\n\n\nPublicación abierta\nDatos abiertos\nPre-registro\nConsentimiento libre, previo e informado\nCiencia ciudadana\nInvestigación acción"
+  },
+  {
+    "objectID": "posts/2025-02-28-contenido/pres-ciencia-abierta.html#ciencia-abierta-institucionalizada",
+    "href": "posts/2025-02-28-contenido/pres-ciencia-abierta.html#ciencia-abierta-institucionalizada",
+    "title": "Ciencia Abierta:",
+    "section": "Ciencia abierta institucionalizada",
+    "text": "Ciencia abierta institucionalizada\n\n\n\n\n\n\n\nDerecho humano a la ciencia\nRepositorios nacionales de publicaciones abiertas\nRepositorios nacionales de datos abiertos\nMétricas y reconocimiento a las personas\nAcuerdo de Escazú"
+  },
+  {
+    "objectID": "posts/2025-02-28-contenido/pres-ciencia-abierta.html#declaración-de-panamá",
+    "href": "posts/2025-02-28-contenido/pres-ciencia-abierta.html#declaración-de-panamá",
+    "title": "Ciencia Abierta:",
+    "section": "Declaración de Panamá",
+    "text": "Declaración de Panamá\n\n\n\n\n\n\n\nEntiende que el conocimiento es un bien común.\nConfía en el papel de la ciencia como motor de la democracia, la libertad y la justicia social en el momento histórico actual.\nQuiere más ciencia, que debe ser abierta.\nAvanza hacia modelos de colaboración entre Academia-Ciudadanía-Estado-Empresa.\nAfirma que abrir la ciencia exige ir más allá del acceso abierto.\nInsta a que la sociedad recupere el liderazgo.\nAfirma que los ciudadanos tienen derecho a producir y beneficiarse de la ciencia, la tecnología y la innovación.\n\n\n\n \n\n\n\n\n\n\nFuente: Declaración de Panamá"
+  },
+  {
+    "objectID": "posts/2025-02-28-contenido/pres-ciencia-abierta.html#section-4",
+    "href": "posts/2025-02-28-contenido/pres-ciencia-abierta.html#section-4",
+    "title": "Ciencia Abierta:",
+    "section": "",
+    "text": "Ciencia abierta y bienestar sustentable\n\n\n\n\n\n\n\nBienestar sustentable\nArticulación de saberes, capacidades y compromisos\nInteligencia artificial interpretable\n\n\n\n\n\n\n\n\n\n\n\n\nFuente: Costanza, R. (2020). Ecological Economics, 168, 106484."
+  },
+  {
+    "objectID": "posts/2025-02-28-contenido/pres-ciencia-abierta.html#la-ciencia-abierta-que-queremos",
+    "href": "posts/2025-02-28-contenido/pres-ciencia-abierta.html#la-ciencia-abierta-que-queremos",
+    "title": "Ciencia Abierta:",
+    "section": "La ciencia abierta que queremos",
+    "text": "La ciencia abierta que queremos\n\n\n\n\n\n\n\nCooperativa\nTrazable\nreproducible\nVerificable con datos\nIncluyente (científicos y no científicos)\nDatos abiertos\nReflexiva\n\n\n\n\n\n\nFuente: Equihua, M. y Pérez-Maqueo, O. (2024).Ciencia abierta desde el Inecol. Eco-lógico"
+  },
+  {
+    "objectID": "posts/2025-02-28-contenido/pres-ciencia-abierta.html#cómo-ponerla-en-práctica",
+    "href": "posts/2025-02-28-contenido/pres-ciencia-abierta.html#cómo-ponerla-en-práctica",
+    "title": "Ciencia Abierta:",
+    "section": "Cómo ponerla en práctica",
+    "text": "Cómo ponerla en práctica\n\n\n\n\n\n\n\nCambio cultural profundo\nTransformar viejos hábitos\nAprender nuevas habilidades\nReaprender a cooperar\nCambios institucionales\nAbierta y no monopólica\nDatos abiertos FAIR"
+  },
+  {
+    "objectID": "posts/2025-02-28-contenido/pres-ciencia-abierta.html#consecuencias-imprevistas",
+    "href": "posts/2025-02-28-contenido/pres-ciencia-abierta.html#consecuencias-imprevistas",
+    "title": "Ciencia Abierta:",
+    "section": "¿Consecuencias imprevistas?",
+    "text": "¿Consecuencias imprevistas?\n\n\n\n\n\nFuente: https://www.nature.com/articles/d41586-022-00724-0"
+  },
+  {
+    "objectID": "posts/2025-02-28-contenido/pres-ciencia-abierta.html#costos-de-procesamiento-de-artículos-apc",
+    "href": "posts/2025-02-28-contenido/pres-ciencia-abierta.html#costos-de-procesamiento-de-artículos-apc",
+    "title": "Ciencia Abierta:",
+    "section": "Costos de Procesamiento de Artículos (APC)",
+    "text": "Costos de Procesamiento de Artículos (APC)\n\n\n\n\n\n\n\nEl modelo APC demolió parte del muro de pago que bloqueaba el acceso de los lectores a las publicaciones.\nAhora a levantado un nuevo muro de pago en el otro extremo de la cadena, al bloquear el acceso de los autores menos privilegiados a la publicación."
+  },
+  {
+    "objectID": "posts/2025-02-28-contenido/pres-ciencia-abierta.html#lo-no-fair",
+    "href": "posts/2025-02-28-contenido/pres-ciencia-abierta.html#lo-no-fair",
+    "title": "Ciencia Abierta:",
+    "section": "Lo No-FAIR",
+    "text": "Lo No-FAIR\n\n\n\n\n\n\nDebemos ser especialmente sensibles a las formas en que las políticas de Ciencia Abierta pueden en realidad empeorar las desigualdades existentes."
   }
 ]
