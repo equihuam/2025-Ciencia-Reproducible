@@ -13,8 +13,92 @@ fig-cap-location: top
 ---
 
 
-
+## Visita a la galería de Quarto
 
 ```{=html}
-<iframe width="780" height="500" src="https://quarto.org/docs/gallery/" title="Webpage example"></iframe>
+<iframe width="780" height="500" 
+        src="https://quarto.org/docs/gallery/" title="Webpage example"
+        style="border:5px solid brown;"
+   >
+</iframe>
 ```
+
+
+## Platiquemos sobre tus intereses
+
+Tu Blog contendrá alguno o varios de los siguientes componentes:
+
++ Tablas de datos.
++ Gráficas.
++ Mapas.
++ Análisis de datos geográficos.
++ Análisis de series de tiempo.
++ Modelos matemáticos.
++ Análisis estadísticos.
++ Análisis de datos moleculares.
++ Análisis de imágenes.
++ Análisis de audio.
++ Alguna otra cosa que sea de tu interés.
+
+Sugiero hacer una reflexión sobre esto y considerar también de qué manera se obtendrán los datos, procesarán y presentarán.
+
+### Algunas ideas para animar la charla
+
+rvest helps you scrape (or harvest) data from web pages. It is designed to work with magrittr to make it easy to express common web scraping tasks, inspired by ...
+
+```{r}
+suppressPackageStartupMessages(library(tidyverse))
+library(importinegi)
+library(stringr)
+
+catalogoINEGI <-  catalogo_inegi()
+
+catalogoINEGI %>% 
+  filter(str_detect(title, "Agropecuaria")) %>% 
+  select(title)
+importinegi::censo_municipal("2019", "ayuntamiento", "recursos")
+
+url <- "https://www.inegi.org.mx/app/preciospromedio/Exportacion.aspx"
+
+df <- url %>% 
+  read_html() %>% 
+  html_nodes("table") %>% 
+  html_table(fill = T) %>% 
+  lapply(., function(x) setNames(x, c("Rank", "Company", "Direct_premiums_written", 
+                                      "Market_share")))
+```
+```{r}
+library(httr)
+library(jsonlite)
+library(rjson)
+library(keyring)
+key_list()
+
+#Llamado al API
+url <-"https://www.inegi.org.mx/app/api/indicadores/desarrolladores/jsonxml/INDICATOR/1002000001/es/00000/false/BISE/2.0/[Aquí va tu Token]?type=json"
+
+# substituyo en forma segura mi token
+url <- str_replace(url, "\\[Aquí va tu Token\\]", key_get("inegi", "miguel"))
+
+respuesta <- GET(url)
+datosGenerales <- content(respuesta,"text")
+flujoDatos <- paste(datosGenerales,collapse = " ")
+
+#Obtención de la lista de observaciones 
+flujoDatos <- fromJSON(flujoDatos)
+flujoDatos <- flujoDatos $Series
+flujoDatos <- flujoDatos[[1]] $OBSERVATIONS
+
+#Generación del promedio de la lista de observaciones 
+datos <- 0;
+for (i in 1:length(flujoDatos)){
+
+ datos[i] <- flujoDatos[[i]] $OBS_VALUE
+}
+
+
+datos <- as.numeric(datos)
+print(mean(datos))
+  
+```
+
