@@ -46,59 +46,153 @@ Sugiero hacer una reflexión sobre esto y considerar también de qué manera se 
 
 rvest helps you scrape (or harvest) data from web pages. It is designed to work with magrittr to make it easy to express common web scraping tasks, inspired by ...
 
+
+## Datos en Mi equipo
+
+Obviamente, la forma más sencilla de acceder a datos es cuando los tenemos en nuestro propio equipo. En este caso lo usual es que sea alguno de los formatos de Microsoft (Word o Excel) o algún formato genérico como los identificados como **txt** (*texto plano*) o **csv** (*valores separados por comas*). Puuede haber otras variantes de archivos de datos, como **kml**, **GeoJson**, **GeoTIFF** o **shp** (*shape file*) usuales en la gestión de *datos geográficos*. En Genómica está el formato **fasta**, que también cuenta con bibliotecas adecuadas en *R*. Hay una correspondiente variedad de recursos para leer todos estos tipos de datos en *R* así como para analizarlos y preparar resúmenes, modelos y gráficos de interés. A continuación veremos algunos ejemplos sencillos para tener una idea del proceso general.
+
+Para nuestros fines didácticos ya hemos visto como podemos interactuar con documentos de tipo texto plano. Ahora quisiera que vieramos como leer datos de Excel y de Word.
+
+### Datos Excel
+
+Tengo este archivo de datos obtenidos por D.L. Cunningham de la Universidad de Cornell. Son registros de masa corporal (g) de pollos de acuerdo con su posición en la *jerarquía de picotazos* (@tbl-pollos). Veamos los datos.
+
 ```{r}
-suppressPackageStartupMessages(library(tidyverse))
-library(importinegi)
-library(stringr)
+#| label: tbl-pollos
+#| tbl-cap: Jearquía de Picotazos
 
-catalogoINEGI <-  catalogo_inegi()
+pacman::p_load(tidyverse, ggplot2, readxl, flextable)
 
-catalogoINEGI %>% 
-  filter(str_detect(title, "Agropecuaria")) %>% 
-  select(title)
-importinegi::censo_municipal("2019", "ayuntamiento", "recursos")
+pollos_peso <- read_excel("datos/peck_odr.xls", skip = 2)
 
-url <- "https://www.inegi.org.mx/app/preciospromedio/Exportacion.aspx"
+pollos_peso |>
+  flextable() |> 
+  width(j = 2, width = 25, unit = "mm") |> 
+  set_header_labels(jerarquia = "Posición",
+                    gallinero = "Gallinero",
+                    peso = "Peso\n(g)")
 
-df <- url %>% 
-  read_html() %>% 
-  html_nodes("table") %>% 
-  html_table(fill = T) %>% 
-  lapply(., function(x) setNames(x, c("Rank", "Company", "Direct_premiums_written", 
-                                      "Market_share")))
-```
-```{r}
-library(httr)
-library(jsonlite)
-library(rjson)
-library(keyring)
-key_list()
-
-#Llamado al API
-url <-"https://www.inegi.org.mx/app/api/indicadores/desarrolladores/jsonxml/INDICATOR/1002000001/es/00000/false/BISE/2.0/[Aquí va tu Token]?type=json"
-
-# substituyo en forma segura mi token
-url <- str_replace(url, "\\[Aquí va tu Token\\]", key_get("inegi", "miguel"))
-
-respuesta <- GET(url)
-datosGenerales <- content(respuesta,"text")
-flujoDatos <- paste(datosGenerales,collapse = " ")
-
-#Obtención de la lista de observaciones 
-flujoDatos <- fromJSON(flujoDatos)
-flujoDatos <- flujoDatos $Series
-flujoDatos <- flujoDatos[[1]] $OBSERVATIONS
-
-#Generación del promedio de la lista de observaciones 
-datos <- 0;
-for (i in 1:length(flujoDatos)){
-
- datos[i] <- flujoDatos[[i]] $OBS_VALUE
-}
-
-
-datos <- as.numeric(datos)
-print(mean(datos))
-  
 ```
 
+los datos están en un formato poco conveniente para un análisis general. Hagamos algunas operaciones para ponerlos en una forma más adecuada. Básicamente buscaremos cambiar del formato extendido, bueno para visualizar, a uno apilado, más apropiado para el análisis estadístico
+
+```{r}
+#| label: grafica_pollos
+
+pollos_peso <- pollos_peso %>%
+                 rename(jerarquia = `Jerarquía\npor picoteo`) %>% 
+                 pivot_longer(cols = `Gallinero 1`:`Gallinero 7`, 
+                              names_to = "gallinero",
+                              values_to = "peso") %>% 
+                 mutate(gallinero = factor(gallinero),
+                        jerarquia = as.integer(jerarquia)) %>% 
+                 arrange(gallinero)
+
+ggplot(pollos_peso, aes(x = jerarquia, y = peso)) +
+  geom_point(color = "darkgreen")
+
+```
+
+¿qué análisis sugieres habría que hacer ahora?
+
+
+## Un bonito mapa
+
+¿Piensas que hacer mapas impactantes es cosa de una elite? Quizás la belleza de muchos mapas que encontramos por ahí justifica pensarr así. Pero ahora podemos aspirar a incluir hermosos mapas en nuestros documentos, pues el acceso a _recursos abiertos_ muy competentes de mapeo ha camiado mucho. En _R_ tenemos ahora biibliotecas como `sf`, `raster`, `terra`, `leaflet` y `tmap`, además del software especializado **QGIS**, 
+
+```{r}
+#| label: mapa
+
+pacman::p_load(leaflet, leaflet.extras)
+
+basemap <- leaflet() %>%
+  # ubicación y nivel de zoom
+  setView(lng = -96.91841, lat = 19.515157, zoom = 20) %>% 
+  # Añade proveedor de maa
+  addProviderTiles(
+    "OpenStreetMap",
+    # Dale un nombre a la capa
+    group = "Mapa-OpenStreet"
+  ) %>% 
+  addProviderTiles("Esri.WorldImagery", 
+                   group = "ESRI") %>% 
+  addWMSTiles(
+    "http://gaia.inegi.org.mx/NLB/tunnel/wms/wms61?",
+    layers = "Ortofotos",
+    options = WMSTileOptions(format = "image/png", transparent = TRUE),
+    attribution = "Inegi",
+    group = "Inegi-ortofoto") %>% 
+  addWMSTiles(
+    "http://gaia.inegi.org.mx/NLB/tunnel/wms/wms61?",
+    layers = "c407",
+    options = WMSTileOptions(format = "image/png", transparent = TRUE),
+    attribution = "Inegi",
+    group = "Humedad del suelo") 
+
+icon.fa <- makeAwesomeIcon(icon = "bicycle", markerColor = "green",
+                           library = "fa",
+                           iconColor = "red")
+
+map_1 <- basemap %>%
+  addAwesomeMarkers(
+    lat = 19.5152,
+    lng = -96.91841,
+    label = "Starting point",
+    icon = icon.fa
+  ) %>% 
+  # Layers control
+  addLayersControl(
+    baseGroups = c(
+      "Mapa-OpenStreet",
+      "ESRI",
+      "Inegi-ortofoto",
+      "Humedad del suelo"
+    ),
+    options = layersControlOptions(collapsed = FALSE)
+  )
+
+map_1
+
+```
+
+
+Con la biblioteca `tmap` podemos hacer cosas como esta.
+
+```{r}
+library(tmap)
+library(spData)
+
+data("urban_agglomerations")
+
+urb_1970_2030 = urban_agglomerations |> 
+  filter(year %in% c(1970, 1990, 2010, 2030))
+
+data("World")
+
+tm_shape(world) +
+  tm_polygons(fill = "lightblue") +
+  tm_shape(urb_1970_2030, ) +
+  tm_symbols(fill = "black", 
+             col = "white", 
+             size = "population_millions", 
+             size.legend = tm_legend(title = "Población (millones)")) +
+  tm_facets_wrap(by = "year", nrow = 2)
+```
+
+```{r}
+urb_anim = tm_shape(world) + tm_polygons() + 
+  tm_shape(urban_agglomerations) + tm_symbols(size = "population_millions") +
+  tm_facets_wrap(by = "year", nrow = 1, ncol = 1, free.coords = FALSE)
+
+tmap_animation(urb_anim, filename = "img/urb_anim.gif", delay = 25)
+
+```
+
+![](img/urb_anim.gif)
+
+|
+|
+
+## Un Video
+
+{{< video https://youtu.be/wo9vZccmqwc start="10" >}}
