@@ -100,10 +100,13 @@ ggplot(pollos_peso, aes(x = jerarquia, y = peso)) +
 
 ¿Piensas que hacer mapas impactantes es cosa de una elite? Quizás la belleza de muchos mapas que encontramos por ahí justifica pensarr así. Pero ahora podemos aspirar a incluir hermosos mapas en nuestros documentos, pues el acceso a _recursos abiertos_ muy competentes de mapeo ha camiado mucho. En _R_ tenemos ahora biibliotecas como `sf`, `raster`, `terra`, `leaflet` y `tmap`, además del software especializado **QGIS**, 
 
+Con `leaflet` puedes incluir mapas interactivos es bastante sencillos. Veamos como empezar con esta biblioteca con unas breves instrucciones.
+
+
 ```{r}
 #| label: mapa
 
-pacman::p_load(leaflet, leaflet.extras)
+library(leaflet) # cargar la biblioteca requerida.
 
 basemap <- leaflet() %>%
   # ubicación y nivel de zoom
@@ -113,7 +116,27 @@ basemap <- leaflet() %>%
     "OpenStreetMap",
     # Dale un nombre a la capa
     group = "Mapa-OpenStreet"
-  ) %>% 
+  )
+
+basemap
+
+```
+\  
+\  
+
+Agregar capas, marcadores, etc. Tampoco es muy complicado. Veamos un ejemplo.
+
+\  
+\  
+
+```{r}
+
+icon.fa <- makeAwesomeIcon(icon = "bicycle", markerColor = "green",
+                           library = "fa",
+                           iconColor = "red")
+
+
+map_1 <- basemap %>% 
   addProviderTiles("Esri.WorldImagery", 
                    group = "ESRI") %>% 
   addWMSTiles(
@@ -127,19 +150,14 @@ basemap <- leaflet() %>%
     layers = "c407",
     options = WMSTileOptions(format = "image/png", transparent = TRUE),
     attribution = "Inegi",
-    group = "Humedad del suelo") 
-
-icon.fa <- makeAwesomeIcon(icon = "bicycle", markerColor = "green",
-                           library = "fa",
-                           iconColor = "red")
-
-map_1 <- basemap %>%
+    group = "Humedad del suelo") %>% 
   addAwesomeMarkers(
     lat = 19.5152,
     lng = -96.91841,
     label = "Starting point",
     icon = icon.fa
   ) %>% 
+
   # Layers control
   addLayersControl(
     baseGroups = c(
@@ -154,23 +172,30 @@ map_1 <- basemap %>%
 map_1
 
 ```
+| 
+| 
 
+Otra posibilidad para producir documentos con mapas más bien de tipo impreso es la biblioteca `tmap` podemos hacer cosas como las siguiente. Usaremos los datos contenidos en el paquete `spData` para ejemplificar.
 
-Con la biblioteca `tmap` podemos hacer cosas como esta.
+| 
+| 
 
 ```{r}
-library(tmap)
-library(spData)
+#| warning: false
+#| message: false
+
+pacman::p_load(tmap, spData)
 
 data("urban_agglomerations")
 
-urb_1970_2030 = urban_agglomerations |> 
+urb_1970_2030 <-  urban_agglomerations %>% 
   filter(year %in% c(1970, 1990, 2010, 2030))
 
 data("World")
 
 tm_shape(world) +
   tm_polygons(fill = "lightblue") +
+  tm_crs("auto") +
   tm_shape(urb_1970_2030, ) +
   tm_symbols(fill = "black", 
              col = "white", 
@@ -178,20 +203,33 @@ tm_shape(world) +
              size.legend = tm_legend(title = "Población (millones)")) +
   tm_facets_wrap(by = "year", nrow = 2)
 ```
+| 
+
+A pesar de lo dicho arriba, con esta biblioteca también se puede incursionar en  preparar productos geográficos dinámicos, como sería una animación. 
+
+| 
 
 ```{r}
-urb_anim = tm_shape(world) + tm_polygons() + 
-  tm_shape(urban_agglomerations) + tm_symbols(size = "population_millions") +
-  tm_facets_wrap(by = "year", nrow = 1, ncol = 1, free.coords = FALSE)
+#| warning: false
+#| message: false
+#| echo: false
 
-tmap_animation(urb_anim, filename = "img/urb_anim.gif", delay = 25)
+urb_anim <- tm_shape(world) + 
+  tm_polygons() + 
+  tm_crs("auto") +
+  tm_shape(urban_agglomerations) + 
+  tm_symbols(size = "population_millions", fill = "green") +
+  tm_facets_wrap(by = "year", nrow = 1, ncol = 1, free.coords = FALSE) 
+
+anim <- urb_anim %>%     
+  tmap_animation(filename = "img/urb_anim.gif", delay = 45);
+
+knitr::include_graphics("img/urb_anim.gif")
 
 ```
 
-![](img/urb_anim.gif)
-
-|
-|
+|  
+|  
 
 ## Un Video
 
