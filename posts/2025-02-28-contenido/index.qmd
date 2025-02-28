@@ -1,7 +1,7 @@
 ---
 title: "¿Qúe puedo incluir en mis documentos?"
 author: "Miguel Equihua"
-image: "images/Image by Mojca-Peter from Pixabay - seeds-1217133_1280.jpg"
+image: "img/Image by Pete Linforth from Pixabay-ai-generated-8411278_1280.jpg"
 lang: es
 date: 28/feb/2025
 
