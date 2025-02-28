@@ -11,6 +11,8 @@ code-fold: true
 code-summary: "muestra el escript:"
 fig-cap-location: top
 
+css: sky.scss
+
 format: 
   html:
     toc: true
