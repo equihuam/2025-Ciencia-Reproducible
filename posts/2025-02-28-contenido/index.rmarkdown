@@ -13,7 +13,13 @@ fig-cap-location: top
 ---
 
 
+
+
+
 ## Visita la galería de Quarto
+
+
+
 
 ```{=html}
 <iframe width="780" height="500" 
@@ -22,6 +28,9 @@ fig-cap-location: top
    >
 </iframe>
 ```
+
+
+
 
 
 ## Platiquemos sobre tus intereses
@@ -54,6 +63,9 @@ Obviamente, la forma más sencilla de acceder a datos es cuando los tenemos en n
 
 Tengo este archivo de datos obtenidos por D.L. Cunningham de la Universidad de Cornell. Son registros de masa corporal (g) de pollos de acuerdo con su posición en la *jerarquía de picotazos* (@tbl-pollos). Veamos los datos. En el procceso dde demostración también te comparto como construir una tabla en formato _publicable_ con la biblioteca `flextable`. Otra posibilidad para trabajar tablas es la biblioteca `DT`, más orientada a construir tablas que serán utilizadas en forma interactiva.
 
+
+
+
 ```{r}
 #| label: tbl-pollos
 #| tbl-cap: Jearquía de Picotazos
@@ -71,7 +83,13 @@ pollos_peso |>
 
 ```
 
+
+
+
 Los datos están en un formato poco conveniente para un análisis general. Hagamos algunas operaciones para ponerlos en una forma más adecuada. Básicamente buscaremos cambiar del formato extendido, bueno para visualizar, a uno apilado, más apropiado para el análisis estadístico
+
+
+
 
 ```{r}
 #| label: grafica_pollos
@@ -86,11 +104,17 @@ pollos_peso <- pollos_peso %>%
                  arrange(gallinero)
 ```
 
+
+
+
 |  
 
 Aprovecharé la nueva disposición para demostrar el uso de la biblioteca `DT` que define la fuuunción `datatable` y un montón de otros recursos para dar formato tabular y anotar los datos de interés.
 
 |  
+
+
+
 
 ```{r}
 library(DT)
@@ -101,6 +125,9 @@ pollos_peso |>
 
 ```
 
+
+
+
 |  
 |  
 
@@ -108,11 +135,17 @@ Otra cosa que puedo hacer ahora es construir un gráfico con los datos utilizand
 
 |  
 
+
+
+
 ```{r}
 ggplot(pollos_peso, aes(x = jerarquia, y = peso)) +
   geom_point(color = "darkgreen")
 
 ```
+
+
+
 
 |  
 
@@ -125,6 +158,9 @@ ggplot(pollos_peso, aes(x = jerarquia, y = peso)) +
 ¿Piensas que hacer mapas impactantes es cosa de una élite entrenada en GIS? Quizás la belleza de muchos mapas que encontramos por ahí justifica pensar así. Pero ahora podemos aspirar a incluir hermosos mapas en nuestros documentos, pues el acceso a _recursos abiertos_ muy competentes de mapeo ha camiado mucho. En _R_ tenemos ahora bibliotecas como `sf`, `raster`, `terra`, `leaflet`, `ggplot2` y `tmap`, además del software especializado **QGIS**, 
 
 Con `leaflet` puedes incluir mapas interactivos es bastante sencillo. Veamos como empezar con esta biblioteca con unas breves instrucciones.
+
+
+
 
 
 ```{r}
@@ -147,6 +183,9 @@ basemap <- leaflet() %>%
 basemap 
 
 ```
+
+
+
 \  
 \  
 
@@ -154,6 +193,9 @@ Agregar capas, marcadores, etc. Tampoco es muy complicado. Veamos un ejemplo.
 
 \  
 \  
+
+
+
 
 ```{r}
 
@@ -198,6 +240,9 @@ map_1 <- basemap %>%
 map_1
 
 ```
+
+
+
 | 
 | 
 |  
@@ -206,6 +251,9 @@ Otra posibilidad para producir documentos con mapas más bien de tipo impreso es
 
 | 
 | 
+
+
+
 
 ```{r}
 #| warning: false
@@ -230,11 +278,17 @@ tm_shape(world) +
              size.legend = tm_legend(title = "Población (millones)")) +
   tm_facets_wrap(by = "year", nrow = 2)
 ```
+
+
+
 | 
 
 A pesar de lo dicho arriba, con esta biblioteca también se puede incursionar en  preparar productos geográficos dinámicos, como sería una animación. 
 
 | 
+
+
+
 
 ```{r}
 #| warning: false
@@ -255,6 +309,9 @@ knitr::include_graphics("img/urb_anim.gif")
 
 ```
 
+
+
+
 |  
 |  
 
@@ -269,4 +326,9 @@ Si por cuaquier razón encuentras justificado o importante mostrar algo que est�
 ```
 
 
+
+
+
 {{< video https://youtu.be/wo9vZccmqwc start="10" >}}
+
+
