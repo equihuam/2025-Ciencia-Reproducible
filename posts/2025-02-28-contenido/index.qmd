@@ -10,6 +10,10 @@ categories: [mapas, tablas, gráficas, galería]
 code-fold: true
 code-summary: "muestra el escript:"
 fig-cap-location: top
+
+format: 
+  html:
+    toc: true
 ---
 
 
