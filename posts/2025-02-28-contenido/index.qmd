@@ -60,6 +60,8 @@ Obviamente, la forma más sencilla de acceder a datos es cuando los tenemos en n
 
 Tengo este archivo de datos obtenidos por D.L. Cunningham de la Universidad de Cornell. Son registros de masa corporal (g) de pollos de acuerdo con su posición en la *jerarquía de picotazos* (@tbl-pollos). Veamos los datos. En el procceso dde demostración también te comparto como construir una tabla en formato _publicable_ con la biblioteca `flextable`. Otra posibilidad para trabajar tablas es la biblioteca `DT`, más orientada a construir tablas que serán utilizadas en forma interactiva.
 
+[Aquí están los datos](https://docs.google.com/spreadsheets/d/101en_5PHLLg0T6L7HtonPzxZ7SbjSH4S/edit?usp=sharing&ouid=117903674529989673913&rtpof=true&sd=true)
+
 ```{r}
 #| label: tbl-pollos
 #| tbl-cap: Jearquía de Picotazos
