@@ -144,7 +144,7 @@
     "href": "posts/2025-02-28-contenido/index.html#incluir-videos",
     "title": "¿Qúe puedo incluir en mis documentos?",
     "section": "Incluir videos",
-    "text": "Incluir videos\nSi por cuaquier razón encuentras justificado o importante mostrar algo que está forma de video, es facilmente realizable agregarlo a tu blog. Tan simple como poner algo semejante a esto."
+    "text": "Incluir videos\nSi por cuaquier razón encuentras justificado o importante mostrar algo que está forma de video, es facilmente realizable agregarlo a tu blog. Tan simple como poner algo semejante a esto directamente en el texto. Es decir no se requiere un trozo de código ( code chunk)."
   },
   {
     "objectID": "posts/2025-02-21-inicio/index.html",
@@ -180,5 +180,40 @@
     "title": "Los primeros pasos",
     "section": "Creación de un nuevo sitio a publicar",
     "text": "Creación de un nuevo sitio a publicar\n\nEn Netlify:\n\nDesde la opción team o site puedes generar un nuevo sitio.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCuando aprietas el boton de añadir sitio, aparecerá una nueva pantalla que tiene tres secciones. Se trata de los atributos que tendrás que proporcionar para darle presencia en Internet a tu proyecto y algunos otros atributos que definen como se producirá y actualizará continuamente. Estas operaciones es poco probable que las vuelvas a ver, una vez que tu proyecto esté en producción, aunque desde luego estarán siempre ahí por si deseas hacer ajustes.\n\n¿Qué nombre le daras?\nDeberás elegir un nombre que se convertirá en una URL para acceder a tu proyecto. Puede ser cualquier cosa que desees, pero debe ser único. En esta sección puedes escribir nombres y verificar que estén disponibles\n\n\n\n¿Qué hará Netlify para operar tu sitio?\nEs una colección de atributos para indicarle a Netlify dónde conseguir los documentos y como manejarlos. En nuestro caso, muy simple, básicamente hay que decirle en donde están los documentos que Quarto, con ayuda de pandoc, ha renderizado. Si no has cambiado nada en _quarto.yml la rama que estamos usando aquí para que Git los registre es main y, en ella el directorio de producción se llama **_site**. Por favor verifica el contenido de esto para ayudarte a comprender mejor lo que estás haciendo.\n\n\n\n¿Todo listo? ¡a producción!\nEn nuestro caso no hay más que hacer, Netlify tiene información suficiente para encargarse de publicar tu proyecto continuamente. Incorporará los cambios que hagas en RStudio en la rama principal. Lo hará automáticamente cada vez que envíes tus cambios a Github.\n\nSi todo salió bien, en este momento ya debe estar tu proyecto publicado y accesible para cualquier lector del mundo que lo localice y se interese en su contenido."
+  },
+  {
+    "objectID": "posts/2025-02-28-contenido/index.html#visita-la-galería-de-quarto",
+    "href": "posts/2025-02-28-contenido/index.html#visita-la-galería-de-quarto",
+    "title": "¿Qúe puedo incluir en mis documentos?",
+    "section": "Visita la galería de Quarto",
+    "text": "Visita la galería de Quarto"
+  },
+  {
+    "objectID": "posts/2025-02-14-taller/index.html",
+    "href": "posts/2025-02-14-taller/index.html",
+    "title": "Una Nueva Manera de Escribir",
+    "section": "",
+    "text": "Curso-taller para iniciarse en las habilidades que promueve la ciencia abierta. La apertura invita a ampliar la colaboración, pero también la eficacia con la que se colabora Hay mucho que ya se puede hacer con el apoyo de Dropbox®, GoogleDocs® y con las mismas aplicaciones de Microsoft® ¿Qué significa que esto esté ocurriendo? ¿Qué implicaciones podría tener sobre la forma como se hace y comunica la ciencia?\nEl curso-taller se propone acercar al estudiante a la increíble evolución mundial de las capacidades de cómputo y de comunicación que ya está en marcha. No sólo porque cada vez hay mayores facilidades para colaborar, sino por la capacidad actual para producir documentos que combinan el texto con el procesamiento estadístico de datos y las gráficas resultantes. El que la secuencia completa datos→análisis→texto se pueda unificar, da todo un nuevo significado al proceso de comunicación en favor de la reproducibilidad científica.\nLos estudiantes aprenderán a producir reportes académicos en distintos formatos: páginas web, documentos tipo Word®, PDF, carteles, presentaciones e incluso artículos o libros. Todo esto sin que se requiera un conocimiento previo de R o RStudio. Lo haremos paso a paso y con un enfoque de manos a la obra. El estudiante podrá elegir los materiales, datos y textos que le interese ensayar.\nLas actividades se desarrollarán a lo largo de 4 semanas teórico prácticas. Habrá sesiones presenciales de 3 horas los viernesde 10 am a 1pm. Se espera que el estudiante desarrollará actividades a su paso para desarrollar el producto que será la entrega final al término del taller. La carga de trabajo se estima requerirá 9 horas adicionales cada semana."
+  },
+  {
+    "objectID": "posts/2025-02-14-taller/index.html#temario",
+    "href": "posts/2025-02-14-taller/index.html#temario",
+    "title": "Una Nueva Manera de Escribir",
+    "section": "Temario",
+    "text": "Temario\nEl curso-taller introducirá al estudiante a los siguientes temas:\n\nTematica 1\n\n¿Ciencia abierta y reproducibilidad?\nEl proceso científico abierto y su trazabilidad\nEscribir en RStudio recurriendo a:\n\nmarkdown\nQuarto\npandoc\necuaciones Latex\n\n\nTematica 2\n\nLeer datos desde distintos orígenes: Excel®, Google Sheets®, OneCloud®\nColaboración y control de versiones\nPublicación en línea.\n\nTematica 3 - Un Blog como libreta colaborativa de trabajo - Organización del contenido - Producción de Diapositivas para presentaciones Web - Documentos abiertos a comentarios desde la web"
+  },
+  {
+    "objectID": "posts/2025-02-14-taller/index.html#actividades-presenciales",
+    "href": "posts/2025-02-14-taller/index.html#actividades-presenciales",
+    "title": "Una Nueva Manera de Escribir",
+    "section": "Actividades presenciales",
+    "text": "Actividades presenciales\nLas sesiones presenciales se llevarán a cabo en el Aula 16, aunque los detalles de la calendarización todavía habrá de ser acordada."
+  },
+  {
+    "objectID": "posts/2025-02-14-taller/index.html#requisitos-previos",
+    "href": "posts/2025-02-14-taller/index.html#requisitos-previos",
+    "title": "Una Nueva Manera de Escribir",
+    "section": "Requisitos previos",
+    "text": "Requisitos previos\nEl estudiante tiene familiaridad con el uso de computadoras y el uso de Internet. Para algunas de las actividades será provechoso tener cuentas activas en los servicios en línea Github (como sistema de control de versiones) y Netlify (para publicar blogs y sitios web personales). El estudiante tendrá que generar su cuenta personal en cada uno de estos servicios. Se recomienda hacerlo con antelación.\n\nAlta en Github.\nAlta en Netlify.\nAlta en hypothesis\n\nPara las actividades en clase se espera que tendrá ya instalado en su máquina el sistema de control de versiones Git (windows requiere instalarlo. Linux y macOS normalmente ya tienen git instalado. Además, para quienes prefieren el mundo gráfico de windows y desean evitar el uso de terminales y comandos, se sugiere utilizar Github Desktop o TortoiseGit). También habrá que tener listo el interprete del lenguaje de computo R y la interface de desarrollo RStudio. Las instrucciones para estos dós últimos están aquí, en el caso de ambiente MS-Windows® pueden usarse los siguientes enlaces:\n\ngit for windows\nInstalar Github Desktop\nInstalar R\nInstalar RStudio\n\nPara las actividdades de preparación es importante verrificar que las siguientes bibliotecas estén instaladas en R. Para hacerlo puedes usar el menú Tools \\(\\rightarrow\\) Install packages… o el siguiente commando en la pestaña Consola.\n\n\nmuestra el escript:\ninstall.packages(c(\"rmarkdown\", \"usethis\", \"knitter\", \"tinytex\"))\n\n\n\nrmarkdown\nknitr\nusethis\ntinytex\n\nSi interesa verificar la publicación Web de documentos hay que prever que no estén bloqueados en el Firewall de la institución los sitios con terminación .netlify.app, pues es la que utilizará el servicio Netlify por defecto.\nQuarto es un sistema de fuente abierta para la autoría de documentos científicos y técnicos. Puedes aprender más sobre lo que ofrece Quarto en este enlace.\nLa construcción de comunidades de aprendizaje requiere compartir intereses y actitudes. Al respecto pongo a su consideración el Pacto del Contribuyente, que busca exponer ideas y conceptos que hace la convivencia grata y productiva. Pienso que el espíritu de este documento es muy adecuado para estimular la reflexión que buscamos propicie lo que estaremos haciendo en este taller.\n\n\nmuestra el escript:\n# devtools::install_github(\"benjcunningham/googlecalendar\", force=TRUE)\n\nlibrary(qrcode)\n\ncode &lt;- qr_code(\"https://2025-ciencia-reproducible.netlify.app/\")\nplot(code, col = c(\"white\", \"#2268bb\"))\n\n\n\n\nCódigo QR del blog"
   }
 ]

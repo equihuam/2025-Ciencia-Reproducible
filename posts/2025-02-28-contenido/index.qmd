@@ -266,12 +266,13 @@ knitr::include_graphics("img/urb_anim.gif")
 |  
 |  
 
+
 ## Incluir videos
 
-Si por cuaquier razón encuentras justificado o importante mostrar algo que está forma de video, es facilmente realizable agregarlo a tu blog. Tan simple como poner algo semejante a esto.
+Si por cuaquier razón encuentras justificado o importante mostrar algo que está forma de video, es facilmente realizable agregarlo a tu blog. Tan simple como poner algo semejante a esto directamente en el texto. Es decir no se requiere un _trozo de código_ ( _code chunk_).
 
 
-```
+```=md
 {{< video https://youtu.be/wo9vZccmqwc start="10" >}}
 
 ```
