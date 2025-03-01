@@ -165,7 +165,7 @@
     "href": "posts/2025-02-21-inicio/index.html#quarto",
     "title": "Los primeros pasos",
     "section": "Quarto",
-    "text": "Quarto\nLo que haremos es:\n\nArrancar RStudio\nCrear un nuevo proyecto\n!!!Empezar a escribir!!!\n\n\n\n\n\n\n\nNuevo proyecto\n\n\n\n\n\nRstudio tiene en su menu file la opción de preparar documentos en Quarto."
+    "text": "Quarto\nLo que haremos es:\n\nArrancar RStudio\nCrear un nuevo proyecto\n!!!Empezar a escribir!!!\n\n\nRStudio\nEs un entorno integrado de desarrollo (IDE). Como tal, ofrece una estructura que permite ineractuar con distintos aspecto del proceso creativo. En la figura puedes ver lo que usualmente tienes a tu alcance en una instalación común. Esta configuración la puedes modificar según tus preferencias desde el menú View ⟹ panes. Pero probablemente al inicio te bastará con la configuración que ya tienes.\n\n\n\nMi primer documento Quarto\nTodo listo. Anímate a escribir tus primeras líneas en un documento Quarto.\n\n\n\n\n\n\nNuevo proyecto\n\n\n\n\n\nRstudio tiene en su menu file la opción de preparar documentos en Quarto."
   },
   {
     "objectID": "posts/2025-02-21-inicio/index.html#guardar-el-trabajo-con-la-intención-de-colaborar",
