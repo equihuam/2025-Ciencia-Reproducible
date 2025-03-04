@@ -1,16 +1,21 @@
 ---
-title: "Untitled"
+title: "Datos abiertos"
+editor_options: 
+  chunk_output_type: console
 ---
 
 
+
+## Catálogo de datos en [datos.gob.mx](datos.gob.mx)
+
 ```{r}
-pacman::p_load(httr, jsonlite, tidyverse)
+pacman::p_load(httr2, jsonlite, tidyverse, DT)
 
-respuesta <- GET("https://api.datos.gob.mx/v1/api-catalog?pageSize=8000")
+req <- request("https://api.datos.gob.mx/v1/api-catalog?pageSize=8000")
+resp <- req_perform(req)
 
-dat_1 <- fromJSON(prettify(respuesta))
-
-dat_1_df <- as_tibble(dat_1$results)
+dat_1 <- fromJSON(resp_body_string(resp))
+dat_1_df <- dat_1$results
 
 for (i in 1:length(dat_1_df$variables))
 {
@@ -19,29 +24,35 @@ for (i in 1:length(dat_1_df$variables))
 
 dat_1_df$variables <- unlist(dat_1_df$variables)
 
-```
-
-
-```{r}
-respuesta_2 <- httr::GET("https://api.datos.gob.mx/v1/condiciones-atmosfericas?pageSize=10000&cityid=MXVZ0111&page=1")
-
-dat_2 <- fromJSON(prettify(respuesta_2))
-
-
-dat_2_df <- as_tibble(dat_2$results)
-
-max(dat_2_df$`date-insert`)
-
+dat_1_df |>
+  select("endpoint", "url", "variables") |> 
+  datatable()
 
 ```
-
 
 ## Ozono
 
 ```{r}
 url <- "https://api.datos.gob.mx/v2/sinaica?pageSize=8000&parametro=O3&estacionesid=259&page=1"
 
-respuesta <- GET(url)
+req_O3 <- request(url)
+resp_O3 <- req_perform(req)
+
+dat_O3 <- fromJSON(resp_body_string(resp_O3))
+dat_1_df <- dat_1$results
+
+for (i in 1:length(dat_1_df$variables))
+{
+  dat_1_df$variables[i] <- paste(dat_1_df$variables[[i]], collapse = ",")
+}
+
+dat_1_df$variables <- unlist(dat_1_df$variables)
+
+dat_1_df |>
+  select("endpoint", "url", "variables") |> 
+  datatable()
+
+respuesta <- (url)
 
 dat_O3 <- fromJSON(prettify(respuesta))
 

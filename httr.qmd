@@ -1,0 +1,118 @@
+---
+title: "Mapas"
+---
+
+INEGI: http://gaia.inegi.org.mx/NLB/tunnel/..
+
+```{r}
+pacman::p_load(tidyverse, sf, httr, ows4R, leaflet)
+
+# URL del WMS
+wms_url <- "http://gaia.inegi.org.mx/NLB/tunnel/wms/wms61"
+
+# Crear un cliente WFS
+wms_client <- WMSClient$new(wms_url) #, serviceVersion = "1.3.0")
+
+# Obtener las capas disponibles
+capabilities <- wms_client$getCapabilities()
+
+# Obtener la lista de capas
+layers <- capabilities$getLayers()
+
+# Mostrar los nombres de las capas disponibles
+layer_names <- sapply(layers, function(layer) layer$getName())
+print(layer_names)
+```
+
+```{r}
+pacman::p_load(httr, jsonlite, rjson, stringr)
+
+#Llamado al API
+
+url <- "https://www.inegi.org.mx/app/api/indicadores/desarrolladores/jsonxml/INDICATOR/6207077693/es/00000/false/BISE/2.0/[Aquí va tu Token]?type=json"
+
+
+url <- str_replace(url, "\\[Aquí va tu Token\\]", keyring::key_get("inegi", "miguel"))
+
+respuesta <- GET(url)
+
+datosGenerales <- content(respuesta,"text")
+
+flujoDatos <- paste(datosGenerales, collapse = " ")
+
+#Obtención de la lista de observaciones 
+flujoDatos <- fromJSON(flujoDatos)
+flujoDatos <- flujoDatos$Series
+flujoDatos <- flujoDatos[[1]] $OBSERVATIONS
+
+plot(flujoDatos[[2]])
+
+#Generación del promedio de la lista de observaciones 
+datos<-0;
+for (i in 1:length(flujoDatos)){
+
+ datos[i]<-flujoDatos[[i]] $OBS_VALUE
+}
+
+datos<-as.numeric(datos)
+print(mean(datos))
+  https://www.inegi.org.mx/app/api/indicadores/desarrolladores/jsonxml/INDICATOR/6207077693/es/0700/true/BISE/2.0/[Aquí va tu Token]?type=json
+```
+
+Catálogo de datos existentes en el servicos de _datos abiertos gubernamentales_: **datos.gob.mx**
+
+
+```{r}
+pacman::p_load(httr, jsonlite)
+
+respuesta <- GET("https://api.datos.gob.mx/v1/api-catalog")
+
+dat_1 <- fromJSON(prettify(respuesta))
+
+dat_1_df <- tibble(id = character(0), variables = character(0), 
+                   count = numeric(0), url = character(0), 
+                   endpoint = character(0))
+for( d in dat_1[[2]])
+{
+  item <- tibble(id = d[[1]], 
+                 variables = paste(d[[2]], collapse = ","),
+                 count = d[[3]],
+                 url = d[[4]],
+                 endpoint = d[[5]])
+  dat_1_df <- bind_rows(dat_1_df, item)
+}
+```
+
+
+Conjuntos de datos
+
+
+```{r}
+respuesta_2 <- httr::GET("https://api.datos.gob.mx/v1/datasets/")
+
+dat_2 <- fromJSON(prettify(respuesta_2))
+
+dat_2$results[1]
+
+dat_2_df <- tibble(id = character(0), variables = character(0), 
+                   count = numeric(0), url = character(0), 
+                   endpoint = character(0))
+for( d in dat_2[[2]])
+{
+  item <- tibble(id = d[[1]], 
+                 variables = paste(d[[2]], collapse = ","),
+                 count = d[[3]],
+                 url = d[[4]],
+                 endpoint = d[[5]])
+  dat_2_df <- bind_rows(dat_2_df, item)
+}
+
+```
+
+
+```{r}
+respuesta_3 <- httr::GET("https://api.datos.gob.mx/v1/SNEDH-001f6b0f-bb9e-4b81-956d-ceab7f87b13c")
+dat_3 <- jsonlite::prettify(respuesta_3)
+
+```
+
