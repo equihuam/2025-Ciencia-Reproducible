@@ -15,7 +15,7 @@ fig-cap-location: top
 *Tan simple como escribir en la página en blanco con pequeñas marcas de intención*. Se ha inventado varias veces y el columpio ha ido y venido entre el interés en ver y controlar las marcas directamente sobre el texto y la preferencia de ver sólo el producto terminado **WYSIWYG** (*lo que ves es lo que tienes*, aunque el marcado existe, pero lo hace la máquina por ti).
 
 ::: {layout="[1, 1.5]"}
-![Libro de Irene Vallejo](images/900-el-infinito-en-un-junco-irene-vallejo-alfa.png){width="200px" #fig-junco}
+![Libro de Irene Vallejo](images/900-el-infinito-en-un-junco-irene-vallejo-alfa.png){#fig-junco width="200px"}
 
 El trabajo del científico, el ingeniero, el estudiante o el creador de contenidos transita por el proceso de escribir, almacenar y dar formato presentable a los documentos. La escritura da origen a la historia y deja atras la prehistoria. Un largo proceso de evolución cultural apasionante que tiene un hermoso recuento en el libro de Irene Vallejo *El infinito en un Junco* ([Fig. @fig-junco]). Hemos explorado las rocas, la arcilla, los pigmentos vegetales y minerales, las pieles de animales y los tejidos vegetales para escribir. Hoy lo hacemos sobre el éter y nos apoyamos en procesos electromagnéticos.
 :::
@@ -31,7 +31,7 @@ En el movimiento social que nos invita a reflexionar sobre la *ciencia abierta*,
 ::: {layout="[1.5, -0.1, 1]"}
 Markdown fue desarrollado en 2004 por **John Gruber** ([Fig. @fig-gruber]). Ideo una manera de poner marcas de formato en un texto cómun y corriente (lo llamaremos *texto plano*). También construyó un programa de cómputo (lo escribió en el lenguaje **Perl**), para convertir los archivos ya marcados en *Markdown* a algo conveniente para que las computadoras nos los pudieran presentar a través de la **Web**. Hacer esto implica recontruir y transforrmar el documento original a un nuevo formato, el **HTML** (*HyperText Markup Language*). Encontrarás ayuda sobre como usar *Markdown* en el menú de ayuda de **RStudio**: *Help* $\rightarrow$ *Markdown Quick Reference*.
 
-![John Gruber](images/John_Gruber,_2009_(cropped) - By Randy Stewart, CC BY-SA 3.0, httpscommons.wikimedia.orgwindex.phpcurid=10682505.jpg){#fig-gruber width="200px"}
+![John Gruber](images/John_Gruber,_2009_(cropped)%20-%20By%20Randy%20Stewart,%20CC%20BY-SA%203.0,%20httpscommons.wikimedia.orgwindex.phpcurid=10682505.jpg){#fig-gruber width="200px"}
 :::
 
 He aquí uno de los grande valores que busca el movimiento en favor de una *ciencia abierta*: **romper las barreras que limitan el acceso a los textos y a los datos**. El uso de *texto plano* para escribir y organizar archivos de datos tienen muchas ventajas. Para empezar se pueden leer prácticamente en cualquier dispositivo, independientemente de *sistema operativo* e intereses comerciales de los fabricantes. Los archivos escritos así han superado la *dura prueba del paso del tiempo* mejor que otros tipos de archivos.
@@ -45,6 +45,18 @@ Lo que haremos es:
 1.  Arrancar *RStudio*
 2.  Crear un nuevo proyecto
 3.  [!!!Empezar a escribir!!!]{style="color: oro"}
+
+### RStudio
+
+Es un *entorno integrado de desarrollo* (**IDE**). Como tal, ofrece una estructura que permite ineractuar con distintos aspecto del proceso creativo. En la figura puedes ver lo que usualmente tienes a tu alcance en una instalación común. Esta configuración la puedes modificar según tus preferencias desde el menú *View* ⟹ *panes*. Pero probablemente al inicio te bastará con la configuración que ya tienes.
+
+
+
+![](images/Rstudio.png)
+
+### Mi primer documento Quarto
+
+Todo listo. Anímate a escribir tus primeras líneas en un documento _Quarto_. 
 
 ::: {.callout-caution collapse="true" title="Nuevo proyecto"}
 *Rstudio* tiene en su menu **file** la opción de preparar documentos en *Quarto*.
@@ -63,7 +75,7 @@ Ahora ya tenemos el texto en nuestras máquinas, almacenado en casa. ¿Podemos h
 ::: {layout="[3,1]"}
 Es una aplicación diseñada por el iniciador del desarrollo de Linux, **Linus Torvalds** ([Fig. @fig-torvalds]). [Git](https://git-scm.com/) es un sistema eficiente confiable y distribuido de control de versiones. El control de versiones es simplemente el seguimiento y registro de los cambios que va teniendo un documento a lo largo del tiempo. El concepto *distribuido* se refiere a que el registro local que tengas en tu máquina o para el caso en cualquier número de máquinas, es un registro completo, **clonado** del proyecto. Estos repositorios locales plenamente funcionales permiten trabajar aún cuando no tengas acceso a Internet. Los autores realizan y registran su trabajo localmente y, cuando lo encuentren conveniente, sincronizan la copia local del repositorio con la del servidor. En la actualidad *Git* se ha convertido en el estándar mundial *de facto* para el control de versiones.
 
-![Linus Torvalds](images/Lf Asia-wikimedia- by the Archive Team-CC BY 3-.jpeg){#fig-torvalds width="80%"}
+![Linus Torvalds](images/Lf%20Asia-wikimedia-%20by%20the%20Archive%20Team-CC%20BY%203-.jpeg){#fig-torvalds width="80%"}
 :::
 
 ::: {.callout-note collapse="true" title="Activar git"}
@@ -160,7 +172,7 @@ Por cierto, este es el comando qe necesitarán en lo sucesivo para vincular cual
 ::: {layout="[2,1]"}
 Una vez teminadas estas tarea puedes ir a la pestaña **git** cuando lo consideres conveniente y ordenar a **RStudio** que envié todos los **commits** que están pendientes hasta el momento a **Github**. Para hacerlo deberás apretar el botón **Push**. Antes de hacerlo siempre es conveniente pedirle a **git** que se ponga al día con lo que ya está registrado en la *nube*, esto lo logras con el botón **pull**. Esto nos lleva a una rutina de operación con **git** que se resume en la figura siguiente.
 
-![](images/En caso de incendio.png){width="150px"}
+![](images/En%20caso%20de%20incendio.png){width="150px"}
 :::
 
 ::: {.callout-tip collapse="true"}
@@ -224,7 +236,7 @@ Deberás elegir un nombre que se convertirá en una URL para acceder a tu proyec
 
 #### ¿Qué hará Netlify para operar tu sitio?
 
-Es una colección de atributos para indicarle a *Netlify* dónde conseguir los documentos y como manejarlos. En nuestro caso, muy simple, básicamente hay que decirle en donde están los documentos que *Quarto*, con ayuda de *pandoc*, ha *renderizado*. Si no has cambiado nada en `_quarto.yml` la rama que estamos usando aquí para que *Git* los registre es **main** y, en ella el directorio de producción se llama **_site**. Por favor verifica el contenido de esto para ayudarte a comprender mejor lo que estás haciendo.
+Es una colección de atributos para indicarle a *Netlify* dónde conseguir los documentos y como manejarlos. En nuestro caso, muy simple, básicamente hay que decirle en donde están los documentos que *Quarto*, con ayuda de *pandoc*, ha *renderizado*. Si no has cambiado nada en `_quarto.yml` la rama que estamos usando aquí para que *Git* los registre es **main** y, en ella el directorio de producción se llama \*\*\_site\*\*. Por favor verifica el contenido de esto para ayudarte a comprender mejor lo que estás haciendo.
 
 ![](images/Netlify-config-site-2.png){width="50%"}
 
@@ -244,7 +256,7 @@ Si todo salió bien, en este momento ya debe estar tu proyecto publicado y acces
 2.  Está vinculado con tu cuenta en **Github**
 3.  Están vinculados **Github** y **Netlify**
 
-Ahora, sólo queda crear el contenido del *Blog*. Recuerda usar un directorio para cada nueva contribución dentro de la carpeta *posts*. Te sugiero usar un esquema *fecha-tema* para llamar esos archivos. Evita usar espacios y caracteres latinos en los temas. Para trabajar hay que crear un archivo *index.qmd*. Puedes hacerlo desde el menú: *File* $ \rightarrow $ *New Quarto document...*.  
+Ahora, sólo queda crear el contenido del *Blog*. Recuerda usar un directorio para cada nueva contribución dentro de la carpeta *posts*. Te sugiero usar un esquema *fecha-tema* para llamar esos archivos. Evita usar espacios y caracteres latinos en los temas. Para trabajar hay que crear un archivo *index.qmd*. Puedes hacerlo desde el menú: *File* \$ \rightarrow \$ *New Quarto document...*.
 
 Configura el encabezado de control con algo así como:
 
