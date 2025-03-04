@@ -14,5 +14,7 @@ RnwWeave: Sweave
 LaTeX: XeLaTeX
 
 PythonType: conda
-PythonVersion: 3.11.5
+PythonVersion: 3.12.3
 PythonPath: C:/miniconda3/python.exe
+
+ProjectName: 2025 Ciencia Reproducible
