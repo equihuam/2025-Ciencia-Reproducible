@@ -1,0 +1,45 @@
+---
+title: "Untitled"
+---
+
+
+```{r}
+pacman::p_load(httr, jsonlite, tidyverse)
+
+respuesta <- GET("https://api.datos.gob.mx/v1/api-catalog")
+
+dat_1 <- fromJSON(prettify(respuesta))
+
+dat_1_df <- as_tibble(dat_1$results)
+
+for (i in 1:length(dat_1_df$variables))
+{
+  dat_1_df$variables[i] <- paste(dat_1_df$variables[[i]], collapse = ",")
+}
+
+dat_1_df$variables <- unlist(dat_1_df$variables)
+
+```
+
+
+```{r}
+respuesta_2 <- httr::GET("https://api.datos.gob.mx/v1/datasets/")
+
+dat_2 <- fromJSON(prettify(respuesta_2))
+
+dat_2$results[1]
+
+dat_2_df <- tibble(id = character(0), variables = character(0), 
+                   count = numeric(0), url = character(0), 
+                   endpoint = character(0))
+for(d in dat_2[[2]])
+{
+  item <- tibble(id = d[1], 
+                 variables = paste(d[[2]], collapse = ","),
+                 count = as.numeric(d[[3]]),
+                 url = d[[4]],
+                 endpoint = d[[5]])
+  dat_2_df <- bind_rows(dat_2_df, item)
+}
+```
+
