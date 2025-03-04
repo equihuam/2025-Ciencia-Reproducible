@@ -83,3 +83,12 @@ dat_meteo |>
 
 ```
 
+```{r}
+library(sf)
+# retrive a list of every layer of the kmz file 
+l_layers <- sf::st_read("../EstacionesClimatologicas/doc.kml", "Estaciones operativas")
+
+l_layers$Description
+
+```
+
