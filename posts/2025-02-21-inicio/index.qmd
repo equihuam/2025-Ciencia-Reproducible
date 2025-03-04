@@ -51,6 +51,7 @@ Lo que haremos es:
 Es un *entorno integrado de desarrollo* (**IDE**). Como tal, ofrece una estructura que permite ineractuar con distintos aspecto del proceso creativo. En la figura puedes ver lo que usualmente tienes a tu alcance en una instalación común. Esta configuración la puedes modificar según tus preferencias desde el menú *View* ⟹ *panes*. Pero probablemente al inicio te bastará con la configuración que ya tienes.
 
 
+
 ![](images/Rstudio.png)
 
 ### Mi primer documento Quarto
