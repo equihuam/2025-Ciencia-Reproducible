@@ -154,7 +154,7 @@ Los datos de la estación de Xalapa son
 #| tbl-cap: Datos meteorológios de Xalapa
 
 # Datos diarios Xalapa
-dat_csv <- "ver/dia30393.txt"
+dat_csv <- "ver/dia30135.txt"
 url_meteo <- "https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios"
 
 url_xalapa <- paste(url_meteo, dat_csv, sep = "/")
