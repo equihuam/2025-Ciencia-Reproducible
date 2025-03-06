@@ -162,18 +162,13 @@ url_xalapa <- paste(url_meteo, dat_csv, sep = "/")
 dat_meteo_meta <- readLines(url_xalapa, n = 25)
 
 # datos de la estación
-estacion <- tibble(est = unlist(dat_meteo_meta[11:19]))
-
-estacion <- estacion |> 
+estacion <- tibble(est = unlist(dat_meteo_meta[11:19])) |> 
   mutate(var = str_extract(est, "(.*)(?=\\s:)"),
          val = str_extract(est, "(?<=\\s:)(.*)"),
          var = str_trim(var),
-         val = str_trim(val), .keep = "unused" ) 
+         val = str_trim(val), .keep = "unused" ) |>
+  pivot_wider(names_from = var, values_from = val)
 
-nombres <- estacion$var
-
-estacion <- as_tibble(t(estacion[, 2]))
-names(estacion) <- nombres
 
 # variables meteorologicas
 variables <- str_split(readLines(url_xalapa, n = 24)[24], "\t")[[1]][c(1,3:6)]
