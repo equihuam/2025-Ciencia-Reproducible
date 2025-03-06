@@ -21,14 +21,20 @@ format:
 ---
 
 
+
+
 La preparación, oferta y mantenimiento de datos abiertos es parte de los intereses en búsqueda de una ciencia abierta. En este sentido conviene considerar los principios de la iniciativa de Budapest, Hungría en torno a publicación abierta.  Esta iniciativa fue publicada el 14 de febrero 2002. Especialmente importante resulta la recomendación de desarrollar capacidades de "self-archiving" siguiendo estándares de la iniciativa de [repositorios abiertos](https://www.openarchives.org/). Aunque esta última propuesta ya nos está en desarrollo activo, fue el antecedente que dio origen al estándar [ANSI/NISO Z39.99-2017](https://www.niso.org/publications/z3999-2017-resourcesync) para el acceso bibliográfico. De aquí emerge tamién el protocolo de cosecha de metadatos **OAI-PMH**, cuyas especificaciones continúan vigentes, y tiene nuevos desarrollos o actualizaciones como el **ANSI/NISO 2017** aunque no se trata necesariamente de un reemplazo. De la iniciativa de Budapest emerge una guía interesante en torno al [establecimiento de repositorios institucionales (de publicaciones)](https://www.budapestopenaccessinitiative.org/resources/guide-to-institutional-repository-software/). En su propio manifiesto del 2023, [REDALYC refrenda los valores enunciados en la iniciativa de Budapest](https://globaldiamantoa.org/manifiesto/#/).
 
 En México se han tenido expresiones positivas en torno a esta iniciativa desde su aparición en 2002. Por ejemplo, del [Senado de la República](https://www.senado.gob.mx/comisiones/ciencia_tecnologia/docs/accesoinfo_b3-2.pdf), la [UNAM](https://www.visibilidadweb.unam.mx/node/239), [UAEM](https://siea.uaemex.mx/acceso-abierto/acerca-de.html), [CONACYT](https://conahcyt.mx/wp-content/uploads/transparencia/planes_programas_informes/libros_blancos/Ciencia_Abierta.pdf) y la [UAM](https://casadelibrosabiertos.uam.mx/blog/post/acceso-abierto-y-universidades-la-importancia-de-la-socializacion-del-conocimiento.html), entre otras. Si bien la iniciativa de Budapest se enfoca en la publicación abierta, resulta claro que no basta con tener acceso a la publicación como producto final de las investigaciones, se requiere compartir también los datos base de los estudios, como se explica en esta [nota de Verhulst, Zahuranec & Young (2021), que retoma parte de la serie “Great Stories of Open Science”](https://theconversation.com/what-the-drive-for-open-science-data-can-learn-from-the-evolving-history-of-open-government-data-156778) que se publica con el apoyo del Ministerio Francés de Educación Superior, Investigación e Innovación
 
 ::: {layout="[-1,20]"}
+
+
 ```{=html}
 <iframe width="600" height="300" src="https://www.budapestopenaccessinitiative.org/" title="El resultado"></iframe>
 ```
+
+
 :::
 
 ::: {layout="[50,50]"}
@@ -70,9 +76,13 @@ De acuerdo con los criterios que emanan de los principio **FAIR**, los datos pue
 Es la *Unidad de Informática para las Ciencias Atmosféricas y Ambientales* gestionada por el Instituto de de la Atmósfera y Cambio Climático de la UNAM.
 
 ::: {style="display: flex; justify-content: center;"}
+
+
 ```{=html}
 <iframe width="60%" height="300" src="https://uniatmos.atmosfera.unam.mx/" title="Portal de Uniatmos" allowfullscreen></iframe>
 ```
+
+
 :::
 
 ### [Zenodo](https://about.zenodo.org/) 
@@ -80,10 +90,14 @@ Es la *Unidad de Informática para las Ciencias Atmosféricas y Ambientales* ges
 Se trata de un espacio construido y desarrollado por investigadores, para garantizar que todo el mundo pueda participar en la Ciencia Abierta. El proyecto _OpenAIRE_ fue desarrollado por indicaciones la Comunidad Europea para apoyar su incipiente política de _Datos Abiertos_. Con esta plataforma se ofrece un **repositorio general** para la investigación financiada por la Comnidad Europea. El **CERN**, socio de _OpenAIRE_ y pionero en código abierto, acceso abierto y datos abiertos, proporcionó esta capacidad para lograr que _Zenodo_ estuviera en operación a partir de mayo de 2013. En apoyo de su programa de investigación, el **CERN** ha desarrollado herramientas para la gestión de Big Data y ha ampliado las capacidades de la biblioteca digital para _Open Data_. A través de _Zenodo_, estas herramientas de Big Science pueden así compartirse eficazmente.
 
 ::: {style="display: flex; justify-content: center;"}
+
+
 ```{=html}
 
 <iframe width="65%" height="300" src="https://about.zenodo.org/" title="Portal de Zenodo" allowfullscreen></iframe>
 ```
+
+
 :::
 
 ### [Datadryad](https://datadryad.org/stash/about)
@@ -187,6 +201,8 @@ Ahora veamos algunos ejemplos de como interactuar con esos datos mediante **API*
 |  
 
 
+
+
 ```{r}
 #| label: cat-odgmx
 
@@ -211,11 +227,15 @@ dat_1_df |>
 
 ```
 
+
+
 | 
 
 ### Datos de Ozono como contaminante atmosférico en ciudades de México
 
 | 
+
+
 
 ```{r}
 #| label: ozono
@@ -229,7 +249,11 @@ dat_O3 <- fromJSON(resp_body_string(resp_O3))
 dat_O3_df <- dat_O3$results
 ```
 
+
+
 Estos son los datos de ozono en la atmósfera medidos en la estación `r dat_O3_df$estacionesid[1]`, de la Ciudad de México (@tbl-ozono).
+
+
 
 ```{r}
 #| label: tbl-ozono
@@ -242,6 +266,8 @@ dat_O3_df |>
   datatable(colnames = c("Fecha", "Hora", "Valor"))
 
 ```
+
+
 
 |  
 
@@ -260,6 +286,8 @@ Este es el mapa a partir de los datos **kmz**
 
 
 ![](images/estaciones-clima-mx.png){width=80%}  
+
+
 
 
 ```{r}
@@ -317,11 +345,15 @@ datos_est |>
 
 ```
 
+
+
 |  
 
 Los datos de la estación de Xalapa con id: 30135, son los siguientes.
 
 |  
+
+
 
 
 ```{r}
