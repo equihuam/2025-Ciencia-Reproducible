@@ -259,7 +259,7 @@ En el _escript_ que sigue, sólo extraeremos los datos del archivo **kml** y los
 Este es el mapa a partir de los datos **kmz**
 
 
-![](images/estaciones-clima-mx.png){width=80%}  
+[![](images/estaciones-clima-mx.png){width=80%}](https://smn.conagua.gob.mx/es/climatologia/informacion-climatologica/informacion-estadistica-climatologica)  
 
 
 ```{r}
