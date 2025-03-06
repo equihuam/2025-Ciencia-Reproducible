@@ -11,13 +11,10 @@ code-fold: true
 code-summary: "muestra el escript:"
 fig-cap-location: top
 
-css: sky.scss
-
 format: 
   html:
     toc: true
 ---
-
 
 ## Visita la galería de Quarto
 
@@ -29,28 +26,27 @@ format:
 </iframe>
 ```
 
-
 ## Platiquemos sobre tus intereses
 
 Tu Blog contendrá alguno o varios de los siguientes componentes:
 
-+ Tablas de datos.
-+ Gráficas.
-+ Mapas.
-+ Análisis de datos geográficos.
-+ Análisis de series de tiempo.
-+ Modelos matemáticos.
-+ Análisis estadísticos.
-+ Análisis de datos moleculares.
-+ Análisis de imágenes.
-+ Análisis de audio.
-+ Alguna otra cosa que sea de tu interés.
+-   Tablas de datos.
+-   Gráficas.
+-   Mapas.
+-   Análisis de datos geográficos.
+-   Análisis de series de tiempo.
+-   Modelos matemáticos.
+-   Análisis estadísticos.
+-   Análisis de datos moleculares.
+-   Análisis de imágenes.
+-   Análisis de audio.
+-   Alguna otra cosa que sea de tu interés.
 
 Sugiero hacer una reflexión sobre esto y considerar también de qué manera se obtendrán los datos, procesarán y presentarán.
 
 ### Algunas ideas para animar la charla
 
-Una cosa que podría ser de tu interés es _cosechar datos_ del Internet. **R** tiene bibliotecas bbastante competenes para hacerlo, pero te invito primero a pensarlo y precisar la idea, para entonces dedicar alguna sesión del taller en el futuro próximo all tema. Junto con esto va una reflexión sobre _datos abiertos_ que tengo previsto tratar y junto con esto alguunos asuntos sobre derechos de autor y licenciamiento del contenido que tu mismo producirás. En tanto resolvemos esta interés, una cosa más sencilla es trabajar con datos que ya tengo en mi poseción, es decir un Excel o documento semejante en mi máquina. 
+Una cosa que podría ser de tu interés es *cosechar datos* del Internet. **R** tiene bibliotecas bbastante competenes para hacerlo, pero te invito primero a pensarlo y precisar la idea, para entonces dedicar alguna sesión del taller en el futuro próximo all tema. Junto con esto va una reflexión sobre *datos abiertos* que tengo previsto tratar y junto con esto alguunos asuntos sobre derechos de autor y licenciamiento del contenido que tu mismo producirás. En tanto resolvemos esta interés, una cosa más sencilla es trabajar con datos que ya tengo en mi poseción, es decir un Excel o documento semejante en mi máquina.
 
 ## Datos en Mi equipo
 
@@ -58,7 +54,7 @@ Obviamente, la forma más sencilla de acceder a datos es cuando los tenemos en n
 
 ### Datos Excel
 
-Tengo este archivo de datos obtenidos por D.L. Cunningham de la Universidad de Cornell. Son registros de masa corporal (g) de pollos de acuerdo con su posición en la *jerarquía de picotazos* (@tbl-pollos). Veamos los datos. En el procceso dde demostración también te comparto como construir una tabla en formato _publicable_ con la biblioteca `flextable`. Otra posibilidad para trabajar tablas es la biblioteca `DT`, más orientada a construir tablas que serán utilizadas en forma interactiva.
+Tengo este archivo de datos obtenidos por D.L. Cunningham de la Universidad de Cornell. Son registros de masa corporal (g) de pollos de acuerdo con su posición en la *jerarquía de picotazos* (@tbl-pollos). Veamos los datos. En el procceso dde demostración también te comparto como construir una tabla en formato *publicable* con la biblioteca `flextable`. Otra posibilidad para trabajar tablas es la biblioteca `DT`, más orientada a construir tablas que serán utilizadas en forma interactiva.
 
 [Aquí están los datos](https://docs.google.com/spreadsheets/d/101en_5PHLLg0T6L7HtonPzxZ7SbjSH4S/edit?usp=sharing&ouid=117903674529989673913&rtpof=true&sd=true)
 
@@ -94,11 +90,11 @@ pollos_peso <- pollos_peso %>%
                  arrange(gallinero)
 ```
 
-|  
+| 
 
 Aprovecharé la nueva disposición para demostrar el uso de la biblioteca `DT` que define la fuuunción `datatable` y un montón de otros recursos para dar formato tabular y anotar los datos de interés.
 
-|  
+| 
 
 ```{r}
 library(DT)
@@ -109,12 +105,12 @@ pollos_peso |>
 
 ```
 
-|  
-|  
+| 
+| 
 
 Otra cosa que puedo hacer ahora es construir un gráfico con los datos utilizando la bibliotea `ggplot2`, muy capáz de producir gráficos atractivos, incluso como para publicaciones formales. Piensa en qué gráficos te gustaría inlcuir en el blog que estas construyendo. En este enlace encontrara una [galería de gráficos](https://r-graph-gallery.com/) que pueden ayudar a estimular tu imaginación e interés.
 
-|  
+| 
 
 ```{r}
 ggplot(pollos_peso, aes(x = jerarquia, y = peso)) +
@@ -122,18 +118,17 @@ ggplot(pollos_peso, aes(x = jerarquia, y = peso)) +
 
 ```
 
-|  
+| 
 
 ¿qué análisis sugieres habría que hacer ahora? ¿Cómo lo presentarías para asegurar que tu proceso analítico sea reproducible?
 
-|  
+| 
 
 ## Un bonito mapa
 
-¿Piensas que hacer mapas impactantes es cosa de una élite entrenada en GIS? Quizás la belleza de muchos mapas que encontramos por ahí justifica pensar así. Pero ahora podemos aspirar a incluir hermosos mapas en nuestros documentos, pues el acceso a _recursos abiertos_ muy competentes de mapeo ha camiado mucho. En _R_ tenemos ahora bibliotecas como `sf`, `raster`, `terra`, `leaflet`, `ggplot2` y `tmap`, además del software especializado **QGIS**, 
+¿Piensas que hacer mapas impactantes es cosa de una élite entrenada en GIS? Quizás la belleza de muchos mapas que encontramos por ahí justifica pensar así. Pero ahora podemos aspirar a incluir hermosos mapas en nuestros documentos, pues el acceso a *recursos abiertos* muy competentes de mapeo ha camiado mucho. En *R* tenemos ahora bibliotecas como `sf`, `raster`, `terra`, `leaflet`, `ggplot2` y `tmap`, además del software especializado **QGIS**,
 
 Con `leaflet` puedes incluir mapas interactivos es bastante sencillo. Veamos como empezar con esta biblioteca con unas breves instrucciones.
-
 
 ```{r}
 #| label: mapa
@@ -155,13 +150,12 @@ basemap <- leaflet() %>%
 basemap 
 
 ```
-\  
-\  
+
+| 
 
 Agregar capas, marcadores, etc. Tampoco es muy complicado. Veamos un ejemplo.
 
-\  
-\  
+|  
 
 ```{r}
 
@@ -206,9 +200,6 @@ map_1 <- basemap %>%
 map_1
 
 ```
-| 
-| 
-|  
 
 Otra posibilidad para producir documentos con mapas más bien de tipo impreso es la biblioteca `tmap` podemos hacer cosas como las siguiente. Usaremos los datos contenidos en el paquete `spData` para ejemplificar. Aquí está un [tutorial sobre esta biblioteca.](https://rpubs.com/yianlin/901579)
 
@@ -238,9 +229,10 @@ tm_shape(world) +
              size.legend = tm_legend(title = "Población (millones)")) +
   tm_facets_wrap(by = "year", nrow = 2)
 ```
+
 | 
 
-A pesar de lo dicho arriba, con esta biblioteca también se puede incursionar en  preparar productos geográficos dinámicos, como sería una animación. 
+A pesar de lo dicho arriba, con esta biblioteca también se puede incursionar en preparar productos geográficos dinámicos, como sería una animación.
 
 | 
 
@@ -263,19 +255,15 @@ knitr::include_graphics("img/urb_anim.gif")
 
 ```
 
-|  
-|  
-
+| 
+| 
 
 ## Incluir videos
 
-Si por cuaquier razón encuentras justificado o importante mostrar algo que está forma de video, es facilmente realizable agregarlo a tu blog. Tan simple como poner algo semejante a esto directamente en el texto. Es decir no se requiere un _trozo de código_ ( _code chunk_).
+Si por cualquier razón encuentras justificado o importante mostrar algo que está forma de video, es fácilmente realizable agregarlo a tu blog. Tan simple como poner algo semejante a esto directamente en el texto. Es decir no se requiere un *trozo de código* ( *code chunk*).
 
+[{{< video https://youtu.be/wo9vZccmqwc start="10" >}}]{style="color: green"}
 
-```=md
-{{< video https://youtu.be/wo9vZccmqwc start="10" >}}
-
-```
-
+ 
 
 {{< video https://youtu.be/wo9vZccmqwc start="10" >}}

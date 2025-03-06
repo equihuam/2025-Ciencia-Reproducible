@@ -13,7 +13,6 @@ format:
     toc: true
 xeditor_options: 
   chunk_output_type: console
-lightbox: true
 ---
 
 

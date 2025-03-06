@@ -1,0 +1,191 @@
+---
+title: "Datos abiertos"
+author: "Miguel Equihua"
+lang: es
+date: 07/mar/2025
+categories: [datos abiertos, scraping]
+code-fold: true
+code-summary: "muestra el escript:"
+fig-cap-location: top
+tbl-cap-location: top
+editor_options: 
+  chunk_output_type: console
+format: 
+  html: default
+---
+
+## Catálogo de datos en [datos.gob.mx](datos.gob.mx)
+
+```{r}
+#| label: cat-odgmx
+
+pacman::p_load(httr2, jsonlite, tidyverse, DT)
+
+req <- request("https://api.datos.gob.mx/v1/api-catalog?pageSize=8000")
+resp <- req_perform(req)
+
+dat_1 <- fromJSON(resp_body_string(resp))
+dat_1_df <- dat_1$results
+
+for (i in 1:length(dat_1_df$variables))
+{
+  dat_1_df$variables[i] <- paste(dat_1_df$variables[[i]], collapse = ",")
+}
+
+dat_1_df$variables <- unlist(dat_1_df$variables)
+
+dat_1_df |>
+  select("endpoint", "url", "variables") |> 
+  datatable()
+
+```
+
+| 
+
+## Ozono
+
+| 
+
+```{r}
+#| label: ozono
+
+url_O3 <- "https://api.datos.gob.mx/v2/sinaica?pageSize=8000&parametro=O3&estacionesid=259&page=1"
+
+req_O3 <- request(url_O3)
+resp_O3 <- req_perform(req_O3)
+
+dat_O3 <- fromJSON(resp_body_string(resp_O3))
+dat_O3_df <- dat_O3$results
+```
+
+Estos son los datos de ozono en la atmósfera medidos en la estación `r dat_O3_df$estacionesid[1]`, de la Ciudad de México (@tbl-ozono).
+
+```{r}
+#| label: tbl-ozono
+#| tbl-cap: Ozono atmosférico
+#| tbl-cap-location: top
+
+
+dat_O3_df |>
+  select("fecha", "hora", "valororig") |> 
+  datatable(colnames = c("Fecha", "Hora", "Valor"))
+
+```
+
+|  
+
+### Datos de estaciones meteorológicas _Conagua_
+
+Los datos generales de todas las estaciones climatológicas de México están publicadas como datos de acceso abierto, pero no están en forrma de tabla sino en forma de datos geográficos asociados a marcadores de puntos que se despliegan en un mapa. Se comprende que es una entrega de datos pensada para que un usuario acceda a la información en forma interactiva. Pienso que para muchos otros fines de _reuso_ de esos datos conviene tenerlos en formato tabular. El documento geográfico está disponible en formato **kmz**. Este archivo es el tipo que usa _Google Earth_. Es na versión comprimida como un "zip", de otro tipo de archivo que es el **kml**, también desarrollado y usado en _Google Earth_. Lo que podemos hacer es descomprimir el archivo **kmz**, con la herramienta qe prefieras, y procesar el archivo descomprimido resultante. Es lo que haremos enseguida.
+
+La estrategia de procesamiento que seguiremos la orientaremos a aprovechar el hecho de que los archivos **kml** son ambién documentos **xml**, semejantes a los que se usan para producir páginas Web, para manejar este tipo de archivos existe en **R** la biblioteca _XML_. El proceso require recorrer el documento y recolectar las piezas de información que interesan. La tarea no es sencilla, pero nos sirve de _ejemplo avanzado_ que ilustra cosas que es posile hacer. Una vez obtenidos estos datos podría ser interesante ver formas de análisis de esttos datos generales que se imagines.
+
+En el _escript_ que sigue, sólo extraeremos los datos del archivo **kml** y los deslegaremos en forma de tabla. Los datos quedarán disponibles como una tabla _tibble_ (la variante más actual del _data.frame_ original de **R**), que podrás usar de muchas maneras. Me gustará mucho escuchar tus ideas.
+
+|  
+
+```{r}
+#| label: tbl-lista-estaciones
+
+pacman::p_load(XML)
+
+data <- xmlParse("EstacionesClimatologicas/doc.kml")
+xml_data <- xmlToList(data)
+
+# Estaciones operativas
+datos_ext <- as.list(xml_data[["Document"]][["Folder"]][[3]])
+                    
+# Estaciones suspendidas
+datos_ext_2 <- as.list(xml_data[["Document"]][["Folder"]][[4]])
+
+length(datos_ext[[1]])
+length(datos_ext_2[[1]])
+
+datos_todo <- c(datos_ext, datos_ext_2)
+
+for (r in datos_todo)
+{
+  if(!identical(r,"Estaciones operativas") & (!identical(r,"Estaciones suspendidas")))
+  {
+    e <- r$ExtendedData$SchemaData
+    # recupera datos de la estación 
+    nombres <- character(length(e)-1)
+    valores <- character(length(e)-1)
+    for (i in 1:(length(e)-1))
+    {
+      if((hasName(e[[i]], "text") & (hasName(e[[i]], ".attrs"))))
+      {
+        nombres[i] <- e[[i]]$.attrs
+        valores[i] <- e[[i]]$text
+      } else {
+        nombres[i] <- e[[i]]
+        valores[i] <- NA
+      }
+    }
+    
+    datos_temp <- tibble(nombres, valores) %>%
+      pivot_wider(names_from = nombres, values_from = valores)
+    
+    if (identical(r, datos_ext[[2]]))
+    {
+      datos_est <- tibble(datos_temp)
+    } else {
+      datos_est <- rows_append(datos_est, datos_temp)
+    }
+  }
+}
+
+
+datos_est |> 
+  select(CLAVE, ESTADO, NOMBRE, SITUACION) |> 
+  datatable()
+
+```
+
+|  
+
+Los datos de la estación de Xalapa son
+
+|  
+
+
+```{r}
+#| label: tbl-xalapa-meteo
+#| tbl-cap: Datos meteorológios de Xalapa
+
+# Datos diarios Xalapa
+dat_csv <- "ver/dia30393.txt"
+url_meteo <- "https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/Diarios"
+
+url_xalapa <- paste(url_meteo, dat_csv, sep = "/")
+
+dat_meteo_meta <- readLines(url_xalapa, n = 25)
+
+# datos de la estación
+estacion <- tibble(est = unlist(dat_meteo_meta[11:19]))
+
+estacion <- estacion |> 
+  mutate(var = str_extract(est, "(.*)(?=\\s:)"),
+         val = str_extract(est, "(?<=\\s:)(.*)"),
+         var = str_trim(var),
+         val = str_trim(val), .keep = "unused" ) 
+
+nombres <- estacion$var
+
+estacion <- as_tibble(t(estacion[, 2]))
+names(estacion) <- nombres
+
+# variables meteorologicas
+variables <- str_split(readLines(url_xalapa, n = 24)[24], "\t")[[1]][c(1,3:6)]
+
+# datos meteorológicos
+dat_meteo <- read.csv(url_xalapa, skip = 25, sep = "\t", header = F)
+
+names(dat_meteo) <- variables
+
+dat_meteo |> 
+  mutate(idEstacion = estacion$ESTACIÓN) |> 
+  datatable()
+
+```
+
