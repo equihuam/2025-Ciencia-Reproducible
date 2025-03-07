@@ -199,6 +199,7 @@ map_1 <- basemap %>%
 
 map_1
 
+
 ```
 
 Otra posibilidad para producir documentos con mapas más bien de tipo impreso es la biblioteca `tmap` podemos hacer cosas como las siguiente. Usaremos los datos contenidos en el paquete `spData` para ejemplificar. Aquí está un [tutorial sobre esta biblioteca.](https://rpubs.com/yianlin/901579)
@@ -210,7 +211,7 @@ Otra posibilidad para producir documentos con mapas más bien de tipo impreso es
 #| warning: false
 #| message: false
 
-pacman::p_load(tmap, spData)
+pacman::p_load(tmap, spData, dplyr)
 
 data("urban_agglomerations")
 
@@ -262,8 +263,13 @@ knitr::include_graphics("img/urb_anim.gif")
 
 Si por cualquier razón encuentras justificado o importante mostrar algo que está forma de video, es fácilmente realizable agregarlo a tu blog. Tan simple como poner algo semejante a esto directamente en el texto. Es decir no se requiere un *trozo de código* ( *code chunk*).
 
-[{{< video https://youtu.be/wo9vZccmqwc start="10" >}}]{style="color: green"}
+```{=text}
+#| eval: false
 
- 
+[\{\{\< video https://youtu.be/wo9vZccmqwc start="10" \>\}\}]{style="color: green"}
+
+```
+
+|  
 
 {{< video https://youtu.be/wo9vZccmqwc start="10" >}}
