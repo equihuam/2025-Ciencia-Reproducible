@@ -233,7 +233,7 @@ Los pasos que hay que seguir para esta primera interacción son los siguiente. I
 
 El Siguiente paso es autorizar a Netlify a acceder a Github a través de tu cuenta, así como los específicos del repositorio que te interesa vincular. _Esto sólo necesitarás hacerlo la primera vez en que habrás de enlazar tus cuenta_. Esto también implica que se instalará una **aplicación** de vínculo de *Netlify* dentro de tu cuenta de _Github_.
 
-![](images/Netlify-2.png)
+![](images/Netlify-2.png){width=350}
 
 Si todo ocurrió sin problemas, tendrás ahora en *Github*, en el menú de aplicaciones (Avatar→ Settings→ Applications), un botón que te permitirá configurar el vínculo con *Netlify* según tus requerimientos. También podrás ver los *repos* que hayas autorizado desde *Netlify*. Si le dijiste a netlify que autorice todos los repositorios, no tendrás que visitar esta opción nunca.
 
