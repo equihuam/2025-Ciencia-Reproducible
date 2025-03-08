@@ -292,6 +292,22 @@ Figura&nbsp;2: John Gruber
 <h3 class="anchored" data-anchor-id="rstudio">RStudio</h3>
 <p>Es un <em>entorno integrado de desarrollo</em> (<strong>IDE</strong>). Como tal, ofrece una estructura que permite ineractuar con distintos aspecto del proceso creativo. En la figura puedes ver lo que usualmente tienes a tu alcance en una instalación común. Esta configuración la puedes modificar según tus preferencias desde el menú <em>View</em> ⟹ <em>panes</em>. Pero probablemente al inicio te bastará con la configuración que ya tienes.</p>
 <p><img src="images/Rstudio.png" class="img-fluid"></p>
+<p>La gente de <strong>Posit</strong>, desarrolladores de <em>RStudio</em> está trabajando en la producción de versiones del programa en otros idiomas, aparte del inglés. En este momento existe una prueba en francés, pero no está listo nada en español. Mientras tanto, una ayuda parcial puede ser tener acceso a los reportes de error que dan los comandos en español, para eso deberás usar el comando siguiente en la ventana de <em>consola</em></p>
+<div class="cell">
+<details class="code-fold">
+<summary>muestra el escript:</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Idioma español en sistema de codificación digital UTF-8</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setLanguage</span>(<span class="at">lang =</span> <span class="st">"es.UTF-8"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Esto puede ayudar, pero puede ser un problema si necesitas buscar ayuda en Internet, que las más de las veces está en inglés. Entonces, si quieres regresar a éste idioma, harás algo semejante a lo de arriba, pero usarás el código apropiado, por ejemplo para inlgés norteamericano: “en_us.UTF-8”</p>
+<div class="cell">
+<details class="code-fold">
+<summary>muestra el escript:</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Idioma inglés norteamericano en sistema de codificación digital UTF-8</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setLanguage</span>(<span class="at">lang =</span> <span class="st">"en_us.UTF-8"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 </section>
 <section id="mi-primer-documento-quarto" class="level3">
 <h3 class="anchored" data-anchor-id="mi-primer-documento-quarto">Mi primer documento Quarto</h3>
@@ -369,7 +385,7 @@ Activar git
 <div class="cell">
 <details class="code-fold">
 <summary>muestra el escript:</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>En cualquier caso, ahora conviene verificar como está configurado el espacio de trabajo. En la ventana de <strong>consola</strong> puedes escribir los siguientes comandos para averiguar detalles de tu configuración.</p>
@@ -377,28 +393,28 @@ Activar git
 <div class="cell">
 <details class="code-fold">
 <summary>muestra el escript:</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">git_default_branch</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">git_default_branch</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>Si quieres configurar tu instalación de <strong>RStudio</strong> para que siempre defina la rama base como <em>main</em>, puedes usar elsiguiente comando. Aunque esto sólo actuará para futuros proyectos, no cambiará nada en los que tienes ya creados hasta este momento.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>muestra el escript:</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">git_default_branch_configure</span>(<span class="at">name =</span> <span class="st">"main"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">git_default_branch_configure</span>(<span class="at">name =</span> <span class="st">"main"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>Si lo que quieres es modificar la rama principal del proyecto con el que estas trabajando y que ya tienes abierto, este es el comando que te ayudará. En este ejemplo uso lo que es ya práctica común, migrar de <em>master</em> a <em>main</em>, pero puedes tomar tus propias preferencias sin ningún problema, aunque obviamente la parte <strong>from</strong> debe ser la existente que deseas modificar.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>muestra el escript:</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">git_default_branch_rename</span>(<span class="at">from =</span> <span class="st">"master"</span>, <span class="at">to =</span> <span class="st">"main"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">git_default_branch_rename</span>(<span class="at">from =</span> <span class="st">"master"</span>, <span class="at">to =</span> <span class="st">"main"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>No todos los archivos que están en el espacio de trabajo son realmente de interés como para seguir su historia en el tiempo y podría haber también cosas que nunca deberían estar registradas en un sistema que te expone al acceso público generalizado: claves personales, tokens, identificadores de archivos privados, etc. Aunque ante esto no hay mejor cosa que ser prudente y estar atentos, existe la función <code>vacunar</code> que busca ayudarte a evitar estos problemas. Para activar esta ayuda en tu proyecto puedes usar este comando.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>muestra el escript:</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">git_vaccinate</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">git_vaccinate</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>Esto pone ya en operación las capacidades de <strong>git</strong> en tu máquina. Para usarlas debes dirigirte a la pestaña respectiva. Con la función <strong>Commit</strong> generas el registro del estado de los archivos del proyecto al momento de activar el comando. Para operar esto debes decidir que archivos enviar al registro histórico, marcados como <em>staged</em>. Al apretar el botón <strong>Commit</strong> aparecerá una ventana en donde se reportan los detalles de lo que estas registrando. Cada <strong>Commit</strong> requiere anotar un mensaje descriptivo breve de lo que contiene el “corte”. Una vez que está todo resuelto, hay que apretar el botón <strong>Commit</strong> en esa pantalla y esperar algunos segundos a que termine el proceso de registro en la base de datos respectiva.</p>
@@ -422,14 +438,14 @@ Enviar el <em>repositorio</em> <strong>git</strong> a la nube
 <div class="cell">
 <details class="code-fold">
 <summary>muestra el escript:</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">create_github_token</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">create_github_token</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>Esto te lleva a la página de <strong>Github</strong> en la que hay que generar el <strong>token</strong>. Hay que responder las preguntas que te haga la página, aunque todo estará <em>prellenado</em> con lo normalmente necesario. Cuando esté a tu gusto, aprieta el botón respectivo. Aparecerá una nueva pantalla con el <strong>token</strong> que habrá que copiar al <em>portapapeles</em> (<strong>ctr-c</strong> en Windows). Este <strong>token</strong> que aparece, es la única vez que lo verás, por lo que conviene copiarlo al <em>portapapeles</em> de tu máquina (<strong>ctrl-c</strong> en windows) y tenerlo a buen resguardo por lo pronto. En seguida hay que ejecutar este otro comando en la consola de <em>RStudio</em></p>
 <div class="cell">
 <details class="code-fold">
 <summary>muestra el escript:</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>gitcreds<span class="sc">::</span><span class="fu">gitcreds_set</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>gitcreds<span class="sc">::</span><span class="fu">gitcreds_set</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>Si es la primeta vez que registras un <strong>token</strong> te pedirá que lo registres, dale <em>paste</em> (<strong>ctrl-v</strong> en Windows). Si ya tienes un registro dado de alta, te informará sobre lo que tiene anotado y te dará oportunidad de decidir qué quieres hacer en seguida.</p>
@@ -437,7 +453,7 @@ Enviar el <em>repositorio</em> <strong>git</strong> a la nube
 <div class="cell">
 <details class="code-fold">
 <summary>muestra el escript:</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>Por cierto, este es el comando qe necesitarán en lo sucesivo para vincular cualquier nuevo proyecto a tt centta ed <strong>Github</strong>, siempre y cuando tu <strong>token</strong> este vigente.</p>
@@ -476,7 +492,7 @@ Resumen rutinario para usar <strong>git</strong>
 <div class="cell">
 <details class="code-fold">
 <summary>muestra el escript:</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>Eso es todo.</p>
@@ -497,12 +513,13 @@ Publicar tu Blog con ayuda de Netlify
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Hay que indicarle a <em>Github</em> que de acceso a <em>Netlify</em> para que tome <em>continuamente</em> lo necesario. La meta es que construya un sitio Web con tu contenido y lo publique en Internet. Los pasos que hay que seguir para esta primera interacción son los siguiente.</p>
-<p>Iniciar la vinculación con Github seleccionando la opción que ofrece importar los documentos desde un <em>repo</em> Git. Esto dará la opción de utilizar <em>Github</em> como origen de datos, entre otras posibilidades.</p>
+<p>Esta operación inicia en el sitio de <em>Netlify</em>, así que por favor dirigete allá e ingresa con tus datos de cuenta si ya los tienes, o registrate para tener acceso al servicio. En un principio no necesitas pagar nada y para la mayoría de los propósitos es muy probable que no lo requieras. En todo caso hay opciones para acceder a especificaciones más <em>profesionales</em> que pueden requerir pago, pero siempre podrás elegir lo que más te convenga. En fin, ya debes estar en tu cuenta de <em>Netlify</em> ahora.</p>
+<p>Ojalá las figuras siguientes te ayuden a seguir los pasos necesarios. La tarea es primero, autorizar a <em>Netlify</em> para que interactue con <em>Github</em>, axí que debes autorizar este enlazamiento de servicios. Una vez que lo hayas hecho, podrás, especificar lo que deberá estar vigilando <em>Netlify</em> para que tome <em>continuamente</em> lo necesario, lo que hayas cambiado en <em>Github</em>. La meta es que construya un sitio Web con tu contenido y lo publique en Internet, y que lo actualice cada vez que des <strong>push</strong> a tu <em>blog</em> en <em>RStudio</em>. Después de autorizar el vínculo entre los servicios sigue crear un nuevo sitio con tu <em>blog</em>, que debe tener en este momento un directorio **_site** como resultado de haber hecho <em>Render</em> en <em>RStudio</em>, si no ves ese directorio ve a la pestaña <strong>Build</strong> en <em>RStudio</em> y pídele que construya el sitio de tu <em>blog</em> completo.</p>
+<p>Los pasos que hay que seguir para esta primera interacción son los siguiente. Iniciar la vinculación con <em>Github</em> seleccionando la opción que ofrece importar los documentos desde un <em>repo</em> Git. Esto tellevara a una pantalla en donde posrás elegir la opción de utilizar <em>Github</em> como origen de datos, entre otras posibilidades.</p>
 <p><img src="images/Netlify-1.png" class="img-fluid"></p>
-<p>El Siguiente paso es autorizar a Netlify a acceder a Github a través de tu cuenta, así como los específicos del repositorio que te interesa vincular. Esto también implica instalar una <strong>aplicación</strong> de vínculo entre <em>Netlify</em> y <em>Github</em> dentro de tu cuenta.</p>
+<p>El Siguiente paso es autorizar a Netlify a acceder a Github a través de tu cuenta, así como los específicos del repositorio que te interesa vincular. <em>Esto sólo necesitarás hacerlo la primera vez en que habrás de enlazar tus cuenta</em>. Esto también implica que se instalará una <strong>aplicación</strong> de vínculo de <em>Netlify</em> dentro de tu cuenta de <em>Github</em>.</p>
 <p><img src="images/Netlify-2.png" class="img-fluid"></p>
-<p>Si todo ocurrió sin problemas, tendrás ahora en <em>Github</em>, en el menú de aplicaciones (Avatar→ Settings→ Applications), un botón que te permitirá configurar el vínculo con <em>Netlify</em> según tus requerimientos. También podrás ver los <em>repos</em> que hayas autorizado desde <em>Netlify</em>.</p>
+<p>Si todo ocurrió sin problemas, tendrás ahora en <em>Github</em>, en el menú de aplicaciones (Avatar→ Settings→ Applications), un botón que te permitirá configurar el vínculo con <em>Netlify</em> según tus requerimientos. También podrás ver los <em>repos</em> que hayas autorizado desde <em>Netlify</em>. Si le dijiste a netlify que autorice todos los repositorios, no tendrás que visitar esta opción nunca.</p>
 <section id="creación-de-un-nuevo-sitio-a-publicar" class="level2">
 <h2 class="anchored" data-anchor-id="creación-de-un-nuevo-sitio-a-publicar">Creación de un nuevo sitio a publicar</h2>
 <ol type="1">
@@ -564,17 +581,17 @@ Finalmente ¿Cómo quedá todo organizado?
 </ol>
 <p>Ahora, sólo queda crear el contenido del <em>Blog</em>. Recuerda usar un directorio para cada nueva contribución dentro de la carpeta <em>posts</em>. Te sugiero usar un esquema <em>fecha-tema</em> para llamar esos archivos. Evita usar espacios y caracteres latinos en los temas. Para trabajar hay que crear un archivo <em>index.qmd</em>. Puedes hacerlo desde el menú: <em>File</em> $ $ <em>New Quarto document…</em>.</p>
 <p>Configura el encabezado de control con algo así como:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Descriptivo del contenido"</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Tu Nombre y el de los autores involucrados"</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="an">lang:</span><span class="co"> es</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> {{la fecha de publicación}}</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [colección de frases clave separadas por comas]</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> "archivo de la imágen que deseas incluir como portada"</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="an">code-fold:</span><span class="co"> true</span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="an">code-summary:</span><span class="co"> "muestra el escript:"</span></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="an">fig-cap-location:</span><span class="co"> top</span></span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Descriptivo del contenido"</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Tu Nombre y el de los autores involucrados"</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="an">lang:</span><span class="co"> es</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> {{la fecha de publicación}}</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [colección de frases clave separadas por comas]</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> "archivo de la imágen que deseas incluir como portada"</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="an">code-fold:</span><span class="co"> true</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="an">code-summary:</span><span class="co"> "muestra el escript:"</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="an">fig-cap-location:</span><span class="co"> top</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Si es de tu interés, aquí encontrarás <a href="https://rpubs.com/drgregmartin/1266674">muchos detalles interesanes sobre YAML</a>.</p>
 </div>
 </div>

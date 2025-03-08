@@ -54,6 +54,27 @@ Es un *entorno integrado de desarrollo* (**IDE**). Como tal, ofrece una estructu
 
 ![](images/Rstudio.png)
 
+La gente de **Posit**, desarrolladores de _RStudio_ está trabajando en la producción de versiones del programa en otros idiomas, aparte del inglés. En este momento existe una prueba en francés, pero no está listo nada en español. Mientras tanto, una ayuda parcial puede ser tener acceso a los reportes de error que dan los comandos en español, para eso deberás usar el comando siguiente en la ventana de _consola_
+
+```{r}
+#| eval: false
+
+# Idioma español en sistema de codificación digital UTF-8
+Sys.setLanguage(lang = "es.UTF-8")
+
+```
+
+Esto puede ayudar, pero puede ser un problema si necesitas buscar ayuda en Internet, que las más de las veces está en inglés. Entonces, si quieres regresar a éste idioma, harás algo semejante a lo de arriba, pero usarás el código apropiado, por ejemplo para inlgés norteamericano: "en_us.UTF-8"
+
+```{r}
+#| eval: false
+
+# Idioma inglés norteamericano en sistema de codificación digital UTF-8
+Sys.setLanguage(lang = "en_us.UTF-8")
+
+```
+
+
 ### Mi primer documento Quarto
 
 Todo listo. Anímate a escribir tus primeras líneas en un documento _Quarto_. 
@@ -202,17 +223,19 @@ Eso es todo.
 :::: {.callout-caution collapse="true"}
 ## Publicar tu Blog con ayuda de Netlify
 
-Hay que indicarle a *Github* que de acceso a *Netlify* para que tome *continuamente* lo necesario. La meta es que construya un sitio Web con tu contenido y lo publique en Internet. Los pasos que hay que seguir para esta primera interacción son los siguiente.
+Esta operación inicia en el sitio de *Netlify*, así que por favor dirigete allá e ingresa con tus datos de cuenta si ya los tienes, o registrate para tener acceso al servicio. En un principio no necesitas pagar nada y para la mayoría de los propósitos es muy probable que no lo requieras. En todo caso hay opciones para acceder a especificaciones más _profesionales_ que pueden requerir pago, pero siempre podrás elegir lo que más te convenga. En fin, ya debes estar en tu cuenta de *Netlify* ahora.
 
-Iniciar la vinculación con Github seleccionando la opción que ofrece importar los documentos desde un *repo* Git. Esto dará la opción de utilizar *Github* como origen de datos, entre otras posibilidades.
+Ojalá las figuras siguientes te ayuden a seguir los pasos necesarios. La tarea es primero, autorizar a *Netlify* para que interactue con *Github*, axí que debes autorizar este enlazamiento de servicios. Una vez que lo hayas hecho, podrás, especificar lo que deberá estar vigilando *Netlify* para que tome *continuamente* lo necesario, lo que hayas cambiado en *Github*. La meta es que construya un sitio Web con tu contenido y lo publique en Internet, y que lo actualice cada vez que des **push** a tu _blog_ en _RStudio_. Después de autorizar el vínculo entre los servicios sigue crear un nuevo sitio con tu _blog_, que debe tener en este momento un directorio **_site** como resultado de haber hecho _Render_ en _RStudio_, si no ves ese directorio ve a la pestaña **Build** en _RStudio_ y pídele que construya el sitio de tu _blog_ completo. 
+
+Los pasos que hay que seguir para esta primera interacción son los siguiente. Iniciar la vinculación con _Github_ seleccionando la opción que ofrece importar los documentos desde un *repo* Git. Esto tellevara a una pantalla en donde posrás elegir la opción de utilizar *Github* como origen de datos, entre otras posibilidades.
 
 ![](images/Netlify-1.png)
 
-El Siguiente paso es autorizar a Netlify a acceder a Github a través de tu cuenta, así como los específicos del repositorio que te interesa vincular. Esto también implica instalar una **aplicación** de vínculo entre *Netlify* y *Github* dentro de tu cuenta.
+El Siguiente paso es autorizar a Netlify a acceder a Github a través de tu cuenta, así como los específicos del repositorio que te interesa vincular. _Esto sólo necesitarás hacerlo la primera vez en que habrás de enlazar tus cuenta_. Esto también implica que se instalará una **aplicación** de vínculo de *Netlify* dentro de tu cuenta de _Github_.
 
 ![](images/Netlify-2.png)
 
-Si todo ocurrió sin problemas, tendrás ahora en *Github*, en el menú de aplicaciones (Avatar→ Settings→ Applications), un botón que te permitirá configurar el vínculo con *Netlify* según tus requerimientos. También podrás ver los *repos* que hayas autorizado desde *Netlify*.
+Si todo ocurrió sin problemas, tendrás ahora en *Github*, en el menú de aplicaciones (Avatar→ Settings→ Applications), un botón que te permitirá configurar el vínculo con *Netlify* según tus requerimientos. También podrás ver los *repos* que hayas autorizado desde *Netlify*. Si le dijiste a netlify que autorice todos los repositorios, no tendrás que visitar esta opción nunca.
 
 ## Creación de un nuevo sitio a publicar
 
