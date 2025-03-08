@@ -12,7 +12,7 @@ fig-cap-location: top
 
 ## [Markdown](https://rstudio.github.io/cheatsheets/quarto.pdf) y la [ciencia abierta](pres-ciencia-abierta.qmd)
 
-*Tan simple como escribir en la página en blanco con pequeñas marcas de intención*. Se ha inventado varias veces y el columpio ha ido y venido entre el interés en ver y controlar las marcas directamente sobre el texto y la preferencia de ver sólo el producto terminado **WYSIWYG** (*lo que ves es lo que tienes*, aunque el marcado existe, pero lo hace la máquina por ti).
+*Tan simple como escribir en la página en blanco con pe queñas marcas de intención*. Se ha inventado varias veces y el columpio ha ido y venido entre el interés en ver y controlar las marcas directamente sobre el texto y la preferencia de ver sólo el producto terminado **WYSIWYG** (*lo que ves es lo que tienes*, aunque el marcado existe, pero lo hace la máquina por ti).
 
 ::: {layout="[1, 1.5]"}
 ![Libro de Irene Vallejo](images/900-el-infinito-en-un-junco-irene-vallejo-alfa.png){#fig-junco width="200px"}
@@ -50,11 +50,9 @@ Lo que haremos es:
 
 Es un *entorno integrado de desarrollo* (**IDE**). Como tal, ofrece una estructura que permite ineractuar con distintos aspecto del proceso creativo. En la figura puedes ver lo que usualmente tienes a tu alcance en una instalación común. Esta configuración la puedes modificar según tus preferencias desde el menú *View* ⟹ *panes*. Pero probablemente al inicio te bastará con la configuración que ya tienes.
 
-
-
 ![](images/Rstudio.png)
 
-La gente de **Posit**, desarrolladores de _RStudio_ está trabajando en la producción de versiones del programa en otros idiomas, aparte del inglés. En este momento existe una prueba en francés, pero no está listo nada en español. Mientras tanto, una ayuda parcial puede ser tener acceso a los reportes de error que dan los comandos en español, para eso deberás usar el comando siguiente en la ventana de _consola_
+La gente de **Posit**, desarrolladores de *RStudio* está trabajando en la producción de versiones del programa en otros idiomas, aparte del inglés. En este momento existe una prueba en francés, pero no está listo nada en español. Mientras tanto, una ayuda parcial puede ser tener acceso a los reportes de error que dan los comandos en español, para eso deberás usar el comando siguiente en la ventana de *consola*
 
 ```{r}
 #| eval: false
@@ -74,10 +72,9 @@ Sys.setLanguage(lang = "en_us.UTF-8")
 
 ```
 
-
 ### Mi primer documento Quarto
 
-Todo listo. Anímate a escribir tus primeras líneas en un documento _Quarto_. 
+Todo listo. Anímate a escribir tus primeras líneas en un documento *Quarto*.
 
 ::: {.callout-caution collapse="true" title="Nuevo proyecto"}
 *Rstudio* tiene en su menu **file** la opción de preparar documentos en *Quarto*.
@@ -223,17 +220,17 @@ Eso es todo.
 :::: {.callout-caution collapse="true"}
 ## Publicar tu Blog con ayuda de Netlify
 
-Esta operación inicia en el sitio de *Netlify*, así que por favor dirigete allá e ingresa con tus datos de cuenta si ya los tienes, o registrate para tener acceso al servicio. En un principio no necesitas pagar nada y para la mayoría de los propósitos es muy probable que no lo requieras. En todo caso hay opciones para acceder a especificaciones más _profesionales_ que pueden requerir pago, pero siempre podrás elegir lo que más te convenga. En fin, ya debes estar en tu cuenta de *Netlify* ahora.
+Esta operación inicia en el sitio de *Netlify*, así que por favor dirigete allá e ingresa con tus datos de cuenta si ya los tienes, o registrate para tener acceso al servicio. En un principio no necesitas pagar nada y para la mayoría de los propósitos es muy probable que no lo requieras. En todo caso hay opciones para acceder a especificaciones más *profesionales* que pueden requerir pago, pero siempre podrás elegir lo que más te convenga. En fin, ya debes estar en tu cuenta de *Netlify* ahora.
 
-Ojalá las figuras siguientes te ayuden a seguir los pasos necesarios. La tarea es primero, autorizar a *Netlify* para que interactue con *Github*, axí que debes autorizar este enlazamiento de servicios. Una vez que lo hayas hecho, podrás, especificar lo que deberá estar vigilando *Netlify* para que tome *continuamente* lo necesario, lo que hayas cambiado en *Github*. La meta es que construya un sitio Web con tu contenido y lo publique en Internet, y que lo actualice cada vez que des **push** a tu _blog_ en _RStudio_. Después de autorizar el vínculo entre los servicios sigue crear un nuevo sitio con tu _blog_, que debe tener en este momento un directorio **_site** como resultado de haber hecho _Render_ en _RStudio_, si no ves ese directorio ve a la pestaña **Build** en _RStudio_ y pídele que construya el sitio de tu _blog_ completo. 
+Ojalá las figuras siguientes te ayuden a seguir los pasos necesarios. La tarea es primero, autorizar a *Netlify* para que interactue con *Github*, axí que debes autorizar este enlazamiento de servicios. Una vez que lo hayas hecho, podrás, especificar lo que deberá estar vigilando *Netlify* para que tome *continuamente* lo necesario, lo que hayas cambiado en *Github*. La meta es que construya un sitio Web con tu contenido y lo publique en Internet, y que lo actualice cada vez que des **push** a tu *blog* en *RStudio*. Después de autorizar el vínculo entre los servicios sigue crear un nuevo sitio con tu *blog*, que debe tener en este momento un directorio \*\*\_site\*\* como resultado de haber hecho *Render* en *RStudio*, si no ves ese directorio ve a la pestaña **Build** en *RStudio* y pídele que construya el sitio de tu *blog* completo.
 
-Los pasos que hay que seguir para esta primera interacción son los siguiente. Iniciar la vinculación con _Github_ seleccionando la opción que ofrece importar los documentos desde un *repo* Git. Esto tellevara a una pantalla en donde posrás elegir la opción de utilizar *Github* como origen de datos, entre otras posibilidades.
+Los pasos que hay que seguir para esta primera interacción son los siguiente. Iniciar la vinculación con *Github* seleccionando la opción que ofrece importar los documentos desde un *repo* Git. Esto tellevara a una pantalla en donde posrás elegir la opción de utilizar *Github* como origen de datos, entre otras posibilidades.
 
 ![](images/Netlify-1.png)
 
-El Siguiente paso es autorizar a Netlify a acceder a Github a través de tu cuenta, así como los específicos del repositorio que te interesa vincular. _Esto sólo necesitarás hacerlo la primera vez en que habrás de enlazar tus cuenta_. Esto también implica que se instalará una **aplicación** de vínculo de *Netlify* dentro de tu cuenta de _Github_.
+El Siguiente paso es autorizar a Netlify a acceder a Github a través de tu cuenta, así como los específicos del repositorio que te interesa vincular. *Esto sólo necesitarás hacerlo la primera vez en que habrás de enlazar tus cuenta*. Esto también implica que se instalará una **aplicación** de vínculo de *Netlify* dentro de tu cuenta de *Github*.
 
-![](images/Netlify-2.png){width=350}
+![](images/Netlify-2.png){width="350"}
 
 Si todo ocurrió sin problemas, tendrás ahora en *Github*, en el menú de aplicaciones (Avatar→ Settings→ Applications), un botón que te permitirá configurar el vínculo con *Netlify* según tus requerimientos. También podrás ver los *repos* que hayas autorizado desde *Netlify*. Si le dijiste a netlify que autorice todos los repositorios, no tendrás que visitar esta opción nunca.
 
@@ -259,7 +256,7 @@ Deberás elegir un nombre que se convertirá en una URL para acceder a tu proyec
 
 #### ¿Qué hará Netlify para operar tu sitio?
 
-Es una colección de atributos para indicarle a *Netlify* dónde conseguir los documentos y como manejarlos. En nuestro caso, muy simple, básicamente hay que decirle en donde están los documentos que *Quarto*, con ayuda de *pandoc*, ha *renderizado*. Si no has cambiado nada en `_quarto.yml` la rama que estamos usando aquí para que *Git* los registre es **main** y, en ella el directorio de producción se llama \*\*\_site\*\*. Por favor verifica el contenido de esto para ayudarte a comprender mejor lo que estás haciendo.
+Es una colección de atributos para indicarle a *Netlify* dónde conseguir los documentos y como manejarlos. En nuestro caso, muy simple, básicamente hay que decirle en donde están los documentos que *Quarto*, con ayuda de *pandoc*, ha *renderizado*. Si no has cambiado nada en `_quarto.yml` la rama que estamos usando aquí para que *Git* los registre es **main** y, en ella el directorio de producción se llama **site**. Por favor verifica el contenido de esto para ayudarte a comprender mejor lo que estás haciendo.
 
 ![](images/Netlify-config-site-2.png){width="50%"}
 
@@ -279,7 +276,7 @@ Si todo salió bien, en este momento ya debe estar tu proyecto publicado y acces
 2.  Está vinculado con tu cuenta en **Github**
 3.  Están vinculados **Github** y **Netlify**
 
-Ahora, sólo queda crear el contenido del *Blog*. Recuerda usar un directorio para cada nueva contribución dentro de la carpeta *posts*. Te sugiero usar un esquema *fecha-tema* para llamar esos archivos. Evita usar espacios y caracteres latinos en los temas. Para trabajar hay que crear un archivo *index.qmd*. Puedes hacerlo desde el menú: *File* \$ \rightarrow \$ *New Quarto document...*.
+Ahora, sólo queda crear el contenido del *Blog*. Recuerda usar un directorio para cada nueva contribución dentro de la carpeta *posts*. Te sugiero usar un esquema *fecha-tema* para llamar esos archivos. Evita usar espacios y caracteres latinos en los temas. Para trabajar hay que crear un archivo *index.qmd*. Puedes hacerlo desde el menú: **File ⟹ Quarto document...**, o simplemente copiando algún *index.qmd* que tengas por ahí y quieras aprovechar como base para iniciar un nuevo documento.
 
 Configura el encabezado de control con algo así como:
 

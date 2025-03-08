@@ -228,7 +228,7 @@ window.Quarto = {
 
 <section id="markdown-y-la-ciencia-abierta" class="level2">
 <h2 class="anchored" data-anchor-id="markdown-y-la-ciencia-abierta"><a href="https://rstudio.github.io/cheatsheets/quarto.pdf">Markdown</a> y la <a href="../../posts/2025-02-21-inicio/pres-ciencia-abierta.html">ciencia abierta</a></h2>
-<p><em>Tan simple como escribir en la página en blanco con pequeñas marcas de intención</em>. Se ha inventado varias veces y el columpio ha ido y venido entre el interés en ver y controlar las marcas directamente sobre el texto y la preferencia de ver sólo el producto terminado <strong>WYSIWYG</strong> (<em>lo que ves es lo que tienes</em>, aunque el marcado existe, pero lo hace la máquina por ti).</p>
+<p><em>Tan simple como escribir en la página en blanco con pe queñas marcas de intención</em>. Se ha inventado varias veces y el columpio ha ido y venido entre el interés en ver y controlar las marcas directamente sobre el texto y la preferencia de ver sólo el producto terminado <strong>WYSIWYG</strong> (<em>lo que ves es lo que tienes</em>, aunque el marcado existe, pero lo hace la máquina por ti).</p>
 <div>
 
 </div>
@@ -552,7 +552,7 @@ Publicar tu Blog con ayuda de Netlify
 </section>
 <section id="qué-hará-netlify-para-operar-tu-sitio" class="level4">
 <h4 class="anchored" data-anchor-id="qué-hará-netlify-para-operar-tu-sitio">¿Qué hará Netlify para operar tu sitio?</h4>
-<p>Es una colección de atributos para indicarle a <em>Netlify</em> dónde conseguir los documentos y como manejarlos. En nuestro caso, muy simple, básicamente hay que decirle en donde están los documentos que <em>Quarto</em>, con ayuda de <em>pandoc</em>, ha <em>renderizado</em>. Si no has cambiado nada en <code>_quarto.yml</code> la rama que estamos usando aquí para que <em>Git</em> los registre es <strong>main</strong> y, en ella el directorio de producción se llama **_site**. Por favor verifica el contenido de esto para ayudarte a comprender mejor lo que estás haciendo.</p>
+<p>Es una colección de atributos para indicarle a <em>Netlify</em> dónde conseguir los documentos y como manejarlos. En nuestro caso, muy simple, básicamente hay que decirle en donde están los documentos que <em>Quarto</em>, con ayuda de <em>pandoc</em>, ha <em>renderizado</em>. Si no has cambiado nada en <code>_quarto.yml</code> la rama que estamos usando aquí para que <em>Git</em> los registre es <strong>main</strong> y, en ella el directorio de producción se llama <strong>site</strong>. Por favor verifica el contenido de esto para ayudarte a comprender mejor lo que estás haciendo.</p>
 <p><a href="images/Netlify-config-site-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14"><img src="images/Netlify-config-site-2.png" class="img-fluid" style="width:50.0%"></a></p>
 </section>
 <section id="todo-listo-a-producción" class="level4">
@@ -582,7 +582,7 @@ Finalmente ¿Cómo quedá todo organizado?
 <li>Está vinculado con tu cuenta en <strong>Github</strong></li>
 <li>Están vinculados <strong>Github</strong> y <strong>Netlify</strong></li>
 </ol>
-<p>Ahora, sólo queda crear el contenido del <em>Blog</em>. Recuerda usar un directorio para cada nueva contribución dentro de la carpeta <em>posts</em>. Te sugiero usar un esquema <em>fecha-tema</em> para llamar esos archivos. Evita usar espacios y caracteres latinos en los temas. Para trabajar hay que crear un archivo <em>index.qmd</em>. Puedes hacerlo desde el menú: <em>File</em> $ $ <em>New Quarto document…</em>.</p>
+<p>Ahora, sólo queda crear el contenido del <em>Blog</em>. Recuerda usar un directorio para cada nueva contribución dentro de la carpeta <em>posts</em>. Te sugiero usar un esquema <em>fecha-tema</em> para llamar esos archivos. Evita usar espacios y caracteres latinos en los temas. Para trabajar hay que crear un archivo <em>index.qmd</em>. Puedes hacerlo desde el menú: <strong>File ⟹ Quarto document…</strong>, o simplemente copiando algún <em>index.qmd</em> que tengas por ahí y quieras aprovechar como base para iniciar un nuevo documento.</p>
 <p>Configura el encabezado de control con algo así como:</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Descriptivo del contenido"</span></span>
@@ -1026,7 +1026,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","selector":".lightbox","loop":false,"descPosition":"bottom"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","descPosition":"bottom","loop":false,"closeEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
