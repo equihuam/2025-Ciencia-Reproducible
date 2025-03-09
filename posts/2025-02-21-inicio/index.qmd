@@ -12,12 +12,12 @@ fig-cap-location: top
 
 ## [Markdown](https://rstudio.github.io/cheatsheets/quarto.pdf) y la [ciencia abierta](pres-ciencia-abierta.qmd)
 
-*Tan simple como escribir en la página en blanco con pe queñas marcas de intención*. Se ha inventado varias veces y el columpio ha ido y venido entre el interés en ver y controlar las marcas directamente sobre el texto y la preferencia de ver sólo el producto terminado **WYSIWYG** (*lo que ves es lo que tienes*, aunque el marcado existe, pero lo hace la máquina por ti).
+*Tan simple como escribir en la página en blanco con pequeñas marcas de intención*. Se ha inventado varias veces y el columpio ha ido y venido entre el interés en ver y controlar las marcas directamente sobre el texto y la preferencia de ver sólo el producto terminado **WYSIWYG** (*lo que ves es lo que tienes*, aunque el marcado existe, pero lo hace la máquina por ti).
 
 ::: {layout="[1, 1.5]"}
 ![Libro de Irene Vallejo](images/900-el-infinito-en-un-junco-irene-vallejo-alfa.png){#fig-junco width="200px"}
 
-El trabajo del científico, el ingeniero, el estudiante o el creador de contenidos transita por el proceso de escribir, almacenar y dar formato presentable a los documentos. La escritura da origen a la historia y deja atras la prehistoria. Un largo proceso de evolución cultural apasionante que tiene un hermoso recuento en el libro de Irene Vallejo *El infinito en un Junco* ([Fig. @fig-junco]). Hemos explorado las rocas, la arcilla, los pigmentos vegetales y minerales, las pieles de animales y los tejidos vegetales para escribir. Hoy lo hacemos sobre el éter y nos apoyamos en procesos electromagnéticos.
+El trabajo del científico, el ingeniero, el estudiante o el creador de contenidos transita por el proceso de escribir, almacenar y dar formato presentable a los documentos. La escritura da origen a la historia y deja atrás la prehistoria. Un largo proceso de evolución cultural apasionante que tiene un hermoso recuento en el libro de Irene Vallejo *El infinito en un Junco* ([Fig. @fig-junco]). Hemos explorado las rocas, la arcilla, los pigmentos vegetales y minerales, las pieles de animales y los tejidos vegetales para escribir. Hoy lo hacemos sobre el éter y nos apoyamos en procesos electromagnéticos.
 :::
 
 Hacer esto ha involucrado a incontables inventores y lo hacemos recurriendo a herramientas y formatos que tienen registro de propiedad a nombre de lucrativas empresas particulares. Lo hacemos así y el hecho no nos merece ni un suspiro reflexivo sobre sus implicaciones.
@@ -29,7 +29,7 @@ Por la fuerza del hábito, y a pesar de inconvenientes, la mayoría de las revis
 En el movimiento social que nos invita a reflexionar sobre la *ciencia abierta*, hay quienes sostenemos que el conocimiento y el proceso creativo que lo impulsa debe ser lo más libre posible. El talento y la sabiduría su núcleo. Sobre todo en áreas como la salud y la calidad del entorno ecológico en el que vivimos.
 
 ::: {layout="[1.5, -0.1, 1]"}
-Markdown fue desarrollado en 2004 por **John Gruber** ([Fig. @fig-gruber]). Ideo una manera de poner marcas de formato en un texto cómun y corriente (lo llamaremos *texto plano*). También construyó un programa de cómputo (lo escribió en el lenguaje **Perl**), para convertir los archivos ya marcados en *Markdown* a algo conveniente para que las computadoras nos los pudieran presentar a través de la **Web**. Hacer esto implica recontruir y transforrmar el documento original a un nuevo formato, el **HTML** (*HyperText Markup Language*). Encontrarás ayuda sobre como usar *Markdown* en el menú de ayuda de **RStudio**: *Help* $\rightarrow$ *Markdown Quick Reference*.
+Markdown fue desarrollado en 2004 por **John Gruber** ([Fig. @fig-gruber]). Ideo una manera de poner marcas de formato en un texto común y corriente (lo llamaremos *texto plano*). También construyó un programa de cómputo (lo escribió en el lenguaje **Perl**), para convertir los archivos ya marcados en *Markdown* a algo conveniente para que las computadoras nos los pudieran presentar a través de la **Web**. Hacer esto implica reconstruir y transformar el documento original a un nuevo formato, el **HTML** (*HyperText Markup Language*). Encontrarás ayuda sobre como usar *Markdown* en el menú de ayuda de **RStudio**: *Help* $\rightarrow$ *Markdown Quick Reference*.
 
 ![John Gruber](images/John_Gruber,_2009_(cropped)%20-%20By%20Randy%20Stewart,%20CC%20BY-SA%203.0,%20httpscommons.wikimedia.orgwindex.phpcurid=10682505.jpg){#fig-gruber width="200px"}
 :::
@@ -48,7 +48,7 @@ Lo que haremos es:
 
 ### RStudio
 
-Es un *entorno integrado de desarrollo* (**IDE**). Como tal, ofrece una estructura que permite ineractuar con distintos aspecto del proceso creativo. En la figura puedes ver lo que usualmente tienes a tu alcance en una instalación común. Esta configuración la puedes modificar según tus preferencias desde el menú *View* ⟹ *panes*. Pero probablemente al inicio te bastará con la configuración que ya tienes.
+Es un *entorno integrado de desarrollo* (**IDE**). Como tal, ofrece una estructura que permite interactuar con distintos aspecto del proceso creativo. En la figura puedes ver lo que usualmente tienes a tu alcance en una instalación común. Esta configuración la puedes modificar según tus preferencias desde el menú *View* ⟹ *panes*. Pero probablemente al inicio te bastará con la configuración que ya tienes.
 
 ![](images/Rstudio.png)
 
@@ -62,7 +62,7 @@ Sys.setLanguage(lang = "es.UTF-8")
 
 ```
 
-Esto puede ayudar, pero puede ser un problema si necesitas buscar ayuda en Internet, que las más de las veces está en inglés. Entonces, si quieres regresar a éste idioma, harás algo semejante a lo de arriba, pero usarás el código apropiado, por ejemplo para inlgés norteamericano: "en_us.UTF-8"
+Esto puede ayudar, pero puede ser un problema si necesitas buscar ayuda en Internet, que las más de las veces está en inglés. Entonces, si quieres regresar a éste idioma, harás algo semejante a lo de arriba, pero usarás el código apropiado, por ejemplo para inglés norteamericano: "en_us.UTF-8"
 
 ```{r}
 #| eval: false
@@ -77,7 +77,7 @@ Sys.setLanguage(lang = "en_us.UTF-8")
 Todo listo. Anímate a escribir tus primeras líneas en un documento *Quarto*.
 
 ::: {.callout-caution collapse="true" title="Nuevo proyecto"}
-*Rstudio* tiene en su menu **file** la opción de preparar documentos en *Quarto*.
+*Rstudio* tiene en su menú **file** la opción de preparar documentos en *Quarto*.
 
 ![](images/proyecto-blog.png)
 :::
@@ -123,7 +123,7 @@ usethis::git_default_branch()
 
 ```
 
-Si quieres configurar tu instalación de **RStudio** para que siempre defina la rama base como *main*, puedes usar elsiguiente comando. Aunque esto sólo actuará para futuros proyectos, no cambiará nada en los que tienes ya creados hasta este momento.
+Si quieres configurar tu instalación de **RStudio** para que siempre defina la rama base como *main*, puedes usar el siguiente comando. Aunque esto sólo actuará para futuros proyectos, no cambiará nada en los que tienes ya creados hasta este momento.
 
 ```{r}
 #| eval: false
@@ -165,7 +165,7 @@ Nuevamente nos ayudará `usethis`para hacer esto. Lo primero es que para comunic
 usethis::create_github_token()
 ```
 
-Esto te lleva a la página de **Github** en la que hay que generar el **token**. Hay que responder las preguntas que te haga la página, aunque todo estará *prellenado* con lo normalmente necesario. Cuando esté a tu gusto, aprieta el botón respectivo. Aparecerá una nueva pantalla con el **token** que habrá que copiar al *portapapeles* (**ctr-c** en Windows). Este **token** que aparece, es la única vez que lo verás, por lo que conviene copiarlo al *portapapeles* de tu máquina (**ctrl-c** en windows) y tenerlo a buen resguardo por lo pronto. En seguida hay que ejecutar este otro comando en la consola de *RStudio*
+Esto te lleva a la página de **Github** en la que hay que generar el **token**. Hay que responder las preguntas que te haga la página, aunque todo estará *prellenado* con lo normalmente necesario. Cuando esté a tu gusto, aprieta el botón respectivo. Aparecerá una nueva pantalla con el **token** que habrá que copiar al *portapapeles* (**ctrl-c** en Windows). Este **token** que aparece, es la única vez que lo verás, por lo que conviene copiarlo al *portapapeles* de tu máquina (**ctrl-c** en windows) y tenerlo a buen resguardo por lo pronto. En seguida hay que ejecutar este otro comando en la consola de *RStudio*
 
 ```{r}
 #| eval: false
@@ -173,7 +173,7 @@ Esto te lleva a la página de **Github** en la que hay que generar el **token**.
 gitcreds::gitcreds_set()
 ```
 
-Si es la primeta vez que registras un **token** te pedirá que lo registres, dale *paste* (**ctrl-v** en Windows). Si ya tienes un registro dado de alta, te informará sobre lo que tiene anotado y te dará oportunidad de decidir qué quieres hacer en seguida.
+Si es la primera vez que registras un **token** te pedirá que lo registres, dale *paste* (**ctrl-v** en Windows). Si ya tienes un registro dado de alta, te informará sobre lo que tiene anotado y te dará oportunidad de decidir qué quieres hacer en seguida.
 
 Todo está ya preparado, sólo falta poner en uso el vínculo que acabamos de crear. Para eso bastará con decir:
 
@@ -184,11 +184,11 @@ usethis::use_github()
 
 ```
 
-Por cierto, este es el comando qe necesitarán en lo sucesivo para vincular cualquier nuevo proyecto a tt centta ed **Github**, siempre y cuando tu **token** este vigente.
+Por cierto, este es el comando que necesitarán en lo sucesivo para vincular cualquier nuevo proyecto a tu cuenta de **Github**, siempre y cuando tu **token** este vigente.
 :::
 
 ::: {layout="[2,1]"}
-Una vez teminadas estas tarea puedes ir a la pestaña **git** cuando lo consideres conveniente y ordenar a **RStudio** que envié todos los **commits** que están pendientes hasta el momento a **Github**. Para hacerlo deberás apretar el botón **Push**. Antes de hacerlo siempre es conveniente pedirle a **git** que se ponga al día con lo que ya está registrado en la *nube*, esto lo logras con el botón **pull**. Esto nos lleva a una rutina de operación con **git** que se resume en la figura siguiente.
+Una vez terminadas estas tarea puedes ir a la pestaña **git** cuando lo consideres conveniente y ordenar a **RStudio** que envié todos los **commits** que están pendientes hasta el momento a **Github**. Para hacerlo deberás apretar el botón **Push**. Antes de hacerlo siempre es conveniente pedirle a **git** que se ponga al día con lo que ya está registrado en la *nube*, esto lo logras con el botón **pull**. Esto nos lleva a una rutina de operación con **git** que se resume en la figura siguiente.
 
 ![](images/En%20caso%20de%20incendio.png){width="150px"}
 :::
@@ -202,7 +202,7 @@ En la figura se ilustran las dos rutas para hacerlo en *RStudio*.
 
 ![](images/proyecto-con-git.png)
 
-Evidentemete, si seguiste la ruta azul, tu repositorio ya existe en *Github*, una vez qe hayas **clonado** el repositorio en t máquina todo queda listo para concentrarte en escriibir. Si optaste por la ruta verde, entonces deberás crear un nuevo repositorio en *Github*. Para hacerlo Utiliza `usethis` en la pestaña de consola.
+Evidentemente, si seguiste la ruta azul, tu repositorio ya existe en *Github*, una vez que hayas **clonado** el repositorio en tu máquina todo queda listo para concentrarte en escribir. Si optaste por la ruta verde, entonces deberás crear un nuevo repositorio en *Github*. Para hacerlo Utiliza `usethis` en la pestaña de consola.
 
 ```{r}
 #| eval: false
@@ -220,11 +220,11 @@ Eso es todo.
 :::: {.callout-caution collapse="true"}
 ## Publicar tu Blog con ayuda de Netlify
 
-Esta operación inicia en el sitio de *Netlify*, así que por favor dirigete allá e ingresa con tus datos de cuenta si ya los tienes, o registrate para tener acceso al servicio. En un principio no necesitas pagar nada y para la mayoría de los propósitos es muy probable que no lo requieras. En todo caso hay opciones para acceder a especificaciones más *profesionales* que pueden requerir pago, pero siempre podrás elegir lo que más te convenga. En fin, ya debes estar en tu cuenta de *Netlify* ahora.
+Esta operación inicia en el sitio de *Netlify*, así que por favor dirígete allá e ingresa con tus datos de cuenta si ya los tienes, o registrare para tener acceso al servicio. En un principio no necesitas pagar nada y para la mayoría de los propósitos es muy probable que no lo requieras. En todo caso hay opciones para acceder a especificaciones más *profesionales* que pueden requerir pago, pero siempre podrás elegir lo que más te convenga. En fin, ya debes estar en tu cuenta de *Netlify* ahora.
 
-Ojalá las figuras siguientes te ayuden a seguir los pasos necesarios. La tarea es primero, autorizar a *Netlify* para que interactue con *Github*, axí que debes autorizar este enlazamiento de servicios. Una vez que lo hayas hecho, podrás, especificar lo que deberá estar vigilando *Netlify* para que tome *continuamente* lo necesario, lo que hayas cambiado en *Github*. La meta es que construya un sitio Web con tu contenido y lo publique en Internet, y que lo actualice cada vez que des **push** a tu *blog* en *RStudio*. Después de autorizar el vínculo entre los servicios sigue crear un nuevo sitio con tu *blog*, que debe tener en este momento un directorio \*\*\_site\*\* como resultado de haber hecho *Render* en *RStudio*, si no ves ese directorio ve a la pestaña **Build** en *RStudio* y pídele que construya el sitio de tu *blog* completo.
+Ojalá las figuras siguientes te ayuden a seguir los pasos necesarios. La tarea es primero, autorizar a *Netlify* para que interactue con *Github*, así que debes autorizar este enlazamiento de servicios. Una vez que lo hayas hecho, podrás, especificar lo que deberá estar vigilando *Netlify* para que tome *continuamente* lo necesario, lo que hayas cambiado en *Github*. La meta es que construya un sitio Web con tu contenido y lo publique en Internet, y que lo actualice cada vez que des **push** a tu *blog* en *RStudio*. Después de autorizar el vínculo entre los servicios sigue crear un nuevo sitio con tu *blog*, que debe tener en este momento un directorio \*\*\_site\*\* como resultado de haber hecho *Render* en *RStudio*, si no ves ese directorio ve a la pestaña **Build** en *RStudio* y pídele que construya el sitio de tu *blog* completo.
 
-Los pasos que hay que seguir para esta primera interacción son los siguiente. Iniciar la vinculación con *Github* seleccionando la opción que ofrece importar los documentos desde un *repo* Git. Esto tellevara a una pantalla en donde posrás elegir la opción de utilizar *Github* como origen de datos, entre otras posibilidades.
+Los pasos que hay que seguir para esta primera interacción son los siguiente. Iniciar la vinculación con *Github* seleccionando la opción que ofrece importar los documentos desde un *repo* Git. Esto te llevará a una pantalla en donde podrás elegir la opción de utilizar *Github* como origen de datos, entre otras posibilidades.
 
 ![](images/Netlify-1.png)
 
@@ -232,7 +232,7 @@ El Siguiente paso es autorizar a Netlify a acceder a Github a través de tu cuen
 
 ![](images/Netlify-2.png){width="350"}
 
-Si todo ocurrió sin problemas, tendrás ahora en *Github*, en el menú de aplicaciones (Avatar→ Settings→ Applications), un botón que te permitirá configurar el vínculo con *Netlify* según tus requerimientos. También podrás ver los *repos* que hayas autorizado desde *Netlify*. Si le dijiste a netlify que autorice todos los repositorios, no tendrás que visitar esta opción nunca.
+Si todo ocurrió sin problemas, tendrás ahora en *Github*, en el menú de aplicaciones (Avatar→ Settings→ Applications), un botón que te permitirá configurar el vínculo con *Netlify* según tus requerimientos. También podrás ver los *repos* que hayas autorizado desde *Netlify*. Si le dijiste a *Netliffy* que autorice todos los repositorios, no tendrás que visitar esta opción nunca.
 
 ## Creación de un nuevo sitio a publicar
 
@@ -246,7 +246,7 @@ Si todo ocurrió sin problemas, tendrás ahora en *Github*, en el menú de aplic
 ![](images/Netlify-new-site-team.png)
 :::
 
-Cuando aprietas el boton de *añadir sitio*, aparecerá una nueva pantalla que tiene tres secciones. Se trata de los atributos que tendrás que proporcionar para darle presencia en Internet a tu proyecto y algunos otros atributos que definen como se producirá y actualizará continuamente. Estas operaciones es poco probable que las vuelvas a ver, una vez que tu proyecto esté en producción, aunque desde luego estarán siempre ahí por si deseas hacer ajustes.
+Cuando aprietas el botón de *añadir sitio*, aparecerá una nueva pantalla que tiene tres secciones. Se trata de los atributos que tendrás que proporcionar para darle presencia en Internet a tu proyecto y algunos otros atributos que definen como se producirá y actualizará continuamente. Estas operaciones es poco probable que las vuelvas a ver, una vez que tu proyecto esté en producción, aunque desde luego estarán siempre ahí por si deseas hacer ajustes.
 
 #### ¿Qué nombre le daras?
 
@@ -284,7 +284,7 @@ Configura el encabezado de control con algo así como:
 ---
 title: "Descriptivo del contenido"
 author: "Tu Nombre y el de los autores involucrados"
-lang: es
+lang: es 
 date: {{la fecha de publicación}}
 categories: [colección de frases clave separadas por comas]
 image: "archivo de la imágen que deseas incluir como portada"
@@ -295,4 +295,31 @@ fig-cap-location: top
 ```
 
 Si es de tu interés, aquí encontrarás [muchos detalles interesanes sobre YAML](https://rpubs.com/drgregmartin/1266674).
-:::
+::: 
+
+
+::: {.callout-important collapse="true"}
+## Arruiné mi **Blog** ¡¡¡¡Ayuda!!!!
+
+Como ya nos pasó, puede ser que eches a perder tu archivo _index.qmd_ en la raíz de tu proyecto. Ese documento se encarga de construir la estructura general de tu _blog_. Ojalá hayas echo un **commit** inicial justo acabando de crear tu proyecto. Si fuiste así de sabia o sabio, todo lo que tienes que hacer es buscar el archivo en cuestión y recuperarlo. **Github desktop** será tu amigo para eso.
+Por si ocurriera un accidente de este tipo y no hubiera nada más que hacer pongo aquí las líneas generales que suele tener este archivo, cópialas en caso de emergencia y substituye todo lo que tengas en el archivo dañado (si pusiste cosas muy importantes que quiere conservar, haz una copia y haz la reparación en una de ellas. ¡Suerte!
+
+
+``` md
+---
+title: "Título de inicio en tu blog "
+listing:    
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: cloud
+  sort-ui: false
+  filter-ui: false
+page-layout: full
+title-block-banner: true
+---
+```
+
+Recuerda sólo hacer lo escencial en los documentos en la raíz de tu proyecto: el nombre dd tu blog, título inicial y cosas así. No hagas más de lo indispensable en los archivos  **index.qmd** y **_quarto.yml** que están en esta ubicación. Toda tu creatividad debes expresarla dentro de subcarpetas contenidas en la carpeta **posts**.
+      
+::: 
