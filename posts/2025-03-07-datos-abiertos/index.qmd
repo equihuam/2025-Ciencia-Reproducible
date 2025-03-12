@@ -184,13 +184,12 @@ Para empezar, debes saber que estos datos están cubiertos por la licencia **lib
 
 Ahora veamos algunos ejemplos de como interactuar con esos datos mediante **API**.
 
-|  
-
+| 
 
 ```{r}
 #| label: cat-odgmx
 
-pacman::p_load(httr2, jsonlite, tidyverse, DT)
+pacman::p_load(jsonlite, tidyverse, DT, rvest, httr2)
 
 req <- request("https://api.datos.gob.mx/v1/api-catalog?pageSize=8000")
 resp <- req_perform(req)
@@ -247,12 +246,30 @@ dat_O3_df |>
 
 ### Datos de estaciones meteorológicas _Conagua_
 
-Los datos generales de todas las estaciones climatológicas de México están publicadas como datos de acceso abierto, pero no están en forrma de tabla sino en forma de datos geográficos asociados a marcadores de puntos que se despliegan en un mapa. Se comprende que es una entrega de datos pensada para que un usuario acceda a la información en forma interactiva. Pienso que para muchos otros fines de _reuso_ de esos datos conviene tenerlos en formato tabular. El documento geográfico está disponible en formato **kmz**. Este archivo es el tipo que usa _Google Earth_. Es na versión comprimida como un "zip", de otro tipo de archivo que es el **kml**, también desarrollado y usado en _Google Earth_. Lo que podemos hacer es descomprimir el archivo **kmz**, con la herramienta qe prefieras, y procesar el archivo descomprimido resultante. Es lo que haremos enseguida.
+Los datos generales de todas las estaciones climatológicas de México están publicadas como datos de acceso abierto, pero no están en forrma de tabla sino en forma de datos geográficos asociados a marcadores de puntos que se despliegan en un mapa. Se comprende que es una entrega de datos pensada para que un usuario acceda a la información en forma interactiva. Pienso que para muchos otros fines de _reuso_ de esos datos conviene tenerlos en formato tabular. El documento geográfico está disponible en formato **kmz**. Este archivo es el tipo que usa _Google Earth_. Es una versión comprimida como un "zip", de otro tipo de archivo que es el **kml**, también desarrollado y usado en _Google Earth_. Lo que podemos hacer es descomprimir el archivo **kmz**, y procesar el archivo descomprimido resultante. En **R** existe la función `unzip`. Es la que usaremos enseguida.
 
-La estrategia de procesamiento que seguiremos la orientaremos a aprovechar el hecho de que los archivos **kml** son ambién documentos **xml**, semejantes a los que se usan para producir páginas Web, para manejar este tipo de archivos existe en **R** la biblioteca _XML_. El proceso require recorrer el documento y recolectar las piezas de información que interesan. La tarea no es sencilla, pero nos sirve de _ejemplo avanzado_ que ilustra cosas que es posile hacer. Una vez obtenidos estos datos podría ser interesante ver formas de análisis de esttos datos generales que se imagines.
+
+```{r}
+#| label: mapa-estaciones
+
+#descarga el archivo "kmz" de interés
+url_agua <- "http://smn.conagua.gob.mx/"
+url_kmz <- "tools/RESOURCES/Normales_Climatologicas/EstacionesClimatologicas.kmz"   
+archivo_kmz <- "./estaciones.kmz"
+
+httr::GET(paste0(url_agua, url_kmz)) |> 
+  httr::content("raw") |> 
+  writeBin(archivo_kmz)
+
+
+# desempaca el "kmz" y guarda el resultado en "temp-kmz"
+unzip(zipfile = archivo_kmz, exdir = "temp-kmz")
+
+```
+
+La estrategia de procesamiento que seguiremos la orientaremos a aprovechar el hecho de que los archivos **kml** son ambién documentos **xml**, semejantes a los que se usan para producir páginas Web, para manejar este tipo de archivos existe en **R** la biblioteca _rvest_ que empaca [muchas heramientas interesantes](https://rvest.tidyverse.org/index.html) para recolectar y procesar datos directamente del _Internet_ (se le llama **Web scraping** a esta tarea, algo así como ¿*cosechar la web*?). El proceso require recorrer el documento y recolectar las piezas de información que interesan. La tarea no es sencilla, pero nos sirve de _ejemplo avanzado_ que ilustra cosas que es posile hacer. Una vez obtenidos estos datos podría ser interesante ver formas de análisis de esttos datos generales que se imagines.
 
 En el _escript_ que sigue, sólo extraeremos los datos del archivo **kml** y los deslegaremos en forma de tabla. Los datos quedarán disponibles como una tabla _tibble_ (la variante más actual del _data.frame_ original de **R**), que podrás usar de muchas maneras. Me gustará mucho escuchar tus ideas.
-
 
 |  
 
@@ -265,43 +282,43 @@ Este es el mapa a partir de los datos **kmz**
 ```{r}
 #| label: tbl-lista-estaciones
 
-pacman::p_load(XML)
+# carga la biblioteca para procesar el "xml"
+pacman::p_load(xml2)
 
-data <- xmlParse("EstacionesClimatologicas/doc.kml")
-xml_data <- xmlToList(data)
+data <- read_html("temp-kmz//doc.kml")
+xml_data <- as_list(data)
+
+# los datoa de interés están en "folders" 
+# dentro de la rama html/body/kml/document/
+xml_data <- xml_data[["html"]][["body"]][["kml"]][["document"]]
 
 # Estaciones operativas
-datos_ext <- as.list(xml_data[["Document"]][["Folder"]][[3]])
+datos_ext_opr <- xml_data[["folder"]][[3]]
                     
 # Estaciones suspendidas
-datos_ext_2 <- as.list(xml_data[["Document"]][["Folder"]][[4]])
+datos_ext_ssp <- xml_data[["folder"]][[4]]
 
-datos_todo <- c(datos_ext, datos_ext_2)
+datos_todo <- c(datos_ext_opr, datos_ext_ssp)
 
 for (r in datos_todo)
 {
-  if(!identical(r,"Estaciones operativas") & (!identical(r,"Estaciones suspendidas")))
+  if(!identical(r[[1]],"Estaciones operativas") &
+    (!identical(r[[1]],"Estaciones suspendidas")))
   {
-    e <- r$ExtendedData$SchemaData
+    e <- r$extendeddata$schemadata
     # recupera datos de la estación 
     nombres <- character(length(e)-1)
     valores <- character(length(e)-1)
     for (i in 1:(length(e)-1))
     {
-      if((hasName(e[[i]], "text") & (hasName(e[[i]], ".attrs"))))
-      {
-        nombres[i] <- e[[i]]$.attrs
-        valores[i] <- e[[i]]$text
-      } else {
-        nombres[i] <- e[[i]]
-        valores[i] <- NA
-      }
+        nombres[i] <- attr(e[[i]], "name")
+        if (!is_empty(e[[i]])) valores[i] <- e[[i]][[1]]
     }
     
     datos_temp <- tibble(nombres, valores) %>%
       pivot_wider(names_from = nombres, values_from = valores)
     
-    if (identical(r, datos_ext[[2]]))
+    if (identical(r, datos_ext_opr[[2]]))
     {
       datos_est <- tibble(datos_temp)
     } else {
