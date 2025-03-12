@@ -1,0 +1,256 @@
+---
+title: "Dar formato a mi documeto"
+author: "Miguel Equihua"
+date: 14/mar/2025
+
+lang: es
+categories: [div, fences, pestañas, cajas]
+
+toc: true
+
+image: magnifying-glass-541626_1280.jpg
+
+format: 
+  html: 
+    grid:
+      sidebar-width: 300px
+      body-width: 800px
+      margin-width: 300px
+      gutter-width: 1.5rem
+
+lightbox: true
+---
+
+
+No me gustó la configuración *default* que usa *Quarto*, de justificar a la izquierda las leyendas de las figuras. Para cambiar eso use el código del @lst-css. Esto tiene un poco que ver con el asunto de darle en general un *tema/aspecto* al proyecto. [Aquí puedes encontrar más información](https://quarto.org/docs/output-formats/html-themes.html) al respecto.
+
+::: {#lst-css lst-cap="Código css para centrar la leyenda."}
+```{css}
+
+figcaption {
+    text-align: center;
+}
+
+```
+:::
+
+## Identificadores fijos
+
+*Quarto* tiene prevista toda una colección de identificadores para reconocer los distintos tipos de componentes que pueden requerir alguna forma de llamada en el texto. Claramente es el caso de **figuras** y **tablas**. Pero *Quarto* tiene además toda una gama de componentes que son susceptibles de *referencia cruzada*. Los anoto en el @tbl-prefijos. Algunos de ellos corresponden con *bloques de llamada* (**callouts**), que desde luego también puede ser interesante referir en otras partes del texto y que podrían tener contenido distinto al sugerido por el bloque. Por ejemplo, dentro de un bloque *tip*, podría ponerse una definición a la que se hace referencia en otra parte del texto. Además, podrías definir tu propio prefijo para llevar control de alguna clase de componente de t interés. Puedes encontrar [más al respecto en la documentación de Quarto](https://quarto.org/docs/reference/metadata/crossref.html). 
+
+\
+\
+
+| Prefijo    | Componente        |
+|------------|-------------------|
+| {tu clave} | {tus términos}    |
+| cau        | precaución        |
+| cnj        | conjetura         |
+| cor        | corolario         |
+| def        | definición        |
+| eq         | ecuación          |
+| exm        | ejemplo           |
+| exr        | ejercicio         |
+| fig        | figura            |
+| imp        | importante        |
+| lem        | lema              |
+| lst        | código de cómputo |
+| nte        | notas             |
+| prp        | proposición       |
+| rem        | observación       |
+| sec        | sección           |
+| sol        | solución          |
+| tbl        | cuadro            |
+| thm        | teorema           |
+| tip        | sugerencia        |
+| wrn        | advertencia       |
+: Lista de prefijos previstos en *Quarto* {#tbl-prefijos}
+
+\
+
+Me preguntabas sobre como incluir la definición de algo de interés (@def-definir). Está es la manera.
+
+\
+
+**\:\:\: \{\#def-definir\}**\
+**Definición de algo importante**\
+**\:\:\:**\
+
+\
+
+-------------
+
+::: {#def-definir}
+Definición de algo importante
+:::
+
+------------
+
+\
+\
+
+Puede ser que interese hacer referencia a un poco de código computacional que es importante en la explicación de tus hallazgos científicos o tecnológicos. Por ejemplo, el @lst-cod-1 es el que use para producir la @fig-sun-burst. Se trata de una ilustración de la taxonomía de características de *sabor* que pueden apreciarse en una taza de café. La gráfica de la izquierda son datos un poco resumidos y los de la derecha una lista llamada *completa*. La presentación permite comparar ambos conjuntos de datos.
+
+::: {#lst-cod-1 lst-cap="Código para producir una gráfica bonita."}
+```{r}
+#| warning: false
+#| code-overflow: wrap
+
+library(plotly, warn.conflicts = FALSE, quietly = TRUE, mask.ok = TRUE)
+
+d1 <- read.csv('https://raw.githubusercontent.com/plotly/datasets/master/coffee-flavors.csv')
+d2 <- read.csv('https://raw.githubusercontent.com/plotly/datasets/718417069ead87650b90472464c7565dc8c2cb1c/sunburst-coffee-flavors-complete.csv')
+fig <- plot_ly() 
+fig <- fig %>%
+  add_trace(
+    ids = d1$ids,
+    labels = d1$labels,
+    parents = d1$parents,
+    type = 'sunburst',
+    maxdepth = 2,
+    domain = list(column = 0)
+    ) 
+fig <- fig %>%
+  add_trace(
+    ids = d2$ids,
+    labels = d2$labels,
+    parents = d2$parents,
+    type = 'sunburst',
+    maxdepth = 3,
+    domain = list(column = 1)
+  ) 
+fig <- fig %>%
+  layout(autosize=F, width = 700, height = 450, 
+         grid = list(columns =2, rows = 1),
+         margin = list(l = 0, r = 0, b = 0, t = 0),
+         sunburstcolorway = c("#636efa","#EF553B","#00cc96",
+                              "#ab63fa","#19d3f3","#e763fa",
+                              "#FECB52","#FFA15A","#FF6692",
+                              "#B6E880"),
+      extendsunburstcolors = TRUE)
+```
+:::
+
+::: {layout="[-1,5,-1]"}
+```{r}
+#| label: fig-sun-burst
+#| fig-cap: Gráfica dinámica bonita con biblioteca Plotly
+#| warning: false
+#| out-width: 8in
+#| out-height: 5in
+#| echo: false
+
+fig
+```
+:::
+
+
+
+## Bloques tipo "caja"
+
+A veces conviene ofrecer información adicional al lector, dándole la oportunidad de decidir cuándo o si es que la desea ver. Hay una colección de cajas de este tipo en _Quarto_ que se engloban en la conjunto [callout](https://quarto.org/docs/authoring/callouts.html). Su uso es mediante _fences_ (**div**), el sistema de marcado que se inicia con `::: {_indicación_}` y se cierra con `:::`.
+
+| tipo | llamada |
+|------|---------|
+|note      |::: {.callout-note}|    
+|warning   |::: {.callout-warning}|
+|important |::: {.callout-important}|
+|tip       |::: {.callout-tip}|
+|caution   |::: {.callout-caution}|
+
+En cada uno de estos casos puedes agregar la frase: `collapse="true"`. Al hacerlo, el bloque aparecerá cerrado y el lector deberá activarlo para leer su contenido. Puedes también agregar un título con la frase `title="Tip with Title"` o si anotas un texto con marcado de sub título en seguida de la llamada.
+
+**\:\:\: {.callout-tip}**\
+**\#\# Título de un bloque de "sugerencias"**\
+**Algo que sea importante decir, ¡pero no indispensable!**\
+**\:\:\:**
+
+## Formato del texto
+
+Se puede usar la opción `style` que admite varios componentes:
+
+**\:\:\: {style="font-size: 50%; color:green; font-family: helvetica; font-size:44px;"}**
+
+Tamaño de letra en _puntos_ (**px**)
+
+**\:\:\: {style="font-size:44px;"}**
+
+Esto también se puede hacer a nivel incluso de una letra con la idea siguiente:
+
+**\[rojo\]\{style="color:red;"\}**.
+
+Puede interesarte una referencia a como definir los colores. Hay muchas posibilidades en la Web, pero [está es un inicio](https://htmlcolorcodes.com/es/). Con esta página conseguiras el código _hexadecimal_, el que está marcado con **#**. Lo puedes usar así:
+
+**\[rojo\]\{style="color:#E71D02;"\}**
+
+Muchos [colores tienen nombres definidos](https://htmlcolorcodes.com/color-names/), si lo prefieres puedes usarlos en lugar del código _hexadecimal_.
+
+Otra opción del _atributo_ `style` es la forma de justificación de un texto. La frase a usar es `text-align: justify`. Las variantes de justificación son las usuales: _justify_, _center_, _right_, _left_. Si quieres profundizar más en todo esto te sugiero [empezar aquí](https://www.w3schools.com/cssref/pr_text_text-align.php)
+
+::: {style="text-align: right; color:#E71D00;"}
+Lorem ipsum dolor sit amet consectetur adipiscing elit, augue rutrum feugiat vitae habitasse nisi aenean tellus, suspendisse malesuada faucibus nam dapibus id. Gravida felis dictumst at nibh lacinia ut hendrerit euismod pellentesque, scelerisque sed conubia commodo iaculis luctus tristique rhoncus, velit eleifend purus class non rutrum odio placerat. Integer sagittis magnis lacus erat senectus lobortis aliquet sodales, dignissim convallis conubia arcu pretium suscipit a torquent faucibus, velit laoreet maecenas auctor vivamus morbi netus.
+:::
+
+algo así [texto de color]{style="text-align: right; color:#E71D00; font-size:44px;"} y sigo escribiendo.
+
+
+## Información en "pestañas"
+
+Puede resultarte interesante considerar presentar tu información como si se tratara de una libreta con [secciones reconocibles por pestañas](https://quarto.org/docs/output-formats/html-basics.html#tabsets). Para hacerlo, el _bloque_ (**div**) se contruye así.
+
+**\:\:\:** **\{.panel-tabset\}**\
+**\#\#** **Descripción de los datos**
+
+**Es realmente un subdocumento, que podrá tener texto, código, gráficas, etc.**
+
+**\#\#** **Estrategia analítica**
+
+**Misma cosa. Subdocumento en el que abordas el tema que anuncias en la _pestaña_.**
+
+**\:\:\:**
+
+
+::: {.panel-tabset}
+## Descripción de los datos
+
+Es realmente un subdocumento, que podrá tener texto, código, gráficas, etc.
+
+## Estrategia analítica
+
+Misma cosa. Subdocumento en el que abordas el tema que anuncias en la _pestaña_.
+
+:::
+
+
+Hay muchas posibilidades para dar formato a un documento. Lo que describí aquí son sólo cosas elementales. Otros recursos disponibles son temas, definición de estilos con archivos `*.css` o `*.scc`. Más [información la podrás encontrar acá](https://quarto.org/docs/output-formats/html-themes.html). Puedes darte una idea de las posibilidades [visitando la galería](https://quarto.org/docs/gallery/). 
+
+Por otro lado, te sugiero **dosificar el esfuerzo**. Nuestro propósito es la **comunicación efectiva de contenidos científicos** y la **documentación reproducible** de los **procesos de producción de conocimiento nuevo** en los que participes. Esto sugiere que hay que procurar mantener al mínimo el uso de variantes estilísticas en tus documentos, aunque hay que recordar también que somos sensibles al valor estético de lo que observamos. Desde luego, ser **minimalista** no te debe impedir elaborar algunos productos muy cuidados en los que los elementos de diseño tomarán un papel relevante: presentaciones para público general, libros, manuales, infografías, tableros interactivos (_dashboards_), etc. Siempre, deberás encontrar un equilibrio entre estética y funcionalidad. También recuerda ser ordenado en tus procesos. Cada proyecto un directorio nuevo, adecuadamente documentado y preservado. 
+
+
+[Cómo configurar un sitio web en Quarto](https://quarto.org/docs/websites/website-navigation.html)
+
+
+::: {layout-ncol=2}
+![](img/web-1.png){width=300}
+
+![](img/web-2.png){width=300}
+
+:::
+
+[Configura un Blog](https://quarto.org/docs/websites/website-blog.html)
+
+Es básicamente un Website con una _landing-page_ que genera automáticamente una lista del contenido del blog (los documentos contenidos en **posts**).
+
++ documento definiendo la _landing-page_ **index.qmd** en directorio raíz.
++ especificar en el archivo de control un directorio base de contribuciones.
++ documento de metadatos que especifica como tratar el contenido de contribuciones
+
+[Escribir una presentación Revealjs](https://quarto.org/docs/presentations/revealjs/)
+
+![](img/reveal-js.png)
+
+## Extensiones para Quarto
+
+_Quarto_, como _R_, es una pieza de software que propicia la colaboración abierta en su desarrollo, así que hay creciente núumero de extensiones. Algunas de ellas las [encuentras aqí](https://quarto.org/docs/extensions/listing-revealjs.html). Para el caso particular de las presentaciones te interesará aprender [algunas técnicas avanzadas](https://quarto.org/docs/presentations/revealjs/advanced.html)
+
+

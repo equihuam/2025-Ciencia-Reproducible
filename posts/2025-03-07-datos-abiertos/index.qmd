@@ -257,19 +257,20 @@ url_agua <- "http://smn.conagua.gob.mx/"
 url_kmz <- "tools/RESOURCES/Normales_Climatologicas/EstacionesClimatologicas.kmz"   
 archivo_kmz <- "./estaciones.kmz"
 
-httr::GET(paste0(url_agua, url_kmz)) |> 
-  httr::content("raw") |> 
+httr2::request(paste0(url_agua, url_kmz)) |> 
+  httr2::req_perform() |> 
+  httr2::resp_body_raw() |> 
   writeBin(archivo_kmz)
 
 
-# desempaca el "kmz" y guarda el resultado en "temp-kmz"
+ # desempaca el "kmz" y guarda el resultado en "temp-kmz"
 unzip(zipfile = archivo_kmz, exdir = "temp-kmz")
 
 ```
 
-La estrategia de procesamiento que seguiremos la orientaremos a aprovechar el hecho de que los archivos **kml** son ambién documentos **xml**, semejantes a los que se usan para producir páginas Web, para manejar este tipo de archivos existe en **R** la biblioteca _rvest_ que empaca [muchas heramientas interesantes](https://rvest.tidyverse.org/index.html) para recolectar y procesar datos directamente del _Internet_ (se le llama **Web scraping** a esta tarea, algo así como ¿*cosechar la web*?). El proceso require recorrer el documento y recolectar las piezas de información que interesan. La tarea no es sencilla, pero nos sirve de _ejemplo avanzado_ que ilustra cosas que es posile hacer. Una vez obtenidos estos datos podría ser interesante ver formas de análisis de esttos datos generales que se imagines.
+La estrategia de procesamiento que seguiremos la orientaremos a aprovechar el hecho de que los archivos **kml** son ambién documentos **xml**, semejantes a los que se usan para producir páginas Web, para manejar este tipo de archivos existe en **R** la biblioteca _rvest_ que empaca [muchas heramientas interesantes](https://rvest.tidyverse.org/index.html) para recolectar y procesar datos directamente del _Internet_ (se le llama **Web scraping** a esta tarea, algo así como ¿*cosechar la web*?). El proceso require recorrer el documento y recolectar las piezas de información que interesan. La tarea no es sencilla, pero nos sirve de _ejemplo avanzado_ que ilustra cosas que es posile hacer. Una vez obtenidos estos datos podría ser interesante ver formas de análisis de esttos datos generales que te imagines.
 
-En el _escript_ que sigue, sólo extraeremos los datos del archivo **kml** y los deslegaremos en forma de tabla. Los datos quedarán disponibles como una tabla _tibble_ (la variante más actual del _data.frame_ original de **R**), que podrás usar de muchas maneras. Me gustará mucho escuchar tus ideas.
+En el _escript_ que sigue, sólo extraeremos los datos del archivo **kml** y los desplegaremos en forma de tabla. Los datos quedarán disponibles como una tabla _tibble_ (la variante más moderna del _data.frame_ original de **R**), que podrás usar de muchas maneras. Me gustará mucho escuchar tus ideas.
 
 |  
 
@@ -295,7 +296,7 @@ xml_data <- xml_data[["html"]][["body"]][["kml"]][["document"]]
 # Estaciones operativas
 datos_ext_opr <- xml_data[["folder"]][[3]]
                     
-# Estaciones suspendidas
+# Estaciones suspendidas        
 datos_ext_ssp <- xml_data[["folder"]][[4]]
 
 datos_todo <- c(datos_ext_opr, datos_ext_ssp)
