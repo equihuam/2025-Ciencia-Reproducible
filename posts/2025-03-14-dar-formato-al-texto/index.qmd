@@ -4,6 +4,7 @@ author: "Miguel Equihua"
 date: 14/mar/2025
 
 lang: es
+
 categories: [div, fences, pestañas, cajas]
 
 toc: true
@@ -303,7 +304,7 @@ render_graph(example_graph, layout = "nicely")
 
 mermaid("
     gantt
-        dateFormat YYYY-MM-DD
+        dateFormat YYYY-MMM-DD
         title Un diagrama de Gantt
 
         section Grupo 1
@@ -316,8 +317,38 @@ mermaid("
 )
 
 ```
+
+
 ```{r}
-df <- data.frame(task = c("task1", "task2", "task3"), status = c("done", "active", "crit"), pos = c("first_1", "first_2", "first_3"), start = c("2014-01-06", "2014-01-09", "after first_2"), end = c("2014-01-08", "3d", "5d"))
+df <- data.frame(task = c("task1", "task2", "task3"), status = c("done", "active", "crit"), pos = c("first_1", "first_2", "first_3"), start = c("2025-01-06", "2025-01-09", "after first_2"), end = c("2025-01-08", "3d", "5d"))
+
+library(DiagrammeR)
+library(tidyr)
+library(lubridate)
+
+m <- mermaid(paste0( 
+  # mermaid "header", each component separated with "\n" (line break)    
+  "gantt", "\n", 
+  "dateFormat YYYY-MMM-DD", "\n", 
+  "title Un bonito diagrama de Gantt", "\n", 
+  # unite the first two columns (task & status) and separate them with ":" 
+  # then, unite the other columns and separate them with "," 
+  # this will create the required mermaid "body" 
+  paste(df %>% 
+          unite(i, task, status, sep = ":") %>% 
+          unite(j, i, pos, start, end, sep = ",") %>% 
+          .$j, collapse = "\n" ), "\n" ) )
+
+
+m$x$config <-  list(ganttConfig = 
+                      list(axisFormatter = list(
+                        list("%b %d, %Y", 
+                             htmlwidgets::JS(
+                               'function(d){return d.getDay() == 1 }') 
+      )) 
+    ))
+
+ m
 
 ```
 
