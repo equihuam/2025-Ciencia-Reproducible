@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Por una Ciencia Reproducible 2025 – Ciencia Abierta</title>
+<title>Untitled – Ciencia Abierta</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./images/pluma-escritura.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -69,65 +67,10 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Buscar"
   }
 }</script>
-<script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -135,7 +78,7 @@ window.Quarto = {
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -171,314 +114,58 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">Por una Ciencia Reproducible 2025</h1>
-                      </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta column-page-left">
-
-      
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categorías</h5><div class="quarto-listing-category category-cloud"><div class="category" data-category="antecedentes"><span class="quarto-category-count category-cloud-2">antecedentes</span></div><div class="category" data-category="cajas"><span class="quarto-category-count category-cloud-2">cajas</span></div><div class="category" data-category="conceptos"><span class="quarto-category-count category-cloud-2">conceptos</span></div><div class="category" data-category="datos abiertos"><span class="quarto-category-count category-cloud-2">datos abiertos</span></div><div class="category" data-category="div"><span class="quarto-category-count category-cloud-2">div</span></div><div class="category" data-category="fences"><span class="quarto-category-count category-cloud-2">fences</span></div><div class="category" data-category="galería"><span class="quarto-category-count category-cloud-2">galería</span></div><div class="category" data-category="git"><span class="quarto-category-count category-cloud-2">git</span></div><div class="category" data-category="gráficas"><span class="quarto-category-count category-cloud-2">gráficas</span></div><div class="category" data-category="inicio"><span class="quarto-category-count category-cloud-2">inicio</span></div><div class="category" data-category="mapas"><span class="quarto-category-count category-cloud-2">mapas</span></div><div class="category" data-category="markdown"><span class="quarto-category-count category-cloud-2">markdown</span></div><div class="category" data-category="pestañas"><span class="quarto-category-count category-cloud-2">pestañas</span></div><div class="category" data-category="presentación"><span class="quarto-category-count category-cloud-2">presentación</span></div><div class="category" data-category="propuestas"><span class="quarto-category-count category-cloud-2">propuestas</span></div><div class="category" data-category="rstudio"><span class="quarto-category-count category-cloud-2">rstudio</span></div><div class="category" data-category="scraping"><span class="quarto-category-count category-cloud-2">scraping</span></div><div class="category" data-category="tablas"><span class="quarto-category-count category-cloud-2">tablas</span></div><div class="category" data-category="taller"><span class="quarto-category-count category-cloud-3">taller</span></div></div></div>
+    <div class="quarto-alternate-formats"><h2>Otros formatos</h2><ul><li><a href="mermeid.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Untitled</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">gantt
+    title A Gantt Diagram
+    dateFormat YYYY-MM-DD
+    section Section
+        A task          :a1, 2014-01-01, 30d
+        Another task    :after a1, 20d
+    section Another
+        Task in Another :2014-01-12, 12d
+        another task    :24d
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
 
 
 
-
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="div,fences,pestañas,cajas" data-listing-date-sort="1741906800000" data-listing-file-modified-sort="1741811136917" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2054">
-<div class="thumbnail">
-<p><a href="./posts/2025-03-14-dar-formato-al-texto/index.html" class="no-external"></a></p><a href="./posts/2025-03-14-dar-formato-al-texto/index.html" class="no-external">
-<p><img loading="lazy" src="./posts/2025-03-14-dar-formato-al-texto/magnifying-glass-541626_1280.jpg" class="thumbnail-image"></p>
-</a><p><a href="./posts/2025-03-14-dar-formato-al-texto/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2025-03-14-dar-formato-al-texto/index.html" class="no-external">Dar formato a mi documeto</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2025-03-14-dar-formato-al-texto/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('div'); return false;">
-div
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('fences'); return false;">
-fences
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('pestañas'); return false;">
-pestañas
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('cajas'); return false;">
-cajas
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2025-03-14-dar-formato-al-texto/index.html" class="no-external">Voy a empezar por “no me gustó la configuración <em>default</em> que usa <em>Quarto</em>”, en cuanto a justificar a la izquierda las leyendas de las figuras. Para cambiar eso use el código del …<em></em></a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2025-03-14-dar-formato-al-texto/index.html" class="no-external">
-<div class="listing-date">
-Xalapa, Ver., 14 de marzo, 2025
-</div>
-<div class="listing-author">
-Miguel Equihua
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="datos abiertos,scraping" data-listing-date-sort="1741302000000" data-listing-file-modified-sort="1741738809749" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2347">
-<div class="thumbnail">
-<p><a href="./posts/2025-03-07-datos-abiertos/index.html" class="no-external"></a></p><a href="./posts/2025-03-07-datos-abiertos/index.html" class="no-external">
-<p><img loading="lazy" src="./posts/2025-03-07-datos-abiertos/images/logo-goFAIR.svg" class="thumbnail-image"></p>
-</a><p><a href="./posts/2025-03-07-datos-abiertos/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2025-03-07-datos-abiertos/index.html" class="no-external">Datos abiertos</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2025-03-07-datos-abiertos/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('datos abiertos'); return false;">
-datos abiertos
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('scraping'); return false;">
-scraping
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2025-03-07-datos-abiertos/index.html" class="no-external">La preparación, oferta y mantenimiento de datos abiertos es parte de los intereses en búsqueda de una ciencia abierta. En este sentido conviene considerar los principios de…<strong></strong><strong></strong></a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2025-03-07-datos-abiertos/index.html" class="no-external">
-<div class="listing-date">
-Xalapa, Ver., 7 de marzo, 2025
-</div>
-<div class="listing-author">
-Miguel Equihua
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="mapas,tablas,gráficas,galería" data-listing-date-sort="1740697200000" data-listing-file-modified-sort="1741415235128" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1579">
-<div class="thumbnail">
-<p><a href="./posts/2025-02-28-contenido/index.html" class="no-external"></a></p><a href="./posts/2025-02-28-contenido/index.html" class="no-external">
-<p><img loading="lazy" src="./posts/2025-02-28-contenido/img/Image by Pete Linforth from Pixabay-ai-generated-8411278_1280.jpg" class="thumbnail-image"></p>
-</a><p><a href="./posts/2025-02-28-contenido/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2025-02-28-contenido/index.html" class="no-external">¿Qúe puedo incluir en mis documentos?</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2025-02-28-contenido/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('mapas'); return false;">
-mapas
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('tablas'); return false;">
-tablas
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('gráficas'); return false;">
-gráficas
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('galería'); return false;">
-galería
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2025-02-28-contenido/index.html" class="no-external">Tu Blog contendrá alguno o varios de los siguientes componentes:</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2025-02-28-contenido/index.html" class="no-external">
-<div class="listing-date">
-Xalapa, Ver., 28 de febrero, 2025
-</div>
-<div class="listing-author">
-Miguel Equihua
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="taller,inicio,markdown,rstudio,git" data-listing-date-sort="1740092400000" data-listing-file-modified-sort="1741480906899" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="16" data-listing-word-count-sort="3134">
-<div class="thumbnail">
-<p><a href="./posts/2025-02-21-inicio/index.html" class="no-external"></a></p><a href="./posts/2025-02-21-inicio/index.html" class="no-external">
-<p><img loading="lazy" src="./posts/2025-02-21-inicio/images/Image by Mojca-Peter from Pixabay - seeds-1217133_1280.jpg" class="thumbnail-image"></p>
-</a><p><a href="./posts/2025-02-21-inicio/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2025-02-21-inicio/index.html" class="no-external">Los primeros pasos</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2025-02-21-inicio/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('taller'); return false;">
-taller
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('inicio'); return false;">
-inicio
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('markdown'); return false;">
-markdown
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('rstudio'); return false;">
-rstudio
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('git'); return false;">
-git
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2025-02-21-inicio/index.html" class="no-external"><em>Tan simple como escribir en la página en blanco con pequeñas marcas de intención</em>. Se ha inventado varias veces y el columpio ha ido y venido entre el interés en ver y…<strong></strong><em></em></a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2025-02-21-inicio/index.html" class="no-external">
-<div class="listing-date">
-Xalapa, Ver., 21 de febrero, 2025
-</div>
-<div class="listing-author">
-Miguel Equihua
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="antecedentes,presentación,conceptos,propuestas" data-listing-date-sort="1740092400000" data-listing-file-modified-sort="1741316612840" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="632">
-<div class="thumbnail">
-<p><a href="./posts/2025-02-21-inicio/pres-ciencia-abierta.html" class="no-external"></a></p><a href="./posts/2025-02-21-inicio/pres-ciencia-abierta.html" class="no-external">
-<p><img loading="lazy" src="./posts/2025-02-21-inicio/images/ciencia-abierta-conahcyt.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/2025-02-21-inicio/pres-ciencia-abierta.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2025-02-21-inicio/pres-ciencia-abierta.html" class="no-external">Ciencia Abierta:</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2025-02-21-inicio/pres-ciencia-abierta.html" class="no-external">Retos y Perspectivas</a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('antecedentes'); return false;">
-antecedentes
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('presentación'); return false;">
-presentación
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('conceptos'); return false;">
-conceptos
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('propuestas'); return false;">
-propuestas
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2025-02-21-inicio/pres-ciencia-abierta.html" class="no-external">La ciencia abierta surge como un movimiento que nos invita a reconsiderar como se desarrolla la actividad científica, como se accede a sus resultado e incluso como se pueden gestionar oportunidades para que el público general se pueddda involucra en sus procesos y apropiarrse de sus beneficios con mayor facilidad y confianza. </a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2025-02-21-inicio/pres-ciencia-abierta.html" class="no-external">
-<div class="listing-date">
-Xalapa, Ver., 21 de febrero, 2025
-</div>
-<div class="listing-author">
-Miguel Equihua, Griselda Benítez, Octavio Pérez Maqueo
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="taller" data-listing-date-sort="1739487600000" data-listing-file-modified-sort="1741316612155" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="878">
-<div class="thumbnail">
-<p><a href="./posts/2025-02-14-taller/index.html" class="no-external"></a></p><a href="./posts/2025-02-14-taller/index.html" class="no-external">
-<p><img loading="lazy" src="./posts/2025-02-14-taller/Poster-r-ciencia.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/2025-02-14-taller/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2025-02-14-taller/index.html" class="no-external">Una Nueva Manera de Escribir</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2025-02-14-taller/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('taller'); return false;">
-taller
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2025-02-14-taller/index.html" class="no-external">Curso-taller para iniciarse en las habilidades que promueve la ciencia abierta. La apertura invita a ampliar la colaboración, pero también la eficacia con la que se colabora…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2025-02-14-taller/index.html" class="no-external">
-<div class="listing-date">
-Xalapa, Ver., 14 de febrero, 2025
-</div>
-<div class="listing-author">
-Miguel Equihua
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-listing-date-sort="1739487600000" data-listing-file-modified-sort="1741316613084" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="31">
-<div class="thumbnail">
-<p><a href="./posts/bienvenida/index.html" class="no-external"></a></p><a href="./posts/bienvenida/index.html" class="no-external">
-<p class="card-img-top"><img src="posts\bienvenida\images\840-2404-1-PB-A.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/bienvenida/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/bienvenida/index.html" class="no-external">Blog de Reproducibilidad Científica</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/bienvenida/index.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/bienvenida/index.html" class="no-external">Este es un espacio para conversar sobre Ciencia Reproducible. La figura ilustra los pilares de la reproducibilidad de acuerdo con lo expresado en este artículo de González-Ra…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/bienvenida/index.html" class="no-external">
-<div class="listing-date">
-Xalapa, Ver., 14 de febrero, 2025
-</div>
-<div class="listing-author">
-Miguel Equihua
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No hay resultados
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
