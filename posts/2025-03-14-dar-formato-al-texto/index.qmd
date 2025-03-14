@@ -257,73 +257,38 @@ Es básicamente un Website con una _landing-page_ que genera automáticamente un
 
 ## Extensiones para Quarto
 
-_Quarto_, como _R_, es una pieza de software que propicia la colaboración abierta en su desarrollo, así que hay creciente núumero de extensiones. Algunas de ellas las [encuentras aqí](https://quarto.org/docs/extensions/listing-revealjs.html). Para el caso particular de las presentaciones te interesará aprender [algunas técnicas avanzadas](https://quarto.org/docs/presentations/revealjs/advanced.html).
+_Quarto_, como _R_, es una pieza de software que propicia la colaboración abierta en su desarrollo, así que hay creciente núumero de extensiones. Algunas de ellas las [encuentras aquí](https://quarto.org/docs/extensions/listing-revealjs.html). Para el caso particular de las presentaciones te interesará aprender [algunas técnicas avanzadas](https://quarto.org/docs/presentations/revealjs/advanced.html).
+
+
+Diagrama de Gantt. Producido a partir de una especificación de elementos según comandos clave de la _aplicación mermaid_ para la produción de diveros tipos de diagrams basados en **Java Script**. La documentación y un herramienta de diseño auxiliar se encuentra en la [documentación de mermaid](https://mermaid.js.org/)
 
 
 ```{r}
-library(dplyr)
+#| label: gantt
+
 library(DiagrammeR)
 
-example_graph <-
-  create_graph() %>%
-  add_pa_graph(
-    n = 50, m = 1,
-    set_seed = 23
-  ) %>%
-  add_gnp_graph(
-    n = 50, p = 1/100,
-    set_seed = 23
-  ) %>%
-  join_node_attrs(df = get_betweenness(.)) %>%
-  join_node_attrs(df = get_degree_total(.)) %>%
-  colorize_node_attrs(
-    node_attr_from = total_degree,
-    node_attr_to = fillcolor,
-    palette = "Greens",
-    alpha = 90
-  ) %>%
-  rescale_node_attrs(
-    node_attr_from = betweenness,
-    to_lower_bound = 0.5,
-    to_upper_bound = 1.0,
-    node_attr_to = height
-  ) %>%
-  select_nodes_by_id(nodes = get_articulation_points(.)) %>%
-  set_node_attrs_ws(node_attr = peripheries, value = 2) %>%
-  set_node_attrs_ws(node_attr = penwidth, value = 3) %>%
-  clear_selection() %>%
-  set_node_attr_to_display(attr = NULL)
-
-render_graph(example_graph, layout = "nicely")
-
-```
-
-+
-
-```{r}
-
-m <- mermaid("
-    gantt
-        dateFormat YYYY-MMM-DD
-        title Un diagrama de Gantt
-
-        section Grupo 1
-           Una tareas      :a1, 2025-01-01, 30d
-           Otra tarea      :after a1, 20d
-        section Grupo 2
-           Tarea en grupo 2 :2025-12-01, 12d
-           Otra tareaa en 2 :24d"  
+m <- mermaid(
+"
+  gantt
+      dateFormat YYYY-MM-DD
+      title Un diagrama de Gantt
   
+      section Grupo 1
+         Una tareas      :a1, 2025-03-01, 30d
+         Otra tarea      :after a1, 25d
+      section Grupo 2
+         Tarea en grupo 2 :2025-10-01, 12d
+         Otra tareaa en 2 :24d
+"
+    
 )
 
-m$x$config <-  list(ganttConfig = 
-                      list(axisFormatter = list(
-                        list("%b %d, %Y", 
-                             htmlwidgets::JS(
-                               'function(d){return d.getDay() == 1 }') 
-      )) 
-    ))
 
 m
 ```
+
+
+
+
 
