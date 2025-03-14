@@ -30,8 +30,14 @@ A partir de estos elementos es posible clasificar los tipos de estudios que se r
 
 En todos estos casos existe una gran oferta de métodos estadísticos de procesamiento de datos para evitar el *efecto distractor* de los factores y procesos de confusión que dificultan comprender la consistencia y relevancia de los hallazgos científicos y tecnológicos. Recientemente se ha avanzado mucho a este respecto con el uso de diagramas causales y la comorensión de los patrones de correlación que cabría esperar en caso de que sean razonablemente apegados al proceso que estemos analizando. Estos diagramas son conocidos como **DAG** (*Directed Acyclic Graphs*) y encontraras una referencia interesante a ellos en [@pearl_libro_2020].
 
-Si tu estudio es más de tipo retrospectivo es decir buscas analizar datos estadísticos o vas a realizr una encuesta, el libro en línea de [@velasquez_exploring_nodate] es una fuente iteresante. Si por el contrario, te inclinas por un trabajo del tipo de experimento controlado, te sugiero el libro de [@lawson_design_2014]. Finalmente, te sugiero consideres también el punto de vista que propone para **repensar el uso de la estadística** este otro autor [@mcelreath_statistical_2020]. Puede interesrte también ete artíulo sobre los datos abiertos que ofrece [Inegi y su bilioteca para **R**](https://rde.inegi.org.mx/index.php/2020/12/02/importinegi-un-paquete-de-r-para-descargar-y-gestionar-bases-de-datos-del-inegi/) que ha desarrollado. Este otro es un ejemplo detallado de [acceso y procesamiento de miodatos](https://revistasinvestigacion.lasalle.mx/index.php/relais/article/download/4122/3778/27670). Algo semejante ofrece este artículo de @castro_usando_2021.
+Si tu estudio es más de tipo retrospectivo es decir buscas analizar datos estadísticos o vas a realizr una encuesta, el libro en línea de [@velasquez_exploring_nodate] es una fuente iteresante. Si por el contrario, te inclinas por un trabajo del tipo de experimento controlado, te sugiero el libro de [@lawson_design_2014]. Finalmente, te sugiero consideres también el punto de vista que propone para **repensar el uso de la estadística** este otro autor [@mcelreath_statistical_2020]. Puede interesrte también ete artíulo sobre los datos abiertos que ofrece [Inegi y la bilioteca para **R**](https://rde.inegi.org.mx/index.php/2020/12/02/importinegi-un-paquete-de-r-para-descargar-y-gestionar-bases-de-datos-del-inegi/) que ha desarrollado. Este otro es un ejemplo detallado de [acceso y procesamiento de microdatos](https://revistasinvestigacion.lasalle.mx/index.php/relais/article/download/4122/3778/27670). Algo semejante ofrece este artículo de @castro_usando_2021 y un libro completo sobre como usar microdato para analizar el mercado de tabajo es el libro en líne de @escoto_castillo_encuesta2021.
 
+
+
+
+```{r}
+
+```
 
 
 
