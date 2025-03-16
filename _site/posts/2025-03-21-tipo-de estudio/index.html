@@ -88,6 +88,7 @@ div.csl-indent {
     "search-label": "Buscar"
   }
 }</script>
+<meta name="quarto:status" content="draft">
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -96,7 +97,7 @@ div.csl-indent {
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner"><div id="quarto-draft-alert" class="alert alert-warning"><i class="bi bi-pencil-square"></i>Borrador</div>
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -185,6 +186,17 @@ div.csl-indent {
 <p>Otro aspecto a considerar es si para los fines del trabajo se requiere una sóla medición en el tiempo (<em>transversal</em>) o si se requiere dar sguimiento a la evolución del fenómeno con mediciones repetidas varias veces a lo largo del tiempo (<em>longitudinal</em>).</p>
 <p>Finalmente es necesario resolver si los propósitos del estudio se requiere caracterizar una sóla población objetivo (<em>descriptivo</em>) o si interesa comparar y contrastar dos o más poblaciones (<em>comparativo</em>). Desde luego por <strong>población</strong> me refiero a la idea estadística que propone una definición abstracta de un conjunto de entidades observables, que se caracterizan con referencia precisa a un conjunto de atributos o variables concretas.</p>
 <p>A partir de estos elementos es posible clasificar los tipos de estudios que se realizan. Desafortunadamente, las distintas disciplinas tienden a denominar cada combinación de atributos de maneras algo peculiares. No me ocuparé de eso, lo que interesa aquí es ayudarte a clarificar la naturaleza de tu proyecto. Usualmente un estudio observacional, y descriptivo y retrospectivo corresponde con la práctica de <em>revisión de casos</em> o de análisis de <em>microdatos censales</em> (es decir los cuestionarios individuales levantados en campo), esto es lo que explica <em>INEGI</em> que hace como <a href="https://www.inegi.org.mx/programas/ca/2022/#microdatos">procedimiento paa obtenerlos</a>. Desde luego, esto también se puede hacer con un propósito comparativo, los médicos y epidemiólogos lo llaman estudio de <em>casos y controles</em>, o <em>perspectiva histórica</em> tú ¿cómo lo llamarías?. Finalmente, si el planteamiento es experimental y prospectivo, estás en el ámbito de un <em>experimento controlado</em>.</p>
+<p>Podemos decir, en resumen, que los estudios pueden concebirse por muy distintas razones, ningúna mejor que otra en general, cada una más bien sencible y adecuada a lo que la siruación de interés requiere:</p>
+<ul>
+<li><strong>Describir</strong> patrones característicos en algo.</li>
+<li><strong>Inferir</strong> la presencia o estado de algo a partir de evidencias disponibles.</li>
+<li><strong>Predecir</strong> el estado futuro de algo de nuestro interés.</li>
+<li><strong>Prescribir</strong> o dar inidicaciones de como proceder para lograr algo.</li>
+<li><strong>Explorar</strong> algo para identificar aspectos que podrían ser de nuestro interés.</li>
+<li><strong>Comprender las causas</strong> que <em>gobiernan</em> el comoortamiento de un sistema.</li>
+<li>Descubrir los <strong>mecanísmos</strong> detallados que definen como se comporta algo.</li>
+<li>Definir un problema, es decir, identificar el sistema y sus condiciones de interés.</li>
+</ul>
 <p>En todos estos casos existe una gran oferta de métodos estadísticos de procesamiento de datos para evitar el <em>efecto distractor</em> de los factores y procesos de confusión que dificultan comprender la consistencia y relevancia de los hallazgos científicos y tecnológicos. Recientemente se ha avanzado mucho a este respecto con el uso de diagramas causales y el enendimiento de los patrones de correlación que cabría esperar en tus datos, suponiendo que la proposición causal que imaginas para eolicarls sea razonablemente apegada al proceso que estas analizando. Estos diagramas son conocidos como <strong>DAG</strong> (<em>Directed Acyclic Graphs</em>) y encontraras una referencia interesante a ellos en <span class="citation" data-cites="pearl_libro_2020">(<a href="#ref-pearl_libro_2020" role="doc-biblioref">Pearl &amp; Mackenzie, 2020</a>)</span>.</p>
 <p>Si tu estudio es más de tipo retrospectivo es decir buscas analizar datos estadísticos o vas a realizr una encuesta, el libro en línea de <span class="citation" data-cites="velasquez_exploring_nodate">(<a href="#ref-velasquez_exploring_nodate" role="doc-biblioref">Zimmer, 2024</a>)</span> es una fuente iteresante. Si por el contrario, te inclinas por un trabajo del tipo de experimento controlado, te sugiero el libro de <span class="citation" data-cites="lawson_design_2014">(<a href="#ref-lawson_design_2014" role="doc-biblioref">Lawson, 2014</a>)</span>. Finalmente, te sugiero consideres también el punto de vista que propone para <strong>repensar el uso de la estadística</strong> este otro autor <span class="citation" data-cites="mcelreath_statistical_2020">(<a href="#ref-mcelreath_statistical_2020" role="doc-biblioref">McElreath, 2020</a>)</span>. Puede interesrte también ete artíulo sobre los datos abiertos que ofrece <a href="https://rde.inegi.org.mx/index.php/2020/12/02/importinegi-un-paquete-de-r-para-descargar-y-gestionar-bases-de-datos-del-inegi/">Inegi y la bilioteca para <strong>R</strong></a> que ha desarrollado. Este otro es un ejemplo detallado de <a href="https://revistasinvestigacion.lasalle.mx/index.php/relais/article/download/4122/3778/27670">acceso y procesamiento de microdatos</a>. Algo semejante ofrece este artículo de <span class="citation" data-cites="castro_usando_2021">Castro (<a href="#ref-castro_usando_2021" role="doc-biblioref">2021</a>)</span> y un libro completo sobre como usar microdato para analizar el mercado de tabajo es el libro en líne de <span class="citation" data-cites="escoto_castillo_encuesta2021">Escoto Castillo (<a href="#ref-escoto_castillo_encuesta2021" role="doc-biblioref">2021</a>)</span>.</p>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">

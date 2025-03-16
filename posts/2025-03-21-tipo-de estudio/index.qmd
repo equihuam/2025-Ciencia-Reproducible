@@ -3,6 +3,8 @@ title: "¿Qué tipo de proyecto presenta mi blog?"
 author: "Miguel Equihua"
 lang: es
 date: 21/mar/2025
+draft: true
+
 categories: [tipos de estudio, experimento, muestreo, encuesta, divulgación]
 image: "images/Image by Mojca-Peter from Pixabay - seeds-1217133_1280.jpg"
 code-fold: true
@@ -15,7 +17,6 @@ crossref:
   tbl-title: Cuadro
   tbl-prefix: Cuadro
   lot-title: Lista de Cuadros
-
 ---
 
 Los proyectos que suelen abordarse en una especialización científca o tecnológica abordan desafíos de **identificación y medición de relaciones causales**, estimación del estado de variables ambientales, demográficas, económicas, etc., representación gráfica de procesos, mecanismos o distribución geográfica de variables de interés. También puede interesar la construcción de formas de comunicación efectiva a actores relevantes pero no especializados en términos de preparación universitaria formal. Será tu desafío precisar la naturaleza del proyecto que será la base formal de tu **Blog**. Recuerda mantener una perspectiva de *narrativa basada en datos*, *trazabilidad* de la evidencia y de los procesos analíticos utilizados.
@@ -28,16 +29,22 @@ Finalmente es necesario resolver si los propósitos del estudio se requiere cara
 
 A partir de estos elementos es posible clasificar los tipos de estudios que se realizan. Desafortunadamente, las distintas disciplinas tienden a denominar cada combinación de atributos de maneras algo peculiares. No me ocuparé de eso, lo que interesa aquí es ayudarte a clarificar la naturaleza de tu proyecto. Usualmente un estudio observacional, y descriptivo y retrospectivo corresponde con la práctica de *revisión de casos* o de análisis de *microdatos censales* (es decir los cuestionarios individuales levantados en campo), esto es lo que explica _INEGI_ que hace como [procedimiento paa obtenerlos](https://www.inegi.org.mx/programas/ca/2022/#microdatos). Desde luego, esto también se puede hacer con un propósito comparativo, los médicos y epidemiólogos lo llaman estudio de *casos y controles*, o *perspectiva histórica* tú ¿cómo lo llamarías?. Finalmente, si el planteamiento es experimental y prospectivo, estás en el ámbito de un *experimento controlado*.
 
+Podemos decir, en resumen, que los estudios pueden concebirse por muy distintas razones, ningúna mejor que otra en general, cada una más bien sencible y adecuada a lo que la siruación de interés requiere:
+
++ **Describir** patrones característicos en algo.
++ **Inferir** la presencia o estado de algo a partir de evidencias disponibles.
++ **Predecir** el estado futuro de algo de nuestro interés.
++ **Prescribir** o dar inidicaciones de como proceder para lograr algo.
++ **Explorar** algo para identificar aspectos que podrían ser de nuestro interés.
++ **Comprender las causas** que _gobiernan_ el comoortamiento de un sistema.
++ Descubrir los **mecanísmos** detallados que definen como se comporta algo.
++ Definir un problema, es decir, identificar el sistema y sus condiciones de interés.
+
+
 En todos estos casos existe una gran oferta de métodos estadísticos de procesamiento de datos para evitar el *efecto distractor* de los factores y procesos de confusión que dificultan comprender la consistencia y relevancia de los hallazgos científicos y tecnológicos. Recientemente se ha avanzado mucho a este respecto con el uso de diagramas causales y el enendimiento de los patrones de correlación que cabría esperar en tus datos, suponiendo que la proposición causal que imaginas para eolicarls sea razonablemente apegada al proceso que estas analizando. Estos diagramas son conocidos como **DAG** (*Directed Acyclic Graphs*) y encontraras una referencia interesante a ellos en [@pearl_libro_2020].
 
 Si tu estudio es más de tipo retrospectivo es decir buscas analizar datos estadísticos o vas a realizr una encuesta, el libro en línea de [@velasquez_exploring_nodate] es una fuente iteresante. Si por el contrario, te inclinas por un trabajo del tipo de experimento controlado, te sugiero el libro de [@lawson_design_2014]. Finalmente, te sugiero consideres también el punto de vista que propone para **repensar el uso de la estadística** este otro autor [@mcelreath_statistical_2020]. Puede interesrte también ete artíulo sobre los datos abiertos que ofrece [Inegi y la bilioteca para **R**](https://rde.inegi.org.mx/index.php/2020/12/02/importinegi-un-paquete-de-r-para-descargar-y-gestionar-bases-de-datos-del-inegi/) que ha desarrollado. Este otro es un ejemplo detallado de [acceso y procesamiento de microdatos](https://revistasinvestigacion.lasalle.mx/index.php/relais/article/download/4122/3778/27670). Algo semejante ofrece este artículo de @castro_usando_2021 y un libro completo sobre como usar microdato para analizar el mercado de tabajo es el libro en líne de @escoto_castillo_encuesta2021.
 
-
-
-
-```{r}
-
-```
 
 
 

@@ -9,7 +9,7 @@ categories: [div, fences, pestañas, cajas]
 
 toc: true
 
-image: magnifying-glass-541626_1280.jpg
+image: img/magnifying-glass-541626_1280.jpg
 
 
 format: 
