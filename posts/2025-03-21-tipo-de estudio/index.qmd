@@ -3,7 +3,8 @@ title: "¿Qué tipo de proyecto presenta mi blog?"
 author: "Miguel Equihua"
 lang: es
 date: 21/mar/2025
-draft: true
+draft: false
+
 
 categories: [tipos de estudio, experimento, muestreo, encuesta, divulgación]
 image: "images/Image by Mojca-Peter from Pixabay - seeds-1217133_1280.jpg"

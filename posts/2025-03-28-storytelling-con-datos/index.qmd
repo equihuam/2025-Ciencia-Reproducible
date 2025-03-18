@@ -3,7 +3,7 @@ title: "¿Qué tipo de proyecto presenta mi blog?"
 author: "Miguel Equihua"
 lang: es
 date: 21/mar/2025
-draft: true
+draft: false
 
 categories: [tipos de estudio, experimento, muestreo, encuesta, divulgación]
 image: "images/Image by Mojca-Peter from Pixabay - seeds-1217133_1280.jpg"
@@ -19,46 +19,46 @@ crossref:
   lot-title: Lista de Cuadros
 ---
 
-Se suele pensar que **los datos puros y duros sólo los pueden entender** unos pocos genios o, al menos, _especialistas_. Esta concepción, cierta o no, se relaciona con hechos que estan cambiando nuestras vidas. La [empresa IDC](https://www.idc.com/latam_es/about), una influyente firma mundial de inteligencia de mercado publicó como un _White paper_ el estudio de @david_reinsel_digitization_2018 al respecto. En él se sostiene que los volúmenes mundiales de generación de datos están ya alcanzarán los 175 **zettabytes** ($10^{21}$ bytes), simple magnitud que no se si alguno de nosotros puede imaginar. La velocidad a la cual ha ocurrido este descomunal crecimiento humano del  _Big Data_ no sólo en volumen, sino en complejidad impulsa la frenética carrera en la que muchas empresas luchan por mantenerse al día. ¿Cómo intentamos encontrar sentido humano en este oceano de datos? Se ha desarrollado brutalmente la **visualización de datos** (diagramas, gráficos, infografías) para representar y generar entendimiento entre las toneladas de datos. Desde luego los gráficos simples pueden no bastar. Importa **poner en contexto las ideas impulsadas por datos**. Ha surgido también El _storytelling de datos_, que se vislumbra como la nueva generación de comunicación para los negocios. ¿Serán estas apreciaciones igualmente válidas para la ciencia? ¿Deberían la ciencia y la investigación agronómica y ambiental adoptar estos enfoques de análisis y comunicación?
+Se suele pensar que **los datos puros y duros sólo los pueden entender** unos pocos genios o, al menos, *especialistas*. Esta concepción, cierta o no, se relaciona con hechos que estan cambiando nuestras vidas. La [empresa IDC](https://www.idc.com/latam_es/about), una influyente firma mundial de inteligencia de mercado publicó como un *White paper* el estudio de @david_reinsel_digitization_2018 al respecto. En él se sostiene que los volúmenes mundiales de generación de datos están ya alcanzarán los 175 **zettabytes** ($10^{21}$ bytes), simple magnitud que no se si alguno de nosotros puede imaginar. La velocidad a la cual ha ocurrido este descomunal crecimiento humano del *Big Data* no sólo en volumen, sino en complejidad impulsa la frenética carrera en la que muchas empresas luchan por mantenerse al día. ¿Cómo intentamos encontrar sentido humano en este oceano de datos? Se ha desarrollado brutalmente la **visualización de datos** (diagramas, gráficos, infografías) para representar y generar entendimiento entre las toneladas de datos. Desde luego los gráficos simples pueden no bastar. Importa **poner en contexto las ideas impulsadas por datos**. Ha surgido también El *storytelling de datos*, que se vislumbra como la nueva generación de comunicación para los negocios. ¿Serán estas apreciaciones igualmente válidas para la ciencia? ¿Deberían la ciencia y la investigación agronómica y ambiental adoptar estos enfoques de análisis y comunicación?
 
-Te sugiero considerar seriamente lo que analízan @david_reinsel_digitization_2018. A lo mejor incluso nos podríamos beneficiar de que lo converses con tus amigos de la escuela y también con los de otros ámbitos. ¿Qué piensas?, ¿qué piensan? ¿qué nos convendrá hacer? Finalmente, te quiero invitar a que consideres las ideas de @knaflic_storytelling_2017. Ella es una exitosa licenciada en _Matemática Aplicada_ y Maestra en Negocios y Administracióm. Ha establecido una empresa basada en visualización y narrativas de datos. Tiene un espacio en el que ofrece oportunidades para ensayar y pulir tus habilidades comunicativas, a lo mejor nosotros podríamos seguir su ejemplo, [quizás te interese asomarte para ver como lo hace](https://community.storytellingwithdata.com/).
+Te sugiero considerar seriamente lo que analízan @david_reinsel_digitization_2018. A lo mejor incluso nos podríamos beneficiar de que lo converses con tus amigos de la escuela y también con los de otros ámbitos. ¿Qué piensas?, ¿qué piensan? ¿qué nos convendrá hacer? Finalmente, te quiero invitar a que consideres las ideas de @knaflic_storytelling_2017. Ella es una exitosa licenciada en *Matemática Aplicada* y Maestra en Negocios y Administracióm. Ha establecido una empresa basada en visualización y narrativas de datos. Tiene un espacio en el que ofrece oportunidades para ensayar y pulir tus habilidades comunicativas, a lo mejor nosotros podríamos seguir su ejemplo, [quizás te interese asomarte para ver como lo hace](https://community.storytellingwithdata.com/).
 
+Según Knaflic, para *preparar una historia con datos* hay que dominar seis habilidades fundamentales:
 
-Según Knaflic, para _preparar una historia con datos_ hay que dominar seis habilidades fundamentales:
+1.  Comprender el contexto.
+2.  Elegir el elemento visual apropiado.
+3.  Eliminar la confusión.
+4.  Centrar la atención donde importa
+5.  Pensar como un diseñador.
+6.  Contar la historia elocuentemente.
 
-1. Comprender el contexto.
-2. Elegir el elemento visual apropiado.
-3. Eliminar la confusión.
-4. Centrar la atención donde importa
-5. Pensar como un diseñador.
-6. Contar la historia elocuentemente.
+Las historias que queremos contar son **Grandes Ideas**, naturalmente. Pero, ¿Cómo podemos atraer a otros para que se enteren de esa gran cosa? La misma autora, nos dice, despertar el interés eficazmente en una **Gran Idea** exige reducir al mínimo todo lo que pudiera distraer, llevarlo a una sóla frase. Quizás es el texto que presentaras en el título de un artículo, en la *declaración de objetivos* o al hablar con el profe o con alguién que podría financiar el proyecto. Sugiere consideral estos tres pasos para lograr esta síntesis prodigiosa:
 
-Las historias que queremos contar son **Grandes Ideas**, naturalmente. Pero, ¿Cómo podemos comunicar tal cosa? La misma autora, nos dice, comunicar eficazmente una **Gran Idea** exige reducir al mínimo todo lo que pudiera distraer, llevarlo a una sóla frase, Quizás la presentaras en el título de un artículo, en la _declaración de objetivos_ o al hablar con el profe o con alguién que podría financiar el proyecto. Sugiere consideral estos tres pasos para lograr esta síntesis prodigiosa:
+1.  Encuentra el punto de vista que la hace original.
+2.  Debes expresar lo que está en juego, decir claramente por qué importa.
+3.  Debes producir una oración completa: quién, qué, de qué manera, dónde.
 
-1. Encuentra el punto de vista que la hace original.
-2. Debes expresar lo que está en juego, decir claramente por qué importa.
-3. Debes producir una oración completa: quién, qué, de qué manera, dónde. 
+Ya que estamos en este asunto de la *narración* y notando que puse esa frace arriba sobre *pensar como un diseñador*, me entusiasmé con el libro de @lupton_diseno_2019. Te sugiero que lo veas. Su asunto es la relación entre como comunicar una historía y los concenptos de **diseño** que podemos aprovechar para hacer una comunicación humana efectiva. Un primer asuntó que llamó mi atención es lo que Lupton llama el cono de lo posible que vemos en la @fig-cono-plausible. ¿Te sugiere algó de interés para la concepción de tu proyecto? Aparentemente esta noción la expresó en 1988 el estratega militar *Charles W. Taylor*. Le angustiaban las situaciones que podrían, en un futuro próximo, hacer disminuir el apoyo gubernamental al ejército. ¿Te suena familiar la inquietud? Taylor imaginó que la situación se parece a un embudo que se forma en el tiempo. La mayor certeza está en la punta del embudo que ocurre cerca del tiempo presente. Se desarrolla un aumento progresivo de la incertidumbre conforme vislumbramos hacia futuros cada vez más distantes. Me pareció muy familiar la idea, al considerar lo que solemos hacer al preparar un estudio científico. Iniciamos por un análisis de *estado del arte*, resolvemos así lo que damos por certero o sabido hoy. De ahí nos aventuramos a lo desconocido, tratando de sondear lo posible y proponemos hipótesis de lo que podría ser. ¿Compartes mi sensación?
 
-Ya que estamos en este asunto de la _narración_ y notando que puse esa frace arriba sobre _pensar como un diseñador_, me entusiasmé con el libro de @lupton_diseno_2019. Te sugiero que lo veas. Su asunto es la relación entre como comunicar una historía y los concenptos de **diseño** que podemos aprovechar para hacer una comunicación humana efectiva. Un primer asuntó que llamó mi atención es lo que Lupton llama el cono de lo posible que vemos en la @fig-cono-plausible. ¿Te sugiere algó de interés para la concepción de tu proyecto? Aparentemente esta noción la expresó en 1988 el estratega militar _Charles W. Taylor_. Le angustiaban las situaciones que podrían, en un futuro próximo, hacer disminuir el apoyo gubernamental al ejército. ¿Te suena familiar la inquietud? Taylor imaginó que la situación se parece a un embudo que se forma en el tiempo. La mayor certeza está en la punta del embudo que ocurre cerca del tiempo presente. Se desarrolla un aumento progresivo de la incertidumbre conforme vislumbramos hacia futuros cada vez más distantes. Me pareció muy familiar la idea, al considerar lo que solemos hacer al preparar un estudio científico. Iniciamos por un análisis de _estado del arte_, resolvemos así lo que damos por certero o sabido hoy. De ahí nos aventuramos a lo desconocido, tratando de sondear lo posible y proponemos hipótesis de lo que podría ser. ¿Compartes mi sensación?
+![Ilustración de Jennifer Tobias](img/Captura%20de%20pantalla%202025-03-16%20094328.png){#fig-cono-plausible width="50%"}
 
-![Ilustración de Jennifer Tobias](img/Captura de pantalla 2025-03-16 094328.png){#fig-cono-plausible width=50%}
+La autora utiliza estas ideas como una manera de concebir escenarios de interés (@fig-escenarios). Así qué, ¿te ayudaría imaginar que las hipótesis que te surgen al considerar tu proyecto, las podrías expresar como escenarios plausibles? Por ejemplo, en esta imágen del libro de Lupton, ¿te ayuda a pensar, hipotéticamente, sobre como podrías cambiar un museo para adoptar valores de la ciencia abierta?
 
-La autora utiliza estas ideas como una manera de concebir escenarios de interés (@fig-escenarios). Así qué, ¿te ayudaría imaginar que las hipótesis que te surgen al considerar tu proyecto, las podrías expresar como escenarios plausibles? Por ejemplo, en esta imágen del libro de Lupton, ¿te ayuda a pensar, hipotéticamente,  sobre como podrías cambiar un museo para adoptar valores de la ciencia abierta?
-
-![](img/Museo.png){#fig-escenarios width=50%}
-
+![](img/Museo.png){#fig-escenarios width="50%"}
 
 También encontre en el libro de @lupton_diseno_2019 la referencia al **Arco Narrativo** (@fig-triangulo-drama), que conocía vagamente de mis clases de literatura en la preparatoria. Bueno, en el libro de Lupton me enteré que ese nombre lo ideo el dramaturgo y novelista alemán Gustav Freytag en 1863. Con este concepto Gustav nos invita a imaginar el contenido de las obras dramáticas divididolas en cinco partes: exposición, acción ascendente, clímax, acción descendente y desenlace. Este es el **triángulo de Freytag**.
 
-![Triángulo o pirámide narrativa de Freytag](img/arco-dramatico.png){#fig-triangulo-drama width=50%}
+![Triángulo o pirámide narrativa de Freytag](img/arco-dramatico.png){#fig-triangulo-drama width="50%"}
 
-Encuentro la idea facinante. ¿Se relacionará esto con la escritura de reportes científicos o técnicos? La mera idea de imaginar _narrativas con datos_ evoca algo de tensión entre la escritura literaria y la austeridad científica. A lo mejor esta otra ilustración despieta tu imaginación (@fig-montana-rusa).
+Encuentro la idea facinante. ¿Se relacionará esto con la escritura de reportes científicos o técnicos? La mera idea de imaginar *narrativas con datos* evoca algo de tensión entre la escritura literaria y la austeridad científica. A lo mejor esta otra ilustración despieta tu imaginación (@fig-montana-rusa). ¿Puedes acomodar aquí: antecedentes, objetivo, métodos, resultados, discusión y conclusionea? ¿Deberías hacerlo o evitarlo? o ¿es enteramente otra cosa?
 
 
-![La narración como una dramática montaña rusa](img/20130715-12230857-storycoaster.jpg){#fig-montana-rusa width=50%}
+![La narración como una dramática montaña rusa](img/storycoaster-es.png){#fig-montana-rusa width="50%"}
+
+
+Commo afirma @knaflic_storytelling_2017, hoy, ser experto en procesadores de texto, hojas de cálculo y presentaciones ahora se interpreta como nivel básico, y todo lo que seamos capaces de hacer más avanzado es lo que nos diferenciará del resto. Pienso que lo que hemos estado buscando van en dirección de lograr tales ventajas: poder contar historias con datos de manera efectiva, asegurar la _trazabilidad_ desde diseño de estudio, adquisición de datos, análisis y reporte es otra ventaja.
 
 
 ::: {#refs}
 ## Lecturas sugeridas
 :::
-
