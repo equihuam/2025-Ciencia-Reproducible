@@ -1,5 +1,5 @@
 ---
-title: "¿Narrativas con dato?"
+title: "¿Narrativas con datos?"
 author: "Miguel Equihua"
 lang: es
 date: 21/mar/2025
