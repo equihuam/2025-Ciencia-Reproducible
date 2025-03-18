@@ -7,7 +7,7 @@ draft: false
 
 
 categories: [tipos de estudio, experimento, muestreo, encuesta, divulgación]
-image: "images/Image by Mojca-Peter from Pixabay - seeds-1217133_1280.jpg"
+image: "img/Steve Buissinne from Pixabay-alternative-energy-1042411_1280.jpg"
 code-fold: true
 code-summary: "muestra el escript:"
 fig-cap-location: top

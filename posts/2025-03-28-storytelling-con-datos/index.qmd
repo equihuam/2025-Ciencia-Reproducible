@@ -1,12 +1,12 @@
 ---
-title: "¿Qué tipo de proyecto presenta mi blog?"
+title: "¿Narrativas con dato?"
 author: "Miguel Equihua"
 lang: es
 date: 21/mar/2025
 draft: false
 
 categories: [tipos de estudio, experimento, muestreo, encuesta, divulgación]
-image: "images/Image by Mojca-Peter from Pixabay - seeds-1217133_1280.jpg"
+image: "img/Divya Gupta from Pixabay-data-protection-4394633_1280.jpg"
 code-fold: true
 code-summary: "muestra el escript:"
 fig-cap-location: top
