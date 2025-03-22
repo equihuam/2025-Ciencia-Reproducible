@@ -2,16 +2,10 @@
 title: "Dar formato a mi documeto"
 author: "Miguel Equihua"
 date: 14/mar/2025
-
 lang: es
-
 categories: [div, fences, pestañas, cajas]
-
 toc: true
-
 image: img/magnifying-glass-541626_1280.jpg
-
-
 format: 
   html: 
     grid:
@@ -19,7 +13,7 @@ format:
       body-width: 800px
       margin-width: 300px
       gutter-width: 1.5rem
-
+      
 lightbox: true
 ---
 
@@ -33,12 +27,11 @@ figcaption {
 ```
 :::
 
-![Descripción](img/clothespins-8506708_1280.jpg){width="100"}
+![Descripción](clothespins-8506708_1280.jpg){width="100"}
 
 Voy a empezar por "no me gustó la configuración *default* que usa *Quarto*", en cuanto a justificar a la izquierda las leyendas de las figuras. Para cambiar eso use el código del @lst-css. Esto tiene un poco que ver con el asunto de darle en general un *tema/aspecto* al proyecto. [Aquí puedes encontrar más información](https://quarto.org/docs/output-formats/html-themes.html) al respecto.
 
 Otra cosa que puede interesarte hacer es controlar el arreglo general de la página de tu blog. Algo que puedes hacer en el encabezado **yml** de cada contribución que quieras o en el documento general `_quarto.yml`.
-
 
 ```{html}
 
@@ -52,9 +45,7 @@ format:
 
 ```
 
-
-
-![]()
+![](estructura-pagina.png){width="500"}
 
 ## Identificadores fijos
 
