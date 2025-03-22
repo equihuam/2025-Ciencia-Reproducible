@@ -2,7 +2,7 @@
 title: "¿Narrativas con datos?"
 author: "Miguel Equihua"
 lang: es
-date: 21/mar/2025
+date: 28 /mar/2025
 draft: false
 
 categories: [tipos de estudio, experimento, muestreo, encuesta, divulgación]
@@ -53,13 +53,13 @@ También encontre en el libro de @lupton_diseno_2019 la referencia al **Arco Nar
 
 ![Triángulo o pirámide narrativa de Freytag](img/arco-dramatico.png){#fig-triangulo-drama width="50%"}
 
-Encuentro la idea facinante. ¿Se relacionará esto con la escritura de reportes científicos o técnicos? La mera idea de imaginar *narrativas con datos* evoca algo de tensión entre la escritura literaria y la austeridad científica. A lo mejor esta otra ilustración despieta tu imaginación (@fig-montana-rusa). ¿Puedes acomodar aquí: antecedentes, objetivo, métodos, resultados, discusión y conclusionea? ¿Deberías hacerlo o evitarlo? o ¿es enteramente otra cosa?
+Encuentro la idea facinante. ¿Se relacionará esto con la escritura de reportes científicos o técnicos? La mera idea de imaginar *narrativas con datos* evoca algo de tensión entre la escritura literaria y la austeridad científica. A lo mejor esta otra ilustración despieta tu imaginación (@fig-montana-rusa). ¿Puedes acomodar aquí: antecedentes, objetivo, métodos, resultados, discusión y conclusiones? ¿Deberías hacerlo o evitarlo? o ¿es enteramente otra cosa?
 
 ![La narración como una dramática montaña rusa](img/storycoaster-es.png){#fig-montana-rusa width="50%"}
 
 Commo afirma @knaflic_storytelling_2017, hoy, ser experto en procesadores de texto, hojas de cálculo y presentaciones se interpreta como nivel básico, y todo lo que seamos capaces de hacer más avanzado es lo que nos distingue del resto. Pienso que lo que hemos estado buscando en este taller va en dirección de lograr tales ventajas: poder contar historias con datos de manera efectiva, asegurar la *trazabilidad* desde diseño de estudio, adquisición de datos, análisis y reporte es otra ventaja.
 
-El tema es parte de las muchas cosas que están ocurriendo en estos tiempos posmodernos y de la posverdad. También están las muchas inconformidades que surgen en nosotros y en nuestro alrededor. Una miradita a lo que piensan algunos miembros de la comunidad inclinada a la convicción de que debemos encontrar formas de contar historias con base en datos es [Lydia Hooper](https://medium.com/nightingale/ten-ways-cognitive-biases-impact-data-design-work-be83f86d4274). De sus ideas se ha producido una ilustración como la que se muestra en la [@fig-lydia]. Es interesante como destaca reubicar los valores humanos en este esquema de reconstruir imaginarios, que es parte del oficio de la ciencia. La comunicació de resultados científicos considerando el contexto subjetivo de lo humano es sin duda un gran desafío [@krackov_can_2024].
+El tema es parte de las muchas cosas que están ocurriendo en estos tiempos posmodernos y de la posverdad. También están las muchas inconformidades que surgen en nosotros y en nuestro alrededor. Una miradita a lo que piensan algunos miembros de la comunidad inclinada a la convicción de que debemos encontrar formas de contar historias con base en datos es [Lydia Hooper](https://medium.com/nightingale/ten-ways-cognitive-biases-impact-data-design-work-be83f86d4274). De sus ideas se ha producido una ilustración como la que se muestra en la [@fig-lydia]. Es interesante como la figura destaca la idea de reubicar los valores humanos. Lo encuentro relacionado con el interés de reconstruir o hasta reinventar imaginarios, que es parte del oficio de la ciencia. La comunicació de resultados científicos considerando el contexto subjetivo de lo humano es sin duda un gran desafío [@krackov_can_2024].
 
 |  
 
