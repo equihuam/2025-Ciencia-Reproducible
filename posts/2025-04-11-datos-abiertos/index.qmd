@@ -2,8 +2,10 @@
 title: "Datos abiertos"
 author: "Miguel Equihua"
 lang: es
-date: 07/mar/2025
+date: 11/apr/2025
 categories: [datos abiertos, scraping]
+draft: true
+
 image: images/logo-goFAIR.svg
 code-fold: true
 code-summary: "muestra el escript:"

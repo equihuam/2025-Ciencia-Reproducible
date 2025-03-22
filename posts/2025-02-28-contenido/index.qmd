@@ -264,7 +264,7 @@ Si por cualquier razón encuentras justificado o importante mostrar algo que est
 
 
 
-[$\{\{<$ video https://youtu.be/wo9vZccmqwc start="10" $>\}\}$]{style="color:green;"}
+[$\{\{<$ video https://youtu.be/wo9vZccmqwc start="10"    $>\}\}$]{style="color:green;"}
 
 |  
 |  
