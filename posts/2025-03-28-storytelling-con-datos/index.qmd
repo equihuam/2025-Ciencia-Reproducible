@@ -60,7 +60,22 @@ Commo afirma @knaflic_storytelling_2017, hoy, ser experto en procesadores de tex
 
 El tema es parte de las muchas cosas que están ocurriendo en estos tiempos de la posverdad y las muchas inconformidades que surgen en nosotros y en nuestro alrededor. Una miradita a lo que piensan algunos miembros de la comunidad inclinada a la convicción de que debemos encintrar formas de contar historias con base en datos es [Lydia Hooper](https://medium.com/nightingale/ten-ways-cognitive-biases-impact-data-design-work-be83f86d4274). De sus ideas se ha producido una ilustración como la que se muestra en la @lydia-hooper. Es interesante como detaca reubicar los valores humanos en este esquema de reconstruir imaginarios, que es parte  del oficio de la ciencia. La comunicació de resultados científicos considerando el contexto subjetivo de lo humano es sin duda un gran desafío.
 
-![](img/datastorytelling.svg) 
+![](img/datastorytelling.png) 
+
+
+```{=html}
+
+<iframe
+  id="Ejemplo"
+  title="Datos, sociedad y política"
+  width="1000"
+  height="700"
+  src="https://nightingaledvs.com/can-community-data-help-heal-public-discourse/">
+</iframe>
+
+```
+
+
 
 ::: {#refs}
 ## Lecturas sugeridas

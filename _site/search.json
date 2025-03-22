@@ -277,7 +277,7 @@
     "href": "posts/2025-03-14-dar-formato-al-texto/index.html",
     "title": "Dar formato a mi documeto",
     "section": "",
-    "text": "Listado 1: Código css para centrar la leyenda.\n\n\n\n\nfigcaption {\n    text-align: center;\n}\nVoy a empezar por “no me gustó la configuración default que usa Quarto”, en cuanto a justificar a la izquierda las leyendas de las figuras. Para cambiar eso use el código del Listado 1. Esto tiene un poco que ver con el asunto de darle en general un tema/aspecto al proyecto. Aquí puedes encontrar más información al respecto."
+    "text": "Listado 1: Código css para centrar la leyenda.\n\n\n\n\nfigcaption {\n    text-align: center;\n}\nVoy a empezar por “no me gustó la configuración default que usa Quarto”, en cuanto a justificar a la izquierda las leyendas de las figuras. Para cambiar eso use el código del Listado 1. Esto tiene un poco que ver con el asunto de darle en general un tema/aspecto al proyecto. Aquí puedes encontrar más información al respecto.\nOtra cosa que puede interesarte hacer es controlar el arreglo general de la página de tu blog. Algo que puedes hacer en el encabezado yml de cada contribución que quieras o en el documento general _quarto.yml.\nformat: \n  html: \n    grid:\n      sidebar-width: 300px\n      body-width: 800px\n      margin-width: 300px\n      gutter-width: 1.5rem"
   },
   {
     "objectID": "posts/2025-03-14-dar-formato-al-texto/index.html#identificadores-fijos",
