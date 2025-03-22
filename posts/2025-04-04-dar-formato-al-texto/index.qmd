@@ -1,11 +1,15 @@
 ---
 title: "Dar formato a mi documeto"
 author: "Miguel Equihua"
-date: 14/mar/2025
+date: 04/apr/2025
 lang: es
 categories: [div, fences, pestañas, cajas]
 toc: true
-image: img/magnifying-glass-541626_1280.jpg
+
+image: magnifying-glass-541626_1280.jpg
+cap-location: bottom
+
+
 format: 
   html: 
     grid:
@@ -17,6 +21,8 @@ format:
 lightbox: true
 ---
 
+Voy a empezar por "no me gustó la configuración *default* que usa *Quarto*", en cuanto a justificar a la izquierda las leyendas de las figuras. Para cambiar eso use el código del @lst-css. 
+
 ::: {#lst-css lst-cap="Código css para centrar la leyenda."}
 ```{css}
 
@@ -27,25 +33,20 @@ figcaption {
 ```
 :::
 
+|  
+
 ![Descripción](clothespins-8506708_1280.jpg){width="100"}
 
-Voy a empezar por "no me gustó la configuración *default* que usa *Quarto*", en cuanto a justificar a la izquierda las leyendas de las figuras. Para cambiar eso use el código del @lst-css. Esto tiene un poco que ver con el asunto de darle en general un *tema/aspecto* al proyecto. [Aquí puedes encontrar más información](https://quarto.org/docs/output-formats/html-themes.html) al respecto.
+Esto tiene un poco que ver con el asunto de darle en general un *tema/aspecto* al proyecto. [Aquí puedes encontrar más información](https://quarto.org/docs/output-formats/html-themes.html) al respecto.
 
-Otra cosa que puede interesarte hacer es controlar el arreglo general de la página de tu blog. Algo que puedes hacer en el encabezado **yml** de cada contribución que quieras o en el documento general `_quarto.yml`.
+Otra cosa que puede interesarte hacer es controlar el arreglo general de la página de tu blog (@fig-partes-pag). Algo que puedes hacer en el documento general `_quarto.yml`. [Aquí están los detalles](https://quarto.org/docs/output-formats/page-layout.html#page-layout).
 
-```{html}
+|  
 
-format: 
-  html: 
-    grid:
-      sidebar-width: 300px
-      body-width: 800px
-      margin-width: 300px
-      gutter-width: 1.5rem
+![Partes de la página que normalmente construye Quarto.](estructura-pagina.png){#fig-partes-pag width="500"}
 
-```
-
-![](estructura-pagina.png){width="500"}
+\  
+\  
 
 ## Identificadores fijos
 
@@ -105,6 +106,8 @@ Definición de algo importante
 
 Puede ser que interese hacer referencia a un poco de código computacional que es importante en la explicación de tus hallazgos científicos o tecnológicos. Por ejemplo, el @lst-cod-1 es el que use para producir la @fig-sun-burst. Se trata de una ilustración de la taxonomía de características de *sabor* que pueden apreciarse en una taza de café. La gráfica de la izquierda son datos un poco resumidos y los de la derecha una lista llamada *completa*. La presentación permite comparar ambos conjuntos de datos.
 
+|  
+
 ::: {#lst-cod-1 lst-cap="Código para producir una gráfica bonita."}
 ```{r}
 #| warning: false
@@ -160,7 +163,7 @@ fig
 
 ## Bloques tipo "caja"
 
-A veces conviene ofrecer información adicional al lector, dándole la oportunidad de decidir cuándo o si es que la desea ver. Hay una colección de cajas de este tipo en *Quarto* que se engloban en la conjunto [callout](https://quarto.org/docs/authoring/callouts.html). Su uso es mediante *fences* (**div**), el sistema de marcado que se inicia con `::: {_indicación_}` y se cierra con `:::`.
+A veces conviene ofrecer información adicional al lector, dándole la oportunidad de decidir cuándo o si es que la desea ver. Hay una colección de cajas de este tipo en *Quarto* que se engloban en el conjunto [callout](https://quarto.org/docs/authoring/callouts.html). Su uso es mediante *fences* (**div**), el sistema de marcado que se inicia con `::: {_indicación_}` y se cierra con `:::`.
 
 | tipo      | llamada                  |
 |-----------|--------------------------|
