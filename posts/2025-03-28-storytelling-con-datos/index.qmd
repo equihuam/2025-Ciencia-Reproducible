@@ -41,23 +41,51 @@ Las historias que queremos contar son **Grandes Ideas**, naturalmente. Pero, ¿C
 2.  Debes expresar lo que está en juego, decir claramente por qué importa.
 3.  Debes producir una oración completa: quién, qué, de qué manera, dónde.
 
-Ya que estamos en este asunto de la *narración* y notando que puse esa frace arriba sobre *pensar como un diseñador*, me entusiasmé con el libro de @lupton_diseno_2019. Te sugiero que lo veas. Su asunto es la relación entre como comunicar una historía y los conceptos de **diseño** que podemos aprovechar para hacer una comunicación humana efectiva. Un primer asuntó que llamó mi atención es lo que Lupton llama el cono de lo posible que vemos en la @fig-cono-plausible. ¿Te sugiere algó de interés para la concepción de tu proyecto? Aparentemente esta noción la expresó en 1988 el estratega militar *Charles W. Taylor*. Le angustiaban las situaciones que podrían, en un futuro próximo, hacer disminuir el apoyo gubernamental al ejército. ¿Te suena familiar la inquietud? Taylor imaginó que la situación se parece a un embudo que se forma en el tiempo. La mayor certeza está en la punta del embudo que ocurre cerca del tiempo presente. Se desarrolla un aumento progresivo de la incertidumbre conforme vislumbramos hacia futuros cada vez más distantes. Me pareció muy familiar la idea, al considerar lo que solemos hacer al preparar un estudio científico. Iniciamos por un análisis de *estado del arte*, resolvemos así lo que damos por certero o sabido hoy. De ahí nos aventuramos a lo desconocido, tratando de sondear lo posible y proponemos hipótesis de lo que podría ser. ¿Compartes mi sensación?
+\  
+
+::: {layout="[1,1]"}
+Ya que estamos en este asunto de la *narración* y notando que puse esa frace arriba sobre *pensar como un diseñador*, me entusiasmé con el libro de @lupton_diseno_2019. Te sugiero que lo veas. Su asunto es la relación entre como comunicar una historía y los conceptos de **diseño** que podemos aprovechar para hacer una comunicación humana efectiva. Un primer asuntó que llamó mi atención es lo que Lupton llama el cono de lo posible que vemos en la @fig-cono-plausible. ¿Te sugiere algó de interés para la concepción de tu proyecto?
 
 ![Ilustración de Jennifer Tobias](img/Captura%20de%20pantalla%202025-03-16%20094328.png){#fig-cono-plausible width="50%"}
 
-La autora utiliza estas ideas como una manera de concebir escenarios de interés (@fig-escenarios). Así qué, ¿te ayudaría imaginar que las hipótesis que te surgen al considerar tu proyecto, las podrías expresar como escenarios plausibles? Por ejemplo, en esta imágen del libro de Lupton, ¿te ayuda a pensar, hipotéticamente, sobre como podrías cambiar un museo para adoptar valores de la ciencia abierta?
+:::
+
+Aparentemente esta noción la expresó en 1988 el estratega militar *Charles W. Taylor*. Le angustiaban las situaciones que podrían, en un futuro próximo, hacer disminuir el apoyo gubernamental al ejército. ¿Te suena familiar la inquietud? Taylor imaginó que la situación se parece a un embudo que se forma en el tiempo. La mayor certeza está en la punta del embudo que ocurre cerca del tiempo presente. Se desarrolla un aumento progresivo de la incertidumbre conforme vislumbramos hacia futuros cada vez más distantes. Me pareció muy familiar la idea, al considerar lo que solemos hacer al preparar un estudio científico. Iniciamos por un análisis de *estado del arte*, resolvemos así lo que damos por certero o sabido hoy. De ahí nos aventuramos a lo desconocido, tratando de sondear lo posible y _proponemos hipótesis_ de lo que podría ser. ¿Compartes mi sensación?
+ 
+ 
+\  
+\ 
+
+::: {layout="[1,1]"}
+
+La autora utiliza estas ideas como una manera de concebir escenarios de interés (@fig-escenarios). Así qué, ¿te ayudaría imaginar que las hipótesis que te surgen al considerar tu proyecto, las podrías expresar como escenarios plausibles? Por ejemplo, en esta imágen del libro de Lupton, ¿te ayuda a pensar, **hipotéticamente**, sobre como podrías cambiar un museo para adoptar valores de la ciencia abierta?
 
 ![](img/Museo.png){#fig-escenarios width="50%"}
 
-También encontre en el libro de @lupton_diseno_2019 la referencia al **Arco Narrativo** (@fig-triangulo-drama), que conocía vagamente de mis clases de literatura en la preparatoria. Bueno, en el libro de Lupton me enteré que ese nombre lo ideo el dramaturgo y novelista alemán Gustav Freytag en 1863. Con este concepto Gustav nos invita a imaginar el contenido de las obras dramáticas divididolas en cinco partes: exposición, acción ascendente, clímax, acción descendente y desenlace. Este es el **triángulo de Freytag**.
+:::
+
+\  
+\  
+
+
+::: {layout="[1,1,1]"}
+
+También encontre en el libro de @lupton_diseno_2019 la referencia al **Arco Narrativo** (@fig-triangulo-drama), que conocía vagamente de mis clases de literatura en la preparatoria. Bueno, en el libro de Lupton me enteré que ese nombre lo ideo el dramaturgo y novelista alemán Gustav Freytag en 1863.
 
 ![Triángulo o pirámide narrativa de Freytag](img/arco-dramatico.png){#fig-triangulo-drama width="50%"}
+ 
+Con este concepto Gustav nos invita a imaginar el contenido de las obras dramáticas divididolas en cinco partes: exposición, acción ascendente, clímax, acción descendente y desenlace. Este es el **triángulo de Freytag**.
+ 
+:::
+
+\ 
+
 
 Encuentro la idea facinante. ¿Se relacionará esto con la escritura de reportes científicos o técnicos? La mera idea de imaginar *narrativas con datos* evoca algo de tensión entre la escritura literaria y la austeridad científica. A lo mejor esta otra ilustración despieta tu imaginación (@fig-montana-rusa). ¿Puedes acomodar aquí: antecedentes, objetivo, métodos, resultados, discusión y conclusiones? ¿Deberías hacerlo o evitarlo? o ¿es enteramente otra cosa?
 
 ![La narración como una dramática montaña rusa](img/storycoaster-es.png){#fig-montana-rusa width="50%"}
 
-Commo afirma @knaflic_storytelling_2017, hoy, ser experto en procesadores de texto, hojas de cálculo y presentaciones se interpreta como nivel básico, y todo lo que seamos capaces de hacer más avanzado es lo que nos distingue del resto. Pienso que lo que hemos estado buscando en este taller va en dirección de lograr tales ventajas: poder contar historias con datos de manera efectiva, asegurar la *trazabilidad* desde diseño de estudio, adquisición de datos, análisis y reporte es otra ventaja.
+Commo afirma @knaflic_storytelling_2017, hoy, ser experto en procesadores de texto, hojas de cálculo y presentaciones se interpreta como nivel básico, y todo lo que seamos capaces de hacer más avanzado es lo que nos distingue del resto. Pienso que lo que hemos estado buscando en este taller va en dirección de lograr tales ventajas: poder contar historias con datos de manera efectiva, asegurar la *trazabilidad* desde el diseño mismo del estudio, la adquisición de datos, el análisis y el reporte es otra ventaja.
 
 El tema es parte de las muchas cosas que están ocurriendo en estos tiempos posmodernos y de la posverdad. También están las muchas inconformidades que surgen en nosotros y en nuestro alrededor. Una miradita a lo que piensan algunos miembros de la comunidad inclinada a la convicción de que debemos encontrar formas de contar historias con base en datos es [Lydia Hooper](https://medium.com/nightingale/ten-ways-cognitive-biases-impact-data-design-work-be83f86d4274). De sus ideas se ha producido una ilustración como la que se muestra en la [@fig-lydia]. Me gusta lo que resalta la figura en favor de reubicar los valores humanos en el centro de la historia. Lo encuentro relacionado con el interés de reconstruir o hasta reinventar imaginarios, que es parte del oficio de la ciencia. La comunicació de resultados científicos considerando el contexto subjetivo de lo humano es sin duda un gran desafío [@krackov_can_2024].
 
