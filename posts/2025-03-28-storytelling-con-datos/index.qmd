@@ -75,7 +75,7 @@ Encuentro la idea facinante. ¿Se relacionará esto con la escritura de reportes
 
 ![La narración como una dramática montaña rusa](img/storycoaster-es.png){#fig-montana-rusa width="50%"}
 
-Commo afirma @knaflic_storytelling_2017, hoy, ser experto en procesadores de texto, hojas de cálculo y presentaciones se interpreta como nivel básico, y todo lo que seamos capaces de hacer más avanzado es lo que nos distingue del resto. Pienso que lo que hemos estado buscando en este taller va en dirección de lograr tales ventajas: poder contar historias con datos de manera efectiva, asegurar la *trazabilidad* desde el diseño mismo del estudio [@science_preregistration_nodate; @mohring_osf_2021; @nosek_preregistration_2018; @noauthor_home_nodate], la adquisición de datos, el análisis y el reporte es otra ventaja.
+Commo afirma @knaflic_storytelling_2017, hoy, ser experto en procesadores de texto, hojas de cálculo y presentaciones se interpreta como nivel básico, y todo lo que seamos capaces de hacer más avanzado es lo que nos distingue del resto. Pienso que lo que hemos estado buscando en este taller va en dirección de lograr tales ventajas: poder contar historias con datos de manera efectiva, asegurar la *trazabilidad* desde el diseño mismo del estudio y seguir consistentemente a través de la adquisición de datos, el análisis y el reporte [@science_preregistration_nodate; @mohring_osf_2021; @nosek_preregistration_2018; @noauthor_home_nodate].
 
 El tema es parte de las muchas cosas que están ocurriendo en estos tiempos posmodernos y de la posverdad. También están las muchas inconformidades que surgen en nosotros y en nuestro alrededor. Una miradita a lo que piensan algunos miembros de la comunidad inclinada a la convicción de que debemos encontrar formas de contar historias con base en datos es [Lydia Hooper](https://medium.com/nightingale/ten-ways-cognitive-biases-impact-data-design-work-be83f86d4274). De sus ideas se ha producido una ilustración como la que se muestra en la [@fig-lydia]. Me gusta lo que resalta la figura en favor de reubicar los valores humanos en el centro de la historia. Lo encuentro relacionado con el interés de reconstruir o hasta reinventar imaginarios, que es parte del oficio de la ciencia. La comunicació de resultados científicos considerando el contexto subjetivo de lo humano es sin duda un gran desafío [@krackov_can_2024].
 
@@ -83,6 +83,14 @@ El tema es parte de las muchas cosas que están ocurriendo en estos tiempos posm
 
 ![Narraciones basadas en datos.](img/datastorytelling.png){#fig-lydia}
 
+
+\ 
+\ 
+
 ::: {#refs}
 ## Lecturas sugeridas
 :::
+
+
+
+
