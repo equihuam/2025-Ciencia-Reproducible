@@ -1,6 +1,6 @@
 ---
 title: "Acerca de"
-image: lonely.jpg
+image: images/Image by Couleur from Pixabay-walnut-1751661_1280.jpg
 about:
   template: jolla
   links:
@@ -10,4 +10,5 @@ about:
 
 ---
 
-Este es un **blog** de reflexión sobre actitudes que conviene cultivar y formas sobre como se puede escribir para propiciar una ciencia más reproducible.
+Este es un **blog** de reflexión sobre actitudes que conviene cultivar y formas sobre como se puede escribir para asegurar una ciencia más reproducible y abierta.
+
