@@ -7,3 +7,5 @@
 .Rdata
 .DS_Store
 .quarto
+/_creds/miguel.json
+/_creds
