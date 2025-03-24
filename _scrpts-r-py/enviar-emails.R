@@ -47,6 +47,8 @@ for (i in (1:convers))
   
 }
 
+
+
 my_threads <- gm_threads(num_results = 30, 
                          search = "subject:(taller-uv-2025)")
 
@@ -81,4 +83,5 @@ for (i in (1:convers))
   }
 }
 
-key_list()
+
+surveydown::sd_create_survey("encuesta/")

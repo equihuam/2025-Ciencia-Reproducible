@@ -383,5 +383,19 @@
     "title": "Dar formato a mi documeto",
     "section": "Extensiones para Quarto",
     "text": "Extensiones para Quarto\nQuarto, como R, es una pieza de software que propicia la colaboración abierta en su desarrollo, así que hay creciente núumero de extensiones. Algunas de ellas las encuentras aquí. Para el caso particular de las presentaciones te interesará aprender algunas técnicas avanzadas.\nDiagrama de Gantt. Producido a partir de una especificación de elementos según comandos clave de la aplicación mermaid para la produción de diveros tipos de diagrams basados en Java Script. La documentación y un herramienta de diseño auxiliar se encuentra en la documentación de mermaid\n\nlibrary(DiagrammeR)\n\nm &lt;- mermaid(\n\"\n  gantt\n      dateFormat YYYY-MM-DD\n      title Un diagrama de Gantt\n  \n      section Grupo 1\n         Una tareas      :a1, 2025-03-01, 30d\n         Otra tarea      :after a1, 25d\n      section Grupo 2\n         Tarea en grupo 2 :2025-10-01, 12d\n         Otra tareaa en 2 :24d\n\"\n    \n)\n\n\nm"
+  },
+  {
+    "objectID": "encuesta/survey.html",
+    "href": "encuesta/survey.html",
+    "title": "Welcome to our survey!",
+    "section": "",
+    "text": "This is a simple demonstration of a surveydown survey. It has two pages with one question on each page.\nHere is a basic “multiple choice” question:\n\n\n\n\nWhich type of penguin do you like the best?\n\n\n\n\n\nAdélie\n\n\n\n\n\nChinstrap\n\n\n\n\n\nGentoo\n\n\n\n\n*\n\n\n\nYou need to insert next buttons with sd_next() on each page. By default, it will go to the next page defined in the survey.qmd file, but you can also specify the page with the next_page argument set to the name of the page you want to go to next.\n\n\n\nNext"
+  },
+  {
+    "objectID": "encuesta/survey.html#end",
+    "href": "encuesta/survey.html#end",
+    "title": "Welcome to our survey!",
+    "section": "End",
+    "text": "End\nThis it the last page in the survey.\n\n\n\nExit Survey"
   }
 ]
