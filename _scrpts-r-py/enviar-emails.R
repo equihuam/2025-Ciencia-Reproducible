@@ -1,4 +1,4 @@
-pacman::p_load(emayili, keyring, gmailr, stringr, dplyr, tidyr)
+pacman::p_load(gmailr, emayili, keyring, stringr, dplyr, tidyr)
 
 
 # Preparar y enviar correos con "emayili"
@@ -81,4 +81,3 @@ for (i in (1:convers))
   }
 }
 
-key_list()
