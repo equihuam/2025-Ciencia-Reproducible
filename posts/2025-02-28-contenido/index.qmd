@@ -57,7 +57,7 @@ Obviamente, la forma más sencilla de acceder a datos es cuando los tenemos en n
 
 ### Datos Excel
 
-Tengo este archivo de datos obtenidos por D.L. Cunningham de la Universidad de Cornell. Son registros de masa corporal (g) de pollos de acuerdo con su posición en la *jerarquía de picotazos* (@tbl-pollos). Veamos los datos. En el procceso dde demostración también te comparto como construir una tabla en formato *publicable* con la biblioteca `flextable`. Otra posibilidad para trabajar tablas es la biblioteca `DT`, más orientada a construir tablas que serán utilizadas en forma interactiva.
+Tengo este archivo de datos obtenidos por D.L. Cunningham de la Universidad de Cornell. Son registros de masa corporal (g) de pollos de acuerdo con su posición en la *jerarquía de picotazos* (@tbl-pollos). Veamos los datos. En el procceso de demostración también te comparto como construir una tabla en formato *publicable* con la biblioteca `flextable`. Otra posibilidad para trabajar tablas es la biblioteca `DT`, más orientada a construir tablas que serán utilizadas en forma interactiva.
 
 [Aquí están los datos](https://docs.google.com/spreadsheets/d/101en_5PHLLg0T6L7HtonPzxZ7SbjSH4S/edit?usp=sharing&ouid=117903674529989673913&rtpof=true&sd=true)
 
@@ -95,7 +95,7 @@ pollos_peso <- pollos_peso %>%
 
 | 
 
-Aprovecharé la nueva disposición para demostrar el uso de la biblioteca `DT` que define la fuuunción `datatable` y un montón de otros recursos para dar formato tabular y anotar los datos de interés.
+Aprovecharé la nueva disposición para demostrar el uso de la biblioteca `DT` que define la función `datatable` y un montón de otros recursos para dar formato tabular y anotar los datos de interés.
 
 | 
 
@@ -111,7 +111,7 @@ pollos_peso |>
 | 
 | 
 
-Otra cosa que puedo hacer ahora es construir un gráfico con los datos utilizando la bibliotea `ggplot2`, muy capáz de producir gráficos atractivos, incluso como para publicaciones formales. Piensa en qué gráficos te gustaría inlcuir en el blog que estas construyendo. En este enlace encontrara una [galería de gráficos](https://r-graph-gallery.com/) que pueden ayudar a estimular tu imaginación e interés.
+Otra cosa que puedo hacer ahora es construir un gráfico con los datos utilizando la bibliotea `ggplot2`, muy capáz de producir gráficos atractivos, incluso como para publicaciones formales. Piensa en qué gráficos te gustaría inlcuir en el blog que estas construyendo. En este enlace encontraras una [galería de gráficos](https://r-graph-gallery.com/) que pueden ayudar a estimular tu imaginación e interés.
 
 | 
 
@@ -129,9 +129,9 @@ ggplot(pollos_peso, aes(x = jerarquia, y = peso)) +
 
 ## Un bonito mapa
 
-¿Piensas que hacer mapas impactantes es cosa de una élite entrenada en GIS? Quizás la belleza de muchos mapas que encontramos por ahí justifica pensar así. Pero ahora podemos aspirar a incluir hermosos mapas en nuestros documentos, pues el acceso a *recursos abiertos* muy competentes de mapeo ha camiado mucho. En *R* tenemos ahora bibliotecas como `sf`, `raster`, `terra`, `leaflet`, `ggplot2` y `tmap`, además del software especializado **QGIS**,
+¿Piensas que hacer mapas impactantes es cosa de una élite entrenada en GIS? Quizás la belleza de muchos mapas que encontramos por ahí justifica pensar así. Pero ahora podemos aspirar a incluir hermosos mapas en nuestros documentos, pues el acceso a *recursos abiertos* muy competentes de mapeo ha cambiado mucho. En **R** tenemos ahora bibliotecas como `sf`, `raster`, `terra`, `leaflet`, `ggplot2` y `tmap`, además del software especializado **QGIS**,
 
-Con `leaflet` puedes incluir mapas interactivos es bastante sencillo. Veamos como empezar con esta biblioteca con unas breves instrucciones.
+Con `leaflet` incluir mapas, incluso interactivos, es bastante sencillo. Veamos como empezar con esta biblioteca con unas breves instrucciones.
 
 ```{r}
 #| label: mapa
@@ -154,11 +154,13 @@ basemap
 
 ```
 
-| 
+\ 
+\ 
 
 Agregar capas, marcadores, etc. Tampoco es muy complicado. Veamos un ejemplo.
 
-|  
+\ 
+\ 
 
 ```{r}
 
@@ -227,7 +229,7 @@ urb_1970_2030 <-  urban_agglomerations %>%
 
 data("World")
 
-tm_shape(world) +
+tm_shape(World) +
   tm_polygons(fill = "lightblue") +
   tm_crs("auto") +
   tm_shape(urb_1970_2030, ) +
@@ -248,7 +250,7 @@ A pesar de lo dicho arriba, con esta biblioteca también se puede incursionar en
 #| warning: false
 #| message: false
 
-urb_anim <- tm_shape(world) + 
+urb_anim <- tm_shape(World) + 
   tm_polygons() + 
   tm_crs("auto") +
   tm_shape(urban_agglomerations) + 
@@ -283,7 +285,7 @@ Si por cualquier razón encuentras justificado o importante mostrar algo que est
 
 Usar las plataformas móbiles para capturar datos en campo tiene una historia que va a los primeros dispositivos llamados **PDA** (_Personal Digital Assistant_) allá por los mediados de 1990. Siguieron los avances que condujeron a la aparición del iPhone&reg; y del sistema Android&reg;. La aparición de Android incentivó el desarrollo que apareció en 2010 como _Open Data Kit_ (**ODK**). Un poco más adelante un grupo de la Universidad de Harvard desarrolló la aplicación _Kobo_, basada en el mismo motor de software de **ODK**, pero con una estrategia de servico distinta. En cualquier caso, para la adquisición de datos en campo la base **ODK** es sin duda un estandar mundial [@hartung_open_2010; @brunette_open_2023]. No quiero entrar en los detalles de cada solución, sólo quiero que conozcas de su existencia, para saber más de ellas puedes ir a sus respectivos sitios Web: [odkcloud](https://getodk.org/) y [kobotoolbox](https://www.kobotoolbox.org/). Hay bibliotecas en **R** para acceder a cualquiera de estas dos soluciones: `ruODK`, `odkr` y `KoboconnectR`, por ejemplo.
 
-Otra opción interesante que está en proceso de desarrollo actualmente, viable para satisfacer las neesidades de proyectos muy pequeños en estos momentos, son los recursos que ofrece la biblioteca `surveydown`. [Aquí te dejo un tutorial de ejemplo](https://bastianolea.rbind.io/blog/surveydown_encuestas/), sobre como aprovechar este paquete desde _Quarto_. 
+Otra opción interesante está en proceso de desarrollo actualmente. La encuentro viable como para satisfacer las neesidades de proyectos muy pequeños en estos momentos. Se trata de los recursos que ofrece la biblioteca `surveydown`. [Aquí te dejo un tutorial de ejemplo](https://bastianolea.rbind.io/blog/surveydown_encuestas/) sobre como aprovechar este paquete desde _Quarto_. 
 
 
 
