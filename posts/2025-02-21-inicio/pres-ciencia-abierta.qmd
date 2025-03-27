@@ -27,7 +27,7 @@ abstract: >
   La ciencia abierta surge como un movimiento que nos invita a 
   reconsiderar como se desarrolla la actividad científica, como
   se accede a sus resultado e incluso como se pueden gestionar 
-  oportunidades para que el público general se pueddda involucra 
+  oportunidades para que el público general se pueda involucrar 
   en sus procesos y apropiarrse de sus beneficios con mayor
   facilidad y confianza.
   
