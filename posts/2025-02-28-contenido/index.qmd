@@ -202,6 +202,10 @@ map_1
 
 ```
 
+
+| 
+| 
+
 Otra posibilidad para producir documentos con mapas más bien de tipo impreso es la biblioteca `tmap` podemos hacer cosas como las siguiente. Usaremos los datos contenidos en el paquete `spData` para ejemplificar. Aquí está un [tutorial sobre esta biblioteca.](https://rpubs.com/yianlin/901579)
 
 | 
@@ -263,7 +267,7 @@ Si por cualquier razón encuentras justificado o importante mostrar algo que est
 
 
 
-[$\{\{<$ video https://youtu.be/wo9vZccmqwc start="10"    $>\}\}$]{style="color:green;"}
+[$\{\{<$ video https://youtu.be/wo9vZccmqwc start="10" $>\}\}$]{style="color:green;"}
 
 |  
 |  
