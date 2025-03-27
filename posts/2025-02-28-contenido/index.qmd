@@ -240,7 +240,6 @@ A pesar de lo dicho arriba, con esta biblioteca también se puede incursionar en
 ```{r}
 #| warning: false
 #| message: false
-#| echo: false
 
 urb_anim <- tm_shape(world) + 
   tm_polygons() + 
