@@ -12,7 +12,7 @@ code-fold: true
 code-summary: "muestra el escript:"
 fig-cap-location: top 
 bibliography: "../references.bib"
-csl: apa.csl
+csl: ../apa.csl
 
 crossref: 
   tbl-title: Cuadro
