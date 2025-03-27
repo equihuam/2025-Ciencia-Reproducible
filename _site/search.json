@@ -256,7 +256,7 @@
     "href": "posts/2025-02-28-contenido/index.html#incluir-videos",
     "title": "¿Qúe puedo incluir en mis documentos?",
     "section": "Incluir videos",
-    "text": "Incluir videos\nSi por cualquier razón encuentras justificado o importante mostrar algo que está forma de video, es fácilmente realizable agregarlo a tu blog. Tan simple como poner algo semejante a esto directamente en el texto. Es decir no se requiere un trozo de código ( code chunk).\n\\(\\{\\{&lt;\\) video https://youtu.be/wo9vZccmqwc start=“10” \\(&gt;\\}\\}\\)"
+    "text": "Incluir videos\nSi por cualquier razón encuentras justificado o importante mostrar algo que está en forma de video, fácilmente puedes agregarlo a tu blog. Tan simple como poner algo semejante a esto directamente en el texto. Es decir no se requiere un trozo de código ( code chunk).\n\\(\\{\\{&lt;\\) video https://youtu.be/wo9vZccmqwc start=“10” \\(&gt;\\}\\}\\)"
   },
   {
     "objectID": "posts/2025-03-28-storytelling-con-datos/index.html",
