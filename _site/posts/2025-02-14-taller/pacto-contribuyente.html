@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Miguel Equihua">
 
-<title>Una Nueva Manera de Escribir – Ciencia Abierta</title>
+<title>Pacto del contribuyente – Ciencia Abierta</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -75,9 +40,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -106,35 +68,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -181,7 +114,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Una Nueva Manera de Escribir</h1>
+      <h1 class="title">Pacto del contribuyente</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">taller</div>
               </div>
@@ -191,12 +124,6 @@ window.Quarto = {
   
   <div class="quarto-title-meta">
 
-      <div>
-      <div class="quarto-title-meta-heading">Autor/a</div>
-      <div class="quarto-title-meta-contents">
-               <p>Miguel Equihua </p>
-            </div>
-    </div>
       
       <div>
       <div class="quarto-title-meta-heading">Fecha de publicación</div>
@@ -217,9 +144,15 @@ window.Quarto = {
     <h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#temario" id="toc-temario" class="nav-link active" data-scroll-target="#temario">Temario</a></li>
-  <li><a href="#actividades-presenciales" id="toc-actividades-presenciales" class="nav-link" data-scroll-target="#actividades-presenciales">Actividades presenciales</a></li>
-  <li><a href="#requisitos-previos" id="toc-requisitos-previos" class="nav-link" data-scroll-target="#requisitos-previos">Requisitos previos</a></li>
+  <li><a href="#código-de-conducta-convenido" id="toc-código-de-conducta-convenido" class="nav-link active" data-scroll-target="#código-de-conducta-convenido">Código de Conducta Convenido</a>
+  <ul class="collapse">
+  <li><a href="#nuestro-compromiso" id="toc-nuestro-compromiso" class="nav-link" data-scroll-target="#nuestro-compromiso">Nuestro compromiso</a></li>
+  <li><a href="#nuestros-estándares" id="toc-nuestros-estándares" class="nav-link" data-scroll-target="#nuestros-estándares">Nuestros estándares</a></li>
+  <li><a href="#nuestras-responsabilidades" id="toc-nuestras-responsabilidades" class="nav-link" data-scroll-target="#nuestras-responsabilidades">Nuestras responsabilidades</a></li>
+  <li><a href="#alcance" id="toc-alcance" class="nav-link" data-scroll-target="#alcance">Alcance</a></li>
+  <li><a href="#aplicación" id="toc-aplicación" class="nav-link" data-scroll-target="#aplicación">Aplicación</a></li>
+  <li><a href="#atribución" id="toc-atribución" class="nav-link" data-scroll-target="#atribución">Atribución</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -230,100 +163,51 @@ window.Quarto = {
 
 
 
-<p>Curso-taller para iniciarse en las habilidades que promueve la <a href="pres-ciencia-abierta.qmd">ciencia abierta</a>. La apertura invita a ampliar la colaboración, pero también la eficacia con la que se colabora Hay mucho que ya se puede hacer con el apoyo de Dropbox®, GoogleDocs® y con las mismas aplicaciones de Microsoft® ¿Qué significa que esto esté ocurriendo? ¿Qué implicaciones podría tener sobre la forma como se hace y comunica la ciencia?</p>
-<p>El curso-taller se propone acercar al estudiante a la increíble evolución mundial de las capacidades de cómputo y de comunicación que ya está en marcha. No sólo porque cada vez hay mayores facilidades para colaborar, sino por la capacidad actual para producir documentos que combinan el texto con el procesamiento estadístico de datos y las gráficas resultantes. El que la secuencia completa <strong>datos→análisis→texto</strong> se pueda unificar, da todo un nuevo significado al proceso de comunicación en favor de la <em>reproducibilidad</em> científica.</p>
-<p><br>
-</p>
-<div class="quarto-figure quarto-figure-right">
-<figure class="figure">
-<p><a href="Poster-r-ciencia.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="Poster-r-ciencia.png" class="img-fluid quarto-figure quarto-figure-right figure-img" style="width:79.0%" data-fig-pos="h"></a></p>
-</figure>
-</div>
-<p>Los estudiantes aprenderán a producir reportes académicos en distintos formatos: páginas web, documentos tipo Word®, PDF, carteles, presentaciones e incluso artículos o libros. Todo esto sin que se requiera un conocimiento previo de <strong>R</strong> o <strong>RStudio</strong>. Lo haremos paso a paso y con un enfoque de <em>manos a la obra</em>. El estudiante podrá elegir los materiales, datos y textos que le interese ensayar.</p>
-<p>Las actividades se desarrollarán a lo largo de 4 semanas teórico prácticas. Habrá sesiones presenciales de 3 horas los viernesde 10 am a 1pm. Se espera que el estudiante desarrollará actividades a su paso para desarrollar el producto que será la entrega final al término del taller. La carga de trabajo se estima requerirá 9 horas adicionales cada semana.</p>
-<section id="temario" class="level2">
-<h2 class="anchored" data-anchor-id="temario">Temario</h2>
-<p>El curso-taller introducirá al estudiante a los siguientes temas:</p>
+<section id="código-de-conducta-convenido" class="level2">
+<h2 class="anchored" data-anchor-id="código-de-conducta-convenido">Código de Conducta Convenido</h2>
+<section id="nuestro-compromiso" class="level3">
+<h3 class="anchored" data-anchor-id="nuestro-compromiso">Nuestro compromiso</h3>
+<p>En el interés de fomentar una comunidad abierta y acogedora, nosotros como participantes y facilitadores nos comprometemos a hacer de la participación en nuestro taller y nuestra comunidad una experiencia libre de acoso para todos, independientemente de la edad, dimensión corporal, discapacidad, etnia, identidad y expresión de género, nivel de experiencia, nacionalidad, apariencia física, raza, religión, identidad u orientación sexual.</p>
+</section>
+<section id="nuestros-estándares" class="level3">
+<h3 class="anchored" data-anchor-id="nuestros-estándares">Nuestros estándares</h3>
+<p>Ejemplos de comportamiento que contribuyen a crear un ambiente positivo:</p>
 <ul>
-<li>Tematica 1
-<ul>
-<li>¿Ciencia abierta y reproducibilidad?</li>
-<li>El proceso científico abierto y su trazabilidad</li>
-<li>Escribir en <strong>RStudio</strong> recurriendo a:
-<ul>
-<li><em>markdown</em></li>
-<li><em>Quarto</em></li>
-<li><em>pandoc</em></li>
-<li><em>ecuaciones Latex</em></li>
-</ul></li>
-</ul></li>
-<li>Tematica 2
-<ul>
-<li>Leer datos desde distintos orígenes: <em>Excel®</em>, <em>Google Sheets®</em>, <em>OneCloud®</em></li>
-<li>Colaboración y control de versiones</li>
-<li>Publicación en línea.</li>
-</ul></li>
-<li>Tematica 3 - Un Blog como libreta colaborativa de trabajo - Organización del contenido - Producción de Diapositivas para presentaciones <em>Web</em> - Documentos abiertos a <a href="https://web.hypothes.is/">comentarios desde la <em>web</em></a></li>
+<li>Uso de lenguaje amable e inclusivo</li>
+<li>Respeto a diferentes puntos de vista y experiencias</li>
+<li>Aceptación de críticas constructivas</li>
+<li>Enfocarse en lo que es mejor para la comunidad</li>
+<li>Mostrar empatía a otros miembros de la comunidad</li>
 </ul>
-<p><br>
-</p>
+<p>Ejemplos de comportamiento inaceptable por participantes:</p>
+<ul>
+<li>Uso de lenguaje o imágenes sexuales y atención sexual no deseada</li>
+<li>Comentarios insultantes o despectivos (<em>trolling</em>) y ataques personales o políticos</li>
+<li>Acoso público o privado</li>
+<li>Publicación de información privada de terceros sin su consentimiento, como direcciones físicas o electrónicas</li>
+<li>Otros tipos de conducta que pudieran considerarse inapropiadas en un entorno profesional.</li>
+</ul>
 </section>
-<section id="actividades-presenciales" class="level2">
-<h2 class="anchored" data-anchor-id="actividades-presenciales">Actividades presenciales</h2>
-<p>Las sesiones presenciales se llevarán a cabo en el <strong>Aula 16</strong>, aunque los detalles de la calendarización todavía habrá de ser acordada y pueden incluir tener sesiones en el Inecol.</p>
+<section id="nuestras-responsabilidades" class="level3">
+<h3 class="anchored" data-anchor-id="nuestras-responsabilidades">Nuestras responsabilidades</h3>
+<p>Los facilitadores del taller son responsables de clarificar los estándares de comportamiento aceptable y se espera que tomen medidas correctivas y apropiadas en respuesta a situaciones de conducta inaceptable.</p>
+<p>Los facilitadores del taller tienen el derecho y la responsabilidad de eliminar en los productos para la Web que se elaboren, editar o rechazar comentarios, <em>commits</em>, código, ediciones de documentación, <em>issues</em>, y otras contribuciones que no estén alineadas con este Código de Conducta, o de prohibir temporal o permanentemente a cualquier participante cuyo comportamiento sea inapropiado, amenazante, ofensivo o perjudicial.</p>
 </section>
-<section id="requisitos-previos" class="level2">
-<h2 class="anchored" data-anchor-id="requisitos-previos">Requisitos previos</h2>
-<p>El estudiante tiene familiaridad con el uso de computadoras y el uso de Internet. Para algunas de las actividades será provechoso tener cuentas activas en los servicios en línea <strong>Github</strong> (como sistema de control de versiones) y <strong>Netlify</strong> (para publicar blogs y sitios web personales). El estudiante tendrá que generar su cuenta personal en cada uno de estos servicios. Se recomienda hacerlo con antelación.</p>
-<ol type="1">
-<li><a href="https://github.com/signup?ref_cta=Sign+up&amp;ref_loc=header+logged+out&amp;ref_page=%2F&amp;source=header-home">Alta en Github.</a></li>
-<li><a href="https://app.netlify.com/signup">Alta en Netlify.</a></li>
-<li><a href="https://web.hypothes.is/">Alta en hypothesis</a></li>
-</ol>
-<p>Para las actividades en clase se espera que tendrá ya instalado en su máquina el sistema de control de versiones <strong>Git</strong> (windows requiere instalarlo. Linux y macOS normalmente ya tienen git instalado. Además, para quienes prefieren el mundo gráfico de windows y desean evitar el uso de terminales y comandos, se sugiere utilizar <a href="https://docs.github.com/es/desktop">Github Desktop</a> o <a href="https://tortoisegit.org/">TortoiseGit</a>). También habrá que tener listo el interprete del lenguaje de computo <strong>R</strong> y la interface de desarrollo <strong>RStudio</strong>. Las <a href="https://posit.co/download/rstudio-desktop/">instrucciones para estos dós últimos están aquí</a>, en el caso de ambiente <em>MS-Windows®</em> pueden usarse los siguientes enlaces:</p>
-<ol type="1">
-<li><a href="https://gitforwindows.org/">git for windows</a></li>
-<li><a href="https://desktop.github.com/?ref_cta=download+desktop&amp;ref_loc=about+github+desktop&amp;ref_page=docs">Instalar Github Desktop</a></li>
-<li><a href="https://cran.rstudio.com/">Instalar R</a></li>
-<li><a href="https://download1.rstudio.org/electron/windows/RStudio-2024.04.1-748.exe">Instalar RStudio</a></li>
-</ol>
-<p>Para las actividdades de preparación es importante verrificar que las siguientes bibliotecas estén instaladas en <strong>R</strong>. Para hacerlo puedes usar el menú <em>Tools</em> <span class="math inline">\(\rightarrow\)</span> <em>Install packages…</em> o el siguiente commando en la pestaña <em>Consola</em>.</p>
-<div class="cell">
-<details class="code-fold">
-<summary>muestra el escript:</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"rmarkdown"</span>, <span class="st">"usethis"</span>, <span class="st">"knitter"</span>, <span class="st">"tinytex"</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<ol type="1">
-<li><code>rmarkdown</code></li>
-<li><code>knitr</code></li>
-<li><code>usethis</code></li>
-<li><code>tinytex</code></li>
-</ol>
-<p>Si interesa verificar la publicación Web de documentos hay que prever que no estén bloqueados en el <em>Firewall</em> de la institución los sitios con terminación <code>.netlify.app</code>, pues es la que utilizará el servicio <strong>Netlify</strong> por defecto.</p>
-<p><strong>Quarto</strong> es un sistema de <em>fuente abierta</em> para la autoría de documentos científicos y técnicos. Puedes aprender más sobre lo que ofrece <a href="https://quarto.org/"><strong>Quarto</strong> en este enlace.</a></p>
-<p>La construcción de <em>comunidades de aprendizaje</em> requiere compartir intereses y actitudes. Al respecto pongo a su consideración el <a href="../../posts/2025-02-14-taller/pacto-contribuyente.html"><em>Pacto del Contribuyente</em></a>, que busca exponer ideas y conceptos que hace la convivencia grata y productiva. Pienso que el espíritu de este documento es muy adecuado para estimular la reflexión que buscamos propicie lo que estaremos haciendo en este taller.</p>
-<div class="cell">
-<details class="code-fold">
-<summary>muestra el escript:</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># devtools::install_github("benjcunningham/googlecalendar", force=TRUE)</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(qrcode)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>code <span class="ot">&lt;-</span> <span class="fu">qr_code</span>(<span class="st">"https://2025-ciencia-reproducible.netlify.app/"</span>)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(code, <span class="at">col =</span> <span class="fu">c</span>(<span class="st">"white"</span>, <span class="st">"#2268bb"</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<figcaption>Código QR del blog</figcaption>
-<p><a href="index_files/figure-html/codigo_qr_html-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Código QR del blog"><img src="index_files/figure-html/codigo_qr_html-1.png" class="img-fluid figure-img" style="width:40mm" alt="Código QR del blog"></a></p>
-</figure>
-</div>
-</div>
-</div>
+<section id="alcance" class="level3">
+<h3 class="anchored" data-anchor-id="alcance">Alcance</h3>
+<p>Este código de conducta aplica tanto a espacios del taller como a espacios públicos donde un individuo presente intereses del taller o comunidad UV. Ejemplos de esto incluye el uso de correo electrónico a nombre del grupo, publicaciones a través de las redes sociales, o presentaciones en eventos <em>online</em> u <em>offline</em>. La representación del taller puede ser clarificada explicitamente por los facilitadores del proyecto.</p>
+</section>
+<section id="aplicación" class="level3">
+<h3 class="anchored" data-anchor-id="aplicación">Aplicación</h3>
+<p>Ejemplos de abuso, acoso u otro tipo de comportamiento inaceptable puede ser reportado al conductor del taller en <a href="mailto:equihuam@gmail.com">M. Equihua</a>. Todas las quejas serán revisadas e investigadas, generando un resultado apropiado a las circunstancias. El equipo del proyecto está obligado a mantener confidencialidad de la persona que reportó el incidente. Detalles específicos acerca de las políticas de aplicación pueden ser publicadas por separado.</p>
+<p>Facilitadores que no sigan o que no hagan cumplir este Código de Conducta pueden ser eliminados de forma temporal o permanente del equipo.</p>
+</section>
+<section id="atribución" class="level3">
+<h3 class="anchored" data-anchor-id="atribución">Atribución</h3>
+<p>Este Código de Conducta es una adaptación del Contributor Covenant, versión 1.4, disponible en <a href="https://www.contributor-covenant.org/es/version/1/4/code-of-conduct.html">https://www.contributor-covenant.org/es/version/1/4/code-of-conduct.html</a></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -748,38 +632,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","loop":false,"openEffect":"zoom","closeEffect":"zoom","selector":".lightbox"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 
