@@ -443,7 +443,7 @@ Enviar el <em>repositorio</em> <strong>git</strong> a la nube
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">create_github_token</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<p>Esto te lleva a la página de <strong>Github</strong> en la que hay que generar el <strong>token</strong>. Hay que responder las preguntas que te haga la página, aunque todo estará <em>prellenado</em> con lo normalmente necesario. Cuando esté a tu gusto, aprieta el botón respectivo. Aparecerá una nueva pantalla con el <strong>token</strong> que habrá que copiar al <em>portapapeles</em> (<strong>ctrl-c</strong> en Windows). Este <strong>token</strong> que aparece, es la única vez que lo verás, por lo que conviene copiarlo al <em>portapapeles</em> de tu máquina (<strong>ctrl-c</strong> en windows) y tenerlo a buen resguardo por lo pronto. En seguida hay que ejecutar este otro comando en la consola de <em>RStudio</em></p>
+<p>Esto te lleva a la página de <strong>Github</strong> en la que hay que generar el <strong>token</strong>. Hay que responder las preguntas que te haga la página, aunque todo estará <em>prellenado</em> con lo normalmente necesario. Cuando esté a tu gusto, aprieta el botón respectivo. Aparecerá una nueva pantalla con el <strong>token</strong>. Este <strong>token</strong> que aparece, es la única vez que lo verás, por lo que conviene copiarlo al <em>portapapeles</em> de tu máquina (<strong>ctrl-c</strong> en windows) y tenerlo a buen resguardo por lo pronto. En seguida hay que ejecutar este otro comando en la consola de <em>RStudio</em></p>
 <div class="cell">
 <details class="code-fold">
 <summary>muestra el escript:</summary>
@@ -468,7 +468,7 @@ Enviar el <em>repositorio</em> <strong>git</strong> a la nube
 <div class="quarto-layout-panel" data-layout="[2,1]">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 66.7%;justify-content: flex-start;">
-<p>Una vez terminadas estas tarea puedes ir a la pestaña <strong>git</strong> cuando lo consideres conveniente y ordenar a <strong>RStudio</strong> que envié todos los <strong>commits</strong> que están pendientes hasta el momento a <strong>Github</strong>. Para hacerlo deberás apretar el botón <strong>Push</strong>. Antes de hacerlo siempre es conveniente pedirle a <strong>git</strong> que se ponga al día con lo que ya está registrado en la <em>nube</em>, esto lo logras con el botón <strong>pull</strong>. Esto nos lleva a una rutina de operación con <strong>git</strong> que se resume en la figura siguiente.</p>
+<p>Una vez terminadas estas tarea puedes ir a la pestaña <strong>git</strong> cuando lo consideres conveniente y ordenar a <strong>RStudio</strong> que envié todos los <strong>commits</strong> que están pendientes hasta el momento a <strong>Github</strong>. Para hacerlo deberás apretar el botón <strong>push</strong>. Antes de hacerlo siempre es conveniente pedirle a <strong>git</strong> que se ponga al día con lo que ya está registrado en la <em>nube</em>, esto lo logras con el botón <strong>pull</strong>. Esto nos lleva a una rutina de operación con <strong>git</strong> que se resume en la figura siguiente.</p>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
 <p><a href="images/En caso de incendio.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="images/En caso de incendio.png" class="img-fluid" width="150"></a></p>
@@ -623,7 +623,7 @@ Arruiné mi <strong>Blog</strong> ¡¡¡¡Ayuda!!!!
 <span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="an">page-layout:</span><span class="co"> full</span></span>
 <span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="an">title-block-banner:</span><span class="co"> true</span></span>
 <span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Recuerda sólo hacer lo escencial en los documentos en la raíz de tu proyecto: el nombre dd tu blog, título inicial y cosas así. No hagas más de lo indispensable en los archivos <strong>index.qmd</strong> y **_quarto.yml** que están en esta ubicación. Toda tu creatividad debes expresarla dentro de subcarpetas contenidas en la carpeta <strong>posts</strong>.</p>
+<p>Recuerda sólo hacer lo escencial en los documentos en la raíz de tu proyecto: el nombre de tu blog, título inicial y cosas así. No hagas más de lo indispensable en los archivos <strong>index.qmd</strong> y **_quarto.yml** que están en esta ubicación. Toda tu creatividad debes expresarla dentro de subcarpetas contenidas en la carpeta <strong>posts</strong>.</p>
 </div>
 </div>
 </div>
@@ -1054,7 +1054,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","loop":false,"selector":".lightbox","descPosition":"bottom","openEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom","selector":".lightbox","loop":false});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
