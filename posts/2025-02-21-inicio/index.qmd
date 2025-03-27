@@ -318,6 +318,6 @@ title-block-banner: true
 ---
 ```
 
-Recuerda sólo hacer lo escencial en los documentos en la raíz de tu proyecto: el nombre de tu blog, título inicial y cosas así. No hagas más de lo indispensable en los archivos  **index.qmd** y **_quarto.yml** que están en esta ubicación. Toda tu creatividad debes expresarla dentro de subcarpetas contenidas en la carpeta **posts**.
+Recuerda sólo hacer lo escencial en los documentos en la raíz de tu proyecto: el nombre de tu blog, título inicial y cosas así. No hagas más de lo indispensable en los archivos  **index.qmd** y **\_quarto.yml** que están en esta ubicación. Toda tu creatividad debes expresarla dentro de subcarpetas contenidas en la carpeta **posts**.
       
 ::: 
