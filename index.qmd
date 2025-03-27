@@ -1,7 +1,7 @@
 ---
 title: "Por una Ciencia Reproducible 2025"
 listing:
-  contents: posts
+  contents: posts/*/index.qmd
   sort: "date asce"
   type: default
   categories: cloud
