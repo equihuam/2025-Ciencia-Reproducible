@@ -143,8 +143,8 @@ basemap <- leaflet() %>%
   setView(lng = -96.91841, lat = 19.515157, zoom = 20) %>% 
 
     # Añade proveedor de mapa
-  addProviderTiles(
-    "OpenStreetMap",
+  addProviderTiles("OpenStreetMap",
+                     
     # Dale un nombre a la capa
     group = "Mapa-OpenStreet"
   )
