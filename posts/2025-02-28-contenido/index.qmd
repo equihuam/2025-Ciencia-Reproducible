@@ -31,7 +31,6 @@ format:
 
 ## Platiquemos sobre tus intereses
 
--- rama de prueba
 
 Tu Blog contendrá alguno o varios de los siguientes componentes:
 
