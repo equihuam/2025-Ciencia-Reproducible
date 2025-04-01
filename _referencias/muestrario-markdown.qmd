@@ -8,7 +8,7 @@ Acordeón de Ejemplos de Markdown
 
 Este es un archivo markdown de ejemplo para ayudarte a escribir Markdown rápidamente :)
 
-En Quarto, todo está preparado para que esto funcione directamente. Por otro lado, si usas el fabuloso editor de textos [Sublime Text 2, 3 o4 ][ST] podrás hacer lo mismo recurriendo al [Markdown Preview plugin][MarkdownPreview], abre tu Paleta ST2 con `CMD+⇧+P` luego elige `Markdown Preview in browser` para ver el resultado en tu navegador.
+En Quarto, todo está preparado para que esto funcione directamente. Por otro lado, si usas el fabuloso editor de textos [Sublime Text 2, 3 o4 ][ST] podrás hacer lo mismo recurriendo al [Markdown Preview plugin][MarkdownPreview], abre tu Paleta ST3 con `CMD+⇧+P` luego elige `Markdown Preview in browser` para ver el resultado en tu navegador.
 
 ## Texto básico
 esto es *italic* y esto es **bold** . otro _italic_ y otro __bold__
