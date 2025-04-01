@@ -1,4 +1,4 @@
-pacman::p_load(emayili, keyring, gmailr, stringr, dplyr, tidyr)
+pacman::p_load(gmailr, emayili, keyring, stringr, dplyr, tidyr)
 
 
 # Preparar y enviar correos con "emayili"
@@ -17,7 +17,7 @@ print(email, details = TRUE)
 
 smtp <- server(
   host = "smtp.gmail.com",
-  port = 465,
+  port = 587,
   username = "equihuam@gmail.com",
   password = key_get("smtp-gmail", "miguel")
 )
