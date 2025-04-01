@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Miguel Equihua, Griselda Benítez, Octavio Pérez Maqueo">
 
-<title>Ciencia Abierta: – Ciencia Abierta</title>
+<title>prueba – Ciencia Abierta</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -72,11 +105,40 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -118,50 +180,23 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Ciencia Abierta:</h1>
-            <p class="subtitle lead">Retos y Perspectivas</p>
-                                <div class="quarto-categories">
-                <div class="quarto-category">antecedentes</div>
-                <div class="quarto-category">presentación</div>
-                <div class="quarto-category">conceptos</div>
-                <div class="quarto-category">propuestas</div>
-              </div>
-                  </div>
+      <h1 class="title">prueba</h1>
+                      </div>
   </div>
     
   
   <div class="quarto-title-meta">
 
-      <div>
-      <div class="quarto-title-meta-heading">Autor/a</div>
-      <div class="quarto-title-meta-contents">
-               <p>Miguel Equihua, Griselda Benítez, Octavio Pérez Maqueo </p>
-            </div>
-    </div>
       
-      <div>
-      <div class="quarto-title-meta-heading">Fecha de publicación</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">Xalapa, Ver., 21 febrero 2025</p>
-      </div>
-    </div>
     
       
     </div>
     
-  <div>
-    <div class="abstract">
-      <div class="block-title">Resumen</div>
-      <p>La ciencia abierta surge como un movimiento que nos invita a reconsiderar como se desarrolla la actividad científica, como se accede a sus resultado e incluso como se pueden gestionar oportunidades para que el público general se pueda involucrar en sus procesos y apropiarrse de sus beneficios con mayor facilidad y confianza.</p>
-    </div>
-  </div>
   
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <div class="quarto-alternate-formats"><h2>Otros formatos</h2><ul><li><a href="pres-ciencia-abierta.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></div>
+    
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
 
@@ -169,372 +204,289 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="antecedentes---ciencia-y-cooperación" class="level2">
-<h2 class="anchored" data-anchor-id="antecedentes---ciencia-y-cooperación"><span class="h2a">Antecedentes - ciencia y cooperación</span></h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="images/Revistas científicas-alfa.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/Revistas científicas-alfa.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a></p>
-</figure>
-</div>
+<section id="sample-markdown-cheat-sheet" class="level1">
+<h1>Sample Markdown Cheat Sheet</h1>
+<p>This is a sample markdown file to help you write Markdown quickly :)</p>
+<p>If you use the fabulous <a href="http://sublimetext.com">Sublime Text 2/3 editor</a> along with the <a href="https://github.com/revolunet/sublimetext-markdown-preview">Markdown Preview plugin</a>, open your ST2 Palette with <code>CMD+⇧+P</code> then choose <code>Markdown Preview in browser</code> to see the result in your browser.</p>
+<section id="text-basics" class="level2">
+<h2 class="anchored" data-anchor-id="text-basics">Text basics</h2>
+<p>this is <em>italic</em> and this is <strong>bold</strong> . another <em>italic</em> and another <strong>bold</strong></p>
+<p>this is <code>important</code> text. and percentage signs : % and <code>%</code></p>
+<p>This is a paragraph with a footnote (builtin parser only). <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>Insert <code>[ TOC ]</code> without spaces to generate a table of contents (builtin parsers only).</p>
 </section>
-<section id="section" class="level2">
-<h2 class="anchored" data-anchor-id="section"></h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="images/900-el-infinito-en-un-junco-irene-vallejo.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/900-el-infinito-en-un-junco-irene-vallejo.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%"></a></p>
-</figure>
-</div>
-<p><a href="images/gettyimages-1434828663-2048x2048-rec.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="images/gettyimages-1434828663-2048x2048-rec.jpg" class="absolute fragment img-fluid" style="width:30.0%" data-top="-2%" data-left="-5%"></a></p>
-<p><a href="images/la-barata1-rec.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="images/la-barata1-rec.png" class="absolute fragment" style="width:30.0%;height:125.0%" data-top="-2%" data-left="70%"></a></p>
-<p><a href="images/papiro-encontrado-en-egipto__1280x640.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="images/papiro-encontrado-en-egipto__1280x640.jpg" class="absolute fragment fade-down" style="width:45.0%;height:100.0%" data-top="-2%" data-left="25%"></a></p>
-</section>
-<section id="narrar-y-escribir" class="level2">
-<h2 class="anchored" data-anchor-id="narrar-y-escribir">Narrar y Escribir</h2>
+<section id="indentation" class="level2">
+<h2 class="anchored" data-anchor-id="indentation">Indentation</h2>
 <blockquote class="blockquote">
-<p>Frente a la oralidad, que favorece las formas e ideas tradicionales, reconocibles para el que escucha, el discurso alfabetizado puede abrirse a horizontes desconocidos <strong>porque el lector tiene tiempo</strong> para asimilar y meditar con tranquilidad las ideas novedosas. En los libros caben planteamientos excéntricos, voces de identidades individuales, desafíos a la tradición.</p>
+<p>Here is some indented text &gt; even more indented</p>
 </blockquote>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[-70, 30]">
-<div class="quarto-layout-row">
-<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 70.0%;justify-content: flex-start;">
-<p>&nbsp;</p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 30.0%;justify-content: flex-start;">
-<p><em>Irene Vallejo</em></p>
-</div>
-</div>
-</div>
 </section>
-<section id="escribir-y-la-importancia-de-reflexionar" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="escribir-y-la-importancia-de-reflexionar">Escribir y la importancia de reflexionar</h2>
-<p>Sócrates temía que, por culpa de la escritura se abandonaría el esfuerzo de la propia reflexión. Lo dice mediante la conversación entre Thamus (rey de Egipto) y el dios Theuth:</p>
-<blockquote class="blockquote">
-<p>iOh Theuth!, por ser el padre de la escritura le atribuyes ventajas que no tiene. <strong>Es olvido lo que producirán las letras en quienes las aprendan</strong>, descuidarán la memoria. Fiándose de los libros, <em>llegarán al recuerdo desde fuera</em>. Será, por tanto, <em>apariencia de sabiduría</em>, no autenticidad lo que la escritura dará a los hombres; y, cuando haya hecho de ellos entendidos en todo sin verdadera instrucción, su compañía será difícil de soportar, porque <strong>se creerán sabios en lugar de serlo</strong>.</p>
-</blockquote>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[-70, 30]">
-<div class="quarto-layout-row">
-<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 70.0%;justify-content: flex-start;">
-<p>&nbsp;</p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 30.0%;justify-content: flex-start;">
-<p><em>Irene Vallejo</em></p>
-</div>
-</div>
-</div>
+<section id="titles" class="level2">
+<h2 class="anchored" data-anchor-id="titles">Titles</h2>
 </section>
-<section id="section-1" class="level2" data-background-image="images/pres-ciencia-abierta-chiapas-final.png" data-background-size="80%">
-<h2 data-background-image="images/pres-ciencia-abierta-chiapas-final.png" data-background-size="80%" class="anchored" data-anchor-id="section-1"></h2>
 </section>
-<section id="section-2" class="level2" data-background-image="images/software-heritage.png" data-background-size="70%">
-<h2 data-background-image="images/software-heritage.png" data-background-size="70%" class="anchored" data-anchor-id="section-2"></h2>
-<div>
-
-</div>
-<div class="fragment quarto-layout-panel" data-layout="[-1, 4, -1]">
-<div class="quarto-layout-row">
-<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 16.7%;justify-content: flex-start;">
-<p>&nbsp;</p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 66.7%;justify-content: flex-start;">
-<p><a href="https://www.softwareheritage.org/">https://www.softwareheritage.org/</a></p>
-</div>
-<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 16.7%;justify-content: flex-start;">
-<p>&nbsp;</p>
-</div>
-</div>
-</div>
+<section id="big-title-h1" class="level1">
+<h1>Big title (h1)</h1>
+<section id="middle-title-h2" class="level2">
+<h2 class="anchored" data-anchor-id="middle-title-h2">Middle title (h2)</h2>
+<section id="smaller-title-h3" class="level3">
+<h3 class="anchored" data-anchor-id="smaller-title-h3">Smaller title (h3)</h3>
+<section id="and-so-on-hx" class="level4">
+<h4 class="anchored" data-anchor-id="and-so-on-hx">and so on (hX)</h4>
+<section id="and-so-on-hx-1" class="level5">
+<h5 class="anchored" data-anchor-id="and-so-on-hx-1">and so on (hX)</h5>
+<section id="and-so-on-hx-2" class="level6">
+<h6 class="anchored" data-anchor-id="and-so-on-hx-2">and so on (hX)</h6>
 </section>
-<section id="preocupados-doomsday-clock" class="level2">
-<h2 class="anchored" data-anchor-id="preocupados-doomsday-clock">¿Preocupados?: <em>Doomsday clock</em></h2>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[2,1.2]">
-<div class="quarto-layout-row quarto-layout-valign-center">
-<div class="quarto-layout-cell" style="flex-basis: 62.5%;justify-content: center;">
-<p><a href="images/clocks-metaphorical-tmes-world-events.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="images/clocks-metaphorical-tmes-world-events.png" class="img-fluid" width="750"></a></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 37.5%;justify-content: center;">
-<p><a href="images/doomsday-clock-rojo.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="images/doomsday-clock-rojo.png" class="fragment img-fluid"></a></p>
-</div>
-</div>
-</div>
 </section>
-<section id="section-3" class="level2" data-background-image="images/publicar-o-morir.png" data-background-size="70%">
-<h2 data-background-image="images/publicar-o-morir.png" data-background-size="70%" class="anchored" data-anchor-id="section-3"></h2>
 </section>
-<section id="crisis-de-reproducibiliad" class="level2">
-<h2 class="anchored" data-anchor-id="crisis-de-reproducibiliad">Crisis de reproducibiliad</h2>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[[30,30],[50]]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><a href="images/reproducibility.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="images/reproducibility.png" class="img-fluid"></a></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><a href="images/rerproduce.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="images/rerproduce.png" class="img-fluid"></a></p>
-</div>
-</div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
-<p><a href="https://www.nature.com/articles/533452a#change-history" style="font-size:0.7em;"><strong>Fuente:</strong> 1,500 scientists lift the lid on reproducibility. Nature (2016)</a></p>
-</div>
-</div>
-</div>
 </section>
-<section id="significados-de-ciencia-abierta" class="level2">
-<h2 class="anchored" data-anchor-id="significados-de-ciencia-abierta">Significados de ciencia abierta</h2>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[50, 50]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+</section>
+<section id="example-lists-1" class="level2">
+<h2 class="anchored" data-anchor-id="example-lists-1">Example lists (1)</h2>
 <ul>
-<li>Publicación abierta</li>
-<li>Datos abiertos</li>
-<li>Pre-registro</li>
-<li>Consentimiento libre, previo e informado</li>
-<li>Ciencia ciudadana</li>
-<li>Investigación acción</li>
-</ul>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><a href="images/Ciencia-abierta-unesco-alfa.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="images/Ciencia-abierta-unesco-alfa.png" class="img-fluid"></a></p>
-</div>
-</div>
-</div>
-</section>
-<section id="ciencia-abierta-institucionalizada" class="level2">
-<h2 class="anchored" data-anchor-id="ciencia-abierta-institucionalizada">Ciencia abierta institucionalizada</h2>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[50, 50]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<li>bullets can be <code>-</code>, <code>+</code>, or <code>*</code></li>
+<li>bullet list 1</li>
+<li>bullet list 2
 <ul>
-<li>Derecho humano a la ciencia</li>
-<li>Repositorios nacionales de publicaciones abiertas</li>
-<li>Repositorios nacionales de datos abiertos</li>
-<li>Métricas y reconocimiento a las personas</li>
-<li>Acuerdo de Escazú</li>
+<li><p>sub item 1</p></li>
+<li><p>sub item 2</p>
+<p>with indented text inside</p></li>
+</ul></li>
+<li>bullet list 3</li>
+<li>bullet list 4</li>
+<li>bullet list 5</li>
 </ul>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><a href="images/ciencia-abierta-conahcyt.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="images/ciencia-abierta-conahcyt.png" class="img-fluid"></a></p>
-</div>
-</div>
-</div>
 </section>
-<section id="declaración-de-panamá" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="declaración-de-panamá">Declaración de Panamá</h2>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[60, -10, 30]">
-<div class="quarto-layout-row quarto-layout-valign-center">
-<div class="quarto-layout-cell" style="flex-basis: 60.0%;justify-content: flex-start;">
-<ul>
-<li>Entiende que el conocimiento es un bien común.</li>
-<li>Confía en el papel de la ciencia como motor de la democracia, la libertad y la justicia social en el momento histórico actual.</li>
-<li>Quiere más ciencia, que debe ser abierta.</li>
-<li>Avanza hacia modelos de colaboración entre Academia-Ciudadanía-Estado-Empresa.</li>
-<li>Afirma que abrir la ciencia exige ir más allá del acceso abierto.</li>
-<li>Insta a que la sociedad recupere el liderazgo.</li>
-<li>Afirma que los ciudadanos tienen derecho a producir y beneficiarse de la ciencia, la tecnología y la innovación.</li>
-</ul>
-</div>
-<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 10.0%;justify-content: flex-start;">
-<p>&nbsp;</p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 30.0%;justify-content: center;">
-<p><a href="images/cilac.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img src="images/cilac.png" class="img-fluid"></a></p>
-</div>
-</div>
-</div>
-<p><a href="https://forocilac.org/en/declaracion-de-panama-sobre-ciencia-abierta/"><strong>Fuente:</strong> Declaración de Panamá</a></p>
+<section id="links" class="level2">
+<h2 class="anchored" data-anchor-id="links">Links</h2>
+<p>This is an <a href="http://lmgtfy.com/">example inline link</a> and <a href="http://lmgtfy.com/" title="Hello, world">another one with a title</a>.</p>
+<p>Links can also be reference based : <a href="http://revolunet.com">reference 1</a> or <a href="http://revolunet.com" title="rich web apps">reference 2 with title</a>.</p>
+<p>References are usually placed at the bottom of the document</p>
 </section>
-<section id="section-4" class="level2">
-<h2 class="anchored" data-anchor-id="section-4"></h2>
-<section id="ciencia-abierta-y-bienestar-sustentable" class="level3">
-<h3 class="anchored" data-anchor-id="ciencia-abierta-y-bienestar-sustentable">Ciencia abierta y bienestar sustentable</h3>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[35,65]" style="font-size:0.7em;">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 35.0%;justify-content: flex-start;">
-<ul>
-<li>Bienestar sustentable</li>
-<li>Articulación de saberes, capacidades y compromisos</li>
-<li>Inteligencia artificial interpretable</li>
-</ul>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 65.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-right">
-<figure class="figure">
-<p><a href="images/bienestar_sustentable.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13"><img src="images/bienestar_sustentable.png" class="img-fluid quarto-figure quarto-figure-right figure-img" width="650"></a></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<div class="attribution">
-<p><strong>Fuente:</strong> <a href="https://www.sciencedirect.com/science/article/abs/pii/S0921800919309322">Costanza, R. (2020). Ecological Economics, 168, 106484.</a></p>
-</div>
-</section>
-</section>
-<section id="la-ciencia-abierta-que-queremos" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="la-ciencia-abierta-que-queremos">La ciencia abierta que queremos</h2>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[30, 70]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 30.0%;justify-content: flex-start;">
-<ul>
-<li>Cooperativa</li>
-<li>Trazable</li>
-<li>reproducible</li>
-<li>Verificable con datos</li>
-<li>Incluyente (científicos y no científicos)</li>
-<li>Datos abiertos</li>
-<li>Reflexiva</li>
-</ul>
-</div>
-</div>
-</div>
-<p><a href="images/figura-2-Vision-reducida-inclusiva-medir-impacto-cientifico.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14"><img src="images/figura-2-Vision-reducida-inclusiva-medir-impacto-cientifico.png" class="absolute img-fluid" data-top="30%" data-left="40%" width="800"></a></p>
-<div style="font-size:0.5em;">
-<p><span class="absolute" style="color: blue;" data-top="90%" data-left="40%"><strong>Fuente:</strong> <a href="https://www.flipsnack.com/deblith/volumen-5-n-mero-2-verano-2024/full-view.html">Equihua, M. y Pérez-Maqueo, O. (2024).Ciencia abierta desde el Inecol. Eco-lógico</a></span></p>
-</div>
-</section>
-<section id="cómo-ponerla-en-práctica" class="level2">
-<h2 class="anchored" data-anchor-id="cómo-ponerla-en-práctica">Cómo ponerla en práctica</h2>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[50, -50]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<ul>
-<li>Cambio cultural profundo</li>
-<li>Transformar viejos hábitos</li>
-<li>Aprender nuevas habilidades</li>
-<li>Reaprender a cooperar</li>
-<li>Cambios institucionales</li>
-<li>Abierta y no monopólica</li>
-<li>Datos abiertos FAIR</li>
-</ul>
-</div>
-<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p>&nbsp;</p>
-</div>
-</div>
-</div>
-<p><a href="images/Valores y principios.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15"><img src="images/Valores y principios.png" class="absolute img-fluid" data-top="30%" data-left="45%" width="700"></a></p>
-</section>
-<section id="section-5" class="level2">
-<h2 class="anchored" data-anchor-id="section-5"></h2>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[-10, 80]">
-<div class="quarto-layout-row">
-<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 11.1%;justify-content: flex-start;">
-<p>&nbsp;</p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 88.9%;justify-content: center;">
-<p><a href="images/Self-correcting-1.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-16"><img src="images/Self-correcting-1.jpg" class="img-fluid" width="900"></a></p>
-</div>
-</div>
-</div>
-</section>
-<section id="consecuencias-imprevistas" class="level2">
-<h2 class="anchored" data-anchor-id="consecuencias-imprevistas">¿Consecuencias imprevistas?</h2>
+<section id="images" class="level2">
+<h2 class="anchored" data-anchor-id="images">Images</h2>
+<p>A sample image :</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="images/Open-science-wrong.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17"><img src="images/Open-science-wrong.png" class="quarto-figure quarto-figure-center figure-img" style="height:12em"></a></p>
+<p><a href="https://2025-ciencia-reproducible.netlify.app/posts/2025-02-14-taller/Poster-r-ciencia.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="por una ciencia reproducible"><img src="https://2025-ciencia-reproducible.netlify.app/posts/2025-02-14-taller/Poster-r-ciencia.png" title="taller por una ciencia más reproducible" class="img-fluid figure-img" width="200" alt="por una ciencia reproducible"></a></p>
+<figcaption>por una ciencia reproducible</figcaption>
 </figure>
 </div>
-<p><span class="absolute" data-top="84%" data-left="28%" style="font-size:0.4em;"><strong>Fuente:</strong> <a href="https://www.nature.com/articles/d41586-022-00724-0" class="uri">https://www.nature.com/articles/d41586-022-00724-0</a></span></p>
-</section>
-<section id="costos-de-procesamiento-de-artículos-apc" class="level2">
-<h2 class="anchored" data-anchor-id="costos-de-procesamiento-de-artículos-apc">Costos de Procesamiento de Artículos (APC)</h2>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[50,50]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<ul>
-<li>El modelo APC demolió parte del muro de pago que bloqueaba el acceso de los lectores a las publicaciones.</li>
-<li>Ahora a levantado un nuevo muro de pago en el otro extremo de la cadena, al bloquear el acceso de los autores menos privilegiados a la publicación.</li>
-</ul>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-right">
+<p>As links, images can also use references instead of inline links :</p>
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://libraries.uta.edu/news-events/blog/whats-behind-paywall"><img src="images/paywall.png" class="img-fluid quarto-figure quarto-figure-right figure-img" width="400"></a></p>
+<p><a href="https://2025-ciencia-reproducible.netlify.app/posts/2025-02-14-taller/Poster-r-ciencia.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="revolunet logo"><img src="https://2025-ciencia-reproducible.netlify.app/posts/2025-02-14-taller/Poster-r-ciencia.png" title="taller por una ciencia más reproducible" class="img-fluid figure-img" width="200" alt="revolunet logo"></a></p>
+<figcaption>revolunet logo</figcaption>
 </figure>
 </div>
-</div>
-</div>
-</div>
 </section>
-<section id="lo-no-fair" class="level2">
-<h2 class="anchored" data-anchor-id="lo-no-fair">Lo No-FAIR</h2>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[30,-5, 65]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 30.0%;justify-content: flex-start;">
-<p>Debemos ser especialmente sensibles a las formas en que las políticas de Ciencia Abierta pueden en realidad empeorar las desigualdades existentes.</p>
-</div>
-<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 5.0%;justify-content: flex-start;">
-<p>&nbsp;</p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 65.0%;justify-content: center;">
-<p><a href="images/rsz_unfair_18553507478.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-18"><img src="images/rsz_unfair_18553507478.jpg" class="img-fluid"></a></p>
-</div>
-</div>
-</div>
+<section id="code" class="level2">
+<h2 class="anchored" data-anchor-id="code">Code</h2>
+<p>It’s quite easy to show code in markdown files.</p>
+<p>Backticks can be used to <code>highlight</code> some words.</p>
+<p>Also, any indented block is considered a code block. If <code>enable_highlight</code> is <code>true</code>, syntax highlighting will be included (for the builtin parser - the github parser does this automatically).</p>
+<pre><code>&lt;script&gt;
+    document.location = 'http://lmgtfy.com/?q=markdown+cheat+sheet';
+&lt;/script&gt;</code></pre>
 </section>
-<section id="section-6" class="level2" data-background-image="images/demanda-a-editoriales.png" data-background-size="70%">
-<h2 data-background-image="images/demanda-a-editoriales.png" data-background-size="70%" class="anchored" data-anchor-id="section-6"></h2>
+<section id="math" class="level2">
+<h2 class="anchored" data-anchor-id="math">Math</h2>
+<p>Math can be displayed in the browser using MathJax or Katex. The feature can be enabled by correctly configuring the <code>"js"</code>, <code>"css"</code>, and <code>"markdown_extensions"</code> configuration fields. This allows for inline math to be included <span class="math inline">\(\frac{\pi}{2}\)</span> or just <span class="math inline">\(\pi\)</span>.</p>
+<p>Alternatively, math can be written on its own line:</p>
+<p><span class="math display">\[F(\omega) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} f(t) \, e^{ - i \omega t}dt\]</span></p>
+<p><br> <br></p>
+<p><span class="math display">\[
+\begin{split}
+\int_0^1 f(t) \mathrm{d}t\\
+\\
+\\
+\sum_j \gamma_j^2/d_j
+\end{split}
+\]</span></p>
 </section>
-<section id="section-7" class="level2">
-<h2 class="anchored" data-anchor-id="section-7"></h2>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[[-2,5,-1],[-1,10]]">
-<div class="quarto-layout-row">
-<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 25.0%;justify-content: flex-start;">
-<p>&nbsp;</p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 62.5%;justify-content: center;">
-<p><a href="images/keep-calm.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19"><img src="images/keep-calm.png" class="img-fluid" width="650"></a></p>
-</div>
-<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 12.5%;justify-content: flex-start;">
-<p>&nbsp;</p>
-</div>
-</div>
-</div>
+<section id="github-flavored-markdown" class="level2">
+<h2 class="anchored" data-anchor-id="github-flavored-markdown">GitHub Flavored Markdown</h2>
+<p>If you use the Github parser, you can use some of <a href="https://help.github.com/articles/github-flavored-markdown/">Github Flavored Markdown</a> syntax :</p>
+<ul>
+<li>User/Project@SHA: revolunet/sublimetext-markdown-preview@7da61badeda468b5019869d11000307e07e07401</li>
+<li>User/Project#Issue: revolunet/sublimetext-markdown-preview#1</li>
+<li>User : <span class="citation" data-cites="revolunet">@revolunet</span></li>
+</ul>
+<p>Some Python code :</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> CardGame(<span class="bu">object</span>):</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">""" a sample python class """</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    NB_CARDS <span class="op">=</span> <span class="dv">32</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, cards<span class="op">=</span><span class="dv">5</span>):</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.cards <span class="op">=</span> random.sample(<span class="bu">range</span>(<span class="va">self</span>.NB_CARDS), <span class="dv">5</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span> <span class="st">'ready to play'</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Some Javascript code :</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> config <span class="op">=</span> {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">duration</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">comment</span><span class="op">:</span> <span class="st">'WTF'</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">// callbacks beauty un action</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">async_call</span>(<span class="st">'/path/to/api'</span><span class="op">,</span> <span class="kw">function</span>(json) {</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">another_call</span>(json<span class="op">,</span> <span class="kw">function</span>(result2) {</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        <span class="fu">another_another_call</span>(result2<span class="op">,</span> <span class="kw">function</span>(result3) {</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>            <span class="fu">another_another_another_call</span>(result3<span class="op">,</span> <span class="kw">function</span>(result4) {</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>                <span class="fu">alert</span>(<span class="st">'And if all went well, i got my result :)'</span>)<span class="op">;</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>            })<span class="op">;</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>        })<span class="op">;</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    })<span class="op">;</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The Github Markdown also brings some <a href="http://www.emoji-cheat-sheet.com/">nice Emoji support</a> : :+1: :heart: :beer:</p>
+</section>
+<section id="parsers-and-extensions" class="level2">
+<h2 class="anchored" data-anchor-id="parsers-and-extensions">Parsers and Extensions</h2>
+<p>Markdown Preview comes with <strong>Python-Markdown</strong> preloaded.</p>
+<section id="python-markdown" class="level3">
+<h3 class="anchored" data-anchor-id="python-markdown"><em>Python-Markdown</em></h3>
+<p>The <a href="https://github.com/Python-Markdown/markdown">Python-Markdown Parser</a> provides support for several extensions.</p>
+<section id="extra-extensions" class="level4">
+<h4 class="anchored" data-anchor-id="extra-extensions">Extra Extensions</h4>
+<ul>
+<li><code>abbr</code> – <a href="https://python-markdown.github.io/extensions/abbreviations">Abbreviations</a></li>
+<li><code>attr_list</code> – <a href="https://python-markdown.github.io/extensions/attr_list">Attribute Lists</a></li>
+<li><code>def_list</code> – <a href="https://python-markdown.github.io/extensions/definition_lists">Definition Lists</a></li>
+<li><code>fenced_code</code> – <a href="https://python-markdown.github.io/extensions/fenced_code_blocks">Fenced Code Blocks</a></li>
+<li><code>footnotes</code> – <a href="https://python-markdown.github.io/extensions/footnotes">Footnotes</a></li>
+<li><code>tables</code> – <a href="https://python-markdown.github.io/extensions/tables">Tables</a></li>
+<li><code>smart_strong</code> – <a href="https://python-markdown.github.io/extensions/smart_strong">Smart Strong</a></li>
+</ul>
+<p>You can enable them all at once using the <code>extra</code> keyword.</p>
+<pre><code>extensions: [ 'extra' ]</code></pre>
+<p>If you want all the extras plus the <code>toc</code> extension, your settings would look like this:</p>
+<pre><code>{
+    ...
+    parser: 'markdown',
+    extensions: ['extra', 'toc'],
+    ...
+}</code></pre>
+</section>
+<section id="other-extensions" class="level4">
+<h4 class="anchored" data-anchor-id="other-extensions">Other Extensions</h4>
+<p>There are also some extensions that are not included in Markdown Extra but come in the standard Python-Markdown library.</p>
+<ul>
+<li><code>code-hilite</code> – <a href="https://python-markdown.github.io/extensions/code_hilite">CodeHilite</a></li>
+<li><code>header-id</code> – <a href="https://python-markdown.github.io/extensions/header_id">HeaderId</a></li>
+<li><code>meta_data</code> – <a href="https://python-markdown.github.io/extensions/meta_data">Meta-Data</a></li>
+<li><code>nl2br</code> – <a href="https://python-markdown.github.io/extensions/nl2br">New Line to Break</a></li>
+<li><code>sane_lists</code> – <a href="https://python-markdown.github.io/extensions/sane_lists">Sane Lists</a></li>
+<li><code>smarty</code> – <a href="hhttps://python-markdown.github.io/extensions/smarty">Smarty</a></li>
+<li><code>toc</code> – <a href="https://python-markdown.github.io/extensions/toc">Table of Contents</a></li>
+<li><code>wikilinks</code> – <a href="https://python-markdown.github.io/extensions/wikilinks">WikiLinks</a></li>
+</ul>
+</section>
+<section id="rd-party-extensions" class="level4">
+<h4 class="anchored" data-anchor-id="rd-party-extensions">3rd Party Extensions</h4>
+<p><em>Python-Markdown</em> is designed to be extended.</p>
+<p>Some included ones are:</p>
+<ul>
+<li><code>delete</code> – github style delete support via <code>~~word~~</code></li>
+<li><code>githubemoji</code> – github emoji support</li>
+<li><code>tasklist</code> – github style tasklists</li>
+<li><code>magiclink</code> – github style auto link conversion of http|ftp links</li>
+<li><code>headeranchor</code> – github style header anchor links</li>
+<li><code>github</code> – Adds the above extensions in one shot</li>
+<li><code>b64</code> – convert and embed local images to base64. Setup by adding this <code>b64(base_path=${BASE_PATH})</code></li>
+</ul>
+<p>There are also a number of others available:</p>
+<p>Just fork this repo and add your extensions inside the <code>.../Packages/Markdown Preview/markdown/extensions/</code> folder.</p>
+<p>Check out the list of <a href="https://github.com/waylan/Python-Markdown/wiki/Third-Party-Extensions">3rd Party extensions</a>.</p>
+</section>
+<section id="default-extensions" class="level4">
+<h4 class="anchored" data-anchor-id="default-extensions">Default Extensions</h4>
+<p>The default extensions are:</p>
+<ul>
+<li><code>footnotes</code> – <a href="https://python-markdown.github.io/extensions/footnotes">Footnotes</a></li>
+<li><code>toc</code> – <a href="https://python-markdown.github.io/extensions/toc">Table of Contents</a></li>
+<li><code>fenced_code</code> – <a href="https://python-markdown.github.io/extensions/fenced_code_blocks">Fenced Code Blocks</a></li>
+<li><code>tables</code> – <a href="https://python-markdown.github.io/extensions/tables">Tables</a></li>
+</ul>
+<p>Use the <code>default</code> keyword, to select them all. If you want all the defaults plus the <code>definition_lists</code> extension, your settings would look like this:</p>
+<pre><code>{
+    ...
+    parser: 'markdown',
+    extensions: ['default', 'definition_lists'],
+    ...
+}</code></pre>
+</section>
+</section>
+</section>
+<section id="examples" class="level2">
+<h2 class="anchored" data-anchor-id="examples">Examples</h2>
+<section id="tables" class="level3">
+<h3 class="anchored" data-anchor-id="tables">Tables</h3>
+<p>The <code>tables</code> extension of the <em>Python-Markdown</em> parser is activated by default, but is currently <strong>not</strong> available in <em>Markdown2</em>.</p>
+<p>The syntax was adopted from the <a href="http://michelf.ca/projects/php-markdown/extra/#table">php markdown project</a>, and is also used in github flavoured markdown.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Year</th>
+<th>Temperature (low)</th>
+<th>Temperature (high)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1900</td>
+<td>-10</td>
+<td>25</td>
+</tr>
+<tr class="even">
+<td>1910</td>
+<td>-15</td>
+<td>30</td>
+</tr>
+<tr class="odd">
+<td>1920</td>
+<td>-10</td>
+<td>32</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="wiki-tables" class="level3">
+<h3 class="anchored" data-anchor-id="wiki-tables">Wiki Tables</h3>
+<p>If you are using <em>Markdown2</em> with the <code>wiki-tables</code> extra activated you should see a table below:</p>
+<p>|| <em>Year</em> || <em>Temperature (low)</em> || <em>Temperature (high)</em> ||<br>
+|| 1900 || -10 || 25 ||<br>
+|| 1910 || -15 || 30 ||<br>
+|| 1920 || -10 || 32 ||</p>
+</section>
+<section id="definition-lists" class="level3">
+<h3 class="anchored" data-anchor-id="definition-lists">Definition Lists</h3>
+<p>This example requires <em>Python Markdown</em>’s <code>def_list</code> extension.</p>
+<dl>
+<dt>Apple</dt>
+<dd>
+Pomaceous fruit of plants of the genus Malus in the family Rosaceae.
+</dd>
+<dt>Orange</dt>
+<dd>
+The fruit of an evergreen tree of the genus Citrus.
+</dd>
+</dl>
+</section>
+</section>
+<section id="about" class="level2">
+<h2 class="anchored" data-anchor-id="about">About</h2>
+<p>This plugin and this sample file is proudly brought to you by the <a href="http://revolunet.com">revolunet team</a></p>
 
 
 </section>
+</section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Notas</h2>
+
+<ol>
+<li id="fn1"><p>This is the text of the note.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -956,7 +908,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","closeEffect":"zoom","openEffect":"zoom","loop":false});
+<script>var lightboxQuarto = GLightbox({"loop":false,"descPosition":"bottom","openEffect":"zoom","selector":".lightbox","closeEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
