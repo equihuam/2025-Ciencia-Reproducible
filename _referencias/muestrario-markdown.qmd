@@ -1,0 +1,311 @@
+---
+title: "Acordeón de Markdown"
+format: html
+---
+
+Acordeón de Ejemplos de Markdown
+================================ 
+
+Este es un archivo markdown de ejemplo para ayudarte a escribir Markdown rápidamente :)
+
+En Quarto, todo está preparado para que esto funcione directamente. Por otro lado, si usas el fabuloso editor de textos [Sublime Text 2, 3 o4 ][ST] podrás hacer lo mismo recurriendo al [Markdown Preview plugin][MarkdownPreview], abre tu Paleta ST2 con `CMD+⇧+P` luego elige `Markdown Preview in browser` para ver el resultado en tu navegador.
+
+## Texto básico
+esto es *italic* y esto es **bold** . otro _italic_ y otro __bold__
+
+esto es texto `importante` y signos de porcentaje : % y `%`
+
+Esto es un párrafo con una nota a pie de página (sólo analizador sintáctico incorporado). [^note-id]
+
+Inserte `[ TOC ]` sin espacios para generar una tabla de contenidos (sólo analizadores incorporados).
+
+
+
+## Sangría
+> Aquí hay algo de texto sangrado
+
+>> aún más sangrado
+
+## Títulos
+## Título grande (h1)
+## Título medio (h2)
+### Título más pequeño (h3)
+#### y así sucesivamente (hX)
+##### y así sucesivamente (hX)
+###### y así sucesivamente (hX)
+
+## Listas de ejemplo (1)
+
+ - las viñetas pueden ser `-`, `+` o `*`.
+ - lista de viñetas 1
+ - lista de viñetas 2
+    - subelemento 1
+    - subelemento 2
+
+        con texto sangrado en el interior
+
+ - lista 3
+ + lista 4
+ ## bullet list 5
+
+## Enlaces
+
+Este es un [ejemplo de enlace en línea](http://lmgtfy.com/) y [otro con título](http://lmgtfy.com/ "Hola, mundo").
+
+Los enlaces también pueden basarse en referencias: [referencia 1][ref1] o [referencia 2 con título][ref2].
+
+Las referencias suelen colocarse al final del documento
+
+## Imágenes
+
+Una imagen de ejemplo :
+
+
+![por una ciencia reproducible](https://2025-ciencia-reproducible.netlify.app/posts/2025-02-14-taller/Poster-r-ciencia.png "taller por una ciencia más reproducible"){width=200}
+
+Como enlaces, las imágenes también pueden utilizar referencias en lugar de enlaces en línea :
+
+![logo revolunet][taller-reproducibilidad]{width=200}
+
+
+## Código
+
+Es bastante fácil mostrar código en archivos markdown.
+
+Las marcas pueden utilizarse para `resaltar` algunas palabras.
+
+Además, cualquier bloque con sangría se considera un bloque de código.  If `enable_highlight` is `true`, syntax highlighting will be included (for the builtin parser - the github parser does this automatically).
+
+    <script>
+        document.location = 'http://lmgtfy.com/?q=markdown+cheat+sheet';
+    </script>
+
+
+
+
+## Fórmulas Matemáticas
+
+Las fórmulas matemáticas pueden mostrarse en el navegador usando _MathJax_ o _Katex_. [En Sublimetext][ST] la función puede activarse configurando correctamente los campos de configuración `"js"`, `"css"` y `"markdown_extensions"`. Esto permite incluir matemáticas en línea $\frac{\pi}{2}$ o sólo $\pi$.En _Quarto_ no es necesario hacer nada particular.
+
+Alternativamente, las matemáticas se pueden escribir en su propia línea:
+
+$$F(\omega) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} f(t) \, e^{ - i \omega t}dt$$
+
+<br/>
+<br/>
+
+$$
+\begin{split}
+\int_0^1 f(t) \mathrm{d}t\\
+\\
+\\
+\sum_j \gamma_j^2/d_j
+\end{split}
+$$
+
+
+
+## GitHub Flavored Markdown
+
+If you use the Github parser, you can use some of [Github Flavored Markdown][gfm] syntax :
+
+ * User/Project@SHA: revolunet/sublimetext-markdown-preview@7da61badeda468b5019869d11000307e07e07401
+ * Usuario/Proyecto#Edición: revolunet/sublimetext-markdown-preview#1
+ * Usuario : @revolunet
+
+Algo de código Python :
+
+```python
+importar random
+
+class JuegoDeCartas(object):
+    """ una clase python de ejemplo """
+    NB_CARDAS = 32
+    def __init__(self, cards=5):
+        self.cards = random.sample(range(self.NB_CARDS), 5)
+        print 'listo para jugar'
+```
+
+Algo de código Javascript :
+
+```js
+var config = {
+    duración 5,
+    comentario: 'WTF'
+}
+// callbacks beauty un action
+async_call('/ruta/a/api', function(json) {
+    otra_llamada(json, function(resultado2) {
+        otra_otra_llamada(resultado2, function(resultado3) {
+            another_another_another_call(result3, function(result4) {
+                alert('Y si todo ha ido bien, ya tengo mi resultado :)');
+            });
+        });
+    });
+})
+```
+
+El Github Markdown también trae algunos [bonito soporte Emoji][emoji] : :+1: :heart: :beer:
+
+[^note-id]: Este es el texto de la nota. 
+
+## Parsers y Extensiones
+
+Markdown Preview viene con **Python-Markdown** precargado.
+
+### *Python-Markdown*
+
+El [Python-Markdown Parser][] proporciona soporte para varias extensiones.
+
+Parser [Python-Markdown]: https://github.com/Python-Markdown/markdown
+
+#### Extensiones extra
+
+* `abbr` -- [Abreviaturas][]
+* `attr_list` -- [Listas de Atributos][]
+* `def_list` -- [Listas de definiciones][]
+* `fenced_code` -- [Bloques de código delimitados][]
+* `footnotes` -- [Notas a pie de página][]
+* `tables` -- [Tablas][]
+* `smart_strong` -- [Smart Strong][]
+
+[Abreviaturas]: https://python-markdown.github.io/extensions/abbreviations
+[Listas de atributos]: https://python-markdown.github.io/extensions/attr_list
+[Listas de definiciones]: https://python-markdown.github.io/extensions/definition_lists
+[Bloques de código delimitados]: https://python-markdown.github.io/extensions/fenced_code_blocks
+[Notas a pie de página]: https://python-markdown.github.io/extensions/footnotes
+[Tablas]: https://python-markdown.github.io/extensions/tables
+[Smart Strong]: https://python-markdown.github.io/extensions/smart_strong
+
+
+Puede activarlas todas a la vez utilizando la palabra clave `extra`.
+
+    extensiones: [ 'extra' ]
+
+Si quieres todos los extras más la extensión `toc`,
+su configuración se vería así:
+
+    {
+        ...
+        analizador sintáctico: 'markdown',
+        extensiones: ['extra', 'toc'],
+        ...
+    }
+
+
+#### Otras extensiones
+
+También hay algunas extensiones que no están incluidas en Markdown Extra
+pero vienen en la biblioteca estándar Python-Markdown.
+
+* `code-hilite` -- [CodeHilite][]
+* `header-id` -- [HeaderId][]
+* `meta_data` -- [Meta-Data][]
+* `nl2br` -- [Nueva línea a romper][]
+* `sane_lists` -- [Listas Sanas][]
+* `smarty` -- [Smarty][]
+* `toc` -- [Tabla de contenidos][]
+* `wikilinks` -- [Enlaces Wiki][]
+
+[CodeHilite]: https://python-markdown.github.io/extensions/code_hilite
+[HeaderId]: https://python-markdown.github.io/extensions/header_id
+[Meta-Datos]: https://python-markdown.github.io/extensions/meta_data
+[Nueva línea a romper]: https://python-markdown.github.io/extensions/nl2br
+[Listas Sanas]: https://python-markdown.github.io/extensions/sane_lists
+[Índice]: https://python-markdown.github.io/extensions/toc
+[Enlaces Wiki]: https://python-markdown.github.io/extensions/wikilinks
+[Smarty]: hhttps://python-markdown.github.io/extensions/smarty
+
+#### Extensiones de terceros
+
+*Python-Markdown* está diseñado para ser extendido.
+
+Algunas incluidas son:
+
+* `delete` -- soporte de borrado estilo github mediante `~~word~~`.
+* `githubemoji` -- soporte para emoji de github
+* `tasklist` -- listas de tareas estilo github
+* `magiclink` -- conversión automática de enlaces http|ftp al estilo github
+* `headeranchor` -- enlaces de anclaje de cabecera al estilo github
+* `github` -- Añade las extensiones anteriores de una sola vez
+* `b64` -- convierte e incrusta imágenes locales a base64.  Se configura añadiendo `b64(base_path=${BASE_PATH})`.
+
+También hay una serie de otros disponibles:
+
+Simplemente bifurca este repositorio y añade tus extensiones dentro de la carpeta `.../Packages/Markdown Preview/markdown/extensions/`.
+
+Echa un vistazo a la lista de [3rd Party extensions](
+https://github.com/waylan/Python-Markdown/wiki/Third-Party-Extensions).
+
+#### Extensiones por defecto
+
+Las extensiones por defecto son:
+
+* `footnotes` -- [Notas a pie de página]
+* `toc` -- [Tabla de contenidos]
+* `fenced_code` -- [Bloques de código delimitados] 
+* `tables` -- [Tablas]
+
+Utilice la palabra clave `default`, para seleccionarlos todos.
+Si quiere todos los predeterminados más la extensión `definition_lists`,
+su configuración se vería así:
+
+    {
+        ...
+        analizador sintáctico: 'markdown',
+        extensiones: ['default', 'definition_lists'],
+        ...
+    }
+
+## Ejemplos
+
+### Tablas
+
+La extensión `tables` del analizador sintáctico *Python-Markdown* está activada por defecto,
+pero actualmente **no** está disponible en *Markdown2*.
+
+La sintaxis fue adoptada del [php markdown project](http://michelf.ca/projects/php-markdown/extra/#table),
+y también se usa en markdown con sabor a github.
+
+| Año | Temperatura (baja) | Temperatura (alta) |  
+| ---- | ----------------- | -------------------|  
+| 1900 | -10 | 25 |  
+| 1910 | -15 | 30 |  
+| 1920 | -10 | 32 |  
+
+
+### Tablas Wiki
+
+Si estás usando *Markdown2* con el extra `wiki-tables` activado deberías ver la siguiente tabla:
+
+| *Año* || *Temperatura (baja)* | *Temperatura (alta)* ||  
+|| 1900 || -10 || 25 ||  
+|| 1910 || -15 || 30 ||  
+|| 1920 || -10 || 32 ||  
+
+
+### Listas de definiciones
+
+Este ejemplo requiere la extensión `def_list` de *Python Markdown*.
+
+Apple
+:   Fruto pomáceo de plantas del género Malus de la 
+    la familia Rosaceae.
+
+Naranja
+:   Fruto de un árbol perenne del género Citrus.
+
+
+## Acerca de
+
+Este plugin y este archivo de ejemplo es orgullosamente traído a usted por el [equipo revolunet][revolunet]. La traducción la hizo [Miguel Equihua](https://2025-ciencia-reproducible.netlify.app/)
+
+ [ref1]: http://revolunet.com
+ [ref2]: http://revolunet.com "aplicaciones web enriquecidas"
+ [MarkdownREF]: http://daringfireball.net/projects/markdown/basics
+ [MarkdownPreview]: https://github.com/revolunet/sublimetext-markdown-preview
+ [ST]: http://sublimetext.com
+ [revolunet]: http://revolunet.com
+ [taller-reproducibilidad]: https://2025-ciencia-reproducible.netlify.app/posts/2025-02-14-taller/Poster-r-ciencia.png "taller por una ciencia más reproducible"
+ [gfm]: https://help.github.com/articles/github-flavored-markdown/
+ [emoji]: http://www.emoji-cheat-sheet.com/
