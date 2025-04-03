@@ -299,7 +299,10 @@ Si es de tu interés, aquí encontrarás [muchos detalles interesanes sobre YAML
 ::: {.callout-important collapse="true"}
 ## Arruiné mi **Blog** ¡¡¡¡Ayuda!!!!
 
+#### Descompuse archivos clave
+
 Como ya nos pasó, puede ser que eches a perder tu archivo _index.qmd_ en la raíz de tu proyecto. Ese documento se encarga de construir la estructura general de tu _blog_. Ojalá hayas echo un **commit** inicial justo acabando de crear tu proyecto. Si fuiste así de sabia o sabio, todo lo que tienes que hacer es buscar el archivo en cuestión y recuperarlo. **Github desktop** será tu amigo para eso.
+
 Por si ocurriera un accidente de este tipo y no hubiera nada más que hacer pongo aquí las líneas generales que suele tener este archivo, cópialas en caso de emergencia y substituye todo lo que tengas en el archivo dañado (si pusiste cosas muy importantes que quiere conservar, haz una copia y haz la reparación en una de ellas. ¡Suerte!
 
 
@@ -320,4 +323,35 @@ title-block-banner: true
 
 Recuerda sólo hacer lo escencial en los documentos en la raíz de tu proyecto: el nombre de tu blog, título inicial y cosas así. No hagas más de lo indispensable en los archivos  **index.qmd** y **\_quarto.yml** que están en esta ubicación. Toda tu creatividad debes expresarla dentro de subcarpetas contenidas en la carpeta **posts**.
       
+
+#### !Eché a perder mi blog, pero tengo una versión buena en git!
+
+Lo primero es !serenidad y paciencia! Toda la idea de usar _git_ es para estos casos. Claro, podrías volverte experto en su uso más profesional mediante comandos, [ojalá te animes](https://www.epirhandbook.com/es/new_pages/collaboration.es.html). Pero por lo pronto hagámoslo con lo que ya tenemos a la mano. Veamos algunos escenarios posibles:
+
+1. Un escenario muy sencillo es cuando estas actualizando un documento que ya pusiste en el registro de _git_. Intentas _renderizarlo_ y para tu sorpresa, ¡falla de manera inexplicable! Para colmo, hiciste un montón de cambios que ya ni te acuerdas. Eso sí, estas seguro o segura de que tu última versi´n, a la que le hiciste un _commit_, sí funcionaba, no a tu gusto comoleto, pero no se trababa. En este caso, busca en la pestaña de _git_ en _RStudio_ el arhivo que estás trabajando, seguro un **index.qmd** en un folder de la carpet **posts**. Seleccionalo y aprieta el botón derecho dell mouse. En las ventanita emergente encontrarás la palabra _revert..._. ¡Eso es!, dale click y recuperará el arhivo en la últia versión que resguardaste con un _commit_. ¡Listo!, estás de regreso y ahora puedes volver a empezar, con más cuidado.
+
+2. Otro caso es cuando has sido muy diligente y has echo todo bien. Haces cambios a tu gusto y cada vez que lo sientes apropiado has echo tus _commits_. Te vas por un tesito, cambias de humor, trabajas en otra parte de tu **blog** y haces commit a tus nuevos cambios. De pronto, un rayo de inspiración, te hace comprender que lo que hiciste al principio del día no era buena ideas, te arrepientes y quieres regresar a una versión que está seis o diez _commits_ atras, sabes a donde te gustaría regresar pues anotaste un mensaje alusivo que te recuerda claramente el estado del documento que quieres retomar como inicio. ¿Cómo puedes viajar hacia atras en el tiempo? Bueno, hacer esto es relativamente sencillo con el comando [`git restore`](https://git-scm.com/docs/git-restore) que puede rescatarte desde la _terminal_ de _RStudio_. Las indicaciones _--source_ y _main~x_ van de cajón (la x toma el valor de cuantos _commits_ atras hay que ir en la rama **main**), y terminas con la ruta al archivo de tu interés, en este ejemplo _posts/primer-ejemplo/index.qmd_. 
+
+
+```{.bash}
+
+git restore --source main~5 posts/primer-ejemplo/index.qmd
+ 
+```
+
+
+:::: {layout="[1,1]"}
+Otra opción para identificar el _commit_ preciso de mi interés es poner enseguida de _--source_ una parte reconocible en forma única de la firma hash *SHA* de 40 caracteres, que identifica en forma exacta a cada _commit_, y que puedes encontrar con la opción _History_ en la pestaña _git_.
+
+![](images/restaurar-a-un-commit-dado.png){width=200}
+
+::::
+
+```{.bash}
+
+git restore --source cc12d23841a  posts/primer-ejemplo/index.qmd
+
+```
+
 ::: 
+

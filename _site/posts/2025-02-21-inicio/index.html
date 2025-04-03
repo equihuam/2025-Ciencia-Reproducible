@@ -610,7 +610,10 @@ Arruiné mi <strong>Blog</strong> ¡¡¡¡Ayuda!!!!
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Como ya nos pasó, puede ser que eches a perder tu archivo <em>index.qmd</em> en la raíz de tu proyecto. Ese documento se encarga de construir la estructura general de tu <em>blog</em>. Ojalá hayas echo un <strong>commit</strong> inicial justo acabando de crear tu proyecto. Si fuiste así de sabia o sabio, todo lo que tienes que hacer es buscar el archivo en cuestión y recuperarlo. <strong>Github desktop</strong> será tu amigo para eso. Por si ocurriera un accidente de este tipo y no hubiera nada más que hacer pongo aquí las líneas generales que suele tener este archivo, cópialas en caso de emergencia y substituye todo lo que tengas en el archivo dañado (si pusiste cosas muy importantes que quiere conservar, haz una copia y haz la reparación en una de ellas. ¡Suerte!</p>
+<section id="descompuse-archivos-clave" class="level4">
+<h4 class="anchored" data-anchor-id="descompuse-archivos-clave">Descompuse archivos clave</h4>
+<p>Como ya nos pasó, puede ser que eches a perder tu archivo <em>index.qmd</em> en la raíz de tu proyecto. Ese documento se encarga de construir la estructura general de tu <em>blog</em>. Ojalá hayas echo un <strong>commit</strong> inicial justo acabando de crear tu proyecto. Si fuiste así de sabia o sabio, todo lo que tienes que hacer es buscar el archivo en cuestión y recuperarlo. <strong>Github desktop</strong> será tu amigo para eso.</p>
+<p>Por si ocurriera un accidente de este tipo y no hubiera nada más que hacer pongo aquí las líneas generales que suele tener este archivo, cópialas en caso de emergencia y substituye todo lo que tengas en el archivo dañado (si pusiste cosas muy importantes que quiere conservar, haz una copia y haz la reparación en una de ellas. ¡Suerte!</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Título de inicio en tu blog "</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="an">listing:</span><span class="co">    </span></span>
@@ -624,6 +627,33 @@ Arruiné mi <strong>Blog</strong> ¡¡¡¡Ayuda!!!!
 <span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="an">title-block-banner:</span><span class="co"> true</span></span>
 <span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Recuerda sólo hacer lo escencial en los documentos en la raíz de tu proyecto: el nombre de tu blog, título inicial y cosas así. No hagas más de lo indispensable en los archivos <strong>index.qmd</strong> y <strong>_quarto.yml</strong> que están en esta ubicación. Toda tu creatividad debes expresarla dentro de subcarpetas contenidas en la carpeta <strong>posts</strong>.</p>
+</section>
+<section id="eché-a-perder-mi-blog-pero-tengo-una-versión-buena-en-git" class="level4">
+<h4 class="anchored" data-anchor-id="eché-a-perder-mi-blog-pero-tengo-una-versión-buena-en-git">!Eché a perder mi blog, pero tengo una versión buena en git!</h4>
+<p>Lo primero es !serenidad y paciencia! Toda la idea de usar <em>git</em> es para estos casos. Claro, podrías volverte experto en su uso más profesional mediante comandos, <a href="https://www.epirhandbook.com/es/new_pages/collaboration.es.html">ojalá te animes</a>. Pero por lo pronto hagámoslo con lo que ya tenemos a la mano. Veamos algunos escenarios posibles:</p>
+<ol type="1">
+<li><p>Un escenario muy sencillo es cuando estas actualizando un documento que ya pusiste en el registro de <em>git</em>. Intentas <em>renderizarlo</em> y para tu sorpresa, ¡falla de manera inexplicable! Para colmo, hiciste un montón de cambios que ya ni te acuerdas. Eso sí, estas seguro o segura de que tu última versi´n, a la que le hiciste un <em>commit</em>, sí funcionaba, no a tu gusto comoleto, pero no se trababa. En este caso, busca en la pestaña de <em>git</em> en <em>RStudio</em> el arhivo que estás trabajando, seguro un <strong>index.qmd</strong> en un folder de la carpet <strong>posts</strong>. Seleccionalo y aprieta el botón derecho dell mouse. En las ventanita emergente encontrarás la palabra <em>revert…</em>. ¡Eso es!, dale click y recuperará el arhivo en la últia versión que resguardaste con un <em>commit</em>. ¡Listo!, estás de regreso y ahora puedes volver a empezar, con más cuidado.</p></li>
+<li><p>Otro caso es cuando has sido muy diligente y has echo todo bien. Haces cambios a tu gusto y cada vez que lo sientes apropiado has echo tus <em>commits</em>. Te vas por un tesito, cambias de humor, trabajas en otra parte de tu <strong>blog</strong> y haces commit a tus nuevos cambios. De pronto, un rayo de inspiración, te hace comprender que lo que hiciste al principio del día no era buena ideas, te arrepientes y quieres regresar a una versión que está seis o diez <em>commits</em> atras, sabes a donde te gustaría regresar pues anotaste un mensaje alusivo que te recuerda claramente el estado del documento que quieres retomar como inicio. ¿Cómo puedes viajar hacia atras en el tiempo? Bueno, hacer esto es relativamente sencillo con el comando <a href="https://git-scm.com/docs/git-restore"><code>git restore</code></a> que puede rescatarte desde la <em>terminal</em> de <em>RStudio</em>. Las indicaciones <em>–source</em> y <em>main~x</em> van de cajón (la x toma el valor de cuantos <em>commits</em> atras hay que ir en la rama <strong>main</strong>), y terminas con la ruta al archivo de tu interés, en este ejemplo <em>posts/primer-ejemplo/index.qmd</em>.</p></li>
+</ol>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> restore <span class="at">--source</span> main~5 posts/primer-ejemplo/index.qmd</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a> </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p>Otra opción para identificar el <em>commit</em> preciso de mi interés es poner enseguida de <em>–source</em> una parte reconocible en forma única de la firma hash <em>SHA</em> de 40 caracteres, que identifica en forma exacta a cada <em>commit</em>, y que puedes encontrar con la opción <em>History</em> en la pestaña <em>git</em>.</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="images/restaurar-a-un-commit-dado.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16"><img src="images/restaurar-a-un-commit-dado.png" class="img-fluid" width="200"></a></p>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> restore <span class="at">--source</span> cc12d23841a  posts/primer-ejemplo/index.qmd</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
 </div>
 </div>
 </div>
@@ -1054,7 +1084,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"loop":false,"openEffect":"zoom","selector":".lightbox","closeEffect":"zoom","descPosition":"bottom"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","closeEffect":"zoom","loop":false,"openEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {

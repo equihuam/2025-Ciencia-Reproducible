@@ -50,7 +50,7 @@ Sugiero hacer una reflexión sobre esto y considerar también de qué manera se 
 
 ### Algunas ideas para animar la charla
 
-Una cosa que podría ser de tu interés es *cosechar datos* del Internet. **R** tiene bibliotecas bbastante competenes para hacerlo, pero te invito primero a pensarlo y precisar la idea, para entonces dedicar alguna sesión del taller en el futuro próximo all tema. Junto con esto va una reflexión sobre *datos abiertos* que tengo previsto tratar y junto con esto alguunos asuntos sobre derechos de autor y licenciamiento del contenido que tu mismo producirás. En tanto resolvemos esta interés, una cosa más sencilla es trabajar con datos que ya tengo en mi poseción, es decir un Excel o documento semejante en mi máquina.
+Una cosa que podría ser de tu interés es *cosechar datos* del Internet. **R** tiene bibliotecas bbastante competenes para hacerlo, pero te invito primero a pensarlo y precisar la idea, para entonces dedicar alguna sesión del taller en el futuro próximo al tema. Junto con esto va una reflexión sobre *datos abiertos* que tengo previsto tratar y junto con esto alguunos asuntos sobre derechos de autor y licenciamiento del contenido que tu mismo producirás. En tanto resolvemos esta interés, una cosa más sencilla es trabajar con datos que ya tengo en mi poseción, es decir un Excel o documento semejante en mi máquina.
 
 ## Datos en Mi equipo
 
@@ -79,7 +79,7 @@ pollos_peso |>
 
 ```
 
-Los datos están en un formato poco conveniente para un análisis general. Hagamos algunas operaciones para ponerlos en una forma más adecuada. Básicamente buscaremos cambiar del formato extendido, bueno para visualizar, a uno apilado, más apropiado para el análisis estadístico
+Los datos están en un formato poco conveniente para un análisis general. Hagamos algunas operaciones para ponerlos en una forma más adecuada. Básicamente buscaremos cambiar del formato extendido, bueno para visualizar, a uno apilado, más apropiado para el análisis estadístico.
 
 ```{r}
 #| label: grafica_pollos
