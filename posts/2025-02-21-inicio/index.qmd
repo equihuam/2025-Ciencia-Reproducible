@@ -356,5 +356,26 @@ git restore --source cc12d23841a  posts/primer-ejemplo/index.qmd
 
 Como por arte de magia, estás de regreso en el documento solicitado. Quizás _RStudio_ te advierta que hubo cambios y te pida le des indicaciones, lee con cuidado lo que te diga y responde adecuadamente. ¡Listo!
 
+#### ¿Como Evitar arriesgar mi **blog** a cada commit?
+
+:::: {layout="[1,1]"}
+Una manera de trabajar con más tranquilidad en tu **blog** es otra vez recurriendo a la ayuda que ofrece _git_. Te sugiero evitar trabajar el desarrollo de tus ideas directamente sobre la rama _main_ o la que sea tu rama **principal/publicación/producción**. La idea es que cuando estes planeado algo nuevo crees una rama nueva o si ya tienes una y está en la misma cosa, seleccionala como la rama activa.
+
+![](images/git-rama-nueva.png){width=200 fig-align="right"}
+::::
+
+Asegurate de que la rama del nuevo desarrollo sea la activa. Como recordarás, la publicación de tu **blog** ocurre a través de _Netlify_ **exclusivamenre con lo que pongas en la rama _main_.**. Así que todo lo que hagas en la nueva rama no pasará a publicación en tu **blog**, sólo lo podrás ver localmente cuando hagas _render_, será una especie de borrador. Cuando todo esté a tu gusto y ya lo quieras publicar tienes que combinar el contenido de la rama en la que has estado trabajando con la rama _main_. Para hacerlo hay que seguir estos pasos:
+
+1. Cambia el espacio de trabajo en _git_ a la rama _main_.
+2. En la pestaña de **terminal** de _RStudio_. Indicale a _git_ que jale para combinar *la_rama_alterna_con_mi_trabajo*. Escribe para esto los siguientes comandos de _git_ en la pestaña de **terminal**:
+
+```{.bash}
+
+git merge la_rama_alterna_con_mi_trabajo
+
+```
+
+Como podrás imaginar, [el proceso requiere verificar muchas cosas](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging), lo cual hace _git_ por ti. Normalmente y si te portaste bien, la fusión de las ramas debe ocurrir sin tropiezos. Si hubiera dificultades, _git_ te lo hará saber. Basicamente lo que hará es indicarte que hay cambios contradicorios. Es decir, hiciste cambios tú, al mismo archivo en las dos ramas, así que no se puede decidir cuál es el cambio que hay que conservar sin preguntarte a ti que es lo que prefieres. En tal caso, veras los archivos inconsistentes marcados con una etiqueta naranja y tendrás que revisarlos para que tú resuelvas directamente lo conducente. Puede ser que haya archivos que en realidad no cambiaste tú directamente, como serían los que se producen automáticamente en **\_site** y que sólo arrastrán las consecuencias de tus cambios. De esos no te preocupes, se renovarán cuando hayas resuelto los importantes, que seguramente son los que tienes en **posts**, o algún detallito que arreglaste en los archivos general en la raíz de tu proyecto.
+
 ::: 
 

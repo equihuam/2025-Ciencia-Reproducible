@@ -659,6 +659,34 @@ Arruiné mi <strong>Blog</strong> ¡¡¡¡Ayuda!!!!
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> restore <span class="at">--source</span> cc12d23841a  posts/primer-ejemplo/index.qmd</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Como por arte de magia, estás de regreso en el documento solicitado. Quizás <em>RStudio</em> te advierta que hubo cambios y te pida le des indicaciones, lee con cuidado lo que te diga y responde adecuadamente. ¡Listo!</p>
 </section>
+<section id="como-evitar-arriesgar-mi-blog-a-cada-commit" class="level4">
+<h4 class="anchored" data-anchor-id="como-evitar-arriesgar-mi-blog-a-cada-commit">¿Como Evitar arriesgar mi <strong>blog</strong> a cada commit?</h4>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p>Una manera de trabajar con más tranquilidad en tu <strong>blog</strong> es otra vez recurriendo a la ayuda que ofrece <em>git</em>. Te sugiero evitar trabajar el desarrollo de tus ideas directamente sobre la rama <em>main</em> o la que sea tu rama <strong>principal/publicación/producción</strong>. La idea es que cuando estes planeado algo nuevo crees una rama nueva o si ya tienes una y está en la misma cosa, seleccionala como la rama activa.</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-right">
+<figure class="figure">
+<p><a href="images/git-rama-nueva.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17"><img src="images/git-rama-nueva.png" class="img-fluid quarto-figure quarto-figure-right figure-img" width="200"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>Asegurate de que la rama del nuevo desarrollo sea la activa. Como recordarás, la publicación de tu <strong>blog</strong> ocurre a través de <em>Netlify</em> <strong>exclusivamenre con lo que pongas en la rama <em>main</em>.</strong>. Así que todo lo que hagas en la nueva rama no pasará a publicación en tu <strong>blog</strong>, sólo lo podrás ver localmente cuando hagas <em>render</em>, será una especie de borrador. Cuando todo esté a tu gusto y ya lo quieras publicar tienes que combinar el contenido de la rama en la que has estado trabajando con la rama <em>main</em>. Para hacerlo hay que seguir estos pasos:</p>
+<ol type="1">
+<li>Cambia el espacio de trabajo en <em>git</em> a la rama <em>main</em>.</li>
+<li>En la pestaña de <strong>terminal</strong> de <em>RStudio</em>. Indicale a <em>git</em> que jale para combinar <em>la_rama_alterna_con_mi_trabajo</em>. Escribe para esto los siguientes comandos de <em>git</em> en la pestaña de <strong>terminal</strong>:</li>
+</ol>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge la_rama_alterna_con_mi_trabajo</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Como podrás imaginar, <a href="https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging">el proceso requiere verificar muchas cosas</a>, lo cual hace <em>git</em> por ti. Normalmente y si te portaste bien, la fusión de las ramas debe ocurrir sin tropiezos. Si hubiera dificultades, <em>git</em> te lo hará saber. Basicamente lo que hará es indicarte que hay cambios contradicorios. Es decir, hiciste cambios tú, al mismo archivo en las dos ramas, así que no se puede decidir cuál es el cambio que hay que conservar sin preguntarte a ti que es lo que prefieres. En tal caso, veras los archivos inconsistentes marcados con una etiqueta naranja y tendrás que revisarlos para que tú resuelvas directamente lo conducente. Puede ser que haya archivos que en realidad no cambiaste tú directamente, como serían los que se producen automáticamente en <strong>_site</strong> y que sólo arrastrán las consecuencias de tus cambios. De esos no te preocupes, se renovarán cuando hayas resuelto los importantes, que seguramente son los que tienes en <strong>posts</strong>, o algún detallito que arreglaste en los archivos general en la raíz de tu proyecto.</p>
+</section>
 </div>
 </div>
 </div>
@@ -1089,7 +1117,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"loop":false,"openEffect":"zoom","descPosition":"bottom","selector":".lightbox","closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","openEffect":"zoom","loop":false,"closeEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
