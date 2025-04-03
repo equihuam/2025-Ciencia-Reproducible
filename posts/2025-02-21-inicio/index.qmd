@@ -12,6 +12,7 @@ fig-cap-location: top
 
 ## [Markdown](https://gesel.github.io/materiales/10Gu%C3%ADa_RMarkdown.pdf), [Quarto](https://rstudio.github.io/cheatsheets/quarto.pdf) y la [ciencia abierta](pres-ciencia-abierta.qmd)
 
+
 *Tan simple como escribir en la página en blanco con pequeñas marcas de intención*. Se ha inventado varias veces y el columpio ha ido y venido entre el interés en ver y controlar las marcas directamente sobre el texto y la preferencia de ver sólo el producto terminado **WYSIWYG** (*lo que ves es lo que tienes*, aunque el marcado existe, pero lo hace la máquina por ti).
 
 ::: {layout="[1, 1.5]"}
