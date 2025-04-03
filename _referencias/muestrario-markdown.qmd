@@ -1,6 +1,5 @@
 ---
 title: "Acordeón de Markdown"
-format: html
 ---
 
 Acordeón de Ejemplos de Markdown
@@ -18,7 +17,6 @@ esto es texto `importante` y signos de porcentaje : % y `%`
 Esto es un párrafo con una nota a pie de página (sólo analizador sintáctico incorporado). [^note-id]
 
 Inserte `[ TOC ]` sin espacios para generar una tabla de contenidos (sólo analizadores incorporados).
-
 
 
 ## Sangría

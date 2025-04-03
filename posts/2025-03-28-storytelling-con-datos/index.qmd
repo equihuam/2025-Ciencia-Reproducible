@@ -13,9 +13,7 @@ fig-cap-location: top
 bibliography: "../references.bib"
 csl: ../apa.csl
 
-format: 
-  html: default
- 
+
 crossref: 
   tbl-title: Cuadro
   tbl-prefix: Cuadro
