@@ -343,7 +343,7 @@ git restore --source main~5 posts/primer-ejemplo/index.qmd
 :::: {layout="[1,1]"}
 Otra opción para identificar el _commit_ preciso de mi interés es poner enseguida de _--source_ una parte reconocible en forma única de la firma hash *SHA* de 40 caracteres, que identifica en forma exacta a cada _commit_, y que puedes encontrar con la opción _History_ en la pestaña _git_.
 
-![](images/restaurar-a-un-commit-dado.png){width=200}
+![](images/restaurar-a-un-commit-dado.png){width=200 fig-align="right"}
 
 ::::
 
