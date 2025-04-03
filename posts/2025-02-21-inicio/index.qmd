@@ -334,7 +334,6 @@ Lo primero es !serenidad y paciencia! Toda la idea de usar [_git_](https://git-s
 
 
 ```{.bash}
-
 git restore --source main~5 posts/primer-ejemplo/index.qmd
  
 ```
@@ -348,7 +347,6 @@ Otra opción para identificar el _commit_ preciso de mi interés es poner ensegu
 ::::
 
 ```{.bash}
-
 git restore --source cc12d23841a  posts/primer-ejemplo/index.qmd
 
 ```
@@ -370,12 +368,11 @@ Asegurate de que la rama del nuevo desarrollo sea la activa. Como recordarás, l
 2. En la pestaña de **terminal** de _RStudio_. Indicale a _git_ que jale para combinar *la_rama_alterna_con_mi_trabajo*. Escribe para esto los siguientes comandos de _git_ en la pestaña de **terminal**:
 
 ```{.bash}
-
 git merge la_rama_alterna_con_mi_trabajo
 
 ```
 
-Como podrás imaginar, [el proceso requiere verificar muchas cosas](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging), lo cual hace _git_ por ti. Normalmente y si te portaste bien, la fusión de las ramas debe ocurrir sin tropiezos. Si hubiera dificultades, _git_ te lo hará saber. Basicamente lo que hará es indicarte que hay cambios contradicorios. Es decir, hiciste cambios tú, al mismo archivo en las dos ramas, así que no se puede decidir cuál es el cambio que hay que conservar sin preguntarte a ti que es lo que prefieres. En tal caso, veras los archivos inconsistentes marcados con una etiqueta naranja y tendrás que revisarlos para que tú resuelvas directamente lo conducente. Puede ser que haya archivos que en realidad no cambiaste tú directamente, como serían los que se producen automáticamente en **\_site** y que sólo arrastrán las consecuencias de tus cambios. De esos no te preocupes, se renovarán cuando hayas resuelto los importantes, que seguramente son los que tienes en **posts**, o algún detallito que arreglaste en los archivos general en la raíz de tu proyecto.
+Como podrás imaginar, [el proceso requiere verificar muchas cosas](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging), lo cual hace _git_ por ti. Normalmente y si te portaste bien, la fusión de las ramas debe ocurrir sin tropiezos. Si hubiera dificultades, _git_ te lo hará saber. Basicamente lo que hará es indicarte que hay cambios contradictorios. Es decir, hiciste cambios tú, al mismo archivo en las dos ramas, así que no se puede decidir cuál es el cambio que hay que conservar sin preguntarte a ti que es lo que prefieres. En tal caso, veras los archivos inconsistentes marcados con una etiqueta naranja y tendrás que revisarlos para que tú resuelvas directamente lo conducente. Puede ser que haya archivos que en realidad no cambiaste tú directamente, como serían los que se producen automáticamente en **\_site** y que sólo arrastrán las consecuencias de tus cambios. De esos no te preocupes, se renovarán cuando hayas resuelto los importantes, que seguramente son los que tienes en **posts**, o algún detallito que arreglaste en los archivos general en la raíz de tu proyecto.
 
 ::: 
 
