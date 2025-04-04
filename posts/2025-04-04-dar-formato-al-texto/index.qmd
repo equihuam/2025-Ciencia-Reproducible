@@ -3,7 +3,7 @@ title: "Dar formato a mi documeto"
 author: "Miguel Equihua"
 date: 04/apr/2025
 lang: es
-draft: true
+draft: false
 categories: [div, fences, pestañas, cajas]
 toc: true
 
