@@ -1,0 +1,15 @@
+---
+title: Test
+keep-md: true
+---
+
+```{r}
+DiagrammeR::grViz("digraph {
+
+graph [layout = dot, rankdir = LR]
+node [shape = rectangle, style = filled, fillcolor = Linen]
+owner [label = 'Owner', shape = circle]
+
+}")
+
+```

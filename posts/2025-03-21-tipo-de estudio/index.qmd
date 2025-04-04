@@ -22,7 +22,7 @@ crossref:
 
 Los proyectos que suelen abordarse en una especialización científca o tecnológica abordan desafíos de **identificación y medición de relaciones causales**, estimación del estado de variables ambientales, demográficas, económicas, etc., representación gráfica de procesos, mecanismos o de la distribución geográfica de variables de interés. También puede interesar la construcción de formas de comunicación efectiva a actores relevantes pero no especializados en términos de preparación universitaria formal. Será tu desafío precisar la naturaleza del proyecto que será la base formal de tu **Blog**. Recuerda mantener una perspectiva de [*narrativa basada en datos*](../2025-03-28-storytelling-con-datos/index.qmd), y de la importancia de la *trazabilidad* de la evidencia y de los procesos analíticos utilizados.
 
-Para ayudarte a poner tus intereses en perspectiva conviene hablar sobre como se caractefrizan generalmente los tipos de estudio científicos y tecnológicos. Un primer asunto es considerar si se trata de estudios que se basaran en datos ya existentes (*retrospectiva*) o datos nuevos que se planea producir (*prospectivo*).
+Para ayudarte a poner tus intereses en perspectiva conviene hablar sobre como se caracterizan generalmente los tipos de estudio científicos y tecnológicos. Un primer asunto es considerar si se trata de estudios que se basaran en datos ya existentes (*retrospectiva*) o datos nuevos que se planea producir (*prospectivo*).
 
 Otro aspecto a considerar es si para los fines del trabajo se requiere una sóla medición en el tiempo (*transversal*) o si se requiere dar sguimiento a la evolución del fenómeno con mediciones repetidas varias veces a lo largo del tiempo (*longitudinal*).
 
