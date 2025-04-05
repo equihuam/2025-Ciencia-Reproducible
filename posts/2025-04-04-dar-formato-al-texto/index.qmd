@@ -6,39 +6,36 @@ lang: es
 draft: false
 categories: [div, fences, pestañas, cajas]
 
-image: magnifying-glass-541626_1280.jpg
+image: img/magnifying-glass-541626_1280.jpg
 cap-location: top
 
 code-fold: true
 code-summary: "muestra el escript:"
 
-format: 
-  html:
-    toc: true
-
+format: html           
 ---
 
-Voy a empezar por mi propia reacción "no me gustó la configuración *default* que usa *Quarto*", en cuanto a justificar a la izquierda las leyendas de las figuras. Para cambiar eso use el código del @lst-css. 
+Voy a empezar por mi propia reacción "no me gustó la configuración *default* que usa *Quarto*", en cuanto a justificar a la izquierda las leyendas de las figuras. Para cambiar eso use el código del @lst-css, dentro de un trozo de código css:
 
 ::: {#lst-css lst-cap="Código css para centrar la leyenda."}
-```{.css}
 
-figcaption {
-    text-align: center;
-}
+>\`\`\`\{css\}
+>  
+>figcaption \{
+>    text-align: center;
+>\}
+>
+>\`\`\`
 
-```
 :::
 
-|  
+\  
 
-![Descripción](img/clothespins-8506708_1280.jpg){width=100}
+![Descripción](img/clothespins-8506708_1280.jpg){#fig-dec width=100}
 
-Esto tiene un poco que ver con el asunto de darle en general un *tema/aspecto* al proyecto. [Aquí puedes encontrar más información](https://quarto.org/docs/output-formats/html-themes.html) al respecto.
+Esto tiene un poco que ver con el asunto de darle en general un *tema/aspecto* al proyecto. [Aquí puedes encontrar más información](https://quarto.org/docs/output-formats/html-themes.html) al respecto. Para cambiar el tema modifica el archivo **\_quarto.yml** en la línea de theme (@fig-tema). Por cierto, nota que en esta figura aparece la opción _lightbox_. Esa opción es la que activa la función que permite interactuar con las ilustraciones como entidades separadas, para que el usuario pueda explorarlas con más detalle.
 
-Para cambiar el tema modifica el archivo **\_quarto.yml** en la línea de theme. Por cierto, en la figura aparece la opción _lightbox_, que activa la función que permite interactuar con las figuras como entidades separadas, para que el usuario pueda explorarlas con más detalle.
-
-![](img/tema.png){width=300}
+![](img/tema.png){#fig-tema width=300}
 
 Otra cosa que puede interesarte hacer es controlar el arreglo general de la página de tu blog (@fig-partes-pag). Algo que puedes hacer en el documento general `_quarto.yml`. [Aquí están los detalles](https://quarto.org/docs/output-formats/page-layout.html#page-layout).
 
@@ -48,6 +45,59 @@ Otra cosa que puede interesarte hacer es controlar el arreglo general de la pág
 
 \  
 \  
+## Crear Columnas
+
+A veces nos gustaría tener una figura al lado del texto o como en un periódico o revista, tener el texto en columnas angostas. Esto es bastante fácil de lograr en _Quarto_. Hay varias maneras de hacerlo.  la más sencilla:
+
+> \:\:\: \{layout="[1,1]"\}
+>
+> Párrafo 1 con algunas ideas muy sabias....  
+>  
+> Párrafo 2 para explicar lo sabio del párrafo 1....  
+>
+> \:\:\:
+
+Los número dentro de paréntesis cuadrados indican proporción, no una magnitud absoluta. En este caso, dos columnas del mismo tamaño. Puedes usar valores negativos para indicar columnas vacías. El resultado se ve así:
+
+::: {layout="[1,1]" style="color:green;"}
+
+Párafo 1 con algunas ideas muy sabias. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    
+Párrafo 2 para explicar lo sabio del párrafo 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  
+ 
+:::
+
+[Otra manera](https://quarto.org/docs/presentations/beamer.html#multiple-columns) es la siguiente.
+
+> \:\:\: \{.columns\}
+>
+> \:\:\:\: \{.column width="40%"}
+> Párrafo 1 con algunas ideas muy sabias....  
+> \:\:\:\:
+>
+> \:\:\:\:{.colum width="60%" }
+> Párrafo 2 para explicar lo sabio del párrafo 1....  
+>
+> \:\:\:
+
+
+::: {.columns style="color:blue;"}
+
+:::: {.column width="40%"}
+Párafo 1 con algunas ideas muy sabias. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+::::
+
+:::: {.column width="60%"}
+Párrafo 2 para explicar lo sabio del párrafo 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  
+::::
+
+:::
+
+Intenta usar esto para producir un [texto al lado de una imágen](https://quarto.org/docs/authoring/figures.html). ¿Con cuál variante sientes más cómoda o cómodo?
+
+
+\ 
+\ 
 
 ## Identificadores fijos
 

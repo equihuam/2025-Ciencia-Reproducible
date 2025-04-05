@@ -2,24 +2,22 @@
 title: "Datos abiertos"
 author: "Miguel Equihua"
 lang: es
-date: 11/apr/2025
+date: 10/apr/2025
 categories: [datos abiertos, scraping]
-draft: true
+draft: false
 
 image: images/logo-goFAIR.svg
 code-fold: true
 code-summary: "muestra el escript:"
+
 fig-cap-location: top
 tbl-cap-location: top
 editor_options: 
   chunk_output_type: inline
+  
 format: 
-  html: 
-    grid:
-      sidebar-width: 300px
-      body-width: 800px
-      margin-width: 300px
-      gutter-width: 1.5rem
+  html: default
+
 ---
 
 
@@ -61,7 +59,7 @@ De acuerdo con los criterios que emanan de los principio **FAIR**, los datos pue
 
 \
 
-![](images/Escalera-Open%20Access.png){width=60% fig-align="center"}
+![](images/Escalera-Open Access.png){width=60% fig-align="center"}
 
 \
 
