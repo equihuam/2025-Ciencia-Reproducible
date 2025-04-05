@@ -287,7 +287,7 @@ Es básicamente un Website con una *landing-page* que genera automáticamente un
 
 ## Cómo incluir diagramas en mi **blog**
 
-Diagrama de Gantt. Producido a partir de una especificación de elementos según comandos clave de la *aplicación mermaid* para la produción de diveros tipos de diagrams basados en **Java Script**. La documentación y un herramienta de diseño auxiliar se encuentra en la [documentación de mermaid](https://mermaid.js.org/).
+Por ejemplo algo muy útil como un diagrama de Gantt. Se puede construir a partir de una especificación de elementos según comandos clave de la *aplicación mermaid* para la produción de diveros tipos de diagrams basados en **Java Script**. La documentación e incluso un herramienta de diseño auxiliar se encuentra en la [documentación de mermaid](https://mermaid.js.org/).
 
 \  
 
@@ -306,8 +306,8 @@ m <- mermaid(
          Una tareas      :a1, 2025-03-01, 30d
          Otra tarea      :after a1, 25d
       section Grupo 2
-         Tarea en grupo 2 :2025-10-01, 12d
-         Otra tareaa en 2 :24d
+         Tarea en grupo 2 :a2, 2025-10-01, 12d
+         Otra tareaa en 2 :after a2, 24d
 "
     
 )
