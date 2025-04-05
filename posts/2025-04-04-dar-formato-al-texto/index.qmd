@@ -287,3 +287,32 @@ m <- mermaid(
 
 m
 ```
+
+Este otro ejemplo ilustra como puede hacerse un diagramade flujo.
+
+
+```{r}
+
+mermaid("
+  graph LR
+    A-->B
+    A-->C
+    C-->E
+    B-->D
+    C-->D
+    D-->F
+    E-->F
+")
+
+mermaid("graph LR;A(cuadrado redondeado)-->B[cuadrado];B-->C{Una decisión};
+ C-->D[Cuadrado uno];C-->E[Cuadrado dos];
+ style A fill:#E5E25F;  style B fill:#87AB51; style C fill:#3C8937;
+ style D fill:#23772C;  style E fill:#B6E6E6;"
+)
+
+```
+
+
+
+
+
