@@ -361,7 +361,7 @@ grViz(engine = "dot",
         node [overlap = true,
               shape = box,
               fontname = Helvetica,
-              fontsize = 8,
+              fontsize = 6,
               color = blue,
               style = filled,
               fillcolor = pink]
@@ -371,7 +371,7 @@ grViz(engine = "dot",
         
         node [shape = box,
               fontname = Helvetica,
-              fontsize = 8,
+              fontsize = 6,
               color = green,
               style = filled,
               fillcolor = cyan]
