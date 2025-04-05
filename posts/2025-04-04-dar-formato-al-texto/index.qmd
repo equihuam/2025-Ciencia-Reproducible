@@ -358,9 +358,10 @@ grViz(engine = "dot",
       digraph DAG {
       
         # Usa rectángulos para representar los 'nodos'
-        node [shape = box,
+        node [overlap = true,
+              shape = box,
               fontname = Helvetica,
-              fontsize = 10,
+              fontsize = 8,
               color = blue,
               style = filled,
               fillcolor = pink]
@@ -370,7 +371,7 @@ grViz(engine = "dot",
         
         node [shape = box,
               fontname = Helvetica,
-              fontsize = 10,
+              fontsize = 8,
               color = green,
               style = filled,
               fillcolor = cyan]
