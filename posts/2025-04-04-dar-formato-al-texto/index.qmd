@@ -10,7 +10,6 @@ toc: true
 image: magnifying-glass-541626_1280.jpg
 cap-location: bottom
 
-
 format: 
   html: 
     grid:
@@ -36,7 +35,7 @@ figcaption {
 
 |  
 
-![Descripción](clothespins-8506708_1280.jpg){width="100"}
+![Descripción](img/clothespins-8506708_1280.jpg){width=100}
 
 Esto tiene un poco que ver con el asunto de darle en general un *tema/aspecto* al proyecto. [Aquí puedes encontrar más información](https://quarto.org/docs/output-formats/html-themes.html) al respecto.
 
@@ -44,7 +43,7 @@ Otra cosa que puede interesarte hacer es controlar el arreglo general de la pág
 
 |  
 
-![Partes de la página que normalmente construye Quarto.](estructura-pagina.png){#fig-partes-pag width="500"}
+![Partes de la página que normalmente construye Quarto.](img/estructura-pagina.png){#fig-partes-pag width="500"}
 
 \  
 \  
