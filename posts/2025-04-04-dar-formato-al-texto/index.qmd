@@ -5,22 +5,17 @@ date: 04/apr/2025
 lang: es
 draft: false
 categories: [div, fences, pestañas, cajas]
-toc: true
 
 image: magnifying-glass-541626_1280.jpg
-cap-location: bottom
+cap-location: top
 
 code-fold: true
+code-summary: "muestra el escript:"
 
 format: 
-  html: 
-    grid:
-      sidebar-width: 300px
-      body-width: 800px
-      margin-width: 300px
-      gutter-width: 1.5rem
-      
-lightbox: true
+  html:
+    toc: true
+
 ---
 
 Voy a empezar por mi propia reacción "no me gustó la configuración *default* que usa *Quarto*", en cuanto a justificar a la izquierda las leyendas de las figuras. Para cambiar eso use el código del @lst-css. 
