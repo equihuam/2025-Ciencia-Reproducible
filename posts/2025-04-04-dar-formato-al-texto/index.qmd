@@ -10,6 +10,8 @@ toc: true
 image: magnifying-glass-541626_1280.jpg
 cap-location: bottom
 
+code-fold: true
+
 format: 
   html: 
     grid:
@@ -345,35 +347,55 @@ mermaid("graph LR;A(cuadrado redondeado)-->B[cuadrado];B-->C{Una decisión};
 
 ```
 
+Este es un DAG (grafo acíclico dirigido) que representa un diagrama de influencia con interpretnción causal. En este caso se usa el lenguaje de diagramación [dot](https://en.wikipedia.org/wiki/DOT_(graph_description_language). [Aquí puedes ver ejemplos de diagramas](https://graphviz.org/) producidos con esta herramienta.
+
+\  
+
 ```{r}
-library("DiagrammeR")
 
 grViz(engine = "dot", 
   diagram =  "
-      digraph boxes_and_circles {
+      digraph DAG {
       
-        # a 'graph' statement 
-        graph [overlap = true, fontsize = 10]
-      
-        # several 'node' statements
+        # Usa rectángulos para representar los 'nodos'
         node [shape = box,
-              fontname = Helvetica]
-        A; B; C; D; E; F
+              fontname = Helvetica,
+              fontsize = 10,
+              color = blue,
+              style = filled,
+              fillcolor = pink]
+        Visita_Asia; Tuberculosis; Fumador;
+        Cancer_pulmonar; Bronquitis; 
+        Rayos_X;Disnea
+        
+        node [shape = box,
+              fontname = Helvetica,
+              fontsize = 10,
+              color = green,
+              style = filled,
+              fillcolor = cyan]
+        tuberculosis_o_cancer; 
+
       
-        node [shape = circle,
-              fixedsize = true,
-              width = 0.9] // sets as circles
-        1; 2; 3; 4; 5; 6; 7; 8
-      
-        # several 'edge' statements
-        A->1 B->2 B->3 B->4 C->A
-        1->D E->A 2->4 1->5 1->F
-        E->6 4->6 5->7 6->7 3->8
+        # patrón de 'influencia'
+        Visita_Asia->Tuberculosis
+        Tuberculosis->tuberculosis_o_cancer
+        tuberculosis_o_cancer->Rayos_X
+        tuberculosis_o_cancer->Disnea
+        Fumador->Cancer_pulmonar
+        Fumador->Bronquitis
+        Cancer_pulmonar->tuberculosis_o_cancer
+        Bronquitis->Disnea
       }
       "
   )
 
 ```
+
+
+
+
+
 
 
 
