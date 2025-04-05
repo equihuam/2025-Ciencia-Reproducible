@@ -359,7 +359,7 @@ grViz(engine = "dot",
       
         # características generales del diagram
         graph [overlap = true, fontsize = 8]
-        
+
         # Usa rectángulos para representar los 'nodos'
         node [overlap = true,
               shape = box,
@@ -371,22 +371,22 @@ grViz(engine = "dot",
         Cancer_pulmonar; Bronquitis; 
         Rayos_X;Disnea
         
-        node [shape = box,
+        node [shape = record,
               fontname = Helvetica,
-              color = green,
+              color = red,
               style = filled,
               fillcolor = cyan]
-        tuberculosis_o_cancer; 
+        t_o_c [label='tuberculosis\\no\\ncancer\\n|{si:|no:}|{{[(?, ?)]}|{[(?, ?)]}}']; 
 
       
         # patrón de 'influencia'
         Visita_Asia->Tuberculosis
-        Tuberculosis->tuberculosis_o_cancer
-        tuberculosis_o_cancer->Rayos_X
-        tuberculosis_o_cancer->Disnea
+        Tuberculosis->t_o_c
+        t_o_c->Rayos_X
+        t_o_c->Disnea
         Fumador->Cancer_pulmonar
         Fumador->Bronquitis
-        Cancer_pulmonar->tuberculosis_o_cancer
+        Cancer_pulmonar->t_o_c
         Bronquitis->Disnea
       }
       "
