@@ -21,10 +21,10 @@ format:
 lightbox: true
 ---
 
-Voy a empezar por "no me gustó la configuración *default* que usa *Quarto*", en cuanto a justificar a la izquierda las leyendas de las figuras. Para cambiar eso use el código del @lst-css. 
+Voy a empezar por mi propia reacción "no me gustó la configuración *default* que usa *Quarto*", en cuanto a justificar a la izquierda las leyendas de las figuras. Para cambiar eso use el código del @lst-css. 
 
 ::: {#lst-css lst-cap="Código css para centrar la leyenda."}
-```{css}
+```{.css}
 
 figcaption {
     text-align: center;
@@ -38,6 +38,10 @@ figcaption {
 ![Descripción](img/clothespins-8506708_1280.jpg){width=100}
 
 Esto tiene un poco que ver con el asunto de darle en general un *tema/aspecto* al proyecto. [Aquí puedes encontrar más información](https://quarto.org/docs/output-formats/html-themes.html) al respecto.
+
+Para cambiar el tema modifica el archivo **\_quarto.yml** en la línea de theme. Por cierto, en la figura aparece la opción _lightbox_, que activa la función que permite interactuar con las figuras como entidades separadas, para que el usuario pueda explorarlas con más detalle.
+
+![](img/tema.png){width=300}
 
 Otra cosa que puede interesarte hacer es controlar el arreglo general de la página de tu blog (@fig-partes-pag). Algo que puedes hacer en el documento general `_quarto.yml`. [Aquí están los detalles](https://quarto.org/docs/output-formats/page-layout.html#page-layout).
 
@@ -79,13 +83,14 @@ Otra cosa que puede interesarte hacer es controlar el arreglo general de la pág
 | tip        | sugerencia        |
 | wrn        | advertencia       |
 
-: Lista de prefijos previstos en *Quarto* {#tbl-prefijos}
+: Lista de prefijos previstos en *Quarto*. {#tbl-prefijos} 
 
 \
 
-Me preguntabas sobre como incluir la definición de algo de interés (@def-definir). Está es la manera.
+Usa esos prefijos según se requiera y aplica el concepto de marcar la definición de la refenencia con **\#** y su llamana con **\@**. Ve el ejemplo siguiente. Quiero incluir la definición de algo de interés (@def-definir - aquí use **\@def-definir** para hacer la llamada). Esta llamada hace referencia a esto, que puedo poner en cualquier lugar del documento.
 
 \
+ 
 
 **::: {#def-definir}**\
 **Definición de algo importante**\
@@ -93,10 +98,14 @@ Me preguntabas sobre como incluir la definición de algo de interés (@def-defin
 
 \
 
+Este texto se verá así en donde quiera que lo pongas.
+
 ------------------------------------------------------------------------
 
 ::: {#def-definir}
+
 Definición de algo importante
+
 :::
 
 ------------------------------------------------------------------------
@@ -180,15 +189,21 @@ En cada uno de estos casos puedes agregar la frase: `collapse="true"`. Al hacerl
 **Algo que sea importante decir, ¡pero no indispensable!**\
 **:::**
 
+La marcas de estos bloques pueden *anidarse*, en cuyo caso habrá que cuidar que el número de veces que aparece **:** sea el mismo al abrir y cerrar el bloque respectivo. Algo así:
+
+> **::: {inicia 1}**  
+> **:::: {inicia B}**  
+> ***algo de contenido***  
+> **::::**  
+> **:::**  
+
+\  
+
 ## Formato del texto
 
 Se puede usar la opción `style` que admite varios componentes:
 
 **::: {style="font-size: 50%; color:green; font-family: helvetica; font-size:44px;"}**
-
-Tamaño de letra en *puntos* (**px**)
-
-**::: {style="font-size:44px;"}**
 
 Esto también se puede hacer a nivel incluso de una letra con la idea siguiente:
 
@@ -206,7 +221,16 @@ Otra opción del *atributo* `style` es la forma de justificación de un texto. L
 Lorem ipsum dolor sit amet consectetur adipiscing elit, augue rutrum feugiat vitae habitasse nisi aenean tellus, suspendisse malesuada faucibus nam dapibus id. Gravida felis dictumst at nibh lacinia ut hendrerit euismod pellentesque, scelerisque sed conubia commodo iaculis luctus tristique rhoncus, velit eleifend purus class non rutrum odio placerat. Integer sagittis magnis lacus erat senectus lobortis aliquet sodales, dignissim convallis conubia arcu pretium suscipit a torquent faucibus, velit laoreet maecenas auctor vivamus morbi netus.
 :::
 
-algo así [texto de color]{style="text-align: right; color:#E71D00; font-size:44px;"} y sigo escribiendo.
+\  
+Tamaño de letra en unidades expresdas como una proporción relativa al tamaño de letra definido para el contenido (**em**). Concretamente, se trata de una fraccción o un múltiplo de escalamiento que se define con referencia al tamaño de letra en uso.
+
+> **{style="font-size:3em;"}**
+
+
+algo así [texto de color]{style="text-align: right; color:#E71D00; font-size:3em;"} y sigo escribiendo.
+
+Para incluir exponentes 
+se puede recurrir a la modalidad _fórmula_ usando algo así: \$m^{2}\$ que se verá así: $m^{2}$. Otra opción es recurrir al marcado html. Pondríamos algo así: **algo\<sup\>superíndice\</sup\>** y se verá así: **algo<sup>superíndice</sup>**. Subíndices, algo semejante, cambiando los códigos necesarios: \$m_{2}\$ que se verá así: $m_{2}$. En marcado html. Pondríamos algo así: **algo\<sub\>subíndice\</sub\>** y se verá así: **algo<sub>subíndice</sub>**.
 
 ## Información en "pestañas"
 
@@ -261,7 +285,11 @@ Es básicamente un Website con una *landing-page* que genera automáticamente un
 
 *Quarto*, como *R*, es una pieza de software que propicia la colaboración abierta en su desarrollo, así que hay creciente núumero de extensiones. Algunas de ellas las [encuentras aquí](https://quarto.org/docs/extensions/listing-revealjs.html). Para el caso particular de las presentaciones te interesará aprender [algunas técnicas avanzadas](https://quarto.org/docs/presentations/revealjs/advanced.html).
 
-Diagrama de Gantt. Producido a partir de una especificación de elementos según comandos clave de la *aplicación mermaid* para la produción de diveros tipos de diagrams basados en **Java Script**. La documentación y un herramienta de diseño auxiliar se encuentra en la [documentación de mermaid](https://mermaid.js.org/)
+## Cómo incluir diagramas en mi **blog**
+
+Diagrama de Gantt. Producido a partir de una especificación de elementos según comandos clave de la *aplicación mermaid* para la produción de diveros tipos de diagrams basados en **Java Script**. La documentación y un herramienta de diseño auxiliar se encuentra en la [documentación de mermaid](https://mermaid.js.org/).
+
+\  
 
 ```{r}
 #| label: gantt
@@ -288,7 +316,12 @@ m <- mermaid(
 m
 ```
 
-Este otro ejemplo ilustra como puede hacerse un diagramade flujo.
+
+\  
+
+Este otro ejemplo ilustra como puede hacerse un diagrama de flujo.
+
+\  
 
 
 ```{r}
