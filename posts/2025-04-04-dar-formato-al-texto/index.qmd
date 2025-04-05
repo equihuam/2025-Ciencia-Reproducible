@@ -357,11 +357,13 @@ grViz(engine = "dot",
   diagram =  "
       digraph DAG {
       
+        # características generales del diagram
+        graph [overlap = true, fontsize = 8]
+        
         # Usa rectángulos para representar los 'nodos'
         node [overlap = true,
               shape = box,
               fontname = Helvetica,
-              fontsize = 6,
               color = blue,
               style = filled,
               fillcolor = pink]
@@ -371,7 +373,6 @@ grViz(engine = "dot",
         
         node [shape = box,
               fontname = Helvetica,
-              fontsize = 6,
               color = green,
               style = filled,
               fillcolor = cyan]
