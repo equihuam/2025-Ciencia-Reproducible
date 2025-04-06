@@ -28,7 +28,7 @@ dentro de un trozo de código css:
 > \`\`\`
 :::
 
- 
+\ 
 
 ![Descripción](img/clothespins-8506708_1280.jpg){#fig-dec width="100"}
 
@@ -58,6 +58,7 @@ Quarto](https://quarto.org/docs/websites/website-about.html#templates).
 
 ![Partes de la página que normalmente construye
 Quarto.](img/estructura-pagina.png){#fig-partes-pag width="500"}
+
 
 
 ## Imágenes en el margen
