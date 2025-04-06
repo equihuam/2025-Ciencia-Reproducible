@@ -3,16 +3,18 @@ title: "Dar formato a mi documeto"
 author: "Miguel Equihua"
 date: 04/apr/2025
 lang: es
+
 draft: false
+
 categories: [div, fences, pestañas, cajas]
 image: img/magnifying-glass-541626_1280.jpg
+
 cap-location: top
 code-fold: true
 code-summary: "muestra el escript:"
-format: html           
-editor: 
-  markdown: 
-    wrap: 72
+
+format: html
+
 ---
 
 Voy a empezar por mi propia reacción "no me gustó la configuración
@@ -47,7 +49,7 @@ Otra cosa que puede interesarte hacer es controlar el arreglo general de
 la página de tu blog (@fig-partes-pag). Algo que puedes hacer en el
 documento general `_quarto.yml`. [Aquí están los
 detalles](https://quarto.org/docs/output-formats/page-layout.html#page-layout).
-Por cierto, el componente *about* tiene sus propios estilos, pues se
+Por cierto, el componente *about* del blog tiene sus propios estilos, pues se
 asume que debe acomodar datos personales, biográficos, etc. Puedes
 encontrar más información al respecto en [esta parte de la documentación
 de
