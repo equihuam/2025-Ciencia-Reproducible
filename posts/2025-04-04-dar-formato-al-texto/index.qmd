@@ -5,122 +5,159 @@ date: 04/apr/2025
 lang: es
 draft: false
 categories: [div, fences, pestañas, cajas]
-
 image: img/magnifying-glass-541626_1280.jpg
 cap-location: top
-
 code-fold: true
 code-summary: "muestra el escript:"
-
 format: html           
+editor: 
+  markdown: 
+    wrap: 72
 ---
 
-Voy a empezar por mi propia reacción "no me gustó la configuración *default* que usa *Quarto*", en cuanto a justificar a la izquierda las leyendas de las figuras. Para cambiar eso use el código del @lst-css, dentro de un trozo de código css:
+Voy a empezar por mi propia reacción "no me gustó la configuración
+*default* que usa *Quarto*", en cuanto a justificar a la izquierda las
+leyendas de las figuras. Para cambiar eso use el código del @lst-css,
+dentro de un trozo de código css:
 
 ::: {#lst-css lst-cap="Código css para centrar la leyenda."}
-
->\`\`\`\{css\}
->  
->figcaption \{
->    text-align: center;
->\}
+> \`\`\`{css}
 >
->\`\`\`
-
+> figcaption { text-align: center; }
+>
+> \`\`\`
 :::
 
-\  
+ 
 
-![Descripción](img/clothespins-8506708_1280.jpg){#fig-dec width=100}
+![Descripción](img/clothespins-8506708_1280.jpg){#fig-dec width="100"}
 
-Esto tiene un poco que ver con el asunto de darle en general un *tema/aspecto* al proyecto. [Aquí puedes encontrar más información](https://quarto.org/docs/output-formats/html-themes.html) al respecto. Para cambiar el tema modifica el archivo **\_quarto.yml** en la línea de theme (@fig-tema). Por cierto, nota que en esta figura aparece la opción _lightbox_. Esa opción es la que activa la función que permite interactuar con las ilustraciones como entidades separadas, para que el usuario pueda explorarlas con más detalle.
+Esto tiene un poco que ver con el asunto de darle en general un
+*tema/aspecto* al proyecto. [Aquí puedes encontrar más
+información](https://quarto.org/docs/output-formats/html-themes.html) al
+respecto. Para cambiar el tema modifica el archivo **\_quarto.yml** en
+la línea de theme (@fig-tema). Por cierto, nota que en esta figura
+aparece la opción *lightbox*. Esa opción es la que activa la función que
+permite interactuar con las ilustraciones como entidades separadas, para
+que el usuario pueda explorarlas con más detalle.
 
-![](img/tema.png){#fig-tema width=300}
+![](img/tema.png){#fig-tema width="300"}
 
-Otra cosa que puede interesarte hacer es controlar el arreglo general de la página de tu blog (@fig-partes-pag). Algo que puedes hacer en el documento general `_quarto.yml`. [Aquí están los detalles](https://quarto.org/docs/output-formats/page-layout.html#page-layout).
+Otra cosa que puede interesarte hacer es controlar el arreglo general de
+la página de tu blog (@fig-partes-pag). Algo que puedes hacer en el
+documento general `_quarto.yml`. [Aquí están los
+detalles](https://quarto.org/docs/output-formats/page-layout.html#page-layout).
+Por cierto, el componente *about* tiene sus propios estilos, pues se
+asume que debe acomodar datos personales, biográficos, etc. Puedes
+encontrar más información al respecto en [esta parte de la documentación
+de
+Quarto](https://quarto.org/docs/websites/website-about.html#templates).
 
-|  
-
-![Partes de la página que normalmente construye Quarto.](img/estructura-pagina.png){#fig-partes-pag width="500"}
 \ 
-\ 
+
+
+![Partes de la página que normalmente construye
+Quarto.](img/estructura-pagina.png){#fig-partes-pag width="500"}
+
 
 ## Imágenes en el margen
 
-
-
 Para hacer esto hay que escribir así:
 
-::: {.column-margin}
-![](img/door-575958_1280.png){width=200}
+::: column-margin
+![](img/door-575958_1280.png){width="200"}
 :::
 
-
->\:\:\:\{.column-margin\}  
->\!\[\](img/door-575958_1280.png){width=200}  
->\:\:\:  
+> :::{.column-margin}\
+> \![\](img/door-575958_1280.png){width=200}\
+> :::
 
 para obtener este resultado.
 
-
-\  
-\  
+\ 
 
 ## Crear Columnas
 
-A veces nos gustaría tener una figura al lado del texto o como en un periódico o revista, tener el texto en columnas angostas. Esto es bastante fácil de lograr en _Quarto_. Hay varias maneras de hacerlo.  la más sencilla:
+A veces nos gustaría tener una figura al lado del texto o como en un
+periódico o revista, tener el texto en columnas angostas. Esto es
+bastante fácil de lograr en *Quarto*. Hay varias maneras de hacerlo. la
+más sencilla:
 
-> \:\:\: \{layout="[1,1]"\}  
-> Párrafo 1 con algunas ideas muy sabias....  
->  
-> Párrafo 2 para explicar lo sabio del párrafo 1....  
-> \:\:\:
+> ::: {layout="\[1,1\]"}\
+> Párrafo 1 con algunas ideas muy sabias....
+>
+> Párrafo 2 para explicar lo sabio del párrafo 1....\
+> :::
 
-Los número dentro de paréntesis cuadrados indican proporción, no una magnitud absoluta. En este caso, dos columnas del mismo tamaño. Puedes usar valores negativos para _abrir espacios_ entre columnas. El resultado se ve así:
+Los número dentro de paréntesis cuadrados indican proporción, no una
+magnitud absoluta. En este caso, dos columnas del mismo tamaño. Puedes
+usar valores negativos para *abrir espacios* entre columnas. El
+resultado se ve así:
 
 ::: {layout="[1,1]" style="color:green;"}
+Párafo 1 con algunas ideas muy sabias. Lorem ipsum dolor sit amet,
+consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
-Párafo 1 con algunas ideas muy sabias. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    
-Párrafo 2 para explicar lo sabio del párrafo 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  
- 
+Párrafo 2 para explicar lo sabio del párrafo 1. Lorem ipsum dolor sit
+amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 :::
 
-[Otra manera](https://quarto.org/docs/presentations/beamer.html#multiple-columns) es la siguiente.
+[Otra
+manera](https://quarto.org/docs/presentations/beamer.html#multiple-columns)
+es la siguiente.
 
-> \:\:\: \{.columns\}
+> ::: {.columns}
 >
-> \:\:\:\: \{.column width="40%"}
-> Párrafo 1 con algunas ideas muy sabias....  
-> \:\:\:\:
+> :::: {.column width="40%"} Párrafo 1 con algunas ideas muy sabias....\
+> ::::
 >
-> \:\:\:\:{.colum width="60%" }
-> Párrafo 2 para explicar lo sabio del párrafo 1....  
+> ::::{.colum width="60%" } Párrafo 2 para explicar lo sabio del párrafo
+> 1....
 >
-> \:\:\:
+> :::
 
-
-::: {.columns style="color:blue;"}
-
-:::: {.column width="40%"}
-Párafo 1 con algunas ideas muy sabias. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-::::
-
-:::: {.column width="60%"}
-Párrafo 2 para explicar lo sabio del párrafo 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  
-::::
-
+::::: {.columns style="color:blue;"}
+::: {.column width="40%"}
+Párafo 1 con algunas ideas muy sabias. Lorem ipsum dolor sit amet,
+consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 :::
 
-Intenta usar esto para producir un [texto al lado de una imágen](https://quarto.org/docs/authoring/figures.html). ¿Con cuál variante te sientes más cómoda o cómodo?
+::: {.column width="60%"}
+Párrafo 2 para explicar lo sabio del párrafo 1. Lorem ipsum dolor sit
+amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+:::
+:::::
 
+Intenta usar esto para producir un [texto al lado de una
+imágen](https://quarto.org/docs/authoring/figures.html). ¿Con cuál
+variante te sientes más cómoda o cómodo?
 
-\ 
-\ 
+   
 
 ## Identificadores fijos
 
-*Quarto* tiene prevista toda una colección de identificadores para reconocer los distintos tipos de componentes que pueden requerir alguna forma de llamada en el texto. Claramente es el caso de **figuras** y **tablas**. Pero *Quarto* tiene además toda una gama de componentes que son susceptibles de *referencia cruzada*. Los anoto en el @tbl-prefijos. Algunos de ellos corresponden con *bloques de llamada* (**callouts**), que desde luego también puede ser interesante referir en otras partes del texto y que podrían tener contenido distinto al sugerido por el bloque. Por ejemplo, dentro de un bloque *tip*, podría ponerse una definición a la que se hace referencia en otra parte del texto. Además, podrías definir tu propio prefijo para llevar control de alguna clase de componente de t interés. Puedes encontrar [más al respecto en la documentación de Quarto](https://quarto.org/docs/reference/metadata/crossref.html).
+*Quarto* tiene prevista toda una colección de identificadores para
+reconocer los distintos tipos de componentes que pueden requerir alguna
+forma de llamada en el texto. Claramente es el caso de **figuras** y
+**tablas**. Pero *Quarto* tiene además toda una gama de componentes que
+son susceptibles de *referencia cruzada*. Los anoto en el @tbl-prefijos.
+Algunos de ellos corresponden con *bloques de llamada* (**callouts**),
+que desde luego también puede ser interesante referir en otras partes
+del texto y que podrían tener contenido distinto al sugerido por el
+bloque. Por ejemplo, dentro de un bloque *tip*, podría ponerse una
+definición a la que se hace referencia en otra parte del texto. Además,
+podrías definir tu propio prefijo para llevar control de alguna clase de
+componente de t interés. Puedes encontrar [más al respecto en la
+documentación de
+Quarto](https://quarto.org/docs/reference/metadata/crossref.html).
 
 \
 \
@@ -149,14 +186,18 @@ Intenta usar esto para producir un [texto al lado de una imágen](https://quarto
 | tip        | sugerencia        |
 | wrn        | advertencia       |
 
-: Lista de prefijos previstos en *Quarto*. {#tbl-prefijos} 
+: Lista de prefijos previstos en *Quarto*. {#tbl-prefijos}
 
 \
 
-Usa esos prefijos según se requiera y aplica el concepto de marcar la definición de la refenencia con **\#** y su llamada con **\@**. Ve el ejemplo siguiente. Quiero incluir la definición de algo de interés (@def-definir - aquí use **\@def-definir** para hacer la llamada). Esta llamada hace referencia a esto, que puedo poner en cualquier lugar del documento.
+Usa esos prefijos según se requiera y aplica el concepto de marcar la
+definición de la refenencia con **\#** y su llamada con **\@**. Ve el
+ejemplo siguiente. Quiero incluir la definición de algo de interés
+(@def-definir - aquí use **\@def-definir** para hacer la llamada). Esta
+llamada hace referencia a esto, que puedo poner en cualquier lugar del
+documento.
 
 \
- 
 
 **::: {#def-definir}**\
 **Definición de algo importante**\
@@ -169,9 +210,7 @@ Este texto se verá así en donde quiera que lo pongas.
 ------------------------------------------------------------------------
 
 ::: {#def-definir}
-
 Definición de algo importante
-
 :::
 
 ------------------------------------------------------------------------
@@ -179,9 +218,16 @@ Definición de algo importante
 \
 \
 
-Puede ser que interese hacer referencia a un poco de código computacional que es importante en la explicación de tus hallazgos científicos o tecnológicos. Por ejemplo, el @lst-cod-1 es el que use para producir la @fig-sun-burst. Se trata de una ilustración de la taxonomía de características de *sabor* que pueden apreciarse en una taza de café. La gráfica de la izquierda son datos un poco resumidos y los de la derecha una lista llamada *completa*. La presentación permite comparar ambos conjuntos de datos.
+Puede ser que interese hacer referencia a un poco de código
+computacional que es importante en la explicación de tus hallazgos
+científicos o tecnológicos. Por ejemplo, el @lst-cod-1 es el que use
+para producir la @fig-sun-burst. Se trata de una ilustración de la
+taxonomía de características de *sabor* que pueden apreciarse en una
+taza de café. La gráfica de la izquierda son datos un poco resumidos y
+los de la derecha una lista llamada *completa*. La presentación permite
+comparar ambos conjuntos de datos.
 
-|  
+| 
 
 ::: {#lst-cod-1 lst-cap="Código para producir una gráfica bonita."}
 ```{r}
@@ -238,7 +284,12 @@ fig
 
 ## Bloques tipo "caja"
 
-A veces conviene ofrecer información adicional al lector, dándole la oportunidad de decidir cuándo o si es que la desea ver. Hay una colección de cajas de este tipo en *Quarto* que se engloban en el conjunto [callout](https://quarto.org/docs/authoring/callouts.html). Su uso es mediante *fences* (**div**), el sistema de marcado que se inicia con `::: {_indicación_}` y se cierra con `:::`.
+A veces conviene ofrecer información adicional al lector, dándole la
+oportunidad de decidir cuándo o si es que la desea ver. Hay una
+colección de cajas de este tipo en *Quarto* que se engloban en el
+conjunto [callout](https://quarto.org/docs/authoring/callouts.html). Su
+uso es mediante *fences* (**div**), el sistema de marcado que se inicia
+con `::: {_indicación_}` y se cierra con `:::`.
 
 | tipo      | llamada                  |
 |-----------|--------------------------|
@@ -248,86 +299,147 @@ A veces conviene ofrecer información adicional al lector, dándole la oportunid
 | tip       | ::: {.callout-tip}       |
 | caution   | ::: {.callout-caution}   |
 
-En cada uno de estos casos puedes agregar la frase: `collapse="true"`. Al hacerlo, el bloque aparecerá cerrado y el lector deberá activarlo para leer su contenido. Puedes también agregar un título con la frase `title="Tip with Title"` o si anotas un texto con marcado de sub título en seguida de la llamada.
+En cada uno de estos casos puedes agregar la frase: `collapse="true"`.
+Al hacerlo, el bloque aparecerá cerrado y el lector deberá activarlo
+para leer su contenido. Puedes también agregar un título con la frase
+`title="Tip with Title"` o si anotas un texto con marcado de sub título
+en seguida de la llamada.
 
 **::: {.callout-tip}**\
 **\## Título de un bloque de "sugerencias"**\
 **Algo que sea importante decir, ¡pero no indispensable!**\
 **:::**
 
-La marcas de estos bloques pueden *anidarse*, en cuyo caso habrá que cuidar que el número de veces que aparece **:** sea el mismo al abrir y cerrar el bloque respectivo. Algo así:
+La marcas de estos bloques pueden *anidarse*, en cuyo caso habrá que
+cuidar que el número de veces que aparece **:** sea el mismo al abrir y
+cerrar el bloque respectivo. Algo así:
 
-> **::: {inicia 1}**  
-> **:::: {inicia B}**  
-> ***algo de contenido***  
-> **::::**  
-> **:::**  
+> **::: {inicia 1}**\
+> **:::: {inicia B}**\
+> ***algo de contenido***\
+> **::::**\
+> **:::**
 
-\  
+ 
 
 ## Formato del texto
 
 Se puede usar la opción `style` que admite varios componentes:
 
-**::: {style="font-size: 50%; color:green; font-family: helvetica; font-size:44px;"}**
+**::: {style="font-size: 50%; color:green; font-family: helvetica;
+font-size:44px;"}**
 
-Esto también se puede hacer a nivel incluso de una letra con la idea siguiente:
+Esto también se puede hacer a nivel incluso de una letra con la idea
+siguiente:
 
 **\[rojo\]{style="color:red;"}**.
 
-Puede interesarte una referencia a como definir los colores. Hay muchas posibilidades en la Web, pero [está es un inicio](https://htmlcolorcodes.com/es/). Con esta página conseguiras el código *hexadecimal*, el que está marcado con **\#**. Lo puedes usar así:
+Puede interesarte una referencia a como definir los colores. Hay muchas
+posibilidades en la Web, pero [está es un
+inicio](https://htmlcolorcodes.com/es/). Con esta página conseguiras el
+código *hexadecimal*, el que está marcado con **\#**. Lo puedes usar
+así:
 
 **\[rojo\]{style="color:#E71D02;"}**
 
-Muchos [colores tienen nombres definidos](https://htmlcolorcodes.com/color-names/), si lo prefieres puedes usarlos en lugar del código *hexadecimal*.
+Muchos [colores tienen nombres
+definidos](https://htmlcolorcodes.com/color-names/), si lo prefieres
+puedes usarlos en lugar del código *hexadecimal*.
 
-Otra opción del *atributo* `style` es la forma de justificación de un texto. La frase a usar es `text-align: justify`. Las variantes de justificación son las usuales: *justify*, *center*, *right*, *left*. Si quieres profundizar más en todo esto te sugiero [empezar aquí](https://www.w3schools.com/cssref/pr_text_text-align.php)
+Otra opción del *atributo* `style` es la forma de justificación de un
+texto. La frase a usar es `text-align: justify`. Las variantes de
+justificación son las usuales: *justify*, *center*, *right*, *left*. Si
+quieres profundizar más en todo esto te sugiero [empezar
+aquí](https://www.w3schools.com/cssref/pr_text_text-align.php)
 
 ::: {style="text-align: right; color:#E71D00;"}
-Lorem ipsum dolor sit amet consectetur adipiscing elit, augue rutrum feugiat vitae habitasse nisi aenean tellus, suspendisse malesuada faucibus nam dapibus id. Gravida felis dictumst at nibh lacinia ut hendrerit euismod pellentesque, scelerisque sed conubia commodo iaculis luctus tristique rhoncus, velit eleifend purus class non rutrum odio placerat. Integer sagittis magnis lacus erat senectus lobortis aliquet sodales, dignissim convallis conubia arcu pretium suscipit a torquent faucibus, velit laoreet maecenas auctor vivamus morbi netus.
+Lorem ipsum dolor sit amet consectetur adipiscing elit, augue rutrum
+feugiat vitae habitasse nisi aenean tellus, suspendisse malesuada
+faucibus nam dapibus id. Gravida felis dictumst at nibh lacinia ut
+hendrerit euismod pellentesque, scelerisque sed conubia commodo iaculis
+luctus tristique rhoncus, velit eleifend purus class non rutrum odio
+placerat. Integer sagittis magnis lacus erat senectus lobortis aliquet
+sodales, dignissim convallis conubia arcu pretium suscipit a torquent
+faucibus, velit laoreet maecenas auctor vivamus morbi netus.
 :::
 
-\  
-Tamaño de letra en unidades expresdas como una proporción relativa al tamaño de letra definido para el contenido (**em**). Concretamente, se trata de una fraccción o un múltiplo de escalamiento que se define con referencia al tamaño de letra en uso.
+  Tamaño de letra en unidades expresdas como una proporción relativa al
+tamaño de letra definido para el contenido (**em**). Concretamente, se
+trata de una fraccción o un múltiplo de escalamiento que se define con
+referencia al tamaño de letra en uso.
 
 > **{style="font-size:3em;"}**
 
+algo así [texto de
+color]{style="text-align: right; color:#E71D00; font-size:3em;"} y sigo
+escribiendo.
 
-algo así [texto de color]{style="text-align: right; color:#E71D00; font-size:3em;"} y sigo escribiendo.
-
-Para incluir exponentes 
-se puede recurrir a la modalidad _fórmula_ usando algo así: \$m^{2}\$ que se verá así: $m^{2}$. Otra opción es recurrir al marcado html. Pondríamos algo así: **algo\<sup\>superíndice\</sup\>** y se verá así: **algo<sup>superíndice</sup>**. Subíndices, algo semejante, cambiando los códigos necesarios: \$m_{2}\$ que se verá así: $m_{2}$. En marcado html. Pondríamos algo así: **algo\<sub\>subíndice\</sub\>** y se verá así: **algo<sub>subíndice</sub>**.
+Para incluir exponentes se puede recurrir a la modalidad *fórmula*
+usando algo así: \$m\^{2}\$ que se verá así: $m^{2}$. Otra opción es
+recurrir al marcado html. Pondríamos algo así:
+**algo\<sup\>superíndice\</sup\>** y se verá así:
+**algo**<sup>superíndice</sup>. Subíndices, algo semejante, cambiando
+los códigos necesarios: \$m\_{2}\$ que se verá así: $m_{2}$. En marcado
+html. Pondríamos algo así: **algo\<sub\>subíndice\</sub\>** y se verá
+así: **algo**<sub>subíndice</sub>.
 
 ## Información en "pestañas"
 
-Puede resultarte interesante considerar presentar tu información como si se tratara de una libreta con [secciones reconocibles por pestañas](https://quarto.org/docs/output-formats/html-basics.html#tabsets). Para hacerlo, el *bloque* (**div**) se contruye así.
+Puede resultarte interesante considerar presentar tu información como si
+se tratara de una libreta con [secciones reconocibles por
+pestañas](https://quarto.org/docs/output-formats/html-basics.html#tabsets).
+Para hacerlo, el *bloque* (**div**) se contruye así.
 
 **:::** **{.panel-tabset}**\
 **\##** **Descripción de los datos**
 
-**Es realmente un subdocumento, que podrá tener texto, código, gráficas, etc.**
+**Es realmente un subdocumento, que podrá tener texto, código, gráficas,
+etc.**
 
 **\##** **Estrategia analítica**
 
-**Misma cosa. Subdocumento en el que abordas el tema que anuncias en la *pestaña*.**
+**Misma cosa. Subdocumento en el que abordas el tema que anuncias en la
+*pestaña*.**
 
 **:::**
 
 ::: panel-tabset
 ## Descripción de los datos
 
-Es realmente un subdocumento, que podrá tener texto, código, gráficas, etc.
+Es realmente un subdocumento, que podrá tener texto, código, gráficas,
+etc.
 
 ## Estrategia analítica
 
-Misma cosa. Subdocumento en el que abordas el tema que anuncias en la *pestaña*.
+Misma cosa. Subdocumento en el que abordas el tema que anuncias en la
+*pestaña*.
 :::
 
-Hay muchas posibilidades para dar formato a un documento. Lo que describí aquí son sólo cosas elementales. Otros recursos disponibles son temas, definición de estilos con archivos `*.css` o `*.scc`. Más [información la podrás encontrar acá](https://quarto.org/docs/output-formats/html-themes.html). Puedes darte una idea de las posibilidades [visitando la galería](https://quarto.org/docs/gallery/).
+Hay muchas posibilidades para dar formato a un documento. Lo que
+describí aquí son sólo cosas elementales. Otros recursos disponibles son
+temas, definición de estilos con archivos `*.css` o `*.scc`. Más
+[información la podrás encontrar
+acá](https://quarto.org/docs/output-formats/html-themes.html). Puedes
+darte una idea de las posibilidades [visitando la
+galería](https://quarto.org/docs/gallery/).
 
-Por otro lado, te sugiero **dosificar el esfuerzo**. Nuestro propósito es la **comunicación efectiva de contenidos científicos** y la **documentación reproducible** de los **procesos de producción de conocimiento nuevo** en los que participes. Esto sugiere que hay que procurar mantener al mínimo el uso de variantes estilísticas en tus documentos, aunque hay que recordar también que somos sensibles al valor estético de lo que observamos. Desde luego, ser **minimalista** no te debe impedir elaborar algunos productos muy cuidados en los que los elementos de diseño tomarán un papel relevante: presentaciones para público general, libros, manuales, infografías, tableros interactivos (*dashboards*), etc. Siempre, deberás encontrar un equilibrio entre estética y funcionalidad. También recuerda ser ordenado en tus procesos. Cada proyecto un directorio nuevo, adecuadamente documentado y preservado.
+Por otro lado, te sugiero **dosificar el esfuerzo**. Nuestro propósito
+es la **comunicación efectiva de contenidos científicos** y la
+**documentación reproducible** de los **procesos de producción de
+conocimiento nuevo** en los que participes. Esto sugiere que hay que
+procurar mantener al mínimo el uso de variantes estilísticas en tus
+documentos, aunque hay que recordar también que somos sensibles al valor
+estético de lo que observamos. Desde luego, ser **minimalista** no te
+debe impedir elaborar algunos productos muy cuidados en los que los
+elementos de diseño tomarán un papel relevante: presentaciones para
+público general, libros, manuales, infografías, tableros interactivos
+(*dashboards*), etc. Siempre, deberás encontrar un equilibrio entre
+estética y funcionalidad. También recuerda ser ordenado en tus procesos.
+Cada proyecto un directorio nuevo, adecuadamente documentado y
+preservado.
 
-[Cómo configurar un sitio web en Quarto](https://quarto.org/docs/websites/website-navigation.html)
+[Cómo configurar un sitio web en
+Quarto](https://quarto.org/docs/websites/website-navigation.html)
 
 ::: {layout-ncol="2"}
 ![](img/web-1.png){width="300"}
@@ -337,25 +449,42 @@ Por otro lado, te sugiero **dosificar el esfuerzo**. Nuestro propósito es la **
 
 [Configura un Blog](https://quarto.org/docs/websites/website-blog.html)
 
-Es básicamente un Website con una *landing-page* que genera automáticamente una lista del contenido del blog (los documentos contenidos en **posts**).
+Es básicamente un Website con una *landing-page* que genera
+automáticamente una lista del contenido del blog (los documentos
+contenidos en **posts**).
 
--   documento definiendo la *landing-page* **index.qmd** en directorio raíz.
--   especificar en el archivo de control un directorio base de contribuciones.
--   documento de metadatos que especifica como tratar el contenido de contribuciones
+-   documento definiendo la *landing-page* **index.qmd** en directorio
+    raíz.
+-   especificar en el archivo de control un directorio base de
+    contribuciones.
+-   documento de metadatos que especifica como tratar el contenido de
+    contribuciones
 
-[Escribir una presentación Revealjs](https://quarto.org/docs/presentations/revealjs/)
+[Escribir una presentación
+Revealjs](https://quarto.org/docs/presentations/revealjs/)
 
 ![](img/reveal-js.png)
 
 ## Extensiones para Quarto
 
-*Quarto*, como *R*, es una pieza de software que propicia la colaboración abierta en su desarrollo, así que hay creciente núumero de extensiones. Algunas de ellas las [encuentras aquí](https://quarto.org/docs/extensions/listing-revealjs.html). Para el caso particular de las presentaciones te interesará aprender [algunas técnicas avanzadas](https://quarto.org/docs/presentations/revealjs/advanced.html).
+*Quarto*, como *R*, es una pieza de software que propicia la
+colaboración abierta en su desarrollo, así que hay creciente núumero de
+extensiones. Algunas de ellas las [encuentras
+aquí](https://quarto.org/docs/extensions/listing-revealjs.html). Para el
+caso particular de las presentaciones te interesará aprender [algunas
+técnicas
+avanzadas](https://quarto.org/docs/presentations/revealjs/advanced.html).
 
 ## Cómo incluir diagramas en mi **blog**
 
-Por ejemplo algo muy útil como un diagrama de Gantt. Se puede construir a partir de una especificación de elementos según comandos clave de la *aplicación mermaid* para la produción de diveros tipos de diagrams basados en **Java Script**. La documentación e incluso un herramienta de diseño auxiliar se encuentra en la [documentación de mermaid](https://mermaid.js.org/).
+Por ejemplo algo muy útil como un diagrama de Gantt. Se puede construir
+a partir de una especificación de elementos según comandos clave de la
+*aplicación mermaid* para la produción de diveros tipos de diagrams
+basados en **Java Script**. La documentación e incluso un herramienta de
+diseño auxiliar se encuentra en la [documentación de
+mermaid](https://mermaid.js.org/).
 
-\  
+ 
 
 ```{r}
 #| label: gantt
@@ -382,13 +511,11 @@ m <- mermaid(
 m
 ```
 
-
-\  
+ 
 
 Este otro ejemplo ilustra como puede hacerse un diagrama de flujo.
 
-\  
-
+ 
 
 ```{r}
 
@@ -411,9 +538,14 @@ mermaid("graph LR;A(cuadrado redondeado)-->B[cuadrado];B-->C{Una decisión};
 
 ```
 
-Este es un DAG (grafo acíclico dirigido) que representa un diagrama de influencia con interpretnción causal. En este caso se usa el lenguaje de diagramación [dot](https://en.wikipedia.org/wiki/DOT_(graph_description_language). [Aquí puedes ver ejemplos de diagramas](https://graphviz.org/) producidos con esta herramienta.
+Este es un DAG (grafo acíclico dirigido) que representa un diagrama de
+influencia con interpretnción causal. En este caso se usa el lenguaje de
+diagramación
+\[dot\](https://en.wikipedia.org/wiki/DOT\_(graph_description_language).
+[Aquí puedes ver ejemplos de diagramas](https://graphviz.org/)
+producidos con esta herramienta.
 
-\  
+ 
 
 ```{r}
 
@@ -457,11 +589,3 @@ grViz(engine = "dot",
   )
 
 ```
-
-
-
-
-
-
-
-
