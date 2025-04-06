@@ -42,22 +42,41 @@ Otra cosa que puede interesarte hacer es controlar el arreglo general de la pág
 |  
 
 ![Partes de la página que normalmente construye Quarto.](img/estructura-pagina.png){#fig-partes-pag width="500"}
+\ 
+\ 
+
+## Imágenes en el margen
+
+
+
+Para hacer esto hay que escribir así:
+
+::: {.column-margin}
+![](img/door-575958_1280.png){width=200}
+:::
+
+
+>\:\:\:\{.column-margin\}  
+>\!\[\](img/door-575958_1280.png){width=200}  
+>\:\:\:  
+
+para obtener este resultado.
+
 
 \  
 \  
+
 ## Crear Columnas
 
 A veces nos gustaría tener una figura al lado del texto o como en un periódico o revista, tener el texto en columnas angostas. Esto es bastante fácil de lograr en _Quarto_. Hay varias maneras de hacerlo.  la más sencilla:
 
-> \:\:\: \{layout="[1,1]"\}
->
+> \:\:\: \{layout="[1,1]"\}  
 > Párrafo 1 con algunas ideas muy sabias....  
 >  
 > Párrafo 2 para explicar lo sabio del párrafo 1....  
->
 > \:\:\:
 
-Los número dentro de paréntesis cuadrados indican proporción, no una magnitud absoluta. En este caso, dos columnas del mismo tamaño. Puedes usar valores negativos para indicar columnas vacías. El resultado se ve así:
+Los número dentro de paréntesis cuadrados indican proporción, no una magnitud absoluta. En este caso, dos columnas del mismo tamaño. Puedes usar valores negativos para _abrir espacios_ entre columnas. El resultado se ve así:
 
 ::: {layout="[1,1]" style="color:green;"}
 
@@ -93,7 +112,7 @@ Párrafo 2 para explicar lo sabio del párrafo 1. Lorem ipsum dolor sit amet, co
 
 :::
 
-Intenta usar esto para producir un [texto al lado de una imágen](https://quarto.org/docs/authoring/figures.html). ¿Con cuál variante sientes más cómoda o cómodo?
+Intenta usar esto para producir un [texto al lado de una imágen](https://quarto.org/docs/authoring/figures.html). ¿Con cuál variante te sientes más cómoda o cómodo?
 
 
 \ 
