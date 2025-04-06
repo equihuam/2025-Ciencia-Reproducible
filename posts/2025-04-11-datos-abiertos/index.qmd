@@ -17,11 +17,9 @@ editor_options:
   
 format: 
   html: default
-
 ---
 
-
-La preparación, oferta y mantenimiento de datos abiertos es parte de los intereses en búsqueda de una ciencia abierta. En este sentido conviene considerar los principios de la iniciativa de Budapest, Hungría en torno a publicación abierta.  Esta iniciativa fue publicada el 14 de febrero 2002. Especialmente importante resulta la recomendación de desarrollar capacidades de "self-archiving" siguiendo estándares de la iniciativa de [repositorios abiertos](https://www.openarchives.org/). Aunque esta última propuesta ya nos está en desarrollo activo, fue el antecedente que dio origen al estándar [ANSI/NISO Z39.99-2017](https://www.niso.org/publications/z3999-2017-resourcesync) para el acceso bibliográfico. De aquí emerge tamién el protocolo de cosecha de metadatos **OAI-PMH**, cuyas especificaciones continúan vigentes, y tiene nuevos desarrollos o actualizaciones como el **ANSI/NISO 2017** aunque no se trata necesariamente de un reemplazo. De la iniciativa de Budapest emerge una guía interesante en torno al [establecimiento de repositorios institucionales (de publicaciones)](https://www.budapestopenaccessinitiative.org/resources/guide-to-institutional-repository-software/). En su propio manifiesto del 2023, [REDALYC refrenda los valores enunciados en la iniciativa de Budapest](https://globaldiamantoa.org/manifiesto/#/).
+La preparación, oferta y mantenimiento de datos abiertos es parte de los intereses en búsqueda de una ciencia abierta. En este sentido conviene considerar los principios de la iniciativa de Budapest, Hungría en torno a publicación abierta. Esta iniciativa fue publicada el 14 de febrero 2002. Especialmente importante resulta la recomendación de desarrollar capacidades de "self-archiving" siguiendo estándares de la iniciativa de [repositorios abiertos](https://www.openarchives.org/). Aunque esta última propuesta ya nos está en desarrollo activo, fue el antecedente que dio origen al estándar [ANSI/NISO Z39.99-2017](https://www.niso.org/publications/z3999-2017-resourcesync) para el acceso bibliográfico. De aquí emerge tamién el protocolo de cosecha de metadatos **OAI-PMH**, cuyas especificaciones continúan vigentes, y tiene nuevos desarrollos o actualizaciones como el **ANSI/NISO 2017** aunque no se trata necesariamente de un reemplazo. De la iniciativa de Budapest emerge una guía interesante en torno al [establecimiento de repositorios institucionales (de publicaciones)](https://www.budapestopenaccessinitiative.org/resources/guide-to-institutional-repository-software/). En su propio manifiesto del 2023, [REDALYC refrenda los valores enunciados en la iniciativa de Budapest](https://globaldiamantoa.org/manifiesto/#/).
 
 En México se han tenido expresiones positivas en torno a esta iniciativa desde su aparición en 2002. Por ejemplo, del [Senado de la República](https://www.senado.gob.mx/comisiones/ciencia_tecnologia/docs/accesoinfo_b3-2.pdf), la [UNAM](https://www.visibilidadweb.unam.mx/node/239), [UAEM](https://siea.uaemex.mx/acceso-abierto/acerca-de.html), [CONACYT](https://conahcyt.mx/wp-content/uploads/transparencia/planes_programas_informes/libros_blancos/Ciencia_Abierta.pdf) y la [UAM](https://casadelibrosabiertos.uam.mx/blog/post/acceso-abierto-y-universidades-la-importancia-de-la-socializacion-del-conocimiento.html), entre otras. Si bien la iniciativa de Budapest se enfoca en la publicación abierta, resulta claro que no basta con tener acceso a la publicación como producto final de las investigaciones, se requiere compartir también los datos base de los estudios, como se explica en esta [nota de Verhulst, Zahuranec & Young (2021), que retoma parte de la serie “Great Stories of Open Science”](https://theconversation.com/what-the-drive-for-open-science-data-can-learn-from-the-evolving-history-of-open-government-data-156778) que se publica con el apoyo del Ministerio Francés de Educación Superior, Investigación e Innovación
 
@@ -37,11 +35,10 @@ Actualmente, la opción vigente para datos abiertos nos conduce a [los principio
 [![](images/zbw_gofair_grafik_web_790px-1-768x401.jpg){width="300px"}](https://www.go-fair.org/wp-content/uploads/2020/02/GO_FAIR_Flyer_Update19022020-1.pdf)
 :::
 
-Un ejemplo del proceso de adopción de los principios **FAIR** se presenta en el reporte aparecido en 2018 de la experiencia europea: [_Turning FAIR into reality: final report and action plan from the European Commission expert group on FAIR data, Publications Office_](https://data.europa.eu/doi/10.2777/1524). En este mismo sentido y en la confluencia de esfuerzos que impulsan los valores de la ciencia abierta esta también [**SPARC**](https://sparcopen.org/), que es una organización Norteamericana con filiales en Europa, África y Japón, sin fines de lucro. Promueve el desarrollo de sistemas para la investigación y la educación que sean _abiertos en forma predeterminada y equitativos por diseño_. La experiencia europea de **SPARC** ha producido documentos útiles como referencia y fuente de inspiración:
+Un ejemplo del proceso de adopción de los principios **FAIR** se presenta en el reporte aparecido en 2018 de la experiencia europea: [*Turning FAIR into reality: final report and action plan from the European Commission expert group on FAIR data, Publications Office*](https://data.europa.eu/doi/10.2777/1524). En este mismo sentido y en la confluencia de esfuerzos que impulsan los valores de la ciencia abierta esta también [**SPARC**](https://sparcopen.org/), que es una organización Norteamericana con filiales en Europa, África y Japón, sin fines de lucro. Promueve el desarrollo de sistemas para la investigación y la educación que sean *abiertos en forma predeterminada y equitativos por diseño*. La experiencia europea de **SPARC** ha producido documentos útiles como referencia y fuente de inspiración:
 
-+ [SPARC Europe. Open / FAIR Data.](https://sparceurope.org/what-we-do/open-data/)
-+ [SPARC Europe. Open Data and FAIR data benefits.](https://sparceurope.org/what-we-do/open-data/open-data-benefits/)
-
+-   [SPARC Europe. Open / FAIR Data.](https://sparceurope.org/what-we-do/open-data/)
+-   [SPARC Europe. Open Data and FAIR data benefits.](https://sparceurope.org/what-we-do/open-data/open-data-benefits/)
 
 \
 
@@ -55,17 +52,17 @@ Esta misma organización ofrece orientación para la definición de *metadatos* 
 
 [![](images/metadatos.png)](https://www.dcc.ac.uk/guidance/standards/metadata)
 
-De acuerdo con los criterios que emanan de los principio **FAIR**, los datos pueden estar en distintos *niveles* de **acceso abierto**. Así, se puede definir la _escalera de estructuración y acceso_. En el nivel más simple encontramos datos contenidos en documentos de texto, por ejemplo **PDF**. En el otro extremo, con plena accesibilidad digital, están los verdaderos *datos abiertos* que cumplen a plenitud con los criterio **FAIR**.
+De acuerdo con los criterios que emanan de los principio **FAIR**, los datos pueden estar en distintos *niveles* de **acceso abierto**. Así, se puede definir la *escalera de estructuración y acceso*. En el nivel más simple encontramos datos contenidos en documentos de texto, por ejemplo **PDF**. En el otro extremo, con plena accesibilidad digital, están los verdaderos *datos abiertos* que cumplen a plenitud con los criterio **FAIR**.
 
 \
 
-![](images/Escalera-Open Access.png){width=60% fig-align="center"}
+![](images/Escalera-Open%20Access.png){width="60%" fig-align="center"}
 
 \
 
 ## Ejemplos de soluciones de datos abiertos
 
-### [Uniatmos](https://uniatmos.atmosfera.unam.mx/) 
+### [Uniatmos](https://uniatmos.atmosfera.unam.mx/)
 
 Es la *Unidad de Informática para las Ciencias Atmosféricas y Ambientales* gestionada por el Instituto de de la Atmósfera y Cambio Climático de la UNAM.
 
@@ -75,38 +72,35 @@ Es la *Unidad de Informática para las Ciencias Atmosféricas y Ambientales* ges
 ```
 :::
 
-### [Zenodo](https://about.zenodo.org/) 
+### [Zenodo](https://about.zenodo.org/)
 
-Se trata de un espacio construido y desarrollado por investigadores, para garantizar que todo el mundo pueda participar en la Ciencia Abierta. El proyecto _OpenAIRE_ fue desarrollado por indicaciones la Comunidad Europea para apoyar su incipiente política de _Datos Abiertos_. Con esta plataforma se ofrece un **repositorio general** para la investigación financiada por la Comnidad Europea. El **CERN**, socio de _OpenAIRE_ y pionero en código abierto, acceso abierto y datos abiertos, proporcionó esta capacidad para lograr que _Zenodo_ estuviera en operación a partir de mayo de 2013. En apoyo de su programa de investigación, el **CERN** ha desarrollado herramientas para la gestión de Big Data y ha ampliado las capacidades de la biblioteca digital para _Open Data_. A través de _Zenodo_, estas herramientas de Big Science pueden así compartirse eficazmente.
+Se trata de un espacio construido y desarrollado por investigadores, para garantizar que todo el mundo pueda participar en la Ciencia Abierta. El proyecto *OpenAIRE* fue desarrollado por indicaciones la Comunidad Europea para apoyar su incipiente política de *Datos Abiertos*. Con esta plataforma se ofrece un **repositorio general** para la investigación financiada por la Comnidad Europea. El **CERN**, socio de *OpenAIRE* y pionero en código abierto, acceso abierto y datos abiertos, proporcionó esta capacidad para lograr que *Zenodo* estuviera en operación a partir de mayo de 2013. En apoyo de su programa de investigación, el **CERN** ha desarrollado herramientas para la gestión de Big Data y ha ampliado las capacidades de la biblioteca digital para *Open Data*. A través de *Zenodo*, estas herramientas de Big Science pueden así compartirse eficazmente.
 
 ::: {style="display: flex; justify-content: center;"}
 ```{=html}
-
-<iframe width="65%" height="300" src="https://about.zenodo.org/" title="Portal de Zenodo" allowfullscreen></iframe>
+<iframe width="65%" 
+        height="300" 
+        src="https://about.zenodo.org/" 
+        title="Portal de Zenodo" allowfullscreen>
+</iframe>
 ```
 :::
 
 ### [Datadryad](https://datadryad.org/stash/about)
 
 ::: {layout="[60, 40]"}
-
 Es una plataforma de publicación de datos abiertos y una comunidad comprometida con la disponibilidad abierta y la reutilización rutinaria de todos los datos de investigación.
 
 ![](images/logo_dryad.png)
-
 :::
-
 
 ### [Figshare](https://knowledge.figshare.com/about)
 
 ::: {layout="[60, 40]"}
-
 Es un repositorio en el que los usuarios pueden poner a disposición todos los resultados de sus investigaciones de forma que se puedan citar, compartir y descubrir.
 
 ![](images/figshare_NoSubheadColour-logo.svg)
-
 :::
-
 
 ## Metadatos y ejemplos de datos abiertos
 
@@ -120,27 +114,23 @@ Es un repositorio en el que los usuarios pueden poner a disposición todos los r
 
 #### [Metadatos ámbito ciencias de la Tierra ISO-19115](https://www.iso.org/standard/53798.html)
 
-La documentación de los metadatos cartográficos que utiliza Conaio sigue los estándares definidos en [FGDC (1998)](https://www.fgdc.gov/standards/projects/FGDC-standards-projects/accuracy/part3/chapter3) y [FGDC (1999)](https://www.fgdc.gov/standards/projects/metadata/biometadata/standards/projects/metadata/biometadata/biodatap.pdf). De acuerdo con lo qe nos explicó el Ing. Fernández, el estándar de metadatos FGDC ha sido remplazado actualmente por el *ISO-19115*.
+La documentación de los metadatos cartográficos que utiliza Conab io sigue los estándares definidos en [FGDC (1998)](https://www.fgdc.gov/standards/projects/FGDC-standards-projects/accuracy/part3/chapter3) y [FGDC (1999)](https://www.fgdc.gov/standards/projects/metadata/biometadata/standards/projects/metadata/biometadata/biodatap.pdf). De acuerdo con lo qe nos explicó el Ing. Fernández, el estándar de metadatos FGDC ha sido remplazado actualmente por el *ISO-19115*.
 
 -   [Inegi](https://www.inegi.org.mx/contenidos/infraestructura/datos/doc/Norma_Tecnica_para_la_elaboracion_de_Metadatos_Geograficos.pdf)
 -   [CONABIO](https://www.inegi.org.mx/contenidos/eventos/2011/infogeo/ET6_17_MUNOZ.pdf)
 
-
 #### Otros ejemplos con datos climáticos y ambientales en general
 
-+ [Open Geospatial Consortium standards.](https://www.ogc.org/standards/)
-+ [Use of international metadata standards to be interoperable. World Meteorological Organization Information System (WIS.)](https://www.eumetsat.int/wmo-information-system)
-[INSPIRE Knowledge base - Metadata.](https://inspire.ec.europa.eu/document-tags/metadata)
-+ [Climate Resilience Information Systems.](https://climateintelligence.github.io/smartduck-docs/sections/guide_fairclimateservices.html)
-
+-   [Open Geospatial Consortium standards.](https://www.ogc.org/standards/)
+-   [Use of international metadata standards to be interoperable. World Meteorological Organization Information System (WIS.)](https://www.eumetsat.int/wmo-information-system) [INSPIRE Knowledge base - Metadata.](https://inspire.ec.europa.eu/document-tags/metadata)
+-   [Climate Resilience Information Systems.](https://climateintelligence.github.io/smartduck-docs/sections/guide_fairclimateservices.html)
 
 ::: {.callout-warning collapse="true"}
 ## Datos Abiertos: Recomendaciones para producirlos
 
 ### Datos abiertos para principiantes
 
-El grupo [Safe Software](https://www.safe.com/) produjo este [libro electrónico](https://cdn.safe.com/resources/ebook/Open-Data-eBook-Safe-Software.pdf), que explica en forma sencilla asuntos importantes a tener en cuenta. 
-
+El grupo [Safe Software](https://www.safe.com/) produjo este [libro electrónico](https://cdn.safe.com/resources/ebook/Open-Data-eBook-Safe-Software.pdf), que explica en forma sencilla asuntos importantes a tener en cuenta.
 
 ### Mantenlo simple
 
@@ -153,30 +143,42 @@ Hay que acercarse tan pronto como sea posible a los usuarios reales y potenciale
 ### Atender los miedos y malos entendidos comunes
 
 Esto es especialmente importante si estas trabajando con o dentro de una institución grande como suelen ser las áreas gubernamentales. Cuando se trata de abrir los acervos de datos es de esperar que surjan muchas preguntas, dudas y temores. Es importante identificar los más importantes de ellos y enfrentarlos de inmediato.
-
 :::
 
-|  
+| 
 
+## Recursos para facilitar el compartir
+
+-   [Creative commons](https://creativecommons.org/licenses/by/4.0/deed.es)
+-   [Copyleft](https://web.archive.org/web/20070710185741/http://www.gnu.org/copyleft/copyleft.html)
+-   [The MIT License](https://opensource.org/license/mit)
+-   [DOI](https://www.doi.org/)
+
+### Indautor
+
+Puedes visitar en México el [Instituto Nacional del Derecho de Autor](http://www.indautor.gob.mx/) para obtener más información.
+
+::: {style="display: flex; justify-content: center;"}
+
+
+\ 
 
 ## ¿Cómo podemos usar datos abiertos?
 
-Ahora te propongo pasar a la práctica y explorar algunas cosas que te darán idea de como es que puedes aprovechar datos abiertos de tu interés. En el caso de México, como ya comenté, **Inegi**, **Conabio** y en general **datos.gob.mx** son referencias importantes de proveedores de datos de México. Te propongo ver algunos ejemplos de como puedes aprovechar estos datos. Desde luego, una forma de hacerlo es por la ruta de _descargar lo que necesites_ y a partir de ahí hacer tu procesamiento de _valor agregado_ para generar nuevos productos de información que se alinean con los fines de tu proyecto. Otra forma de hacerlo  es recurriendo a _canales de flujo de datos_ que muchas veces se pueden aprovechar mediante el uso de [**API** (Interfaz de Programación de Aplicaciones)](https://www.redhat.com/es/topics/api/what-are-application-programming-interfaces). Las **API** son creadas, diseñadas y utilizadas para lograr una interacción ordenada y coherente entre aplicaciones, sin necesidad de saber más que las especificaciones que definen a la **API** y nada de la estructura interna del servicio que deseamos utilizar. Naturalmente Esto simplifica el desarrollo de nuevas aplicaciones. No es mi pretención cubrir ampliamente el tema, pero considero potencialmente interesante para ti saber algo de este tema, que te abre las puertas al acceso a muchas cosas en la **World Wide Web** actual.  Te presentaré algunos ejemplos y espero me propongas ideas de como utilizar estas ideas en tu proyecto.
+Ahora te propongo pasar a la práctica y explorar algunas cosas que te darán idea de como es que puedes aprovechar datos abiertos de tu interés. En el caso de México, como ya comenté, **Inegi**, **Conabio** y en general **datos.gob.mx** son referencias importantes de proveedores de datos de México. Te propongo ver algunos ejemplos de como puedes aprovechar estos datos. Desde luego, una forma de hacerlo es por la ruta de *descargar lo que necesites* y a partir de ahí hacer tu procesamiento de *valor agregado* para generar nuevos productos de información que se alinean con los fines de tu proyecto. Otra forma de hacerlo es recurriendo a *canales de flujo de datos* que muchas veces se pueden aprovechar mediante el uso de [**API** (Interfaz de Programación de Aplicaciones)](https://www.redhat.com/es/topics/api/what-are-application-programming-interfaces). Las **API** son creadas, diseñadas y utilizadas para lograr una interacción ordenada y coherente entre aplicaciones, sin necesidad de saber más que las especificaciones que definen a la **API** y nada de la estructura interna del servicio que deseamos utilizar. Naturalmente Esto simplifica el desarrollo de nuevas aplicaciones. No es mi pretención cubrir ampliamente el tema, pero considero potencialmente interesante para ti saber algo de este tema, que te abre las puertas al acceso a muchas cosas en la **World Wide Web** actual. Te presentaré algunos ejemplos y espero me propongas ideas de como utilizar estas ideas en tu proyecto.
 
-|  
-
+| 
 
 ### [datos.gob.mx](datos.gob.mx)
 
 Para empezar, debes saber que estos datos están cubiertos por la licencia **libre uso MX**. Esta licencia busca promover el uso, reuso y redistribución de conjuntos de datos de acuerdo con una serie de [criterios que se especificán aquí](https://datos.gob.mx/libreusomx) y que indica, entre otras cosas que puedes:
 
-
-+ Hacer y distribuir copias del conjunto de datos y su contenido;
-+ Difundir y publicar el conjunto de datos y su contenido;
-+ Adaptar o reordenar el conjunto de datos y su contenido;
-+ Extraer total o parcialmente el contenido del conjunto de datos;
-+ Explotar comercialmente el conjunto de datos y su contenido, y;
-+ Crear conjuntos de datos derivados del conjunto de datos o su contenido.
+-   Hacer y distribuir copias del conjunto de datos y su contenido;
+-   Difundir y publicar el conjunto de datos y su contenido;
+-   Adaptar o reordenar el conjunto de datos y su contenido;
+-   Extraer total o parcialmente el contenido del conjunto de datos;
+-   Explotar comercialmente el conjunto de datos y su contenido, y;
+-   Crear conjuntos de datos derivados del conjunto de datos o su contenido.
 
 ![](images/libre-uso-mx.png)
 
@@ -242,12 +244,11 @@ dat_O3_df |>
 
 ```
 
-|  
+| 
 
-### Datos de estaciones meteorológicas _Conagua_
+### Datos de estaciones meteorológicas *Conagua*
 
-Los datos generales de todas las estaciones climatológicas de México están publicadas como datos de acceso abierto, pero no están en forrma de tabla sino en forma de datos geográficos asociados a marcadores de puntos que se despliegan en un mapa. Se comprende que es una entrega de datos pensada para que un usuario acceda a la información en forma interactiva. Pienso que para muchos otros fines de _reuso_ de esos datos conviene tenerlos en formato tabular. El documento geográfico está disponible en formato **kmz**. Este archivo es el tipo que usa _Google Earth_. Es una versión comprimida como un "zip", de otro tipo de archivo que es el **kml**, también desarrollado y usado en _Google Earth_. Lo que podemos hacer es descomprimir el archivo **kmz**, y procesar el archivo descomprimido resultante. En **R** existe la función `unzip`. Es la que usaremos enseguida.
-
+Los datos generales de todas las estaciones climatológicas de México están publicadas como datos de acceso abierto, pero no están en forrma de tabla sino en forma de datos geográficos asociados a marcadores de puntos que se despliegan en un mapa. Se comprende que es una entrega de datos pensada para que un usuario acceda a la información en forma interactiva. Pienso que para muchos otros fines de *reuso* de esos datos conviene tenerlos en formato tabular. El documento geográfico está disponible en formato **kmz**. Este archivo es el tipo que usa *Google Earth*. Es una versión comprimida como un "zip", de otro tipo de archivo que es el **kml**, también desarrollado y usado en *Google Earth*. Lo que podemos hacer es descomprimir el archivo **kmz**, y procesar el archivo descomprimido resultante. En **R** existe la función `unzip`. Es la que usaremos enseguida.
 
 ```{r}
 #| label: mapa-estaciones
@@ -268,17 +269,15 @@ unzip(zipfile = archivo_kmz, exdir = "temp-kmz")
 
 ```
 
-La estrategia de procesamiento que seguiremos la orientaremos a aprovechar el hecho de que los archivos **kml** son ambién documentos **xml**, semejantes a los que se usan para producir páginas Web, para manejar este tipo de archivos existe en **R** la biblioteca _rvest_ que empaca [muchas heramientas interesantes](https://rvest.tidyverse.org/index.html) para recolectar y procesar datos directamente del _Internet_ (se le llama **Web scraping** a esta tarea, algo así como ¿*cosechar la web*?). El proceso require recorrer el documento y recolectar las piezas de información que interesan. La tarea no es sencilla, pero nos sirve de _ejemplo avanzado_ que ilustra cosas que es posile hacer. Una vez obtenidos estos datos podría ser interesante ver formas de análisis de esttos datos generales que te imagines.
+La estrategia de procesamiento que seguiremos la orientaremos a aprovechar el hecho de que los archivos **kml** son ambién documentos **xml**, semejantes a los que se usan para producir páginas Web, para manejar este tipo de archivos existe en **R** la biblioteca *rvest* que empaca [muchas heramientas interesantes](https://rvest.tidyverse.org/index.html) para recolectar y procesar datos directamente del *Internet* (se le llama **Web scraping** a esta tarea, algo así como ¿*cosechar la web*?). El proceso require recorrer el documento y recolectar las piezas de información que interesan. La tarea no es sencilla, pero nos sirve de *ejemplo avanzado* que ilustra cosas que es posile hacer. Una vez obtenidos estos datos podría ser interesante ver formas de análisis de esttos datos generales que te imagines.
 
-En el _escript_ que sigue, sólo extraeremos los datos del archivo **kml** y los desplegaremos en forma de tabla. Los datos quedarán disponibles como una tabla _tibble_ (la variante más moderna del _data.frame_ original de **R**), que podrás usar de muchas maneras. Me gustará mucho escuchar tus ideas.
+En el *escript* que sigue, sólo extraeremos los datos del archivo **kml** y los desplegaremos en forma de tabla. Los datos quedarán disponibles como una tabla *tibble* (la variante más moderna del *data.frame* original de **R**), que podrás usar de muchas maneras. Me gustará mucho escuchar tus ideas.
 
-|  
+| 
 
 Este es el mapa a partir de los datos **kmz**
 
-
-[![](images/estaciones-clima-mx.png){width=80%}](https://smn.conagua.gob.mx/es/climatologia/informacion-climatologica/informacion-estadistica-climatologica)  
-
+[![](images/estaciones-clima-mx.png){width="80%"}](https://smn.conagua.gob.mx/es/climatologia/informacion-climatologica/informacion-estadistica-climatologica)
 
 ```{r}
 #| label: tbl-lista-estaciones
@@ -335,12 +334,11 @@ datos_est |>
 
 ```
 
-|  
+| 
 
 Los datos de la estación de Xalapa con id: 30135, son los siguientes.
 
-|  
-
+| 
 
 ```{r}
 #| label: tbl-xalapa-meteo
@@ -376,4 +374,3 @@ dat_meteo |>
   datatable()
 
 ```
-
