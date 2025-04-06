@@ -158,8 +158,6 @@ Esto es especialmente importante si estas trabajando con o dentro de una institu
 
 Puedes visitar en México el [Instituto Nacional del Derecho de Autor](http://www.indautor.gob.mx/) para obtener más información.
 
-::: {style="display: flex; justify-content: center;"}
-
 
 \ 
 
