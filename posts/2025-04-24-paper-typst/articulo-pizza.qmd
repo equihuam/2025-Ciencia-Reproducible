@@ -26,8 +26,7 @@ params:
   es_html: true
 
 format:
-    html:
-      mathfont: "Libertinus-math"
+    html: default
     docx: default
     academic-typst:
       section-numbering: "1.1.1"
@@ -311,4 +310,5 @@ The "A" stands for the "Appendix", not the section numbering.
 
 
 {{< pagebreak >}}
+
 <!-- Bibliography -->

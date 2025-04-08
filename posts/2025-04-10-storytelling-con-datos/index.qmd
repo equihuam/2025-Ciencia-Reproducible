@@ -33,7 +33,7 @@ Según Knaflic, para *preparar una historia con datos* hay que dominar seis habi
 5.  Pensar como un diseñador.
 6.  Contar la historia elocuentemente.
 
-Las historias que queremos contar son **Grandes Ideas**, naturalmente. Pero, ¿Cómo podemos atraer a otros para que se enteren de esa gran cosa? La misma autora, nos dice: despertar el interés hacia una **Gran Idea** eficazmente, exige reducir al mínimo todo lo que pudiera distraer, hay que buscar llegar a una sóla frase. Quizás es el texto que presentaras en el título de un artículo, en la *declaración de objetivos* o al hablar con la profe o con alguién que podría financiar el proyecto. Sugiere considerar estos tres pasos para lograr esta síntesis prodigiosa:
+Las historias que queremos contar son **Grandes Ideas**, naturalmente. Pero, ¿Cómo podemos atraer a otros para que se enteren de esa gran cosa? La misma autora, nos dice: despertar el interés hacia una **Gran Idea** eficazmente, exige reducir al mínimo todo lo que pudiera distraer, hay que buscar llegar a una sóla frase. Quizás es el texto que presentaras en el título de un artículo, en la *declaración de objetivos* o al hablar con la    profe o con alguién que podría financiar el proyecto. Sugiere considerar estos tres pasos para lograr esta síntesis prodigiosa:
 
 1.  Encuentra el punto de vista que la hace original.
 2.  Debes expresar lo que está en juego, decir claramente por qué importa.

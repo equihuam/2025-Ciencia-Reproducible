@@ -235,9 +235,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 </div>
 <p><br>
-<br>
-</p>
-<p>La tarea consiste en que preparas un reporte con el formato de un artículo y que sea parte de tu blog. En este caso usarás la extensión <a href="https://github.com/kazuyanagimoto/quarto-academic-typst">academic-typst</a> que está en la página de [extensiones de <em>Quarto</em>](https://quarto.org/docs/extensions/listing-formats.html. Para incorporar esta extensión a tu proyecto usa el siguiente comando en la pestaña de terminal.</p>
+&nbsp;</p>
+<p>La tarea consiste en que preparas un reporte con el formato de un artículo y que sea parte de tu blog. En este caso usarás la extensión <a href="https://github.com/kazuyanagimoto/quarto-academic-typst">academic-typst</a> que está en la página de <a href="https://quarto.org/docs/extensions/listing-formats.html">extensiones de <em>Quarto</em></a>. Para incorporar esta extensión a tu proyecto usa el siguiente comando en la pestaña de terminal.</p>
 <blockquote class="blockquote">
 <p><code>quarto use template kazuyanagimoto/quarto-academic-typst</code></p>
 </blockquote>
@@ -245,7 +244,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb2"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">     </span><span class="fu">html</span><span class="kw">:</span><span class="at"> default</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="at">     </span><span class="fu">docx</span><span class="kw">:</span><span class="at"> default</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>La idea es que experimentes con la preparación de un reporte técnico con <em>Quarto</em>. Para averiguar un poco más sobre esto <a href="https://quarto.org/docs/manuscripts/authoring/rstudio.html">te invito a visitar este documento</a>. Incluso podrías interesarte en preparar un <a href="https://quarto.org/docs/books/">libro completo</a> ¡Quizás es algo que podrías querer hacer para producir el documento de tu tesis! Bueno, por lo pronto lo que sigue es que construyas tu reporte, siguiendo ideas de formateo que te sugiere el <em>templete</em>. <a href="../../posts/2025-04-24-paper-typst/articulo-pizza.html">La idea es algo así</a>. Ejercita también la inclusión de <a href="https://quarto.org/docs/authoring/citations.html">referencias bibliográficas</a>. Resulta muy cómodá para esto la opción de insertar referencias que ofrece RStudio en su modo visual (<a href="#fig-citas" class="quarto-xref">Figura&nbsp;1</a>) .</p>
+<p>La idea es que experimentes con la preparación de un reporte técnico con <em>Quarto</em>. Ejercita también la inclusión de <a href="https://quarto.org/docs/authoring/citations.html">referencias bibliográficas</a>. Resulta muy cómodá para esto la opción de insertar referencias que ofrece RStudio en su modo visual (<a href="#fig-citas" class="quarto-xref">Figura&nbsp;1</a>). La sección de referencias puede personalizarse con un <em>divo</em> así:</p>
+<blockquote class="blockquote">
+<p><strong>:::{#refs}</strong><br>
+<strong>## Referencias</strong><br>
+<strong>:::</strong></p>
+</blockquote>
+<p>&nbsp;</p>
 <div id="fig-citas" class="quarto-float quarto-figure quarto-figure-center anchored" width="300">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-citas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -256,6 +261,7 @@ Figura&nbsp;1
 </figcaption>
 </figure>
 </div>
+<p>Para averiguar un poco más sobre esto <a href="https://quarto.org/docs/manuscripts/authoring/rstudio.html">te invito a visitar este documento</a>. Incluso podrías interesarte en preparar un <a href="https://quarto.org/docs/books/">libro completo</a> ¡Quizás es algo que podrías querer hacer para producir el documento de tu tesis! Bueno, por lo pronto lo que sigue es que construyas tu reporte, siguiendo ideas de formateo que te sugiere el <em>templete</em>. <a href="../../posts/2025-04-24-paper-typst/articulo-pizza.html">La idea es algo así</a>.</p>
 <p><a href="img/linea-de-hojas.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="img/linea-de-hojas.svg" class="img-fluid"></a></p>
 
 
@@ -682,7 +688,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom","loop":false});
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","loop":false,"closeEffect":"zoom","selector":".lightbox","openEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
