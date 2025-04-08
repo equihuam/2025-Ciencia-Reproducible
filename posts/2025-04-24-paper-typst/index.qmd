@@ -88,7 +88,7 @@ format:
      docx: default
 ```
   
-La idea es que experimentes con la preparación de un reporte técnico con *Quarto*. Para averiguar un poco más sobre esto [te invito a visitar este documento](https://quarto.org/docs/manuscripts/authoring/rstudio.html). Lo que sigue es que construyas tu reporte, siguiendo ideas de formato que te sugiere el _templete_. [La idea es algo así](articulo-pizza.qmd). 
+La idea es que experimentes con la preparación de un reporte técnico con *Quarto*. Para averiguar un poco más sobre esto [te invito a visitar este documento](https://quarto.org/docs/manuscripts/authoring/rstudio.html). Incluso podrías interesarte en preparar un [libro completo](https://quarto.org/docs/books/) ¡Quizás es algo que podrías querer hacer para producir el documento de tu tesis! Bueno, por lo pronto lo que sigue es que construyas tu reporte, siguiendo ideas de formateo que te sugiere el _templete_. [La idea es algo así](articulo-pizza.qmd). 
 
 
 ![](img/linea-de-hojas.svg)
