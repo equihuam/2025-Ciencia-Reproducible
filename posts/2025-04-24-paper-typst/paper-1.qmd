@@ -17,7 +17,7 @@ keywords:
   - format
 date: today
 date-format: full
-bibliography: references.bib
+bibliography: paper-refs.bib
 format:
   html: default
   academic-typst:
