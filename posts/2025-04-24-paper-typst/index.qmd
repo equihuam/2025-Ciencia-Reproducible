@@ -14,9 +14,9 @@ format:
     code-fold: true
 ---
 
-## Preparación de la Masa
+ ## Preparación de la Masa
 
-::: columns
+:::::: columns
 ::: {.column width="20%"}
 ![](img/pizza-masa.jpg){width="600"}
 
@@ -29,20 +29,22 @@ format:
 ::: {.column width="50%"}
 Para encontrar una mejor manera de hacer su pizza favorita, Marcelo se propuso reducir el tiempo que tarda en preparar la masa. Para hacerlo siguió el camino de la ciencia y **diseñó un experimento** para poner a prueba el efecto de la cantidad de azúcar y de leche en los tiempos de activación de la levadura. En concreto, probó cuatro recetas diferentes y midió cuántos segundos tardaba la misma cantidad de masa en llenar un recipiente hasta una marca que fijo como referencia. **Aleatorizó** el orden de las recetas y repitió cada tratamiento 4 veces.
 :::
-:::
+::::::
 
 [Descargar los datos en formato de texto simple](masa-para-pizza.txt) o [Utiliza este vínculo para otenerlo de Google Drive](https://drive.google.com/file/d/1uVUOqwobv67E5xTsSSxjg9f9qypW-aIS/view?usp=sharing)
+
 
 ```{=html}
 <iframe 
         src="https://drive.google.com/embeddedfolderview?id=1R63QN1N3r4n-aR2lL7OKnwMEfnNnRmd7#list"
         title="Directorio de datos"
         allowfullscreen= "true"
-        height="50%"
+        height="10%"
         width="95%"
         style="border:10px solid blue;">
 </iframe>
 ```
+
 
 Puedes usar instrucciones parecidas a las que siguen para leer los datos en **R**, directamente desde un documento en la nube de *Google Drive*. Nota que en este ejemplo deberás cambiar **datos** por un nombre de tu preferencia. Yo elegí **masa**.
 
@@ -75,24 +77,20 @@ masa <- read.csv(sprintf(url_drive, dat_datos_id))
 \
 \
 
-La tarea consiste en que preparas un reporte con el formato de un artículo y que sea parte de tu blog. En este caso usarás la extensión [academic-typst](https://github.com/kazuyanagimoto/quarto-academic-typst) que está en la página de [extensiones de _Quarto_](https://quarto.org/docs/extensions/listing-formats.html. Para incorporar esta extensión a tu proyecto usa el siguiente comando en la pestaña de terminal.
+La tarea consiste en que preparas un reporte con el formato de un artículo y que sea parte de tu blog. En este caso usarás la extensión [academic-typst](https://github.com/kazuyanagimoto/quarto-academic-typst) que está en la página de \[extensiones de *Quarto*\](https://quarto.org/docs/extensions/listing-formats.html. Para incorporar esta extensión a tu proyecto usa el siguiente comando en la pestaña de terminal.
 
 > `quarto use template kazuyanagimoto/quarto-academic-typst`
 
-Una ves que lo hayas instalado aparecerá un nuevo directorio en la raíz de tu proyecto con el nombre `_extensions` y también un archivo que te servira de _templete_ con el nombre _template-full.qmd_ y otro con los datos de las referencias: _references.bib_. Muévelos por favor a _posts_, a un subdirectorio apropiado para que mantengas el orden de tu trabajo. Para que experimentes un poco sobre la flexibilidad de lo que estamos haciendo, agrega lo siguiente en la sección de formato del _encabezado yaml_ del _templete_, arribita de _academic-typst_:
+Una ves que lo hayas instalado aparecerá un nuevo directorio en la raíz de tu proyecto con el nombre `_extensions` y también un archivo que te servira de *templete* con el nombre *template-full.qmd* y otro con los datos de las referencias: *references.bib*. Muévelos por favor a *posts*, a un subdirectorio apropiado para que mantengas el orden de tu trabajo. Para que experimentes un poco sobre la flexibilidad de lo que estamos haciendo, agrega lo siguiente en la sección de formato del *encabezado yaml* del *templete*, arribita de *academic-typst*:
 
-
-```{.yml}
+``` yml
 format:
      html: default
      docx: default
 ```
-  
-La idea es que experimentes con la preparación de un reporte técnico con *Quarto*. Para averiguar un poco más sobre esto [te invito a visitar este documento](https://quarto.org/docs/manuscripts/authoring/rstudio.html). Incluso podrías interesarte en preparar un [libro completo](https://quarto.org/docs/books/) ¡Quizás es algo que podrías querer hacer para producir el documento de tu tesis! Bueno, por lo pronto lo que sigue es que construyas tu reporte, siguiendo ideas de formateo que te sugiere el _templete_. [La idea es algo así](articulo-pizza.qmd). 
 
+La idea es que experimentes con la preparación de un reporte técnico con *Quarto*. Para averiguar un poco más sobre esto [te invito a visitar este documento](https://quarto.org/docs/manuscripts/authoring/rstudio.html). Incluso podrías interesarte en preparar un [libro completo](https://quarto.org/docs/books/) ¡Quizás es algo que podrías querer hacer para producir el documento de tu tesis! Bueno, por lo pronto lo que sigue es que construyas tu reporte, siguiendo ideas de formateo que te sugiere el *templete*. [La idea es algo así](articulo-pizza.qmd). Ejercita también la inclusión de [referencias bibliográficas](https://quarto.org/docs/authoring/citations.html). Resulta muy cómodá para esto la opción de insertar referencias que ofrece RStudio en su modo visual (@fig-citas) .
+
+![](img/citas.png){width=300 #fig-citas}
 
 ![](img/linea-de-hojas.svg)
-
-
-
-
