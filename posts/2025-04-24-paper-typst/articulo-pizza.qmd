@@ -34,7 +34,7 @@ format:
       mainfont: "Libertinus-serif"
       sansfont: Jost
       mathfont: "Libertinus-math"
-      bibliographystyle: "chicago-author-date"
+      bibliographystyle: "american-psychological-association"
       include-in-header:
         - text: '#import "@preview/mitex:0.2.4": *'      
 execute: 
