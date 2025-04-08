@@ -14,7 +14,7 @@ format:
     code-fold: true
 ---
 
- ## Preparación de la Masa
+## Preparación de la Masa
 
 :::::: columns
 ::: {.column width="20%"}
