@@ -6,10 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Kazuharu Yanagimoto">
-<meta name="keywords" content="Quarto, Typst, format">
+<meta name="author" content="Miguel Equihua">
 
-<title>Quarto Academic Typst (html) – Ciencia Abierta</title>
+<title>Pizzas – Ciencia Abierta</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,27 +21,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
 }
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -93,40 +106,11 @@ div.csl-indent {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -168,58 +152,39 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Quarto Academic Typst (html)</h1>
-            <p class="subtitle lead">A minimalistic Quarto + Typst template for academic writing</p>
-                      </div>
+      <h1 class="title">Pizzas</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">estadística</div>
+                <div class="quarto-category">reporte</div>
+              </div>
+                  </div>
   </div>
     
-  <div class="quarto-title-meta-author">
-    <div class="quarto-title-meta-heading">Autor/a</div>
-    <div class="quarto-title-meta-heading">Afiliación</div>
-    
-      <div class="quarto-title-meta-contents">
-      <p class="author">Kazuharu Yanagimoto <a href="mailto:kazuharu.yanagimoto@cemfi.edu.es" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0009-0007-1967-8304" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
-    </div>
-    <div class="quarto-title-meta-contents">
-          <p class="affiliation">
-              CEMFI
-            </p>
-        </div>
-    </div>
-
+  
   <div class="quarto-title-meta">
 
-        
+      <div>
+      <div class="quarto-title-meta-heading">Autor/a</div>
+      <div class="quarto-title-meta-contents">
+               <p>Miguel Equihua </p>
+            </div>
+    </div>
+      
       <div>
       <div class="quarto-title-meta-heading">Fecha de publicación</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">lunes, 7 de abril de 2025</p>
+        <p class="date">Xalapa, Ver., 24 de abril, 2025</p>
       </div>
     </div>
     
       
     </div>
     
-  <div>
-    <div class="abstract">
-      <div class="block-title">Resumen</div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis posuere ligula sit amet lacinia. Duis dignissim pellentesque magna, rhoncus congue sapien finibus mollis. Ut eu sem laoreet, vehicula ipsum in, convallis erat. Vestibulum magna sem, blandit pulvinar augue sit amet, auctor malesuada sapien. Nullam faucibus leo eget eros hendrerit, non laoreet ipsum lacinia. Curabitur cursus diam elit, non tempus ante volutpat a. Quisque hendrerit blandit purus non fringilla. Integer sit amet elit viverra ante dapibus semper. Vestibulum viverra rutrum enim, at luctus enim posuere eu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-    </div>
-  </div>
-
-  <div>
-    <div class="keywords">
-      <div class="block-title">Palabras clave</div>
-      <p>Quarto, Typst, format</p>
-    </div>
-  </div>
   
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <div class="quarto-alternate-formats"><h2>Otros formatos</h2><ul><li><a href="paper-1.pdf"><i class="bi bi-file-pdf"></i>Typst (academic)</a></li></ul></div></div>
+    
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
 
@@ -227,232 +192,66 @@ window.Quarto = {
 
 
 
-<p>This document shows a minimal example of the template. For more information, see the <a href="https://kazuyanagimoto.com/quarto-academic-typst/template-full.pdf">full demo</a> and its <a href="https://github.com/kazuyanagimoto/quarto-academic-typst">source</a>.</p>
-<section id="section-as-heading-level-1" class="level1">
-<h1>Section as Heading Level 1</h1>
-<p>Section numbering can be specified in the YAML <code>section-numbering</code> field as other Typst templates.</p>
-<section id="subsection-as-heading-level-2" class="level2">
-<h2 class="anchored" data-anchor-id="subsection-as-heading-level-2">Subsection as Heading Level 2</h2>
-<p>You can use LaTeX math expressions:</p>
-<p><span class="math display">\[
-Y_{it} = \alpha_i + \lambda_t + \sum_{k \neq -1} \tau_h \{E_i + k = t\} +
-\varepsilon_{it}.
-\]</span></p>
-<section id="subsubsection-as-heading-level-3" class="level3">
-<h3 class="anchored" data-anchor-id="subsubsection-as-heading-level-3">Subsubsection as Heading Level 3</h3>
-<p>I don’t use and don’t recommend using heading levels 3 and below but it works.</p>
-</section>
-</section>
-<section id="citation" class="level2">
-<h2 class="anchored" data-anchor-id="citation">Citation</h2>
-<p>You can cite a reference like this <span class="citation" data-cites="katsushika1831">(<a href="#ref-katsushika1831" role="doc-biblioref">Katsushika 1831</a>)</span> or <span class="citation" data-cites="horst2020">Horst, Hill, y Gorman (<a href="#ref-horst2020" role="doc-biblioref">2020</a>)</span>. Typst has some built-in citation styles. Check the <a href="https://typst.app/docs/reference/model/bibliography/#parameters-style">Typst documentation</a> for more information.</p>
-</section>
-</section>
-<section id="figures-and-tables" class="level1">
-<h1>Figures and Tables</h1>
-<section id="figures" class="level2">
-<h2 class="anchored" data-anchor-id="figures">Figures</h2>
-<p>As <a href="#fig-hist-mpg" class="quarto-xref">Figura&nbsp;1</a> shows, the caption is displayed below the figure. As a caption of the figure (<code>fig-cap</code>), I use bold text for the title and use a normal text for the description.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-hist-mpg" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-hist-mpg-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="paper-1_files/figure-html/fig-hist-mpg-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figura&nbsp;1: Histogram of Miles per Gallon. The x-axis shows the miles per gallon, and the y-axis shows the frequency."><img src="paper-1_files/figure-html/fig-hist-mpg-1.png" class="img-fluid figure-img" width="672"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hist-mpg-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;1: <strong>Histogram of Miles per Gallon</strong>. The x-axis shows the miles per gallon, and the y-axis shows the frequency.
-</figcaption>
+<section id="preparación-de-la-masa" class="level2">
+<h2 class="anchored" data-anchor-id="preparación-de-la-masa">Preparación de la Masa</h2>
+<div class="columns">
+<div class="column" style="width:20%;">
+<p><a href="img/pizza-masa.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="img/pizza-masa.jpg" class="img-fluid" width="600"></a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="img/vaso-de-precipitados-sin-embudo.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="img/vaso-de-precipitados-sin-embudo.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="100"></a></p>
 </figure>
 </div>
-</div>
-</div>
-</section>
-<section id="tables" class="level2">
-<h2 class="anchored" data-anchor-id="tables">Tables</h2>
-<p>You can use <a href="https://vincentarelbundock.github.io/tinytable/">tinytable</a> for general tables and <a href="https://vincentarelbundock.github.io/modelsummary/">modelsummary</a> for regression tables.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> As <a href="#tbl-mtcars-head" class="quarto-xref">Tabla&nbsp;1</a> shows, the caption is displayed above the table. The notes of the table can be added using the <code>notes</code> argument of the <code>tinytable::tt()</code> function.</p>
-<div class="cell">
-<div id="tbl-mtcars-head" class="cell quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-mtcars-head-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabla&nbsp;1: Head of the mtcars Dataset
-</figcaption>
-<div aria-describedby="tbl-mtcars-head-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output-display">
-<!-- preamble start -->
+</div><div class="column" style="width:10%;">
 
-    <script>
-
-      function styleCell_b7m82ckud08sx74ud2ps(i, j, css_id) {
-          var table = document.getElementById("tinytable_b7m82ckud08sx74ud2ps");
-          var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
-          if (cell) {
-              console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
-              cell.classList.add(css_id);
-          } else {
-              console.warn(`Cell at (${i}, ${j}) not found.`);
-          }
-      }
-      function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_b7m82ckud08sx74ud2ps');
-        var newRow = table.insertRow(i);
-        var newCell = newRow.insertCell(0);
-        newCell.setAttribute("colspan", colspan);
-        // newCell.innerText = content;
-        // this may be unsafe, but innerText does not interpret <br>
-        newCell.innerHTML = content;
-      }
-      function spanCell_b7m82ckud08sx74ud2ps(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_b7m82ckud08sx74ud2ps");
-        const targetRow = table.rows[i];
-        const targetCell = targetRow.cells[j];
-        for (let r = 0; r < rowspan; r++) {
-          // Only start deleting cells to the right for the first row (r == 0)
-          if (r === 0) {
-            // Delete cells to the right of the target cell in the first row
-            for (let c = colspan - 1; c > 0; c--) {
-              if (table.rows[i + r].cells[j + c]) {
-                table.rows[i + r].deleteCell(j + c);
-              }
-            }
-          }
-          // For rows below the first, delete starting from the target column
-          if (r > 0) {
-            for (let c = colspan - 1; c >= 0; c--) {
-              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
-                table.rows[i + r].deleteCell(j);
-              }
-            }
-          }
-        }
-        // Set rowspan and colspan of the target cell
-        targetCell.rowSpan = rowspan;
-        targetCell.colSpan = colspan;
-      }
-      // tinytable span after
-      window.addEventListener('load', function () {
-          var cellsToStyle = [
-            // tinytable style arrays after
-          { positions: [ { i: 5, j: 0 }, { i: 5, j: 1 }, { i: 5, j: 2 }, { i: 5, j: 3 }, { i: 5, j: 4 },  ], css_id: 'tinytable_css_nboi67e7zxoqxbw0b7bn',}, 
-          { positions: [ { i: 0, j: 0 }, { i: 0, j: 1 }, { i: 0, j: 2 }, { i: 0, j: 3 }, { i: 0, j: 4 },  ], css_id: 'tinytable_css_3k3y3p7qz8dfkhjpm6jv',}, 
-          ];
-
-          // Loop over the arrays to style the cells
-          cellsToStyle.forEach(function (group) {
-              group.positions.forEach(function (cell) {
-                  styleCell_b7m82ckud08sx74ud2ps(cell.i, cell.j, group.css_id);
-              });
-          });
-      });
-    </script>
-
-    <style>
-      /* tinytable css entries after */
-      .table td.tinytable_css_nboi67e7zxoqxbw0b7bn, .table th.tinytable_css_nboi67e7zxoqxbw0b7bn { border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_3k3y3p7qz8dfkhjpm6jv, .table th.tinytable_css_3k3y3p7qz8dfkhjpm6jv { border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
-    </style>
-    <div class="container">
-      <table class="table table-borderless" id="tinytable_b7m82ckud08sx74ud2ps" style="table-layout: fixed; width: 80% !important; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
-        <thead>
-        
-              <tr>
-                <th scope="col">mpg</th>
-                <th scope="col">cyl</th>
-                <th scope="col">disp</th>
-                <th scope="col">hp</th>
-                <th scope="col">drat</th>
-              </tr>
-        </thead>
-        <tfoot><tr><td colspan="5">_Notes_: This table shows the first six rows of the mtcars dataset.</td></tr></tfoot>
-        <tbody>
-                <tr>
-                  <td>21.0</td>
-                  <td>6</td>
-                  <td>160</td>
-                  <td>110</td>
-                  <td>3.90</td>
-                </tr>
-                <tr>
-                  <td>21.0</td>
-                  <td>6</td>
-                  <td>160</td>
-                  <td>110</td>
-                  <td>3.90</td>
-                </tr>
-                <tr>
-                  <td>22.8</td>
-                  <td>4</td>
-                  <td>108</td>
-                  <td>93</td>
-                  <td>3.85</td>
-                </tr>
-                <tr>
-                  <td>21.4</td>
-                  <td>6</td>
-                  <td>258</td>
-                  <td>110</td>
-                  <td>3.08</td>
-                </tr>
-                <tr>
-                  <td>18.7</td>
-                  <td>8</td>
-                  <td>360</td>
-                  <td>175</td>
-                  <td>3.15</td>
-                </tr>
-        </tbody>
-      </table>
-    </div>
-<!-- hack to avoid NA insertion in last line -->
+</div><div class="column" style="width:50%;">
+<p>Para encontrar una mejor manera de hacer su pizza favorita, Marcelo se propuso reducir el tiempo que tarda en preparar la masa. Para hacerlo siguió el camino de la ciencia y <strong>diseñó un experimento</strong> para poner a prueba el efecto de la cantidad de azúcar y de leche en los tiempos de activación de la levadura. En concreto, probó cuatro recetas diferentes y midió cuántos segundos tardaba la misma cantidad de masa en llenar un recipiente hasta una marca que fijo como referencia. <strong>Aleatorizó</strong> el orden de las recetas y repitió cada tratamiento 4 veces.</p>
 </div>
 </div>
-</figure>
-</div>
-</div>
-</section>
-</section>
-<section id="last-words" class="level1">
-<h1>Last words</h1>
-<p>I made this template for my working papers, so it may not be suitable for other fields than economics. I am happy to receive feedback and suggestions for improvement.</p>
-</section>
-<section id="supplemental-figures" class="level1">
-<h1>Supplemental Figures</h1>
-<p>The figure numbering will be reset to “A.1”, “A.2”, etc so that it is clear that these figures are part of the appendix.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-scatter-car" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-scatter-car-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="paper-1_files/figure-html/fig-scatter-car-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figura&nbsp;2: Scatter Plot of Car Data. The x-axis shows the weight of the car, and the y-axis shows the miles per gallon."><img src="paper-1_files/figure-html/fig-scatter-car-1.png" class="img-fluid figure-img" width="672"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scatter-car-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;2: <strong>Scatter Plot of Car Data</strong>. The x-axis shows the weight of the car, and the y-axis shows the miles per gallon.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<div style="page-break-after: always;"></div>
-<!-- Bibliography -->
-
-
-
-</section>
-
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referencias</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-horst2020" class="csl-entry" role="listitem">
-Horst, Allison Marie, Alison Presmanes Hill, y Kristen B Gorman. 2020. <em>palmerpenguins: Palmer Archipelago (Antarctica) penguin data</em>. <a href="https://doi.org/10.5281/zenodo.3960218">https://doi.org/10.5281/zenodo.3960218</a>.
-</div>
-<div id="ref-katsushika1831" class="csl-entry" role="listitem">
-Katsushika, Hokusai. 1831. <span>«The Great Wave off Kanagawa»</span>. <a href="https://upload.wikimedia.org/wikipedia/commons/a/a5/Tsunami_by_hokusai_19th_century.jpg">https://upload.wikimedia.org/wikipedia/commons/a/a5/Tsunami_by_hokusai_19th_century.jpg</a>.
-</div>
-</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Notas</h2>
-
-<ol>
-<li id="fn1"><p>Since the default backend of <code>modelsummary</code> is <code>tinytable</code>, you can use the customization options of <code>tinytable</code> for <code>modelsummary</code>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<p><a href="masa-para-pizza.txt">Descargar los datos en formato de texto simple</a> o <a href="https://drive.google.com/file/d/1uVUOqwobv67E5xTsSSxjg9f9qypW-aIS/view?usp=sharing">Utiliza este vínculo para otenerlo de Google Drive</a></p>
+<iframe src="https://drive.google.com/embeddedfolderview?id=1R63QN1N3r4n-aR2lL7OKnwMEfnNnRmd7#list" title="Directorio de datos" allowfullscreen="true" height="50%" width="95%" style="border:10px solid blue;">
+</iframe>
+<p>Puedes usar instrucciones parecidas a las que siguen para leer los datos en <strong>R</strong>, directamente desde un documento en la nube de <em>Google Drive</em>. Nota que en este ejemplo deberás cambiar <strong>datos</strong> por un nombre de tu preferencia. Yo elegí <strong>masa</strong>.</p>
+<hr>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>url_datos <span class="ot">&lt;-</span> <span class="st">"URL de los datos"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>dat_datos_id <span class="ot">&lt;-</span> <span class="fu">str_extract</span>(url_datos, <span class="st">"(?&lt;=d/)(.*)(?=/view)"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>url_drive <span class="ot">&lt;-</span> <span class="st">"https://docs.google.com/uc?id=%s&amp;export=download"</span> </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>masa <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">sprintf</span>(url_drive, dat_datos_id)) </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+<div style="color:GoldenRod">
+<ol type="1">
+<li>¿Diseño experimental?</li>
+<li>¿Arreglo de tratamientos?</li>
+<li>¿Modelo que corresponde a este experimento?</li>
+<li>¿Supuestos qe harás para apoyar tu análisis estadístico?</li>
+<li>¿Define tu criterio o nivel de significancia?</li>
+<li>Realiza una exploración de los datos, numérica y gráfica, comenta</li>
+<li>Construye los modelos necesarios y selecciona el mínimo adecuado</li>
+<li>Valora la calidad del modelo, incluyendo el análisis de los residuos</li>
+<li>Resuelve que tratamientos difieren de los demás</li>
+<li>Argumenta tus conclusiones</li>
 </ol>
-</section></div></main> <!-- /main -->
+</div>
+<p><br>
+<br>
+</p>
+<p>La tarea consiste en que preparas un reporte con el formato de un artículo y que sea parte de tu blog. En este caso usarás la extensión <a href="https://github.com/kazuyanagimoto/quarto-academic-typst">academic-typst</a> que está en la página de [extensiones de <em>Quarto</em>](https://quarto.org/docs/extensions/listing-formats.html. Para incorporar esta extensión a tu proyecto usa el siguiente comando en la pestaña de terminal.</p>
+<blockquote class="blockquote">
+<p><code>quarto use template kazuyanagimoto/quarto-academic-typst</code></p>
+</blockquote>
+<p>Una ves que lo hayas instalado aparecerá un nuevo directorio en la raíz de tu proyecto con el nombre <code>_extensions</code> y también un archivo que te servira de <em>templete</em> con el nombre <em>template-full.qmd</em> y otro con los datos de las referencias: <em>references.bib</em>. Muévelos por favor a <em>posts</em>, a un subdirectorio apropiado para que mantengas el orden de tu trabajo. Para que experimentes un poco sobre la flexibilidad de lo que estamos haciendo, agrega lo siguiente en la sección de formato del <em>encabezado yaml</em> del <em>templete</em>, arribita de <em>academic-typst</em>:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">     </span><span class="fu">html</span><span class="kw">:</span><span class="at"> default</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="at">     </span><span class="fu">docx</span><span class="kw">:</span><span class="at"> default</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>La idea es que experimentes con la preparación de un reporte técnico con <em>Quarto</em>. Para averiguar un poco más sobre esto <a href="https://quarto.org/docs/manuscripts/authoring/rstudio.html">te invito a visitar este documento</a>. Lo que sigue es que construyas tu reporte, siguiendo ideas de formato que te sugiere el <em>templete</em>. <a href="../../posts/2025-04-24-paper-typst/articulo-pizza.html">La idea es algo así</a>.</p>
+<p><a href="img/linea-de-hojas.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="img/linea-de-hojas.svg" class="img-fluid"></a></p>
+
+
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -874,7 +673,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","openEffect":"zoom","closeEffect":"zoom","loop":false});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","loop":false,"selector":".lightbox","descPosition":"bottom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {

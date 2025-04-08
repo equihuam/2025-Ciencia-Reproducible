@@ -1,0 +1,98 @@
+---
+title: "Pizzas"
+author: ["Miguel Equihua"]
+date: "24/apr/2025"
+lang: es
+draft: false
+
+image: img/pizza-masa.jpg
+lightbox: true
+
+categories: [estadística, reporte]
+format:
+  html:
+    code-fold: true
+---
+
+## Preparación de la Masa
+
+::: columns
+::: {.column width="20%"}
+![](img/pizza-masa.jpg){width="600"}
+
+![](img/vaso-de-precipitados-sin-embudo.svg){width="100" fig-align="center"}
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="50%"}
+Para encontrar una mejor manera de hacer su pizza favorita, Marcelo se propuso reducir el tiempo que tarda en preparar la masa. Para hacerlo siguió el camino de la ciencia y **diseñó un experimento** para poner a prueba el efecto de la cantidad de azúcar y de leche en los tiempos de activación de la levadura. En concreto, probó cuatro recetas diferentes y midió cuántos segundos tardaba la misma cantidad de masa en llenar un recipiente hasta una marca que fijo como referencia. **Aleatorizó** el orden de las recetas y repitió cada tratamiento 4 veces.
+:::
+:::
+
+[Descargar los datos en formato de texto simple](masa-para-pizza.txt) o [Utiliza este vínculo para otenerlo de Google Drive](https://drive.google.com/file/d/1uVUOqwobv67E5xTsSSxjg9f9qypW-aIS/view?usp=sharing)
+
+```{=html}
+<iframe 
+        src="https://drive.google.com/embeddedfolderview?id=1R63QN1N3r4n-aR2lL7OKnwMEfnNnRmd7#list"
+        title="Directorio de datos"
+        allowfullscreen= "true"
+        height="50%"
+        width="95%"
+        style="border:10px solid blue;">
+</iframe>
+```
+
+Puedes usar instrucciones parecidas a las que siguen para leer los datos en **R**, directamente desde un documento en la nube de *Google Drive*. Nota que en este ejemplo deberás cambiar **datos** por un nombre de tu preferencia. Yo elegí **masa**.
+
+------------------------------------------------------------------------
+
+``` r
+library(stringr)
+url_datos <- "URL de los datos"
+dat_datos_id <- str_extract(url_datos, "(?<=d/)(.*)(?=/view)")
+
+url_drive <- "https://docs.google.com/uc?id=%s&export=download" 
+masa <- read.csv(sprintf(url_drive, dat_datos_id)) 
+```
+
+------------------------------------------------------------------------
+
+::: {style="color:GoldenRod"}
+1.  ¿Diseño experimental?
+2.  ¿Arreglo de tratamientos?
+3.  ¿Modelo que corresponde a este experimento?
+4.  ¿Supuestos qe harás para apoyar tu análisis estadístico?
+5.  ¿Define tu criterio o nivel de significancia?
+6.  Realiza una exploración de los datos, numérica y gráfica, comenta
+7.  Construye los modelos necesarios y selecciona el mínimo adecuado
+8.  Valora la calidad del modelo, incluyendo el análisis de los residuos
+9.  Resuelve que tratamientos difieren de los demás
+10. Argumenta tus conclusiones
+:::
+
+\
+\
+
+La tarea consiste en que preparas un reporte con el formato de un artículo y que sea parte de tu blog. En este caso usarás la extensión [academic-typst](https://github.com/kazuyanagimoto/quarto-academic-typst) que está en la página de [extensiones de _Quarto_](https://quarto.org/docs/extensions/listing-formats.html. Para incorporar esta extensión a tu proyecto usa el siguiente comando en la pestaña de terminal.
+
+> `quarto use template kazuyanagimoto/quarto-academic-typst`
+
+Una ves que lo hayas instalado aparecerá un nuevo directorio en la raíz de tu proyecto con el nombre `_extensions` y también un archivo que te servira de _templete_ con el nombre _template-full.qmd_ y otro con los datos de las referencias: _references.bib_. Muévelos por favor a _posts_, a un subdirectorio apropiado para que mantengas el orden de tu trabajo. Para que experimentes un poco sobre la flexibilidad de lo que estamos haciendo, agrega lo siguiente en la sección de formato del _encabezado yaml_ del _templete_, arribita de _academic-typst_:
+
+
+```{.yml}
+format:
+     html: default
+     docx: default
+```
+  
+La idea es que experimentes con la preparación de un reporte técnico con *Quarto*. Para averiguar un poco más sobre esto [te invito a visitar este documento](https://quarto.org/docs/manuscripts/authoring/rstudio.html). Lo que sigue es que construyas tu reporte, siguiendo ideas de formato que te sugiere el _templete_. [La idea es algo así](articulo-pizza.qmd). 
+
+
+![](img/linea-de-hojas.svg)
+
+
+
+
