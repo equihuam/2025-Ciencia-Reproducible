@@ -34,7 +34,7 @@ format:
       mainfont: "Libertinus-serif"
       sansfont: Jost
       mathfont: "Libertinus-math"
-      bibliographystyle: "american-psychological-association"
+      bibliographystyle: "american-psychological-association"  
       include-in-header:
         - text: '#import "@preview/mitex:0.2.4": *'      
 execute: 
@@ -65,7 +65,7 @@ color_accent3 <- "#e64173"
 font_base_regular <- "Roboto Condensed"
 font_base_light <- "Roboto Condensed Light"
 
-# font_add_google(font_base_regular, font_base_light)
+ font_add_google(font_base_regular, font_base_light)
 showtext_auto()
 
 theme_quarto <- function(font_title = font_base_regular,

@@ -12,6 +12,9 @@ categories: [estadística, reporte, artículo]
 format:
   html:
     code-fold: true
+    code-tools: true  
+    
+embed-resources: true   
 ---
 
 ## Preparación de la Masa
@@ -99,4 +102,13 @@ La idea es que experimentes con la preparación de un reporte técnico con *Quar
 
 Para averiguar un poco más sobre esto [te invito a visitar este documento](https://quarto.org/docs/manuscripts/authoring/rstudio.html). Incluso podrías interesarte en preparar un [libro completo](https://quarto.org/docs/books/) ¡Quizás es algo que podrías querer hacer para producir el documento de tu tesis! Bueno, por lo pronto lo que sigue es que construyas tu reporte, siguiendo ideas de formateo que te sugiere el *templete*. [La idea es algo así](articulo-pizza.qmd).
 
-![](img/linea-de-hojas.svg)
+\ 
+
+{{< downloadthis img/pizza-masa.jpg dname="File" label="Download the jpg" >}}
+
+\ 
+
+
+
+![](img/linea-de-hojas.svg){width=100%}
+
