@@ -31,9 +31,9 @@ format:
     academic-typst:
       section-numbering: "1.1.1"
       font-paths: ["./static/fonts"]
-      mainfont: "Libertinus-serif"
+      mainfont: "Libertinus serif"
       sansfont: Jost
-      mathfont: "Libertinus-math"
+      mathfont: "Libertinus Math"
       bibliographystyle: "american-psychological-association"  
       include-in-header:
         - text: '#import "@preview/mitex:0.2.4": *'      
