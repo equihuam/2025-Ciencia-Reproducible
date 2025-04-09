@@ -241,7 +241,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <blockquote class="blockquote">
 <p><code>quarto use template kazuyanagimoto/quarto-academic-typst</code></p>
 </blockquote>
-<p>Una ves que lo hayas instalado aparecerá un nuevo directorio en la raíz de tu proyecto con el nombre <code>_extensions</code> y también un archivo que te servira de <em>templete</em> con el nombre <em>template-full.qmd</em> y otro con los datos de las referencias: <em>references.bib</em>. Muévelos por favor a <em>posts</em>, a un subdirectorio apropiado para que mantengas el orden de tu trabajo. Para que experimentes un poco sobre la flexibilidad de lo que estamos haciendo, agrega lo siguiente en la sección de formato del <em>encabezado yaml</em> del <em>templete</em>, arribita de <em>academic-typst</em>:</p>
+<p>Una ves que lo hayas instalado aparecerá un nuevo directorio en la raíz de tu proyecto con el nombre <code>_extensions</code> y también un archivo que te servira de <em>templete</em> con el nombre <em>template-full.qmd</em>, otro con los datos de las referencias: <em>references.bib</em> y un directorio <em>img</em>. Muévelos todos por favor a <em>posts</em>, a un subdirectorio apropiado para que mantengas el orden de tu trabajo. Para que experimentes un poco sobre la flexibilidad de lo que estamos haciendo, agrega lo siguiente en la sección de formato del <em>encabezado yaml</em> del <em>templete</em>, arribita de <em>academic-typst</em>:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">     </span><span class="fu">html</span><span class="kw">:</span><span class="at"> default</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="at">     </span><span class="fu">docx</span><span class="kw">:</span><span class="at"> default</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -690,7 +690,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"descPosition":"bottom","openEffect":"zoom","closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","selector":".lightbox","loop":false,"descPosition":"bottom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {

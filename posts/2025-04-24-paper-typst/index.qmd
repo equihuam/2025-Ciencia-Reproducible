@@ -79,7 +79,7 @@ La tarea consiste en que preparas un reporte con el formato de un artículo y qu
 
 > `quarto use template kazuyanagimoto/quarto-academic-typst`
 
-Una ves que lo hayas instalado aparecerá un nuevo directorio en la raíz de tu proyecto con el nombre `_extensions` y también un archivo que te servira de *templete* con el nombre *template-full.qmd* y otro con los datos de las referencias: *references.bib*. Muévelos por favor a *posts*, a un subdirectorio apropiado para que mantengas el orden de tu trabajo. Para que experimentes un poco sobre la flexibilidad de lo que estamos haciendo, agrega lo siguiente en la sección de formato del *encabezado yaml* del *templete*, arribita de *academic-typst*:
+Una ves que lo hayas instalado aparecerá un nuevo directorio en la raíz de tu proyecto con el nombre `_extensions` y también un archivo que te servira de *templete* con el nombre *template-full.qmd*, otro con los datos de las referencias: *references.bib* y un directorio *img*. Muévelos todos por favor a *posts*, a un subdirectorio apropiado para que mantengas el orden de tu trabajo. Para que experimentes un poco sobre la flexibilidad de lo que estamos haciendo, agrega lo siguiente en la sección de formato del *encabezado yaml* del *templete*, arribita de *academic-typst*:
 
 ``` yml
 format:
