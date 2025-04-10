@@ -12,16 +12,15 @@ categories: [estadística, reporte, artículo]
 format:
   html:
     code-fold: true
-    code-tools: true  
-    
-embed-resources: true   
+    code-tools: true 
+
 ---
 
 ## Preparación de la Masa
 
 :::::: columns
 ::: {.column width="20%"}
-![](img/pizza-masa.jpg){width="600"}
+![](img/pizza%20-%20masa.jpg){width="600"}
 
 ![](img/vaso-de-precipitados-sin-embudo.svg){width="100" fig-align="center"}
 :::
@@ -36,15 +35,18 @@ Para encontrar una mejor manera de hacer su pizza favorita, Marcelo se propuso r
 
 [Descargar los datos en formato de texto simple](masa-para-pizza.txt) o [Utiliza este vínculo para otenerlo de Google Drive](https://drive.google.com/file/d/1uVUOqwobv67E5xTsSSxjg9f9qypW-aIS/view?usp=sharing)
 
+
 ```{=html}
 <iframe 
         src="https://drive.google.com/embeddedfolderview?id=1R63QN1N3r4n-aR2lL7OKnwMEfnNnRmd7#List"
+        access_token=`r rstudioapi::askForSecret("miguel-gd")`
         title="Directorio de datos"
         allowfullscreen= "true"
         height="10%"
         width="95%"
         style="border:10px solid blue;">
 </iframe>
+
 ```
 
 Puedes usar instrucciones parecidas a las que siguen para leer los datos en **R**, directamente desde un documento en la nube de *Google Drive*. Nota que en este ejemplo deberás cambiar **datos** por un nombre de tu preferencia. Yo elegí **masa**.
