@@ -167,7 +167,7 @@ Ahora te propongo pasar a la práctica y explorar algunas cosas que te darán id
 
 | 
 
-### [datos.gob.mx](datos.gob.mx)
+### [datos.gob.mx](https://datos.gob.mx/)
 
 Para empezar, debes saber que estos datos están cubiertos por la licencia **libre uso MX**. Esta licencia busca promover el uso, reuso y redistribución de conjuntos de datos de acuerdo con una serie de [criterios que se especificán aquí](https://datos.gob.mx/libreusomx) y que indica, entre otras cosas que puedes:
 
@@ -182,7 +182,7 @@ Para empezar, debes saber que estos datos están cubiertos por la licencia **lib
 
 ### Catálogo de datos existentes **datos.gob.mx**
 
-Ahora veamos algunos ejemplos de como interactuar con esos datos mediante **API**.
+Ahora veamos algunos ejemplos de como interactuar con esos datos mediante la **API**.
 
 | 
 
@@ -214,7 +214,38 @@ dat_1_df |>
 
 ### Datos de Ozono como contaminante atmosférico en ciudades de México
 
-| 
+Del catálogo mostrado arriba, obtengo la referencia de la **API** al conjunto de datos que me interesa, se refiere al **endpoint**. En este caso se trata del **sinaica**, la ruta de acceso que me interesa es la **URL** respectiva. Lo que sigue es agregar los datos específicos que me interesan, que agregaré a la misma **URL** después de un signo de interrogación. Los datos de las estaciones existentes los puedes consultar con la misma **API** o en la página del [SInaica](https://sinaica.inecc.gob.mx/), Hay un enlace a [Infraestructura de los SMCA](https://sinaica.inecc.gob.mx/archivoEstaciones.php), que contiene los descriptores de cada una de las estaciones existentes en el país. Para hacerlo con la **API** buscamos en la tabla anterior _sinaica-estaciones_. Hacemos la petición así:
+
+```{r}
+pacman::p_load(dplyr,jsonlite, httr2)
+
+URL_estaciones <- "https://api.datos.gob.mx/v2/sinaica-estaciones"
+request(URL_estaciones) |> 
+  req_perform() |> 
+  fromJSON(resp_body_string()) |> 
+  select(results)
+```
+
+
+
+
+El dato que necesitamos en este caso es el **idEstación**, también el nombre del parámetro, en este caso **O3**. Hay un dato *pageSize*, que se refiere al máximo de registros que esperamos recibir por página. Con estos datos construimos la **URL** necesaria. 
+
+> URL: https://api.datos.gob.mx/v2/sinaica  
+> pagesize: 8000  
+> parametro: O3  
+> estacionesid: 259 (es la del Pedregal de San ángel, Álvaro Obregón, CdMx)  
+> page: 1  
+
+Combino todos estos parámetros con el caracter **&** como separador de items y lo agrego todo al final de la **URL**.El resultado debe verse así.
+
+> https://api.datos.gob.mx/v2/sinaica[?]{style="color: red;"}pageSize=8000[&]{style="color: red;"}parametro=O3[&]{style="color: red;"}estacionesid=259[&]{style="color: red;"}page=1"
+
+\ 
+
+Ahora, estamos listos para hacer la consulta con el escript de abajo.
+ 
+\ 
 
 ```{r}
 #| label: ozono
@@ -228,8 +259,12 @@ dat_O3 <- fromJSON(resp_body_string(resp_O3))
 dat_O3_df <- dat_O3$results
 ```
 
+\ 
+
 Estos son los datos de ozono en la atmósfera medidos en la estación `r dat_O3_df$estacionesid[1]`, de la Ciudad de México (@tbl-ozono).
 
+\ 
+ 
 ```{r}
 #| label: tbl-ozono
 #| tbl-cap: Ozono atmosférico
@@ -372,3 +407,9 @@ dat_meteo |>
   datatable()
 
 ```
+
+
+### Microdatos censale
+
+Como habíamos visto en [tipos de estudios](2025-03-21-tipo-de%20estudio)
+Puede interesrte también ete artíulo sobre los datos abiertos que ofrece Inegi y la bilioteca para R que ha desarrollado. Este otro es un ejemplo detallado de acceso y procesamiento de microdatos. Algo semejante ofrece este artículo de Castro (2021) y está también el libro completo en línea d Escoto Castillo (2021), sobre como usar microdato para analizar el mercado de tabajo .
