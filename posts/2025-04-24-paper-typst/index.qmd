@@ -36,9 +36,11 @@ Para encontrar una mejor manera de hacer su pizza favorita, Marcelo se propuso r
 
 [Descargar los datos en formato de texto simple](masa-para-pizza.txt) o [Utiliza este vínculo para otenerlo de Google Drive](https://drive.google.com/file/d/1uVUOqwobv67E5xTsSSxjg9f9qypW-aIS/view?usp=sharing)
 
+
 ```{=html}
 <iframe 
-        src="https://drive.google.com/embeddedfolderview?id=1R63QN1N3r4n-aR2lL7OKnwMEfnNnRmd7#grid"
+        src="https://drive.google.com/embeddedfolderview?id=1R63QN1N3r4n-aR2lL7OKnwMEfnNnRmd7#List"
+        access_token=`r keyring::key_get("miguel-gd", "miguel-gd")`
         title="Directorio de datos"
         allowfullscreen= "true"
         height="20%"
@@ -46,6 +48,8 @@ Para encontrar una mejor manera de hacer su pizza favorita, Marcelo se propuso r
         style="border:10px solid blue;">
 </iframe>
 ```
+
+
 
 Puedes usar instrucciones parecidas a las que siguen para leer los datos en **R**, directamente desde un documento en la nube de *Google Drive*. Nota que en este ejemplo deberás cambiar **datos** por un nombre de tu preferencia. Yo elegí **masa**.
 
