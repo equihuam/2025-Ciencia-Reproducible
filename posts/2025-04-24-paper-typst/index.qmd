@@ -6,13 +6,13 @@ lang: es
 draft: false
 
 image: img/pizza-masa.jpg
-lightbox: true
+
+code-fold: true
+code-summary: "muestra el escript:"
 
 categories: [estadística, reporte, artículo]
 format:
-  html:
-    code-fold: true
-    code-tools: true 
+  html: default
 
 ---
 
