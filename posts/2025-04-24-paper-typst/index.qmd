@@ -39,8 +39,8 @@ Para encontrar una mejor manera de hacer su pizza favorita, Marcelo se propuso r
 
 ```{=html}
 <iframe 
-        src="https://drive.google.com/embeddedfolderview?id=1R63QN1N3r4n-aR2lL7OKnwMEfnNnRmd7#List"
-        access_token=`r keyring::key_get("miguel-gd", "miguel-gd")`
+        src="https://drive.google.com/embeddedfolderview?id=1R63QN1N3r4n-aR2lL7OKnwMEfnNnRmd7"
+        access_token=`r rstudioapi::askForSecret("miguel-gd", "miguel-gd")`
         title="Directorio de datos"
         allowfullscreen= "true"
         height="20%"
