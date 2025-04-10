@@ -1,20 +1,20 @@
 ---
 title: "Pizzas"
-author: ["Miguel Equihua"]
-date: "24/apr/2025"
+author: "Miguel Equihua"
+date: 24/apr/2025
 lang: es
 draft: false
 
 image: img/pizza-masa.jpg
-lightbox: true
+
+cap-location: top
+code-fold: true
+code-summary: "muestra el escript:"
 
 categories: [estadística, reporte, artículo]
 format:
-  html:
-    code-fold: true
-    code-tools: true  
+  html: default
     
-embed-resources: true   
 ---
 
 ## Preparación de la Masa
@@ -40,7 +40,7 @@ Para encontrar una mejor manera de hacer su pizza favorita, Marcelo se propuso r
 ```{=html}
 <iframe 
         src="https://drive.google.com/embeddedfolderview?id=1R63QN1N3r4n-aR2lL7OKnwMEfnNnRmd7"
-        access_token=`r rstudioapi::askForSecret("miguel-gd", "miguel-gd")`
+        access_token=`r rstudioapi::askForSecret("miguel-gd")`
         title="Directorio de datos"
         allowfullscreen= "true"
         height="20%"
