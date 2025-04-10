@@ -38,7 +38,7 @@ Para encontrar una mejor manera de hacer su pizza favorita, Marcelo se propuso r
 
 ```{=html}
 <iframe 
-        src="https://drive.google.com/embeddedfolderview?id=1R63QN1N3r4n-aR2lL7OKnwMEfnNnRmd7#list"
+        src="https://drive.google.com/embeddedfolderview?id=1R63QN1N3r4n-aR2lL7OKnwMEfnNnRmd7#List"
         title="Directorio de datos"
         allowfullscreen= "true"
         height="10%"
