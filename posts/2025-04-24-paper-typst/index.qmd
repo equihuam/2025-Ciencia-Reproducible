@@ -40,7 +40,6 @@ Para encontrar una mejor manera de hacer su pizza favorita, Marcelo se propuso r
 ```{=html}
 <iframe 
         src="https://drive.google.com/embeddedfolderview?id=1R63QN1N3r4n-aR2lL7OKnwMEfnNnRmd7"
-        access_token=`r rstudioapi::askForSecret("miguel-gd")`
         title="Directorio de datos"
         allowfullscreen= "true"
         height="20%"
@@ -94,7 +93,7 @@ Una ves que lo hayas instalado aparecerá un nuevo directorio en la raíz de tu 
 \  
 
 
-``` yml
+``` =text
 format:
      html: default
      docx: default
@@ -106,7 +105,7 @@ La idea es que experimentes con la preparación de un reporte técnico con *Quar
 > **\## Referencias**\
 > **:::**
 
- 
+\ 
 
 ![](img/citas.png){#fig-citas width="300"}
 
