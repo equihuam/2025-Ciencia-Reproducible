@@ -194,7 +194,7 @@ Ahora veamos algunos ejemplos de como interactuar con esos datos mediante la **A
 
 pacman::p_load(jsonlite, tidyverse, DT, rvest, httr2)
 
-req <- request("https://api.datos.gob.mx/v1/api-catalog?pageSize=8000")
+req <- request("https://api.datos.gob.mx/v1/api-catalog?pageSize=10000")
 resp <- req_perform(req)
 
 dat_1 <- fromJSON(resp_body_string(resp))
@@ -210,7 +210,7 @@ dat_1_df$variables <- unlist(dat_1_df$variables)
 dat_1_df |>
   select("endpoint", "url", "variables") |> 
   datatable()
-
+ 
 ```
 
 | 
@@ -221,14 +221,23 @@ Del catálogo mostrado arriba, obtengo la referencia de la **API** al conjunto d
 
 ```{r}
 
-URL_estaciones <- "https://api.datos.gob.mx/v2/sinaica-estaciones"
+URL_estaciones <- "https://api.datos.gob.mx/v2/sinaica-estaciones?pageSize=1000"
+
+req_est <- request(URL_estaciones)
+resp_est <- req_perform(req_est)
+
+dat_est <- fromJSON(resp_body_string(resp_est))
+dat_est_df <- dat_est$results
+
+dat_est_df |>
+  select("id", "nombre", "long", "lat") |> 
+  datatable(colnames = c("idEstación", "nombre", "long", "lat       "))
 
 ```
 
 
 
-
-El dato que necesitamos en este caso es el **idEstación**, también el nombre del parámetro, en este caso **O3**. Hay un dato *pageSize*, que se refiere al máximo de registros que esperamos recibir por página. Con estos datos construimos la **URL** necesaria. 
+Para averiguar que variables tiene el conjunto de datos hay que ver lo que reporta la columna _variables_ del catálogo. Así, encontramos que los datos que necesitamos en este caso son el **idEstación**, y el nombre del parámetro, en este caso **O3**. Hay un dato *pageSize*, que se refiere al máximo de registros que esperamos recibir por página. Con estos datos construimos la **URL** necesaria. 
 
 > URL: https://api.datos.gob.mx/v2/sinaica  
 > pagesize: 8000  
