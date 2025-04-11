@@ -221,7 +221,9 @@ Otra posibilidad para producir documentos con mapas más bien de tipo impreso es
 #| warning: false
 #| message: false
 
-pacman::p_load(tmap, spData, dplyr)
+library(tmap)
+library(spData)
+library(dplyr)
 
 data("urban_agglomerations")
 

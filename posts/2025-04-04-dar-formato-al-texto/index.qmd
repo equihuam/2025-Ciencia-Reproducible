@@ -22,12 +22,18 @@ Voy a empezar por mi propia reacción "no me gustó la configuración
 leyendas de las figuras. Para cambiar eso use el código del @lst-css,
 dentro de un trozo de código css:
 
-::: {#lst-css lst-cap="Código css para centrar la leyenda."}
-> \`\`\`{css}
->
-> figcaption { text-align: center; }
->
-> \`\`\`
+::: {#lst-css lst-cap="Código css para centrar la leyenda." }
+
+::::{style="font-weight: bold; background-color: WhiteSmoke;"}
+
+```{{css}}  
+  figcaption {    
+    text-align: center;   
+    }   
+```
+
+::::
+
 :::
 
 \ 
@@ -71,9 +77,11 @@ Para hacer esto hay que escribir así:
 ![](img/door-575958_1280.png){width="200"}
 :::
 
-> :::{.column-margin}\
-> \![\](img/door-575958_1280.png){width=200}\
-> :::
+```{.text style="font-weight: bold; background-color: WhiteSmoke;"}
+:::{.column-margin}   
+![](img/door-575958_1280.png){width=200} 
+:::
+```
 
 para obtener este resultado.
 
@@ -86,11 +94,14 @@ periódico o revista, tener el texto en columnas angostas. Esto es
 bastante fácil de lograr en *Quarto*. Hay varias maneras de hacerlo. la
 más sencilla:
 
-> ::: {layout="\[1,1\]"}\
-> Párrafo 1 con algunas ideas muy sabias....
->
-> Párrafo 2 para explicar lo sabio del párrafo 1....\
-> :::
+
+```{.text style="font-weight: bold; background-color: WhiteSmoke;"}
+:::{layout="[1,1]"}
+Párrafo 1 con algunas ideas muy sabias... 
+
+Párrafo 2 para explicar lo sabio del párrafo 1...
+:::
+```
 
 Los número dentro de paréntesis cuadrados indican proporción, no una
 magnitud absoluta. En este caso, dos columnas del mismo tamaño. Puedes
@@ -109,19 +120,20 @@ labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
 exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 :::
 
-[Otra
-manera](https://quarto.org/docs/presentations/beamer.html#multiple-columns)
+[Otra manera](https://quarto.org/docs/presentations/beamer.html#multiple-columns)
 es la siguiente.
 
-> ::: {.columns}
->
-> :::: {.column width="40%"} Párrafo 1 con algunas ideas muy sabias....\
-> ::::
->
-> ::::{.colum width="60%" } Párrafo 2 para explicar lo sabio del párrafo
-> 1....
->
-> :::
+```{.text style="font-weight: bold; background-color: WhiteSmoke;"}
+:::.columns}
+::::{.column width="40%"}
+Párrafo 1 con algunas ideas muy sabias... 
+::::
+   
+::::{.column width="60%"}
+Párrafo 2 para explicar lo sabio del párrafo...
+::::
+:::
+```
 
 ::::: {.columns style="color:blue;"}
 ::: {.column width="40%"}
@@ -143,7 +155,7 @@ Intenta usar esto para producir un [texto al lado de una
 imágen](https://quarto.org/docs/authoring/figures.html). ¿Con cuál
 variante te sientes más cómoda o cómodo?
 
-   
+\ 
 
 ## Identificadores fijos
 
@@ -162,8 +174,7 @@ componente de t interés. Puedes encontrar [más al respecto en la
 documentación de
 Quarto](https://quarto.org/docs/reference/metadata/crossref.html).
 
-\
-\
+\ 
 
 | Prefijo    | Componente        |
 |------------|-------------------|
@@ -191,7 +202,7 @@ Quarto](https://quarto.org/docs/reference/metadata/crossref.html).
 
 : Lista de prefijos previstos en *Quarto*. {#tbl-prefijos}
 
-\
+\ 
 
 Usa esos prefijos según se requiera y aplica el concepto de marcar la
 definición de la refenencia con **\#** y su llamada con **\@**. Ve el
@@ -200,13 +211,13 @@ ejemplo siguiente. Quiero incluir la definición de algo de interés
 llamada hace referencia a esto, que puedo poner en cualquier lugar del
 documento.
 
-\
+\ 
 
 **::: {#def-definir}**\
 **Definición de algo importante**\
 **:::**\
 
-\
+\ 
 
 Este texto se verá así en donde quiera que lo pongas.
 
@@ -218,8 +229,8 @@ Definición de algo importante
 
 ------------------------------------------------------------------------
 
-\
-\
+\ 
+\ 
 
 Puede ser que interese hacer referencia a un poco de código
 computacional que es importante en la explicación de tus hallazgos
@@ -230,7 +241,7 @@ taza de café. La gráfica de la izquierda son datos un poco resumidos y
 los de la derecha una lista llamada *completa*. La presentación permite
 comparar ambos conjuntos de datos.
 
-| 
+\  
 
 ::: {#lst-cod-1 lst-cap="Código para producir una gráfica bonita."}
 ```{r}

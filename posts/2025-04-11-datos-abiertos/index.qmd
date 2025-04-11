@@ -10,6 +10,9 @@ image: images/logo-goFAIR.svg
 code-fold: true
 code-summary: "muestra el escript:"
 
+bibliography: "../references.bib"
+csl: ../apa.csl
+
 fig-cap-location: top
 tbl-cap-location: top
 editor_options: 
@@ -217,13 +220,9 @@ dat_1_df |>
 Del catálogo mostrado arriba, obtengo la referencia de la **API** al conjunto de datos que me interesa, se refiere al **endpoint**. En este caso se trata del **sinaica**, la ruta de acceso que me interesa es la **URL** respectiva. Lo que sigue es agregar los datos específicos que me interesan, que agregaré a la misma **URL** después de un signo de interrogación. Los datos de las estaciones existentes los puedes consultar con la misma **API** o en la página del [SInaica](https://sinaica.inecc.gob.mx/), Hay un enlace a [Infraestructura de los SMCA](https://sinaica.inecc.gob.mx/archivoEstaciones.php), que contiene los descriptores de cada una de las estaciones existentes en el país. Para hacerlo con la **API** buscamos en la tabla anterior _sinaica-estaciones_. Hacemos la petición así:
 
 ```{r}
-pacman::p_load(dplyr,jsonlite, httr2)
 
 URL_estaciones <- "https://api.datos.gob.mx/v2/sinaica-estaciones"
-request(URL_estaciones) |> 
-  req_perform() |> 
-  fromJSON(resp_body_string()) |> 
-  select(results)
+
 ```
 
 
@@ -412,4 +411,9 @@ dat_meteo |>
 ### Microdatos censale
 
 Como habíamos visto en [tipos de estudios](2025-03-21-tipo-de%20estudio)
-Puede interesrte también ete artíulo sobre los datos abiertos que ofrece Inegi y la bilioteca para R que ha desarrollado. Este otro es un ejemplo detallado de acceso y procesamiento de microdatos. Algo semejante ofrece este artículo de Castro (2021) y está también el libro completo en línea d Escoto Castillo (2021), sobre como usar microdato para analizar el mercado de tabajo .
+Puede interesarte también ete artíulo sobre los datos abiertos que ofrece [Inegi y la bilioteca para **R**](inegi-r) que han desarrollado. Este otro es un ejemplo detallado de [acceso y procesamiento de microdatos](microdatos-lasalle). Algo semejante ofrece este artículo de @castro_usando_2021 y está también el libro completo en línea d @escoto_castillo_encuesta2021, sobre como usar microdato para analizar el mercado de tabajo.
+
+[microdatos-lasalle][https://revistasinvestigacion.lasalle.mx/index.php/relais/article/download/4122/3778/27670]
+[inegi-r][https://rde.inegi.org.mx/index.php/2020/12/02/importinegi-un-paquete-de-r-para-descargar-y-gestionar-bases-de-datos-del-inegi/]
+
+
