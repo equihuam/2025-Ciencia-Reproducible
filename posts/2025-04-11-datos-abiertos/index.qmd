@@ -235,7 +235,7 @@ dat_est_df |>
 
 ```
 
-
+ 
 
 Para averiguar que variables tiene el conjunto de datos hay que ver lo que reporta la columna _variables_ del catálogo. Así, encontramos que los datos que necesitamos en este caso son el **idEstación**, y el nombre del parámetro, en este caso **O3**. Hay un dato *pageSize*, que se refiere al máximo de registros que esperamos recibir por página. Con estos datos construimos la **URL** necesaria. 
 
