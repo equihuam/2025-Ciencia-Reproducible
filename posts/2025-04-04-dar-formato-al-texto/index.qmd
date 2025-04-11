@@ -123,7 +123,7 @@ exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 [Otra manera](https://quarto.org/docs/presentations/beamer.html#multiple-columns)
 es la siguiente.
 
-```{.text style="font-weight: bold; background-color: WhiteSmoke;"}
+ ```{.text style="font-weight: bold; background-color: WhiteSmoke;"}
 :::.columns}
 ::::{.column width="40%"}
 Párrafo 1 con algunas ideas muy sabias... 

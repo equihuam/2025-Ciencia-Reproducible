@@ -419,10 +419,10 @@ dat_meteo |>
 
 ### Microdatos censale
 
-Como habíamos visto en [tipos de estudios](2025-03-21-tipo-de%20estudio)
-Puede interesarte también ete artíulo sobre los datos abiertos que ofrece [Inegi y la bilioteca para **R**](inegi-r) que han desarrollado. Este otro es un ejemplo detallado de [acceso y procesamiento de microdatos](microdatos-lasalle). Algo semejante ofrece este artículo de @castro_usando_2021 y está también el libro completo en línea d @escoto_castillo_encuesta2021, sobre como usar microdato para analizar el mercado de tabajo.
+Como habíamos visto en [tipos de estudios](../2025-03-21-tipo-de estudio/index.qmd)
+Puede interesarte también ete artíulo sobre los datos abiertos que ofrece [Inegi y la bilioteca para **R**][inegi-r] que han desarrollado. Este otro es un ejemplo detallado de [acceso y procesamiento de microdatos][microdatos-lasalle]. Algo semejante ofrece este artículo de @castro_usando_2021 y está también el libro completo en línea d @escoto_castillo_encuesta2021, sobre como usar microdato para analizar el mercado de tabajo.
 
-[microdatos-lasalle][https://revistasinvestigacion.lasalle.mx/index.php/relais/article/download/4122/3778/27670]
-[inegi-r][https://rde.inegi.org.mx/index.php/2020/12/02/importinegi-un-paquete-de-r-para-descargar-y-gestionar-bases-de-datos-del-inegi/]
+[microdatos-lasalle]: https://revistasinvestigacion.lasalle.mx/index.php/relais/article/download/4122/3778/27670
+[inegi-r]:https://rde.inegi.org.mx/index.php/2020/12/02/importinegi-un-paquete-de-r-para-descargar-y-gestionar-bases-de-datos-del-inegi/
 
 
