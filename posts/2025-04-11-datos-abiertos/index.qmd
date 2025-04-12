@@ -117,7 +117,7 @@ Es un repositorio en el que los usuarios pueden poner a disposición todos los r
 
 #### [Metadatos ámbito ciencias de la Tierra ISO-19115](https://www.iso.org/standard/53798.html)
 
-La documentación de los metadatos cartográficos que utiliza Conab io sigue los estándares definidos en [FGDC (1998)](https://www.fgdc.gov/standards/projects/FGDC-standards-projects/accuracy/part3/chapter3) y [FGDC (1999)](https://www.fgdc.gov/standards/projects/metadata/biometadata/standards/projects/metadata/biometadata/biodatap.pdf). De acuerdo con lo qe nos explicó el Ing. Fernández, el estándar de metadatos FGDC ha sido remplazado actualmente por el *ISO-19115*.
+La documentación de los metadatos cartográficos que utiliza Conabio sigue los estándares definidos en [FGDC (1998)](https://www.fgdc.gov/standards/projects/FGDC-standards-projects/accuracy/part3/chapter3) y [FGDC (1999)](https://www.fgdc.gov/standards/projects/metadata/biometadata/standards/projects/metadata/biometadata/biodatap.pdf). De acuerdo con lo qe nos explicó el Ing. Fernández, el estándar de metadatos FGDC ha sido remplazado actualmente por el *ISO-19115*.
 
 -   [Inegi](https://www.inegi.org.mx/contenidos/infraestructura/datos/doc/Norma_Tecnica_para_la_elaboracion_de_Metadatos_Geograficos.pdf)
 -   [CONABIO](https://www.inegi.org.mx/contenidos/eventos/2011/infogeo/ET6_17_MUNOZ.pdf)
@@ -217,7 +217,11 @@ dat_1_df |>
 
 ### Datos de Ozono como contaminante atmosférico en ciudades de México
 
-Del catálogo mostrado arriba, obtengo la referencia de la **API** al conjunto de datos que me interesa, se refiere al **endpoint**. En este caso se trata del **sinaica**, la ruta de acceso que me interesa es la **URL** respectiva. Lo que sigue es agregar los datos específicos que me interesan, que agregaré a la misma **URL** después de un signo de interrogación. Los datos de las estaciones existentes los puedes consultar con la misma **API** o en la página del [SInaica](https://sinaica.inecc.gob.mx/), Hay un enlace a [Infraestructura de los SMCA](https://sinaica.inecc.gob.mx/archivoEstaciones.php), que contiene los descriptores de cada una de las estaciones existentes en el país. Para hacerlo con la **API** buscamos en la tabla anterior _sinaica-estaciones_. Hacemos la petición así:
+Del catálogo mostrado arriba, obtengo la referencia de la **API** al conjunto de datos que me interesa, se refiere al **endpoint**. En este caso se trata del **sinaica**, la ruta de acceso que me interesa es la **URL** respectiva. Lo que sigue es agregar los datos específicos que me interesan, que agregaré a la misma **URL** después de un signo de interrogación.
+
+Los datos de las estaciones existentes los puedes consultar con la misma **API** o en la página del [Sinaica](https://sinaica.inecc.gob.mx/), Hay un enlace a [Infraestructura de los SMCA][sinaica-estaciones], que contiene los descriptores de cada una de las estaciones existentes en el país. Para hacerlo con la **API** buscamos en la tabla anterior _sinaica-estaciones_. Hacemos la petición así:
+
+[sinaica-estaciones]:https://sinaica.inecc.gob.mx/archivoEstaciones.php
 
 ```{r}
 
@@ -235,9 +239,19 @@ dat_est_df |>
 
 ```
 
- 
+Las variables que puedo usar para construir esta **consulta** las encuentro precisamente en la columna _variables_ del catálogo. Para el caso de _Sinaica_ esta columna reporta las siguientes variables disponibles.
 
-Para averiguar que variables tiene el conjunto de datos hay que ver lo que reporta la columna _variables_ del catálogo. Así, encontramos que los datos que necesitamos en este caso son el **idEstación**, y el nombre del parámetro, en este caso **O3**. Hay un dato *pageSize*, que se refiere al máximo de registros que esperamos recibir por página. Con estos datos construimos la **URL** necesaria. 
+```{r}
+dat_1_df |> 
+  filter(endpoint == "sinaica") |> 
+  select(variables) |>  
+  separate_longer_delim(variables,  ",") |> 
+  flextable::flextable() |> 
+  flextable::color(i = 7:8 , color = "blue ")
+
+```
+
+Los datos que quiero para este ejercicio son el **idEstación**, y el nombre del parámetro, en este caso **O3**. Hay un dato *pageSize*, que se refiere al máximo de registros que esperamos recibir por página. Con estos datos construimos la **URL** necesaria. 
 
 > URL: https://api.datos.gob.mx/v2/sinaica  
 > pagesize: 8000  
@@ -247,7 +261,7 @@ Para averiguar que variables tiene el conjunto de datos hay que ver lo que repor
 
 Combino todos estos parámetros con el caracter **&** como separador de items y lo agrego todo al final de la **URL**.El resultado debe verse así.
 
-> https://api.datos.gob.mx/v2/sinaica[?]{style="color: red;"}pageSize=8000[&]{style="color: red;"}parametro=O3[&]{style="color: red;"}estacionesid=259[&]{style="color: red;"}page=1"
+> https://api.datos.gob.mx/v2/sinaica[?]{style="color: red;"}pageSize=8000[&]{style="color: red;"}parametro=O3[&]{style="color: red;"}estacionesid=259[&]{style="color: red;"}page=1 
 
 \ 
 
@@ -294,7 +308,7 @@ Los datos generales de todas las estaciones climatológicas de México están pu
 ```{r}
 #| label: mapa-estaciones
 
-#descarga el archivo "kmz" de interés
+# descarga el archivo "kmz" de interés
 url_agua <- "http://smn.conagua.gob.mx/"
 url_kmz <- "tools/RESOURCES/Normales_Climatologicas/EstacionesClimatologicas.kmz"   
 archivo_kmz <- "./estaciones.kmz"
@@ -305,7 +319,7 @@ httr2::request(paste0(url_agua, url_kmz)) |>
   writeBin(archivo_kmz)
 
 
- # desempaca el "kmz" y guarda el resultado en "temp-kmz"
+# desempaca el "kmz" y guarda el resultado en "temp-kmz"
 unzip(zipfile = archivo_kmz, exdir = "temp-kmz")
 
 ```
@@ -424,5 +438,106 @@ Puede interesarte también ete artíulo sobre los datos abiertos que ofrece [Ine
 
 [microdatos-lasalle]: https://revistasinvestigacion.lasalle.mx/index.php/relais/article/download/4122/3778/27670
 [inegi-r]:https://rde.inegi.org.mx/index.php/2020/12/02/importinegi-un-paquete-de-r-para-descargar-y-gestionar-bases-de-datos-del-inegi/
+
+
+## Precios según el **SNIIM**
+
+Encontré que la forma de reportar los datos en la página del **SNII** es un poco complicada en términos informáticos. Lo que hacen es generar en forma dinámica una tabla con la i formación solicitada, pero en lugar de poner los datos en una tabla directamente, producen un **iframe**, es decir ofreven sólo una especie de _visor_ a datos que están en otro lado, aunque al desplegar el reporte producido a petición del usuario, parecería que está todo en un sólo lugar.
+
+Para obtener los datos propiamente y poderlos leer a una tabla en **R**, es mejor hacer una cosulta directamente a la base de datos. Para eso necesitamos algunos datos específicos que obtendremos de los siguientes catálogos que con un poco de maña se pueden obtener del propio sitio del **SNIIM**, yo ya lo hice por tí y aquí están. A continuación podrás consultar estos catálogos para que contruyas peticiones a tu gusto.
+
+\ 
+
+```{r}
+pacman::p_load(rvest, DT, dplyr, stringr, ggplot2)
+
+cat_dest <- read.csv(file = "sniim-destinos.csv", quote = "'")
+cat_frut <- read.csv(file = "sniim-frutas-hortalizas.csv")
+cat_flor <- read.csv(file = "sniim-flores.csv")
+cat_gran <- read.csv(file = "sniim-granos-semillas.csv")
+cat_acei <- read.csv(file = "sniim-aceite.csv")
+cat_insu <- read.csv(file = "sniim-insumo.csv")
+
+cat_dest |> 
+  datatable(options = list(pageLength = 1))
+
+cat_frut |> 
+  datatable(options = list(pageLength = 1))
+
+cat_flor|> 
+  datatable(options = list(pageLength = 1))
+
+cat_gran |> 
+  datatable(options = list(pageLength = 1))
+
+cat_acei |> 
+  datatable(options = list(pageLength = 1))
+
+cat_insu |> 
+  datatable(options = list(pageLength = 1))
+
+
+```
+
+
+\
+
+Hagamos un ejercicio con los precios del _limón sin semilla_ en Xalapa, entre las fechas 01/feb/2025 y 01/abr/2025. Para hacer esto necesitamos los siguientes datos.
+
+>**url base:** http://www.economia-sniim.gob.mx/nuevo/Consultas/MercadosNacionales/PreciosDeMercado/Agricolas/  \
+>**escritp de consulta:**ResultadosConsultaFechaFrutasYHortalizas.aspx \
+>**generador de la tabla de datos:** ResultadosConsultaFechaFrutasYHortalizas.aspx\   
+>**fechaInicio:** 01/01/2025\ 
+>**fechaFinal:** 01/04/2025\ 
+>**ProductoId** 426\ 
+>**OrigenId** 30\ 
+>**Origen** Veracruz\ 
+>**DestinoId** 301\ 
+>**Destino** Veracruz: Central de Abasto de Jalapa\ 
+>**PreciosPorId** 2 (este código se refiere a kg unitario)\ 
+>**RegistrosPorPagina** 500 \ 
+
+Ahora, semejante a los ejemplos anteriores, tomamos la **URL base** y, en este caso, la juntamos con la llamada al escript que hará la consulta a la base de datos y le ponemos una iterrogación al final. luego hacemos la consulta que nos interesa, agregando los datos separados por el símbolo **&**, así:
+
+>http://www.economia-sniim.gob.mx/nuevo/Consultas/MercadosNacionales/PreciosDeMercado/Agricolas/[ResultadosConsultaFechaFrutasYHortalizas.aspx]{style="color:blue;"}[?]{style="color:red;"}fechaInicio=01/02/2025[&]{style="color:red;"}fechaFinal=01/04/2025[&]{style="color:red;"}ProductoId=426[&]{style="color:red;"}OrigenId=30[&]{style="color:red;"}Origen=Veracruz[&]{style="color:red;"}DestinoId=301[&]{style="color:red;"}Destino=Veracruz: Central de Abasto de Jalapa[&]{style="color:red;"}PreciosPorId= 2[&]{style="color:red;"}RegistrosPorPagina=500
+
+En general o conviene usar espacioes entre palabras en las **URL**, así que se suelen substituir por el código **%20**. Si tu consulta llegara a fallar, esta es una cosa que podrías intentar, pero antes checa que todo se vea según tu plan. Por cierto, notarás que cada elemento de la consulta tiene un nombre de parámetro y un valor. Normalmente esto sugiere que el orden en el que pongas las cosas no importa, salvo la parte ab
+ntes de la interrogación.
+
+Listo, hagamos la consulta para averiguar el patrón de precios del _limón sin semilla_ en lo que va de 2025 en Xalapa, Ver.
+
+\ 
+
+```{r}
+url_limon <- "http://www.economia-sniim.gob.mx/nuevo/Consultas/MercadosNacionales/PreciosDeMercado/Agricolas/ResultadosConsultaFechaFrutasYHortalizas.aspx?fechaInicio=01/01/2025&fechaFinal=01/04/2025&ProductoId=426&OrigenId=30&Origen=Veracruz&DestinoId=301&Destino=Veracruz:%20Central%20de%20Abasto%20de%20Jalapa&PreciosPorId=2&RegistrosPorPagina=500"
+
+page <- read_html(url_limon)
+
+tabla_precios <- page %>% 
+  html_node("table#tblResultados") %>%
+  html_table(header = TRUE) %>% 
+  slice(-1) %>% 
+  mutate(precio_num = as.numeric(`Precio Frec`),
+         feha_d = as.Date(Fecha, format = "%d/%m/%Y")) %>% 
+  rename_with(., ~ str_replace_all(iconv(.x, to='latin1//TRANSLIT'), "'", ""))
+
+# print result to console
+
+tabla_precios |>
+  select(Fecha:Obs.) |> 
+  datatable()
+
+
+tabla_precios |> 
+  ggplot(aes(x = feha_d, y = precio_num)) +
+    geom_point() +
+    geom_smooth(method = 'loess', formula = 'y ~ x') +
+    labs(title = "Precio de limón sin semilla", 
+         subtitle = "Xalapa, Ver. entre 01/ene/2025 y 01/abr/2025") +
+    xlab(label = "Fecha") +
+    ylab(label = "Precio ($ mn/kg)")
+
+
+```
 
 
