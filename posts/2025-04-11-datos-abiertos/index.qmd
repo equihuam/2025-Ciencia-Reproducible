@@ -444,12 +444,12 @@ Puede interesarte también ete artíulo sobre los datos abiertos que ofrece [Ine
 
 Encontré que la forma de reportar los datos en la página del **SNII** es un poco complicada en términos informáticos. Lo que hacen es generar en forma dinámica una tabla con la i formación solicitada, pero en lugar de poner los datos en una tabla directamente, producen un **iframe**, es decir ofreven sólo una especie de _visor_ a datos que están en otro lado, aunque al desplegar el reporte producido a petición del usuario, parecería que está todo en un sólo lugar.
 
-Para obtener los datos propiamente y poderlos leer a una tabla en **R**, es mejor hacer una cosulta directamente a la base de datos. Para eso necesitamos algunos datos específicos que obtendremos de los siguientes catálogos que con un poco de maña se pueden obtener del propio sitio del **SNIIM**, yo ya lo hice por tí y aquí están. A continuación podrás consultar estos catálogos para que contruyas peticiones a tu gusto.
+Para obtener los datos cargarlos a una tabla en **R**, es mejor hacer una cosulta directamente a la base de datos. Para eso necesitamos algunos datos específicos que obtendremos de los siguientes catálogos que con un poco de maña se pueden obtener del propio sitio del **SNIIM**, yo ya lo hice por tí y aquí están. A continuación podrás consultar estos catálogos para que contruyas peticiones a tu gusto.
 
 \ 
 
 ```{r}
-pacman::p_load(rvest, DT, dplyr, stringr, ggplot2)
+pacman::p_load(rvest, DT, dplyr, stringr, ggplot2, scales)
 
 cat_dest <- read.csv(file = "sniim-destinos.csv", quote = "'")
 cat_frut <- read.csv(file = "sniim-frutas-hortalizas.csv")
@@ -485,7 +485,7 @@ cat_insu |>
 Hagamos un ejercicio con los precios del _limón sin semilla_ en Xalapa, entre las fechas 01/feb/2025 y 01/abr/2025. Para hacer esto necesitamos los siguientes datos.
 
 >**url base:** http://www.economia-sniim.gob.mx/nuevo/Consultas/MercadosNacionales/PreciosDeMercado/Agricolas/  \
->**escritp de consulta:**ResultadosConsultaFechaFrutasYHortalizas.aspx \
+>**escript de consulta:**ResultadosConsultaFechaFrutasYHortalizas.aspx \
 >**generador de la tabla de datos:** ResultadosConsultaFechaFrutasYHortalizas.aspx\   
 >**fechaInicio:** 01/01/2025\ 
 >**fechaFinal:** 01/04/2025\ 
@@ -497,12 +497,13 @@ Hagamos un ejercicio con los precios del _limón sin semilla_ en Xalapa, entre l
 >**PreciosPorId** 2 (este código se refiere a kg unitario)\ 
 >**RegistrosPorPagina** 500 \ 
 
-Ahora, semejante a los ejemplos anteriores, tomamos la **URL base** y, en este caso, la juntamos con la llamada al escript que hará la consulta a la base de datos y le ponemos una iterrogación al final. luego hacemos la consulta que nos interesa, agregando los datos separados por el símbolo **&**, así:
+Ahora, semejante a los ejemplos anteriores, tomamos la **URL base** y, en este caso, la juntamos con la llamada al escript que se encarga de hacer la consulta a la base de datos y le ponemos una iterrogación al final. luego hacemos la consulta que nos interesa, agregando los datos separados por el símbolo **&**, así:
 
->http://www.economia-sniim.gob.mx/nuevo/Consultas/MercadosNacionales/PreciosDeMercado/Agricolas/[ResultadosConsultaFechaFrutasYHortalizas.aspx]{style="color:blue;"}[?]{style="color:red;"}fechaInicio=01/02/2025[&]{style="color:red;"}fechaFinal=01/04/2025[&]{style="color:red;"}ProductoId=426[&]{style="color:red;"}OrigenId=30[&]{style="color:red;"}Origen=Veracruz[&]{style="color:red;"}DestinoId=301[&]{style="color:red;"}Destino=Veracruz: Central de Abasto de Jalapa[&]{style="color:red;"}PreciosPorId= 2[&]{style="color:red;"}RegistrosPorPagina=500
+>[http://www.economia-sniim.gob.mx/nuevo/Consultas/MercadosNacionales/PreciosDeMercado/Agricolas/]{style="color:blue;"}[ResultadosConsultaFechaFrutasYHortalizas.aspx]{style="color:blue;"}[?]{style="color:red;"}fechaInicio=01/02/2025[&]{style="color:red;"}fechaFinal=01/04/2025[&]{style="color:red;"}ProductoId=426[&]{style="color:red;"}OrigenId=30[&]{style="color:red;"}Origen=Veracruz[&]{style="color:red;"}DestinoId=301[&]{style="color:red;"}Destino=Veracruz: Central de Abasto de Jalapa[&]{style="color:red;"}PreciosPorId= 2[&]{style="color:red;"}RegistrosPorPagina=500
 
-En general o conviene usar espacioes entre palabras en las **URL**, así que se suelen substituir por el código **%20**. Si tu consulta llegara a fallar, esta es una cosa que podrías intentar, pero antes checa que todo se vea según tu plan. Por cierto, notarás que cada elemento de la consulta tiene un nombre de parámetro y un valor. Normalmente esto sugiere que el orden en el que pongas las cosas no importa, salvo la parte ab
-ntes de la interrogación.
+En general no conviene usar espacios entre palabras en las **URL**, así que se suelen substituir por el código **%20**. Si tu consulta llegara a fallar, esta es una cosa que podrías intentar, pero antes checa que todo se vea según tu plan. Por cierto, notarás que cada elemento de la consulta tiene un nombre de parámetro y un valor, separados por el signo "=". Normalmente esto sugiere que el orden en el que pongas las cosas no importa, salvo la parte que está antes de la interrogación. [Aquí hay algo de documentación][doc-sniim] de este servicos gubernamental.
+
+[doc-sniim]:http://www.economia-sniim.gob.mx/manuales.asp
 
 Listo, hagamos la consulta para averiguar el patrón de precios del _limón sin semilla_ en lo que va de 2025 en Xalapa, Ver.
 
@@ -531,11 +532,12 @@ tabla_precios |>
 tabla_precios |> 
   ggplot(aes(x = feha_d, y = precio_num)) +
     geom_point() +
-    geom_smooth(method = 'loess', formula = 'y ~ x') +
-    labs(title = "Precio de limón sin semilla", 
-         subtitle = "Xalapa, Ver. entre 01/ene/2025 y 01/abr/2025") +
+    geom_smooth(method = 'loess', formula = 'y ~ x', span = 0.3) +
+    labs(title = "Precio del limón sin semilla", 
+         subtitle = "Xalapa, Ver. entre 1/ene/2025 y 1/abr/2025") +
     xlab(label = "Fecha") +
-    ylab(label = "Precio ($ mn/kg)")
+    ylab(label = "Precio ($ mn/kg)") +
+    scale_x_date(labels = date_format("%b-%Y", locale = "es"))
 
 
 ```
