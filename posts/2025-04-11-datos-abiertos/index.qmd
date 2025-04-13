@@ -431,20 +431,20 @@ dat_meteo |>
 ```
 
 
-### Microdatos censale
+### Microdatos censales
 
 Como habíamos visto en [tipos de estudios](../2025-03-21-tipo-de estudio/index.qmd)
-Puede interesarte también ete artíulo sobre los datos abiertos que ofrece [Inegi y la bilioteca para **R**][inegi-r] que han desarrollado. Este otro es un ejemplo detallado de [acceso y procesamiento de microdatos][microdatos-lasalle]. Algo semejante ofrece este artículo de @castro_usando_2021 y está también el libro completo en línea d @escoto_castillo_encuesta2021, sobre como usar microdato para analizar el mercado de tabajo.
+Puede interesarte también ete artíulo sobre los datos abiertos que ofrece [Inegi y la bilioteca para **R**][inegi-r] que han desarrollado. Este otro es un ejemplo detallado de [acceso y procesamiento de microdatos][microdatos-lasalle]. Algo semejante ofrece este artículo de @castro_usando_2021 y está también el libro completo en línea d @escoto_castillo_encuesta2021, sobre como usar microdato para analizar el mercado de tabajo. Si es de tu interés [esta página de INEGI](https://www.inegi.org.mx/microdatos/) te ayudará a encontrar lo que necesitas. Por ejemplo, INEGI dispone de los [microdatos del censo agropecuario 2022](https://www.inegi.org.mx/programas/ca/2022/#microdatos). Al tratar microdatos es importante que consideres las recomendaciones de seguridad de @griffiths_manual_2020. 
 
 [microdatos-lasalle]: https://revistasinvestigacion.lasalle.mx/index.php/relais/article/download/4122/3778/27670
 [inegi-r]:https://rde.inegi.org.mx/index.php/2020/12/02/importinegi-un-paquete-de-r-para-descargar-y-gestionar-bases-de-datos-del-inegi/
 
 
-## Precios según el **SNIIM**
+### Precios según el **SNIIM**
 
-Encontré que la forma de reportar los datos en la página del **SNII** es un poco complicada en términos informáticos. Lo que hacen es generar en forma dinámica una tabla con la i formación solicitada, pero en lugar de poner los datos en una tabla directamente, producen un **iframe**, es decir ofreven sólo una especie de _visor_ a datos que están en otro lado, aunque al desplegar el reporte producido a petición del usuario, parecería que está todo en un sólo lugar.
+Encontré que la forma de reportar los datos en la página del **SNIIM** es un poco complicada en términos informáticos. Lo que hacen es generar en forma dinámica una tabla con la información solicitada, pero en lugar de poner los datos en una tabla directamente, producen un **iframe**, es decir ofrecen sólo una especie de _visor_ a datos que están en otro lado, aunque al desplegar el reporte producido a petición del usuario, parecería que está todo en un sólo documento que se despliega en el navegador, pero no es realmente así.
 
-Para obtener los datos cargarlos a una tabla en **R**, es mejor hacer una cosulta directamente a la base de datos. Para eso necesitamos algunos datos específicos que obtendremos de los siguientes catálogos que con un poco de maña se pueden obtener del propio sitio del **SNIIM**, yo ya lo hice por tí y aquí están. A continuación podrás consultar estos catálogos para que contruyas peticiones a tu gusto.
+Para obtener los datos y poderlos cargar a una tabla en **R**, es mejor hacer una cosulta directamente a la base de datos. Para eso necesitamos algunos datos específicos que obtendremos de los siguientes catálogos que, con un poco de maña, se pueden obtener del propio sitio del **SNIIM**, yo ya lo hice por tí y aquí están. A continuación podrás consultar estos catálogos para que contruyas peticiones a tu gusto.
 
 \ 
 
