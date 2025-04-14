@@ -1,4 +1,5 @@
-id,origen
+id,nombre
+"0",Sin Especificar
 "1",Aguascalientes
 "2",Baja California
 "3",Baja California Sur
@@ -25,7 +26,6 @@ id,origen
 "22",Querétaro
 "23",Quintana Roo
 "24",San Luis Potosí
-"0",Sin Especificar
 "25",Sinaloa
 "26",Sonora
 "27",Tabasco

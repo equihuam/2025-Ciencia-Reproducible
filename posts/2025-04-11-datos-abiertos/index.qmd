@@ -453,7 +453,7 @@ Puede interesarte también ete artíulo sobre los datos abiertos que ofrece [Ine
 
 Me pareció interesante averiguar sobre mercados en el ámbito agropecuario mexicano. Encontré al [**SNIIM**](http://www.economia-sniim.gob.mx/nuevo/Home.aspx). Es el _Sistema Nacional de Información e Integración de Mercados_. Es un servicio que ofrece la Secretaría de Economía con el propósito de poner al alcance sel público información sobre el comportamiento de los precios al por mayor de los productos agrícolas, pecuarios y pesqueros que se comercializan en los mercados nacionales e internacionales.
 
-Desafortunadamente, la forma como reportan los datos en la página del **SNIIM** es un poco complicada en términos informáticos y utiliza la tecnología de Microsoft **asp.net** [véase este artículo sobre estas tecnologías](https://www.arsys.es/blog/php-o-asp-que-elijo-para-mi-web). Lo que hacen es generar en forma dinámica una tabla con la información solicitada, pero en lugar de poner los datos en una tabla directamente, producen un **iframe**, es decir ofrecen sólo una especie de _visor_ a datos que están en otro lado, aunque al desplegar el reporte producido a petición del usuario, parecería que está todo en un sólo documento que se despliega en el navegador, pero no es realmente así.
+Desafortunadamente, la forma como reportan los datos en la página del **SNIIM** es un poco complicada en términos informáticos y utiliza la tecnología de Microsoft **asp.net** [véase este artículo sobre estas tecnologías](https://www.arsys.es/blog/php-o-asp-que-elijo-para-mi-web). Lo que hacen es generar en forma dinámica una tabla con la información solicitada, pero en lugar de poner los datos en una tabla directamente, producen un **iframe**, es decir ofrecen sólo una especie de _visor_ a datos que están encapsulados, aunque al desplegar el reporte producido a petición del usuario, parecería que está todo en un sólo documento que se despliega en el navegador, pero no es realmente así.
 
 Para obtener los datos y poderlos cargar a una tabla en **R**, es mejor hacer una cosulta directamente a la base de datos. Para eso necesitamos algunos datos específicos que obtendremos de los siguientes catálogos que, con un poco de maña, se pueden obtener del propio sitio del **SNIIM**, yo ya lo hice por tí y aquí están. A continuación podrás consultar estos catálogos para que contruyas peticiones a tu gusto.
 
@@ -469,71 +469,40 @@ cat_flor <- read.csv(file = "sniim-flores.csv")
 cat_gran <- read.csv(file = "sniim-granos-semillas.csv")
 cat_acei <- read.csv(file = "sniim-aceite.csv")
 cat_insu <- read.csv(file = "sniim-insumo.csv")
+
+cat_lugar <- cat_dest |> 
+  mutate(tipo = "destino") |> 
+  bind_rows(c(cat_orig, tipo = "origen"))
+
+cat_prod <- cat_frut |> 
+  mutate(tipo = "frutas y hortalizas") |> 
+  bind_rows(c(cat_flor, tipo = "flores")) |> 
+  bind_rows(c(cat_gran, tipo = "granos y semillas")) |> 
+  bind_rows(c(cat_acei, tipo = "aceites comestibles")) |> 
+  bind_rows(c(cat_insu, tipo = "insumos agrícolas"))
+  
+            
 ```
 
 ---
 
-#### Mercado de Destino
+#### Lugar de Orígen y Mercado de Destino
 
 ```{r}
-cat_dest |> 
-  datatable(options = list(pageLength = 1)) #, caption = tags$caption(style = "caption-side: top; text-align: center; font-weight: bold;", "Mercado de Destino"))
+cat_lugar |> 
+  datatable() #options = list(pageLength = 1)) #, caption = tags$caption(style = "caption-side: top; text-align: center; font-weight: bold;", "Mercado de Destino"))
 ```
 
 ---
 
-#### Origen de la producción
+#### Productos en los Mercados Agrícolas Nacionales
 
 ```{r}
-cat_orig |> 
-  datatable(options = list(pageLength = 1))
+cat_prod |> 
+  datatable()
 ```
 
 ---
-
-#### Frutos y hortalizas
-
-```{r}
-cat_frut |> 
-  datatable(options = list(pageLength = 1))
-```
-
----
-
-#### Flores
-
-```{r}
-cat_flor|> 
-  datatable(options = list(pageLength = 1))
-```
-
----
- 
-#### Granos básicos
-
-```{r}
-cat_gran |> 
-  datatable(options = list(pageLength = 1))
-```
-
----
- 
-#### Aceites comestibles
-
-```{r}
-cat_acei |> 
-  datatable(options = list(pageLength = 1))
-```
-
----
- 
-#### Insumos agrícolas
-
-```{r}
-cat_insu |> 
-  datatable(options = list(pageLength = 1))
-
-```
 
 
 \
