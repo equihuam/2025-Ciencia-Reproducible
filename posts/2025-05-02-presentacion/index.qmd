@@ -1,0 +1,10 @@
+---
+title: "Otra manera de Presentar"
+author: "Miguel Equihua"
+format: revealjs
+---
+
+## Hola
+
+En el manual de [Quarto hay información sobre presentaciones](https://quarto.org/docs/presentations/) 
+
