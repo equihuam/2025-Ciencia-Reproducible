@@ -2,10 +2,6 @@ pacman::p_load(RPostgres)
 
 dsn_database <-  "dvdrental"   # Specify the name of your Database
 # Specify host name e.g.:"aws-us-east-1-portal.4.dblayer.com"
-dsn_hostname <- "192.168.36.214"  
-dsn_port     <- "5432"                # Specify your port number. e.g. 98939
-
-
 
 tryCatch({
   drv <- Postgres()
