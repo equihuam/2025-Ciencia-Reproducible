@@ -1,0 +1,50 @@
+pacman::p_load(RPostgres)
+
+dsn_database <-  "dvdrental"   # Specify the name of your Database
+# Specify host name e.g.:"aws-us-east-1-portal.4.dblayer.com"
+
+tryCatch({
+  drv <- Postgres()
+  print("Connecting to Database…")
+  connec <- dbConnect(drv, 
+                      dbname =   dsn_database,
+                      host =     Sys.getenv("psql_eq_ip"), 
+                      port =     Sys.getenv("psql_eq_port"),
+                      user =     keyring::key_list("psql-eq")[1,2],
+                      password = keyring::key_get(service = "psql-eq", 
+                                                  username = dsn_uid))
+  print("Database Connected!")
+},
+error=function(cond) {
+  print(cond)
+  print("Unable to connect to Database.")
+})
+
+df <- dbGetQuery(connec, "SELECT first_name, last_name FROM actor")
+
+dbDisconnect(connec)
+
+
+## Preparar WSL y PostgreSQL en Windows
+
+Ahora Windows incluye la opción de habilitar una versión de linux virtual que convive con el ambiente Windows, la característica que denomina [_Windows Subsystem Linux_ (**WSL**)](https://learn.microsoft.com/es-mx/windows/wsl/). Hay que habilitarlo desde la panel de control como _características de Windows_ como se ilustra en la  @fig-wsl, o mediante comandos desde una ventana de **Powershell** de la manera siguiente.
+
+```{.bash}
+
+wsl --install
+wsl --version
+wsl --install -d ubuntu
+
+```
+
+Una vez activado **WSL**, tendrás, en este ejemplo, un _linux Ubuntu_ en marcha y para acceder a su consola de sistema bastará con que escribas `wsl`en una terminal de **Powershell**, que puede ser la misma que usaste para instalar todo. 
+
+
+En una ventana de _Powershell_ escribir
+
+```{.bash}
+
+
+sudo apt-get install postgresql postgresql-contrib
+
+```
