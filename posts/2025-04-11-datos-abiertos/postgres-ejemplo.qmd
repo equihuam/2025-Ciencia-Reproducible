@@ -1,34 +1,34 @@
+## Preparar Linux y PostgreSQL en tu máquina Windows
+
+### WSL
+Ahora Windows incluye la opción de habilitar una versión de linux virtual que convive con el ambiente Windows, la característica que denomina [*Windows Subsystem Linux* (**WSL**)](https://learn.microsoft.com/es-mx/windows/wsl/). Hay que habilitarlo desde el panel de control como *características de Windows* como se ilustra en la @fig-wsl, o mediante comandos desde una ventana de **Powershell** (🪟 + X; y luego I).
 
 
-
-
-## Preparar WSL y PostgreSQL en Windows
-
-Ahora Windows incluye la opción de habilitar una versión de linux virtual que convive con el ambiente Windows, la característica que denomina [_Windows Subsystem Linux_ (**WSL**)](https://learn.microsoft.com/es-mx/windows/wsl/). Hay que habilitarlo desde la panel de control como _características de Windows_ como se ilustra en la  @fig-wsl, o mediante comandos desde una ventana de **Powershell** de la manera siguiente.
-
-```{.bash}
-
+```bash
 wsl --install
 wsl --version
 wsl --install -d ubuntu
-
 ```
+\ 
 
-Una vez activado **WSL**, tendrás, en este ejemplo, un _linux Ubuntu_ en marcha y para acceder a su consola de sistema bastará con que escribas `wsl`en una terminal de **Powershell**, que puede ser la misma que usaste para instalar todo. 
+Habrá ahora un ícono con el pingüino de Linux en tu equipo, que es un enlace a una ventana de terminal directamente asociada con **WSL**. Más adelante será una forma de acceso conveniente, pero por lo pronto puedes seguir con la que ya tienes de **Powershell**.
+
+### PostgreSQL
+
+Una vez activado **WSL**, tendrás, en este ejemplo, un *linux Ubuntu* en marcha. Ahora puedes instalar _PostgreSQL_ en esa máquina virtual. Lo primero es acceder a _linux_ mediante una consola de sistema. Bastará con que escribas `wsl` en **Powershell**. Puede ser la misma ventana que usaste para instalar todo, si todavía la tienes abierta, o usar el nuevo ícono del pingüino. Ahora, escribe las siguientes instrucciones en _linux_. Básicamente le estas diciendo que entre en modo de _superusuario_ (`sudo`) y que vaya al servicio general de almacenamiento de aplicaciones (`apt-get`) y conseguir lo necesario para instalar _PostgreSQL_ en la versión que incluye extensiones y adiciones comunes al _PostgreSQL_ básico.
 
 
-En una ventana de _Powershell_ escribir
-
-```{.bash}
-
-
+``` bash
 sudo apt-get install postgresql postgresql-contrib
-
 ```
 
-Para iniciar tu interacción con PostgreSQL incialmente necesitará entrar a la interfaz del sistema con el siguiente comando.
+La instalación inicial de *PostgreSQL* utiliza como usuario de arranque a `postgres`. Es necesario darle un *password* para lograr que *PostgreSQL* nos de acceso. El siguiente comando lo hace. Te generará una línea en la que te pide ingreses la nueva clave que quieres darle al usuario `postgres`. Escribiras pero no verás lo que escribes, por seguiridad obviamente. Al terminar aprieta la tecla **enter/intro/&#9166;**
 
-```{.bash}
+``` bash
+sudo passwd postgres
+```
+
+
 
 sudo -u postgres psql
 
@@ -39,12 +39,24 @@ sudo -u postgres createdb <dbname>
 $ sudo -u postgres psql
 psql=# alter user <username> with encrypted password '<password>';
 grant all privileges on database <dbname> to <username> ; 
-
 ```
 
+Para iniciar tu interacción con *PostgreSQL* incialmente necesitará entrar a la interfaz del sistema con el siguiente comando.
+
+``` bash
+
+sudo -u postgres psql
+
+sudo -u postgres createuser <username>
+
+sudo -u postgres createdb <dbname>
+
+$ sudo -u postgres psql
+psql=# alter user <username> with encrypted password '<password>';
+grant all privileges on database <dbname> to <username> ; 
+```
 
 Una vez que todo ha sido configurado podrás tener acceso a PostgreSQL yhacer operaciones de todo tipo. A continuación un ejemplo muy sencillo con la bae de datos de ejemplo "dbdrental".
-
 
 ```{r}
 pacman::p_load(RPostgres, keyring)
@@ -75,4 +87,3 @@ head(df)
 dbDisconnect(connec)
 
 ```
-
