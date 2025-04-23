@@ -1,35 +1,5 @@
 
 
-```{r}
-pacman::p_load(RPostgres, keyring)
-
-
-tryCatch({
-  drv <- Postgres()
-  print("Connecting to Database…")
-  connec <- dbConnect(drv, 
-                      dbname =   "dvdrental",
-                      host =     Sys.getenv("psql_eq_ip"), 
-                      port =     Sys.getenv("psql_eq_port"),
-                      user =     key_list("psql-eq")[1,2],
-                      password = key_get(service = "psql-eq", 
-                                                  username = key_list("psql-eq")[1,2]))
-  
-  print("Database Connected!")
-},
-error=function(cond) {
-  print(cond)
-  print("Unable to connect to Database.")
-})
-
-df <- dbGetQuery(connec, "SELECT first_name, last_name FROM actor")
-
-head(df)
-
-dbDisconnect(connec)
-
-```
-
 
 
 ## Preparar WSL y PostgreSQL en Windows
@@ -71,3 +41,38 @@ psql=# alter user <username> with encrypted password '<password>';
 grant all privileges on database <dbname> to <username> ; 
 
 ```
+
+
+Una vez que todo ha sido configurado podrás tener acceso a PostgreSQL yhacer operaciones de todo tipo. A continuación un ejemplo muy sencillo con la bae de datos de ejemplo "dbdrental".
+
+
+```{r}
+pacman::p_load(RPostgres, keyring)
+
+
+tryCatch({
+  drv <- Postgres()
+  print("Connecting to Database…")
+  connec <- dbConnect(drv, 
+                      dbname =   "dvdrental",
+                      host =     Sys.getenv("psql_eq_ip"), 
+                      port =     Sys.getenv("psql_eq_port"),
+                      user =     key_list("psql-eq")[1,2],
+                      password = key_get(service = "psql-eq", 
+                                                  username = key_list("psql-eq")[1,2]))
+  
+  print("Database Connected!")
+},
+error=function(cond) {
+  print(cond)
+  print("Unable to connect to Database.")
+})
+
+df <- dbGetQuery(connec, "SELECT first_name, last_name FROM actor")
+
+head(df)
+
+dbDisconnect(connec)
+
+```
+
