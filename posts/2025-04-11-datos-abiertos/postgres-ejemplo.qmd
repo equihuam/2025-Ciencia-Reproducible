@@ -22,41 +22,73 @@ Una vez activado **WSL**, tendrás, en este ejemplo, un *linux Ubuntu* en marcha
 sudo apt-get install postgresql postgresql-contrib
 ```
 
-La instalación inicial de *PostgreSQL* utiliza como usuario de arranque a `postgres`. Es necesario darle un *password* para lograr que *PostgreSQL* nos de acceso. El siguiente comando lo hace. Te generará una línea en la que te pide ingreses la nueva clave que quieres darle al usuario `postgres`. Escribiras pero no verás lo que escribes, por seguiridad obviamente. Al terminar aprieta la tecla **enter/intro/&#9166;**
+La instalación inicial de *PostgreSQL* utiliza como usuario de arranque a `postgres`. Es necesario darle un *password* para lograr que *PostgreSQL* nos de acceso. El siguiente comando lo hace. Te generará una línea en la que te pide ingreses la nueva clave que quieras darle al usuario `postgres`. Escribiras pero no verás lo que escribes, por seguiridad obviamente. Al terminar aprieta la tecla **enter/intro/&#9166;**
 
 ``` bash
 sudo passwd postgres
 ```
 
+Ahora, desde la misma terminal, tenemos que arrancar a _posgtreSQL_  como un servico activo en el equipo. Esto lo mantendrá en operación hasta que reinicies la máquina, en cuyo caso deberás reiniciar el servicio.
+La instrucción para hacer esta operación es la siguiente.
 
-
-sudo -u postgres psql
-
-sudo -u postgres createuser <username>
-
-sudo -u postgres createdb <dbname>
-
-$ sudo -u postgres psql
-psql=# alter user <username> with encrypted password '<password>';
-grant all privileges on database <dbname> to <username> ; 
-```
-
-Para iniciar tu interacción con *PostgreSQL* incialmente necesitará entrar a la interfaz del sistema con el siguiente comando.
 
 ``` bash
+ sudo service postgresql start
+```
 
+Esta mismalínea te sirve para detener el servico (stop en lugar de start), reiniciarlo (restart) o para averiguar si está activo (status).
+
+Conviene generar un usuario de tu preferencia para interactuar con _PostgreSQL_, evitando dejar como vulnerabilidad la interacción através del usuario común `postgres`. Para crear ese nuevo usuario usa el siguiente comando.
+
+``` bash
 sudo -u postgres psql
 
-sudo -u postgres createuser <username>
-
-sudo -u postgres createdb <dbname>
-
-$ sudo -u postgres psql
 psql=# alter user <username> with encrypted password '<password>';
 grant all privileges on database <dbname> to <username> ; 
 ```
 
-Una vez que todo ha sido configurado podrás tener acceso a PostgreSQL yhacer operaciones de todo tipo. A continuación un ejemplo muy sencillo con la bae de datos de ejemplo "dbdrental".
+Para iniciar tu interacción con *PostgreSQL* incialmente necesitará entrar a la interfaz del sistema con el siguiente comando. Puede ser que te presente alguna advertencia, pero por lo pronto no le hagas caso.
+
+``` bash
+sudo -u postgres createuser <username>
+```
+
+Para seguir con el ejercicio necesitamos crear una base de datos nueva. Eneste caso usaremos datos de ejemplo. Veamos la base de datos de los pasajeros del Titanic en su trágico viaje inaugural. Lo primero es preparar a _PostgreSQL_ para alojarla.
+
+
+``` bash
+sudo -u postgres createdb titanic
+```
+
+Ahora vamos por la base de datos. En _linux_ existe para este fin el comando `wget`. Conviene preparar un directorio para poner estos datos de ejemplo. Un lugar posible podría ser dentro de tu directorio
+**home**, (asocido al símbolo **) quizás en _db-ejemplos_. Hay que usra `wget` con la opción **-P** seguida de la ruta deeada para almaenar el xontenido de la URL. Si los directorios involucrados existen, los usa, si no, los crea.
+
+
+``` bash
+wget https://raw.githubusercontent.com/neondatabase/postgres-sample-dbs/main/titanic.sql -P ~/db-ejemplos
+```
+
+Ahora hay que cargar los datos en la base de datos `titanic`. El comando para esto es
+
+
+``` bash
+psql -d titanic -f ~/db-ejemplos/titanic.sql
+```
+
+Si por falta de derechos de acceso en tu linux, falla algo de lo anterior, esta es la manera de darle todos los derechos ak usuario. No siempre una buena idea dezde el punto de vista de la seguridad. Lo primero es entrar a la consola de _PostgreSQL_ como un usuario administrativo, es decir `postgres`, por ejemplo. Nota el cambio en el encabezado de línea en tu terminal
+
+``` bash
+sudo -u postgres psql
+```
+
+Ahora ya estas dentro de _PostgreSQL_ los comandos en su lenguaje, _SQL_, son los siguientes. Nota también que cada comando es terminado con ";", si no lo incluyes el interprete de _SQL_ considera que no has terminado de construir la instrucción y por tanto no la procesa.
+
+``` sql
+alter user <username> with encrypted password '<password>';
+grant all privileges on database <dbname> to <username> ; 
+```
+
+Una vez que todo ha sido configurado podrás tener acceso a PostgreSQL y hacer operaciones de todo tipo. A continuación un ejemplo muy sencillo con la bae de datos de ejemplo "titanic".
 
 ```{r}
 pacman::p_load(RPostgres, keyring)
