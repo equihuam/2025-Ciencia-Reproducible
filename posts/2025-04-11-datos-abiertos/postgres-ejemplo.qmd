@@ -54,12 +54,12 @@ tryCatch({
   drv <- Postgres()
   print("Connecting to Database…")
   connec <- dbConnect(drv, 
-                      dbname =   "dvdrental",
-                      host =     Sys.getenv("psql_eq_ip"), 
-                      port =     Sys.getenv("psql_eq_port"),
-                      user =     key_list("psql-eq")[1,2],
+                      dbname   = "dvdrental",
+                      host     = Sys.getenv("psql_eq_ip"), 
+                      port     = Sys.getenv("psql_eq_port"),
+                      user     = key_list("psql-eq")[1,2],
                       password = key_get(service = "psql-eq", 
-                                                  username = key_list("psql-eq")[1,2]))
+                                         username = key_list("psql-eq")[1,2]))
   
   print("Database Connected!")
 },
