@@ -98,7 +98,7 @@ tryCatch({
   drv <- Postgres()
   print("Connecting to Database…")
   connec <- dbConnect(drv, 
-                      dbname   = "dvdrental",
+                      dbname   = "titanic",
                       host     = Sys.getenv("psql_eq_ip"), 
                       port     = Sys.getenv("psql_eq_port"),
                       user     = key_list("psql-eq")[1,2],
@@ -112,10 +112,15 @@ error=function(cond) {
   print("Unable to connect to Database.")
 })
 
-df <- dbGetQuery(connec, "SELECT first_name, last_name FROM actor")
+df <- dbGetQuery(connec, "SELECT name, hometown FROM passenger;")
 
 head(df)
 
 dbDisconnect(connec)
 
 ```
+
+```{r}
+df[grepl("sanc", df$name),]
+```
+
