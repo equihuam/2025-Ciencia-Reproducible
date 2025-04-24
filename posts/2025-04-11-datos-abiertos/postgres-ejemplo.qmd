@@ -116,8 +116,6 @@ df <- dbGetQuery(connec, "SELECT name, hometown FROM passenger;")
 
 head(df)
 
-dbDisconnect(connec)
-
 ```
 
 \ 
@@ -125,6 +123,19 @@ dbDisconnect(connec)
 \ 
 
 ```{r}
-df[grepl("mexico", df$hometown, ignore.case ="True"),]
+mx_df <- dbGetQuery(connec, "SELECT name, hometown FROM passenger
+                               WHERE hometown ILIKE '%mex%';")
+
+print("Aquí está la resuesta\n")
+peint(mx_df)
+
+```
+
+Hay que cerral la conexión
+
+```{r}
+
+dbDisconnect(connec)
+
 ```
 
