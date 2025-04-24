@@ -242,11 +242,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbDisconnect</span>(connec)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>&nbsp; ¿Había algún mexicano en el Titanic? &nbsp;</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>df[<span class="fu">grepl</span>(<span class="st">"Uruc"</span>, df<span class="sc">$</span>name),]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>df[<span class="fu">grepl</span>(<span class="st">"mexico"</span>, df<span class="sc">$</span>hometown, <span class="at">ignore.case =</span><span class="st">"True"</span>),]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>                       name            hometown
-31 Uruchurtu, Don. Manuel E Mexico City, Mexico</code></pre>
+<pre><code>                        name                    hometown
+31  Uruchurtu, Don. Manuel E         Mexico City, Mexico
+222     Bracken, Mr. James H Lake Arthur, New Mexico, US</code></pre>
 </div>
 </div>
 

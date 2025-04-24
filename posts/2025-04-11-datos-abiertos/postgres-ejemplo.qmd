@@ -120,7 +120,11 @@ dbDisconnect(connec)
 
 ```
 
+\ 
+¿Había algún mexicano en el Titanic?
+\ 
+
 ```{r}
-df[grepl("Uruc", df$name),]
+df[grepl("mexico", df$hometown, ignore.case ="True"),]
 ```
 
