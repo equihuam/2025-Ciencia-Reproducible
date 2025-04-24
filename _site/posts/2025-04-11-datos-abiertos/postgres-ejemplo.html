@@ -172,65 +172,82 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="postgresql">PostgreSQL</h3>
 <p>Una vez activado <strong>WSL</strong>, tendrás, en este ejemplo, un <em>linux Ubuntu</em> en marcha. Ahora puedes instalar <em>PostgreSQL</em> en esa máquina virtual. Lo primero es acceder a <em>linux</em> mediante una consola de sistema. Bastará con que escribas <code>wsl</code> en <strong>Powershell</strong>. Puede ser la misma ventana que usaste para instalar todo, si todavía la tienes abierta, o usar el nuevo ícono del pingüino. Ahora, escribe las siguientes instrucciones en <em>linux</em>. Básicamente le estas diciendo que entre en modo de <em>superusuario</em> (<code>sudo</code>) y que vaya al servicio general de almacenamiento de aplicaciones (<code>apt-get</code>) y conseguir lo necesario para instalar <em>PostgreSQL</em> en la versión que incluye extensiones y adiciones comunes al <em>PostgreSQL</em> básico.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install postgresql postgresql-contrib</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>La instalación inicial de <em>PostgreSQL</em> utiliza como usuario de arranque a <code>postgres</code>. Es necesario darle un <em>password</em> para lograr que <em>PostgreSQL</em> nos de acceso. El siguiente comando lo hace. Te generará una línea en la que te pide ingreses la nueva clave que quieres darle al usuario <code>postgres</code>. Escribiras pero no verás lo que escribes, por seguiridad obviamente. Al terminar aprieta la tecla <strong>enter/intro⏎</strong></p>
+<p>La instalación inicial de <em>PostgreSQL</em> utiliza como usuario de arranque a <code>postgres</code>. Es necesario darle un <em>password</em> para lograr que <em>PostgreSQL</em> nos de acceso. El siguiente comando lo hace. Te generará una línea en la que te pide ingreses la nueva clave que quieras darle al usuario <code>postgres</code>. Escribiras pero no verás lo que escribes, por seguiridad obviamente. Al terminar aprieta la tecla <strong>enter/intro/⏎</strong></p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> passwd postgres</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>sudo -u postgres psql</p>
-<p>sudo -u postgres createuser <username></username></p>
-<p>sudo -u postgres createdb <dbname></dbname></p>
-<p>$ sudo -u postgres psql psql=# alter user <username> with encrypted password ‘<password>’; grant all privileges on database <dbname> to <username> ;</username></dbname></password></username></p>
-<pre><code>
-Para iniciar tu interacción con *PostgreSQL* incialmente necesitará entrar a la interfaz del sistema con el siguiente comando.
-
-``` bash
-
-sudo -u postgres psql
-
-sudo -u postgres createuser &lt;username&gt;
-
-sudo -u postgres createdb &lt;dbname&gt;
-
-$ sudo -u postgres psql
-psql=# alter user &lt;username&gt; with encrypted password '&lt;password&gt;';
-grant all privileges on database &lt;dbname&gt; to &lt;username&gt; ; </code></pre>
-<p>Una vez que todo ha sido configurado podrás tener acceso a PostgreSQL yhacer operaciones de todo tipo. A continuación un ejemplo muy sencillo con la bae de datos de ejemplo “dbdrental”.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(RPostgres, keyring)</span>
+<p>Ahora, desde la misma terminal, tenemos que arrancar a <em>posgtreSQL</em> como un servico activo en el equipo. Esto lo mantendrá en operación hasta que reinicies la máquina, en cuyo caso deberás reiniciar el servicio. La instrucción para hacer esta operación es la siguiente.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">sudo</span> service postgresql start</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Esta mismalínea te sirve para detener el servico (stop en lugar de start), reiniciarlo (restart) o para averiguar si está activo (status).</p>
+<p>Conviene generar un usuario de tu preferencia para interactuar con <em>PostgreSQL</em>, evitando dejar como vulnerabilidad la interacción através del usuario común <code>postgres</code>. Para crear ese nuevo usuario usa el siguiente comando.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> <span class="at">-u</span> postgres psql</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tryCatch</span>({</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  drv <span class="ot">&lt;-</span> <span class="fu">Postgres</span>()</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Connecting to Database…"</span>)</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  connec <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(drv, </span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>                      <span class="at">dbname   =</span> <span class="st">"dvdrental"</span>,</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>                      <span class="at">host     =</span> <span class="fu">Sys.getenv</span>(<span class="st">"psql_eq_ip"</span>), </span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>                      <span class="at">port     =</span> <span class="fu">Sys.getenv</span>(<span class="st">"psql_eq_port"</span>),</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>                      <span class="at">user     =</span> <span class="fu">key_list</span>(<span class="st">"psql-eq"</span>)[<span class="dv">1</span>,<span class="dv">2</span>],</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>                      <span class="at">password =</span> <span class="fu">key_get</span>(<span class="at">service =</span> <span class="st">"psql-eq"</span>, </span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>                                         <span class="at">username =</span> <span class="fu">key_list</span>(<span class="st">"psql-eq"</span>)[<span class="dv">1</span>,<span class="dv">2</span>]))</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Database Connected!"</span>)</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>},</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="at">error=</span><span class="cf">function</span>(cond) {</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(cond)</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Unable to connect to Database."</span>)</span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="va">psql</span><span class="op">=</span># <span class="ex">alter</span> user <span class="op">&lt;</span>username<span class="op">&gt;</span> with encrypted password <span class="st">'&lt;password&gt;'</span><span class="kw">;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ex">grant</span> all privileges on database <span class="op">&lt;</span>dbname<span class="op">&gt;</span> to <span class="op">&lt;</span>username<span class="op">&gt;</span> <span class="kw">;</span> </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Para iniciar tu interacción con <em>PostgreSQL</em> incialmente necesitará entrar a la interfaz del sistema con el siguiente comando. Puede ser que te presente alguna advertencia, pero por lo pronto no le hagas caso.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> <span class="at">-u</span> postgres createuser <span class="op">&lt;</span>username<span class="op">&gt;</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Para seguir con el ejercicio necesitamos crear una base de datos nueva. Eneste caso usaremos datos de ejemplo. Veamos la base de datos de los pasajeros del Titanic en su trágico viaje inaugural. Lo primero es preparar a <em>PostgreSQL</em> para alojarla.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> <span class="at">-u</span> postgres createdb titanic</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Ahora vamos por la base de datos. En <em>linux</em> existe para este fin el comando <code>wget</code>. Conviene preparar un directorio para poner estos datos de ejemplo. Un lugar posible podría ser dentro de tu directorio <strong>home</strong>, (asocido al símbolo <strong>) quizás en <em>db-ejemplos</em>. Hay que usra <code>wget</code> con la opción </strong>-P** seguida de la ruta deeada para almaenar el xontenido de la URL. Si los directorios involucrados existen, los usa, si no, los crea.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://raw.githubusercontent.com/neondatabase/postgres-sample-dbs/main/titanic.sql <span class="at">-P</span> ~/db-ejemplos</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Ahora hay que cargar los datos en la base de datos <code>titanic</code>. El comando para esto es</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">psql</span> <span class="at">-d</span> titanic <span class="at">-f</span> ~/db-ejemplos/titanic.sql</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Si por falta de derechos de acceso en tu linux, falla algo de lo anterior, esta es la manera de darle todos los derechos ak usuario. No siempre una buena idea dezde el punto de vista de la seguridad. Lo primero es entrar a la consola de <em>PostgreSQL</em> como un usuario administrativo, es decir <code>postgres</code>, por ejemplo. Nota el cambio en el encabezado de línea en tu terminal</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> <span class="at">-u</span> postgres psql</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Ahora ya estas dentro de <em>PostgreSQL</em> los comandos en su lenguaje, <em>SQL</em>, son los siguientes. Nota también que cada comando es terminado con “;”, si no lo incluyes el interprete de <em>SQL</em> considera que no has terminado de construir la instrucción y por tanto no la procesa.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">alter</span> <span class="fu">user</span> <span class="op">&lt;</span>username<span class="op">&gt;</span> <span class="kw">with</span> encrypted <span class="kw">password</span> <span class="st">'&lt;password&gt;'</span>;</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">grant</span> <span class="kw">all</span> <span class="kw">privileges</span> <span class="kw">on</span> <span class="kw">database</span> <span class="op">&lt;</span>dbname<span class="op">&gt;</span> <span class="kw">to</span> <span class="op">&lt;</span>username<span class="op">&gt;</span> ; </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Una vez que todo ha sido configurado podrás tener acceso a PostgreSQL y hacer operaciones de todo tipo. A continuación un ejemplo muy sencillo con la bae de datos de ejemplo “titanic”.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(RPostgres, keyring)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tryCatch</span>({</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  drv <span class="ot">&lt;-</span> <span class="fu">Postgres</span>()</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Connecting to Database…"</span>)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  connec <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(drv, </span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>                      <span class="at">dbname   =</span> <span class="st">"titanic"</span>,</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>                      <span class="at">host     =</span> <span class="fu">Sys.getenv</span>(<span class="st">"psql_eq_ip"</span>), </span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>                      <span class="at">port     =</span> <span class="fu">Sys.getenv</span>(<span class="st">"psql_eq_port"</span>),</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>                      <span class="at">user     =</span> <span class="fu">key_list</span>(<span class="st">"psql-eq"</span>)[<span class="dv">1</span>,<span class="dv">2</span>],</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>                      <span class="at">password =</span> <span class="fu">key_get</span>(<span class="at">service =</span> <span class="st">"psql-eq"</span>, </span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>                                         <span class="at">username =</span> <span class="fu">key_list</span>(<span class="st">"psql-eq"</span>)[<span class="dv">1</span>,<span class="dv">2</span>]))</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Database Connected!"</span>)</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>},</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="at">error=</span><span class="cf">function</span>(cond) {</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(cond)</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Unable to connect to Database."</span>)</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Connecting to Database…"
 [1] "Database Connected!"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">dbGetQuery</span>(connec, <span class="st">"SELECT first_name, last_name FROM actor"</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">dbGetQuery</span>(connec, <span class="st">"SELECT name, hometown FROM passenger;"</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  first_name    last_name
-1   Penelope      Guiness
-2       Nick     Wahlberg
-3         Ed        Chase
-4   Jennifer        Davis
-5     Johnny Lollobrigida
-6      Bette    Nicholson</code></pre>
+<pre><code>                                                 name
+1                             Braund, Mr. Owen Harris
+2 Cumings, Mrs. John Bradley (Florence Briggs Thayer)
+3                              Heikkinen, Miss. Laina
+4        Futrelle, Mrs. Jacques Heath (Lily May Peel)
+5                            Allen, Mr. William Henry
+6                                    Moran, Mr. James
+                            hometown
+1         Bridgerule, Devon, England
+2             New York, New York, US
+3                 Jyväskylä, Finland
+4        Scituate, Massachusetts, US
+5 Birmingham, West Midlands, England
+6                      Cork, Ireland</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbDisconnect</span>(connec)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbDisconnect</span>(connec)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>df[<span class="fu">grepl</span>(<span class="st">"Uruc"</span>, df<span class="sc">$</span>name),]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                       name            hometown
+31 Uruchurtu, Don. Manuel E Mexico City, Mexico</code></pre>
+</div>
 </div>
 
 

@@ -121,6 +121,6 @@ dbDisconnect(connec)
 ```
 
 ```{r}
-df[grepl("sanc", df$name),]
+df[grepl("Uruc", df$name),]
 ```
 
