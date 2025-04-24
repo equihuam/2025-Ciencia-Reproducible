@@ -1,8 +1,11 @@
 ## Preparar Linux y PostgreSQL en tu máquina Windows
 
 ### WSL
-Ahora Windows incluye la opción de habilitar una versión de linux virtual que convive con el ambiente Windows, la característica que denomina [*Windows Subsystem Linux* (**WSL**)](https://learn.microsoft.com/es-mx/windows/wsl/). Hay que habilitarlo desde el panel de control como *características de Windows* como se ilustra en la @fig-wsl, o mediante comandos desde una ventana de **Powershell** (🪟 + X; y luego I).
+Ahora Windows incluye la opción de habilitar una versión de linux virtual que convive con el ambiente Windows, la característica se denomina [*Windows Subsystem Linux* (**WSL**)](https://learn.microsoft.com/es-mx/windows/wsl/). Hay que habilitarlo desde el panel de control como *características de Windows* como se ilustra en la @fig-wsl, o mediante comandos desde una ventana de **Powershell** (🪟 + X; y luego I).
 
+![Activar WSL desde el Panel de Control de Windows](images/wsl-activar.png){#fig-wsl width=60%}
+
+\ 
 
 ```bash
 wsl --install
@@ -12,6 +15,8 @@ wsl --install -d ubuntu
 \ 
 
 Habrá ahora un ícono con el pingüino de Linux en tu equipo, que es un enlace a una ventana de terminal directamente asociada con **WSL**. Más adelante será una forma de acceso conveniente, pero por lo pronto puedes seguir con la que ya tienes de **Powershell**.
+
+![El pingüino de Linux debe andar por ahí en tu equipo](images/wsl-icon.png){width=30%}
 
 ### PostgreSQL
 
@@ -53,7 +58,7 @@ Para iniciar tu interacción con *PostgreSQL* incialmente necesitará entrar a l
 sudo -u postgres createuser <username>
 ```
 
-Para seguir con el ejercicio necesitamos crear una base de datos nueva. Eneste caso usaremos datos de ejemplo. Veamos la base de datos de los pasajeros del Titanic en su trágico viaje inaugural. Lo primero es preparar a _PostgreSQL_ para alojarla.
+Para seguir con el ejercicio necesitamos crear una base de datos nueva. En este caso usaremos datos de ejemplo que ya se han organizado en bases de datos. Recurriremos al sitio del [programa Neon de los Estados Unidos](https://github.com/neondatabase-labs/postgres-sample-dbs).. Veamos la base de datos de los pasajeros del Titanic en su trágico viaje inaugural. Lo primero es preparar a _PostgreSQL_ para alojarla.
 
 
 ``` bash
@@ -61,21 +66,22 @@ sudo -u postgres createdb titanic
 ```
 
 Ahora vamos por la base de datos. En _linux_ existe para este fin el comando `wget`. Conviene preparar un directorio para poner estos datos de ejemplo. Un lugar posible podría ser dentro de tu directorio
-**home**, (asocido al símbolo **) quizás en _db-ejemplos_. Hay que usra `wget` con la opción **-P** seguida de la ruta deeada para almaenar el xontenido de la URL. Si los directorios involucrados existen, los usa, si no, los crea.
+**home**, (asocido al símbolo **) quizás en _db-ejemplos_. Hay que usar `wget` con la opción **-P** seguida de la ruta deseada para almacenar el contenido de la URL. Si los directorios involucrados existen, los usa, si no, los crea.
 
 
 ``` bash
 wget https://raw.githubusercontent.com/neondatabase/postgres-sample-dbs/main/titanic.sql -P ~/db-ejemplos
 ```
 
-Ahora hay que cargar los datos en la base de datos `titanic`. El comando para esto es
+En Windows puedes verificar si el archivo solicitado fue cargado en el lugar que quería desde elnavegador de archivos, busca al final de la lista de directorios. Debería estar el pingüino ahí. lo abres y buscas la carpeta `home/<tu usuario>/db-ejemplo` en la forma usual. Ahí debería estar el archivo `titanica.sql`.
 
+Si ya todo está en orden, ahora hay que cargar los datos en la base de datos `titanic`. El comando para esto es este.
 
 ``` bash
 psql -d titanic -f ~/db-ejemplos/titanic.sql
 ```
 
-Si por falta de derechos de acceso en tu linux, falla algo de lo anterior, esta es la manera de darle todos los derechos ak usuario. No siempre una buena idea dezde el punto de vista de la seguridad. Lo primero es entrar a la consola de _PostgreSQL_ como un usuario administrativo, es decir `postgres`, por ejemplo. Nota el cambio en el encabezado de línea en tu terminal
+Si por falta de derechos de acceso en tu linux, falla algo de lo anterior, esta es la manera de darle todos los derechos al usuario. No siempre una buena idea desde el punto de vista de la seguridad. Lo primero es entrar a la consola de _PostgreSQL_ como un usuario administrativo, es decir `postgres`, por ejemplo. Nota el cambio en el encabezado de línea en tu terminal.
 
 ``` bash
 sudo -u postgres psql
@@ -88,7 +94,12 @@ alter user <username> with encrypted password '<password>';
 grant all privileges on database <dbname> to <username> ; 
 ```
 
-Una vez que todo ha sido configurado podrás tener acceso a PostgreSQL y hacer operaciones de todo tipo. A continuación un ejemplo muy sencillo con la bae de datos de ejemplo "titanic".
+\ 
+Para salir de _PostgreSQL_, usa el comando `\q`)
+\ 
+
+
+Una vez que todo ha sido configurado podrás tener acceso a _PostgreSQL_ y hacer operaciones de todo tipo. A continuación un ejemplo muy sencillo con la bae de datos de ejemplo "titanic".
 
 ```{r}
 pacman::p_load(RPostgres, keyring)
@@ -126,12 +137,12 @@ head(df)
 mx_df <- dbGetQuery(connec, "SELECT name, hometown FROM passenger
                                WHERE hometown ILIKE '%mex%';")
 
-print("Aquí está la resuesta\n")
-peint(mx_df)
+print("Aquí está la resuesta")
+print(mx_df)
 
 ```
 
-Hay que cerral la conexión
+Al terminar el procesamiento hay que cerrar la conexión, ¡práctica de seguridad estandar!
 
 ```{r}
 
