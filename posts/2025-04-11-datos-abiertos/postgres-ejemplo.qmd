@@ -102,7 +102,7 @@ Para salir de _PostgreSQL_, usa el comando `\q`)
 Una vez que todo ha sido configurado podrás tener acceso a _PostgreSQL_ y hacer operaciones de todo tipo. A continuación un ejemplo muy sencillo con la bae de datos de ejemplo "titanic".
 
 ```{r}
-pacman::p_load(RPostgres, keyring)
+pacman::p_load(RPostgres, keyring, flextable, DT)
 
 
 tryCatch({
@@ -123,22 +123,24 @@ error=function(cond) {
   print("Unable to connect to Database.")
 })
 
-df <- dbGetQuery(connec, "SELECT name, hometown FROM passenger;")
+dbGetQuery(connec, "SELECT name, hometown FROM passenger;") |> 
+  datatable()
 
 head(df)
 
 ```
 
 \ 
-¿Había algún mexicano en el Titanic?
+¿Había algún mexicano en el Titanic? Por supuesto puedes ver esto en los datos que ya transferimos a una tabla en **R** arriba, pero para fines didácticos veamos como puedes hacer lo mismo directamente en _PostgreSQL_ con **SQL**.
 \ 
 
 ```{r}
-mx_df <- dbGetQuery(connec, "SELECT name, hometown FROM passenger
-                               WHERE hometown ILIKE '%mex%';")
+dbGetQuery(connec, "SELECT name, hometown FROM passenger
+                               WHERE hometown ILIKE '%mex%';") |> 
+  flextable() |> 
+  width(width = c(2,3)) |> 
+  set_caption("Aquí está la respuesta")
 
-print("Aquí está la resuesta")
-print(mx_df)
 
 ```
 
