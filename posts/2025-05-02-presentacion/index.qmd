@@ -44,6 +44,14 @@ comments:
   hypothesis: true
 ---
 
+
+## Para empezar
+
+En el manual de [Quarto hay información sobre presentaciones](https://quarto.org/docs/presentations/) 
+
+
+
+
 # Ir más allá de lo básico
 
 Te sugiero:
@@ -258,5 +266,7 @@ revealjs-plugins:
 
 ![](img/zoo-4508682_1280.jpg)
 :::
+
+
 
  

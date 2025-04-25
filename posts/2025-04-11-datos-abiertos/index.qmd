@@ -33,7 +33,7 @@ En México se han tenido expresiones positivas en torno a esta iniciativa desde 
 :::
 
 ::: {layout="[50,50]"}
-Actualmente, la opción vigente para datos abiertos nos conduce a [los principios **FAIR**](https://www.nature.com/articles/sdata201618), que son un conjunto de recomendaciones para la gestión y cuidado de los **datos científicos** . La sigla **FAIR** se propone como adjetivo para calificar a los datos científicos como contenido digital, en virtud de su *Findability*, *Accessibility*, *Interoperability*, and *Reuse*. Existe el sitio [goFAIR](https://www.go-fair.org/) que promueve la adopción de estos principios.
+Actualmente, la opción vigente para datos abiertos nos conduce a [los principios **FAIR**](https://www.nature.com/articles/sdata201618), que son un conjunto de recomendaciones para la gestión y cuidado de los **datos científicos** . La sigla **FAIR** se propone como adjetivo para calificar a los datos científicos como contenido digital, en virtud de su *Findability*, *Accessibility*, *Interoperability*, and *Reuse*. Existe el sitio [goFAIR](https://www.go-fair.org/) que promueve la adopción de estos principios [@Giadrossich2025] .
 
 [![](images/zbw_gofair_grafik_web_790px-1-768x401.jpg){width="300px"}](https://www.go-fair.org/wp-content/uploads/2020/02/GO_FAIR_Flyer_Update19022020-1.pdf)
 :::
@@ -69,7 +69,6 @@ De acuerdo con los criterios que emanan de los principio **FAIR**, los datos pue
 
 Es la *Unidad de Informática para las Ciencias Atmosféricas y Ambientales* gestionada por el Instituto de de la Atmósfera y Cambio Climático de la UNAM.
 
- 
 ::: {style="display: flex; justify-content: center;"}
 ```{=html}
 <iframe width="60%" height="300" src="https://uniatmos.atmosfera.unam.mx/" title="Portal de Uniatmos" allowfullscreen></iframe>
@@ -162,16 +161,13 @@ Esto es especialmente importante si estas trabajando con o dentro de una institu
 
 Puedes visitar en México el [Instituto Nacional del Derecho de Autor](http://www.indautor.gob.mx/) para obtener más información.
 
-
 ::: {style="display: flex; justify-content: center;"}
 ```{=html}
 <iframe width="90%" height="300" src="https://www.indautor.gob.mx/" title="Portal de IndAutor" allowfullscreen></iframe>
 ```
 :::
 
-
-
-\ 
+ 
 
 ## ¿Cómo podemos usar datos abiertos?
 
@@ -228,9 +224,7 @@ dat_1_df |>
 
 Del catálogo mostrado arriba, obtengo la referencia de la **API** al conjunto de datos que me interesa, se refiere al **endpoint**. En este caso se trata del **sinaica**, la ruta de acceso que me interesa es la **URL** respectiva. Lo que sigue es agregar los datos específicos que me interesan, que agregaré a la misma **URL** después de un signo de interrogación.
 
-Los datos de las estaciones existentes los puedes consultar con la misma **API** o en la página del [Sinaica](https://sinaica.inecc.gob.mx/), Hay un enlace a [Infraestructura de los SMCA][sinaica-estaciones], que contiene los descriptores de cada una de las estaciones existentes en el país. Para hacerlo con la **API** buscamos en la tabla anterior _sinaica-estaciones_. Hacemos la petición así:
-
-[sinaica-estaciones]:https://sinaica.inecc.gob.mx/archivoEstaciones.php
+Los datos de las estaciones existentes los puedes consultar con la misma **API** o en la página del [Sinaica](https://sinaica.inecc.gob.mx/), Hay un enlace a [Infraestructura de los SMCA](https://sinaica.inecc.gob.mx/archivoEstaciones.php), que contiene los descriptores de cada una de las estaciones existentes en el país. Para hacerlo con la **API** buscamos en la tabla anterior *sinaica-estaciones*. Hacemos la petición así:
 
 ```{r}
 
@@ -248,7 +242,7 @@ dat_est_df |>
 
 ```
 
-Las variables que puedo usar para construir esta **consulta** las encuentro precisamente en la columna _variables_ del catálogo. Para el caso de _Sinaica_ esta columna reporta las siguientes variables disponibles.
+Las variables que puedo usar para construir esta **consulta** las encuentro precisamente en la columna *variables* del catálogo. Para el caso de *Sinaica* esta columna reporta las siguientes variables disponibles.
 
 ```{r}
 dat_1_df |> 
@@ -260,23 +254,23 @@ dat_1_df |>
 
 ```
 
-Los datos que quiero para este ejercicio son el **idEstación**, y el nombre del parámetro, en este caso **O3**. Hay un dato *pageSize*, que se refiere al máximo de registros que esperamos recibir por página. Con estos datos construimos la **URL** necesaria. 
+Los datos que quiero para este ejercicio son el **idEstación**, y el nombre del parámetro, en este caso **O3**. Hay un dato *pageSize*, que se refiere al máximo de registros que esperamos recibir por página. Con estos datos construimos la **URL** necesaria.
 
-> URL: https://api.datos.gob.mx/v2/sinaica  
-> pagesize: 8000  
-> parametro: O3  
-> estacionesid: 259 (es la del Pedregal de San ángel, Álvaro Obregón, CdMx)  
-> page: 1  
+> URL: https://api.datos.gob.mx/v2/sinaica\
+> pagesize: 8000\
+> parametro: O3\
+> estacionesid: 259 (es la del Pedregal de San ángel, Álvaro Obregón, CdMx)\
+> page: 1
 
 Combino todos estos parámetros con el caracter **&** como separador de items y lo agrego todo al final de la **URL**.El resultado debe verse así.
 
-> https://api.datos.gob.mx/v2/sinaica[?]{style="color: red;"}pageSize=8000[&]{style="color: red;"}parametro=O3[&]{style="color: red;"}estacionesid=259[&]{style="color: red;"}page=1 
+> https://api.datos.gob.mx/v2/sinaica[?]{style="color: red;"}pageSize=8000[&]{style="color: red;"}parametro=O3[&]{style="color: red;"}estacionesid=259[&]{style="color: red;"}page=1
 
-\ 
+ 
 
 Ahora, estamos listos para hacer la consulta con el escript de abajo.
- 
-\ 
+
+ 
 
 ```{r}
 #| label: ozono
@@ -290,12 +284,12 @@ dat_O3 <- fromJSON(resp_body_string(resp_O3))
 dat_O3_df <- dat_O3$results
 ```
 
-\ 
+ 
 
 Estos son los datos de ozono en la atmósfera medidos en la estación `r dat_O3_df$estacionesid[1]`, de la Ciudad de México (@tbl-ozono).
 
-\ 
- 
+ 
+
 ```{r}
 #| label: tbl-ozono
 #| tbl-cap: Ozono atmosférico
@@ -439,25 +433,19 @@ dat_meteo |>
 
 ```
 
-
 ### Microdatos censales
 
-Como habíamos visto en [tipos de estudios](../2025-03-21-tipo-de estudio/index.qmd)
-Puede interesarte también ete artíulo sobre los datos abiertos que ofrece [Inegi y la bilioteca para **R**][inegi-r] que han desarrollado. Este otro es un ejemplo detallado de [acceso y procesamiento de microdatos][microdatos-lasalle]. Algo semejante ofrece este artículo de @castro_usando_2021 y está también el libro completo en línea de @escoto_castillo_encuesta2021, sobre como usar microdato para analizar el mercado de tabajo. Si es de tu interés [esta página de INEGI](https://www.inegi.org.mx/microdatos/) te ayudará a encontrar lo que necesitas. Por ejemplo, INEGI dispone de los [microdatos del censo agropecuario 2022](https://www.inegi.org.mx/programas/ca/2022/#microdatos). Al tratar microdatos es importante que consideres las recomendaciones de seguridad de @griffiths_manual_2020. 
-
-[microdatos-lasalle]: https://revistasinvestigacion.lasalle.mx/index.php/relais/article/download/4122/3778/27670
-[inegi-r]:https://rde.inegi.org.mx/index.php/2020/12/02/importinegi-un-paquete-de-r-para-descargar-y-gestionar-bases-de-datos-del-inegi/
-
+Como habíamos visto en [tipos de estudios](../2025-03-21-tipo-de%20estudio/index.qmd) Puede interesarte también ete artíulo sobre los datos abiertos que ofrece [Inegi y la bilioteca para **R**](https://rde.inegi.org.mx/index.php/2020/12/02/importinegi-un-paquete-de-r-para-descargar-y-gestionar-bases-de-datos-del-inegi/) que han desarrollado. Este otro es un ejemplo detallado de [acceso y procesamiento de microdatos](https://revistasinvestigacion.lasalle.mx/index.php/relais/article/download/4122/3778/27670). Algo semejante ofrece este artículo de @castro_usando_2021 y está también el libro completo en línea de @escoto_castillo_encuesta2021, sobre como usar microdato para analizar el mercado de tabajo. Si es de tu interés [esta página de INEGI](https://www.inegi.org.mx/microdatos/) te ayudará a encontrar lo que necesitas. Por ejemplo, INEGI dispone de los [microdatos del censo agropecuario 2022](https://www.inegi.org.mx/programas/ca/2022/#microdatos). Al tratar microdatos es importante que consideres las recomendaciones de seguridad de @griffiths_manual_2020.
 
 ### Precios según el **SNIIM**
 
-Me pareció interesante averiguar sobre mercados en el ámbito agropecuario mexicano. Encontré al [**SNIIM**](http://www.economia-sniim.gob.mx/nuevo/Home.aspx). Es el _Sistema Nacional de Información e Integración de Mercados_. Es un servicio que ofrece la Secretaría de Economía con el propósito de poner al alcance sel público información sobre el comportamiento de los precios al por mayor de los productos agrícolas, pecuarios y pesqueros que se comercializan en los mercados nacionales e internacionales.
+Me pareció interesante averiguar sobre mercados en el ámbito agropecuario mexicano. Encontré al [**SNIIM**](http://www.economia-sniim.gob.mx/nuevo/Home.aspx). Es el *Sistema Nacional de Información e Integración de Mercados*. Es un servicio que ofrece la Secretaría de Economía con el propósito de poner al alcance sel público información sobre el comportamiento de los precios al por mayor de los productos agrícolas, pecuarios y pesqueros que se comercializan en los mercados nacionales e internacionales.
 
-Desafortunadamente, la forma como reportan los datos en la página del **SNIIM** es un poco complicada en términos informáticos y utiliza la tecnología de Microsoft **asp.net** [véase este artículo sobre estas tecnologías](https://www.arsys.es/blog/php-o-asp-que-elijo-para-mi-web). Lo que hacen es generar en forma dinámica una tabla con la información solicitada, pero en lugar de poner los datos en una tabla directamente, producen un **iframe**, es decir ofrecen sólo una especie de _visor_ a datos que están encapsulados, aunque al desplegar el reporte producido a petición del usuario, parecería que está todo en un sólo documento que se despliega en el navegador, pero no es realmente así.
+Desafortunadamente, la forma como reportan los datos en la página del **SNIIM** es un poco complicada en términos informáticos y utiliza la tecnología de Microsoft **asp.net** [véase este artículo sobre estas tecnologías](https://www.arsys.es/blog/php-o-asp-que-elijo-para-mi-web). Lo que hacen es generar en forma dinámica una tabla con la información solicitada, pero en lugar de poner los datos en una tabla directamente, producen un **iframe**, es decir ofrecen sólo una especie de *visor* a datos que están encapsulados, aunque al desplegar el reporte producido a petición del usuario, parecería que está todo en un sólo documento que se despliega en el navegador, pero no es realmente así.
 
 Para obtener los datos y poderlos cargar a una tabla en **R**, es mejor hacer una cosulta directamente a la base de datos. Para eso necesitamos algunos datos específicos que obtendremos de los siguientes catálogos que, con un poco de maña, se pueden obtener del propio sitio del **SNIIM**, yo ya lo hice por tí y aquí están. A continuación podrás consultar estos catálogos para que contruyas peticiones a tu gusto.
 
-\ 
+ 
 
 ```{r}
 pacman::p_load(rvest, DT, dplyr, stringr, ggplot2, scales, htmltools)
@@ -484,7 +472,7 @@ cat_prod <- cat_frut |>
             
 ```
 
----
+------------------------------------------------------------------------
 
 #### Lugar de Orígen y Mercado de Destino
 
@@ -493,7 +481,7 @@ cat_lugar |>
   datatable() #options = list(pageLength = 1)) #, caption = tags$caption(style = "caption-side: top; text-align: center; font-weight: bold;", "Mercado de Destino"))
 ```
 
----
+------------------------------------------------------------------------
 
 #### Productos en los Mercados Agrícolas Nacionales
 
@@ -502,37 +490,26 @@ cat_prod |>
   datatable()
 ```
 
----
-
+------------------------------------------------------------------------
 
 \
 
-Hagamos un ejercicio con los precios del _limón sin semilla_ en Xalapa, entre las fechas 01/feb/2025 y 01/abr/2025. Para hacer esto necesitamos los siguientes datos.
+Hagamos un ejercicio con los precios del *limón sin semilla* en Xalapa, entre las fechas 01/feb/2025 y 01/abr/2025. Para hacer esto necesitamos los siguientes datos.
 
->**url base:** http://www.economia-sniim.gob.mx/nuevo/Consultas/MercadosNacionales/PreciosDeMercado/Agricolas/  \
->**escript de consulta:**ResultadosConsultaFechaFrutasYHortalizas.aspx \
->**generador de la tabla de datos:** ResultadosConsultaFechaFrutasYHortalizas.aspx\   
->**fechaInicio:** 01/01/2025\ 
->**fechaFinal:** 01/04/2025\ 
->**ProductoId** 426\ 
->**OrigenId** 30\ 
->**Origen** Veracruz\ 
->**DestinoId** 301\ 
->**Destino** Veracruz: Central de Abasto de Jalapa\ 
->**PreciosPorId** 2 (este código se refiere a kg unitario)\ 
->**RegistrosPorPagina** 500 \ 
+> **url base:** http://www.economia-sniim.gob.mx/nuevo/Consultas/MercadosNacionales/PreciosDeMercado/Agricolas/\
+> **escript de consulta:**ResultadosConsultaFechaFrutasYHortalizas.aspx\
+> **generador de la tabla de datos:** ResultadosConsultaFechaFrutasYHortalizas.aspx \
+> **fechaInicio:** 01/01/2025  **fechaFinal:** 01/04/2025  **ProductoId** 426  **OrigenId** 30  **Origen** Veracruz  **DestinoId** 301  **Destino** Veracruz: Central de Abasto de Jalapa  **PreciosPorId** 2 (este código se refiere a kg unitario)  **RegistrosPorPagina** 500  
 
 Ahora, semejante a los ejemplos anteriores, tomamos la **URL base** y, en este caso, la juntamos con la llamada al escript que se encarga de hacer la consulta a la base de datos y le ponemos una iterrogación al final. Luego hacemos la consulta que nos interesa, agregando los datos separados por el símbolo **&**. Todo en una sola larga línea. Así:
 
->[http://www.economia-sniim.gob.mx/nuevo/Consultas/MercadosNacionales/PreciosDeMercado/Agricolas/]{style="color:blue;"}[ResultadosConsultaFechaFrutasYHortalizas.aspx]{style="color:blue;"}[?]{style="color:red;"}fechaInicio=01/02/2025[&]{style="color:red;"}fechaFinal=01/04/2025[&]{style="color:red;"}ProductoId=426[&]{style="color:red;"}OrigenId=30[&]{style="color:red;"}Origen=Veracruz[&]{style="color:red;"}DestinoId=301[&]{style="color:red;"}Destino=Veracruz: Central de Abasto de Jalapa[&]{style="color:red;"}PreciosPorId= 2[&]{style="color:red;"}RegistrosPorPagina=500
+> [http://www.economia-sniim.gob.mx/nuevo/Consultas/MercadosNacionales/PreciosDeMercado/Agricolas/ResultadosConsultaFechaFrutasYHortalizas.aspx]{style="color:blue;"}[?]{style="color:red;"}fechaInicio=01/02/2025[&]{style="color:red;"}fechaFinal=01/04/2025[&]{style="color:red;"}ProductoId=426[&]{style="color:red;"}OrigenId=30[&]{style="color:red;"}Origen=Veracruz[&]{style="color:red;"}DestinoId=301[&]{style="color:red;"}Destino=Veracruz: Central de Abasto de Jalapa[&]{style="color:red;"}PreciosPorId= 2[&]{style="color:red;"}RegistrosPorPagina=500
 
-En general no conviene usar espacios entre palabras en las **URL**, así que se suelen substituir por el código **%20**. Si tu consulta llegara a fallar, esta es una cosa que podrías intentar, pero antes checa que todo se vea según tu plan. Por cierto, notarás que cada elemento de la consulta tiene un nombre de parámetro y un valor, separados por el signo "=". Normalmente esto sugiere que el orden en el que pongas las cosas no importa, salvo la parte que está antes de la interrogación. [Aquí hay algo de documentación][doc-sniim] de este servicos gubernamental.
+En general no conviene usar espacios entre palabras en las **URL**, así que se suelen substituir por el código **%20**. Si tu consulta llegara a fallar, esta es una cosa que podrías intentar, pero antes checa que todo se vea según tu plan. Por cierto, notarás que cada elemento de la consulta tiene un nombre de parámetro y un valor, separados por el signo "=". Normalmente esto sugiere que el orden en el que pongas las cosas no importa, salvo la parte que está antes de la interrogación. [Aquí hay algo de documentación](http://www.economia-sniim.gob.mx/manuales.asp) de este servicos gubernamental.
 
-[doc-sniim]:http://www.economia-sniim.gob.mx/manuales.asp
+Listo, hagamos la consulta para averiguar el patrón de precios del *limón sin semilla* en lo que va de 2025 en Xalapa, Ver.
 
-Listo, hagamos la consulta para averiguar el patrón de precios del _limón sin semilla_ en lo que va de 2025 en Xalapa, Ver.
-
-\ 
+ 
 
 ```{r}
 url_limon <- "http://www.economia-sniim.gob.mx/nuevo/Consultas/MercadosNacionales/PreciosDeMercado/Agricolas/ResultadosConsultaFechaFrutasYHortalizas.aspx?fechaInicio=01/01/2025&fechaFinal=01/04/2025&ProductoId=426&OrigenId=30&Origen=Veracruz&DestinoId=301&Destino=Veracruz:%20Central%20de%20Abasto%20de%20Jalapa&PreciosPorId=2&RegistrosPorPagina=500"
@@ -566,5 +543,3 @@ tabla_precios |>
 
 
 ```
-
-

@@ -341,5 +341,12 @@
     "title": "Otra manera de Presentar",
     "section": "Particles",
     "text": "Particles\nThis doc showcases how to use particle.js to get a nice header in your quarto document.\nlet’s dive in."
+  },
+  {
+    "objectID": "posts/2025-05-02-presentacion/index.html#para-empezar",
+    "href": "posts/2025-05-02-presentacion/index.html#para-empezar",
+    "title": "Otra manera de Presentar",
+    "section": "Para empezar",
+    "text": "Para empezar\nEn el manual de Quarto hay información sobre presentaciones"
   }
 ]
