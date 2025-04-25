@@ -1,7 +1,7 @@
 ## Preparar Linux y PostgreSQL en tu máquina Windows
 
 ### WSL
-Ahora Windows incluye la opción de habilitar una versión de linux virtual que convive con el ambiente Windows, la característica se denomina [*Windows Subsystem Linux* (**WSL**)](https://learn.microsoft.com/es-mx/windows/wsl/). Hay que habilitarlo desde el panel de control como *características de Windows* como se ilustra en la @fig-wsl, o mediante comandos desde una ventana de **Powershell** (🪟 + X; y luego I).
+Ahora Windows incluye la opción de habilitar una versión de linux virtual que convive con el ambiente Windows, la característica se denomina [*Windows Subsystem Linux* (**WSL**)](https://learn.microsoft.com/es-mx/windows/wsl/). Hay que habilitarlo desde el panel de control como *características de Windows* como se ilustra en la @fig-wsl, o mediante comandos desde una ventana de **Powershell** (🪟 + X y luego I).
 
 ![Activar WSL desde el Panel de Control de Windows](images/wsl-activar.png){#fig-wsl width=60%}
 
@@ -131,7 +131,8 @@ head(df)
 ```
 
 \ 
-¿Había algún mexicano en el Titanic? Por supuesto puedes ver esto en los datos que ya transferimos a una tabla en **R** arriba, pero para fines didácticos veamos como puedes hacer lo mismo directamente en _PostgreSQL_ con **SQL**.
+¿Había algún mexicano en el Titanic? Por supuesto puedes ver esto en los datos que ya transferimos a una tabla en **R** arriba, pero para fines didácticos veamos como puedes hacer lo mismo directamente en _PostgreSQL_ con **SQL**. Usaremos el operador `ILIKE` que permite buscar patrones de caracteres sin distinguir entre mayúsculas y minúsculas. Cosa que no hace el operado `LIKE`. [Más sobre este operador aquí](https://docs.getdbt.com/sql-reference/ilike)
+
 \ 
 
 ```{r}
@@ -144,7 +145,9 @@ dbGetQuery(connec, "SELECT name, hometown FROM passenger
 
 ```
 
+\ 
 Al terminar el procesamiento hay que cerrar la conexión, ¡práctica de seguridad estandar!
+\ 
 
 ```{r}
 
