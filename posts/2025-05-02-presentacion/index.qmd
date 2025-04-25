@@ -1,10 +1,262 @@
 ---
 title: "Otra manera de Presentar"
 author: "Miguel Equihua"
-format: revealjs
+
+date: 25-apr-2025
+
+code-fold: true  
+
+image: "img/idea-3976295_1280.png"
+
+categories: [mapas, revealjs, extensiones, diapo portada]
+
+
+format: 
+  revealjs:
+    width: 1280
+    height: 720
+    margin: 0.02
+    preview-links: true
+    css: rotating-earth/style.css 
+    chalkboard:
+      theme: chalkboard
+      boardmarker-width: 5
+      buttons: true
+      src: notas.json
+      
+    link-external-newwindow: true
+    navigation-mode: vertical
+    menu:
+      side: left
+      width: normal
+    pointer:
+      pointerSize: 18
+      color: 'red'   
+    footer: "[inicio](../../index.qmd)"
+
+revealjs-plugins:
+  - pointer
+  - attribution
+  
+
+  
+comments: 
+  hypothesis: true
 ---
 
-## Hola
+# Ir más allá de lo básico
 
-En el manual de [Quarto hay información sobre presentaciones](https://quarto.org/docs/presentations/) 
+Te sugiero:
 
+-   [Extensiones de Quarto](https://quarto.org/docs/extensions/listing-revealjs.html)
+-   [El proyecto Slidecraft 101, de Emil Hvitfeldt](https://emilhvitfeldt.com/project/slidecraft-101/#blog-posts)
+
+## Esta es la segunda Diapositiva
+
++ Contenido 1
++ Contenido 2
+
+## ¿Una gráfica con ggplot?
+
+```{r}
+#| title: graf-1
+#| echo: false
+
+suppressPackageStartupMessages(library(tidyverse))
+library(ggplot2)
+
+datos <- tibble(x = seq(0, 10, 0.1)) %>% 
+  mutate(y = sin(x) + cos(x) + 10 + rnorm(length(x)))
+
+ggplot(datos, aes(x = x, y = y)) +
+  geom_smooth(fill = "orange") +
+  xlab(label = "tiempo (segundos)") +
+  ylab(label = expression(paste("proteina (", mu, "g ", mm^-3,")")))
+```
+
+## Diapo con un bonito mapa
+
+```{r}
+library(leaflet)
+library(leaflet.extras)
+
+basemap <- leaflet() %>%
+  # ubicación y nivel de zoom
+  setView(lng = -96.942838, lat = 19.512198, zoom = 20) %>% 
+  # Añade proveedor de maa
+  addProviderTiles(
+    "OpenStreetMap",
+    # Dale un nombre a la capa
+    group = "Mapa-OpenStreet"
+  ) %>% 
+  addProviderTiles("Esri.WorldImagery", 
+                   group = "ESRI") %>% 
+  addWMSTiles(
+    "http://gaia.inegi.org.mx/NLB/tunnel/wms/wms61?",
+    layers = "Ortofotos",
+    options = WMSTileOptions(format = "image/png", transparent = TRUE),
+    attribution = "Inegi",
+    group = "Inegi-ortofoto") %>% 
+  addWMSTiles(
+    "http://gaia.inegi.org.mx/NLB/tunnel/wms/wms61?",
+    layers = "c407",
+    options = WMSTileOptions(format = "image/png", transparent = TRUE),
+    attribution = "Inegi",
+    group = "Humedad del suelo") 
+
+#%>% 
+#  addWMSLegend("http://gaia.inegi.org.mx/NLB/tunnel/wms/wms61",
+#        'REQUEST=GetLegendGraphic&VERSION=1.1.0',
+#        '&FORMAT=image/png&LAYER=c407')  
+
+
+icon.fa <- makeAwesomeIcon(icon = "bicycle", markerColor = "green",
+                           library = "fa",
+                           iconColor = "red")
+
+map_1 <- basemap %>%
+  addAwesomeMarkers(
+    lat = 19.512198,
+    lng = -96.942838,
+    label = "Starting point",
+    icon = icon.fa
+  ) %>% 
+  # Layers control
+  addLayersControl(
+    baseGroups = c(
+      "Mapa-OpenStreet",
+      "ESRI",
+      "Inegi-ortofoto",
+      "Humedad del suelo"
+    ),
+    options = layersControlOptions(collapsed = FALSE)
+  )
+
+map_1
+
+```
+
+
+# A otros temas
+
+# Poner una diapo de portada
+
+## Para personalizar la *Title Slide* puedes
+
+En orden de complejidad:
+
+-   Evitar la portada automática. No pongas ni título ni autor al encabezado **YAML** de tu documento.
+-   Usar `title-slide-attributes`.
+
+```{+yaml} 
+
+title-slide-attributes: 
+  data-background-image: /ruta/a/imágen_para_portada.png   
+  data-background-size: contain   
+  data-background-opacity: "0.5"
+```
+
+
+-   Substituir todo con `template-partials` que permite usar una plantilla `html` a tu gusto.
+
+##  {background-image="img/jaguar-2894706_1280.jpg"}
+
+```{css, echo=FALSE}
+.vline {
+  position: absolute;
+  border-left: 2px solid white;
+  margin-left: 0px;
+  top: 0;
+  height: 101.5%;
+  left: 50%;
+}
+
+.hline {
+  position: absolute;
+  border-top: 2px solid white;
+  margin-top: 0px;
+  top: 50%;
+  width: 100%;
+}
+
+.box {
+  position: absolute;
+  top: 0;
+  border: 1px solid yellow;
+  height: 101.5%;
+  width: 100%
+}
+
+```
+
+::::{.fragment}
+[texto 10, 0, 0]{style="font-size:10px; color:cyan; position: absolute; top:0em; left:0em;"}
+[texto 10, 0, 50%]{style="font-size:10px; color:cyan; position: absolute; top:0em; left:50%;"}
+[texto 10, 50%, 0]{style="font-size:10px; color:cyan; position: absolute; top:50%; left:0em;"}
+[texto 10, 100%, 100%]{style="font-size:10px; color:cyan; position: absolute; top:100%; left:93.08%;"}
+
+:::{.vline}
+:::
+:::{.hline}
+:::
+::: {.box}
+:::
+::::
+
+::::{style="margin-top:23%; line-height:0.8;"}
+:::{.fragment style="font-size:80px; color:white; text-align:center;"}
+**Jaguar**
+:::
+
+:::{.fragment style="font-size:40px; color:yellow; text-align:center;"}
+Miguel Equihua
+:::
+
+:::{.fragment style="font-size:30px; color:cyan; text-align:center;"}
+_6-agosto-2024_
+:::
+::::
+
+
+# Usar *plugins* y *extensiones*
+
+-   Por ejemplo, podemos querer tener un **puntero** disponible
+-   En `revealjs` esto requiere agregar la funcionalidad con un *plugin*
+
+## Cómo hacerlo
+
+-   En la pestaña de **consola** ejecuta el siguiente comando
+
+`quarto add quarto-ext/pointer`
+
+- Esto creará un directorio `_extensions` en la raíz de tu proyecto,
+- Dentro de `_extensions` está lo necesario para usar los *plugins* que instales.
+- Un juego completo de [diapos con un tema](https://github.com/EmilHvitfeldt/quarto-revealjs-earth?tab=readme-ov-file) 
+
+## Configuración
+
+-   Agrega esto en el encabezado de tu presentación
+
+```{+yaml} 
+title: Mi presentación 
+  format: 
+    revealjs: default
+      pointer: pointerSize: 18       
+      color: #32cd32'       
+
+revealjs-plugins:
+  - pointer`
+```
+
+## !Listo! ¿como lo usas?
+::: {.attribution}
+**Fuente:** Imagen de [edmondlafoto en Pixabay](href="https://pixabay.com/es/users/edmondlafoto-7913128/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4508682)
+:::
+
+::: {layout="[1,1]"}
+-   ahora podrás prender y apagar el apuntador con la tecla **q**
+
+![](img/zoo-4508682_1280.jpg)
+:::
+
+ 
