@@ -1,3 +1,13 @@
+
+#.quarto-title-banner {
+#    background: #999a17;
+#}
+
+#.navbar {
+#    background-color: #999a17;
+#}
+
+
 ul {
   list-style-type: disc;
 }
