@@ -1,6 +1,17 @@
 ---
-title: "¿Qúe puedo incluir en mis documentos?"
-author: "Miguel Equihua"
+title: "Nuestros Blogs"
+author: 
+  - name: "Adrian Canova Herrandiz"
+  - name: "Andrés De la Rosa Portilla"
+  - name: "Denisse Alejandra Diaz Romo"
+  - name: "Guadalupe Méndez Dewar"
+  - name: "Juan José Hernández Viveros"
+  - name: "Mordecai"
+  - name: "Nohemy Cardona Claros"
+  - name: "Ulises Zarate"
+  - name: "Vicky Delgadillo"
+  - name: "Victoria Carolina"
+
 image: "img/Image by Pete Linforth from Pixabay-ai-generated-8411278_1280.jpg"
 lang: es
 date: 28/feb/2025
