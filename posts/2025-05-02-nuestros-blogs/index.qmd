@@ -12,11 +12,11 @@ author:
   - name: "Vicky Delgadillo"
   - name: "Victoria Carolina"
 
-image: "img/Image by Pete Linforth from Pixabay-ai-generated-8411278_1280.jpg"
+image: "img/Image by Gerd Altmann from Pixabay - tree-200795_1280.jpg"
 lang: es
-date: 28/feb/2025
+date: 02/may/2025
 
-categories: [mapas, tablas, gráficas, galería]
+categories: [comunidad, participantes, ejemplos, galería]
 
 code-fold: true
 code-summary: "muestra el escript:"
@@ -30,9 +30,10 @@ format:
     toc: true
 ---
 
+
 ## Blogs de participantes
 
-Haremos una página con una galería de muestra de los blogs que estamos construyendo. Por favor comparte tus datos para poderlo hacer. Actualmente tenemos estos **Blogs** registrados.
+Haremos una página con una galería de muestra de los blogs que estamos construyendo. Por favor [comparte tus datos](https://miequiz.shinyapps.io/listaBlogs/ ) para poderlo hacer. Actualmente tenemos estos **Blogs** registrados.
 
 
 ```{r}
