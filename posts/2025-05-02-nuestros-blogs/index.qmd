@@ -1,0 +1,51 @@
+---
+title: "¿Qúe puedo incluir en mis documentos?"
+author: "Miguel Equihua"
+image: "img/Image by Pete Linforth from Pixabay-ai-generated-8411278_1280.jpg"
+lang: es
+date: 28/feb/2025
+
+categories: [mapas, tablas, gráficas, galería]
+
+code-fold: true
+code-summary: "muestra el escript:"
+fig-cap-location: top
+
+bibliography: "../references.bib"
+csl: ../apa.csl
+
+format: 
+  html:
+    toc: true
+---
+
+## Blogs de participantes
+
+Haremos una página con una galería de muestra de los blogs que estamos construyendo. Por favor comparte tus datos para poderlo hacer. Actualmente tenemos estos **Blogs** registrados.
+
+
+```{r}
+#| label: recupera-datos
+
+pacman::p_load(surveydown, flextable, dplyr, stringr)
+
+
+db <- sd_db_connect(env_file = ".env", 
+                    ignore = FALSE,
+                    gssencmode = "prefer")
+
+data <- sd_get_data(db = db)
+
+data |> 
+  mutate(blog = str_extract(url_blog, "(?<=//)(.*)(?=\\.netlify\\.app)")) |> 
+  filter(nombre != "") |>     
+  arrange(nombre) |> 
+  select(nombre, url_blog, blog) |> 
+  flextable() |> 
+  set_header_labels(nombre = "Nombre", url_blog = "URL", blog = "Blog") |> 
+  compose(j = 2, value = as_paragraph(hyperlink_text(x = blog, url = url_blog))) |> 
+  flextable::delete_columns(j = 3) |> 
+  width(j=1:2, width = c(2.5, 4))
+  
+```
+
