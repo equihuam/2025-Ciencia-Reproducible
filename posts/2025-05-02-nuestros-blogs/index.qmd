@@ -101,11 +101,10 @@ Registros sin datos
 data |>
   filter(is.na(nombre)) |> 
   select(nombre:url_blog) |> 
-  count(nombre)
+  mutate(nombre = "vacío") |> 
+  summarise(vacios = n()) |> 
+  flextable()
 
-  
-  set_header_labels(nombre = "Nombre", correo = "e-mail", 
-                    url_git = "GitHub", url_blog = "Blog")
 ```
 
 URL equivocadas
@@ -113,12 +112,10 @@ URL equivocadas
 ```{r}
 #| label: url-mal
 
-data <- sd_get_data(db = db)
-
 data |>
   filter(str_detect(url_git, "netlify") | str_detect(url_blog, "github") ) |> 
-  select(nombre:url_blog)
+  select(nombre:url_blog) |> 
   flextable() |> 
-  set_header_labels(nombre = "Nombre", correo = e-mail, 
+  set_header_labels(nombre = "Nombre", correo = "e-mail", 
                     url_git = "GitHub", url_blog = "Blog")
 ```
