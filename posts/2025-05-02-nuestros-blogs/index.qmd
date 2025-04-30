@@ -85,10 +85,12 @@ Registros sin datos
 ```{r}
 #| label: vacios
 
-data |>
+vacios <- data |>
   filter(is.na(nombre)) |> 
   select(nombre:url_blog) |> 
   summarise(vacios = n())
+
+print(paste("Registros vacíos: ", vacios))
 
 ```
 
