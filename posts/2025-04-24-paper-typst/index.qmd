@@ -48,7 +48,7 @@ Para encontrar una mejor manera de hacer su pizza favorita, Marcelo se propuso r
 </iframe>
 ```
 
-
+\ 
 
 Puedes usar instrucciones parecidas a las que siguen para leer los datos en **R**, directamente desde un documento en la nube de *Google Drive*. Nota que en este ejemplo deberás cambiar **datos** por un nombre de tu preferencia. Yo elegí **masa**.
 
@@ -64,6 +64,35 @@ masa <- read.csv(sprintf(url_drive, dat_datos_id))
 ```
 
 ------------------------------------------------------------------------
+
+\ 
+
+
+:::{.callout-tip collapse="true"}
+## Tengo mis datos en sharepoint o en OneDrive
+
+El camino es también sencillo, aunque tenxrpas que instalar la [biblioteca Microsoft365R](https://solutions.posit.co/connections/microsoft365/). Es una colección de herramientas muy potente para interactuar con la nube de Microsoft. Incluye capacidades para acceder y operar programáticamente _OneDrive_ (personal y profesional), _Sharepoint_ y _Outlook_. Una vez instalada la biblioteca podrás hacer esto.
+
+\ 
+
+```{r}
+
+library(Microsoft365R)
+
+archivo <- "M3-estadística/Datos/masa-para-pizza.txt"
+
+# Autoriza el acceder a mi cuenta de OneDrive
+od <- get_personal_onedrive()
+
+# Accedo al archivo de interés
+datos_od <- od$load_dataframe(archivo, show_col_type = FALSE)
+
+```
+
+
+:::
+
+\ 
 
 ::: {style="color:GoldenRod"}
 1.  ¿Diseño experimental?
