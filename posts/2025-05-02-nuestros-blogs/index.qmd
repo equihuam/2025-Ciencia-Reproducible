@@ -144,6 +144,21 @@ if (length(url_err) > 0)
 }
 
 ```
+\ 
+\ 
 
+### Opiniones
 
+\ 
 
+```{=html}
+<iframe 
+  src="https://docs.google.com/forms/d/e/1FAIpQLSfwhhNegX8-R6jfCSnvZwUfabBNIUIb4fqxESnZKHYrDTnj-g/viewform?embedded=true" 
+  width="800" 
+  height="1600" 
+  frameborder="0" 
+  marginheight="0" 
+  marginwidth="0">
+  Cargando…
+</iframe>
+```
