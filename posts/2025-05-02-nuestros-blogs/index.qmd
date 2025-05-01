@@ -39,72 +39,111 @@ Haremos una página con una galería de muestra de los blogs que estamos constru
 ```{r}
 #| label: recupera-datos
 
-pacman::p_load(surveydown, flextable, dplyr, stringr)
+pacman::p_load(surveydown, flextable, dplyr, stringr, glue)
 
 
-db <- sd_db_connect(env_file = ".env", 
+  db <- sd_db_connect(env_file = ".env", 
                     ignore = FALSE,
                     gssencmode = "prefer")
 
 data <- sd_get_data(db = db)
 
+data$url_git <- if_else(!is.na(data$url_git), 
+                        paste0(data$url_git, "/issues"), NA)
+
+	
+
 data |> 
-  mutate(blog = str_extract(url_blog, "(?<=//)(.*)(?=\\.netlify\\.app)")) |> 
+  mutate(blog = str_extract(url_blog, 
+                  "(?<=//)(.*)(?=\\.netlify\\.app)"),
+         git = str_extract(url_git, 
+                  "(?<=https://github.com/)(.*)"),
+         url_git = if_else(!is.na(data$url_git), 
+                           paste0(data$url_git, "/issues"), NA),
+         git = str_replace(git, "\\w*/", ""),
+         git = str_replace(git, "/issues", "")) |> 
   filter(nombre != "") |>     
   arrange(nombre) |> 
-  select(nombre, url_blog, blog) |> 
+  select(nombre, git, url_git, blog, url_blog) |> 
   flextable() |> 
-  set_header_labels(nombre = "Nombre", url_blog = "URL", blog = "Blog") |> 
-  compose(j = 2, value = as_paragraph(hyperlink_text(x = blog, url = url_blog))) |> 
-  flextable::delete_columns(j = 3) |> 
+  set_header_labels(nombre = "Nombre", git = "Github", blog = "Blog") |> 
+  compose(j = 2, value = as_paragraph(hyperlink_text(x = git, url = url_git))) |> 
+  compose(j = 4, value = as_paragraph(hyperlink_text(x = blog, url = url_blog))) |> 
+  flextable::delete_columns(j = c(3, 5)) |> 
   width(j=1:2, width = c(2.5, 4))
   
 ```
 
 
-Algunas inconsistencias en el registro
+## Inconsistencias en el registro
 
-Repeticiones
+### Registros repetidos
 
 ```{r}
 #| label: repetidos
+#| tbl-cap: Registros repetidos
+#| attr-output: "style='font-size: 1.0em'"
 
-data |>
+repet <- data |>
   filter(!is.na(nombre)) |> 
   group_by(nombre) |>
   filter(n() > 1) |>
   ungroup() |> 
-  select(nombre:url_blog) |> 
-  flextable() |> 
-  set_header_labels(nombre = "Nombre", correo = "e-mail", 
-                    url_git = "GitHub", url_blog = "Blog")
+  select(nombre:url_blog)
+
+if (length(repet$nombre) > 0)
+{
+  repet |> 
+    flextable() |> 
+    set_header_labels(nombre = "Nombre", correo = "e-mail", 
+                      url_git = "GitHub", url_blog = "Blog")
+} else {
+    cat("No hay registros repetidos\n")
+}
+
 ```
 
-Registros sin datos
+### Registros sin datos
 
-```{r}
+```{r}  
 #| label: vacios
+#| attr-output: "style='font-size: 1.0em'"
 
 vacios <- data |>
   filter(is.na(nombre)) |> 
   select(nombre:url_blog) |> 
   summarise(vacios = n())
 
-print(paste("Registros vacíos: ", vacios))
-
+if (vacios == 1)
+{  cat(glue("Hay {vacios} registro vacío.  "))
+} else {
+  cat(glue("Hay {vacios} registros vacíos.  "))
+}
 ```
 
-URL equivocadas
+### URL equivocadas
 
 ```{r}
 #| label: url-mal
 
 data <- sd_get_data(db = db)
 
-data |>
+url_err <- data |>
   filter(str_detect(url_git, "netlify") | str_detect(url_blog, "github") ) |> 
-  select(nombre:url_blog) |> 
-  flextable() |> 
-  set_header_labels(nombre = "Nombre", correo = "e-mail", 
-                    url_git = "GitHub", url_blog = "Blog")
+  select(nombre:url_blog)
+
+if (length(url_err) > 0)
+{
+  url_err |> 
+    flextable(col_keys = c("nombre", "url_git", "url_blog")) |> 
+    set_header_labels(nombre = "Nombre", 
+                      url_git = "GitHub", 
+                      url_blog = "Blog")
+} else {
+    cat("No se detectaron fallas en el registro de URL")
+}
+
 ```
+
+
+
