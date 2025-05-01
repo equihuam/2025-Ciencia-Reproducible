@@ -71,7 +71,7 @@ masa <- read.csv(sprintf(url_drive, dat_datos_id))
 :::{.callout-tip collapse="true"}
 ## Tengo mis datos en sharepoint o en OneDrive
 
-El camino es también sencillo, aunque tenxrpas que instalar la [biblioteca Microsoft365R](https://solutions.posit.co/connections/microsoft365/). Es una colección de herramientas muy potente para interactuar con la nube de Microsoft. Incluye capacidades para acceder y operar programáticamente _OneDrive_ (personal y profesional), _Sharepoint_ y _Outlook_. Una vez instalada la biblioteca podrás hacer esto.
+El camino es también sencillo, aunque tendrás que instalar la [biblioteca Microsoft365R](https://solutions.posit.co/connections/microsoft365/). Esta es una colección de herramientas muy potente para interactuar con la nube de Microsoft. Incluye capacidades para acceder y operar programáticamente a _OneDrive_ (personal y profesional), _Sharepoint_ y _Outlook_. Una vez instalada la biblioteca podrás hacer esto.
 
 \ 
 
@@ -79,13 +79,15 @@ El camino es también sencillo, aunque tenxrpas que instalar la [biblioteca Micr
 
 library(Microsoft365R)
 
-archivo <- "M3-estadística/Datos/masa-para-pizza.txt"
+archivo <- "M3-estadística/Datos/masa-para-pizza.csv"
 
-# Autoriza el acceder a mi cuenta de OneDrive
+# Autoriza el acceso a mi cuenta de OneDrive
 od <- get_personal_onedrive()
 
 # Accedo al archivo de interés
 datos_od <- od$load_dataframe(archivo, show_col_type = FALSE)
+
+flextable::flextable(datos_od, cwidth = 1)
 
 ```
 
