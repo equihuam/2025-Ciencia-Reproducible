@@ -7,10 +7,19 @@
 #    background-color: #999a17;
 #}
 
+# p {
+#  text-align: justify
+#}
 
 ul {
-  list-style-type: disc;
+  list-style-image: url("./Plant icons created by Icongeek26 - Flaticon-rubber-plant.png);
+  margin-left: 40px;
 }
+
+
+# ul {
+#  list-style-type: disc;
+#}
 
 ul ul {
   list-style-type: circle;
