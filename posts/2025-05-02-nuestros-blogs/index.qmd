@@ -132,7 +132,7 @@ url_err <- data |>
   filter(str_detect(url_git, "netlify") | str_detect(url_blog, "github") ) |> 
   select(nombre:url_blog)
 
-if (length(url_err) > 0)
+if (length(url_err) == 0)
 {
   url_err |> 
     flextable(col_keys = c("nombre", "url_git", "url_blog")) |> 
@@ -149,7 +149,21 @@ if (length(url_err) > 0)
 
 ### Opiniones
 
-Sigue una encuesta hecha en _Google forma_, que estoy vinculando aquí con la tecnología de **iframe**, es 
+Sigue una encuesta hecha en _Google forma_, que estoy vinculando aquí como un recurso **iframe**. Lo que hice fue crear el formato en _Google forms_ de la manera usual y obtener allá el código mediante la opción **Incorporar HTML** que encontré en _opciones_ (los puntitos arriba a la izquierda en el sitio). Lo  siguiente es poner esas líneas en un bloque de código _html_ así:
+\ 
+
+```html
+<iframe 
+  src="https://docs.google.com/forms/d/e/1FAIpQLSfwhhNegX8-R6jfCSnvZwUfabBNIUIb4fqxESnZKHYrDTnj-g/viewform?embedded=true" 
+  width="800" 
+  height="1600" 
+  frameborder="0" 
+  marginheight="0" 
+  marginwidth="0">
+  Cargando…
+</iframe>
+```
+
 \ 
 
 ```{=html}
