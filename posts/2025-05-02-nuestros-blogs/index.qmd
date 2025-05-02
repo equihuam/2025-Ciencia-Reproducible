@@ -42,7 +42,7 @@ Haremos una página con una galería de muestra de los blogs que estamos constru
 pacman::p_load(surveydown, flextable, dplyr, stringr, glue)
 
 
-  db <- sd_db_connect(env_file = ".env", 
+db <- sd_db_connect(env_file = ".env", 
                     ignore = FALSE,
                     gssencmode = "prefer")
 
@@ -149,6 +149,7 @@ if (length(url_err) > 0)
 
 ### Opiniones
 
+Sigue una encuesta hecha en _Google forma_, que estoy vinculando aquí con la tecnología de **iframe**, es 
 \ 
 
 ```{=html}
