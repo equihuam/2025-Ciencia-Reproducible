@@ -12,7 +12,7 @@ fig-cap-location: top
 
 ## Descompuse archivos clave
 
-Como ya nos pasó, puede ser que eches a perder tu archivo _index.qmd_ en la raíz de tu proyecto. Ese documento se encarga de construir la estructura general de tu _blog_, defina la llamada **landing page** de tu proyecto, la cara del primer contacto de tu blog. Ojalá hayas echo un **commit** inicial justo acabando de crear tu proyecto. Si fuiste así de sabia o sabio, todo lo que tienes que hacer es buscar el archivo en cuestión y recuperarlo. **Github desktop** será tu amigo para eso o en la ventana de comandos de _RStudio_, la instrucció `git restore`, ve la sección siguiente.
+Como ya nos pasó, puede ser que eches a perder tu archivo _index.qmd_ en la raíz de tu proyecto. Ese documento se encarga de construir la estructura general de tu _blog_. Es la que define la llamada **landing page** de tu proyecto, la cara del primer contacto de tu blog. Ojalá hayas echo un **commit** inicial justo acabando de crear tu proyecto. Si fuiste así de sabia o sabio, todo lo que tienes que hacer es buscar el archivo en cuestión y recuperarlo. **Github desktop** será tu amigo para eso o en la ventana de comandos de _RStudio_, la instrucció `git restore`, ve la sección siguiente.
 
 Por si ocurriera un accidente de este tipo y no hubiera nada más que hacer pongo aquí las líneas generales que suele tener este archivo, cópialas en caso de emergencia y substituye todo lo que tengas en el archivo dañado (si pusiste cosas muy importantes que quiere conservar, haz una copia y haz la reparación en una de ellas. ¡Suerte!
 

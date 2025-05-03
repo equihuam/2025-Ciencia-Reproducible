@@ -200,7 +200,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="descompuse-archivos-clave" class="level2">
 <h2 class="anchored" data-anchor-id="descompuse-archivos-clave">Descompuse archivos clave</h2>
-<p>Como ya nos pasó, puede ser que eches a perder tu archivo <em>index.qmd</em> en la raíz de tu proyecto. Ese documento se encarga de construir la estructura general de tu <em>blog</em>, defina la llamada <strong>landing page</strong> de tu proyecto, la cara del primer contacto de tu blog. Ojalá hayas echo un <strong>commit</strong> inicial justo acabando de crear tu proyecto. Si fuiste así de sabia o sabio, todo lo que tienes que hacer es buscar el archivo en cuestión y recuperarlo. <strong>Github desktop</strong> será tu amigo para eso o en la ventana de comandos de <em>RStudio</em>, la instrucció <code>git restore</code>, ve la sección siguiente.</p>
+<p>Como ya nos pasó, puede ser que eches a perder tu archivo <em>index.qmd</em> en la raíz de tu proyecto. Ese documento se encarga de construir la estructura general de tu <em>blog</em>. Es la que define la llamada <strong>landing page</strong> de tu proyecto, la cara del primer contacto de tu blog. Ojalá hayas echo un <strong>commit</strong> inicial justo acabando de crear tu proyecto. Si fuiste así de sabia o sabio, todo lo que tienes que hacer es buscar el archivo en cuestión y recuperarlo. <strong>Github desktop</strong> será tu amigo para eso o en la ventana de comandos de <em>RStudio</em>, la instrucció <code>git restore</code>, ve la sección siguiente.</p>
 <p>Por si ocurriera un accidente de este tipo y no hubiera nada más que hacer pongo aquí las líneas generales que suele tener este archivo, cópialas en caso de emergencia y substituye todo lo que tengas en el archivo dañado (si pusiste cosas muy importantes que quiere conservar, haz una copia y haz la reparación en una de ellas. ¡Suerte!</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Título de inicio en tu blog "</span></span>
@@ -698,7 +698,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","openEffect":"zoom","loop":false,"closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","openEffect":"zoom","loop":false,"descPosition":"bottom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
