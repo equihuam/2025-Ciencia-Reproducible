@@ -21,8 +21,13 @@ p {
   text-align: justify
 }
 
+/* cada "ul"" implica un nuevo subnivel */
 .planta ul {
   list-style-image: url("https://github.com/equihuam/2025-Ciencia-Reproducible/blob/main/images/Plant%20icons%20created%20by%20Icongeek26%20-%20Flaticon-rubber-plant-16.png?raw=true")
+}
+
+.planta ul ul {
+  list-style-image: url("https://github.com/equihuam/2025-Ciencia-Reproducible/blob/main/images/gloves_gardening_utensils_icon_146742-16px.png?raw=true")
 }
 
 

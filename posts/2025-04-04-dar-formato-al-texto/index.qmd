@@ -162,11 +162,19 @@ variante te sientes más cómoda o cómodo?
 Lo usual es que las listas lleven al inicio alguna marca que las distinga, un disco, círculo, cuadro, etc. Pero que tal si en lugar de eso quisieras poner una imágen. Lo puedes lograr definiendo el formato en el archivo **style.css** que usualmente tenemos en la raíz del proyecto. Agrega, por ejemplo, estas líneas.
 
 ```css
+/* cada "ul"" implica un nuevo subnivel */
+
 .planta ul {
   list-style-image: url("https://github.com/equihuam/2025-Ciencia-Reproducible/blob/main/images/Plant%20icons%20created%20by%20Icongeek26%20-%20Flaticon-rubber-plant-16.png?raw=true")
 }
 
+.planta ul ul {
+  list-style-image: url("https://github.com/equihuam/2025-Ciencia-Reproducible/blob/main/images/gloves_gardening_utensils_icon_146742-16px.png?raw=true")
+}
+
+
 ```
+Las imágenes indicadas en la url podrían estar en mi equipo, pero yo aquí puse la liga a lo que subí a Github, de manera que si copias lo de arriba directamente te funcionará. En todo caso podrías bajar el archivo de la imágen que te guste y poner la ruta en tu máquina para que quede alo así: `url(images/rubber-plant-16.png)`. El caso es que puedes usar cualquier imágen que quieras, lo único que hice es escalarla para que tuviera un tamaña de 16x16 pixeles, en este caso.
 
 Luego, para usar ese formato que has definido pondrás, en donde lo desees algo como esto.
 
@@ -174,18 +182,31 @@ Luego, para usar ese formato que has definido pondrás, en donde lo desees algo 
 
 :::{.planta}
 - uno
+  - A
+  - B
 - dos
 - tres
 :::
 
 ```
-Se verá así
+
+Se verá así cuando lo _renderices_
 
 :::{.planta}
+
 - uno
+  - A
+  - B
 - dos
 - tres
+
 ::: 
+
+
+Hay muchos sitios de íconos en la web. No olvides acreditar según te lo indiquen. Créditos de los íconos que acabo de usar:
+
+- [guante - diseño de Laura Todd](https://icon-icons.com/icon/gloves-gardening-utensils/146742)
+- [planta - Creado por Icongeek26](https://www.flaticon.com/free-icon/rubber-plant_4584065)
 
 
 ## Identificadores fijos
