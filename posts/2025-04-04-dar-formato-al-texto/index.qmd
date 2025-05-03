@@ -6,7 +6,7 @@ lang: es
 
 draft: false
 
-categories: [div, fences, pestañas, cajas]
+categories: [div, fences, pestañas, cajas, estilo texto, referencias cruzadas, extensiones]
 image: img/magnifying-glass-541626_1280.jpg
 
 cap-location: top
@@ -328,6 +328,7 @@ fig <- fig %>%
     maxdepth = 3,
     domain = list(column = 1)
   ) 
+
 fig <- fig %>%
   layout(autosize=F, width = 700, height = 450, 
          grid = list(columns =2, rows = 1),
@@ -338,7 +339,7 @@ fig <- fig %>%
                               "#B6E880"),
       extendsunburstcolors = TRUE)
 ```
-:::
+::: 
 
 ::: {layout="[-1,5,-1]"}
 ```{r}
