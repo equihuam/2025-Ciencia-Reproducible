@@ -181,12 +181,6 @@ Sigue una encuesta hecha en _Google forma_, que estoy vinculando aquí como un r
 ```
 
 
-- uno
-- dos
-- tres
-
- 
-
 ```r
 pacman::p_load(flextable)
 

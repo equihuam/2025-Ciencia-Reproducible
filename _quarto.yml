@@ -19,7 +19,7 @@ website:
 
 format:
   html:
-    theme: default
+    theme: Yeti 
     css: styles.css
     lightbox: true
   pdf: 

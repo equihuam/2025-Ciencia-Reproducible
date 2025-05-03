@@ -157,6 +157,37 @@ variante te sientes más cómoda o cómodo?
 
 \ 
 
+## Texto destacado con _balitas_
+
+Lo usual es que las listas lleven al inicio alguna marca que las distinga, un disco, círculo, cuadro, etc. Pero que tal si en lugar de eso quisieras poner una imágen. Lo puedes lograr definiendo el formato en el archivo **style.css** que usualmente tenemos en la raíz del proyecto. Agrega, por ejemplo, estas líneas.
+
+```css
+.planta ul {
+  list-style-image: url("https://github.com/equihuam/2025-Ciencia-Reproducible/blob/main/images/Plant%20icons%20created%20by%20Icongeek26%20-%20Flaticon-rubber-plant-16.png?raw=true")
+}
+
+```
+
+Luego, para usar ese formato que has definido pondrás, en donde lo desees algo como esto.
+
+```text
+
+:::{.planta}
+- uno
+- dos
+- tres
+:::
+
+```
+Se verá así
+
+:::{.planta}
+- uno
+- dos
+- tres
+::: 
+
+
 ## Identificadores fijos
 
 *Quarto* tiene prevista toda una colección de identificadores para
