@@ -109,7 +109,7 @@ usar valores negativos para *abrir espacios* entre columnas. El
 resultado se ve así:
 
 ::: {layout="[1,1]" style="color:green;"}
-Párafo 1 con algunas ideas muy sabias. Lorem ipsum dolor sit amet,
+Párrafo 1 con algunas ideas muy sabias. Lorem ipsum dolor sit amet,
 consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
 et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
 exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -137,7 +137,7 @@ Párrafo 2 para explicar lo sabio del párrafo...
 
 ::::: {.columns style="color:blue;"}
 ::: {.column width="40%"}
-Párafo 1 con algunas ideas muy sabias. Lorem ipsum dolor sit amet,
+Párrafo 1 con algunas ideas muy sabias. Lorem ipsum dolor sit amet,
 consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
 et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
 exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
