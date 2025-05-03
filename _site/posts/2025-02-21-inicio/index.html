@@ -598,95 +598,6 @@ Finalmente ¿Cómo quedá todo organizado?
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Arruiné mi <strong>Blog</strong> ¡¡¡¡Ayuda!!!!
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<section id="descompuse-archivos-clave" class="level4">
-<h4 class="anchored" data-anchor-id="descompuse-archivos-clave">Descompuse archivos clave</h4>
-<p>Como ya nos pasó, puede ser que eches a perder tu archivo <em>index.qmd</em> en la raíz de tu proyecto. Ese documento se encarga de construir la estructura general de tu <em>blog</em>. Ojalá hayas echo un <strong>commit</strong> inicial justo acabando de crear tu proyecto. Si fuiste así de sabia o sabio, todo lo que tienes que hacer es buscar el archivo en cuestión y recuperarlo. <strong>Github desktop</strong> será tu amigo para eso.</p>
-<p>Por si ocurriera un accidente de este tipo y no hubiera nada más que hacer pongo aquí las líneas generales que suele tener este archivo, cópialas en caso de emergencia y substituye todo lo que tengas en el archivo dañado (si pusiste cosas muy importantes que quiere conservar, haz una copia y haz la reparación en una de ellas. ¡Suerte!</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Título de inicio en tu blog "</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="an">listing:</span><span class="co">    </span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co">  contents: posts</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co">  sort: "date desc"</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co">  type: default</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co">  categories: cloud</span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co">  sort-ui: false</span></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="co">  filter-ui: false</span></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="an">page-layout:</span><span class="co"> full</span></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="an">title-block-banner:</span><span class="co"> true</span></span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Recuerda sólo hacer lo escencial en los documentos en la raíz de tu proyecto: el nombre de tu blog, título inicial y cosas así. No hagas más de lo indispensable en los archivos <strong>index.qmd</strong> y <strong>_quarto.yml</strong> que están en esta ubicación. Toda tu creatividad debes expresarla dentro de subcarpetas contenidas en la carpeta <strong>posts</strong>.</p>
-</section>
-<section id="eché-a-perder-mi-blog-pero-tengo-una-versión-buena-en-git" class="level4">
-<h4 class="anchored" data-anchor-id="eché-a-perder-mi-blog-pero-tengo-una-versión-buena-en-git">!Eché a perder mi blog, pero tengo una versión buena en git!</h4>
-<p>Lo primero es !serenidad y paciencia! Toda la idea de usar <a href="https://git-scm.com/book/en/v2"><em>git</em></a> es para estos casos. Claro, podrías volverte experta o experto en su uso más profesional mediante comandos, <a href="https://www.epirhandbook.com/es/new_pages/collaboration.es.html">ojalá te animes</a>. Pero por lo pronto hagámoslo con lo que ya tenemos a la mano. Veamos algunos escenarios posibles:</p>
-<ol type="1">
-<li><p>Un escenario muy sencillo es cuando estas actualizando un documento que ya pusiste en el registro de <em>git</em>. Intentas <em>renderizarlo</em> y para tu sorpresa, ¡falla de manera inexplicable! Para colmo, hiciste un montón de cambios que ya ni te acuerdas. Eso sí, estas seguro o segura de que tu última versión, a la que le hiciste un <em>commit</em>, sí funcionaba, no a tu gusto completo, pero no se trababa como el que ahora te tiene de malas. En este caso, busca en la pestaña de <em>git</em> en <em>RStudio</em> el arhivo que estás trabajando, imagino un <strong>index.qmd</strong> en un folder dentro de la carpeta <strong>posts</strong>. Seleccionalo y aprieta el botón derecho del mouse. En las ventanita emergente encontrarás la palabra <em>revert…</em>. ¡Eso es!, dale click y recuperará el arhivo de la últia versión que resguardaste con un <em>commit</em>. ¡Listo!, estás de regreso y ahora puedes volver a empezar, con más cuidado y mejores ideas.</p></li>
-<li><p>Otro caso es cuando has sido muy diligente y has echo todo bien. Haces cambios a tu gusto y cada vez que lo sientes apropiado has echo tus <em>commits</em>. Te vas por un tesito, cambias de humor, trabajas en otra parte de tu <strong>blog</strong> y haces commit a tus nuevos cambios. De pronto, un rayo de inspiración, te hace comprender que lo que hiciste al principio del día no era buena ideas, te arrepientes y quieres regresar a una versión que está seis o diez <em>commits</em> atras, sabes a donde te gustaría regresar pues anotaste un mensaje alusivo que te recuerda claramente el estado del documento que quieres retomar como inicio. ¿Cómo puedes viajar hacia atras en el tiempo a ese preciso momento? Bueno, hacer esto es relativamente sencillo con el comando <a href="https://git-scm.com/docs/git-restore"><code>git restore</code></a> que puede rescatarte desde la <em>terminal</em> de <em>RStudio</em>. Las indicaciones <em>–source</em> y <em>main~x</em> van de cajón (la <strong>x</strong> toma el valor de cuantos <em>commits</em> atras hay que ir en la rama <strong>main</strong>), y terminas con la ruta al archivo de tu interés, en este ejemplo <em>posts/primer-ejemplo/index.qmd</em>.</p></li>
-</ol>
-<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> restore <span class="at">--source</span> main~5 posts/primer-ejemplo/index.qmd</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a> </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[1,1]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p>Otra opción para identificar el <em>commit</em> preciso de mi interés es poner enseguida de <em>–source</em> una parte reconocible en forma única de la firma hash <em>SHA</em> de 40 caracteres, que identifica en forma exacta a cada <em>commit</em>, y que puedes encontrar con la opción <em>History</em> en la pestaña <em>git</em>.</p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-right">
-<figure class="figure">
-<p><a href="images/restaurar-a-un-commit-dado.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16"><img src="images/restaurar-a-un-commit-dado.png" class="img-fluid quarto-figure quarto-figure-right figure-img" width="200"></a></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> restore <span class="at">--source</span> cc12d23841a  posts/primer-ejemplo/index.qmd</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Como por arte de magia, estás de regreso en el documento solicitado. Quizás <em>RStudio</em> te advierta que hubo cambios y te pida le des indicaciones, lee con cuidado lo que te diga y responde adecuadamente. ¡Listo!</p>
-</section>
-<section id="como-evitar-arriesgar-mi-blog-a-cada-commit" class="level4">
-<h4 class="anchored" data-anchor-id="como-evitar-arriesgar-mi-blog-a-cada-commit">¿Como Evitar arriesgar mi <strong>blog</strong> a cada commit?</h4>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[1,1]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p>Una manera de trabajar con más tranquilidad en tu <strong>blog</strong> es otra vez recurriendo a la ayuda que ofrece <em>git</em>. Te sugiero evitar trabajar el desarrollo de tus ideas directamente sobre la rama <em>main</em> o la que sea tu rama <strong>principal/publicación/producción</strong>. La idea es que cuando estes planeado algo nuevo crees una rama nueva o si ya tienes una y está en la misma cosa, seleccionala como la rama activa.</p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-right">
-<figure class="figure">
-<p><a href="images/git-rama-nueva.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17"><img src="images/git-rama-nueva.png" class="img-fluid quarto-figure quarto-figure-right figure-img" width="200"></a></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<p>Asegurate de que la rama del nuevo desarrollo sea la activa. Como recordarás, la publicación de tu <strong>blog</strong> ocurre a través de <em>Netlify</em> <strong>exclusivamenre con lo que pongas en la rama <em>main</em>.</strong>. Así que todo lo que hagas en la nueva rama no pasará a publicación en tu <strong>blog</strong>, sólo lo podrás ver localmente cuando hagas <em>render</em>, será una especie de borrador. Cuando todo esté a tu gusto y ya lo quieras publicar tienes que combinar el contenido de la rama en la que has estado trabajando con la rama <em>main</em>. Para hacerlo hay que seguir estos pasos:</p>
-<ol type="1">
-<li>Cambia el espacio de trabajo en <em>git</em> a la rama <em>main</em>.</li>
-<li>En la pestaña de <strong>terminal</strong> de <em>RStudio</em>. Indicale a <em>git</em> que jale para combinar <em>la_rama_alterna_con_mi_trabajo</em>. Escribe para esto los siguientes comandos de <em>git</em> en la pestaña de <strong>terminal</strong>:</li>
-</ol>
-<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge la_rama_alterna_con_mi_trabajo</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Como podrás imaginar, <a href="https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging">el proceso requiere verificar muchas cosas</a>, lo cual hace <em>git</em> por ti. Normalmente y si te portaste bien, la fusión de las ramas debe ocurrir sin tropiezos. Si hubiera dificultades, <em>git</em> te lo hará saber. Basicamente lo que hará es indicarte que hay cambios contradictorios. Es decir, hiciste cambios tú, al mismo archivo en las dos ramas, así que no se puede decidir cuál es el cambio que hay que conservar sin preguntarte a ti que es lo que prefieres. En tal caso, veras los archivos inconsistentes marcados con una etiqueta naranja y tendrás que revisarlos para que tú resuelvas directamente lo conducente. Puede ser que haya archivos que en realidad no cambiaste tú directamente, como serían los que se producen automáticamente en <strong>_site</strong> y que sólo arrastrán las consecuencias de tus cambios. De esos no te preocupes, se renovarán cuando hayas resuelto los importantes, que seguramente son los que tienes en <strong>posts</strong>, o algún detallito que arreglaste en los archivos general en la raíz de tu proyecto.</p>
-</section>
-</div>
-</div>
-</div>
 
 
 </section>
@@ -1114,7 +1025,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"loop":false,"selector":".lightbox","openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","descPosition":"bottom","loop":false,"closeEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
