@@ -14,7 +14,6 @@ code-summary: "muestra el escript:"
 categories: [estadística, reporte, artículo]
 format:
   html: default
-    
 ---
 
 ## Preparación de la Masa
@@ -36,7 +35,6 @@ Para encontrar una mejor manera de hacer su pizza favorita, Marcelo se propuso r
 
 [Descargar los datos en formato de texto simple](masa-para-pizza.txt) o [Utiliza este vínculo para otenerlo de Google Drive](https://drive.google.com/file/d/1uVUOqwobv67E5xTsSSxjg9f9qypW-aIS/view?usp=sharing)
 
-
 ```{=html}
 <iframe 
         src="https://drive.google.com/embeddedfolderview?id=1R63QN1N3r4n-aR2lL7OKnwMEfnNnRmd7"
@@ -48,7 +46,7 @@ Para encontrar una mejor manera de hacer su pizza favorita, Marcelo se propuso r
 </iframe>
 ```
 
-\ 
+ 
 
 Puedes usar instrucciones parecidas a las que siguen para leer los datos en **R**, directamente desde un documento en la nube de *Google Drive*. Nota que en este ejemplo deberás cambiar **datos** por un nombre de tu preferencia. Yo elegí **masa**.
 
@@ -65,15 +63,14 @@ masa <- read.csv(sprintf(url_drive, dat_datos_id))
 
 ------------------------------------------------------------------------
 
-\ 
+ 
 
-
-:::{.callout-tip collapse="true"}
+::: {.callout-tip collapse="true"}
 ## Tengo mis datos en sharepoint o en OneDrive
 
-El camino es también sencillo, aunque tendrás que instalar la [biblioteca Microsoft365R](https://solutions.posit.co/connections/microsoft365/). Esta es una colección de herramientas muy potente para interactuar con la nube de Microsoft. Incluye capacidades para acceder y operar programáticamente a _OneDrive_ (personal y profesional), _Sharepoint_ y _Outlook_. Una vez instalada la biblioteca podrás hacer esto.
+El camino es también sencillo, aunque tendrás que instalar la [biblioteca Microsoft365R](https://solutions.posit.co/connections/microsoft365/). Esta es una colección de herramientas muy potente para interactuar con la nube de Microsoft. Incluye capacidades para acceder y operar programáticamente a *OneDrive* (personal y profesional), *Sharepoint* y *Outlook*. Una vez instalada la biblioteca podrás hacer esto.
 
-\ 
+ 
 
 ```{r}
 
@@ -90,11 +87,9 @@ datos_od <- od$load_dataframe(archivo, show_col_type = FALSE)
 flextable::flextable(datos_od, cwidth = 1)
 
 ```
-
-
 :::
 
-\ 
+ 
 
 ::: {style="color:GoldenRod"}
 1.  ¿Diseño experimental?
@@ -116,13 +111,11 @@ La tarea consiste en que preparas un reporte con el formato de un artículo y qu
 
 > `quarto use template kazuyanagimoto/quarto-academic-typst`
 
-Una ves que lo hayas instalado aparecerá un nuevo directorio en la raíz de tu proyecto con el nombre `_extensions` y también un archivo que te servira de *templete* con el nombre *template-full.qmd*, otro con los datos de las referencias: *references.bib* y un directorio *img*. Muévelos todos por favor a *posts*, a un subdirectorio apropiado para que mantengas el orden de tu trabajo. Para que experimentes un poco sobre la flexibilidad de lo que estamos haciendo, agrega lo siguiente en la sección de formato del *encabezado yaml* del *templete*, arribita de *academic-typst*. Hay un directorio con fonts que te hará falta si quieres usar el _templete_ tal y como está, aunque realmente no es indispensable. Los fonts los puedes descargar con el botón.
-
+Una ves que lo hayas instalado aparecerá un nuevo directorio en la raíz de tu proyecto con el nombre `_extensions` y también un archivo que te servira de *templete* con el nombre *template-full.qmd*, otro con los datos de las referencias: *references.bib* y un directorio *img*. Muévelos todos por favor a *posts*, a un subdirectorio apropiado para que mantengas el orden de tu trabajo. Para que experimentes un poco sobre la flexibilidad de lo que estamos haciendo, agrega lo siguiente en la sección de formato del *encabezado yaml* del *templete*, arribita de *academic-typst*. Hay un directorio con fonts que te hará falta si quieres usar el *templete* tal y como está, aunque realmente no es indispensable. Los fonts los puedes descargar con el botón.
 
 {{< downloadthis static.zip dname="static" label="Descarga los fonts en el zip" >}}
 
-\  
-
+ 
 
 ``` =text
 format:
@@ -130,21 +123,18 @@ format:
      docx: default
 ```
 
-La idea es que experimentes con la preparación de un reporte técnico con *Quarto*. Ejercita también la inclusión de [referencias bibliográficas](https://quarto.org/docs/authoring/citations.html). En el encabezado del reporte te sugiero [cambiar el formato de la bibliografia para compatibilidad con typst](https://typst.app/docs/reference/model/bibliography/#parameters-style), de *chicago* a **APA**. Para eso substituye la frase en **bibliographystyle:** a que diga "american-psychological-association", en lugar de "chicago-author-date" que es lo que tiene el *templete*. Para agregar referencias y para buscarlas en internet resulta muy cómoda la opción de insertar referencias que ofrece *RStudio* en su modo visual (@fig-citas). Otra herramienta para esto mismo es [Zotero](https://www.zotero.org/), que se puede usar para cosechar referencias de internet y vincularlas a _Quarto_ e incluso para capturarlas manualmente. La sección de referencias puede personalizarse con un *divo* así:
+La idea es que experimentes con la preparación de un reporte técnico con *Quarto*. Ejercita también la inclusión de [referencias bibliográficas](../2025-04-24-bibliografia/index.qmd). En el encabezado del reporte te sugiero [cambiar el formato de la bibliografia para compatibilidad con typst](https://typst.app/docs/reference/model/bibliography/#parameters-style), de *chicago* a **APA**. Para eso substituye la frase en **bibliographystyle:** a que diga "american-psychological-association", en lugar de "chicago-author-date" que es lo que tiene el *templete*. Para agregar referencias y para buscarlas en internet resulta muy cómoda la opción de insertar referencias que ofrece *RStudio* en su modo visual (@fig-citas). Otra herramienta para esto mismo es [Zotero](https://www.zotero.org/), que se puede usar para cosechar referencias de internet y vincularlas a *Quarto* e incluso para capturarlas manualmente. La sección de referencias puede personalizarse con un *divo* así:
 
 > **:::{#refs}**\
 > **\## Referencias**\
 > **:::**
 
-\ 
+ 
 
 ![](img/citas.png){#fig-citas width="300"}
 
 Para averiguar un poco más sobre esto [te invito a visitar este documento](https://quarto.org/docs/manuscripts/authoring/rstudio.html). Incluso podrías interesarte en preparar un [libro completo](https://quarto.org/docs/books/) ¡Quizás es algo que podrías querer hacer para producir el documento de tu tesis! Bueno, por lo pronto lo que sigue es que construyas tu reporte, siguiendo ideas de formateo que te sugiere el *templete*. [La idea es algo así](articulo-pizza.qmd).
 
-\ 
+ 
 
-
-
-![](img/linea-de-hojas.svg){width=100%}
-
+![](img/linea-de-hojas.svg){width="100%"}
