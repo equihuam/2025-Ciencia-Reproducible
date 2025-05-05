@@ -226,7 +226,7 @@ div.csl-indent {
 <p><a href="img/Imagen de Alexa en Pixabay-a-book-1840910_1280.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="img/Imagen de Alexa en Pixabay-a-book-1840910_1280.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a></p>
 </figure>
 </div>
-<p>En la construcción de documentos académicos las referencias bibliográficas son escenciales. Llevar el control de las que soportar tu trabajo, anotarlas en apoyo a tus argumentos y citarlas correctamente en una secciín de referencias es una tarea indispensbale. <a href="https://quarto.org/docs/authoring/citations.html#sec-citations"><em>Quarto</em> te ofrece muchos recursos</a> para realizar esto. Lo primero es agregar las opciones de bibliografía en la sección de encabezado del documento que estes trabajando. Una para especificar el archivo en el que estas recolectando tus datos bibliográficos (<code>*.bib</code>) y otra para controlar el <em>estilo</em> de presentación de las citas (<code>*.csl</code>). Existe el <a href="https://docs.citationstyles.org/en/stable/primer.html"><strong>proyecto CSL</strong></a> que ha creado un <a href="https://github.com/citation-style-language/styles">repositorio público</a> con más de 8,500 archivos de estilo (compartidos con una licencia de <em>Creative Commons</em>).</p>
+<p>En la construcción de documentos académicos las referencias bibliográficas son escenciales. Llevar el control de las que soportar tu trabajo, anotarlas en apoyo a tus argumentos y citarlas correctamente en una sección de referencias es una tarea indispensbale. <a href="https://quarto.org/docs/authoring/citations.html#sec-citations"><em>Quarto</em> te ofrece muchos recursos</a> para realizar esto. Lo primero es agregar las opciones de bibliografía en la sección de encabezado <strong>yaml</strong> del documento que estes trabajando. Una para especificar el archivo en el que estas recolectando tus datos bibliográficos (<code>*.bib</code>) y otra para controlar el <em>estilo</em> de presentación de las citas (<code>*.csl</code>). Existe el <a href="https://docs.citationstyles.org/en/stable/primer.html"><strong>proyecto CSL</strong></a> que ha creado un <a href="https://github.com/citation-style-language/styles">repositorio público</a> con más de 2,500 archivos de estilo (compartidos con una licencia de <em>Creative Commons</em>).</p>
 <p>Puedes optar por tres métodos de gestión de referencias con la opción <code>cite-method</code>. La variante <strong>citeproc</strong> es el default de <em>Quarto</em>, no necesitas idicarla pero puedes hacerlo. Las otras opciones son <em>biblatex</em> y <em>natbib</em>, que vienen del mundo del lenguaje <em>Latex</em>. Además Hay que decir que <em>Typst</em>, lo que hemos usado para dar formato tipo artículo científico, tiene su propio sistema de procesamiento de referencias. Si usas <em>Typst</em>, deberas usar <code>bibliographystyle</code> con una línea que indique el estilo que deseas, según la lista predefinida de <em>Typst</em>, o usar un nombre de archivo <strong>CSL</strong>. Empecemos por lo más simple, que es lo que ya está incluido en <em>RStudio</em>. Para esto conviene activar el modo <em>visual</em>. En lo que sigue usaré el enfoque normal de <em>Quarto</em>. Prepara tu documento agregando las siguientes líneas en tu encabezado.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at">⋮</span></span>
@@ -234,7 +234,13 @@ div.csl-indent {
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">csl</span><span class="kw">:</span><span class="at"> apa.csl</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">⋮</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En este ejemplo, ambos archivos están en el mismo directorio del documento que estás trabajando. Si usas otra ubicación asegurate de proporcionar la información adecuada en la ruta de los archivos.</p>
+<p>En este ejemplo, ambos archivos están en el mismo directorio del documento que estás trabajando. Si usas otra ubicación asegurate de proporcionar la información adecuada en la ruta de los archivos. El archivo de estilo podría ser una dirección <em>URL</em>. Por ejemplo, puedes obtener un <em>link</em> del sitio de <a href="https://www.zotero.org/styles">Zotero</a>. Ese sitio tiene un buscador que te ayuda a localizar lo que te interesa. Cuando tengas lo que quieres, basta con copiar el enlace <em>URL</em> asociado con el título correspondiente. Nota que hay variantes en idiomas y países. Por ejemplo:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">⋮</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> mis-refs.bib</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">csl</span><span class="kw">:</span><span class="at"> https://www.zotero.org/styles/estudios-de-cultura-maya</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="at">⋮</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div>
 
 </div>
@@ -304,23 +310,23 @@ div.csl-indent {
 <p>Nota que las referencias aparecen con la convención de poner “@” como prefijo a un nombre clave (como se usa en <em>Markdown</em> para cualquier referencia cruzada). La forma como se desplieguen las llamadas y la lista de referencicas depende de lo que defina el archivo <strong>CSL</strong> que hayas especificado.</p>
 <p>A continuación un ejemplo: La cita es de <span class="citation" data-cites="equihuazamora2024">Equihua Zamora, Pérez Maqueo, y Equihua Benítez (<a href="#ref-equihuazamora2024" role="doc-biblioref">2024</a>)</span> y agregas una lista de citas al final de un texto poniendo las claves separadas por “;” y todo dentro de paréntesis cuadrados <span class="citation" data-cites="martinez2011 equihua2004">(<a href="#ref-equihua2004" role="doc-biblioref">Equihua y Perez-Maqueo 2004</a>; <a href="#ref-martinez2011" role="doc-biblioref">Martinez, Costanza, y Pérez-Maqueo 2011</a>)</span>.</p>
 <p>Al final del texto, aparecerá la lista de referencias con el encabezado automático <strong>referencias</strong>. Puedes cambiar eso poniendo un <em>div</em> así:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>:::{#refs}</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">## Literatura Citada</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>:::{#refs}</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">## Literatura Citada</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>&nbsp;</p>
 <section id="post-citable" class="level2">
 <h2 class="anchored" data-anchor-id="post-citable">¿Post citable?</h2>
 <p>Ya que estamos en esto de la citación, cosidera que <a href="https://quarto.org/docs/authoring/create-citeable-articles.html">tus post pueden ser organizados para ser citables</a>. Si preparas el encabezado <em>yaml</em> de un documento con una sección <em>citation</em> con datos adecuados (puede acomodar todos los detalles necesarios como opciones). Con esta previsión, el <em>Post</em> respectivo tendrá al final una sección que invitará al lector a citarlo y le dara indicaciones de como lo podría hacer.</p>
 <p>&nbsp;</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">⋮</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">appendix-cite-as</span><span class="kw">:</span><span class="at"> display</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">citation</span><span class="kw">:</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> post</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">container-title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Proyecto Ciencia Abierta Inecol"</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">url</span><span class="kw">:</span><span class="at"> https://2025-ciencia-reproducible.netlify.app/</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="at">⋮</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="at">⋮</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">appendix-cite-as</span><span class="kw">:</span><span class="at"> display</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">citation</span><span class="kw">:</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> post</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">container-title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Proyecto Ciencia Abierta Inecol"</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">url</span><span class="kw">:</span><span class="at"> https://2025-ciencia-reproducible.netlify.app/</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="at">⋮</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><br>
 </p>
 </section>
@@ -766,7 +772,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","openEffect":"zoom","selector":".lightbox","loop":false});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","loop":false,"descPosition":"bottom","openEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
