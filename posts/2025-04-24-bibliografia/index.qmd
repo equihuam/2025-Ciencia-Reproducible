@@ -45,7 +45,7 @@ csl: apa.csl
 ---
 ```
 
-En este ejemplo, ambos archivos están en el mismo directorio del documento que estás trabajando. Si usas otra ubicación asegurate de proporcionar la información adecuada en la ruta de los archivos. El archivo de estilo podría ser una dirección _URL_. Por ejemplo, puedes obtener un _link_ del sitio de [Zotero](https://www.zotero.org/styles). Ese sitio tiene un buscador que te ayuda a localizar lo que te interesa. Cuando tengas lo que quieres, basta con copiar el enlace  _URL_ asociado con el título correspondiente. Nota que hay variantes en idiomas y países. Por ejemplo:
+En este ejemplo, ambos archivos están en el mismo directorio del documento que estás trabajando. Si usas otra ubicación asegurate de proporcionar la información adecuada en la ruta. El archivo de estilo podría ser también una dirección _URL_. Por ejemplo, puedes obtener un _link_ del repositorio que mantiene [Zotero](https://www.zotero.org/styles). Ese sitio tiene un buscador que te ayuda a localizar lo que te interesa. Cuando tengas lo que quieres, basta con copiar el enlace  _URL_ asociado con el título correspondiente. Nota que hay variantes en idiomas y países. Por ejemplo:
 
 
 ``` yaml
