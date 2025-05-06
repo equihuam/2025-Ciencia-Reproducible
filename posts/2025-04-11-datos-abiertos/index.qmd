@@ -188,6 +188,22 @@ Para empezar, debes saber que estos datos están cubiertos por la licencia **lib
 
 ![](images/libre-uso-mx.png)
 
+Al experimentar con los ejemplos que siguen, encontré que puede ocurrir que los sitios que distribuyen los datoss no estén disponibles momentaneamente (¡a veces por varios días!). Esto puede ser frustante y complicar la operación de los escrips de cómputo, en **R** o en cualquier otro lenguaje. Aprovecharé esta dificultad para demostrar el uso de una función en **R** que te ayuda a que tus algoritmos no se interrumpan en caso de fallas como esta. Se trata de la función `trycatch` que observa como se ejecuta un conjunto de instrucciones y en caso de error, "atrapa" la falla y dirige el proceso a lo que hayas previsto para manejarla en la opción `error`. La estrucura de esto es la siguiente.
+
+::: {style="font-weight: bold; background-color: WhiteSmoke;"}
+```text
+trycatch(
+  { pones aquí las intrucciones que quieres vigilar}
+,
+ error = function(cond)
+  { pones dentro de estos corchetes las instrucciones a operar en caso de error}
+ )
+```
+:::
+
+Si todo operó con normalidad, las instrucciones en la primera parte se habrán desarrollado sin falla y entregarán los resultados que deseas. En caso de falla, quizás quieras un reporte de la falla, codificada en la variable `cond` y registrar algún valor para avisar en otras partes que algunos datos podrían no estar presentes.
+
+
 ### Catálogo de datos existentes **datos.gob.mx**
 
 Ahora veamos algunos ejemplos de como interactuar con esos datos mediante la **API**.
@@ -268,19 +284,21 @@ if (exists("dat_1_df"))
       flextable::flextable() |> 
       flextable::color(i = 7:8 , color = "blue ")
 
-} else print("no los datos soliciados")
+} else print("Sinaica: Datos no disponibles")
 
 
 ```
 
 Los datos que quiero para este ejercicio son el **idEstación**, y el nombre del parámetro, en este caso **O3**. Hay un dato *pageSize*, que se refiere al máximo de registros que esperamos recibir por página. Con estos datos construimos la **URL** necesaria.
 
-> URL: https://api.datos.gob.mx/v2/sinaica\
-> pagesize: 8000\
-> parametro: O3\
-> estacionesid: 259 (es la del Pedregal de San ángel, Álvaro Obregón, CdMx)\
-> page: 1
-
+::: {style="font-weight: bold; background-color: WhiteSmoke;"}
+```text
+URL: https://api.datos.gob.mx/v2/sinaica\
+pagesize: 8000\
+parametro: O3\
+estacionesid: 259 (es la del Pedregal de San ángel, Álvaro Obregón, CdMx)\
+page: 1
+:::
 Combino todos estos parámetros con el caracter **&** como separador de items y lo agrego todo al final de la **URL**.El resultado debe verse así.
 
 > https://api.datos.gob.mx/v2/sinaica[?]{style="color: red;"}pageSize=8000[&]{style="color: red;"}parametro=O3[&]{style="color: red;"}estacionesid=259[&]{style="color: red;"}page=1
@@ -326,7 +344,7 @@ if(exists("dat_O3_df"))
     select("fecha", "hora", "valororig") |> 
     datatable(colnames = c("Fecha", "Hora", "Valor"))
 
-} else print("Datos no disponibles")
+} else print("Ozono: Datos no disponibles")
 
 ```
 
