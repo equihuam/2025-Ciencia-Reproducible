@@ -104,8 +104,7 @@ flextable::flextable(datos_od, cwidth = 1)
 10. Argumenta tus conclusiones
 :::
 
-\
- 
+\ 
 
 La tarea consiste en que preparas un reporte con el formato de un artículo y que sea parte de tu blog. En este caso usarás la extensión [academic-typst](https://github.com/kazuyanagimoto/quarto-academic-typst) que está en la página de [extensiones de *Quarto*](https://quarto.org/docs/extensions/listing-formats.html). Para incorporar esta extensión a tu proyecto usa el siguiente comando en la pestaña de terminal.
 
@@ -125,16 +124,17 @@ format:
 
 La idea es que experimentes con la preparación de un reporte técnico con *Quarto*. Ejercita también la inclusión de [referencias bibliográficas](../2025-04-24-bibliografia/index.qmd). En el encabezado del reporte te sugiero [cambiar el formato de la bibliografia para compatibilidad con typst](https://typst.app/docs/reference/model/bibliography/#parameters-style), de *chicago* a **APA**. Para eso substituye la frase en **bibliographystyle:** a que diga "american-psychological-association", en lugar de "chicago-author-date" que es lo que tiene el *templete*. Para agregar referencias y para buscarlas en internet resulta muy cómoda la opción de insertar referencias que ofrece *RStudio* en su modo visual (@fig-citas). Otra herramienta para esto mismo es [Zotero](https://www.zotero.org/), que se puede usar para cosechar referencias de internet y vincularlas a *Quarto* e incluso para capturarlas manualmente. La sección de referencias puede personalizarse con un *divo* así:
 
-> **:::{#refs}**\
-> **\## Referencias**\
-> **:::**
-
- 
+```text
+:::{#refs}\ 
+## Referencias**\
+:::
+```
+\ 
 
 ![](img/citas.png){#fig-citas width="300"}
 
 Para averiguar un poco más sobre esto [te invito a visitar este documento](https://quarto.org/docs/manuscripts/authoring/rstudio.html). Incluso podrías interesarte en preparar un [libro completo](https://quarto.org/docs/books/) ¡Quizás es algo que podrías querer hacer para producir el documento de tu tesis! Bueno, por lo pronto lo que sigue es que construyas tu reporte, siguiendo ideas de formateo que te sugiere el *templete*. [La idea es algo así](articulo-pizza.qmd).
 
- 
+\ 
 
 ![](img/linea-de-hojas.svg){width="100%"}

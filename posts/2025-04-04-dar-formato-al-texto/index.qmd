@@ -23,17 +23,14 @@ leyendas de las figuras. Para cambiar eso use el código del @lst-css,
 dentro de un trozo de código css:
 
 ::: {#lst-css lst-cap="Código css para centrar la leyenda." }
-
 ::::{style="font-weight: bold; background-color: WhiteSmoke;"}
 
-```{{css}}  
+```css  
   figcaption {    
     text-align: center;   
     }   
 ```
-
 ::::
-
 :::
 
 \ 
@@ -73,15 +70,18 @@ Quarto.](img/estructura-pagina.png){#fig-partes-pag width="500"}
 
 Para hacer esto hay que escribir así:
 
-::: column-margin
+::: {.column-margin}
 ![](img/door-575958_1280.png){width="200"}
 :::
 
-```{.text style="font-weight: bold; background-color: WhiteSmoke;"}
+::: {style="font-weight: bold; background-color: WhiteSmoke;"}
+
+```text
 :::{.column-margin}   
-![](img/door-575958_1280.png){width=200} 
+ ![](img/door-575958_1280.png){width=200} 
 :::
 ```
+:::
 
 para obtener este resultado.
 
@@ -95,13 +95,16 @@ bastante fácil de lograr en *Quarto*. Hay varias maneras de hacerlo. la
 más sencilla:
 
 
-```{.text style="font-weight: bold; background-color: WhiteSmoke;"}
+::: {style="font-weight: bold; background-color: WhiteSmoke;"}
+
+```text 
 :::{layout="[1,1]"}
 Párrafo 1 con algunas ideas muy sabias... 
 
 Párrafo 2 para explicar lo sabio del párrafo 1...
 :::
 ```
+:::
 
 Los número dentro de paréntesis cuadrados indican proporción, no una
 magnitud absoluta. En este caso, dos columnas del mismo tamaño. Puedes
@@ -123,8 +126,10 @@ exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 [Otra manera](https://quarto.org/docs/presentations/beamer.html#multiple-columns)
 es la siguiente.
 
-```{.text style="font-weight: bold; background-color: WhiteSmoke;"}
-:::.columns}
+::: {style="font-weight: bold; background-color: WhiteSmoke;"}
+
+```text
+:::{.columns}
 ::::{.column width="40%"}
 Párrafo 1 con algunas ideas muy sabias... 
 ::::
@@ -134,8 +139,10 @@ Párrafo 2 para explicar lo sabio del párrafo...
 ::::
 :::
 ```
+:::
 
-::::: {.columns style="color:blue;"}
+
+:::: {.columns style="color:blue;"}
 ::: {.column width="40%"}
 Párrafo 1 con algunas ideas muy sabias. Lorem ipsum dolor sit amet,
 consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
@@ -149,7 +156,7 @@ amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
 labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
 exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 :::
-:::::
+::::
 
 Intenta usar esto para producir un [texto al lado de una
 imágen](https://quarto.org/docs/authoring/figures.html). ¿Con cuál
@@ -161,6 +168,8 @@ variante te sientes más cómoda o cómodo?
 
 Lo usual es que las listas lleven al inicio alguna marca que las distinga, un disco, círculo, cuadro, etc. Pero que tal si en lugar de eso quisieras poner una imágen. Lo puedes lograr definiendo el formato en el archivo **style.css** que usualmente tenemos en la raíz del proyecto. Agrega, por ejemplo, estas líneas.
 
+
+::: {style="font-weight: bold; background-color: WhiteSmoke;"}
 ```css
 /* cada "ul"" implica un nuevo subnivel */
 
@@ -172,12 +181,14 @@ Lo usual es que las listas lleven al inicio alguna marca que las distinga, un di
   list-style-image: url("https://github.com/equihuam/2025-Ciencia-Reproducible/blob/main/images/gloves_gardening_utensils_icon_146742-16px.png?raw=true")
 }
 
-
 ```
+:::
+
 Las imágenes indicadas en la url podrían estar en mi equipo, pero yo aquí puse la liga a lo que subí a Github, de manera que si copias lo de arriba directamente te funcionará. En todo caso podrías bajar el archivo de la imágen que te guste y poner la ruta en tu máquina para que quede alo así: `url(images/rubber-plant-16.png)`. El caso es que puedes usar cualquier imágen que quieras, lo único que hice es escalarla para que tuviera un tamaña de 16x16 pixeles, en este caso.
 
 Luego, para usar ese formato que has definido pondrás, en donde lo desees algo como esto.
 
+::: {style="font-weight: bold; background-color: WhiteSmoke;"}
 ```text
 
 :::{.planta}
@@ -189,6 +200,7 @@ Luego, para usar ese formato que has definido pondrás, en donde lo desees algo 
 :::
 
 ```
+:::
 
 Se verá así cuando lo _renderices_
 
@@ -209,7 +221,7 @@ Hay muchos sitios de íconos en la web. No olvides acreditar según te lo indiqu
 - [planta - Creado por Icongeek26](https://www.flaticon.com/free-icon/rubber-plant_4584065)
 
 
-## Identificadores fijos
+## Identificadores definidos para referencias cruzadas
 
 *Quarto* tiene prevista toda una colección de identificadores para
 reconocer los distintos tipos de componentes que pueden requerir alguna
@@ -266,12 +278,14 @@ documento.
 \ 
 
 
-:::{.text style="font-weight: bold; background-color: WhiteSmoke;"}
-**::: {#def-definir}**\
-**Definición de algo importante**\
-**:::**\
-
+:::{style="font-weight: bold; background-color: WhiteSmoke;"}
+```text
+::: {#def-definir} \ 
+Definición de algo importante \ 
+::: \ 
+```
 :::
+
 
 \ 
 
@@ -341,6 +355,7 @@ fig <- fig %>%
 ```
 ::: 
 
+
 ::: {layout="[-1,5,-1]"}
 ```{r}
 #| label: fig-sun-burst
@@ -354,6 +369,7 @@ fig
 ```
 :::
 
+
 ## Bloques tipo "caja"
 
 A veces conviene ofrecer información adicional al lector, dándole la
@@ -363,13 +379,13 @@ conjunto [callout](https://quarto.org/docs/authoring/callouts.html). Su
 uso es mediante *fences* (**div**), el sistema de marcado que se inicia
 con `::: {_indicación_}` y se cierra con `:::`.
 
-| tipo      | llamada                  |
-|-----------|--------------------------|
-| note      | ::: {.callout-note}      |
-| warning   | ::: {.callout-warning}   |
-| important | ::: {.callout-important} |
-| tip       | ::: {.callout-tip}       |
-| caution   | ::: {.callout-caution}   |
+| tipo      | llamada                     |
+|-----------|-----------------------------|
+| note      | `::: {.callout-note}`       |
+| warning   | `::: {.callout-warning}`    |
+| important | `:::  {.callout-important}` |
+| tip       | `:::  {.callout-tip}`       |
+| caution   | `:::  {.callout-caution}`   |
 
 En cada uno de estos casos puedes agregar la frase: `collapse="true"`.
 Al hacerlo, el bloque aparecerá cerrado y el lector deberá activarlo
@@ -377,25 +393,27 @@ para leer su contenido. Puedes también agregar un título con la frase
 `title="Tip with Title"` o si anotas un texto con marcado de sub título
 en seguida de la llamada.
 
-:::{.text style="font-weight: bold; background-color: WhiteSmoke;"}
->**::: {.callout-tip}**\
->**\## Título de un bloque de "sugerencias"**\
->**Algo que sea importante decir, ¡pero no indispensable!**\
->**:::**
-
+:::{style="font-weight: bold; background-color: WhiteSmoke;"}
+```text
+::: {.callout-tip} \ 
+## Título de un bloque de "sugerencias" \ 
+Algo que sea importante decir, ¡pero no indispensable! \ 
+:::
+```
 :::
 
 La marcas de estos bloques pueden *anidarse*, en cuyo caso habrá que
 cuidar que el número de veces que aparece **:** sea el mismo al abrir y
 cerrar el bloque respectivo. Algo así:
 
-:::{.text style="font-weight: bold; background-color: WhiteSmoke;"}
-> **::: {inicia 1}**\
-> **:::: {inicia B}**\
-> ***algo de contenido***\
-> **::::**\
-> **:::**
-
+:::{style="font-weight: bold; background-color: WhiteSmoke;"}
+```text
+::: {inicia 1} \ 
+:::: {inicia B} \ 
+algo de contenido \  
+:::: \ 
+::: \ 
+```
 :::
 
 \ 
@@ -404,13 +422,17 @@ cerrar el bloque respectivo. Algo así:
 
 Se puede usar la opción `style` que admite varios componentes:
 
-**::: {style="font-size: 50%; color:green; font-family: helvetica;
-font-size:44px;"}**
+:::{style="font-weight: bold; background-color: WhiteSmoke;"}
+`::: {style="font-size: 50%; color:green; font-family: helvetica;
+font-size:44px;"}`
+:::
 
 Esto también se puede hacer a nivel incluso de una letra con la idea
 siguiente:
 
-**\[rojo\]{style="color:red;"}**.
+:::{style="font-weight: bold; background-color: WhiteSmoke;"}
+`[rojo\]{style="color:red;"}**`
+:::
 
 Puede interesarte una referencia a como definir los colores. Hay muchas
 posibilidades en la Web, pero [está es un
@@ -418,7 +440,9 @@ inicio](https://htmlcolorcodes.com/es/). Con esta página conseguiras el
 código *hexadecimal*, el que está marcado con **\#**. Lo puedes usar
 así:
 
-**\[rojo\]{style="color:#E71D02;"}**
+:::{style="font-weight: bold; background-color: WhiteSmoke;"}
+`[rojo\]{style="color:#E71D02;"}`
+:::
 
 Muchos [colores tienen nombres
 definidos](https://htmlcolorcodes.com/color-names/), si lo prefieres
@@ -448,9 +472,11 @@ tamaño de letra definido para el contenido (**em**). Concretamente, se
 trata de una fraccción o un múltiplo de escalamiento que se define con
 referencia al tamaño de letra en uso.
 
-:::{.text style="font-weight: bold; background-color: WhiteSmoke;"}
-> **{style="font-size:3em;"}**
+:::{style="font-weight: bold; background-color: WhiteSmoke;"}
 
+```text
+{style="font-size:3em;"}
+```
 :::
 
 algo así [texto de
@@ -473,20 +499,21 @@ se tratara de una libreta con [secciones reconocibles por
 pestañas](https://quarto.org/docs/output-formats/html-basics.html#tabsets).
 Para hacerlo, el *bloque* (**div**) se contruye así.
 
-::: {.text style="font-weight: bold; background-color: WhiteSmoke;"}
-**:::** **{.panel-tabset}**\
-**\##** **Descripción de los datos**
+::: {style="font-weight: bold; background-color: WhiteSmoke;"}
+```text
+::: {.panel-tabset} \ 
+## Descripción de los datos \ 
 
-**Es realmente un subdocumento, que podrá tener texto, código, gráficas,
-etc.**
+Es realmente un subdocumento, que podrá tener texto, código, gráficas,
+etc. \ 
 
-**\##** **Estrategia analítica**
+## Estrategia analítica \ 
 
 **Misma cosa. Subdocumento en el que abordas el tema que anuncias en la
 *pestaña*.**
 
-**:::**
-
+:::
+```
 :::
 
 ::: panel-tabset
@@ -631,7 +658,7 @@ diagramación
 [Aquí puedes ver ejemplos de diagramas](https://graphviz.org/)
 producidos con esta herramienta.
 
- 
+\ 
 
 ```{r}
 
@@ -675,3 +702,5 @@ grViz(engine = "dot",
   )
 
 ```
+
+

@@ -167,7 +167,7 @@ Puedes visitar en México el [Instituto Nacional del Derecho de Autor](http://ww
 ```
 :::
 
- 
+\  
 
 ## ¿Cómo podemos usar datos abiertos?
 
@@ -199,23 +199,30 @@ Ahora veamos algunos ejemplos de como interactuar con esos datos mediante la **A
 
 pacman::p_load(jsonlite, tidyverse, DT, rvest, httr2)
 
-req <- request("https://api.datos.gob.mx/v1/api-catalog?pageSize=10000")
-resp <- req_perform(req)
+tryCatch(
+  {
+    req <- request("https://api.datos.gob.mx/v1/api-catalog?pageSize=10000")
+    resp <- req_perform(req)
+    
+    dat_1 <- fromJSON(resp_body_string(resp))
+    dat_1_df <- dat_1$results
+    
+    for (i in 1:length(dat_1_df$variables))
+    {
+      dat_1_df$variables[i] <- paste(dat_1_df$variables[[i]], collapse = ",")
+    }
+    
+    dat_1_df$variables <- unlist(dat_1_df$variables)
+    
+    dat_1_df |>
+      select("endpoint", "url", "variables") |> 
+      datatable()
+  },
+    error = function(cond) {
+      print("Catálogo: datos.gob.mx no está diosponible por el momento.")
+})
 
-dat_1 <- fromJSON(resp_body_string(resp))
-dat_1_df <- dat_1$results
 
-for (i in 1:length(dat_1_df$variables))
-{
-  dat_1_df$variables[i] <- paste(dat_1_df$variables[[i]], collapse = ",")
-}
-
-dat_1_df$variables <- unlist(dat_1_df$variables)
-
-dat_1_df |>
-  select("endpoint", "url", "variables") |> 
-  datatable()
- 
 ```
 
 | 
@@ -230,27 +237,39 @@ Los datos de las estaciones existentes los puedes consultar con la misma **API**
 
 URL_estaciones <- "https://api.datos.gob.mx/v2/sinaica-estaciones?pageSize=1000"
 
-req_est <- request(URL_estaciones)
-resp_est <- req_perform(req_est)
+tryCatch(
+  {
+    req_est <- request(URL_estaciones)
+    resp_est <- req_perform(req_est)
+    
+    dat_est <- fromJSON(resp_body_string(resp_est))
+    dat_est_df <- dat_est$results
+    
+    dat_est_df |>
+      select("id", "nombre", "long", "lat") |> 
+      datatable(colnames = c("idEstación", "nombre", "long", "lat       "))
+},
+    error = function(cond) {
+      print("Ozono: datos.gob.mx no está diosponible por el momento.")
+})
 
-dat_est <- fromJSON(resp_body_string(resp_est))
-dat_est_df <- dat_est$results
-
-dat_est_df |>
-  select("id", "nombre", "long", "lat") |> 
-  datatable(colnames = c("idEstación", "nombre", "long", "lat       "))
 
 ```
 
 Las variables que puedo usar para construir esta **consulta** las encuentro precisamente en la columna *variables* del catálogo. Para el caso de *Sinaica* esta columna reporta las siguientes variables disponibles.
 
 ```{r}
-dat_1_df |> 
-  filter(endpoint == "sinaica") |> 
-  select(variables) |>  
-  separate_longer_delim(variables,  ",") |> 
-  flextable::flextable() |> 
-  flextable::color(i = 7:8 , color = "blue ")
+if (exists("dat_1_df"))
+  {
+    dat_1_df |> 
+      filter(endpoint == "sinaica") |> 
+      select(variables) |>  
+      separate_longer_delim(variables,  ",") |> 
+      flextable::flextable() |> 
+      flextable::color(i = 7:8 , color = "blue ")
+
+} else print("no los datos soliciados")
+
 
 ```
 
@@ -266,39 +285,48 @@ Combino todos estos parámetros con el caracter **&** como separador de items y 
 
 > https://api.datos.gob.mx/v2/sinaica[?]{style="color: red;"}pageSize=8000[&]{style="color: red;"}parametro=O3[&]{style="color: red;"}estacionesid=259[&]{style="color: red;"}page=1
 
- 
+\ 
 
 Ahora, estamos listos para hacer la consulta con el escript de abajo.
 
- 
+\ 
 
 ```{r}
 #| label: ozono
 
 url_O3 <- "https://api.datos.gob.mx/v2/sinaica?pageSize=8000&parametro=O3&estacionesid=259&page=1"
 
-req_O3 <- request(url_O3)
-resp_O3 <- req_perform(req_O3)
-
-dat_O3 <- fromJSON(resp_body_string(resp_O3))
-dat_O3_df <- dat_O3$results
+tryCatch(
+  {
+    req_O3 <- request(url_O3)
+    resp_O3 <- req_perform(req_O3)
+    
+    dat_O3 <- fromJSON(resp_body_string(resp_O3))
+    dat_O3_df <- dat_O3$results
+  },
+    error = function(cond){
+      print("Ozono-CdMx: datos.gob.mx no está diosponible por el momento.")
+    })
 ```
 
- 
+\ 
 
-Estos son los datos de ozono en la atmósfera medidos en la estación `r dat_O3_df$estacionesid[1]`, de la Ciudad de México (@tbl-ozono).
+Estos son los datos de ozono en la atmósfera medidos en la estación `r if (exists("dat_O3_df")) dat_O3_df$estacionesid[1] else "no los datos soliciados"`, de la Ciudad de México (@tbl-ozono).
 
- 
+\ 
 
 ```{r}
 #| label: tbl-ozono
 #| tbl-cap: Ozono atmosférico
 #| tbl-cap-location: top
 
+if(exists("dat_O3_df"))
+{
+  dat_O3_df |>
+    select("fecha", "hora", "valororig") |> 
+    datatable(colnames = c("Fecha", "Hora", "Valor"))
 
-dat_O3_df |>
-  select("fecha", "hora", "valororig") |> 
-  datatable(colnames = c("Fecha", "Hora", "Valor"))
+} else print("Datos no disponibles")
 
 ```
 
@@ -435,7 +463,7 @@ dat_meteo |>
 
 ### Microdatos censales
 
-Como habíamos visto en [tipos de estudios](../2025-03-21-tipo-de%20estudio/index.qmd) Puede interesarte también ete artíulo sobre los datos abiertos que ofrece [Inegi y la bilioteca para **R**](https://rde.inegi.org.mx/index.php/2020/12/02/importinegi-un-paquete-de-r-para-descargar-y-gestionar-bases-de-datos-del-inegi/) que han desarrollado. Este otro es un ejemplo detallado de [acceso y procesamiento de microdatos](https://revistasinvestigacion.lasalle.mx/index.php/relais/article/download/4122/3778/27670). Algo semejante ofrece este artículo de @castro_usando_2021 y está también el libro completo en línea de @escoto_castillo_encuesta2021, sobre como usar microdato para analizar el mercado de tabajo. Si es de tu interés [esta página de INEGI](https://www.inegi.org.mx/microdatos/) te ayudará a encontrar lo que necesitas. Por ejemplo, INEGI dispone de los [microdatos del censo agropecuario 2022](https://www.inegi.org.mx/programas/ca/2022/#microdatos). Al tratar microdatos es importante que consideres las recomendaciones de seguridad de @griffiths_manual_2020.
+Como habíamos visto en [tipos de estudios](../2025-03-21-tipo-de%20estudio/index.qmd) Puede interesarte también ete artíulo sobre los datos abiertos que ofrece [Inegi y la bilioteca para **R**](https://rde.inegi.org.mx/index.php/2020/12/02/importinegi-un-paquete-de-r-para-descargar-y-gestionar-bases-de-datos-del-inegi/) que han desarrollado. Este otro es un ejemplo detallado de [acceso y procesamiento de microdatos](https://revistasinvestigacion.lasalle.mx/index.php/relais/article/download/4122/3778/27670). Algo semejante ofrece este artículo de @castro_usando_2021 y está también el libro completo en línea de @escoto_castillo_encuesta2021, sobre como usar microdato para analizar el mercado de tabajo. Si es de tu interés [esta página de INEGI](https://www.inegi.org.mx/microdatos/) te ayudará a encontrar lo que necesitas. Por ejemplo, INEGI dispone de los [microdatos del censo agropecuario 2022](https://www.inegi.org.mx/programas/ca/2022/#microdatos). Al tratar microdatos es importante que consideres las recomendaciones de seguridad de [@griffiths_manual_2020](https://securedatagroup.org/wp-content/uploads/2020/06/2020-06-manual_de_control_de_divulgacic3b3n_de_confidencialidad.pdf).
 
 ### Precios según el **SNIIM**
 
