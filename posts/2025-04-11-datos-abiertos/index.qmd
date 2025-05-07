@@ -293,12 +293,14 @@ Los datos que quiero para este ejercicio son el **idEstación**, y el nombre del
 
 ::: {style="font-weight: bold; background-color: WhiteSmoke;"}
 ```text
-URL: https://api.datos.gob.mx/v2/sinaica\
-pagesize: 8000\
-parametro: O3\
-estacionesid: 259 (es la del Pedregal de San ángel, Álvaro Obregón, CdMx)\
+URL: https://api.datos.gob.mx/v2/sinaica
+pagesize: 8000
+parametro: O3
+estacionesid: 259  # es la del Pedregal de San ángel, Álvaro Obregón, CdMx
 page: 1
+```
 :::
+
 Combino todos estos parámetros con el caracter **&** como separador de items y lo agrego todo al final de la **URL**.El resultado debe verse así.
 
 > https://api.datos.gob.mx/v2/sinaica[?]{style="color: red;"}pageSize=8000[&]{style="color: red;"}parametro=O3[&]{style="color: red;"}estacionesid=259[&]{style="color: red;"}page=1
@@ -540,12 +542,12 @@ cat_prod |>
 
 \
 
-Hagamos un ejercicio con los precios del *limón sin semilla* en Xalapa, entre las fechas 01/feb/2025 y 01/abr/2025. Para hacer esto necesitamos los siguientes datos.
+Hagamos un ejercicio con los precios del *limón sin semilla* en Xalapa, entre las fechas 01/feb/2025 y 01/may/2025. Para hacer esto necesitamos los siguientes datos.
 
 > **url base:** http://www.economia-sniim.gob.mx/nuevo/Consultas/MercadosNacionales/PreciosDeMercado/Agricolas/\
 > **escript de consulta:**ResultadosConsultaFechaFrutasYHortalizas.aspx\
 > **generador de la tabla de datos:** ResultadosConsultaFechaFrutasYHortalizas.aspx \
-> **fechaInicio:** 01/01/2025  **fechaFinal:** 01/04/2025  **ProductoId** 426  **OrigenId** 30  **Origen** Veracruz  **DestinoId** 301  **Destino** Veracruz: Central de Abasto de Jalapa  **PreciosPorId** 2 (este código se refiere a kg unitario)  **RegistrosPorPagina** 500  
+> **fechaInicio:** 01/01/2025  **fechaFinal:** 01/05/2025  **ProductoId** 426  **OrigenId** 30  **Origen** Veracruz  **DestinoId** 301  **Destino** Veracruz: Central de Abasto de Jalapa  **PreciosPorId** 2 (este código se refiere a kg unitario)  **RegistrosPorPagina** 500  
 
 Ahora, semejante a los ejemplos anteriores, tomamos la **URL base** y, en este caso, la juntamos con la llamada al escript que se encarga de hacer la consulta a la base de datos y le ponemos una iterrogación al final. Luego hacemos la consulta que nos interesa, agregando los datos separados por el símbolo **&**. Todo en una sola larga línea. Así:
 
@@ -558,7 +560,7 @@ Listo, hagamos la consulta para averiguar el patrón de precios del *limón sin 
 \ 
 
 ```{r}
-url_limon <- "http://www.economia-sniim.gob.mx/nuevo/Consultas/MercadosNacionales/PreciosDeMercado/Agricolas/ResultadosConsultaFechaFrutasYHortalizas.aspx?fechaInicio=01/01/2025&fechaFinal=01/04/2025&ProductoId=426&OrigenId=30&Origen=Veracruz&DestinoId=301&Destino=Veracruz:%20Central%20de%20Abasto%20de%20Jalapa&PreciosPorId=2&RegistrosPorPagina=500"
+url_limon <- "http://www.economia-sniim.gob.mx/nuevo/Consultas/MercadosNacionales/PreciosDeMercado/Agricolas/ResultadosConsultaFechaFrutasYHortalizas.aspx?fechaInicio=01/01/2025&fechaFinal=01/05/2025&ProductoId=426&OrigenId=30&Origen=Veracruz&DestinoId=301&Destino=Veracruz:%20Central%20de%20Abasto%20de%20Jalapa&PreciosPorId=2&RegistrosPorPagina=500"
 
 page <- read_html(url_limon)
 
