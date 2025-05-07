@@ -299,6 +299,7 @@ parametro: O3\
 estacionesid: 259 (es la del Pedregal de San ángel, Álvaro Obregón, CdMx)\
 page: 1
 :::
+
 Combino todos estos parámetros con el caracter **&** como separador de items y lo agrego todo al final de la **URL**.El resultado debe verse así.
 
 > https://api.datos.gob.mx/v2/sinaica[?]{style="color: red;"}pageSize=8000[&]{style="color: red;"}parametro=O3[&]{style="color: red;"}estacionesid=259[&]{style="color: red;"}page=1
