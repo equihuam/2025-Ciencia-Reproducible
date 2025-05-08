@@ -105,6 +105,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Buscar"
   }
 }</script>
+<link href="../../site_libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
+
+<script src="../../site_libs/tabwid-1.1.3/tabwid.js"></script>
+
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -224,39 +228,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details class="code-fold">
 <summary>muestra el escript:</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(googlesheets4, stringr, dplyr, tidyr, ggplot2)</span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(googlesheets4, stringr, dplyr, tidyr, ggplot2, flextable)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># keyring::key_get(service = "google-sheets", "equihuam")</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">gargle_oauth_client_type =</span> <span class="st">"web"</span>, <span class="at">gargle_oob_default =</span> <span class="cn">TRUE</span>) </span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">gs4_auth</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">gargle_oauth_email =</span> <span class="st">"equihuam@gmail.com"</span>, </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">gargle_oob_default =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">gargle_oauth_client_type =</span> <span class="st">"web"</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">gs4_auth</span>()</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>url_gs <span class="ot">&lt;-</span> <span class="st">"https://docs.google.com/spreadsheets/d/1O7jzCP3RD7IuOoF-wXrgFnhWLTB_3mhUQevyFhQjA3I/edit?resourcekey=&amp;gid=1886023914#gid=1886023914"</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>datos_id <span class="ot">&lt;-</span> <span class="fu">str_extract</span>(url_gs, <span class="st">"(?&lt;=/d/)(.*?)(?=/edit)"</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>datos_eval <span class="ot">&lt;-</span> <span class="fu">read_sheet</span>(datos_id) </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stderr">
-<pre><code>! Using an auto-discovered, cached token.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>  To suppress this message, modify your code or options to clearly consent to
-  the use of a cached token.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>  See gargle's "Non-interactive auth" vignette for more details:</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>  &lt;https://gargle.r-lib.org/articles/non-interactive-auth.html&gt;</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>ℹ The googlesheets4 package is using a cached token for 'equihuam@gmail.com'.</code></pre>
-</div>
-<details class="code-fold">
-<summary>muestra el escript:</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>url_gs <span class="ot">&lt;-</span> <span class="st">"https://docs.google.com/spreadsheets/d/1O7jzCP3RD7IuOoF-wXrgFnhWLTB_3mhUQevyFhQjA3I/edit?resourcekey=&amp;gid=1886023914#gid=1886023914"</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>datos_id <span class="ot">&lt;-</span> <span class="fu">str_extract</span>(url_gs, <span class="st">"(?&lt;=/d/)(.*?)(?=/edit)"</span>)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>datos_eval <span class="ot">&lt;-</span> <span class="fu">read_sheet</span>(datos_id) </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stderr">
-<pre><code>Auto-refreshing stale OAuth token.</code></pre>
-</div>
 <div class="cell-output cell-output-stderr">
 <pre><code>✔ Reading from "2025-otra-manera-de-escribir-evaluación (Respuestas)".</code></pre>
 </div>
@@ -265,66 +250,79 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <details class="code-fold">
 <summary>muestra el escript:</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>etiqueta <span class="ot">&lt;-</span> <span class="st">"Datos de la encuesta"</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">nrow</span>(datos_eval)<span class="sc">==</span><span class="dv">0</span>)</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>{ </span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  datos_eval <span class="ot">&lt;-</span> datos_eval <span class="sc">|&gt;</span>  </span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_row</span>(<span class="sc">!!!</span> <span class="fu">setNames</span>(<span class="fu">rep</span>(<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,<span class="dv">27</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>), <span class="at">each =</span> <span class="dv">1</span>), <span class="fu">names</span>(datos_eval)))</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  etiqueta <span class="ot">&lt;-</span> <span class="st">"Datos simulados"</span></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>preguntas <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">preg =</span> <span class="fu">c</span>(<span class="st">"tiempo"</span>, <span class="st">"email"</span>, <span class="fu">names</span>(datos_eval)[<span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="sc">-</span><span class="dv">2</span>)]))</span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>preguntas<span class="sc">$</span>preg[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"[tiempo] Marca temporal"</span>, <span class="st">"[email] Dirección de correo electrónico"</span>)</span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>preguntas <span class="ot">&lt;-</span> preguntas <span class="sc">|&gt;</span> </span>
-<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">idBlq =</span> <span class="fu">str_extract</span>(preg, <span class="st">"(?&lt;=</span><span class="sc">\\</span><span class="st">[)(.*?)(?=</span><span class="sc">\\</span><span class="st">])"</span>),</span>
-<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>         <span class="at">preg  =</span> <span class="fu">str_remove</span>(preguntas<span class="sc">$</span>preg, <span class="st">"</span><span class="sc">\\</span><span class="st">[</span><span class="sc">\\</span><span class="st">w*_*</span><span class="sc">\\</span><span class="st">d*</span><span class="sc">\\</span><span class="st">] "</span>), <span class="at">.keep =</span> <span class="st">"none"</span>) </span>
-<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>datos_eval <span class="ot">&lt;-</span> datos_eval <span class="sc">|&gt;</span> </span>
-<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">setNames</span>(preguntas<span class="sc">$</span>idBlq)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>etiqueta <span class="ot">&lt;-</span> <span class="st">"Datos de la encuesta"</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">nrow</span>(datos_eval)<span class="sc">==</span><span class="dv">0</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>{ </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  datos_eval <span class="ot">&lt;-</span> datos_eval <span class="sc">|&gt;</span>  </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_row</span>(<span class="sc">!!!</span> <span class="fu">setNames</span>(<span class="fu">rep</span>(<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,<span class="dv">27</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>), <span class="at">each =</span> <span class="dv">1</span>), <span class="fu">names</span>(datos_eval)))</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  etiqueta <span class="ot">&lt;-</span> <span class="st">"Datos simulados"</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>preguntas <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">preg =</span> <span class="fu">c</span>(<span class="st">"tiempo"</span>, <span class="st">"email"</span>, <span class="fu">names</span>(datos_eval)[<span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="sc">-</span><span class="dv">2</span>)]))</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>preguntas<span class="sc">$</span>preg[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"[tiempo] Marca temporal"</span>, <span class="st">"[email] Dirección de correo electrónico"</span>)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>preguntas <span class="ot">&lt;-</span> preguntas <span class="sc">|&gt;</span> </span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">idBlq =</span> <span class="fu">str_extract</span>(preg, <span class="st">"(?&lt;=</span><span class="sc">\\</span><span class="st">[)(.*?)(?=</span><span class="sc">\\</span><span class="st">])"</span>),</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>         <span class="at">preg  =</span> <span class="fu">str_remove</span>(preguntas<span class="sc">$</span>preg, <span class="st">"</span><span class="sc">\\</span><span class="st">[</span><span class="sc">\\</span><span class="st">w*_*</span><span class="sc">\\</span><span class="st">d*</span><span class="sc">\\</span><span class="st">] "</span>), <span class="at">.keep =</span> <span class="st">"none"</span>) </span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>datos_eval <span class="ot">&lt;-</span> datos_eval <span class="sc">|&gt;</span> </span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">setNames</span>(preguntas<span class="sc">$</span>idBlq)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell">
 <details class="code-fold">
 <summary>muestra el escript:</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>promedios <span class="ot">&lt;-</span> datos_eval <span class="sc">|&gt;</span> </span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(gral_1<span class="sc">:</span>git_4) <span class="sc">|&gt;</span> </span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">prom =</span> <span class="fu">across</span>(gral_1<span class="sc">:</span>git_4, <span class="sc">~</span> <span class="fu">mean</span>(.x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)),</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">min =</span> <span class="fu">across</span>(gral_1<span class="sc">:</span>git_4, <span class="sc">~</span> <span class="fu">min</span>(.x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)))</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a> promedios <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">var =</span> preguntas<span class="sc">$</span>idBlq[<span class="sc">-</span><span class="dv">1</span><span class="sc">:-</span><span class="dv">2</span>],</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>          <span class="at">prom =</span> <span class="fu">as.numeric</span>(promedios<span class="sc">$</span>prom),</span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>          <span class="at">min =</span> <span class="fu">as.numeric</span>(promedios<span class="sc">$</span>min))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>promedios <span class="ot">&lt;-</span> datos_eval <span class="sc">|&gt;</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(gral_1<span class="sc">:</span>git_4) <span class="sc">|&gt;</span> </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">prom =</span> <span class="fu">across</span>(gral_1<span class="sc">:</span>git_4, <span class="sc">~</span> <span class="fu">mean</span>(.x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)),</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">min =</span> <span class="fu">across</span>(gral_1<span class="sc">:</span>git_4, <span class="sc">~</span> <span class="fu">min</span>(.x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)))</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a> promedios <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">var =</span> preguntas<span class="sc">$</span>idBlq[<span class="sc">-</span><span class="dv">1</span><span class="sc">:-</span><span class="dv">2</span>],</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>          <span class="at">prom =</span> <span class="fu">as.numeric</span>(promedios<span class="sc">$</span>prom),</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>          <span class="at">min =</span> <span class="fu">as.numeric</span>(promedios<span class="sc">$</span>min))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <section id="habilidades-generales-y-de-ciencia-abierta" class="level3">
 <h3 class="anchored" data-anchor-id="habilidades-generales-y-de-ciencia-abierta">Habilidades generales y de Ciencia Abierta</h3>
+<p>Las preguntas contenidas en esta sección son las siguientes.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>muestra el escript:</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>promedios <span class="sc">|&gt;</span> </span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(var, <span class="at">pattern =</span> <span class="st">"gral"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> var, <span class="at">y =</span> prom)) <span class="sc">+</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> var, <span class="at">xend =</span> var, </span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> <span class="dv">0</span>, <span class="at">yend =</span> prom), <span class="at">color=</span><span class="st">"blue"</span>) <span class="sc">+</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">size=</span><span class="dv">3</span>, <span class="at">color=</span><span class="st">"#69b3a2"</span>) <span class="sc">+</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_light</span>() <span class="sc">+</span></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(</span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.minor.y =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.major.y =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">axis.text =</span> <span class="fu">element_text</span>( <span class="at">size=</span><span class="dv">10</span> )) <span class="sc">+</span></span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylab</span>(<span class="st">"Valoración"</span>) <span class="sc">+</span></span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">""</span>) <span class="sc">+</span></span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Temas generales"</span>, <span class="at">subtitle =</span> etiqueta) <span class="sc">+</span></span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylim</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">5</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>preguntas <span class="sc">|&gt;</span> </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(idBlq, <span class="at">pattern =</span> <span class="st">"gral"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">flextable</span>(<span class="at">col_keys =</span> <span class="fu">c</span>(<span class="st">"idBlq"</span>, <span class="st">"preg"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">width</span>(<span class="at">j =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">width =</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="dv">6</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="tabwid"><style>.cl-530a2fba{}.cl-5305a0bc{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-53078b84{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-53079cc8{width:0.5in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-53079cd2{width:6in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-53079cd3{width:0.5in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-53079cd4{width:6in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-53079cdc{width:0.5in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-53079cdd{width:6in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-530a2fba"><thead><tr style="overflow-wrap:break-word;"><th class="cl-53079cc8"><p class="cl-53078b84"><span class="cl-5305a0bc">idBlq</span></p></th><th class="cl-53079cd2"><p class="cl-53078b84"><span class="cl-5305a0bc">preg</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-53079cd3"><p class="cl-53078b84"><span class="cl-5305a0bc">gral_1</span></p></td><td class="cl-53079cd4"><p class="cl-53078b84"><span class="cl-5305a0bc">Estructurar mis documentos considerando la perspectiva de narrativa de datos:</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-53079cd3"><p class="cl-53078b84"><span class="cl-5305a0bc">gral_2</span></p></td><td class="cl-53079cd4"><p class="cl-53078b84"><span class="cl-5305a0bc">Defender mi propia opinión en relación con la crisis de la reproducibilidad:</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-53079cd3"><p class="cl-53078b84"><span class="cl-5305a0bc">gral_3</span></p></td><td class="cl-53079cd4"><p class="cl-53078b84"><span class="cl-5305a0bc">Crear un proyecto en RStudio que tenga a Quarto habilitado:</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-53079cd3"><p class="cl-53078b84"><span class="cl-5305a0bc">gral_4</span></p></td><td class="cl-53079cd4"><p class="cl-53078b84"><span class="cl-5305a0bc">Utilizar un blog como una bitácora de control de mi proyecto académico, que puedo compartir:</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-53079cd3"><p class="cl-53078b84"><span class="cl-5305a0bc">gral_5</span></p></td><td class="cl-53079cd4"><p class="cl-53078b84"><span class="cl-5305a0bc">Habilitar y manejar comentarios mediante http://hypothes.is/:</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-53079cd3"><p class="cl-53078b84"><span class="cl-5305a0bc">gral_6</span></p></td><td class="cl-53079cd4"><p class="cl-53078b84"><span class="cl-5305a0bc">Distinguir, buscar y utilizar apropiadamente datos abiertos y de acceso abierto:</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-53079cd3"><p class="cl-53078b84"><span class="cl-5305a0bc">gral_7</span></p></td><td class="cl-53079cd4"><p class="cl-53078b84"><span class="cl-5305a0bc">Organizar mi trabajo para producir y reportar resultados reproducibles:</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-53079cd3"><p class="cl-53078b84"><span class="cl-5305a0bc">gral_8</span></p></td><td class="cl-53079cd4"><p class="cl-53078b84"><span class="cl-5305a0bc">Generar reportes que compartan los datos y los algoritmos que usé para producirlo, con un ánimo de ciencia abierta:</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-53079cdc"><p class="cl-53078b84"><span class="cl-5305a0bc">gral_9</span></p></td><td class="cl-53079cdd"><p class="cl-53078b84"><span class="cl-5305a0bc">Cuidar de utilizar y defender valores de ciencia abierta en mi trabajo profesional:</span></p></td></tr></tbody></table></div>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>muestra el escript:</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>promedios <span class="sc">|&gt;</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(var, <span class="at">pattern =</span> <span class="st">"gral"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> var, <span class="at">y =</span> prom)) <span class="sc">+</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> var, <span class="at">xend =</span> var, </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> <span class="dv">0</span>, <span class="at">yend =</span> prom), <span class="at">color=</span><span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">size=</span><span class="dv">3</span>, <span class="at">color=</span><span class="st">"#69b3a2"</span>) <span class="sc">+</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_light</span>() <span class="sc">+</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.minor.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.major.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">axis.text =</span> <span class="fu">element_text</span>( <span class="at">size=</span><span class="dv">10</span> )) <span class="sc">+</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylab</span>(<span class="st">"Valoración"</span>) <span class="sc">+</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">""</span>) <span class="sc">+</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Temas generales"</span>, <span class="at">subtitle =</span> etiqueta) <span class="sc">+</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylim</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">5</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="index_files/figure-html/unnamed-chunk-3-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></a></p>
+<p><a href="index_files/figure-html/unnamed-chunk-4-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -332,30 +330,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="manejo-de-rstudio-y-quarto" class="level3">
 <h3 class="anchored" data-anchor-id="manejo-de-rstudio-y-quarto">Manejo de RStudio y Quarto</h3>
+<p>Las preguntas contenidas en esta sección son las siguientes.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>muestra el escript:</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>promedios <span class="sc">|&gt;</span> </span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(var, <span class="at">pattern =</span> <span class="st">"rstu"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> var, <span class="at">y =</span> prom)) <span class="sc">+</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> var, <span class="at">xend =</span> var, </span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> <span class="dv">0</span>, <span class="at">yend =</span> prom), <span class="at">color=</span><span class="st">"blue"</span>) <span class="sc">+</span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">size=</span><span class="dv">3</span>, <span class="at">color=</span><span class="st">"#69b3a2"</span>) <span class="sc">+</span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_light</span>() <span class="sc">+</span></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(</span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.minor.y =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.major.y =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">axis.text =</span> <span class="fu">element_text</span>( <span class="at">size=</span><span class="dv">10</span> )) <span class="sc">+</span></span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylab</span>(<span class="st">"Valoración"</span>) <span class="sc">+</span></span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">""</span>) <span class="sc">+</span></span>
-<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Manejo de RStudio y Markdown"</span>, <span class="at">subtitle =</span> etiqueta) <span class="sc">+</span></span>
-<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylim</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">5</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>preguntas <span class="sc">|&gt;</span> </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(idBlq, <span class="at">pattern =</span> <span class="st">"rstu"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">flextable</span>(<span class="at">col_keys =</span> <span class="fu">c</span>(<span class="st">"idBlq"</span>, <span class="st">"preg"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">width</span>(<span class="at">j =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">width =</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="dv">6</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="tabwid"><style>.cl-532bf7a8{}.cl-53279ba4{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-53297fa0{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-53299080{width:0.5in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-53299081{width:6in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-53299082{width:0.5in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-53299083{width:6in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5329908a{width:0.5in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5329908b{width:6in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-532bf7a8"><thead><tr style="overflow-wrap:break-word;"><th class="cl-53299080"><p class="cl-53297fa0"><span class="cl-53279ba4">idBlq</span></p></th><th class="cl-53299081"><p class="cl-53297fa0"><span class="cl-53279ba4">preg</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-53299082"><p class="cl-53297fa0"><span class="cl-53279ba4">rstu_2</span></p></td><td class="cl-53299083"><p class="cl-53297fa0"><span class="cl-53279ba4">Escribir mi texto con Markdown usando marcas de formato, ligas e ilustraciones:</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-53299082"><p class="cl-53297fa0"><span class="cl-53279ba4">rstu_3</span></p></td><td class="cl-53299083"><p class="cl-53297fa0"><span class="cl-53279ba4">Distinguir y manejar apropiadamente la sección de encabezado YAML de un documento (controlando las opciones y metadatos) y el resto del texto desarrollado con Markdown:</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-53299082"><p class="cl-53297fa0"><span class="cl-53279ba4">rstu_4</span></p></td><td class="cl-53299083"><p class="cl-53297fa0"><span class="cl-53279ba4">Editar apropiadamente los distintos tipos de archivos de mi proyecto (yaml, qmd, posts, etc):</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-53299082"><p class="cl-53297fa0"><span class="cl-53279ba4">rstu_5</span></p></td><td class="cl-53299083"><p class="cl-53297fa0"><span class="cl-53279ba4">Habilitar git en RStudio</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-53299082"><p class="cl-53297fa0"><span class="cl-53279ba4">rstu_6</span></p></td><td class="cl-53299083"><p class="cl-53297fa0"><span class="cl-53279ba4">Vincular mi proyecto con un "almacén" en la nube con Github:</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-53299082"><p class="cl-53297fa0"><span class="cl-53279ba4">rstu_7</span></p></td><td class="cl-53299083"><p class="cl-53297fa0"><span class="cl-53279ba4">Publicar continuamente mis documentos en la Web con ayuda de Netlify</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-53299082"><p class="cl-53297fa0"><span class="cl-53279ba4">rstu_8</span></p></td><td class="cl-53299083"><p class="cl-53297fa0"><span class="cl-53279ba4">Operar rutinariamente en RStudio con respaldo en Git: commit-pull-push:</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-53299082"><p class="cl-53297fa0"><span class="cl-53279ba4">rstu_9</span></p></td><td class="cl-53299083"><p class="cl-53297fa0"><span class="cl-53279ba4">Incluir en mi texto "trozos" de código (lectura de datos, análisis, graficación):</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-53299082"><p class="cl-53297fa0"><span class="cl-53279ba4">rstu_10</span></p></td><td class="cl-53299083"><p class="cl-53297fa0"><span class="cl-53279ba4">Usar referencias cruzadas en mi texto (figuras, cuadros, definiciones, etc.):</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-53299082"><p class="cl-53297fa0"><span class="cl-53279ba4">rstu_11</span></p></td><td class="cl-53299083"><p class="cl-53297fa0"><span class="cl-53279ba4">Anotar en mi texto citas bibliográficas e incluir la lista de literatura automáticamente:</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-53299082"><p class="cl-53297fa0"><span class="cl-53279ba4">rstu_12</span></p></td><td class="cl-53299083"><p class="cl-53297fa0"><span class="cl-53279ba4">Utilizar Markdown para producir textos en formato MS-Word o PDF como "artículo científico":</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5329908a"><p class="cl-53297fa0"><span class="cl-53279ba4">rstu_13</span></p></td><td class="cl-5329908b"><p class="cl-53297fa0"><span class="cl-53279ba4">Producir documentos para "presentación web" con Reveal.JS:</span></p></td></tr></tbody></table></div>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>muestra el escript:</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>promedios <span class="sc">|&gt;</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(var, <span class="at">pattern =</span> <span class="st">"rstu"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> var, <span class="at">y =</span> prom)) <span class="sc">+</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> var, <span class="at">xend =</span> var, </span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> <span class="dv">0</span>, <span class="at">yend =</span> prom), <span class="at">color=</span><span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">size=</span><span class="dv">3</span>, <span class="at">color=</span><span class="st">"#69b3a2"</span>) <span class="sc">+</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_light</span>() <span class="sc">+</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.minor.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.major.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">axis.text =</span> <span class="fu">element_text</span>( <span class="at">size=</span><span class="dv">10</span> )) <span class="sc">+</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylab</span>(<span class="st">"Valoración"</span>) <span class="sc">+</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">""</span>) <span class="sc">+</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Manejo de RStudio y Markdown"</span>, <span class="at">subtitle =</span> etiqueta) <span class="sc">+</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylim</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">5</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="index_files/figure-html/unnamed-chunk-4-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></a></p>
+<p><a href="index_files/figure-html/unnamed-chunk-6-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -363,30 +374,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="uso-de-git" class="level3">
 <h3 class="anchored" data-anchor-id="uso-de-git">Uso de Git</h3>
+<p>Las preguntas contenidas en esta sección son las siguientes.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>muestra el escript:</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>promedios <span class="sc">|&gt;</span> </span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(var,<span class="at">pattern =</span> <span class="st">"git"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> var, <span class="at">y =</span> prom)) <span class="sc">+</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> var, <span class="at">xend =</span> var, </span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> <span class="dv">0</span>, <span class="at">yend =</span> prom), <span class="at">color=</span><span class="st">"blue"</span>) <span class="sc">+</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">size=</span><span class="dv">3</span>, <span class="at">color=</span><span class="st">"#69b3a2"</span>) <span class="sc">+</span></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_light</span>() <span class="sc">+</span></span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(</span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.minor.y =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.major.y =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">axis.text =</span> <span class="fu">element_text</span>( <span class="at">size=</span><span class="dv">10</span> )) <span class="sc">+</span></span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylab</span>(<span class="st">"Valoración"</span>) <span class="sc">+</span></span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">""</span>) <span class="sc">+</span></span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Mnejo de Git"</span>, <span class="at">subtitle =</span> etiqueta) <span class="sc">+</span></span>
-<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylim</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">5</span>))  </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>preguntas <span class="sc">|&gt;</span> </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(idBlq, <span class="at">pattern =</span> <span class="st">"git"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">flextable</span>(<span class="at">col_keys =</span> <span class="fu">c</span>(<span class="st">"idBlq"</span>, <span class="st">"preg"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">width</span>(<span class="at">j =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">width =</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="dv">6</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="tabwid"><style>.cl-534f1030{}.cl-534aa3ba{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-534c9ff8{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-534cae80{width:0.5in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-534cae8a{width:6in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-534cae8b{width:0.5in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-534cae8c{width:6in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-534cae94{width:0.5in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-534cae95{width:6in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-534f1030"><thead><tr style="overflow-wrap:break-word;"><th class="cl-534cae80"><p class="cl-534c9ff8"><span class="cl-534aa3ba">idBlq</span></p></th><th class="cl-534cae8a"><p class="cl-534c9ff8"><span class="cl-534aa3ba">preg</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-534cae8b"><p class="cl-534c9ff8"><span class="cl-534aa3ba">git_1</span></p></td><td class="cl-534cae8c"><p class="cl-534c9ff8"><span class="cl-534aa3ba">Crear nuevas ramas para trabajar sin afectar la línea de producción de mi proyecto:</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-534cae8b"><p class="cl-534c9ff8"><span class="cl-534aa3ba">git_2</span></p></td><td class="cl-534cae8c"><p class="cl-534c9ff8"><span class="cl-534aa3ba">Recuperar estados previos de mi espacio de trabajo desde git:</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-534cae8b"><p class="cl-534c9ff8"><span class="cl-534aa3ba">git_3</span></p></td><td class="cl-534cae8c"><p class="cl-534c9ff8"><span class="cl-534aa3ba">Reunir una rama de git con la principal de producción:</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-534cae94"><p class="cl-534c9ff8"><span class="cl-534aa3ba">git_4</span></p></td><td class="cl-534cae95"><p class="cl-534c9ff8"><span class="cl-534aa3ba">Operar un "pull request" como medio de colaboración con respaldo en Github:</span></p></td></tr></tbody></table></div>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>muestra el escript:</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>promedios <span class="sc">|&gt;</span> </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(var,<span class="at">pattern =</span> <span class="st">"git"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> var, <span class="at">y =</span> prom)) <span class="sc">+</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> var, <span class="at">xend =</span> var, </span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> <span class="dv">0</span>, <span class="at">yend =</span> prom), <span class="at">color=</span><span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">size=</span><span class="dv">3</span>, <span class="at">color=</span><span class="st">"#69b3a2"</span>) <span class="sc">+</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_light</span>() <span class="sc">+</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.minor.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.major.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">axis.text =</span> <span class="fu">element_text</span>( <span class="at">size=</span><span class="dv">10</span> )) <span class="sc">+</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylab</span>(<span class="st">"Valoración"</span>) <span class="sc">+</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">""</span>) <span class="sc">+</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Mnejo de Git"</span>, <span class="at">subtitle =</span> etiqueta) <span class="sc">+</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylim</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">5</span>))  </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="index_files/figure-html/unnamed-chunk-5-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></a></p>
+<p><a href="index_files/figure-html/unnamed-chunk-8-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="index_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -818,7 +842,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","loop":false,"descPosition":"bottom","openEffect":"zoom","selector":".lightbox"});
+<script>var lightboxQuarto = GLightbox({"loop":false,"selector":".lightbox","descPosition":"bottom","closeEffect":"zoom","openEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {

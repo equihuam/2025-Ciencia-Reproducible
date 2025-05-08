@@ -51,11 +51,13 @@ Este formulario está generando datos que recojo en un documento _Googlesheets_.
 
 
 ```{r}
-pacman::p_load(googlesheets4, stringr, dplyr, tidyr, ggplot2)
+pacman::p_load(googlesheets4, stringr, dplyr, tidyr, ggplot2, flextable)
 
 # keyring::key_get(service = "google-sheets", "equihuam")
 
-options(gargle_oauth_client_type = "web", gargle_oob_default = TRUE) 
+options(gargle_oauth_email = "equihuam@gmail.com", 
+        gargle_oob_default = TRUE,
+        gargle_oauth_client_type = "web")
 gs4_auth()
 
 url_gs <- "https://docs.google.com/spreadsheets/d/1O7jzCP3RD7IuOoF-wXrgFnhWLTB_3mhUQevyFhQjA3I/edit?resourcekey=&gid=1886023914#gid=1886023914"
@@ -104,6 +106,16 @@ promedios <- datos_eval |>
 
 ### Habilidades generales y de Ciencia Abierta
 
+Las preguntas contenidas en esta sección son las siguientes.
+
+```{r}
+preguntas |> 
+  filter(str_detect(idBlq, pattern = "gral")) |> 
+  flextable(col_keys = c("idBlq", "preg")) |> 
+  width(j = 1:2, width = c(0.5, 6))
+```
+
+
 
 ```{r}
 promedios |> 
@@ -126,6 +138,15 @@ promedios |>
 ```
 
 ### Manejo de RStudio y Quarto
+
+Las preguntas contenidas en esta sección son las siguientes.
+
+```{r}
+preguntas |> 
+  filter(str_detect(idBlq, pattern = "rstu")) |> 
+  flextable(col_keys = c("idBlq", "preg")) |> 
+  width(j = 1:2, width = c(0.5, 6))
+```
 
 
 ```{r}
@@ -150,6 +171,15 @@ promedios |>
 
 
 ### Uso de Git
+
+Las preguntas contenidas en esta sección son las siguientes.
+
+```{r}
+preguntas |> 
+  filter(str_detect(idBlq, pattern = "git")) |> 
+  flextable(col_keys = c("idBlq", "preg")) |> 
+  width(j = 1:2, width = c(0.5, 6))
+```
 
 
 ```{r}
