@@ -122,7 +122,7 @@ promedios |>
   filter(str_detect(var, pattern = "gral")) |> 
   ggplot(aes(x = var, y = prom)) +
     geom_segment(aes(x = var, xend = var, 
-                     y = 0, yend = prom), color="blue") +
+                     y = 1, yend = prom), color="blue") +
     geom_point(size=3, color="#69b3a2") +
     coord_flip() +
     theme_light() +
@@ -130,10 +130,11 @@ promedios |>
       panel.grid.minor.y = element_blank(),
       panel.grid.major.y = element_blank(),
       axis.text = element_text( size=10 )) +
+    scale_x_discrete(limits=rev) +
     ylab("Valoración") +
     xlab("") +
     labs(title = "Temas generales", subtitle = etiqueta) +
-    ylim(c(0, 5))
+    ylim(c(1, 5))
   
 ```
 
@@ -150,13 +151,18 @@ preguntas |>
 
 
 ```{r}
+
 promedios |> 
   filter(str_detect(var, pattern = "rstu")) |> 
+  mutate(var = ordered(var, levels = c("rstu_1","rstu_2","rstu_3","rstu_4","rstu_5",
+                                   "rstu_6","rstu_7","rstu_8","rstu_9","rstu_10",
+                                   "rstu_11","rstu_12"))) |>   
   ggplot(aes(x = var, y = prom)) +
     geom_segment(aes(x = var, xend = var, 
-                     y = 0, yend = prom), color="blue") +
+                     y = 1, yend = prom), color="blue") +
     geom_point(size=3, color="#69b3a2") +
     coord_flip() +
+    scale_x_discrete(limits=rev) +
     theme_light() +
     theme(
       panel.grid.minor.y = element_blank(),
@@ -165,7 +171,7 @@ promedios |>
     ylab("Valoración") +
     xlab("") +
     labs(title = "Manejo de RStudio y Markdown", subtitle = etiqueta) +
-    ylim(c(0, 5))
+    ylim(c(1, 5))
   
 ```
 
@@ -187,9 +193,10 @@ promedios |>
   filter(str_detect(var,pattern = "git")) |> 
   ggplot(aes(x = var, y = prom)) +
     geom_segment(aes(x = var, xend = var, 
-                     y = 0, yend = prom), color="blue") +
+                     y = 1, yend = prom), color="blue") +
     geom_point(size=3, color="#69b3a2") +
     coord_flip() +
+    scale_x_discrete(limits=rev) +
     theme_light() +
     theme(
       panel.grid.minor.y = element_blank(),
@@ -198,7 +205,7 @@ promedios |>
     ylab("Valoración") +
     xlab("") +
     labs(title = "Mnejo de Git", subtitle = etiqueta) +
-    ylim(c(0, 5))  
+    ylim(c(1, 5))  
   
 ```
 
