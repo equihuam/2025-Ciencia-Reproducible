@@ -24,16 +24,15 @@ format:
 
 Te propongo que revises el cuestionario que sigue para que valores que tanto has logrado dominar las habilidades y temas que hemos estado discutiendo en el taller. Consideralo como una guía de verificación de tu avance y toma nota de los temas que se te han comolicado. Con esta información espero poder atender con más precisión las necesidades de asesoría que tengas. El formulario está abierto a que revises tus respuestas cada vez que lo desees, de modo que puedes regresar a él y cambiar tus respuestas conforme resuelvas tus dudas y superes los obstásculos.  EL [formulario está aquí.](https://forms.gle/zHzUE434NWpDaP9c6)
 
-
 \ 
 
-
+::: {style="font-weight: bold; background-color: #B7E1EF;"}
 ```{=html}
 <iframe 
 
     src="https://docs.google.com/forms/d/e/1FAIpQLScdklvBcaL4YkIqw4iIWBS6pfgOp06iw4BN42v1qZOpkpVxiw/viewform?embedded=true" 
     width="800" 
-    height="3500" 
+    height="3000" 
     frameborder="2" 
     marginheight="0" 
     marginwidth="0">
@@ -42,7 +41,7 @@ Te propongo que revises el cuestionario que sigue para que valores que tanto has
   
 </iframe>
 ```
-
+:::
 
 ## Datos del grupo
 

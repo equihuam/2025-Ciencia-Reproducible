@@ -154,6 +154,7 @@ if (length(url_err) == 0)
 Sigue una encuesta hecha en _Google forma_, que estoy vinculando aquí como un recurso **iframe**. Lo que hice fue crear el formato en _Google forms_ de la manera usual y obtener allá el código mediante la opción **Incorporar HTML** que encontré en _opciones_ (los puntitos arriba a la izquierda en el sitio). Lo  siguiente es poner esas líneas en un bloque de código _html_ así:
 \ 
 
+::: {style="font-weight: bold; background-color: WhiteSmoke;"}
 ```html
 <iframe 
   src="https://docs.google.com/forms/d/e/1FAIpQLSfwhhNegX8-R6jfCSnvZwUfabBNIUIb4fqxESnZKHYrDTnj-g/viewform?embedded=true" 
@@ -165,6 +166,7 @@ Sigue una encuesta hecha en _Google forma_, que estoy vinculando aquí como un r
   Cargando…
 </iframe>
 ```
+:::
 
 \ 
 
