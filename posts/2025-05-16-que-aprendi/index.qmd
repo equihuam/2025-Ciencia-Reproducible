@@ -2,7 +2,7 @@
 title: "Evaluar la experiencia"
 author: Miguel Equihua
 
-image: "img/Image by Gerd Altmann from Pixabay - tree-200795_1280.jpg"
+image: "img/Image by Klara David Litschel from Pixabay-ai-generated-8772225_1280.jpg"
 lang: es
 date: 16/may/2025
 
