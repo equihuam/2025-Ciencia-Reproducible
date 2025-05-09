@@ -69,7 +69,15 @@ etiqueta <- "Datos de la encuesta"
 if (nrow(datos_eval)==0)
 { 
   datos_eval <- datos_eval |>  
-  add_row(!!! setNames(rep(sample(1:5,27, replace = TRUE), each = 1), names(datos_eval)))
+  add_row(!!! setNames(rep(sample(1:5,27, replace = TRUE), each = 1), 
+                       names(datos_eval))) |> 
+  add_row(!!! setNames(rep(sample(1:5,27, replace = TRUE), each = 1), 
+                       names(datos_eval))) |> 
+  add_row(!!! setNames(rep(sample(1:5,27, replace = TRUE), each = 1), 
+                       names(datos_eval))) |> 
+  add_row(!!! setNames(rep(sample(1:5,27, replace = TRUE), each = 1), 
+                       names(datos_eval)))
+  
   etiqueta <- "Datos simulados"
 }
 
@@ -94,11 +102,13 @@ datos_eval <- datos_eval |>
 promedios <- datos_eval |> 
   select(gral_1:git_4) |> 
   summarise(prom = across(gral_1:git_4, ~ mean(.x, na.rm = TRUE)),
-            min = across(gral_1:git_4, ~ min(.x, na.rm = TRUE)))
+            min = across(gral_1:git_4, ~ min(.x, na.rm = TRUE)),
+            max = across(gral_1:git_4, ~ max(.x, na.rm = TRUE)))
 
  promedios <- tibble(var = preguntas$idBlq[-1:-2],
           prom = as.numeric(promedios$prom),
-          min = as.numeric(promedios$min))
+          min = as.numeric(promedios$min),
+          max = as.numeric(promedios$max))
 
 ```
 
@@ -121,8 +131,10 @@ promedios |>
   filter(str_detect(var, pattern = "gral")) |> 
   ggplot(aes(x = var, y = prom)) +
     geom_segment(aes(x = var, xend = var, 
-                     y = 1, yend = prom), color="blue") +
+                     y = min, yend = max), color="blue") +
     geom_point(size=3, color="#69b3a2") +
+    geom_point(size=3, color="#F6D289", aes(y=min)) +
+    geom_point(size=3, color="#E6C8F3", aes(y=max)) +
     coord_flip() +
     theme_light() +
     theme(
@@ -158,8 +170,10 @@ promedios |>
                                    "rstu_11","rstu_12"))) |>   
   ggplot(aes(x = var, y = prom)) +
     geom_segment(aes(x = var, xend = var, 
-                     y = 1, yend = prom), color="blue") +
+                     y = min, yend = max), color="blue") +
     geom_point(size=3, color="#69b3a2") +
+    geom_point(size=3, color="#F6D289", aes(y=min)) +
+    geom_point(size=3, color="#E6C8F3", aes(y=max)) +
     coord_flip() +
     scale_x_discrete(limits=rev) +
     theme_light() +
@@ -192,8 +206,10 @@ promedios |>
   filter(str_detect(var,pattern = "git")) |> 
   ggplot(aes(x = var, y = prom)) +
     geom_segment(aes(x = var, xend = var, 
-                     y = 1, yend = prom), color="blue") +
+                     y = min, yend = max), color="blue") +
     geom_point(size=3, color="#69b3a2") +
+    geom_point(size=3, color="#F6D289", aes(y=min)) +
+    geom_point(size=3, color="#E6C8F3", aes(y=max)) +
     coord_flip() +
     scale_x_discrete(limits=rev) +
     theme_light() +
@@ -209,5 +225,4 @@ promedios |>
 ```
 
 \ 
-
 
