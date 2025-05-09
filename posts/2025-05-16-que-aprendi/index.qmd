@@ -203,8 +203,11 @@ promedios |>
       axis.text = element_text( size=10 )) +
     ylab("Valoración") +
     xlab("") +
-    labs(title = "Mnejo de Git", subtitle = etiqueta) +
+    labs(title = "Manejo de Git", subtitle = etiqueta) +
     ylim(c(1, 5))  
   
 ```
+
+\ 
+
 

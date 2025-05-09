@@ -27,14 +27,11 @@ citation:
   type: post
   container-title: "Proyecto Ciencia Abierta Inecol"
   url: https://2025-ciencia-reproducible.netlify.app/
-  
 ---
 
-![](img/Imagen%20de%20Alexa%20en%20Pixabay-a-book-1840910_1280.jpg){width=70% fig-align="center"}
+![](img/Imagen%20de%20Alexa%20en%20Pixabay-a-book-1840910_1280.jpg){width="70%" fig-align="center"}
 
-[modelo](web/index.html)
-
-En la construcción de documentos académicos las referencias bibliográficas son escenciales. Llevar el control de las que soportar tu trabajo, anotarlas en apoyo a tus argumentos y citarlas correctamente en una sección de referencias es una tarea indispensbale. [*Quarto* te ofrece muchos recursos][quarto-citas] para realizar esto. Lo primero es agregar las opciones de bibliografía en la sección de encabezado **yaml** del documento que estes trabajando. Una para especificar el archivo en el que estas recolectando tus datos bibliográficos (`*.bib`) y otra para controlar el *estilo* de presentación de las citas (`*.csl`). Existe el [**proyecto CSL**][csl-primer] que ha creado un [repositorio público][csl-styles] con más de 2,500 archivos de estilo (compartidos con una licencia de *Creative Commons*).
+En la construcción de documentos académicos las referencias bibliográficas son escenciales. Llevar el control de las que soportar tu trabajo, anotarlas en apoyo a tus argumentos y citarlas correctamente en una sección de referencias es una tarea indispensbale. [*Quarto* te ofrece muchos recursos](https://quarto.org/docs/authoring/citations.html#sec-citations) para realizar esto. Lo primero es agregar las opciones de bibliografía en la sección de encabezado **yaml** del documento   que estes trabajando. Una para especificar el archivo en el que estas recolectando tus datos bibliográficos (`*.bib`) y otra para controlar el *estilo* de presentación de las citas (`*.csl`). Existe el [**proyecto CSL**](https://docs.citationstyles.org/en/stable/primer.html) que ha creado un [repositorio público](https://github.com/citation-style-language/styles) con más de 2,500 archivos de estilo (compartidos con una licencia de *Creative Commons*).
 
 Puedes optar por tres métodos de gestión de referencias con la opción `cite-method`. La variante **citeproc** es el default de *Quarto*, no necesitas idicarla pero puedes hacerlo. Las otras opciones son *biblatex* y *natbib*, que vienen del mundo del lenguaje *Latex*. Además Hay que decir que *Typst*, lo que hemos usado para dar formato tipo artículo científico, tiene su propio sistema de procesamiento de referencias. Si usas *Typst*, deberas usar `bibliographystyle` con una línea que indique el estilo que deseas, según la lista predefinida de *Typst*, o usar un nombre de archivo **CSL**. Empecemos por lo más simple, que es lo que ya está incluido en *RStudio*. Para esto conviene activar el modo *visual*. En lo que sigue usaré el enfoque normal de *Quarto*. Prepara tu documento agregando las siguientes líneas en tu encabezado.
 
@@ -47,8 +44,7 @@ csl: apa.csl
 ---
 ```
 
-En este ejemplo, ambos archivos están en el mismo directorio del documento que estás trabajando. Si usas otra ubicación asegurate de proporcionar la información adecuada en la ruta. El archivo de estilo podría ser también una dirección _URL_. Por ejemplo, puedes obtener un _link_ del repositorio que mantiene [Zotero](https://www.zotero.org/styles). Ese sitio tiene un buscador que te ayuda a localizar lo que te interesa. Cuando tengas lo que quieres, basta con copiar el enlace  _URL_ asociado con el título correspondiente. Nota que hay variantes en idiomas y países. Por ejemplo:
-
+En este ejemplo, ambos archivos están en el mismo directorio del documento que estás trabajando. Si usas otra ubicación asegurate de proporcionar la información adecuada en la ruta. El archivo de estilo podría ser también una dirección *URL*. Por ejemplo, puedes obtener un *link* del repositorio que mantiene [Zotero](https://www.zotero.org/styles). Ese sitio tiene un buscador que te ayuda a localizar lo que te interesa. Cuando tengas lo que quieres, basta con copiar el enlace *URL* asociado con el título correspondiente. Nota que hay variantes en idiomas y países. Por ejemplo:
 
 ``` yaml
 ---
@@ -59,61 +55,53 @@ csl: https://www.zotero.org/styles/estudios-de-cultura-maya
 ---
 ```
 
-
-
 ::: {layout="[2,-0.25,1]"}
 La mecánica para incluir referenicas es la siguiente (modo visual activado). Ubícate en el lugar del texto en donde quieres aparezca la llamada a la referencia. Dirígete a la línea de íconos de tareas y elige *Insert*.
 
-![](img/citas.png){width=40%}
+![](img/citas.png){width="40%"}
 :::
-
 
 ::: {layout="[2,-0.25,1]"}
 Al selecciónar `@ Citation` se abrirá la ventana emergente que te permitirá buscar las citas que te interesen. Te ofrecerá la posibilidad de buscar en el archivo de datos de referencias que tengas definido como *Bibliography* (el nombre se muestra abajo a la izquierda), o en varios servicios en línea que acumulan información bibliográfica del mundo.
 
-![](img/citas-servicios.png){width=40%}
+![](img/citas-servicios.png){width="40%"}
 :::
 
-::: {layout="[2,-0.25,1]"}  
-Otro recurso útil, que puedes vincular con _RStudio_ es [_Zotero_](https://www.zotero.org/). Esta aplicación te permite reunir toda clase de referencias, desde referencia a sitios Web, referencias en [Google Scholar][GScholar] y desde luego, la captura manual. _Zotero_ también tiene un repositorio de archivos **CSL** que puedes usar, aunque notarás que los presenta como **XML**. Lo único que tienes que hacer para aprovecharlos en _Quarto_ es cambiar la extensión, pues en realidad un archivo **CSL** está estructurado como un **XML**. Si tienes instalado _Zotero_, entonces podrás usar la herramienta de **edición de estilos** que puedes abrir desde el menu _Herramientas/Desarrollador_, puedes elegir lo que desees y guardar directamente en formato **CSl**. Con este editor puedes incluso seleccionar variantes apropiadas para las preferencias del  idioma y país de tu elección. Para hacer que _Zotero_ esté accesible en _RStudio_ debes activarlo en las_Opciones Globales.  
+::: {layout="[2,-0.25,1]"}
+Otro recurso útil, que puedes vincular con *RStudio* es [*Zotero*](https://www.zotero.org/). Esta aplicación te permite reunir toda clase de referencias, desde referencia a sitios Web, referencias en [Google Scholar](https://scholar.google.com/) y desde luego, la captura manual. *Zotero* también tiene un repositorio de archivos **CSL** que puedes usar, aunque notarás que los presenta como **XML**. Lo único que tienes que hacer para aprovecharlos en *Quarto* es cambiar la extensión, pues en realidad un archivo **CSL** está estructurado como un **XML**. Si tienes instalado *Zotero*, entonces podrás usar la herramienta de **edición de estilos** que puedes abrir desde el menu *Herramientas/Desarrollador*, puedes elegir lo que desees y guardar directamente en formato **CSl**. Con este editor puedes incluso seleccionar variantes apropiadas para las preferencias del idioma y país de tu elección. Para hacer que *Zotero* esté accesible en *RStudio* debes activarlo en las_Opciones Globales.
 
 ![](img/zotero-style-csl.png)
-
-::: 
-
-::: {layout="[[2],[1,1]]".columns}
-En las opciones, busca *R Markdow* y ahí, la pestaña *Ciations*. Ahí defines tus preferencias para interactuar con *Zotero*. Si lo tienes instalado en tu equipo como yo, te conviene elegir `local`. Esto abre una serie de posibilidades para interactuar dinámicamente con las capacidades de ambas aplicaciones.
-
-
-![](img/zotero.png){width=300}
-
-![](img/zotero-option.png ){width=200}
-
-
-  
 :::
 
-\ 
+::: {.columns layout="[[2],[1,1]]"}
+En las opciones, busca *R Markdow* y ahí, la pestaña *Ciations*. Ahí defines tus preferencias para interactuar con *Zotero*. Si lo tienes instalado en tu equipo como yo, te conviene elegir `local`. Esto abre una serie de posibilidades para interactuar dinámicamente con las capacidades de ambas aplicaciones.
+
+![](img/zotero.png){width="300"}
+
+![](img/zotero-option.png){width="200"}
+:::
+
+ 
 
 Nota que las referencias aparecen con la convención de poner "\@" como prefijo a un nombre clave (como se usa en *Markdown* para cualquier referencia cruzada). La forma como se desplieguen las llamadas y la lista de referencicas depende de lo que defina el archivo **CSL** que hayas especificado.
 
 A continuación un ejemplo: La cita es de @equihuazamora2024 y agregas una lista de citas al final de un texto poniendo las claves separadas por ";" y todo dentro de paréntesis cuadrados [@martinez2011; @equihua2004].
 
-Al final del texto, aparecerá la lista de referencias con el encabezado automático **referencias**. Puedes cambiar eso poniendo un _div_ así:
+Al final del texto, aparecerá la lista de referencias con el encabezado automático **referencias**. Puedes cambiar eso poniendo un *div* así:
 
-```md
+``` md
 :::{#refs}
 ## Literatura Citada
 :::
 ```
 
-\ 
+ 
 
 ## ¿Post citable?
 
-Ya que estamos en esto de la citación, cosidera que [tus post pueden ser organizados para ser citables][post-citable]. Si preparas el encabezado _yaml_ de un documento con una sección _citation_ con datos adecuados (puede acomodar todos los detalles necesarios como opciones). Con esta previsión, el _Post_ respectivo tendrá al final una sección que invitará al lector a citarlo y le dara indicaciones de como lo podría hacer.
+Ya que estamos en esto de la citación, cosidera que [tus post pueden ser organizados para ser citables](https://quarto.org/docs/authoring/create-citeable-articles.html). Si preparas el encabezado *yaml* de un documento con una sección *citation* con datos adecuados (puede acomodar todos los detalles necesarios como opciones). Con esta previsión, el *Post* respectivo tendrá al final una sección que invitará al lector a citarlo y le dara indicaciones de como lo podría hacer.
 
-\ 
+ 
 
 ``` yaml
 ---
@@ -129,13 +117,6 @@ citation:
 
 \
 
-:::{#refs}
+::: {#refs}
 ## Literatura Citada
 :::
-
-
-[csl-primer]:https://docs.citationstyles.org/en/stable/primer.html
-[csl-styles]:https://github.com/citation-style-language/styles
-[quarto-citas]:https://quarto.org/docs/authoring/citations.html#sec-citations
-[GScholar]:https://scholar.google.com/
-[post-citable]:https://quarto.org/docs/authoring/create-citeable-articles.html
