@@ -493,7 +493,7 @@ Desafortunadamente, la forma como reportan los datos en la página del **SNIIM**
 
 Para obtener los datos y poderlos cargar a una tabla en **R**, es mejor hacer una cosulta directamente a la base de datos. Para eso necesitamos algunos datos específicos que obtendremos de los siguientes catálogos que, con un poco de maña, se pueden obtener del propio sitio del **SNIIM**, yo ya lo hice por tí y aquí están. A continuación podrás consultar estos catálogos para que contruyas peticiones a tu gusto.
 
- 
+\ 
 
 ```{r}
 pacman::p_load(rvest, DT, dplyr, stringr, ggplot2, scales, htmltools)
