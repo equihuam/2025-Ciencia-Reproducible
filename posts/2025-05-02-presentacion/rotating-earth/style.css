@@ -5,11 +5,15 @@ body {
 .image {
   background-image: url(earth.webp);
   background-size: contain;
+  width: 500%
 
   display: block;
   margin: 0 auto;
-  width: 150%;
-
+  
+  position: absolute;
+  left: 800px;
+  top: 400px;
+  
   animation-name: rotate;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
