@@ -205,11 +205,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="img/Pull-Request.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="img/Pull-Request.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a></p>
-</figure>
-</div>
+<p><img src="img/Pull-Request.png" class="img-fluid">{width=7 0% fig-align=“center”}</p>
 <p>La colaboración con otros miembros del equipo puede hacerse mediante lo que se llamma un <em>Pull request</em> en <em>Git</em>. Podríamos llamarlo una <em>Solicitud de Fusión</em>, aunque lo común es usar la frase en inglés. Es la base del uso de un repositorio <em>Git</em> como plataforma de colaboración, además de su papel en el control de versiones. Es el mecanismo seguro de solicitar la incorporación de cambios al proyecto. La ideas es tan simple como el nombre indica: se solicita al responsable del proyecto que incorpore una nueva rama (desde un repositorio que tiene cambios propuestos), en otra (del mismo o de otro repositorio).</p>
 <p>Con las peticiones de fusión puedes:</p>
 <ul>
@@ -271,14 +267,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="algunos-problemas-encontrados" class="level2">
 <h2 class="anchored" data-anchor-id="algunos-problemas-encontrados">Algunos problemas encontrados</h2>
 <ol type="1">
-<li>Un problema que encontramos hoy fue la de operar <em>RStudio</em> fuera del proyecto de interés en forma inadvertida. Te sugiero siempre verificar que estés trabajando con el proyecto que deseas. La indicación la hace claramente <em>RStudio</em> en la equina superior izquierda. No sólo indica ahí el nombre del proyecto, si <em>Git</em> está habilitado, también indica la <strong>rama</strong> en la que estás trabajando. Si lo que se muestra es solamente <strong>RStudio</strong>, estás fuera de todo proyecto. Ve a <strong>File → Open Project</strong> o <strong>File → Recent Projects</strong> y abre el que deseas sea tu base de trabajo.</li>
+<li>Un problema que encontramos el año pasado fue la de operar <em>RStudio</em> fuera del proyecto de interés en forma inadvertida. Te sugiero siempre verificar que estés trabajando con el proyecto que deseas. La indicación la hace claramente <em>RStudio</em> en la equina superior izquierda. No sólo indica ahí el nombre del proyecto, si <em>Git</em> está habilitado, también indica la <strong>rama</strong> en la que estás trabajando. Si lo que se muestra es solamente <strong>RStudio</strong>, estás fuera de todo proyecto. Ve a <strong>File → Open Project</strong> o <strong>File → Recent Projects</strong> y abre el que deseas sea tu base de trabajo.</li>
 </ol>
-<p><a href="img/Rstudio-proyecto.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="img/Rstudio-proyecto.png" class="img-fluid"></a></p>
+<p><a href="img/Rstudio-proyecto.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="img/Rstudio-proyecto.png" class="img-fluid"></a></p>
 <ol start="2" type="1">
 <li>Después de hacer el <em>fork</em> con <code>usethis::create_from_github("equihuam/ciencia-reproducible", fork = TRUE)</code>, se hizo correctamente la copia, se obtuvo un clón del nuevo repositorio, etc. Sin embargo, el acceso al nuevo repositorio apareció inhabilitado (<em>pull</em> y <em>push</em> grises). Es seguro que esto se deba a un problema de configuración del proyecto. My probablemente tenga que ver con los permisos con los que estás operando y eso lo controla el token que tienes registrado. Pudieran ser también algunas otras cosas. Para empezar a explorar el problema lo mejor será usar <code>git_sitrepo</code> como sugiere <a href="https://forum.posit.co/t/cant-push-git-commit/176827">Matthew Carson</a>, que además de mostrarte detalles de configuración te sugerirá en dónde puede haber problemas y la forma de buscar solución al problema detectado.</li>
 <li>En el vínculo entre <em>Github</em> y <em>Netlify</em> anotaste la rama de interés para publicar que no es la que querías. La solución es redefinir el repositorio de origen. En la figura te sugiero como acceder a esto. Básicamente la idea es reconstruir el vínculo entre <em>Github</em> y <em>Netlify</em> eligiendo los datos correctos de <strong>rama</strong> y <strong>directorio</strong>.</li>
 </ol>
-<p><a href="img/netlify-repositorios.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="img/netlify-repositorios.png" class="img-fluid"></a></p>
+<p><a href="img/netlify-repositorios.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="img/netlify-repositorios.png" class="img-fluid"></a></p>
 <ol start="4" type="1">
 <li>Encontramos inconsistencia con la definición de la rama que toma el papel <em>principal</em> (<em>default</em>) en tu <strong>repo</strong>. Sugiero resolver esto con el comando <code>git_default_branch_rename</code> de la biblioteca <code>usethis</code>. Úsalo en la pestaña de <strong>consola</strong> de <em>RStudio</em>. En el siguiente ejemplo estoy suponiendo que quieres cambiar de <em>master</em> a <em>main</em>. También estoy suponiendo que todo lo que te interesa está actualmente en <em>main</em>.</li>
 </ol>
@@ -723,7 +719,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","loop":false,"selector":".lightbox","openEffect":"zoom","closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","loop":false,"openEffect":"zoom","descPosition":"bottom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
