@@ -205,7 +205,8 @@ ft
 
 ```{r}
 
-pacman::p_load(googlesheets4, stringr, dplyr, tidyr, ggplot2, flextable)
+pacman::p_load(googlesheets4, stringr, dplyr, 
+               tidyr, ggplot2, flextable, DT)
 
 # keyring::key_get(service = "google-sheets", "equihuam")
 
@@ -223,7 +224,15 @@ datos_blogs <- read_sheet(datos_id)
 etiqueta <- "Datos de la encuesta"
 
 ```
+
+
+
 ```{r}
+
+datos_blogs |> 
+  select(`Blog que revisaste`, Comentarios) |> 
+  arrange(`Blog que revisaste`) |> 
+  datatable(colnames = c("Blog", "Comentarios"))
 
 ```
 
