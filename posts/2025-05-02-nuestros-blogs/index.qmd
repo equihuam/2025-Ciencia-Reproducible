@@ -232,7 +232,17 @@ etiqueta <- "Datos de la encuesta"
 datos_blogs |> 
   select(`Blog que revisaste`, Comentarios) |> 
   arrange(`Blog que revisaste`) |> 
-  datatable(colnames = c("Blog", "Comentarios"))
+  datatable(colnames = c("Blog", "Comentarios"),
+            rownames = FALSE,
+            options = list(
+              autoWidth = TRUE,
+              columnDefs = list(
+                  list(targets = 0,       # Primera columna (blog)
+                       width = '150px'    # ancho de 200 pixels
+                       ),
+                  list(targets = 1,       # Columna 2 comentarios
+                       width = '400px'))))
 
 ```
 
+  
