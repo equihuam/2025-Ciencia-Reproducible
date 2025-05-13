@@ -55,13 +55,13 @@ Para empezar a colaborar, lo primero es que cada participante tenga su propia co
 
 
 ``` r
-usethis::create_from_github("equihuam/ciencia-reproducible", fork = TRUE)
+usethis::create_from_github("equihuam/2025-ciencia-reproducible", fork = TRUE)
 
 ```
 
-Este comando hará lo siguiente:
+Este comando hará lo siguienteen tu cuenta de *Github*:
 
-+ Una copia del repositorio _ciencia-reproducible_ que tengo en mi cuenta personal.
++ Una copia del repositorio _2025-ciencia-reproducible_ que tengo en mi cuenta personal.
 + Clonará la copia del repositorio en tu equipo.
 + Definirá el _orígen remoto_ del repositorio vinculado a tu copia en Github.
 + También definirá que t copia está vinculada a mi repositorio del mismo nombre.

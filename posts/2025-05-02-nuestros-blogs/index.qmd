@@ -199,3 +199,31 @@ ft <- display( x = ft,
 ft
 ```
 
+## Comentarios
+
+
+
+```{r}
+
+pacman::p_load(googlesheets4, stringr, dplyr, tidyr, ggplot2, flextable)
+
+# keyring::key_get(service = "google-sheets", "equihuam")
+
+options(gargle_oauth_email = "equihuam@gmail.com", 
+        gargle_oob_default = TRUE,
+        gargle_oauth_client_type = "web")
+
+gs4_auth()
+
+url_gs <- "https://docs.google.com/spreadsheets/d/1bHAFCwoJToh8VVbfsmqx2GNaBvEiq7RYA4Pt1ljVtD4/edit?resourcekey=&gid=834459562#gid=834459562"
+datos_id <- str_extract(url_gs, "(?<=/d/)(.*?)(?=/edit)")
+
+datos_blogs <- read_sheet(datos_id) 
+
+etiqueta <- "Datos de la encuesta"
+
+```
+```{r}
+
+```
+
