@@ -53,6 +53,6 @@ EL resultado será que el documento ofrecerá al lector la posibilidad de anotar
 
 ![](img/pantalla-hypothesis-menu.png)
 
-La pequeña flecha arriba a la derecha abre el espacio de registro de los coentarios. Puedes notar que inicialmente los comentarios se registran en un _ambito_ **público**. Con objeto de que tengas algo más de control sobre el público con el que te interesa interactuar te sugiero usar grupos específicos que requieren invitación. Así, que el camino te llevará a registrarte en `hypothes.is` y desde tu cuenta generar los grupos y las invitaciones.
+La pequeña flecha arriba a la derecha abre el espacio de registro de los comentarios. Puedes notar que inicialmente los comentarios se registran en un _ambito_ **público**. Con objeto de que tengas algo más de control sobre el público con el que te interesa interactuar te sugiero usar grupos específicos que requieren invitación. Así que el camino te llevará a registrarte en `hypothes.is` y desde tu cuenta podrás generar los grupos y las invitaciones.
 
 ![](img/pantalla-hypothesis-menu-2.png)
