@@ -102,12 +102,14 @@ Para salir de _PostgreSQL_, usa el comando `\q`)
 Una vez que todo ha sido configurado podrás tener acceso a _PostgreSQL_ y hacer operaciones de todo tipo. A continuación un ejemplo muy sencillo con la bae de datos de ejemplo "titanic".
 
 ```{r}
-pacman::p_load(RPostgres, keyring, flextable, DT)
+pacman::p_load(RPostgres, keyring, flextable, DT, stringr, tibble)
 
+# Sys.setenv(psql_eq_ip = "192.168.36.214",
+#           psql_eq_port = "5432")
 
 tryCatch({
   drv <- Postgres()
-  print("Connecting to Database…")
+  print("Conectando con la base de datos…")
   connec <- dbConnect(drv, 
                       dbname   = "titanic",
                       host     = Sys.getenv("psql_eq_ip"), 
@@ -116,11 +118,11 @@ tryCatch({
                       password = key_get(service = "psql-eq", 
                                          username = key_list("psql-eq")[1,2]))
   
-  print("Database Connected!")
+  print("¡Conexión exitosa!")
 },
 error=function(cond) {
   print(cond)
-  print("Unable to connect to Database.")
+  print("<<<Conexión fallida>>>")
 })
 
 dbGetQuery(connec, "SELECT name, hometown FROM passenger;") |> 
@@ -155,3 +157,109 @@ dbDisconnect(connec)
 
 ```
 
+
+## Nuestros blogs
+
+Leo los coentarios que han sido registrados mediante _Google forms_.
+
+```{r}
+pacman::p_load(googlesheets4, stringr, dplyr, 
+               tidyr, ggplot2, flextable, DT)
+
+# keyring::key_get(service = "google-sheets", "equihuam")
+
+options(gargle_oauth_email = "equihuam@gmail.com", 
+        gargle_oob_default = TRUE,
+        gargle_oauth_client_type = "web")
+
+gs4_auth()
+
+url_gs <- "https://docs.google.com/spreadsheets/d/1bHAFCwoJToh8VVbfsmqx2GNaBvEiq7RYA4Pt1ljVtD4/edit?resourcekey=&gid=834459562#gid=834459562"
+datos_id <- str_extract(url_gs, "(?<=/d/)(.*?)(?=/edit)")
+
+datos_blogs <- read_sheet(datos_id)
+
+```
+
+
+Los datos de valoración de los blogs son los siguientes.
+
+
+```{r}
+datos_blogs |> 
+  select(`Blog que revisaste`, Comentarios) |> 
+  arrange(`Blog que revisaste`) |> 
+  datatable(colnames = c("Blog", "Comentarios"),
+            rownames = FALSE,
+            options = list(
+              autoWidth = TRUE,
+              columnDefs = list(
+                  list(targets = 0,       # Primera columna (blog)
+                       width = '150px'    # ancho de 200 pixels
+                       ),
+                  list(targets = 1,       # Columna 2 comentarios
+                       width = '4 00px'))))
+
+```
+
+
+Ahora, solo resta actualizar la base de datos con la información recabada. Esto lo haremos con un `INSERT` de **SQL**.
+
+Para evitar mostrar datos confidenciales utilicé variables de sistema creadas con la función `Sys.setenv(subase_.... = <<valor>>`, recupero los valores con `Sys.getenv("subase...")`. Las claves secretas las protegí con keyring.
+
+
+```{r}
+# Sys.setenv(subase_eq_ip = "aws-0-us-east-1.pooler.supabase.com",
+#            subase_eq_port = "6543")
+
+tryCatch({
+  drv <- Postgres()
+  print("Conectando con la base de datos…")
+  connect <- dbConnect(drv, 
+                      dbname   = "postgres",
+                      host     = Sys.getenv("subase_eq_ip"), 
+                      port     = Sys.getenv("subase_eq_port"),
+                      user     = key_list("subase-eq")[1,2],
+                      password = key_get(service = "subase-eq", 
+                                         username = key_list("subase-eq")[1,2]))
+  
+  print("¡Conexión exitosa!")
+},
+error=function(cond) {
+  print(cond)
+  print("<<<Conexión fallida>>>")
+})
+
+# Instruccióneṡpara insertar los datos
+for (i in (1:length(datos_blogs)))
+{
+  blog <- datos_blogs$`Blog que revisaste`[i]
+  comentario <- datos_blogs$Comentarios[i]
+  print(blog)
+  blog_insert <- paste0('
+      INSERT INTO comentarios("blogId", comentario)
+      SELECT session_id,\'', comentario, '\' FROM "datosBlogs" 
+      WHERE url_blog ILIKE \'%', blog, '%\';')
+
+
+  dbExecute(connect, blog_insert)
+  
+}
+```
+
+
+Ahora consigo los datos combinados tomados de las dos tablas para conocer el autor del blog y los comentarios que ha recibido.
+  
+
+```{r}
+dbGetQuery(connect, "SELECT nombre, comentario 
+                           FROM \"comentarios\", \"datosBlogs\"
+                           WHERE  \"blogId\" = \"session_id\";") |> 
+  flextable() |> 
+  width(j = 1, width = 2) |> 
+  width(j = 2, width = 5)
+
+
+   dbDisconnect(connect)
+
+```

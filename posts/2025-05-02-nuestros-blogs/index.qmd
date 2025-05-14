@@ -241,7 +241,7 @@ datos_blogs |>
                        width = '150px'    # ancho de 200 pixels
                        ),
                   list(targets = 1,       # Columna 2 comentarios
-                       width = '400px'))))
+                       width = '4 00px'))))
 
 ```
 
