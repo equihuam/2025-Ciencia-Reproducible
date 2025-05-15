@@ -214,7 +214,7 @@ Para evitar mostrar datos confidenciales utilicé variables de sistema creadas c
 
 tryCatch({
   drv <- Postgres()
-  print("Conectando con la base de datos…")
+  cat("Conectando con la base de datos…\n")
   connect <- dbConnect(drv, 
                       dbname   = "postgres",
                       host     = Sys.getenv("subase_eq_ip"), 
@@ -223,15 +223,15 @@ tryCatch({
                       password = key_get(service = "subase-eq", 
                                          username = key_list("subase-eq")[1,2]))
   
-  print("¡Conexión exitosa!")
+  cat("¡Conexión exitosa!\n\n")
 },
 error=function(cond) {
   print(cond)
-  print("<<<Conexión fallida>>>")
+  print("<<<Conexión fallida>>>\n\n")
 })
 
 # Instruccióneṡpara insertar los datos
-for (i in (1:length(datos_blogs)))
+for (i in (1:length(datos_blogs$`Dirección de correo electrónico`)))
 {
   blog <- datos_blogs$`Blog que revisaste`[i]
   comentario <- datos_blogs$Comentarios[i]
@@ -241,9 +241,8 @@ for (i in (1:length(datos_blogs)))
       SELECT session_id,\'', comentario, '\' FROM "datosBlogs" 
       WHERE url_blog ILIKE \'%', blog, '%\';')
 
-
   dbExecute(connect, blog_insert)
-  
+
 }
 ```
 
