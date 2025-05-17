@@ -29,15 +29,15 @@ format:
 
 ¡Qué sería de la vida académica sin una buena polémica! Tu proyecto de posgrado será mucho más interesante y rico si se propicia el debate la factibilidad de las ideas innovadoras que ofrezcas. ¿Será cierta la hipótesis que se te ocurrió?, ¿estará pasando en realidad el fenómeno que describes?, ¿tendrás razón en ver las cosas como propones? Seguramente hablar creativamente sobre asuntos como estos será grato para todos los involucrados. ¡Finalmente, esa es el alma de la ciencia!.
 
-En la práctica añeja que ya ha establecido el uso de MS Word. Se hace algo de esto con el uso de *control de cambios*. De hecho lo hace muy bien para el caso en el que se está trabajando colaborativamente sobre un texto. Incluye la posibilidad de incluir *comentarios*, que también resulta muy útil. ¿Podremos hacer algo semejante en el enfoque basado en *Quarto* que hemos venido desarrollando?
+En la práctica añeja que ya ha establecido el uso de _MS Word_, se hace algo de esto con el uso de *control de cambios*. De hecho lo hace muy bien para el caso en el que se está trabajando colaborativamente sobre un texto. Incluye la posibilidad de incluir *comentarios*, que también resulta muy útil. ¿Podremos hacer algo semejante en el enfoque basado en *Quarto* que hemos venido desarrollando?
 
-Dejaré que tu respondas esa pregunta. Desde mi punto de vista, el tema de control de cambios no es otra cosa que una variante adecuadamente acota de _control de versiones_, es decir **Git**, en el mundo *Rstudio-Quarto*. Quizás te parezca bastante distinto, pues ciertamente **Git** es mucho mpas amplio y quizás esa potencialidad ampliada, acompañada de uene curva de aprendizaje, te genere algo de dudas. Pero, espero que con lo que hemos venido aprendiendo puedas apreciar la semejanza y, eventualmente, las virtudes de **Git**.
+Dejaré que tu respondas esa pregunta. Desde mi punto de vista, el tema de control de cambios no es otra cosa que una variante adecuadamente acota de _control de versiones_, es decir **Git** en el mundo *Rstudio-Quarto*. Quizás te parezca bastante distinto, pues ciertamente **Git** es mucho más amplio y quizás esa potencialidad ampliada, acompañada de une _curva de aprendizaje_, te genere algo de dudas. Pero, espero que con lo que hemos venido aprendiendo puedas apreciar la semejanza y, eventualmente, las virtudes de **Git**.
 
-Ahora, ¿qué hay en cuanto a comentarios al texto? Hay algunas opciones que espero encuentres interesanres. Dos de ellas estan asociadas al sistema de comentarios o *issues* de *Github* (`utterances` e `giscus`). Con ellas se habilita una sección que recibe comentarios de los visitantes a tu blo. El tercero es `hypothesis` usa un sistema basado en el servicio web [hypothes.is](http://hypothes.is), que es el que yo encuentro más práctico. Te permite recibir retoalimentación directamente sobre tu texto. Ya sea alguna indicación sobre una palabra o una reflexión sobre un idea. La idea es marcar el texto de interés y vincular esa marca con el comentario que desee compartir el lector. Te sugiero que lo pongamos a prueba.
+Ahora, ¿qué hay en cuanto a comentarios al texto? Hay algunas opciones que espero encuentres interesanres. Dos de ellas estan asociadas al sistema de comentarios o *issues* de *Github* (`utterances` e `giscus`). Con ellas se habilita una sección que recibe comentarios de los visitantes a tu **blog**. El tercero es `hypothesis` usa un sistema basado en el servicio web [hypothes.is](http://hypothes.is), que es el que yo encuentro más práctico. Te permite recibir retroalimentación directamente sobre tu texto. Ya sea alguna indicación sobre una palabra o toda una reflexión sobre un idea. El concepto se basa en marcar el texto de interés y vincular esa marca con el comentario que desee compartir el lector contigo. Te sugiero que lo pongamos a prueba.
 
-Para activarlo hay activar ` comments:`en el encabezado **YAML** del documento que quieras abrir a la recepción de comentarios. Quedaría algo así:
+Para activarlo hay agregar `comments: `en el encabezado **YAML** del documento que quieras abrir a la recepción de comentarios, con las indicaciones de tu preferencia. Quedaría algo así para usar `hypothes.is`:
 
-
+:::{style="font-weight: bold; background-color: WhiteSmoke;"}
 ``` yaml
 ---
 ⋮
@@ -46,6 +46,7 @@ comments:
 ⋮
 ---
 ```
+:::
 
 EL resultado será que el documento ofrecerá al lector la posibilidad de anotar el texto de varias maneras, como se puede apreciar en la figura siguiente.
 

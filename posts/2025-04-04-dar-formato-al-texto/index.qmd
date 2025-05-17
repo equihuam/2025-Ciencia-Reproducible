@@ -1,5 +1,5 @@
 ---
-title: "Dar formato a mi documeto"
+title: "Dar formato a mi documento"
 author: "Miguel Equihua"
 date: 04/apr/2025
 lang: es
@@ -64,6 +64,26 @@ Quarto](https://quarto.org/docs/websites/website-about.html#templates).
 ![Partes de la página que normalmente construye
 Quarto.](img/estructura-pagina.png){#fig-partes-pag width="500"}
 
+
+Quizás no encuentres exactamente el tema que te gusta, hay ajustes que puedes hacer usando instrucciones **css**. Sin embargo, una cuestión común y sencilla de ajustar es el color de las barras de navegación, las que aparecen arriba de tu blog. Si deseas cambiar estos colores puedes usar las opciones de **navbar** que controlan el color de fondo: `background` y el color de la escritura `foreground` en el archivo **\_quarto.yml_** que está en la raíz de tu proyecto. Los usas así:
+
+
+:::{style="font-weight: bold; background-color: WhiteSmoke;"}
+``` yaml
+---
+⋮
+navbar: 
+  background: pink
+  foreground: green
+⋮
+---
+```
+:::
+
+Ya sabes, Hay muchas páginas de ayuda para conseguir el dato del color, pero estas dos son comunes.
+
++ [Por nombre](https://htmlcolorcodes.com/color-names/)
++ [Por código](https://htmlcolorcodes.com/es/selector-de-color/)  
 
 
 ## Imágenes en el margen
@@ -159,14 +179,14 @@ exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 ::::
 
 Intenta usar esto para producir un [texto al lado de una
-imágen](https://quarto.org/docs/authoring/figures.html). ¿Con cuál
+imagen](https://quarto.org/docs/authoring/figures.html). ¿Con cuál
 variante te sientes más cómoda o cómodo?
 
 \ 
 
 ## Texto destacado con _balitas_
 
-Lo usual es que las listas lleven al inicio alguna marca que las distinga, un disco, círculo, cuadro, etc. Pero que tal si en lugar de eso quisieras poner una imágen. Lo puedes lograr definiendo el formato en el archivo **style.css** que usualmente tenemos en la raíz del proyecto. Agrega, por ejemplo, estas líneas.
+Lo usual es que las listas lleven al inicio alguna marca que las distinga, un disco, círculo, cuadro, etc. Pero que tal si en lugar de eso quisieras poner una imagen. Lo puedes lograr definiendo el formato en el archivo **style.css** que usualmente tenemos en la raíz del proyecto. Agrega, por ejemplo, estas líneas.
 
 
 ::: {style="font-weight: bold; background-color: WhiteSmoke;"}
@@ -184,7 +204,7 @@ Lo usual es que las listas lleven al inicio alguna marca que las distinga, un di
 ```
 :::
 
-Las imágenes indicadas en la url podrían estar en mi equipo, pero yo aquí puse la liga a lo que subí a Github, de manera que si copias lo de arriba directamente te funcionará. En todo caso podrías bajar el archivo de la imágen que te guste y poner la ruta en tu máquina para que quede alo así: `url(images/rubber-plant-16.png)`. El caso es que puedes usar cualquier imágen que quieras, lo único que hice es escalarla para que tuviera un tamaña de 16x16 pixeles, en este caso.
+Las imágenes indicadas en la URL podrían estar en mi equipo, pero yo aquí puse la liga a lo que subí a Github, de manera que si copias lo de arriba directamente te funcionará. En todo caso podrías bajar el archivo de la imagen que te guste y poner la ruta en tu máquina para que quede algo así: `url(images/rubber-plant-16.png)`. El caso es que puedes usar cualquier imagen que quieras, lo único que hice es escalarla para que tuviera un tamaña de 16x16 pixeles, en este caso.
 
 Luego, para usar ese formato que has definido pondrás, en donde lo desees algo como esto.
 
@@ -234,7 +254,7 @@ del texto y que podrían tener contenido distinto al sugerido por el
 bloque. Por ejemplo, dentro de un bloque *tip*, podría ponerse una
 definición a la que se hace referencia en otra parte del texto. Además,
 podrías definir tu propio prefijo para llevar control de alguna clase de
-componente de t interés. Puedes encontrar [más al respecto en la
+componente de tu interés. Puedes encontrar [más al respecto en la
 documentación de
 Quarto](https://quarto.org/docs/reference/metadata/crossref.html).
 
@@ -269,7 +289,7 @@ Quarto](https://quarto.org/docs/reference/metadata/crossref.html).
 \ 
 
 Usa esos prefijos según se requiera y aplica el concepto de marcar la
-definición de la refenencia con **\#** y su llamada con **\@**. Ve el
+definición de la referencia con **\#** y su llamada con **\@**. Ve el
 ejemplo siguiente. Quiero incluir la definición de algo de interés
 (@def-definir - aquí use **\@def-definir** para hacer la llamada). Esta
 llamada hace referencia a esto, que puedo poner en cualquier lugar del
@@ -390,7 +410,7 @@ con `::: {_indicación_}` y se cierra con `:::`.
 En cada uno de estos casos puedes agregar la frase: `collapse="true"`.
 Al hacerlo, el bloque aparecerá cerrado y el lector deberá activarlo
 para leer su contenido. Puedes también agregar un título con la frase
-`title="Tip with Title"` o si anotas un texto con marcado de sub título
+`title="Tip with Title"` o si anotas un texto con marcado de subtítulo
 en seguida de la llamada.
 
 :::{style="font-weight: bold; background-color: WhiteSmoke;"}
@@ -436,7 +456,7 @@ siguiente:
 
 Puede interesarte una referencia a como definir los colores. Hay muchas
 posibilidades en la Web, pero [está es un
-inicio](https://htmlcolorcodes.com/es/). Con esta página conseguiras el
+inicio](https://htmlcolorcodes.com/es/). Con esta página conseguirás el
 código *hexadecimal*, el que está marcado con **\#**. Lo puedes usar
 así:
 
@@ -455,7 +475,7 @@ quieres profundizar más en todo esto te sugiero [empezar
 aquí](https://www.w3schools.com/cssref/pr_text_text-align.php)
 
 ::: {style="text-align: right; color:#E71D00;"}
-Lorem ipsum dolor sit amet consectetur adipiscing elit, augue rutrum
+Lorem ipsum dolor sit amet consectetur adipiscing elit, aunque rutrum
 feugiat vitae habitasse nisi aenean tellus, suspendisse malesuada
 faucibus nam dapibus id. Gravida felis dictumst at nibh lacinia ut
 hendrerit euismod pellentesque, scelerisque sed conubia commodo iaculis
@@ -467,9 +487,9 @@ faucibus, velit laoreet maecenas auctor vivamus morbi netus.
 
 \ 
 
-Tamaño de letra en unidades expresdas como una proporción relativa al
+Tamaño de letra en unidades expresadas como una proporción relativa al
 tamaño de letra definido para el contenido (**em**). Concretamente, se
-trata de una fraccción o un múltiplo de escalamiento que se define con
+trata de una fracción o un múltiplo de escalamiento que se define con
 referencia al tamaño de letra en uso.
 
 :::{style="font-weight: bold; background-color: WhiteSmoke;"}
@@ -497,7 +517,7 @@ así: **algo**<sub>subíndice</sub>.
 Puede resultarte interesante considerar presentar tu información como si
 se tratara de una libreta con [secciones reconocibles por
 pestañas](https://quarto.org/docs/output-formats/html-basics.html#tabsets).
-Para hacerlo, el *bloque* (**div**) se contruye así.
+Para hacerlo, el *bloque* (**div**) se construye así.
 
 ::: {style="font-weight: bold; background-color: WhiteSmoke;"}
 ```text
@@ -581,7 +601,7 @@ Revealjs](https://quarto.org/docs/presentations/revealjs/)
 ## Extensiones para Quarto
 
 *Quarto*, como *R*, es una pieza de software que propicia la
-colaboración abierta en su desarrollo, así que hay creciente núumero de
+colaboración abierta en su desarrollo, así que hay creciente número de
 extensiones. Algunas de ellas las [encuentras
 aquí](https://quarto.org/docs/extensions/listing-revealjs.html). Para el
 caso particular de las presentaciones te interesará aprender [algunas
@@ -592,7 +612,7 @@ avanzadas](https://quarto.org/docs/presentations/revealjs/advanced.html).
 
 Por ejemplo algo muy útil como un diagrama de Gantt. Se puede construir
 a partir de una especificación de elementos según comandos clave de la
-*aplicación mermaid* para la produción de diveros tipos de diagrams
+*aplicación mermaid* para la producción de diverso tipos de diagrama
 basados en **Java Script**. La documentación e incluso un herramienta de
 diseño auxiliar se encuentra en la [documentación de
 mermaid](https://mermaid.js.org/).
@@ -652,7 +672,7 @@ mermaid("graph LR;A(cuadrado redondeado)-->B[cuadrado];B-->C{Una decisión};
 ```
 
 Este es un DAG (grafo acíclico dirigido) que representa un diagrama de
-influencia con interpretnción causal. En este caso se usa el lenguaje de
+influencia con interpretación causal. En este caso se usa el lenguaje de
 diagramación
 \[dot\](https://en.wikipedia.org/wiki/DOT\_(graph_description_language).
 [Aquí puedes ver ejemplos de diagramas](https://graphviz.org/)
