@@ -1,4 +1,4 @@
-// quarto-scss-analysis-annotation { "quarto-version": "1.7.29" }
+// quarto-scss-analysis-annotation { "quarto-version": "1.6.42" }
 
 // quarto-scss-analysis-annotation { "origin": "'use' section from format" }
 
@@ -1552,6 +1552,10 @@ $mermaid-node-fg-color: $primary !default;
   margin-right: 5px;
   background-color: transparent;
   z-index: 3;
+}
+
+.code-copy-button:focus {
+  outline: none;
 }
 
 .code-copy-button-tooltip {
