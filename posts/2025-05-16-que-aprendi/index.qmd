@@ -66,7 +66,7 @@ datos_id <- str_extract(url_gs, "(?<=/d/)(.*?)(?=/edit)")
 
 datos_eval <- read_sheet(datos_id) 
 
-etiqueta <- "Datos de la encuesta"
+etiqueta <- "Datos de la encuesta" 
 
 if (nrow(datos_eval)==0)
 { 
@@ -82,7 +82,7 @@ if (nrow(datos_eval)==0)
   
   etiqueta <- "Datos simulados"
 }
-
+   
 preguntas <- data.frame(preg = c("tiempo", "email", names(datos_eval)[c(-1,-2)]))
 preguntas$preg[1:2] <- c("[tiempo] Marca temporal", "[email] Dirección de correo electrónico")
 
@@ -95,9 +95,11 @@ datos_eval <- datos_eval |>
   setNames(preguntas$idBlq)
 
 
+
 ```
 
 
+El registro de respuestas tiene datos de **`r dim(datos_eval)[1]` personas** que amablemente han contestado la encuesta de autovaloración.   
 
 
 ```{r}
