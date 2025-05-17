@@ -1,0 +1,3 @@
+Function URL(Hyperlink As Range)
+  URL = Hyperlink.Hyperlinks(1).Address
+End Function

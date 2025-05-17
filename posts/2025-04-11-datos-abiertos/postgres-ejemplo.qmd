@@ -126,9 +126,8 @@ error=function(cond) {
 })
 
 dbGetQuery(connec, "SELECT name, hometown FROM passenger;") |> 
-  datatable()
-
-head(df)
+  datatable() |> 
+  head()
 
 ```
 
@@ -227,7 +226,7 @@ tryCatch({
 },
 error=function(cond) {
   print(cond)
-  print("<<<Conexión fallida>>>\n\n")
+  print("<<<Conexión fallida>>>")
 })
 
 # Instruccióneṡpara insertar los datos

@@ -1,0 +1,40 @@
+---
+title: "Clase de hoy"
+format: 
+  revealjs:
+    footer: "[inicio](../../index.qmd)"
+    controls: true
+    
+  pptx: default
+
+
+---
+
+## Primera diapo
+
+### `![](img/cyberscooty-blackboard_math.svg)`
+
+## Segunda diapo
+
+![](img/cyberscooty-blackboard_math.svg)
+
+
+## Cuadro
+
+|col 1 | col 2 |
+|------|:-----:|
+| A    | 1|
+|B|2|
+|c|4|
+
+
+## Cálculos
+
+```{r}
+
+suma <-  pi * 2
+
+print(suma)
+
+```
+

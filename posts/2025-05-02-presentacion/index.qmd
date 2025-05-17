@@ -25,7 +25,7 @@ format:
       src: notas.json
       
     link-external-newwindow: true
-    navigation-mode: vertical
+    navigation-mode: grid
     
     menu:
       side: left
