@@ -144,7 +144,7 @@ exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 :::
 
 [Otra manera](https://quarto.org/docs/presentations/beamer.html#multiple-columns)
-es la siguiente.
+es la siguiente. Nota que agrego una columna vacía para dejar un espacio entre columnas. Aunque realmente no necesitas poner nada ahí, en este caso lo marqué con la notación de comentario:`<!-- algo -->`. Esta forma de comentar la puedes usar en cualquier lado para anotar tu texto y no producir nada que se muestre en el _render_.
 
 ::: {style="font-weight: bold; background-color: WhiteSmoke;"}
 
@@ -153,8 +153,12 @@ es la siguiente.
 ::::{.column width="40%"}
 Párrafo 1 con algunas ideas muy sabias... 
 ::::
+
+::: {.column width="5%"}
+<!-- Columna vacía. Separa los textos -->
+:::
    
-::::{.column width="60%"}
+::::{.column width="55%"}
 Párrafo 2 para explicar lo sabio del párrafo...
 ::::
 :::
@@ -170,13 +174,57 @@ et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
 exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 :::
 
-::: {.column width="60%"}
+::: {.column width="5%"}
+<!-- Columna vacía. Separa los textos -->
+:::
+
+::: {.column width="55%"}
 Párrafo 2 para explicar lo sabio del párrafo 1. Lorem ipsum dolor sit
 amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
 labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
 exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 :::
 ::::
+
+[¡Otra forma más!](https://quarto.org/docs/output-formats/page-layout.html). El concepto que se usa aquí parte de dividir el cuerpo del documento en una retícula de 12 unidades. Cada una de ellas puede recibir un formato distinto. Los números, n, en `.g-col-n` hacen referencia al número de unidades por abarcar. Puedes hacer las combinaciones que gustes.  En el ejemplo que te muestro puse 6 unidades, así que estoy dividiendo la página en dos columnas.
+
+
+::: {style="font-weight: bold; background-color: WhiteSmoke;"}
+
+```text
+:::{.grid}
+::::{.g-col-6}
+Párrafo 1 con algunas ideas muy sabias... 
+::::
+   
+::::{.g-col-6}
+Párrafo 2 para explicar lo sabio del párrafo...
+::::
+:::
+```
+:::
+
+El resultado se ve así:
+
+::: {.grid style="color:pink;"}
+
+:::: {.g-col-6}
+Párrafo 1 con algunas ideas muy sabias. Lorem ipsum dolor sit amet,
+consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+::::
+
+:::: {.g-col-6}
+Párrafo 2 para explicar lo sabio del párrafo 1. Lorem ipsum dolor sit
+amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+::::
+
+:::
+
+
 
 Intenta usar esto para producir un [texto al lado de una
 imagen](https://quarto.org/docs/authoring/figures.html). ¿Con cuál
