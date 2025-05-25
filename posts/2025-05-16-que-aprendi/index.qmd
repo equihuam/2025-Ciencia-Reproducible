@@ -52,6 +52,10 @@ Este formulario está generando datos que recojo en un documento _Googlesheets_.
 
 
 ```{r}
+#| label: lee-datos
+#| warning: false
+#| output: false
+
 pacman::p_load(googlesheets4, stringr, dplyr, tidyr, ggplot2, flextable)
 
 # keyring::key_get(service = "google-sheets", "equihuam")
