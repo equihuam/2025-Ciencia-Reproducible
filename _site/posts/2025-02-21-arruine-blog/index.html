@@ -108,6 +108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="estilo.scss">
 </head>
 
 <body class="nav-fixed">
@@ -218,7 +219,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="tengo-una-versión-buena-en-git" class="level2">
 <h2 class="anchored" data-anchor-id="tengo-una-versión-buena-en-git">!Tengo una versión buena en git!</h2>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1.5]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 40.0%;justify-content: flex-start;">
 <p>Lo primero es !serenidad y paciencia! Toda la idea de usar <a href="https://git-scm.com/book/en/v2"><em>git</em></a> es para estos casos. Claro, podrías volverte experta o experto en su uso más profesional mediante comandos, <a href="https://www.epirhandbook.com/es/new_pages/collaboration.es.html">ojalá te animes</a>. Pero por lo pronto hagámoslo con lo que ya tenemos a la mano. Veamos algunos escenarios posibles:</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 60.0%;justify-content: flex-start;">
+<div id="fig-kaliman" class="quarto-float quarto-figure quarto-figure-right anchored" data-fig-align="right">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-kaliman-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="img/kaliman-serenidad-tr.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figura&nbsp;1: Kaliman personaje creado por Rafael Cutberto Navarro y Modesto Vázquez González en 1965. Se publicó en forma de comic semanalmente por 26 años. Vendió más de mil millones de copias."><img src="img/kaliman-serenidad-tr.png" class="img-fluid quarto-figure quarto-figure-right figure-img" width="200"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-kaliman-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;1: Kaliman personaje creado por Rafael Cutberto Navarro y Modesto Vázquez González en 1965. Se publicó en forma de <em>comic</em> semanalmente por 26 años. Vendió más de mil millones de copias.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
 <ol type="1">
 <li><p>Un escenario muy sencillo es cuando estas actualizando un documento que ya pusiste en el registro de <em>git</em>. Intentas <em>renderizarlo</em> y para tu sorpresa, ¡falla de manera inexplicable! Para colmo, hiciste un montón de cambios que ya ni te acuerdas. Eso sí, estas seguro o segura de que tu última versión, a la que le hiciste un <em>commit</em>, sí funcionaba, no a tu gusto completo, pero no se trababa como el que ahora te tiene de malas. En este caso, busca en la pestaña de <em>git</em> en <em>RStudio</em> el arhivo que estás trabajando, imagino un <strong>index.qmd</strong> en un folder dentro de la carpeta <strong>posts</strong>. Seleccionalo y aprieta el botón derecho del mouse. En las ventanita emergente encontrarás la palabra <em>revert…</em>. ¡Eso es!, dale click y recuperará el arhivo de la últia versión que resguardaste con un <em>commit</em>. ¡Listo!, estás de regreso y ahora puedes volver a empezar, con más cuidado y mejores ideas.</p></li>
 <li><p>Otro caso es cuando has sido muy diligente y has echo todo bien. Haces cambios a tu gusto y cada vez que lo sientes apropiado has echo tus <em>commits</em>. Te vas por un tesito, cambias de humor, trabajas en otra parte de tu <strong>blog</strong> y haces commit a tus nuevos cambios. De pronto, un rayo de inspiración, te hace comprender que lo que hiciste al principio del día no era buena ideas, te arrepientes y quieres regresar a una versión que está seis o diez <em>commits</em> atras, sabes a donde te gustaría regresar pues anotaste un mensaje alusivo que te recuerda claramente el estado del documento que quieres retomar como inicio. ¿Cómo puedes viajar hacia atras en el tiempo a ese preciso momento? Bueno, hacer esto es relativamente sencillo con el comando <a href="https://git-scm.com/docs/git-restore"><code>git restore</code></a> que puede rescatarte desde la <em>terminal</em> de <em>RStudio</em>. Las indicaciones <em>–source</em> y <em>main~x</em> van de cajón (la <strong>x</strong> toma el valor de cuantos <em>commits</em> atras hay que ir en la rama <strong>main</strong>), y terminas con la ruta al archivo de tu interés, en este ejemplo <em>posts/primer-ejemplo/index.qmd</em>.</p></li>
@@ -233,10 +255,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <p>Otra opción para identificar el <em>commit</em> preciso de mi interés es poner enseguida de <em>–source</em> una parte reconocible en forma única de la firma hash <em>SHA</em> de 40 caracteres, que identifica en forma exacta a cada <em>commit</em>, y que puedes encontrar con la opción <em>History</em> en la pestaña <em>git</em>.</p>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-right">
-<figure class="figure">
-<p><a href="img/restaurar-a-un-commit-dado.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="img/restaurar-a-un-commit-dado.png" class="img-fluid quarto-figure quarto-figure-right figure-img" width="200"></a></p>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-rest-com" class="quarto-float quarto-figure quarto-figure-right anchored" data-fig-align="right">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rest-com-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="img/restaurar-a-un-commit-dado.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figura&nbsp;2: Ir hacia atras en la historia de mi proyecto"><img src="img/restaurar-a-un-commit-dado.png" class="img-fluid quarto-figure quarto-figure-right figure-img" width="200"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rest-com-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2: Ir hacia atras en la historia de mi proyecto
+</figcaption>
 </figure>
 </div>
 </div>
@@ -256,10 +283,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <p>Una manera de trabajar con más tranquilidad en tu <strong>blog</strong> es otra vez recurriendo a la ayuda que ofrece <em>git</em>. Te sugiero evitar trabajar el desarrollo de tus ideas directamente sobre la rama <em>main</em> o la que sea tu rama <strong>principal/publicación/producción</strong>. La idea es que cuando estes planeado algo nuevo crees una rama nueva o si ya tienes una y está en la misma cosa, seleccionala como la rama activa.</p>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-right">
-<figure class="figure">
-<p><a href="img/git-rama-nueva.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="img/git-rama-nueva.png" class="img-fluid quarto-figure quarto-figure-right figure-img" width="200"></a></p>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-rama" class="quarto-float quarto-figure quarto-figure-right anchored" data-fig-align="right">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rama-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="img/git-rama-nueva.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figura&nbsp;3: Crear y usar una nueva rama de trabajo"><img src="img/git-rama-nueva.png" class="img-fluid quarto-figure quarto-figure-right figure-img" width="200"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rama-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;3: Crear y usar una nueva rama de trabajo
+</figcaption>
 </figure>
 </div>
 </div>
