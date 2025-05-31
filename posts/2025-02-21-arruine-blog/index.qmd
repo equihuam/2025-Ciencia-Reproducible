@@ -45,7 +45,7 @@ Recuerda sólo hacer lo escencial en los documentos en la raíz de tu proyecto: 
 
 ::: {layout="[1,1.5]"}
 
-Lo primero es !serenidad y paciencia! Toda la idea de usar [_git_](https://git-scm.com/book/en/v2) es para estos casos. Claro, podrías volverte experta o experto en su uso más profesional mediante comandos, [ojalá te animes](https://www.epirhandbook.com/es/new_pages/collaboration.es.html). Pero por lo pronto hagámoslo con lo que ya tenemos a la mano. Veamos algunos escenarios posibles:
+Lo primero es **!serenidad y paciencia!* Toda la idea de usar [_git_](https://git-scm.com/book/en/v2) es para estos casos. Claro, podrías volverte experta o experto en su uso más profesional mediante comandos, [ojalá te animes](https://www.epirhandbook.com/es/new_pages/collaboration.es.html). Pero por lo pronto hagámoslo con lo que ya tenemos a la mano. Veamos algunos escenarios posibles:
 
 ![Kaliman personaje creado por Rafael Cutberto Navarro y Modesto Vázquez González en 1965. Se publicó en forma de _comic_ semanalmente por 26 años. Vendió más de mil millones de copias.](img/kaliman-serenidad-tr.png){#fig-kaliman width=200 fig-align="right"}
 
