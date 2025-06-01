@@ -39,7 +39,7 @@ Haremos una página con una galería de muestra de los blogs que estamos constru
 ```{r}
 #| label: recupera-datos
 
-pacman::p_load(surveydown, flextable, dplyr, stringr, glue)
+pacman::p_load(imager, magick, surveydown, flextable, dplyr, stringr, glue, rvest)
 
 
 db <- sd_db_connect(env_file = ".env", 
@@ -51,9 +51,7 @@ data <- sd_get_data(db = db)
 data$url_git <- if_else(!is.na(data$url_git), 
                         paste0(data$url_git, "/issues"), NA)
 
-	
-
-data |> 
+data <- data |> 
   mutate(blog = str_extract(url_blog, 
                   "(?<=//)(.*)(?=\\.netlify\\.app)"),
          git = str_extract(url_git, 
@@ -61,18 +59,75 @@ data |>
          url_git = if_else(!is.na(data$url_git), 
                            paste0(data$url_git, "/issues"), NA),
          git = str_replace(git, "\\w*/", ""),
-         git = str_replace(git, "/issues", "")) |> 
+         git = str_replace(git, "/issues", ""))
+
+
+  
+figs <- list()
+for (blog in data$url_blog)
+{
+  pag <- tryCatch(
+    {
+      pag <- read_html(blog)
+    },
+    error = function(e)
+    {
+      pag <- NA
+#      cat("Ocurrió un error:", e$message, "\n")
+      return(pag)
+    }
+  )
+  if (!is.na(pag))
+  {
+    img <- pag |> 
+    html_element("img") |> 
+    html_attr('src') |> 
+    str_remove("\\./") |> 
+    paste0(blog, "/",. = _) |> 
+    str_replace_all(" ", "%20") |> 
+    str_replace_all("\\\\", "/") |> 
+    str_replace("(\\w)(//)(\\w)", "\\1/\\3") |> 
+    image_read() |> 
+    image_scale("100x100>")
+    
+    titulo <- paste0("img/", str_extract(blog, "(?<=//)(.*?)(?=\\.net)"), ".png")
+    image_write(img, titulo)
+    
+    figs <- append(figs, titulo)
+  } else 
+  {
+    img <- image_read("img/blog-caido.png") |> 
+      image_scale("100x100>")
+
+    titulo <- paste0("img/", str_extract(blog, "(?<=//)(.*?)(?=\\.net)"), ".png")
+    
+    image_write(img, titulo)
+    
+    figs <- append(figs, titulo)
+  }
+}
+
+
+data |> 
+  mutate(fig = unlist(figs)) |> 
   filter(nombre != "") |>     
   arrange(nombre) |> 
-  select(nombre, git, url_git, blog, url_blog) |> 
+  select(fig, nombre, git, url_git, blog, url_blog) |> 
   flextable() |> 
-  set_header_labels(nombre = "Nombre", git = "Github", blog = "Blog") |> 
-  compose(j = 2, value = as_paragraph(hyperlink_text(x = git, url = url_git))) |> 
-  compose(j = 4, value = as_paragraph(hyperlink_text(x = blog, url = url_blog))) |> 
-  flextable::delete_columns(j = c(3, 5)) |> 
-  width(j=1:2, width = c(2.5, 4))
-  
+  set_header_labels(nombre = "Nombre", git = "Github", 
+                    blog = "Blog", fig = "Portada") |> 
+  compose(j = 1, 
+          value = as_paragraph(as_image(src = fig))) |> 
+  compose(j = 3, 
+          value = as_paragraph(hyperlink_text(x = git, url = url_git))) |> 
+  compose(j = 5, 
+          value = as_paragraph(hyperlink_text(x = blog, url = url_blog))) |>
+  delete_columns(j = c(4, 6)) |> 
+  flextable::width(j=2:4, width = c(3, 4, 3))
+
 ```
+
+
 
 ::: {.callout-warning collapse="true"}
 ## Inconsistencias en el registro
