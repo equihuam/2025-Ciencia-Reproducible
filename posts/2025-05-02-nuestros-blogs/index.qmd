@@ -114,7 +114,7 @@ data |>
   arrange(nombre) |> 
   select(fig, nombre, git, url_git, blog, url_blog) |> 
   flextable() |> 
-  set_header_labels(nombre = "Nombre", git = "Github", 
+  set_header_labels(nombre = "Autor", git = "Github", 
                     blog = "Blog", fig = "Portada") |> 
   compose(j = 1, 
           value = as_paragraph(as_image(src = fig))) |> 
@@ -238,21 +238,6 @@ Sigue una encuesta hecha en _Google forma_, que estoy vinculando aquí como un r
 ```
 
 
-```r
-pacman::p_load(flextable)
-
-dat <- data.frame(
-  col = "Google it",
-  href = "https://www.google.fr/search?source=hp&q=officer+R+package",
-  stringsAsFactors = FALSE)
-
-ft <- flextable(dat)
-ft <- display( x = ft,
-  col_key = "col",
-  pattern = "This is a link: {{mylink}}",
-  formatters = list(mylink ~ hyperlink_text(href, col) ) )
-ft
-```
 
 ## Comentarios
 
