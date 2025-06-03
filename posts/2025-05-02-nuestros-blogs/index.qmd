@@ -116,11 +116,11 @@ data |>
   flextable() |> 
   set_header_labels(nombre = "Autor", git = "Github", 
                     blog = "Blog", fig = "Portada") |> 
-  compose(j = 1, 
+  mk_par(j = "fig", 
           value = as_paragraph(as_image(src = fig))) |> 
-  compose(j = 3, 
+  mk_par(j = "git", 
           value = as_paragraph(hyperlink_text(x = git, url = url_git))) |> 
-  compose(j = 5, 
+  mk_par(j = "blog", 
           value = as_paragraph(hyperlink_text(x = blog, url = url_blog))) |>
   delete_columns(j = c(4, 6)) |> 
   flextable::width(j=2:4, width = c(3, 4, 3))
