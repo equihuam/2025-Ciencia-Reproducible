@@ -27,7 +27,7 @@ El curso-taller se propone acercar al estudiante a la increíble evolución mund
 
 Los estudiantes aprenderán a producir reportes académicos en distintos formatos: páginas web, documentos tipo Word®, PDF, carteles, presentaciones e incluso artículos o libros. Todo esto sin que se requiera un conocimiento previo de **R** o **RStudio**. Lo haremos paso a paso y con un enfoque de *manos a la obra*. El estudiante podrá elegir los materiales, datos y textos que le interese ensayar.
 
-Las actividades se desarrollarán a lo largo de 16 sesiones teórico prácticas que se impartirán entre el 10/feb/2025 y el 6/jun/2025. Las sesiones serán principalmente presenciales a lo largo de 3 horas. Se desarrillarán los viernes de 10 am a 1pm. Se espera que el estudiante desarrollará actividades a su paso para desarrollar el producto que será la entrega final al término del taller. La carga de trabajo se estima requerirá 9 horas adicionales cada semana.
+Las actividades se desarrollarán a lo largo de 16 sesiones teórico prácticas que se impartirán entre el 10/feb/2025 y el 6/jun/2025. Las sesiones serán principalmente presenciales a lo largo de 3 horas. Se desarrollarán los viernes de 10 am a 1pm. Se espera que el estudiante desarrollará actividades a su paso para desarrollar el producto que será la entrega final al término del taller. La carga de trabajo se estima requerirá 9 horas adicionales cada semana.
 
 
 
@@ -113,7 +113,7 @@ plot(code, col = c("white", "#2268bb"))
 **Quarto** es un sistema de *fuente abierta* para la autoría de documentos científicos y técnicos. Puedes aprender más sobre lo que ofrece [**Quarto** en este enlace.](https://quarto.org/)
 
 La construcción de *comunidades de aprendizaje* requiere compartir intereses y actitudes. Al respecto pongo a su consideración el [*Pacto del Contribuyente*](pacto-contribuyente.qmd), que busca exponer ideas y conceptos que hace la convivencia grata y productiva. Pienso que el espíritu de este documento es muy adecuado para estimular la reflexión que buscamos propicie lo que estaremos haciendo en este taller.
-
+  
 ::: {.content-visible when-format="html"}
 ```{r}
 #| label: codigo_qr_html
