@@ -48,8 +48,6 @@ db <- sd_db_connect(env_file = ".env",
 
 data <- sd_get_data(db = db)
 
-data$url_git <- if_else(!is.na(data$url_git), 
-                        paste0(data$url_git, "/issues"), NA)
 
 data <- data |> 
   mutate(blog = str_extract(url_blog, 
@@ -80,8 +78,10 @@ for (blog in data$url_blog)
   if (!is.na(pag))
   {
     img <- pag |> 
-    html_element("img") |> 
+    html_elements("img") |> 
     html_attr('src') |> 
+    as_tibble() |> 
+    slice(if_else(str_detect(blog,  "limon"), 2, 1)) |> 
     str_remove("\\./") |> 
     paste0(blog, "/",. = _) |> 
     str_replace_all(" ", "%20") |> 
