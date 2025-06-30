@@ -1,8 +1,8 @@
 {
-  "hash": "9ad0e273a320e282ba010cc502b5ec92",
+  "hash": "57dedd81219403dc15b37af234f24b34",
   "result": {
     "engine": "knitr",
-    "markdown": "---\ntitle: \"Clase de hoy\"\nformat: \n  revealjs:\n    footer: \"[inicio](../../index.qmd)\"\n    controls: true\n    \n  pptx: default\n\n---\n\n\n\n\n## Primera diapo\n\n### `![](img/cyberscooty-blackboard_math.svg)`\n\n## Segunda diapo\n\n![](img/cyberscooty-blackboard_math.svg)\n\n\n## Cuadro\n\n|col 1 | col 2 |\n|------|:-----:|\n| A    | 1|\n|B|2|\n|c|4|\n\n\n## Cálculos\n\n\n\n\n::: {.cell}\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 6.283185\n```\n\n\n:::\n:::\n",
+    "markdown": "---\ntitle: \"Clase de hoy\"\n\ndraft: true \n\nformat: \n  revealjs:\n    footer: \"[inicio](../../index.qmd)\"\n    controls: true\n  pptx: default\n---\n\n\n\n\n## Primera diapo\n\n### `![](img/cyberscooty-blackboard_math.svg)`\n\n## Segunda diapo\n\n![](img/cyberscooty-blackboard_math.svg)\n\n\n## Cuadro\n\n|col 1 | col 2 |\n|------|:-----:|\n| A    | 1|\n|B|2|\n|c|4|\n\n\n## Cálculos\n\n\n\n\n::: {.cell}\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 6.283185\n```\n\n\n:::\n:::\n",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"

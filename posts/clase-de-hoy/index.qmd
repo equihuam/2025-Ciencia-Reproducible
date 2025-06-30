@@ -1,13 +1,13 @@
 ---
 title: "Clase de hoy"
+
+draft: true 
+
 format: 
   revealjs:
     footer: "[inicio](../../index.qmd)"
     controls: true
-    
   pptx: default
-
-
 ---
 
 ## Primera diapo

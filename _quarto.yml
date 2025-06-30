@@ -16,7 +16,7 @@ website:
         href: https://github.com/equihuam/2025-ciencia-reproducible
       - icon: x
         href: https://x.com/
-
+        
 format:
   html:
     theme: Yeti 
