@@ -591,8 +591,8 @@
     "objectID": "posts/2025-05-02-presentacion/index.html#para-empezar",
     "href": "posts/2025-05-02-presentacion/index.html#para-empezar",
     "title": "Otra manera de Presentar",
-    "section": "Para empezar",
-    "text": "Para empezar\nEn el manual de Quarto hay información sobre presentaciones"
+    "section": "",
+    "text": "En el manual de Quarto hay información sobre presentaciones"
   },
   {
     "objectID": "posts/2025-05-02-presentacion/index.html#esta-es-la-segunda-diapositiva",
@@ -691,5 +691,12 @@
     "title": "Blog de Reproducibilidad Científica",
     "section": "",
     "text": "Este es un espacio para conversar sobre Ciencia Reproducible. La figura ilustra los pilares de la reproducibilidad de acuerdo con lo expresado en este artículo de González-Rayas, et al., 2020"
+  },
+  {
+    "objectID": "posts/2025-05-02-presentacion/index.html",
+    "href": "posts/2025-05-02-presentacion/index.html",
+    "title": "Otra manera de Presentar",
+    "section": "",
+    "text": "En el manual de Quarto hay información sobre presentaciones"
   }
 ]
