@@ -19,6 +19,7 @@ website:
       - icon: x
         href: https://x.com/
         
+
 format:
   html:
     theme: Yeti 
@@ -30,8 +31,7 @@ format:
     number-sections: false
     colorlinks: true
     papersize: letter
-
-prefer-html: true
+    prefer-html: true
 
 editor: source    
 

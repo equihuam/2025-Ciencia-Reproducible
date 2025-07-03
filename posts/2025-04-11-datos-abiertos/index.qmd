@@ -356,6 +356,7 @@ if(exists("dat_O3_df"))
 
 Los datos generales de todas las estaciones climatológicas de México están publicadas como datos de acceso abierto, pero no están en forrma de tabla sino en forma de datos geográficos asociados a marcadores de puntos que se despliegan en un mapa. Se comprende que es una entrega de datos pensada para que un usuario acceda a la información en forma interactiva. Pienso que para muchos otros fines de *reuso* de esos datos conviene tenerlos en formato tabular. El documento geográfico está disponible en formato **kmz**. Este archivo es el tipo que usa *Google Earth*. Es una versión comprimida como un "zip", de otro tipo de archivo que es el **kml**, también desarrollado y usado en *Google Earth*. Lo que podemos hacer es descomprimir el archivo **kmz**, y procesar el archivo descomprimido resultante. En **R** existe la función `unzip`. Es la que usaremos enseguida.
 
+
 ```{r}
 #| label: mapa-estaciones
 
@@ -364,14 +365,20 @@ url_agua <- "http://smn.conagua.gob.mx/"
 url_kmz <- "tools/RESOURCES/Normales_Climatologicas/EstacionesClimatologicas.kmz"   
 archivo_kmz <- "./estaciones.kmz"
 
-httr2::request(paste0(url_agua, url_kmz)) |> 
-  httr2::req_perform() |> 
-  httr2::resp_body_raw() |> 
-  writeBin(archivo_kmz)
 
 
-# desempaca el "kmz" y guarda el resultado en "temp-kmz"
-unzip(zipfile = archivo_kmz, exdir = "temp-kmz")
+err <- tryCatch({
+  request(paste0(url_agua, url_kmz)) |> 
+    req_perform() |> 
+    resp_body_raw()|> 
+    writeBin(archivo_kmz)},
+  error = function(e) return(e)
+)
+
+if (!str_detect(err$message, "Failed"))
+  # desempaca el "kmz" y guarda el resultado en "temp-kmz"
+  unzip(zipfile = archivo_kmz, exdir = "temp-kmz")
+
 
 ```
 
