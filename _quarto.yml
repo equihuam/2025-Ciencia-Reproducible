@@ -1,15 +1,15 @@
 project:
   type: website
   execute-dir: file
-
+  
 lang: es
 date-format: "[Xalapa, Ver.,] D [de] MMMM, YYYY"
 
 website:
   title: "Ciencia Abierta"
   favicon: images/pluma-escritura.png
-  open-graph: 
-    image: images/poster-r-ciencia.png
+  image: "images/poster-r-ciencia.png"
+
   search: true
   navbar:
     right:
