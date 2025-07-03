@@ -8,7 +8,8 @@ date-format: "[Xalapa, Ver.,] D [de] MMMM, YYYY"
 website:
   title: "Ciencia Abierta"
   favicon: images/pluma-escritura.png
-  image: "images/poster-r-ciencia.png"
+  open-graph: 
+    image: "images/poster-r-ciencia.png"
 
   search: true
   navbar:
@@ -19,7 +20,6 @@ website:
       - icon: x
         href: https://x.com/
         
-
 format:
   html:
     theme: Yeti 
