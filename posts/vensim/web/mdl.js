@@ -978,7 +978,7 @@ function dbg(text) {
 // === Body ===
 
 var ASM_CONSTS = {
-  94572: () => { OnVensimLoaded() }
+  94588: () => { OnVensimLoaded() }
 };
 
 
