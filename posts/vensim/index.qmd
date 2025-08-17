@@ -5,14 +5,13 @@ author: Miguel Equihua
 image: "Image by PDPics from Pixabay-cup-166778_1280.jpg"
 
 format: html
-
+bibliography: references.bib
 ---
 
-Modelo clásio de enfrimiento. Publicado en forma anónima por Newton en 1701.
+Modelo clásico de enfriamiento. Publicado en forma anónima por Newton
+[@vii.sca1701].
 
-![](artículo-newton.png){width=300}
-
-
+![](artículo-newton.png){width="300"}
 
 ```{=html}
 
@@ -22,5 +21,4 @@ Modelo clásio de enfrimiento. Publicado en forma anónima por Newton en 1701.
  frameborder="0" 
  allowfullscreen>
 </iframe>
-
 ```
