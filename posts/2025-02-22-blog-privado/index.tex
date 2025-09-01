@@ -1,0 +1,476 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+<meta name="robots" content="noindex">
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
+\definecolor{quarto-callout-color}{HTML}{909090}
+\definecolor{quarto-callout-note-color}{HTML}{0758E5}
+\definecolor{quarto-callout-important-color}{HTML}{CC1914}
+\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
+\definecolor{quarto-callout-tip-color}{HTML}{00A047}
+\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
+\definecolor{quarto-callout-color-frame}{HTML}{acacac}
+\definecolor{quarto-callout-note-color-frame}{HTML}{4582ec}
+\definecolor{quarto-callout-important-color-frame}{HTML}{d9534f}
+\definecolor{quarto-callout-warning-color-frame}{HTML}{f0ad4e}
+\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
+\definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Tabla de contenidos}
+\else
+  \newcommand\contentsname{Tabla de contenidos}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{Listado de Figuras}
+\else
+  \newcommand\listfigurename{Listado de Figuras}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{Listado de Tablas}
+\else
+  \newcommand\listtablename{Listado de Tablas}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figura}
+\else
+  \newcommand\figurename{Figura}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Tabla}
+\else
+  \newcommand\tablename{Tabla}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listado}
+\newcommand*\listoflistings{\listof{codelisting}{Listado de Listados}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{tikz}{}{\usepackage{tikz}}
+\makeatother
+        \newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+          \node[shape=circle,draw,inner sep=1pt] (char) {{\scriptsize#1}};}}  
+                  
+
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{spanish}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\usepackage{bookmark}
+
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Hacer que mi blog sea privado},
+  pdfauthor={Miguel},
+  pdflang={es},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{Hacer que mi blog sea privado}
+\author{Miguel}
+\date{}
+
+\begin{document}
+\maketitle
+
+
+Supongamos que quieres hacer que sólo los coautores del trabajo tengan
+acceso al \emph{blog} o a alguna sección del mismo. Esto puede iniciar
+procurando que los \emph{bots} o \emph{arañas} de \emph{Google} y otros
+buscadores no recojan datos o metan las narices en mi contenido. Bueno,
+esto puede hacerse por dos caminos. Lo primero lo haremos con el
+\href{https://seranking.com/es/blog/noindex/}{concepto \textbf{noindex}}
+y la ayuda de instrucciones directas a los \emph{bots} mediante un
+archivo de indicaciones. El resultado es poco invasivo para el usuario
+pero no enteramente seguro para garantizar la privacidad del contenido.
+Una solución más radical es de plano encriptar el sitio o porciones
+sensibles del mismo, para sólo mostrarlo cuando se proporciones una
+clave específica. Un archivo encriptado no es indexable (es parte de la
+\emph{Deep web}, que no es lo mismo que la \emph{Dark Web}). Este último
+método es muy efectivo, pero claro, potencialmente un poco incómodo para
+el usuario. Desde luego, las fugas de información son posibles, pero más
+bien vinculadas al cuidado que tengan los involucrados en la gestión del
+acceso y del manejo del contenido. Si todo esto es necesario en un marco
+de \emph{ciencia abierta} es algo que vale la pena meditar, pues el
+acceso temprano es congruente con las nociones de \emph{pre-registro} y
+\emph{pre-publicación}.
+
+\subsubsection{No index}\label{no-index}
+
+Lo que hay que hacer para evitar a los \emph{bots} en la página
+principal, es poner en el archivo \texttt{\textbackslash{}\_quarto.yml}
+las siguientes líneas:
+
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Archivo \texttt{\_quarto.yml}}, toprule=.15mm, toptitle=1mm, colframe=quarto-callout-tip-color-frame, colback=white, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, titlerule=0mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, rightrule=.15mm, opacityback=0, left=2mm, opacitybacktitle=0.6]
+
+\phantomsection\label{annotated-cell-1}%
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\FunctionTok{project}\KeywordTok{:}
+\AttributeTok{  }\FunctionTok{type}\KeywordTok{:}\AttributeTok{ website}
+\AttributeTok{  }\FunctionTok{resources}\KeywordTok{:}\CommentTok{ }\hspace*{\fill}\NormalTok{\circled{1}}
+\AttributeTok{    }\KeywordTok{{-}}\AttributeTok{ robots.txt}
+\AttributeTok{    }
+\FunctionTok{format}\KeywordTok{:}
+\AttributeTok{  }\FunctionTok{html}\KeywordTok{:}
+\AttributeTok{    }\FunctionTok{theme}\KeywordTok{:}\AttributeTok{ fotoD.png}
+\AttributeTok{    }\FunctionTok{include{-}in{-}header}\KeywordTok{:}\CommentTok{ }\hspace*{\fill}\NormalTok{\circled{2}}
+\AttributeTok{      }\KeywordTok{{-}}\AttributeTok{ }\FunctionTok{text}\KeywordTok{:}\AttributeTok{ \textless{}meta name="robots" content="noindex"\textgreater{}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{description}
+\tightlist
+\item[\circled{1}]
+Hay que proporcionar una lista de instrucciones para los robots que
+andan cosechando por la Web. Se hace mediante un archivo específico como
+el anotado.
+\item[\circled{2}]
+Esta es tu petición de no indexar por favor. Sigue el código concreto
+que lo indica, que debe aparecer en la sección \texttt{head} del sitio
+Web que contiene tu \emph{Blog}.
+\end{description}
+
+\end{tcolorbox}
+
+Con esto evitaras que muchos buscadores, los más formales, te den gusto
+y no reúnan información de tu sitio. No todos los buscadores cumplen con
+este estándar, pero sí lo hacen los más importantes. Esto también te
+hace ver que es un \emph{acto voluntario}, es decir, un metiche puede
+optar por ignorar tus deseos.
+
+Las instrucciones para los robots pueden variar. En este caso puse las
+siguientes en el archivo \texttt{robots.txt} en la raíz de tu proyecto.
+
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Archivo robots.txt}, toprule=.15mm, toptitle=1mm, colframe=quarto-callout-tip-color-frame, colback=white, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, titlerule=0mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, rightrule=.15mm, opacityback=0, left=2mm, opacitybacktitle=0.6]
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{robots.txt generated by www.seoptimer.com}
+\NormalTok{User{-}agent: Googlebot}
+\NormalTok{Disallow: /}
+\NormalTok{User{-}agent: googlebot{-}image}
+\NormalTok{Disallow: /}
+\NormalTok{User{-}agent: googlebot{-}mobile}
+\NormalTok{Disallow: /}
+\NormalTok{User{-}agent: MSNBot}
+\NormalTok{Disallow: /}
+\NormalTok{User{-}agent: Slurp}
+\NormalTok{Disallow: /}
+\NormalTok{User{-}agent: Teoma}
+\NormalTok{Disallow: /}
+\NormalTok{User{-}agent: Gigabot}
+\NormalTok{Disallow: /}
+\NormalTok{User{-}agent: Robozilla}
+\NormalTok{Disallow: /}
+\NormalTok{User{-}agent: Nutch}
+\NormalTok{Disallow: /}
+\NormalTok{User{-}agent: ia\_archiver}
+\NormalTok{Disallow: /}
+\NormalTok{User{-}agent: baiduspider}
+\NormalTok{Disallow: /}
+\NormalTok{User{-}agent: naverbot}
+\NormalTok{Disallow: /}
+\NormalTok{User{-}agent: yeti}
+\NormalTok{Disallow: /}
+\NormalTok{User{-}agent: yahoo{-}mmcrawler}
+\NormalTok{Disallow: /}
+\NormalTok{User{-}agent: psbot}
+\NormalTok{Disallow: /}
+\NormalTok{User{-}agent: yahoo{-}blogs/v3.9}
+\NormalTok{Disallow: /}
+\NormalTok{User{-}agent: *}
+\NormalTok{Disallow: /}
+\NormalTok{Disallow: /cgi{-}bin/}
+\end{Highlighting}
+\end{Shaded}
+
+\end{tcolorbox}
+
+~
+
+Una solución más definitiva es encriptar tu contenido. En este caso te
+sugiero usar la solución que se ofrece con la biblioteca
+\texttt{staticryptR}. Las
+\href{https://cran.r-project.org/web/packages/staticryptR/readme/README.html}{explicaciones
+de cómo y qué instalar están acá}. Si la tradicional instalación de
+librerías no es suficiente, te sugiero ir al documento sugerido y ver
+las líneas que hablan de \emph{Node.js}, un ambiente de
+\emph{javascript} que agrega una capa de procesamiento necesario para
+esto en tu máquina. Luego, asegúrate de tener instalada en \textbf{R} la
+biblioteca mencionada. Con eso hecho. Ve de nuevo a tu archivo
+\texttt{\textbackslash{}\_quarto.yml} y agrega las líneas necesarias
+para que incluya lo que se indica:
+
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Orden de encriptar en \texttt{\textbackslash{}\_quarto.yml}}, toprule=.15mm, toptitle=1mm, colframe=quarto-callout-tip-color-frame, colback=white, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, titlerule=0mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, rightrule=.15mm, opacityback=0, left=2mm, opacitybacktitle=0.6]
+
+\phantomsection\label{annotated-cell-3}%
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{project}\KeywordTok{:}
+\AttributeTok{  }\FunctionTok{type}\KeywordTok{:}\AttributeTok{ website}
+\AttributeTok{  }\FunctionTok{output{-}dir}\KeywordTok{:}\AttributeTok{ }\StringTok{"./\_site"}\CommentTok{ }\hspace*{\fill}\NormalTok{\circled{1}}
+\AttributeTok{  }\FunctionTok{post{-}render}\KeywordTok{:}\AttributeTok{ encrypt.r}\CommentTok{ }\hspace*{\fill}\NormalTok{\circled{2}}
+\AttributeTok{  }\FunctionTok{resources}\KeywordTok{:}\AttributeTok{ }
+\AttributeTok{    }\KeywordTok{{-}}\AttributeTok{ robots.txt}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{description}
+\tightlist
+\item[\circled{1}]
+Indica el archivo o directorio que quieres encriptar, en este caso es
+\textbf{todo el sitio}, qué vive en el directorio
+\texttt{\textbackslash{}\_site}.
+\item[\circled{2}]
+Anota el archivo que contiene las instrucciones concretas sobre qué y
+cómo encriptar el contenido.
+\end{description}
+
+\end{tcolorbox}
+
+Desde luego, también necesitas el código indicado que pondrás en el
+archivo \texttt{encrypt.r} y que alojaras en la raíz de tu proyecto.
+
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Código para crear el archivo encrypt.r}, toprule=.15mm, toptitle=1mm, colframe=quarto-callout-tip-color-frame, colback=white, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, titlerule=0mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, rightrule=.15mm, opacityback=0, left=2mm, opacitybacktitle=0.6]
+
+\paragraph{\texorpdfstring{archivo
+\texttt{encrypt.r}}{archivo encrypt.r}}\label{archivo-encrypt.r}
+
+\phantomsection\label{annotated-cell-4}%
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{staticryptR}\SpecialCharTok{::}\FunctionTok{staticryptr}\NormalTok{(}
+  \AttributeTok{files =} \StringTok{"\_site/"}\NormalTok{, }\hspace*{\fill}\NormalTok{\circled{1}}
+  \AttributeTok{directory =} \StringTok{"."}\NormalTok{, }\hspace*{\fill}\NormalTok{\circled{2}}
+  \AttributeTok{password =} \StringTok{"pita{-}123"}\NormalTok{, }\hspace*{\fill}\NormalTok{\circled{3}}
+  \AttributeTok{short =} \ConstantTok{TRUE}\NormalTok{, }\hspace*{\fill}\NormalTok{\circled{4}}
+  \AttributeTok{recursive =} \ConstantTok{TRUE} \hspace*{\fill}\NormalTok{\circled{5}}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{description}
+\tightlist
+\item[\circled{1}]
+Directorio objetivo, en este caso: todo el sitio.
+\item[\circled{2}]
+En dónde encontrar el directorio objetivo. En este caso la raíz de tu
+proyecto.
+\item[\circled{3}]
+La clave que usaras para la tarea (sólo una), puedes usar
+\texttt{keyring} para ocultarla.
+\item[\circled{4}]
+Indicas que es válido usar claves cortas (quizás sólo 8 caracteres). Es
+preferible claves largas.
+\item[\circled{5}]
+Especifica que quieres encriptar la carpeta indicada y todas las
+subcarpetas que contenga.
+\end{description}
+
+\end{tcolorbox}
+
+\subsection{Cuidado}\label{cuidado}
+
+Al encriptar \texttt{\_site} los paquetes ya codificados se van
+``acumulando'', lo que se traduce en que tengan un tamaño cada vez
+mayor, hasta volverse inmanejables. Para evitar ese efecto no deseado,
+es conveniente usar preferentemente la opción \textbf{Render Website}
+desde la pestaña \textbf{Build} en \emph{RStudio}. Esto recrea todos los
+archivos desde cero. Archivos muy grandes acaban siendo un obstáculo
+para el manejo eficiente en \emph{git}. Para ayudar a visualizar el
+problema agregué unas lineas en el escript de \texttt{encrypt.r} que te
+ayudarán a visualizar si están apareciendo archivos potencialmente
+problemáticos, es decir mayores a 10MB. La advertencia la podrás ver en
+la pestaña \emph{Background Jobs}, pero sólo aparecerá si se detecta
+algún riesgo.
+
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Vigilar tamaño de archivos en \_site}, toprule=.15mm, toptitle=1mm, colframe=quarto-callout-tip-color-frame, colback=white, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, titlerule=0mm, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, rightrule=.15mm, opacityback=0, left=2mm, opacitybacktitle=0.6]
+
+Sí te interesa mantener la vigilancia del tamaño de los archivos en
+\texttt{\textbackslash{}\_site}, este es un código que lo hace y te
+reporta cuando se sospecha de algún riesgo por archivos mayores a 10MB.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{lista\_rchivos }\OtherTok{\textless{}{-}}\NormalTok{ tibble}\SpecialCharTok{::}\FunctionTok{tibble}\NormalTok{(}\AttributeTok{archivo =} \FunctionTok{list.files}\NormalTok{(}\StringTok{"./\_site/"}\NormalTok{, }
+                                                     \AttributeTok{recursive =} \ConstantTok{TRUE}\NormalTok{,}
+                                                     \AttributeTok{full.names =} \ConstantTok{TRUE}\NormalTok{)) }\SpecialCharTok{|\textgreater{}} 
+\NormalTok{  dplyr}\SpecialCharTok{::}\FunctionTok{mutate}\NormalTok{(}\AttributeTok{MB =} \FunctionTok{file.size}\NormalTok{(archivo)}\SpecialCharTok{/}\NormalTok{(}\DecValTok{1024}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{)) }\SpecialCharTok{|\textgreater{}} 
+\NormalTok{  dplyr}\SpecialCharTok{::}\FunctionTok{filter}\NormalTok{(MB }\SpecialCharTok{\textgreater{}} \DecValTok{10}\NormalTok{)}
+                                  
+\ControlFlowTok{if}\NormalTok{ (}\FunctionTok{dim}\NormalTok{(lista\_rchivos)[}\DecValTok{1}\NormalTok{] }\SpecialCharTok{\textgreater{}} \DecValTok{0}\NormalTok{)}
+\NormalTok{\{}
+  \FunctionTok{print}\NormalTok{(}\StringTok{"Advertencia: hay archivos muy grandes en \_site"}\NormalTok{)}
+  \FunctionTok{print}\NormalTok{(}\StringTok{"Te sugiero hacer un render completo desde la pestaña \textquotesingle{}Build\textquotesingle{}"}\NormalTok{)}
+  \FunctionTok{print}\NormalTok{(lista\_rchivos)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\end{tcolorbox}
+
+
+
+
+\end{document}
