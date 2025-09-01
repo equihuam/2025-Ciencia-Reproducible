@@ -1,0 +1,24 @@
+---
+title: "Vensim"
+author: Miguel Equihua
+
+image: "Image by PDPics from Pixabay-cup-166778_1280.jpg"
+
+format: html
+bibliography: references.bib
+---
+
+Modelo clásico de enfriamiento. Publicado en forma anónima por Newton
+[@vii.sca1701].
+
+![](artículo-newton.png){width="300"}
+
+```{=html}
+
+<iframe src="https://modelo-enfriamiento.netlify.app/" 
+ width="1200" 
+ height="700" 
+ frameborder="0" 
+ allowfullscreen>
+</iframe>
+```

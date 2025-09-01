@@ -1,3 +1,13 @@
+---
+title: "Ejemplo de uso de Postgres"
+author: "Miguel Equihua"
+lang: es
+date: 10/apr/2025
+categories: [base de dtos,postgres]
+
+format: 
+  html: default
+---  
 ## Preparar Linux y PostgreSQL en tu máquina Windows
 
 ### WSL

@@ -2,7 +2,11 @@
   {
     "listing": "/index.html",
     "items": [
+<<<<<<< HEAD
       "/posts/2025-02-22-blog-privado/index.html",
+=======
+      "/posts/vensim/index.html",
+>>>>>>> 64862a03d97fd498262de1a54038104aad4a01fb
       "/posts/2025-05-23-colaborar-con-git/index.html",
       "/posts/2025-05-23-recibir-comentarios/index.html",
       "/posts/2025-05-16-que-aprendi/index.html",

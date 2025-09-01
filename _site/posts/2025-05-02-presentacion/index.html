@@ -228,6 +228,9 @@
 
   <link href="../../site_libs/fontawesome-4.7.0/font-awesome.min.css" rel="stylesheet">
 
+<meta property="og:title" content="Otra manera de Presentar – Ciencia Abierta">
+<meta property="og:image" content="img/idea-3976295_1280.png">
+<meta property="og:site_name" content="Ciencia Abierta">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -268,14 +271,78 @@ Miguel Equihua
 </section>
 <section id="una-gráfica-con-ggplot" class="slide level2">
 <h2>¿Una gráfica con ggplot?</h2>
+<div class="cell" title="graf-1">
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using method = 'loess' and formula = 'y ~ x'</code></pre>
+</div>
 
-<img data-src="index_files/figure-revealjs/unnamed-chunk-1-1.png" width="960" class="r-stretch"></section>
+</div>
+<img data-src="index_files/figure-html/unnamed-chunk-1-1.png" width="672" class="r-stretch"></section>
 <section id="diapo-con-un-bonito-mapa" class="slide level2">
 <h2>Diapo con un bonito mapa</h2>
 <div class="cell">
+<details class="code-fold">
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">library</span>(leaflet)</span>
+<span id="cb2-2"><a></a><span class="fu">library</span>(leaflet.extras)</span>
+<span id="cb2-3"><a></a></span>
+<span id="cb2-4"><a></a>basemap <span class="ot">&lt;-</span> <span class="fu">leaflet</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb2-5"><a></a>  <span class="co"># ubicación y nivel de zoom</span></span>
+<span id="cb2-6"><a></a>  <span class="fu">setView</span>(<span class="at">lng =</span> <span class="sc">-</span><span class="fl">96.942838</span>, <span class="at">lat =</span> <span class="fl">19.512198</span>, <span class="at">zoom =</span> <span class="dv">20</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-7"><a></a>  <span class="co"># Añade proveedor de maa</span></span>
+<span id="cb2-8"><a></a>  <span class="fu">addProviderTiles</span>(</span>
+<span id="cb2-9"><a></a>    <span class="st">"OpenStreetMap"</span>,</span>
+<span id="cb2-10"><a></a>    <span class="co"># Dale un nombre a la capa</span></span>
+<span id="cb2-11"><a></a>    <span class="at">group =</span> <span class="st">"Mapa-OpenStreet"</span></span>
+<span id="cb2-12"><a></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-13"><a></a>  <span class="fu">addProviderTiles</span>(<span class="st">"Esri.WorldImagery"</span>, </span>
+<span id="cb2-14"><a></a>                   <span class="at">group =</span> <span class="st">"ESRI"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-15"><a></a>  <span class="fu">addWMSTiles</span>(</span>
+<span id="cb2-16"><a></a>    <span class="st">"http://gaia.inegi.org.mx/NLB/tunnel/wms/wms61?"</span>,</span>
+<span id="cb2-17"><a></a>    <span class="at">layers =</span> <span class="st">"Ortofotos"</span>,</span>
+<span id="cb2-18"><a></a>    <span class="at">options =</span> <span class="fu">WMSTileOptions</span>(<span class="at">format =</span> <span class="st">"image/png"</span>, <span class="at">transparent =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb2-19"><a></a>    <span class="at">attribution =</span> <span class="st">"Inegi"</span>,</span>
+<span id="cb2-20"><a></a>    <span class="at">group =</span> <span class="st">"Inegi-ortofoto"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-21"><a></a>  <span class="fu">addWMSTiles</span>(</span>
+<span id="cb2-22"><a></a>    <span class="st">"http://gaia.inegi.org.mx/NLB/tunnel/wms/wms61?"</span>,</span>
+<span id="cb2-23"><a></a>    <span class="at">layers =</span> <span class="st">"c407"</span>,</span>
+<span id="cb2-24"><a></a>    <span class="at">options =</span> <span class="fu">WMSTileOptions</span>(<span class="at">format =</span> <span class="st">"image/png"</span>, <span class="at">transparent =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb2-25"><a></a>    <span class="at">attribution =</span> <span class="st">"Inegi"</span>,</span>
+<span id="cb2-26"><a></a>    <span class="at">group =</span> <span class="st">"Humedad del suelo"</span>) </span>
+<span id="cb2-27"><a></a></span>
+<span id="cb2-28"><a></a><span class="co">#%&gt;% </span></span>
+<span id="cb2-29"><a></a><span class="co">#  addWMSLegend("http://gaia.inegi.org.mx/NLB/tunnel/wms/wms61",</span></span>
+<span id="cb2-30"><a></a><span class="co">#        'REQUEST=GetLegendGraphic&amp;VERSION=1.1.0',</span></span>
+<span id="cb2-31"><a></a><span class="co">#        '&amp;FORMAT=image/png&amp;LAYER=c407')  </span></span>
+<span id="cb2-32"><a></a></span>
+<span id="cb2-33"><a></a></span>
+<span id="cb2-34"><a></a>icon.fa <span class="ot">&lt;-</span> <span class="fu">makeAwesomeIcon</span>(<span class="at">icon =</span> <span class="st">"bicycle"</span>, <span class="at">markerColor =</span> <span class="st">"green"</span>,</span>
+<span id="cb2-35"><a></a>                           <span class="at">library =</span> <span class="st">"fa"</span>,</span>
+<span id="cb2-36"><a></a>                           <span class="at">iconColor =</span> <span class="st">"red"</span>)</span>
+<span id="cb2-37"><a></a></span>
+<span id="cb2-38"><a></a>map_1 <span class="ot">&lt;-</span> basemap <span class="sc">%&gt;%</span></span>
+<span id="cb2-39"><a></a>  <span class="fu">addAwesomeMarkers</span>(</span>
+<span id="cb2-40"><a></a>    <span class="at">lat =</span> <span class="fl">19.512198</span>,</span>
+<span id="cb2-41"><a></a>    <span class="at">lng =</span> <span class="sc">-</span><span class="fl">96.942838</span>,</span>
+<span id="cb2-42"><a></a>    <span class="at">label =</span> <span class="st">"Starting point"</span>,</span>
+<span id="cb2-43"><a></a>    <span class="at">icon =</span> icon.fa</span>
+<span id="cb2-44"><a></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-45"><a></a>  <span class="co"># Layers control</span></span>
+<span id="cb2-46"><a></a>  <span class="fu">addLayersControl</span>(</span>
+<span id="cb2-47"><a></a>    <span class="at">baseGroups =</span> <span class="fu">c</span>(</span>
+<span id="cb2-48"><a></a>      <span class="st">"Mapa-OpenStreet"</span>,</span>
+<span id="cb2-49"><a></a>      <span class="st">"ESRI"</span>,</span>
+<span id="cb2-50"><a></a>      <span class="st">"Inegi-ortofoto"</span>,</span>
+<span id="cb2-51"><a></a>      <span class="st">"Humedad del suelo"</span></span>
+<span id="cb2-52"><a></a>    ),</span>
+<span id="cb2-53"><a></a>    <span class="at">options =</span> <span class="fu">layersControlOptions</span>(<span class="at">collapsed =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb2-54"><a></a>  )</span>
+<span id="cb2-55"><a></a></span>
+<span id="cb2-56"><a></a>map_1</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item" id="htmlwidget-7687a99fcc6b29ee1770" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-7687a99fcc6b29ee1770">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"setView":[[19.512198,-96.94283799999999],20,[]],"calls":[{"method":"addProviderTiles","args":["OpenStreetMap",null,"Mapa-OpenStreet",{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addProviderTiles","args":["Esri.WorldImagery",null,"ESRI",{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addWMSTiles","args":["http://gaia.inegi.org.mx/NLB/tunnel/wms/wms61?",null,"Inegi-ortofoto",{"styles":"","format":"image/png","transparent":true,"version":"1.1.1","attribution":"Inegi","layers":"Ortofotos"}]},{"method":"addWMSTiles","args":["http://gaia.inegi.org.mx/NLB/tunnel/wms/wms61?",null,"Humedad del suelo",{"styles":"","format":"image/png","transparent":true,"version":"1.1.1","attribution":"Inegi","layers":"c407"}]},{"method":"addAwesomeMarkers","args":[19.512198,-96.94283799999999,{"icon":"bicycle","markerColor":"green","iconColor":"red","spin":false,"squareMarker":false,"iconRotate":0,"font":"monospace","prefix":"fa"},null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"Starting point",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addLayersControl","args":[["Mapa-OpenStreet","ESRI","Inegi-ortofoto","Humedad del suelo"],[],{"collapsed":false,"autoZIndex":true,"position":"topright"}]}],"limits":{"lat":[19.512198,19.512198],"lng":[-96.94283799999999,-96.94283799999999]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-4abfd10537ed9f825c6b" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-4abfd10537ed9f825c6b">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"setView":[[19.512198,-96.94283799999999],20,[]],"calls":[{"method":"addProviderTiles","args":["OpenStreetMap",null,"Mapa-OpenStreet",{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addProviderTiles","args":["Esri.WorldImagery",null,"ESRI",{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addWMSTiles","args":["http://gaia.inegi.org.mx/NLB/tunnel/wms/wms61?",null,"Inegi-ortofoto",{"styles":"","format":"image/png","transparent":true,"version":"1.1.1","attribution":"Inegi","layers":"Ortofotos"}]},{"method":"addWMSTiles","args":["http://gaia.inegi.org.mx/NLB/tunnel/wms/wms61?",null,"Humedad del suelo",{"styles":"","format":"image/png","transparent":true,"version":"1.1.1","attribution":"Inegi","layers":"c407"}]},{"method":"addAwesomeMarkers","args":[19.512198,-96.94283799999999,{"icon":"bicycle","markerColor":"green","iconColor":"red","spin":false,"squareMarker":false,"iconRotate":0,"font":"monospace","prefix":"fa"},null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"Starting point",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addLayersControl","args":[["Mapa-OpenStreet","ESRI","Inegi-ortofoto","Humedad del suelo"],[],{"collapsed":false,"autoZIndex":true,"position":"topright"}]}],"limits":{"lat":[19.512198,19.512198],"lng":[-96.94283799999999,-96.94283799999999]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section></section>
@@ -296,11 +363,11 @@ Miguel Equihua
 <li>Evitar la portada automática. No pongas ni título ni autor al encabezado <strong>YAML</strong> de tu documento.</li>
 <li>Usar <code>title-slide-attributes</code>.</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource {+yaml} number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a></a></span>
-<span id="cb1-2"><a></a>title-slide-attributes: </span>
-<span id="cb1-3"><a></a>  data-background-image: /ruta/a/imágen_para_portada.png   </span>
-<span id="cb1-4"><a></a>  data-background-size: contain   </span>
-<span id="cb1-5"><a></a>  data-background-opacity: "0.5"</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource {+yaml} number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a></a></span>
+<span id="cb3-2"><a></a>title-slide-attributes: </span>
+<span id="cb3-3"><a></a>  data-background-image: /ruta/a/imágen_para_portada.png   </span>
+<span id="cb3-4"><a></a>  data-background-size: contain   </span>
+<span id="cb3-5"><a></a>  data-background-opacity: "0.5"</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Substituir todo con <code>template-partials</code> que permite usar una plantilla <code>html</code> a tu gusto.</li>
 </ul>
@@ -385,14 +452,14 @@ Miguel Equihua
 <ul>
 <li>Agrega esto en el encabezado de tu presentación</li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {+yaml} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a></a>title: Mi presentación </span>
-<span id="cb2-2"><a></a>  format: </span>
-<span id="cb2-3"><a></a>    revealjs: default</span>
-<span id="cb2-4"><a></a>      pointer: pointerSize: 18       </span>
-<span id="cb2-5"><a></a>      color: #32cd32'       </span>
-<span id="cb2-6"><a></a></span>
-<span id="cb2-7"><a></a>revealjs-plugins:</span>
-<span id="cb2-8"><a></a>  - pointer`</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource {+yaml} number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a></a>title: Mi presentación </span>
+<span id="cb4-2"><a></a>  format: </span>
+<span id="cb4-3"><a></a>    revealjs: default</span>
+<span id="cb4-4"><a></a>      pointer: pointerSize: 18       </span>
+<span id="cb4-5"><a></a>      color: #32cd32'       </span>
+<span id="cb4-6"><a></a></span>
+<span id="cb4-7"><a></a>revealjs-plugins:</span>
+<span id="cb4-8"><a></a>  - pointer`</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="listo-como-lo-usas" class="slide level2">
 <h2>!Listo! ¿como lo usas?</h2>
@@ -642,82 +709,6 @@ Miguel Equihua
         ]
       });
     </script>
-    
-
-    <script>
-
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-
-      // slide changes (different for each slide format).
-
-      (function () {
-
-        // dispatch for htmlwidgets
-
-        function fireSlideEnter() {
-
-          const event = window.document.createEvent("Event");
-
-          event.initEvent("slideenter", true, true);
-
-          window.document.dispatchEvent(event);
-
-        }
-
-    
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-
-          fireSlideEnter();
-
-    
-
-          // dispatch for shiny
-
-          if (window.jQuery) {
-
-            if (previousSlide) {
-
-              window.jQuery(previousSlide).trigger("hidden");
-
-            }
-
-            if (currentSlide) {
-
-              window.jQuery(currentSlide).trigger("shown");
-
-            }
-
-          }
-
-        }
-
-    
-
-        // hookup for slidy
-
-        if (window.w3c_slidy) {
-
-          window.w3c_slidy.add_observer(function (slide_num) {
-
-            // slide_num starts at position 1
-
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-
-          });
-
-        }
-
-    
-
-      })();
-
-    </script>
-
-    
-
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
