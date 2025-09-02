@@ -1,20 +1,5 @@
----
-title: "Untitled"
-
-format: 
-   html: default
-   
-   include-before-body: 
-     - "web/mdl.js"
-     - "web/vensim_wasm.js"
-     - "web/wasm-arrays.min.js"
-     - "web/d3.min.js"
-
----
-
-```{=html}
 <!DOCTYPE html><head><meta charset = "utf-8">
-<title>Taza de te</title>
+<title>teacup</title>
 
 <style type = "text/css">
 * {
@@ -89,12 +74,12 @@ window.onload = function() {
 };
 </script>
 
-<script type="text/javascript" src="web/mdl.js"></script>
-<script type="text/javascript" src="web/vensim_wasm.js"></script>
-<script type="text/javascript" src="web/wasm-arrays.min.js"></script>
-<script type="text/javascript" src="web/d3.min.js"></script>
+<script type="text/javascript" src="mdl.js"></script>
+<script type="text/javascript" src="vensim_wasm.js"></script>
+<script type="text/javascript" src="wasm-arrays.min.js"></script>
+<script type="text/javascript" src="d3.min.js"></script>
 </head><body>
-<h1>Taza e te</h1>
+<h1>teacup</h1>
 
 <div class="topBar">
 <h3>powered by <a target="blank" href="https://vensim.com/">Vensim</a></h3>
@@ -103,7 +88,7 @@ window.onload = function() {
 </div>
 
 <div class="sketch">
-<img src="web/sketch.png"></img>
+<img src="sketch.png"></img>
 <div class='io-slider-box' name='Temperatura habitación' style='position: absolute; top: 267px; left: 257px; width: 156px; height: 17px'>
 20
 </div>
@@ -322,6 +307,3 @@ runModel(1);
 </script>
 
 </body></html>
-
-```
-
