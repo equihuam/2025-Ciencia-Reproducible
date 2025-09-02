@@ -227,7 +227,7 @@
 
 \title{Hacer que mi blog sea privado}
 \author{Miguel}
-\date{}
+\date{Invalid Date}
 
 \begin{document}
 \maketitle
@@ -260,7 +260,7 @@ Lo que hay que hacer para evitar a los \emph{bots} en la página
 principal, es poner en el archivo \texttt{\textbackslash{}\_quarto.yml}
 las siguientes líneas:
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, left=2mm, opacityback=0, colback=white, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Archivo \texttt{\_quarto.yml}}, toptitle=1mm, breakable, arc=.35mm, rightrule=.15mm, coltitle=black, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, bottomrule=.15mm, leftrule=.75mm, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Archivo \texttt{\_quarto.yml}}, toprule=.15mm, titlerule=0mm, colframe=quarto-callout-tip-color-frame, rightrule=.15mm, opacityback=0, arc=.35mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, coltitle=black, bottomtitle=1mm, leftrule=.75mm, colback=white, toptitle=1mm, opacitybacktitle=0.6, left=2mm, bottomrule=.15mm]
 
 \phantomsection\label{annotated-cell-1}%
 \begin{Shaded}
@@ -302,7 +302,7 @@ optar por ignorar tus deseos.
 Las instrucciones para los robots pueden variar. En este caso puse las
 siguientes en el archivo \texttt{robots.txt} en la raíz de tu proyecto.
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, left=2mm, opacityback=0, colback=white, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Archivo robots.txt}, toptitle=1mm, breakable, arc=.35mm, rightrule=.15mm, coltitle=black, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, bottomrule=.15mm, leftrule=.75mm, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Archivo robots.txt}, toprule=.15mm, titlerule=0mm, colframe=quarto-callout-tip-color-frame, rightrule=.15mm, opacityback=0, arc=.35mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, coltitle=black, bottomtitle=1mm, leftrule=.75mm, colback=white, toptitle=1mm, opacitybacktitle=0.6, left=2mm, bottomrule=.15mm]
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -362,14 +362,14 @@ biblioteca mencionada. Con eso hecho. Ve de nuevo a tu archivo
 \texttt{\textbackslash{}\_quarto.yml} y agrega las líneas necesarias
 para que incluya lo que se indica:
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, left=2mm, opacityback=0, colback=white, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Orden de encriptar en \texttt{\textbackslash{}\_quarto.yml}}, toptitle=1mm, breakable, arc=.35mm, rightrule=.15mm, coltitle=black, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, bottomrule=.15mm, leftrule=.75mm, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Orden de encriptar en \texttt{\textbackslash{}\_quarto.yml}}, toprule=.15mm, titlerule=0mm, colframe=quarto-callout-tip-color-frame, rightrule=.15mm, opacityback=0, arc=.35mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, coltitle=black, bottomtitle=1mm, leftrule=.75mm, colback=white, toptitle=1mm, opacitybacktitle=0.6, left=2mm, bottomrule=.15mm]
 
 \phantomsection\label{annotated-cell-3}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{project}\KeywordTok{:}
 \AttributeTok{  }\FunctionTok{type}\KeywordTok{:}\AttributeTok{ website}
-\AttributeTok{  }\FunctionTok{output{-}dir}\KeywordTok{:}\AttributeTok{ }\StringTok{"./\_site"}\CommentTok{ }\hspace*{\fill}\NormalTok{\circled{1}}
+\AttributeTok{  }\FunctionTok{output{-}dir}\KeywordTok{:}\AttributeTok{ }\StringTok{"./\_site/posts/2025{-}02{-}22{-}blog{-}privado/contenido{-}privado"}\CommentTok{ }\hspace*{\fill}\NormalTok{\circled{1}}
 \AttributeTok{  }\FunctionTok{post{-}render}\KeywordTok{:}\AttributeTok{ encrypt.r}\CommentTok{ }\hspace*{\fill}\NormalTok{\circled{2}}
 \AttributeTok{  }\FunctionTok{resources}\KeywordTok{:}\AttributeTok{ }
 \AttributeTok{    }\KeywordTok{{-}}\AttributeTok{ robots.txt}
@@ -392,7 +392,7 @@ cómo encriptar el contenido.
 Desde luego, también necesitas el código indicado que pondrás en el
 archivo \texttt{encrypt.r} y que alojaras en la raíz de tu proyecto.
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, left=2mm, opacityback=0, colback=white, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Código para crear el archivo encrypt.r}, toptitle=1mm, breakable, arc=.35mm, rightrule=.15mm, coltitle=black, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, bottomrule=.15mm, leftrule=.75mm, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Código para crear el archivo encrypt.r}, toprule=.15mm, titlerule=0mm, colframe=quarto-callout-tip-color-frame, rightrule=.15mm, opacityback=0, arc=.35mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, coltitle=black, bottomtitle=1mm, leftrule=.75mm, colback=white, toptitle=1mm, opacitybacktitle=0.6, left=2mm, bottomrule=.15mm]
 
 \paragraph{\texorpdfstring{archivo
 \texttt{encrypt.r}}{archivo encrypt.r}}\label{archivo-encrypt.r}
@@ -445,7 +445,7 @@ problemáticos, es decir mayores a 10MB. La advertencia la podrás ver en
 la pestaña \emph{Background Jobs}, pero sólo aparecerá si se detecta
 algún riesgo.
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, left=2mm, opacityback=0, colback=white, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Vigilar tamaño de archivos en \_site}, toptitle=1mm, breakable, arc=.35mm, rightrule=.15mm, coltitle=black, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, bottomrule=.15mm, leftrule=.75mm, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Vigilar tamaño de archivos en \_site}, toprule=.15mm, titlerule=0mm, colframe=quarto-callout-tip-color-frame, rightrule=.15mm, opacityback=0, arc=.35mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, coltitle=black, bottomtitle=1mm, leftrule=.75mm, colback=white, toptitle=1mm, opacitybacktitle=0.6, left=2mm, bottomrule=.15mm]
 
 Sí te interesa mantener la vigilancia del tamaño de los archivos en
 \texttt{\textbackslash{}\_site}, este es un código que lo hace y te

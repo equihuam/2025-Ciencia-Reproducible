@@ -1,10 +1,14 @@
 ---
 title: "Hacer que mi blog sea privado"
 author: Miguel
+date: 22/feb/2025
 
 image: "locker-3487043_1280.png"
 include-in-header: 
   - text: <meta name="robots" content="noindex">
+
+format: 
+  html: default
 
 ---
 
@@ -95,8 +99,8 @@ Una solución más definitiva es encriptar tu contenido. En este caso te sugiero
 ``` yaml
 project:
   type: website
-  output-dir: "./_site"     # <1>
-  post-render: encrypt.r    # <2>
+  output-dir: "./_site/" # <1>
+  post-render: encrypt.r     #  <2>
   resources: 
     - robots.txt
 ```
@@ -104,6 +108,8 @@ project:
 2. Anota el archivo que contiene las instrucciones concretas sobre qué y cómo encriptar el contenido.
 
 :::
+
+[Prueba](../privado/contenido-1/index.qmd)
 
 Desde luego, también necesitas el código indicado que pondrás en el archivo `encrypt.r` y que alojaras en la raíz de tu proyecto.
 
@@ -113,17 +119,18 @@ Desde luego, también necesitas el código indicado que pondrás en el archivo `
 #### archivo `encrypt.r`
 
 ``` r
+
 staticryptR::staticryptr(
-  files = "_site/",       # <1>
-  directory = ".",        # <2>
-  password = "pita-123",  # <3>
-  short = TRUE,           # <4>
-  recursive = TRUE        # <5>
+  files = "_site/posts/privado/",  # <1>
+  directory = "_site/posts/",      # <2>
+  password = "prueba-123",         # <3>
+  short = TRUE,                    # <4>
+  recursive = TRUE                 # <5>
 )
 ```
 
-1. Directorio objetivo, en este caso: todo el sitio.
-2. En dónde encontrar el directorio objetivo. En este caso la raíz de tu proyecto.
+1. Directorio objetivo, en este caso: `posts/privado/`.
+2. Ubicación en dónde alojar el contenido encriptado.
 3. La clave que usaras para la tarea (sólo una), puedes usar `keyring` para ocultarla.
 4. Indicas que es válido usar claves cortas (quizás sólo 8 caracteres). Es preferible claves largas.
 5. Especifica que quieres encriptar la carpeta indicada y todas las subcarpetas que contenga.
@@ -133,7 +140,7 @@ staticryptR::staticryptr(
 
 ## Cuidado
 
-Al encriptar `_site` los paquetes ya codificados se van "acumulando", lo que se traduce en que tengan un tamaño cada vez mayor, hasta volverse inmanejables. Para evitar ese efecto no deseado, es conveniente usar preferentemente la opción **Render Website** desde la pestaña **Build** en *RStudio*. Esto recrea todos los archivos desde cero. Archivos muy grandes acaban siendo un obstáculo para el manejo eficiente en *git*. Para ayudar a visualizar el problema agregué unas lineas en el escript de `encrypt.r` que te ayudarán a visualizar si están apareciendo archivos potencialmente problemáticos, es decir mayores a 10MB. La advertencia la podrás ver en la pestaña *Background Jobs*, pero sólo aparecerá si se detecta algún riesgo.
+Al encriptar `_site` los paquetes ya codificados sepueden ir "acumulando", lo que se traduce en que tengan un tamaño cada vez mayor, hasta volverse inmanejables.Archivos muy grandes acaban siendo un obstáculo para el manejo eficiente en *git*. Para evitar ese efecto no deseado, es conveniente usar preferentemente la opción **Render Website** desde la pestaña **Build** en *RStudio*. Esto recrea todos los archivos desde cero. Para ayudar a visualizar el problema agregué unas lineas en el escript de `encrypt.r` que te ayudarán a visualizar si están apareciendo archivos potencialmente problemáticos, es decir mayores a 10MB. La advertencia la podrás ver en la pestaña *Background Jobs*, pero sólo aparecerá si se detecta algún riesgo.
 
 ::: {.callout-tip collapse="true"}
 ## Vigilar tamaño de archivos en _site

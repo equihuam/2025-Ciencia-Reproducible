@@ -1,6 +1,8 @@
 project:
   type: website
   execute-dir: file
+  output-dir: "./_site/"
+  post-render: encrypt.r
   
 lang: es
 date-format: "[Xalapa, Ver.,] D [de] MMMM, YYYY"

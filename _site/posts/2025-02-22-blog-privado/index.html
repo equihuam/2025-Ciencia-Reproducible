@@ -112,7 +112,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta property="og:site_name" content="Ciencia Abierta">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -168,6 +168,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             </div>
     </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Fecha de publicación</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">Xalapa, Ver., 22 de febrero, 2025</p>
+      </div>
+    </div>
     
       
     </div>
@@ -176,9 +182,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <div class="quarto-alternate-formats"><h2>Otros formatos</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
+    
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
 
@@ -295,7 +299,7 @@ Orden de encriptar en <code>\_quarto.yml</code>
 <div class="callout-body-container callout-body">
 <div class="sourceCode" id="annotated-cell-3"><pre class="sourceCode yaml code-annotation-code code-with-copy code-annotated"><code class="sourceCode yaml"><span id="annotated-cell-3-1"><a href="#annotated-cell-3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
 <span id="annotated-cell-3-2"><a href="#annotated-cell-3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-3-3" class="code-annotation-target"><a href="#annotated-cell-3-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">output-dir</span><span class="kw">:</span><span class="at"> </span><span class="st">"./_site"</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-3-3" class="code-annotation-target"><a href="#annotated-cell-3-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">output-dir</span><span class="kw">:</span><span class="at"> </span><span class="st">"./_site/"</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-3-4" class="code-annotation-target"><a href="#annotated-cell-3-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">post-render</span><span class="kw">:</span><span class="at"> encrypt.r</span></span>
 <span id="annotated-cell-3-5"><a href="#annotated-cell-3-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">resources</span><span class="kw">:</span><span class="at"> </span></span>
 <span id="annotated-cell-3-6"><a href="#annotated-cell-3-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> robots.txt</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -312,6 +316,7 @@ Orden de encriptar en <code>\_quarto.yml</code>
 </div>
 </div>
 </div>
+<p><a href="../../posts/privado/contenido-1/index.html">Prueba</a></p>
 <p>Desde luego, también necesitas el código indicado que pondrás en el archivo <code>encrypt.r</code> y que alojaras en la raíz de tu proyecto.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
@@ -326,33 +331,34 @@ Código para crear el archivo encrypt.r
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <section id="archivo-encrypt.r" class="level4 callout-body-container callout-body">
 <h4 class="anchored" data-anchor-id="archivo-encrypt.r">archivo <code>encrypt.r</code></h4>
-<div class="sourceCode" id="annotated-cell-4"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-4-1"><a href="#annotated-cell-4-1" aria-hidden="true" tabindex="-1"></a>staticryptR<span class="sc">::</span><span class="fu">staticryptr</span>(</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-4-2" class="code-annotation-target"><a href="#annotated-cell-4-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">files =</span> <span class="st">"_site/"</span>,</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-4-3" class="code-annotation-target"><a href="#annotated-cell-4-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">directory =</span> <span class="st">"."</span>,</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-4-4" class="code-annotation-target"><a href="#annotated-cell-4-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">password =</span> <span class="st">"pita-123"</span>,</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-4-5" class="code-annotation-target"><a href="#annotated-cell-4-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">short =</span> <span class="cn">TRUE</span>,</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-4-6" class="code-annotation-target"><a href="#annotated-cell-4-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">recursive =</span> <span class="cn">TRUE</span></span>
-<span id="annotated-cell-4-7"><a href="#annotated-cell-4-7" aria-hidden="true" tabindex="-1"></a>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="annotated-cell-4"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-4-1"><a href="#annotated-cell-4-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-4-2"><a href="#annotated-cell-4-2" aria-hidden="true" tabindex="-1"></a>staticryptR<span class="sc">::</span><span class="fu">staticryptr</span>(</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-4-3" class="code-annotation-target"><a href="#annotated-cell-4-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">files =</span> <span class="st">"_site/posts/privado/"</span>,</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-4-4" class="code-annotation-target"><a href="#annotated-cell-4-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">directory =</span> <span class="st">"_site/posts/"</span>,</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-4-5" class="code-annotation-target"><a href="#annotated-cell-4-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">password =</span> <span class="st">"prueba-123"</span>,</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-4-6" class="code-annotation-target"><a href="#annotated-cell-4-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">short =</span> <span class="cn">TRUE</span>,</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-4-7" class="code-annotation-target"><a href="#annotated-cell-4-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">recursive =</span> <span class="cn">TRUE</span></span>
+<span id="annotated-cell-4-8"><a href="#annotated-cell-4-8" aria-hidden="true" tabindex="-1"></a>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="2" data-code-annotation="1">Directorio objetivo, en este caso: todo el sitio.</span>
+<span data-code-cell="annotated-cell-4" data-code-lines="3" data-code-annotation="1">Directorio objetivo, en este caso: <code>posts/privado/</code>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="3" data-code-annotation="2">En dónde encontrar el directorio objetivo. En este caso la raíz de tu proyecto.</span>
+<span data-code-cell="annotated-cell-4" data-code-lines="4" data-code-annotation="2">Ubicación en dónde alojar el contenido encriptado.</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="4" data-code-annotation="3">La clave que usaras para la tarea (sólo una), puedes usar <code>keyring</code> para ocultarla.</span>
+<span data-code-cell="annotated-cell-4" data-code-lines="5" data-code-annotation="3">La clave que usaras para la tarea (sólo una), puedes usar <code>keyring</code> para ocultarla.</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="5" data-code-annotation="4">Indicas que es válido usar claves cortas (quizás sólo 8 caracteres). Es preferible claves largas.</span>
+<span data-code-cell="annotated-cell-4" data-code-lines="6" data-code-annotation="4">Indicas que es válido usar claves cortas (quizás sólo 8 caracteres). Es preferible claves largas.</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="6" data-code-annotation="5">Especifica que quieres encriptar la carpeta indicada y todas las subcarpetas que contenga.</span>
+<span data-code-cell="annotated-cell-4" data-code-lines="7" data-code-annotation="5">Especifica que quieres encriptar la carpeta indicada y todas las subcarpetas que contenga.</span>
 </dd>
 </dl>
 </section>
@@ -361,7 +367,7 @@ Código para crear el archivo encrypt.r
 </section>
 <section id="cuidado" class="level2">
 <h2 class="anchored" data-anchor-id="cuidado">Cuidado</h2>
-<p>Al encriptar <code>_site</code> los paquetes ya codificados se van “acumulando”, lo que se traduce en que tengan un tamaño cada vez mayor, hasta volverse inmanejables. Para evitar ese efecto no deseado, es conveniente usar preferentemente la opción <strong>Render Website</strong> desde la pestaña <strong>Build</strong> en <em>RStudio</em>. Esto recrea todos los archivos desde cero. Archivos muy grandes acaban siendo un obstáculo para el manejo eficiente en <em>git</em>. Para ayudar a visualizar el problema agregué unas lineas en el escript de <code>encrypt.r</code> que te ayudarán a visualizar si están apareciendo archivos potencialmente problemáticos, es decir mayores a 10MB. La advertencia la podrás ver en la pestaña <em>Background Jobs</em>, pero sólo aparecerá si se detecta algún riesgo.</p>
+<p>Al encriptar <code>_site</code> los paquetes ya codificados sepueden ir “acumulando”, lo que se traduce en que tengan un tamaño cada vez mayor, hasta volverse inmanejables.Archivos muy grandes acaban siendo un obstáculo para el manejo eficiente en <em>git</em>. Para evitar ese efecto no deseado, es conveniente usar preferentemente la opción <strong>Render Website</strong> desde la pestaña <strong>Build</strong> en <em>RStudio</em>. Esto recrea todos los archivos desde cero. Para ayudar a visualizar el problema agregué unas lineas en el escript de <code>encrypt.r</code> que te ayudarán a visualizar si están apareciendo archivos potencialmente problemáticos, es decir mayores a 10MB. La advertencia la podrás ver en la pestaña <em>Background Jobs</em>, pero sólo aparecerá si se detecta algún riesgo.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
