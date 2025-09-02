@@ -4,8 +4,20 @@ author: Miguel Equihua
 
 image: "Image by PDPics from Pixabay-cup-166778_1280.jpg"
 
-format: html
+resources: 
+  - web
+  - peces-y-pescadores
+
+format: 
+  html: 
+    grid: 
+      sidebar-width: 0px
+      margin-width: 0px
+      body-width: 1800px
+  
 bibliography: references.bib
+
+lightbox: true
 ---
 
 Modelo clásico de enfriamiento. Publicado en forma anónima por Newton
@@ -13,12 +25,21 @@ Modelo clásico de enfriamiento. Publicado en forma anónima por Newton
 
 ![](artículo-newton.png){width="300"}
 
-```{=html}
 
-<iframe src="https://modelo-enfriamiento.netlify.app/" 
- width="1200" 
- height="700" 
- frameborder="0" 
- allowfullscreen>
-</iframe>
-```
+![Tacita de te](web/index.html){width=1200 height=600 max-width="100%"}
+
+\
+\
+
+
+Otro ejemplo clásico, el modelo de peces y pescadores. Utilizado por [Donella Meadows](https://donellameadows.org/archives/a-tale-of-two-fisheries/) para explicar las particularidades de la sustentabilidad de las actividades humanas.
+
+![](donella-meadows-fishing.png){width=200}
+
+\
+\
+
+
+![Peces y pescadores](peces-y-pescadores/web/index.html){width=1800 height=1000  style="max-width: 100%;"}
+
+
