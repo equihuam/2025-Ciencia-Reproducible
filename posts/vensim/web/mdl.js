@@ -978,7 +978,7 @@ function dbg(text) {
 // === Body ===
 
 var ASM_CONSTS = {
-  94588: () => { OnVensimLoaded() }
+  95196: () => { OnVensimLoaded() }
 };
 
 
@@ -5008,6 +5008,7 @@ var wasmImports = {
 var asm = createWasm();
 var ___wasm_call_ctors = createExportWrapper('__wasm_call_ctors');
 var _SetConstant = Module['_SetConstant'] = createExportWrapper('SetConstant');
+var _SetLookup = Module['_SetLookup'] = createExportWrapper('SetLookup');
 var _Get_NUM_VARS = Module['_Get_NUM_VARS'] = createExportWrapper('Get_NUM_VARS');
 var _Get_NUM_LEVELS = Module['_Get_NUM_LEVELS'] = createExportWrapper('Get_NUM_LEVELS');
 var _Get_NUM_DELAYS = Module['_Get_NUM_DELAYS'] = createExportWrapper('Get_NUM_DELAYS');
@@ -5022,7 +5023,6 @@ var _malloc = createExportWrapper('malloc');
 var _InitializeModel = Module['_InitializeModel'] = createExportWrapper('InitializeModel');
 var _GetVariableType = Module['_GetVariableType'] = createExportWrapper('GetVariableType');
 var _FindLookup = Module['_FindLookup'] = createExportWrapper('FindLookup');
-var _SetLookup = Module['_SetLookup'] = createExportWrapper('SetLookup');
 var _GetConstant = Module['_GetConstant'] = createExportWrapper('GetConstant');
 var _GetConstantUsingIndex = Module['_GetConstantUsingIndex'] = createExportWrapper('GetConstantUsingIndex');
 var _GetNumVariables = Module['_GetNumVariables'] = createExportWrapper('GetNumVariables');

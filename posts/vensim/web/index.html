@@ -1,5 +1,5 @@
 <!DOCTYPE html><head><meta charset = "utf-8">
-<title>teacup</title>
+<title>Peces_y_pescadores</title>
 
 <style type = "text/css">
 * {
@@ -9,8 +9,8 @@ div.sketch {
   position: relative;
 }
 .io-slider-box {
-background-color: white; border: 1px solid gray; font-size:15px;
-text-align: center; vertical-align: middle; line-height: 17px;
+background-color: white; border: 1px solid gray; font-size:8px;
+text-align: center; vertical-align: middle; line-height: 10px;
 }
 .io-slider-slide {
   padding: 0; margin: 0; -webkit-appearance: none; background: transparent;
@@ -19,15 +19,15 @@ text-align: center; vertical-align: middle; line-height: 17px;
   background: transparent; border-color: transparent; color: transparent;
 }
 .io-slider-slide::-webkit-slider-thumb {
-  -webkit-appearance: none; width: 18px; height: 18px;
+  -webkit-appearance: none; width: 11px; height: 11px;
   border-radius: 20%; background: blue; cursor: pointer;
 }
 .io-slider-slide::-moz-range-thumb {
-  height: 18px; width: 18px;
+  height: 11px; width: 11px;
     border-radius: 20%; background: blue; cursor: pointer;
 }
 .io-slider-slide::-ms-thumb {
-  height: 18px; width: 18px;
+  height: 11px; width: 11px;
   border-radius: 20%; background: blue; cursor: pointer;
 }
 div.io-chart {
@@ -79,7 +79,7 @@ window.onload = function() {
 <script type="text/javascript" src="wasm-arrays.min.js"></script>
 <script type="text/javascript" src="d3.min.js"></script>
 </head><body>
-<h1>teacup</h1>
+<h1>Peces_y_pescadores</h1>
 
 <div class="topBar">
 <h3>powered by <a target="blank" href="https://vensim.com/">Vensim</a></h3>
@@ -89,15 +89,46 @@ window.onload = function() {
 
 <div class="sketch">
 <img src="sketch.png"></img>
-<div class='io-slider-box' name='Temperatura habitación' style='position: absolute; top: 267px; left: 257px; width: 156px; height: 17px'>
+<div class='io-slider-box' name='inversión en nuevos barcos' style='position: absolute; top: 247px; left: 391px; width: 67px; height: 10px'>
+0.2
+</div>
+<input class='io-slider-slide' style='position: absolute; top: 257px; left: 391px; width: 67px' type='range' name='inversión en nuevos barcos' min='-1' max='2' step='0.01'></input>
+<div class='io-slider-box' name='balance financiero inicial total' style='position: absolute; top: 553px; left: 524px; width: 90px; height: 11px'>
+0
+</div>
+<input class='io-slider-slide' style='position: absolute; top: 564px; left: 524px; width: 90px' type='range' name='balance financiero inicial total' min='-1' max='2' step='0.01'></input>
+<div class='io-slider-box' name='precio del pescado' style='position: absolute; top: 369px; left: 14px; width: 66px; height: 10px'>
 20
 </div>
-<input class='io-slider-slide' style='position: absolute; top: 284px; left: 257px; width: 156px' type='range' name='Temperatura habitación' min='-100' max='200' step='1'></input>
-<div class='io-slider-box' name='Tiempo característico' style='position: absolute; top: 27px; left: 153px; width: 164px; height: 18px'>
+<input class='io-slider-slide' style='position: absolute; top: 379px; left: 14px; width: 66px' type='range' name='precio del pescado' min='-100' max='200' step='1'></input>
+<div class='io-slider-box' name='área' style='position: absolute; top: 196px; left: 12px; width: 45px; height: 10px'>
+100
+</div>
+<input class='io-slider-slide' style='position: absolute; top: 206px; left: 12px; width: 45px' type='range' name='área' min='-100' max='200' step='1'></input>
+<div class='io-slider-box' name='tasa de natalidad de peces' style='position: absolute; top: 159px; left: 18px; width: 66px; height: 10px'>
+6
+</div>
+<input class='io-slider-slide' style='position: absolute; top: 169px; left: 18px; width: 66px' type='range' name='tasa de natalidad de peces' min='-10' max='20' step='0.1'></input>
+<div class='io-slider-box' name='capacidad de carga' style='position: absolute; top: 124px; left: 346px; width: 64px; height: 11px'>
+1200
+</div>
+<input class='io-slider-slide' style='position: absolute; top: 135px; left: 346px; width: 64px' type='range' name='capacidad de carga' min='-10000' max='20000' step='100'></input>
+<div class='io-slider-box' name='Número inicial de barcos' style='position: absolute; top: 342px; left: 528px; width: 82px; height: 10px'>
 10
 </div>
-<input class='io-slider-slide' style='position: absolute; top: 45px; left: 153px; width: 164px' type='range' name='Tiempo característico' min='-10' max='20' step='0.1'></input>
-<div class='io-chart' name='Cambio en la temperatura' varname='Temperatura del te' xaxisname='' yaxisname='grados' include0 style='position: absolute; top: 35px; left: 510px; width: 539px; height: 411px'></div>
+<input class='io-slider-slide' style='position: absolute; top: 352px; left: 528px; width: 82px' type='range' name='Número inicial de barcos' min='-10' max='20' step='0.1'></input>
+<div class='io-slider-box' name='costo de operar un barco' style='position: absolute; top: 422px; left: 210px; width: 100px; height: 10px'>
+250
+</div>
+<input class='io-slider-slide' style='position: absolute; top: 432px; left: 210px; width: 100px' type='range' name='costo de operar un barco' min='-1000' max='2000' step='10'></input>
+<div class='io-slider-box' name='Cantidad inicial de peces' style='position: absolute; top: 82px; left: 8px; width: 81px; height: 10px'>
+1000
+</div>
+<input class='io-slider-slide' style='position: absolute; top: 92px; left: 8px; width: 81px' type='range' name='Cantidad inicial de peces' min='-1000' max='2000' step='10'></input>
+<div class='io-slider-box' name='costo de un barco' style='position: absolute; top: 431px; left: 416px; width: 75px; height: 11px'>
+300
+</div>
+<input class='io-slider-slide' style='position: absolute; top: 442px; left: 416px; width: 75px' type='range' name='costo de un barco' min='-1000' max='2000' step='10'></input>
 </div>
 
 <script type="text/javascript">
