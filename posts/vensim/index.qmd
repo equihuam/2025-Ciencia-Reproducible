@@ -2,7 +2,7 @@
 title: "Vensim"
 author: Miguel Equihua
 
-image: "Image by PDPics from Pixabay-cup-166778_1280.jpg"
+image: "te-y-pescadores.png"
 
 resources: 
   - web
@@ -34,7 +34,7 @@ Modelo clásico de enfriamiento. Publicado en forma anónima por Newton
 
 Otro ejemplo clásico, el modelo de peces y pescadores. Utilizado por [Donella Meadows](https://donellameadows.org/archives/a-tale-of-two-fisheries/) para explicar las particularidades de la sustentabilidad de las actividades humanas.
 
-![](donella-meadows-fishing.png){width=200}
+![](donella-meadows-fishing.png){width=400}
 
 \
 \

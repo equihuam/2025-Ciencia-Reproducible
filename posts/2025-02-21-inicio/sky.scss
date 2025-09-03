@@ -63,13 +63,14 @@ $code-block-bg: transparent !default;
   grid-gap: 0.5em;
   margin: 0;
   padding: 0;
+}
 
   .result {
     max-height: 100%;
     overflow-y: scroll;
     width: 100%;
     border: 1px dashed $headingColor;
-  }
+}
 
   .code {
     text-align: left;
@@ -81,7 +82,6 @@ $code-block-bg: transparent !default;
     padding: 0.5em;
     border-radius: 0.25em;
     overflow-y: scroll;
-  }
 }
 
 .code-editor {
@@ -209,8 +209,6 @@ ul:nth-of-type(15) {
   list-style-type: none;
 }
 
-
-
 .flow {
   background-image: url(https://images.unsplash.com/photo-1532153975070-2e9ab71f1b14?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80);
   background-attachment: fixed;
@@ -221,10 +219,6 @@ ul:nth-of-type(15) {
 }
 
 @keyframes animate {
-	0% {
-		background-position: left 0px top 10px;
-	}
-	40% {
-		background-position: left 800px top 10px;
-	}
+	0% {background-position: left 0px top 10px;}
+	40% {background-position: left 800px top 10px;}
 }
