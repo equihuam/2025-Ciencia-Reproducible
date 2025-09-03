@@ -9,8 +9,8 @@ div.sketch {
   position: relative;
 }
 .io-slider-box {
-background-color: white; border: 1px solid gray; font-size:9px;
-text-align: center; vertical-align: middle; line-height: 11px;
+background-color: white; border: 1px solid gray; font-size:11px;
+text-align: center; vertical-align: middle; line-height: 13px;
 }
 .io-slider-slide {
   padding: 0; margin: 0; -webkit-appearance: none; background: transparent;
@@ -19,15 +19,15 @@ text-align: center; vertical-align: middle; line-height: 11px;
   background: transparent; border-color: transparent; color: transparent;
 }
 .io-slider-slide::-webkit-slider-thumb {
-  -webkit-appearance: none; width: 12px; height: 12px;
+  -webkit-appearance: none; width: 13px; height: 13px;
   border-radius: 20%; background: blue; cursor: pointer;
 }
 .io-slider-slide::-moz-range-thumb {
-  height: 12px; width: 12px;
+  height: 13px; width: 13px;
     border-radius: 20%; background: blue; cursor: pointer;
 }
 .io-slider-slide::-ms-thumb {
-  height: 12px; width: 12px;
+  height: 13px; width: 13px;
   border-radius: 20%; background: blue; cursor: pointer;
 }
 div.io-chart {
@@ -79,7 +79,7 @@ window.onload = function() {
 <script type="text/javascript" src="wasm-arrays.min.js"></script>
 <script type="text/javascript" src="d3.min.js"></script>
 </head><body>
-<h1>Peces_y_pescadores</h1>
+<h1>Peces y pescadores</h1>
 
 <div class="topBar">
 <h3>powered by <a target="blank" href="https://vensim.com/">Vensim</a></h3>
@@ -89,48 +89,48 @@ window.onload = function() {
 
 <div class="sketch">
 <img src="sketch.png"></img>
-<div class='io-slider-box' name='inversión en nuevos barcos' style='position: absolute; top: 273px; left: 505px; width: 75px; height: 12px'>
+<div class='io-slider-box' name='inversión en nuevos barcos' style='position: absolute; top: 306px; left: 578px; width: 84px; height: 13px'>
 0.2
 </div>
-<input class='io-slider-slide' style='position: absolute; top: 285px; left: 505px; width: 75px' type='range' name='inversión en nuevos barcos' min='-1' max='2' step='0.01'></input>
-<div class='io-slider-box' name='balance financiero inicial total' style='position: absolute; top: 614px; left: 644px; width: 100px; height: 11px'>
+<input class='io-slider-slide' style='position: absolute; top: 319px; left: 578px; width: 84px' type='range' name='inversión en nuevos barcos' min='-1' max='2' step='0.01'></input>
+<div class='io-slider-box' name='balance financiero inicial total' style='position: absolute; top: 688px; left: 734px; width: 112px; height: 13px'>
 0
 </div>
-<input class='io-slider-slide' style='position: absolute; top: 625px; left: 644px; width: 100px' type='range' name='balance financiero inicial total' min='-1' max='2' step='0.01'></input>
-<div class='io-slider-box' name='precio del pescado' style='position: absolute; top: 409px; left: 12px; width: 73px; height: 11px'>
+<input class='io-slider-slide' style='position: absolute; top: 701px; left: 734px; width: 112px' type='range' name='balance financiero inicial total' min='-1' max='2' step='0.01'></input>
+<div class='io-slider-box' name='precio del pescado' style='position: absolute; top: 458px; left: 26px; width: 81px; height: 13px'>
 20
 </div>
-<input class='io-slider-slide' style='position: absolute; top: 420px; left: 12px; width: 73px' type='range' name='precio del pescado' min='-100' max='200' step='1'></input>
-<div class='io-slider-box' name='área' style='position: absolute; top: 242px; left: 1px; width: 50px; height: 11px'>
+<input class='io-slider-slide' style='position: absolute; top: 471px; left: 26px; width: 81px' type='range' name='precio del pescado' min='-100' max='200' step='1'></input>
+<div class='io-slider-box' name='área' style='position: absolute; top: 271px; left: 13px; width: 56px; height: 13px'>
 100
 </div>
-<input class='io-slider-slide' style='position: absolute; top: 253px; left: 1px; width: 50px' type='range' name='área' min='-100' max='200' step='1'></input>
-<div class='io-slider-box' name='tasa de natalidad de peces' style='position: absolute; top: 159px; left: 0px; width: 73px; height: 11px'>
+<input class='io-slider-slide' style='position: absolute; top: 284px; left: 13px; width: 56px' type='range' name='área' min='-100' max='200' step='1'></input>
+<div class='io-slider-box' name='tasa de natalidad de peces' style='position: absolute; top: 178px; left: 12px; width: 81px; height: 13px'>
 6
 </div>
-<input class='io-slider-slide' style='position: absolute; top: 170px; left: 0px; width: 73px' type='range' name='tasa de natalidad de peces' min='-10' max='20' step='0.1'></input>
-<div class='io-slider-box' name='capacidad de carga' style='position: absolute; top: 137px; left: 455px; width: 71px; height: 12px'>
+<input class='io-slider-slide' style='position: absolute; top: 191px; left: 12px; width: 81px' type='range' name='tasa de natalidad de peces' min='-10' max='20' step='0.1'></input>
+<div class='io-slider-box' name='capacidad de carga' style='position: absolute; top: 154px; left: 522px; width: 80px; height: 13px'>
 1200
 </div>
-<input class='io-slider-slide' style='position: absolute; top: 149px; left: 455px; width: 71px' type='range' name='capacidad de carga' min='-10000' max='20000' step='100'></input>
-<div class='io-slider-box' name='Número inicial de barcos' style='position: absolute; top: 379px; left: 648px; width: 92px; height: 11px'>
+<input class='io-slider-slide' style='position: absolute; top: 167px; left: 522px; width: 80px' type='range' name='capacidad de carga' min='-10000' max='20000' step='100'></input>
+<div class='io-slider-box' name='Número inicial de barcos' style='position: absolute; top: 425px; left: 739px; width: 102px; height: 13px'>
 10
 </div>
-<input class='io-slider-slide' style='position: absolute; top: 390px; left: 648px; width: 92px' type='range' name='Número inicial de barcos' min='-10' max='20' step='0.1'></input>
-<div class='io-slider-box' name='costo de operar un barco' style='position: absolute; top: 468px; left: 263px; width: 111px; height: 11px'>
+<input class='io-slider-slide' style='position: absolute; top: 438px; left: 739px; width: 102px' type='range' name='Número inicial de barcos' min='-10' max='20' step='0.1'></input>
+<div class='io-slider-box' name='costo de operar un barco' style='position: absolute; top: 524px; left: 306px; width: 125px; height: 13px'>
 250
 </div>
-<input class='io-slider-slide' style='position: absolute; top: 479px; left: 263px; width: 111px' type='range' name='costo de operar un barco' min='-1000' max='2000' step='10'></input>
-<div class='io-slider-box' name='Cantidad inicial de peces' style='position: absolute; top: 92px; left: 649px; width: 90px; height: 12px'>
+<input class='io-slider-slide' style='position: absolute; top: 537px; left: 306px; width: 125px' type='range' name='costo de operar un barco' min='-1000' max='2000' step='10'></input>
+<div class='io-slider-box' name='Cantidad inicial de peces' style='position: absolute; top: 104px; left: 740px; width: 100px; height: 13px'>
 1000
 </div>
-<input class='io-slider-slide' style='position: absolute; top: 104px; left: 649px; width: 90px' type='range' name='Cantidad inicial de peces' min='-1000' max='2000' step='10'></input>
-<div class='io-slider-box' name='costo de un barco' style='position: absolute; top: 478px; left: 492px; width: 83px; height: 12px'>
+<input class='io-slider-slide' style='position: absolute; top: 117px; left: 740px; width: 100px' type='range' name='Cantidad inicial de peces' min='-1000' max='2000' step='10'></input>
+<div class='io-slider-box' name='costo de un barco' style='position: absolute; top: 536px; left: 563px; width: 93px; height: 13px'>
 300
 </div>
-<input class='io-slider-slide' style='position: absolute; top: 490px; left: 492px; width: 83px' type='range' name='costo de un barco' min='-1000' max='2000' step='10'></input>
-<div class='io-chart' name='peces' varname='Peces' xaxisname='Year' yaxisname='Peces (numero)' include0 style='position: absolute; top: 363px; left: 774px; width: 350px; height: 249px'></div>
-<div class='io-chart' name='balance financiero' varname='balance financiero total' xaxisname='Year' yaxisname='peso ($)' include0 style='position: absolute; top: 8px; left: 774px; width: 350px; height: 249px'></div>
+<input class='io-slider-slide' style='position: absolute; top: 549px; left: 563px; width: 93px' type='range' name='costo de un barco' min='-1000' max='2000' step='10'></input>
+<div class='io-chart' name='peces' varname='Peces' xaxisname='Year' yaxisname='Peces (numero)' include0 style='position: absolute; top: 407px; left: 879px; width: 393px; height: 279px'></div>
+<div class='io-chart' name='balance financiero' varname='balance financiero total' xaxisname='Year' yaxisname='pesos ($)' include0 style='position: absolute; top: 9px; left: 879px; width: 393px; height: 279px'></div>
 </div>
 
 <script type="text/javascript">
@@ -148,7 +148,7 @@ var VensimCharts = [];
 
 function UpdateCharts(run)
 	{
-            var margin = {left: 70, right: 30, top: 30, bottom: 50};
+      var margin = {left: 70, right: 30, top: 30, bottom: 50};
 			d3.selectAll("div.io-chart").each(function() {
 				var div = d3.select(this);
 				var width = parseInt(div.style("width"), 10);
@@ -174,7 +174,7 @@ function UpdateCharts(run)
 					vmin = Math.min(vmin, d3.min(o.runs[r].vals));
 					vmax = Math.max(vmax, d3.max(o.runs[r].vals));
 				}
-				if ( this.hasAttribute("include0") ) { // force the range to include zero
+				if ( this.hasAttribute("include0") ) {// force the range to include zero
 					if (vmin > 0) vmin = 0;
 					else if (vmax < 0) vmax = 0;
 				}
@@ -184,7 +184,7 @@ function UpdateCharts(run)
 				if ( this.hasAttribute("ymax") ) {
 					vmax = this.getAttribute("ymax");
 				}
-				if ( vmin == vmax ) { // if the range is degenerate, modify
+				if ( vmin == vmax ) {// if the range is degenerate, modify
 					if ( vmin == 0 ) {
 						vmin = 0;
 						vmax = 1;
@@ -244,7 +244,7 @@ function UpdateCharts(run)
 				  
                 for (r in o.runs) {
                     var color = "red";
-                    if (r == 0) { color = "blue"; }
+                    if (r == 0) { color = "green"; }
                     chart.selectAll("path.data" + r)
                       .data([o.runs[r].vals])
                       .join("path").attr("class", "data" + r).attr("d", (d, i) =>

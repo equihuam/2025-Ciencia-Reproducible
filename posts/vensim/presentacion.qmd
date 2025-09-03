@@ -1,0 +1,41 @@
+---
+title: "presentacion"
+format:
+  revealjs: 
+    auto-stretch: false
+    footer: "[regresa](index.qmd)"
+---
+
+
+## {auto-animate=true auto-animate-easing="ease-in-out"}
+
+::: {.r-hstack}
+::: {data-id="box1" auto-animate-delay="0"}
+![](circulo-A.png){width=300px}
+:::
+
+::: {data-id="box2" auto-animate-delay="0.1"}
+![](circulo-B.png){width=300px}
+:::
+
+::: {data-id="box3" auto-animate-delay="0.2" width=300px}
+![](circulo-C.png){width=300px}
+:::
+:::
+
+## {auto-animate=true auto-animate-easing="ease-in-out"}
+
+::: {.r-stack}
+::: {data-id="box1"}
+![](circulo-A2.png){width=300px}
+
+:::
+
+::: {data-id="box2"}
+![](circulo-B2.png){width=200px}
+:::
+
+::: {data-id="box3"}
+![](circulo-C.png){width=100px}
+:::
+:::
