@@ -1,4 +1,4 @@
-/*(Wed Sep  3 10:26:13 2025) From Peces_y_pescadores.mdl - C equations for the model */
+/*(Wed Sep  3 11:12:23 2025) From Peces_y_pescadores.mdl - C equations for the model */
 
 #define _VDFX
 #define VDFX
@@ -404,7 +404,7 @@ SetDIM_INFO(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1);
 #endif
 unsigned char *mdl_desc()
 {
-return("(Wed Sep  3 10:26:13 2025) From Peces_y_pescadores.mdl") ;
+return("(Wed Sep  3 11:12:23 2025) From Peces_y_pescadores.mdl") ;
 }
 
 /* compute the model rates */

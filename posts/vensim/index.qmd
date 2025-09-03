@@ -37,3 +37,6 @@ Otro ejemplo clásico, el modelo de peces y pescadores. Utilizado por [Donella M
 \
 
 ![Peces y pescadores](peces-y-pescadores/web/index.html){width="1800" height="1000" max-width="100%"}
+
+
+[Storytelling](presentacion.qmd)
