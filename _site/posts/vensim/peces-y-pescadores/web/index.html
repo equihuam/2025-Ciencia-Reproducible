@@ -9,8 +9,8 @@ div.sketch {
   position: relative;
 }
 .io-slider-box {
-background-color: white; border: 1px solid gray; font-size:13px;
-text-align: center; vertical-align: middle; line-height: 15px;
+background-color: white; border: 1px solid gray; font-size:9px;
+text-align: center; vertical-align: middle; line-height: 11px;
 }
 .io-slider-slide {
   padding: 0; margin: 0; -webkit-appearance: none; background: transparent;
@@ -19,15 +19,15 @@ text-align: center; vertical-align: middle; line-height: 15px;
   background: transparent; border-color: transparent; color: transparent;
 }
 .io-slider-slide::-webkit-slider-thumb {
-  -webkit-appearance: none; width: 16px; height: 16px;
+  -webkit-appearance: none; width: 12px; height: 12px;
   border-radius: 20%; background: blue; cursor: pointer;
 }
 .io-slider-slide::-moz-range-thumb {
-  height: 16px; width: 16px;
+  height: 12px; width: 12px;
     border-radius: 20%; background: blue; cursor: pointer;
 }
 .io-slider-slide::-ms-thumb {
-  height: 16px; width: 16px;
+  height: 12px; width: 12px;
   border-radius: 20%; background: blue; cursor: pointer;
 }
 div.io-chart {
@@ -79,7 +79,7 @@ window.onload = function() {
 <script type="text/javascript" src="wasm-arrays.min.js"></script>
 <script type="text/javascript" src="d3.min.js"></script>
 </head><body>
-<h1>Peces y pescadores</h1>
+<h1>Peces_y_pescadores</h1>
 
 <div class="topBar">
 <h3>powered by <a target="blank" href="https://vensim.com/">Vensim</a></h3>
@@ -89,48 +89,48 @@ window.onload = function() {
 
 <div class="sketch">
 <img src="sketch.png"></img>
-<div class='io-slider-box' name='inversión en nuevos barcos' style='position: absolute; top: 394px; left: 774px; width: 140px; height: 16px'>
+<div class='io-slider-box' name='inversión en nuevos barcos' style='position: absolute; top: 273px; left: 505px; width: 75px; height: 12px'>
 0.2
 </div>
-<input class='io-slider-slide' style='position: absolute; top: 410px; left: 774px; width: 140px' type='range' name='inversión en nuevos barcos' min='-1' max='2' step='0.01'></input>
-<div class='io-slider-box' name='balance financiero inicial total' style='position: absolute; top: 801px; left: 907px; width: 135px; height: 16px'>
+<input class='io-slider-slide' style='position: absolute; top: 285px; left: 505px; width: 75px' type='range' name='inversión en nuevos barcos' min='-1' max='2' step='0.01'></input>
+<div class='io-slider-box' name='balance financiero inicial total' style='position: absolute; top: 614px; left: 644px; width: 100px; height: 11px'>
 0
 </div>
-<input class='io-slider-slide' style='position: absolute; top: 817px; left: 907px; width: 135px' type='range' name='balance financiero inicial total' min='-1' max='2' step='0.01'></input>
-<div class='io-slider-box' name='precio del pescado' style='position: absolute; top: 555px; left: 129px; width: 99px; height: 16px'>
+<input class='io-slider-slide' style='position: absolute; top: 625px; left: 644px; width: 100px' type='range' name='balance financiero inicial total' min='-1' max='2' step='0.01'></input>
+<div class='io-slider-box' name='precio del pescado' style='position: absolute; top: 409px; left: 12px; width: 73px; height: 11px'>
 20
 </div>
-<input class='io-slider-slide' style='position: absolute; top: 571px; left: 129px; width: 99px' type='range' name='precio del pescado' min='-100' max='200' step='1'></input>
-<div class='io-slider-box' name='área' style='position: absolute; top: 329px; left: 47px; width: 67px; height: 16px'>
+<input class='io-slider-slide' style='position: absolute; top: 420px; left: 12px; width: 73px' type='range' name='precio del pescado' min='-100' max='200' step='1'></input>
+<div class='io-slider-box' name='área' style='position: absolute; top: 242px; left: 1px; width: 50px; height: 11px'>
 100
 </div>
-<input class='io-slider-slide' style='position: absolute; top: 345px; left: 47px; width: 67px' type='range' name='área' min='-100' max='200' step='1'></input>
-<div class='io-slider-box' name='tasa de natalidad de peces' style='position: absolute; top: 223px; left: 0px; width: 161px; height: 16px'>
+<input class='io-slider-slide' style='position: absolute; top: 253px; left: 1px; width: 50px' type='range' name='área' min='-100' max='200' step='1'></input>
+<div class='io-slider-box' name='tasa de natalidad de peces' style='position: absolute; top: 159px; left: 0px; width: 73px; height: 11px'>
 6
 </div>
-<input class='io-slider-slide' style='position: absolute; top: 239px; left: 0px; width: 161px' type='range' name='tasa de natalidad de peces' min='-10' max='20' step='0.1'></input>
-<div class='io-slider-box' name='capacidad de carga' style='position: absolute; top: 273px; left: 741px; width: 126px; height: 16px'>
+<input class='io-slider-slide' style='position: absolute; top: 170px; left: 0px; width: 73px' type='range' name='tasa de natalidad de peces' min='-10' max='20' step='0.1'></input>
+<div class='io-slider-box' name='capacidad de carga' style='position: absolute; top: 137px; left: 455px; width: 71px; height: 12px'>
 1200
 </div>
-<input class='io-slider-slide' style='position: absolute; top: 289px; left: 741px; width: 126px' type='range' name='capacidad de carga' min='-10000' max='20000' step='100'></input>
-<div class='io-slider-box' name='Número inicial de barcos' style='position: absolute; top: 515px; left: 918px; width: 124px; height: 15px'>
+<input class='io-slider-slide' style='position: absolute; top: 149px; left: 455px; width: 71px' type='range' name='capacidad de carga' min='-10000' max='20000' step='100'></input>
+<div class='io-slider-box' name='Número inicial de barcos' style='position: absolute; top: 379px; left: 648px; width: 92px; height: 11px'>
 10
 </div>
-<input class='io-slider-slide' style='position: absolute; top: 530px; left: 918px; width: 124px' type='range' name='Número inicial de barcos' min='-10' max='20' step='0.1'></input>
-<div class='io-slider-box' name='costo de operar un barco' style='position: absolute; top: 635px; left: 412px; width: 151px; height: 16px'>
+<input class='io-slider-slide' style='position: absolute; top: 390px; left: 648px; width: 92px' type='range' name='Número inicial de barcos' min='-10' max='20' step='0.1'></input>
+<div class='io-slider-box' name='costo de operar un barco' style='position: absolute; top: 468px; left: 263px; width: 111px; height: 11px'>
 250
 </div>
-<input class='io-slider-slide' style='position: absolute; top: 651px; left: 412px; width: 151px' type='range' name='costo de operar un barco' min='-1000' max='2000' step='10'></input>
-<div class='io-slider-box' name='Cantidad inicial de peces' style='position: absolute; top: 123px; left: 41px; width: 122px; height: 16px'>
+<input class='io-slider-slide' style='position: absolute; top: 479px; left: 263px; width: 111px' type='range' name='costo de operar un barco' min='-1000' max='2000' step='10'></input>
+<div class='io-slider-box' name='Cantidad inicial de peces' style='position: absolute; top: 92px; left: 649px; width: 90px; height: 12px'>
 1000
 </div>
-<input class='io-slider-slide' style='position: absolute; top: 139px; left: 41px; width: 122px' type='range' name='Cantidad inicial de peces' min='-1000' max='2000' step='10'></input>
-<div class='io-slider-box' name='costo de un barco' style='position: absolute; top: 571px; left: 846px; width: 113px; height: 15px'>
+<input class='io-slider-slide' style='position: absolute; top: 104px; left: 649px; width: 90px' type='range' name='Cantidad inicial de peces' min='-1000' max='2000' step='10'></input>
+<div class='io-slider-box' name='costo de un barco' style='position: absolute; top: 478px; left: 492px; width: 83px; height: 12px'>
 300
 </div>
-<input class='io-slider-slide' style='position: absolute; top: 586px; left: 846px; width: 113px' type='range' name='costo de un barco' min='-1000' max='2000' step='10'></input>
-<div class='io-chart' name='balance financiero' varname='balance financiero total' xaxisname='Year' yaxisname='$' include0 style='position: absolute; top: 120px; left: 1095px; width: 607px; height: 342px'></div>
-<div class='io-chart' name='peces' varname='Peces' xaxisname='Year' yaxisname='fish' include0 style='position: absolute; top: 467px; left: 1094px; width: 609px; height: 317px'></div>
+<input class='io-slider-slide' style='position: absolute; top: 490px; left: 492px; width: 83px' type='range' name='costo de un barco' min='-1000' max='2000' step='10'></input>
+<div class='io-chart' name='peces' varname='Peces' xaxisname='Year' yaxisname='Peces (numero)' include0 style='position: absolute; top: 363px; left: 774px; width: 350px; height: 249px'></div>
+<div class='io-chart' name='balance financiero' varname='balance financiero total' xaxisname='Year' yaxisname='peso ($)' include0 style='position: absolute; top: 8px; left: 774px; width: 350px; height: 249px'></div>
 </div>
 
 <script type="text/javascript">
