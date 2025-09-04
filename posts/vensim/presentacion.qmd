@@ -1,41 +1,57 @@
 ---
-title: "presentacion"
+title: "Presentación"
 format:
   revealjs: 
     auto-stretch: false
     footer: "[regresa](index.qmd)"
+      
+revealjs-plugins:
+  - animate
+  
+resources: 
+  - "peces-y-pescasores/*.svg"
+    
+filters: 
+  - animate
 ---
 
 
 ## {auto-animate=true auto-animate-easing="ease-in-out"}
 
 ::: {.r-hstack}
-::: {data-id="box1" auto-animate-delay="0"}
-![](circulo-A.png){width=300px}
+![](circulo-A.png){data-id="box1" auto-animate-delay="0" style="margin: 20px;" width=300px}
+
+
+![](circulo-B.png){data-id="box2" auto-animate-delay="0.1" style="margin: 40px;" width=300px}
+
+
+![](circulo-C.png){data-id="box3" auto-animate-delay="0.2" width=300px}
 :::
 
-::: {data-id="box2" auto-animate-delay="0.1"}
-![](circulo-B.png){width=300px}
-:::
 
-::: {data-id="box3" auto-animate-delay="0.2" width=300px}
-![](circulo-C.png){width=300px}
-:::
-:::
-
-## {auto-animate=true auto-animate-easing="ease-in-out"}
+## {auto-animate=true auto-animate-easing="ease-in-out" }
 
 ::: {.r-stack}
-::: {data-id="box1"}
-![](circulo-A2.png){width=300px}
+![](circulo-A2.png){data-id="box1" width=300px}
 
-:::
+![](circulo-B2.png){data-id="box2" width=200px}
 
-::: {data-id="box2"}
-![](circulo-B2.png){width=200px}
+![](circulo-C.png){data-id="box3" width=100px} 
 :::
 
-::: {data-id="box3"}
-![](circulo-C.png){width=100px}
-:::
-:::
+## Camino SVG a Storytelling
+
+```yaml {.animate src="./peces-y-pescadores/modelo-st-6.svg "}
+setup:
+  - element: "#Price"
+    modifier: attr
+    parameters:
+      - class: fragment
+        data-fragment-index: "0"
+  - element: "#Host1"
+    modifier: attr
+    parameters:
+      - class: fragment
+        data-fragment-index: "1"
+  
+```

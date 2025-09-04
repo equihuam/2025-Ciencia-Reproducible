@@ -10,7 +10,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.42">
 
-  <title>Ciencia Abierta – presentacion</title>
+  <title>Ciencia Abierta – Presentación</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -121,7 +121,7 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="presentacion – Ciencia Abierta">
+<meta property="og:title" content="Presentación – Ciencia Abierta">
 <meta property="og:image" content="images/poster-r-ciencia.png">
 <meta property="og:site_name" content="Ciencia Abierta">
 </head>
@@ -130,7 +130,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">presentacion</h1>
+  <h1 class="title">Presentación</h1>
 
 <div class="quarto-title-authors">
 </div>
@@ -139,30 +139,33 @@
 <section id="section" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
 <h2 data-id="quarto-animate-title"></h2>
 <div class="r-hstack">
-<div data-id="box1" data-auto-animate-delay="0">
-<p><img data-src="circulo-A.png" width="300"></p>
-</div>
-<div data-id="box2" data-auto-animate-delay="0.1">
-<p><img data-src="circulo-B.png" width="300"></p>
-</div>
-<div data-id="box3" data-auto-animate-delay="0.2" width="300px">
-<p><img data-src="circulo-C.png" width="300"></p>
-</div>
+<p><img data-src="circulo-A.png" style="margin: 20px;" data-id="box1" data-auto-animate-delay="0" width="300"></p>
+<p><img data-src="circulo-B.png" style="margin: 40px;" data-id="box2" data-auto-animate-delay="0.1" width="300"></p>
+<p><img data-src="circulo-C.png" data-id="box3" data-auto-animate-delay="0.2" width="300"></p>
 </div>
 </section>
 <section id="section-1" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
 <h2 data-id="quarto-animate-title"></h2>
 <div class="r-stack">
-<div data-id="box1">
-<p><img data-src="circulo-A2.png" width="300"></p>
+<p><img data-src="circulo-A2.png" data-id="box1" width="300"></p>
+<p><img data-src="circulo-B2.png" data-id="box2" width="200"></p>
+<p><img data-src="circulo-C.png" data-id="box3" width="100"></p>
 </div>
-<div data-id="box2">
-<p><img data-src="circulo-B2.png" width="200"></p>
-</div>
-<div data-id="box3">
-<p><img data-src="circulo-C.png" width="100"></p>
-</div>
-</div>
+</section>
+<section id="camino-svg-a-storytelling" class="slide level2">
+<h2>Camino SVG a Storytelling</h2>
+<div data-animate="" data-src="./peces-y-pescadores/modelo-st-6.svg "><!-- setup:
+  - element: "#Price"
+    modifier: attr
+    parameters:
+      - class: fragment
+        data-fragment-index: "0"
+  - element: "#Host1"
+    modifier: attr
+    parameters:
+      - class: fragment
+        data-fragment-index: "1"
+   --></div>
 
 
 </section>
@@ -180,6 +183,9 @@
   <script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
   <script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-animate/plugin.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-animate/svg.min.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-animate/js-yaml.min.js"></script>
   <script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -202,6 +208,7 @@
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'animate': {"autoplay":true},
 'smaller': false,
  
         // Display controls in the bottom right corner
@@ -372,7 +379,7 @@
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealAnimate, QuartoSupport,
 
           RevealMath,
           RevealNotes,
