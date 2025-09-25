@@ -86,7 +86,7 @@
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="captura"
+     inkscape:current-layer="g51"
      inkscape:clip-to-page="false" />
   <title
      id="title1" />
@@ -95,7 +95,9 @@
   <g
      id="finanzas"
      transform="matrix(0.66810849,0,0,0.66810849,0.37182823,0.85012961)"
-     style="display:inline">
+     style="display:inline"
+     onmouseover=""
+     onclick="">
     <g
        style="fill:#c0c0c0;fill-opacity:1;stroke:#c0c0c0;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
        transform="matrix(0.82,0,0,0.82,-186,-13)"
@@ -120,7 +122,8 @@
          height="66"
          rx="-0.05"
          shape-rendering="auto"
-         id="rect50" />
+         id="rect50"
+         onmouseover="" />
       <text
          x="858"
          y="730"
