@@ -1,16 +1,17 @@
 ---
-title: "Presentación"
+title:  Prueba animar SVG  
+
 format:
   revealjs: 
     auto-stretch: false
     footer: "[regresa](index.qmd)"
+    
+resource-path: 
+  - img/*.svg
       
 revealjs-plugins:
   - animate
   
-resources: 
-  - "peces-y-pescasores/*.svg"
-    
 filters: 
   - animate
 ---
@@ -39,19 +40,97 @@ filters:
 ![](circulo-C.png){data-id="box3" width=100px} 
 :::
 
+
+
+## Corazón
+
+\
+
+
+```yaml { .animate src="img/heart.svg" style="margin: 0 auto; display: block" width=50%}
+setup:
+  - element: "#heart"
+    modifier: function() { this.animate(1500).ease('<>').scale(.8).loop(true,true);}
+    parameters: []
+``` 
+
+
 ## Camino SVG a Storytelling
 
-```yaml {.animate src="./peces-y-pescadores/modelo-st-6.svg "}
+    
+
+```yaml {.animate src="img/modelo-st-6.svg" }
 setup:
-  - element: "#Price"
+  - element: "#peces"
     modifier: attr
     parameters:
       - class: fragment
         data-fragment-index: "0"
-  - element: "#Host1"
+  - element: "#texto-1"
+    modifier: attr
+    parameters:
+      - class: fragment fade-in-then-out
+        data-fragment-index: "0"
+  - element: "#dinamica_peces"
     modifier: attr
     parameters:
       - class: fragment
         data-fragment-index: "1"
-  
+  - element: "#texto-2"
+    modifier: attr
+    parameters:
+      - class: fragment fade-in-then-out
+        data-fragment-index: "1"
+  - element: "#flota"
+    modifier: attr
+    parameters:
+      - class: fragment
+        data-fragment-index: "2"
+  - element: "#texto-3"
+    modifier: attr
+    parameters:
+      - class: fragment fade-in-then-out
+        data-fragment-index: "2"
+  - element: "#captura"
+    modifier: attr
+    parameters:
+      - class: fragment
+        data-fragment-index: "3"
+  - element: "#texto-4"
+    modifier: attr
+    parameters:
+      - class: fragment fade-in-then-out
+        data-fragment-index: "3"
+  - element: "#dinamica_flota"
+    modifier: attr
+    parameters:
+      - class: fragment
+        data-fragment-index: "4"
+  - element: "#texto-5"
+    modifier: attr
+    parameters:
+      - class: fragment fade-in-then-out
+        data-fragment-index: "4"
+  - element: "#finanzas"
+    modifier: attr
+    parameters:
+      - class: fragment
+        data-fragment-index: "5"
+  - element: "#texto-6"
+    modifier: attr
+    parameters:
+      - class: fragment fade-in-then-out
+        data-fragment-index: "5"
+  - element: "#dinamica_finanzas"
+    modifier: attr
+    parameters:
+      - class: fragment
+        data-fragment-index: "6"
+  - element: "#texto-7"
+    modifier: attr
+    parameters:
+      - class: fragment fade-in-then-out
+        data-fragment-index: "6"
+ 
 ```
+
