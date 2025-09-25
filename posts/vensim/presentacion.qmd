@@ -58,13 +58,16 @@ setup:
 
 ## Camino SVG a Storytelling
 
-```yaml {.animate src="img/modelo-st-6B.svg" }
+```yaml {.animate src="img/modelo-st-6.svg" }
 setup:
   - element: "#peces"
     modifier: attr
     parameters:
       - class: fragment
         data-fragment-index: "0"
+  - element: "#peces"
+    modifier: function() { this.animate(1500).ease('<>').scale(.8).loop(5, 5);}
+    parameters: []
   - element: "#texto-1"
     modifier: attr
     parameters:
@@ -85,6 +88,9 @@ setup:
     parameters:
       - class: fragment
         data-fragment-index: "2"
+  - element: "#flota"
+    modifier: function() { this.animate(1500).ease('<>').scale(.8).loop(10, 10);}
+    parameters: []
   - element: "#texto-3"
     modifier: attr
     parameters:
@@ -115,6 +121,9 @@ setup:
     parameters:
       - class: fragment
         data-fragment-index: "5"
+  - element: "#finanzas"
+    modifier: function() { this.animate(1500).ease('<>').scale(.8).loop(15,15);}
+    parameters: []
   - element: "#texto-6"
     modifier: attr
     parameters:
