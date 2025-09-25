@@ -5,6 +5,7 @@ format:
   revealjs: 
     auto-stretch: false
     footer: "[regresa](index.qmd)"
+    embed-resources: true
     
 resource-path: 
   - img/*.svg
@@ -57,9 +58,7 @@ setup:
 
 ## Camino SVG a Storytelling
 
-    
-
-```yaml {.animate src="img/modelo-st-6.svg" }
+```yaml {.animate src="img/modelo-st-6B.svg" }
 setup:
   - element: "#peces"
     modifier: attr
