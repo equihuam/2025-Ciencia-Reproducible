@@ -2,7 +2,7 @@
 <svg
    width="760"
    height="650"
-   viewBox="0 0 532 455.0000"
+   viewBox="0 0 550 500"
    version="1.1"
    id="svg121"
    sodipodi:docname="modelo-st-6.svg"
@@ -80,7 +80,7 @@
      inkscape:document-units="cm"
      inkscape:zoom="0.63748395"
      inkscape:cx="22.745671"
-     inkscape:cy="389.81373"
+     inkscape:cy="389.81374"
      inkscape:window-width="1920"
      inkscape:window-height="1057"
      inkscape:window-x="-8"
@@ -100,7 +100,7 @@
      onclick="">
     <g
        style="fill:#c0c0c0;fill-opacity:1;stroke:#c0c0c0;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
-       transform="matrix(0.82,0,0,0.82,-186,-13)"
+       transform="matrix(0.82,0,0,0.82,-186,10.027122)"
        id="g50">
       <rect
          x="850"
@@ -117,7 +117,7 @@
        id="g51">
       <rect
          x="848"
-         y="701"
+         y="729.08167"
          width="126"
          height="66"
          rx="-0.05"
@@ -131,7 +131,8 @@
          style="font-style:normal;font-weight:400;font-size:15px;font-family:'Times New Roman';text-decoration:none;text-decoration-line:none;white-space:pre;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-opacity:1"
          xml:space="preserve"
          id="text50"
-         lengthAdjust="spacing">balance financiero</text>
+         lengthAdjust="spacing"
+         transform="translate(0,28.081858)">balance financiero</text>
       <text
          x="899"
          y="747"
@@ -139,12 +140,13 @@
          style="font-style:normal;font-weight:400;font-size:15px;font-family:'Times New Roman';text-decoration:none;text-decoration-line:none;white-space:pre;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-opacity:1"
          xml:space="preserve"
          id="text51"
-         lengthAdjust="spacing">total</text>
+         lengthAdjust="spacing"
+         transform="translate(0,28.081858)">total</text>
     </g>
   </g>
   <g
      id="dinamica_finanzas"
-     transform="matrix(0.99236982,0,0,0.99236982,-6.9490769,-11.413757)"
+     transform="matrix(0.99236982,0,0,0.99236982,-6.9490769,3.9708581)"
      style="display:inline">
     <g
        style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0"
@@ -192,7 +194,7 @@
          transform="matrix(0.82,0,0,0.82,-186,-13)"
          id="g43">
         <polygon
-           points="804,472 792,480 798,485 "
+           points="792,480 798,485 804,472 "
            shape-rendering="auto"
            style="fill-rule:evenodd"
            id="polygon42" />
@@ -215,7 +217,7 @@
          transform="matrix(0.82,0,0,0.82,-186,-13)"
          id="g39">
         <polygon
-           points="440,588 442,573 434,574 "
+           points="442,573 434,574 440,588 "
            shape-rendering="auto"
            style="fill-rule:evenodd"
            id="polygon38" />
@@ -235,7 +237,7 @@
        transform="matrix(0.55206129,0,0,0.55206129,-117.84647,3.6059808)"
        id="g25">
       <polygon
-         points="399,600 386,592 384,600 "
+         points="386,592 384,600 399,600 "
          shape-rendering="auto"
          style="fill-rule:evenodd"
          id="polygon24" />
@@ -254,7 +256,7 @@
        transform="matrix(0.55206129,0,0,0.55206129,-117.84647,3.6059808)"
        id="g27">
       <polygon
-         points="540,446 549,434 541,431 "
+         points="549,434 541,431 540,446 "
          shape-rendering="auto"
          style="fill-rule:evenodd"
          id="polygon26" />
@@ -273,7 +275,7 @@
        transform="matrix(0.55206129,0,0,0.55206129,-117.84647,3.6059808)"
        id="g29">
       <polygon
-         points="534,472 529,485 537,486 "
+         points="529,485 537,486 534,472 "
          shape-rendering="auto"
          style="fill-rule:evenodd"
          id="polygon28" />
@@ -292,7 +294,7 @@
        transform="matrix(0.55206129,0,0,0.55206129,-117.84647,3.6059808)"
        id="g35">
       <polygon
-         points="733,510 722,500 718,507 "
+         points="722,500 718,507 733,510 "
          shape-rendering="auto"
          style="fill-rule:evenodd"
          id="polygon34" />
@@ -311,7 +313,7 @@
        transform="matrix(0.55206129,0,0,0.55206129,-117.84647,3.6059808)"
        id="g37">
       <polygon
-         points="745,536 732,543 738,548 "
+         points="732,543 738,548 745,536 "
          shape-rendering="auto"
          style="fill-rule:evenodd"
          id="polygon36" />
@@ -321,7 +323,7 @@
        transform="matrix(0.55206129,0,0,0.55206129,-117.84647,3.6059808)"
        id="g44">
       <polygon
-         points="748,647 759,633 750,629 "
+         points="759,633 750,629 748,647 "
          shape-rendering="auto"
          style="fill:#008000;fill-opacity:1;fill-rule:evenodd;stroke:#008000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
          id="polygon44"
@@ -542,7 +544,7 @@
   </g>
   <g
      id="dinamica_flota"
-     transform="matrix(0.66810849,0,0,0.66810849,0.37182823,0.85012961)"
+     transform="matrix(0.66810849,0,0,0.66810849,0.37182823,16.234747)"
      style="display:inline">
     <g
        style="fill:#000000;fill-opacity:0;stroke:#804000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
@@ -558,7 +560,7 @@
        transform="matrix(0.82,0,0,0.82,-186,-13)"
        id="g41">
       <polygon
-         points="846,472 851,485 857,480 "
+         points="851,485 857,480 846,472 "
          shape-rendering="auto"
          style="fill-rule:evenodd"
          id="polygon40" />
@@ -716,7 +718,7 @@
        transform="matrix(0.82000001,0,0,0.82000001,-186,-13)"
        id="g30">
       <polygon
-         points="821,411 819,398 813,400 "
+         points="819,398 813,400 821,411 "
          shape-rendering="auto"
          style="fill:#804000;fill-opacity:1;fill-rule:evenodd;stroke:#804000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
          id="polygon30"
@@ -730,7 +732,7 @@
   <g
      id="captura"
      inkscape:label="captura"
-     transform="matrix(0.66810849,0,0,0.66810849,0.37182823,0.85012961)"
+     transform="matrix(0.66810849,0,0,0.66810849,0.37182823,16.234747)"
      style="display:inline">
     <g
        style="fill:#000000;fill-opacity:0;stroke:#804000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
@@ -741,7 +743,7 @@
          shape-rendering="auto"
          id="path19" />
       <polygon
-         points="623,270 638,267 624,262 "
+         points="638,267 624,262 623,270 "
          shape-rendering="auto"
          style="fill:#804000;fill-opacity:1;fill-rule:evenodd;stroke:#804000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
          id="polygon20"
@@ -756,7 +758,7 @@
          shape-rendering="auto"
          id="path31" />
       <polygon
-         points="759,300 764,294 752,288 "
+         points="764,294 752,288 759,300 "
          shape-rendering="auto"
          style="fill:#804000;fill-opacity:1;fill-rule:evenodd;stroke:#804000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
          id="polygon32"
@@ -817,7 +819,7 @@
        transform="matrix(0.82000001,0,0,0.82000001,-186,-13)"
        id="g23">
       <polygon
-         points="305,391 314,379 306,376 "
+         points="314,379 306,376 305,391 "
          shape-rendering="auto"
          style="fill-rule:evenodd"
          id="polygon22" />
@@ -906,7 +908,7 @@
   </g>
   <g
      style="display:inline;fill:#ffc080;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
-     transform="matrix(0.54784898,0,0,0.54784898,-123.89637,-7.8352898)"
+     transform="matrix(0.54784898,0,0,0.54784898,-123.89637,7.5493253)"
      id="flota">
     <rect
        x="623"
@@ -937,7 +939,7 @@
   </g>
   <g
      style="display:inline;fill:#c0ffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
-     transform="matrix(0.54784896,0,0,0.54784896,-123.89637,-7.8352898)"
+     transform="matrix(0.54784896,0,0,0.54784896,-123.89637,7.5493253)"
      id="peces">
     <rect
        x="594"
@@ -968,14 +970,14 @@
   </g>
   <g
      id="dinamica_peces"
-     transform="matrix(0.66810849,0,0,0.66810849,0.37182823,0.85012961)"
+     transform="matrix(0.66810849,0,0,0.66810849,0.37182823,16.234747)"
      style="display:inline">
     <g
        style="fill:#0000ff;fill-opacity:1;stroke:#0000ff;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
        transform="matrix(0.82,0,0,0.82,-186,-13)"
        id="g5">
       <polygon
-         points="435,84 421,85 433,92 "
+         points="421,85 433,92 435,84 "
          shape-rendering="auto"
          style="fill-rule:evenodd"
          id="polygon4" />
@@ -994,7 +996,7 @@
        transform="matrix(0.82,0,0,0.82,-186,-13)"
        id="g7">
       <polygon
-         points="333,107 343,96 329,100 "
+         points="343,96 329,100 333,107 "
          shape-rendering="auto"
          style="fill-rule:evenodd"
          id="polygon6" />
@@ -1013,7 +1015,7 @@
        transform="matrix(0.82,0,0,0.82,-186,-13)"
        id="g11">
       <polygon
-         points="524,191 520,205 531,195 "
+         points="520,205 531,195 524,191 "
          shape-rendering="auto"
          style="fill-rule:evenodd"
          id="polygon10" />
@@ -1032,7 +1034,7 @@
        transform="matrix(0.82,0,0,0.82,-186,-13)"
        id="g13">
       <polygon
-         points="676,135 689,143 682,129 "
+         points="689,143 682,129 676,135 "
          shape-rendering="auto"
          style="fill-rule:evenodd"
          id="polygon12" />
@@ -1051,7 +1053,7 @@
        transform="matrix(0.82,0,0,0.82,-186,-13)"
        id="g15">
       <polygon
-         points="765,118 770,105 758,114 "
+         points="770,105 758,114 765,118 "
          shape-rendering="auto"
          style="fill-rule:evenodd"
          id="polygon14" />
@@ -1070,7 +1072,7 @@
        transform="matrix(0.82,0,0,0.82,-186,-13)"
        id="g17">
       <polygon
-         points="723,175 711,169 718,181 "
+         points="711,169 718,181 723,175 "
          shape-rendering="auto"
          style="fill-rule:evenodd"
          id="polygon16" />
@@ -1089,7 +1091,7 @@
        transform="matrix(0.82,0,0,0.82,-186,-13)"
        id="g19">
       <polygon
-         points="710,96 724,93 710,88 "
+         points="724,93 710,88 710,96 "
          shape-rendering="auto"
          style="fill-rule:evenodd"
          id="polygon18" />
@@ -1267,7 +1269,7 @@
        style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0"
        transform="matrix(0.82000001,0,0,0.82000001,-186,-13)" />
     <polygon
-       points="474,215 460,210 459,218 "
+       points="460,210 459,218 474,215 "
        shape-rendering="auto"
        style="fill:#0000ff;fill-opacity:1;fill-rule:evenodd;stroke:#0000ff;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
        id="polygon8"
@@ -1430,7 +1432,7 @@
      style="font-size:12px;line-height:normal;font-family:Arial, sans-serif;-inkscape-font-specification:'Nirmala UI Bold';text-align:end;text-decoration-color:#000000;word-spacing:1.5px;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1);display:inline;fill:#87decd;fill-rule:evenodd;stroke-width:1.88976" />
   <g
      id="texto-1"
-     transform="scale(0.99236982)"
+     transform="matrix(0.99236982,0,0,0.99236982,0,15.384617)"
      style="display:inline">
     <rect
        style="opacity:0.8;fill:#ffeeaa;fill-rule:evenodd;stroke:#800000;stroke-width:1.42881"
@@ -1448,41 +1450,41 @@
        y="0"><tspan
          x="630.2832"
          y="14.589522"
-         id="tspan6"><tspan
+         id="tspan2"><tspan
            dx="0 0 -1.5 1.5 0 0 0 0 0 0 0 -1.5"
            style="font-weight:bold;line-height:0.8;-inkscape-font-specification:'Arial, sans-serif Bold'"
-           id="tspan3">La historia
+           id="tspan1">La historia
 </tspan></tspan><tspan
          x="630.2832"
          y="24.189522"
-         id="tspan8"><tspan
+         id="tspan5"><tspan
            style="font-weight:bold;line-height:0.8;-inkscape-font-specification:'Arial, sans-serif Bold'"
-           id="tspan7">
+           id="tspan4">
 </tspan></tspan><tspan
          x="630.2832"
          y="34.389522"
-         id="tspan134"><tspan
+         id="tspan11"><tspan
            dx="0 0 0 0 -1.5 1.5 0 0 0 0 0 -1.5 1.5 0 0 -1.5"
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan9">Todo inicia con </tspan></tspan><tspan
+           id="tspan10">Todo inicia con </tspan></tspan><tspan
          x="630.2832"
          y="45.189522"
-         id="tspan136"><tspan
+         id="tspan13"><tspan
            dx="0 0 0 -1.5 1.5 0 0 0 0 -1.5 1.5 0 -1.5 1.5 0 -1.5"
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan135">los peces en la </tspan></tspan><tspan
+           id="tspan12">los peces en la </tspan></tspan><tspan
          x="630.2832"
          y="55.989521"
-         id="tspan139"><tspan
+         id="tspan16"><tspan
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan137">mar.</tspan><tspan
+           id="tspan14">mar.</tspan><tspan
            dx="-1.5"
            style="line-height:0.9"
-           id="tspan138">  </tspan></tspan></text>
+           id="tspan15">  </tspan></tspan></text>
   </g>
   <g
      id="texto-2"
-     transform="matrix(0.99236982,0,0,0.99236982,0,57.08481)"
+     transform="matrix(0.99236982,0,0,0.99236982,0,72.46943)"
      style="display:inline">
     <rect
        style="opacity:0.8;fill:#ffeeaa;fill-rule:evenodd;stroke:#800000;stroke-width:1.42881"
@@ -1500,44 +1502,44 @@
        y="0"><tspan
          x="630.2832"
          y="14.589522"
-         id="tspan141"><tspan
+         id="tspan18"><tspan
            dx="0 0 0 0 0 0 0 0 -1.5 1.5 0 -1.5 1.5 0 0 -1.5 1.5 0 0 0 0 -1.5"
            style="font-weight:bold;line-height:0.8;-inkscape-font-specification:'Arial, sans-serif Bold'"
-           id="tspan140">Dinámica de los peces
+           id="tspan17">Dinámica de los peces
 </tspan></tspan><tspan
          x="630.2832"
          y="24.189522"
-         id="tspan143"><tspan
+         id="tspan20"><tspan
            style="font-weight:bold;line-height:0.8;-inkscape-font-specification:'Arial, sans-serif Bold'"
-           id="tspan142">
+           id="tspan19">
 </tspan></tspan><tspan
          x="630.2832"
          y="34.389522"
-         id="tspan145"><tspan
+         id="tspan22"><tspan
            dx="0 0 -1.5 1.5 0 0 0 -1.5 1.5 0 0 0 0 0 0 -1.5 1.5 0 0 0 -1.5"
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan144">Es bien sabida. Como </tspan></tspan><tspan
+           id="tspan21">Es bien sabida. Como </tspan></tspan><tspan
          x="630.2832"
          y="45.189522"
-         id="tspan147"><tspan
+         id="tspan24"><tspan
            dx="0 0 0 0 -1.5 1.5 0 0 -1.5 1.5 0 0 0 0 -1.5 1.5 0 0 0 0 0 -1.5"
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan146">todo ser vivo: nacen, </tspan></tspan><tspan
+           id="tspan23">todo ser vivo: nacen, </tspan></tspan><tspan
          x="630.2832"
          y="55.989521"
-         id="tspan149"><tspan
+         id="tspan26"><tspan
            dx="0 0 0 0 0 0 0 -1.5 1.5 0 -1.5 1.5 0 0 0 0 0 0 0 0 0 -1.5 1.5 -1.5"
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan148">crecen, se reproducen y </tspan></tspan><tspan
+           id="tspan25">crecen, se reproducen y </tspan></tspan><tspan
          x="630.2832"
          y="66.78952"
-         id="tspan151"><tspan
+         id="tspan28"><tspan
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan150">mueren.</tspan></tspan></text>
+           id="tspan27">mueren.</tspan></tspan></text>
   </g>
   <g
      id="texto-3"
-     transform="matrix(0.99236982,0,0,0.99236982,-317.98413,146.51621)"
+     transform="matrix(0.99236982,0,0,0.99236982,-317.98413,161.90081)"
      style="display:inline">
     <rect
        style="opacity:0.8;fill:#ffeeaa;fill-rule:evenodd;stroke:#800000;stroke-width:1.42881"
@@ -1555,57 +1557,57 @@
        y="0"><tspan
          x="630.2832"
          y="14.589522"
-         id="tspan153"><tspan
+         id="tspan30"><tspan
            dx="0 0 0 -1.5 1.5 0 0 0 0 0 0 0 0 0 -1.5"
            style="font-weight:bold;line-height:0.8;-inkscape-font-specification:'Arial, sans-serif Bold'"
-           id="tspan152">Los pescadores
+           id="tspan29">Los pescadores
 </tspan></tspan><tspan
          x="630.2832"
          y="24.789522"
-         id="tspan155"><tspan
+         id="tspan32"><tspan
            style="line-height:0.9"
-           id="tspan154">
+           id="tspan31">
 </tspan></tspan><tspan
          x="630.2832"
          y="35.589521"
-         id="tspan157"><tspan
+         id="tspan34"><tspan
            dx="0 0 -1.5 1.5 0 0 0 -1.5 1.5 0 0 0 0 0 0 0 -1.5"
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan156">En esta historia </tspan></tspan><tspan
+           id="tspan33">En esta historia </tspan></tspan><tspan
          x="630.2832"
          y="46.389519"
-         id="tspan159"><tspan
+         id="tspan36"><tspan
            dx="0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1.5 1.5 -1.5"
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan158">consideraremos a </tspan></tspan><tspan
+           id="tspan35">consideraremos a </tspan></tspan><tspan
          x="630.2832"
          y="57.189518"
-         id="tspan161"><tspan
+         id="tspan38"><tspan
            dx="0 0 0 0 0 0 0 0 -1.5 1.5 0 0 -1.5 1.5 0 0 0 -1.5"
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan160">personas que usan </tspan></tspan><tspan
+           id="tspan37">personas que usan </tspan></tspan><tspan
          x="630.2832"
          y="67.989517"
-         id="tspan163"><tspan
+         id="tspan40"><tspan
            dx="0 0 0 0 0 0 0 0 0 0 0 0 0 -1.5 1.5 0 0 0 -1.5"
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan162">embarcaciones para </tspan></tspan><tspan
+           id="tspan39">embarcaciones para </tspan></tspan><tspan
          x="630.2832"
          y="78.789513"
-         id="tspan165"><tspan
+         id="tspan42"><tspan
            dx="0 0 0 0 0 -1.5 1.5 0 -1.5 1.5 0 0 -1.5 1.5 -1.5 1.5 0 0 0 0 0 0 0 -1.5"
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan164">salir al mar a capturar </tspan></tspan><tspan
+           id="tspan41">salir al mar a capturar </tspan></tspan><tspan
          x="630.2832"
          y="89.589516"
-         id="tspan167"><tspan
+         id="tspan44"><tspan
            dx="0 0 0 -1.5 1.5"
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan166">los peces.</tspan></tspan></text>
+           id="tspan43">los peces.</tspan></tspan></text>
   </g>
   <g
      id="texto-4"
-     transform="matrix(0.99236982,0,0,0.99236982,-333.08836,192.22948)"
+     transform="matrix(0.99236982,0,0,0.99236982,-333.08836,207.61408)"
      style="display:inline">
     <rect
        style="opacity:0.8;fill:#ffeeaa;fill-rule:evenodd;stroke:#800000;stroke-width:1.42881"
@@ -1623,75 +1625,75 @@
        y="0"><tspan
          x="630.2832"
          y="14.589522"
-         id="tspan169"><tspan
+         id="tspan46"><tspan
            dx="0 0 -1.5 1.5 0 0 0 0 -1.5"
            style="font-weight:bold;line-height:0.8;-inkscape-font-specification:'Arial, sans-serif Bold'"
-           id="tspan168">La pesca
+           id="tspan45">La pesca
 </tspan></tspan><tspan
          x="630.2832"
          y="24.189522"
-         id="tspan171"><tspan
+         id="tspan48"><tspan
            style="font-weight:bold;line-height:0.8;-inkscape-font-specification:'Arial, sans-serif Bold'"
-           id="tspan170">
+           id="tspan47">
 </tspan></tspan><tspan
          x="630.2832"
          y="34.389522"
-         id="tspan173"><tspan
+         id="tspan50"><tspan
            dx="0 0 -1.5 1.5 0 0 0 0 0 0 0 -1.5 1.5 0 -1.5 1.5 0 0 0 0 -1.5 1.5 0 0 -1.5 1.5 0 -1.5"
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan172">La cantidad de peces que se </tspan></tspan><tspan
+           id="tspan49">La cantidad de peces que se </tspan></tspan><tspan
          x="630.2832"
          y="45.189522"
-         id="tspan175"><tspan
+         id="tspan52"><tspan
            dx="0 0 0 0 0 0 -1.5 1.5 0 0 0 0 0 0 0 -1.5 1.5 0 -1.5 1.5 0 0 -1.5"
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan174">pueden capturar en una </tspan></tspan><tspan
+           id="tspan51">pueden capturar en una </tspan></tspan><tspan
          x="630.2832"
          y="55.989521"
-         id="tspan177"><tspan
+         id="tspan54"><tspan
            dx="0 0 0 0 0 0 0 0 -1.5 1.5 0 0 0 0 0 0 -1.5 1.5 0 -1.5 1.5 0 -1.5"
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan176">jornada, depende de la </tspan></tspan><tspan
+           id="tspan53">jornada, depende de la </tspan></tspan><tspan
          x="630.2832"
          y="66.78952"
-         id="tspan179"><tspan
+         id="tspan56"><tspan
            dx="0 0 0 0 0 0 0 0 -1.5 1.5 0 -1.5 1.5 0 0 0 0 0 0 0 -1.5 1.5 0 -1.5 1.5 0 -1.5"
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan178">densidad de animales en la </tspan></tspan><tspan
+           id="tspan55">densidad de animales en la </tspan></tspan><tspan
          x="630.2832"
          y="77.589516"
-         id="tspan181"><tspan
+         id="tspan58"><tspan
            dx="0 0 0 0 -1.5 1.5 -1.5 1.5 0 -1.5 1.5 0 -1.5 1.5 0 0 0 0 0 0 0 -1.5 1.5 0 -1.5"
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan180">zona y de la cantidad de </tspan></tspan><tspan
+           id="tspan57">zona y de la cantidad de </tspan></tspan><tspan
          x="630.2832"
          y="88.389519"
-         id="tspan183"><tspan
+         id="tspan60"><tspan
            dx="0 0 0 0 0 0 -1.5 1.5 0 0 0 0 0 0 0 0 0 0 0 -1.5"
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan182">barcos disponibles. 
+           id="tspan59">barcos disponibles. 
 </tspan></tspan><tspan
          x="630.2832"
          y="99.189522"
-         id="tspan185"><tspan
+         id="tspan62"><tspan
            dx="0 0 -1.5 1.5 0 0 0 0 0 0 -1.5 1.5 0 -1.5 1.5 0 0 0 0 -1.5 1.5 0 -1.5 1.5 0 0 0 -1.5"
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan184">La captura de peces es otra </tspan></tspan><tspan
+           id="tspan61">La captura de peces es otra </tspan></tspan><tspan
          x="630.2832"
          y="109.98952"
-         id="tspan187"><tspan
+         id="tspan64"><tspan
            dx="0 0 0 0 0 -1.5 1.5 0 0 0 -1.5 1.5 0 0 -1.5 1.5 0 0 0 0 -1.5"
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan186">forma como los peces </tspan></tspan><tspan
+           id="tspan63">forma como los peces </tspan></tspan><tspan
          x="630.2832"
          y="120.78953"
-         id="tspan189"><tspan
+         id="tspan66"><tspan
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan188">mueren.</tspan></tspan></text>
+           id="tspan65">mueren.</tspan></tspan></text>
   </g>
   <g
      id="texto-5"
-     transform="matrix(0.99236982,0,0,0.99236982,-7.1336055,163.96191)"
+     transform="matrix(0.99236982,0,0,0.99236982,-7.1336055,179.34651)"
      style="display:inline">
     <rect
        style="opacity:0.8;fill:#ffeeaa;fill-rule:evenodd;stroke:#800000;stroke-width:1.42881"
@@ -1709,69 +1711,69 @@
        y="0"><tspan
          x="630.2832"
          y="14.589522"
-         id="tspan191"><tspan
+         id="tspan68"><tspan
            dx="0 0 -1.5 1.5 0 0 0 0 -1.5"
            style="font-weight:bold;line-height:0.8;-inkscape-font-specification:'Arial, sans-serif Bold'"
-           id="tspan190">La flota
+           id="tspan67">La flota
 </tspan></tspan><tspan
          x="630.2832"
          y="24.189522"
-         id="tspan193"><tspan
+         id="tspan70"><tspan
            style="font-weight:bold;line-height:0.8;-inkscape-font-specification:'Arial, sans-serif Bold'"
-           id="tspan192">
+           id="tspan69">
 </tspan></tspan><tspan
          x="630.2832"
          y="34.389522"
-         id="tspan195"><tspan
+         id="tspan72"><tspan
            dx="0 0 -1.5 1.5 0 0 0 0 0 0 0 -1.5 1.5 0 -1.5 1.5 0 0 0 0 0 -1.5"
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan194">La cantidad de barcos </tspan></tspan><tspan
+           id="tspan71">La cantidad de barcos </tspan></tspan><tspan
          x="630.2832"
          y="45.189522"
-         id="tspan197"><tspan
+         id="tspan74"><tspan
            dx="0 0 -1.5 1.5 0 0 -1.5 1.5 0 0 0 0 0 -1.5 1.5 0 0 0 0 0 0 0 -1.5"
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan196">de que pueden disponer </tspan></tspan><tspan
+           id="tspan73">de que pueden disponer </tspan></tspan><tspan
          x="630.2832"
          y="55.989521"
-         id="tspan199"><tspan
+         id="tspan76"><tspan
            dx="0 0 0 -1.5 1.5 0 0 0 0 0 0 0 0 0 -1.5 1.5 0 -1.5 1.5 0 0 -1.5"
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan198">los pescadores es una </tspan></tspan><tspan
+           id="tspan75">los pescadores es una </tspan></tspan><tspan
          x="630.2832"
          y="66.78952"
-         id="tspan201"><tspan
+         id="tspan78"><tspan
            dx="0 0 0 0 0 0 0 0 0 0 -1.5 1.5 0 0 -1.5 1.5 0 0 -1.5"
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan200">inversión. Hay que </tspan></tspan><tspan
+           id="tspan77">inversión. Hay que </tspan></tspan><tspan
          x="630.2832"
          y="77.589516"
-         id="tspan203"><tspan
+         id="tspan80"><tspan
            dx="0 0 0 0 0 0 0 0 0 0 0 0 0 -1.5 1.5 0 -1.5 1.5 0 0 -1.5 1.5 0 0 0 0 -1.5"
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan202">construirlos, lo que tiene </tspan></tspan><tspan
+           id="tspan79">construirlos, lo que tiene </tspan></tspan><tspan
          x="630.2832"
          y="88.389519"
-         id="tspan205"><tspan
+         id="tspan82"><tspan
            dx="0 0 -1.5 1.5 0 0 0 0 0 -1.5 1.5 0 0 0 0 0 0 -1.5 1.5 0 0 -1.5"
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan204">un costo. También hay </tspan></tspan><tspan
+           id="tspan81">un costo. También hay </tspan></tspan><tspan
          x="630.2832"
          y="99.189522"
-         id="tspan207"><tspan
+         id="tspan84"><tspan
            dx="0 0 0 -1.5 1.5 0 0 0 0 0 0 0 -1.5 1.5 0 0 0 -1.5 1.5 0 0 0 0 0 0 -1.5"
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan206">que invertir para usarlos </tspan></tspan><tspan
+           id="tspan83">que invertir para usarlos </tspan></tspan><tspan
          x="630.2832"
          y="109.98952"
-         id="tspan209"><tspan
+         id="tspan86"><tspan
            dx="0 0 0 0 -1.5 1.5"
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan208">cada vez</tspan></tspan></text>
+           id="tspan85">cada vez</tspan></tspan></text>
   </g>
   <g
      id="texto-6"
-     transform="matrix(0.99236982,0,0,0.99236982,-25.281346,288.47444)"
+     transform="matrix(0.99236982,0,0,0.99236982,-25.281346,303.85904)"
      style="display:inline">
     <rect
        style="opacity:0.8;fill:#ffeeaa;fill-rule:evenodd;stroke:#800000;stroke-width:1.42881"
@@ -1789,83 +1791,83 @@
        y="0"><tspan
          x="630.2832"
          y="14.589522"
-         id="tspan211"><tspan
+         id="tspan88"><tspan
            dx="0 0 0 -1.5 1.5 0 0 0 0 0 0 0 -1.5"
            style="font-weight:bold;line-height:0.8;-inkscape-font-specification:'Arial, sans-serif Bold'"
-           id="tspan210">Las finanzas
+           id="tspan87">Las finanzas
 </tspan></tspan><tspan
          x="630.2832"
          y="24.189522"
-         id="tspan213"><tspan
+         id="tspan90"><tspan
            style="font-weight:bold;line-height:0.8;-inkscape-font-specification:'Arial, sans-serif Bold'"
-           id="tspan212">
+           id="tspan89">
 </tspan></tspan><tspan
          x="630.2832"
          y="34.389522"
-         id="tspan215"><tspan
+         id="tspan92"><tspan
            dx="0 0 -1.5 1.5 0 0 0 0 0 0 0 0 0 0 -1.5 1.5 0 -1.5 1.5 0 -1.5 1.5 0 0 0 0 -1.5"
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan214">El rendimiento de la pesca </tspan></tspan><tspan
+           id="tspan91">El rendimiento de la pesca </tspan></tspan><tspan
          x="630.2832"
          y="45.189522"
-         id="tspan217"><tspan
+         id="tspan94"><tspan
            dx="0 0 0 0 0 0 -1.5 1.5 0 0 0 0 0 0 0 0 0 -1.5 1.5 0 0 0 -1.5 1.5 0 -1.5"
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan216">ppdría expresarse sólo en </tspan></tspan><tspan
+           id="tspan93">ppdría expresarse sólo en </tspan></tspan><tspan
          x="630.2832"
          y="55.989521"
-         id="tspan219"><tspan
+         id="tspan96"><tspan
            dx="0 0 0 0 0 0 0 0 0 -1.5 1.5 0 -1.5 1.5 0 0 0 0 -1.5 1.5 0 0 0 0 0 0 0 0 0 0 -1.5"
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan218">toneladas de peces capturados. </tspan></tspan><tspan
+           id="tspan95">toneladas de peces capturados. </tspan></tspan><tspan
          x="630.2832"
          y="66.78952"
-         id="tspan221"><tspan
+         id="tspan98"><tspan
            dx="0 0 0 -1.5 1.5 0 0 0 0 0 0 0 -1.5 1.5 0 0 0 -1.5 1.5 0 0 0 0 -1.5 1.5 0 -1.5 1.5 0 0 -1.5"
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan220">Sin embargo, otra forma de ver </tspan></tspan><tspan
+           id="tspan97">Sin embargo, otra forma de ver </tspan></tspan><tspan
          x="630.2832"
          y="77.589516"
-         id="tspan223"><tspan
+         id="tspan100"><tspan
            dx="0 0 -1.5 1.5 0 0 0 0 0 0 -1.5 1.5 0 -1.5 1.5 0 0 0 0 0 0 0 0 0 -1.5 1.5 0 -1.5"
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan222">el asunto, es considerar la </tspan></tspan><tspan
+           id="tspan99">el asunto, es considerar la </tspan></tspan><tspan
          x="630.2832"
          y="88.389519"
-         id="tspan225"><tspan
+         id="tspan102"><tspan
            dx="0 0 0 0 0 0 0 0 0 -1.5 1.5 0 -1.5 1.5 0 0 0 0 0 0 0 0 0 0 -1.5 1.5 0 0 -1.5"
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan224">capacidad de intercambio que </tspan></tspan><tspan
+           id="tspan101">capacidad de intercambio que </tspan></tspan><tspan
          x="630.2832"
          y="99.189522"
-         id="tspan227"><tspan
+         id="tspan104"><tspan
            dx="0 0 -1.5 1.5 0 0 0 0 0 0 0 0 -1.5 1.5 0 0 0 0 0 0 -1.5 1.5 0 0 -1.5 1.5 0 -1.5"
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan226">la actividad genera. Eso lo </tspan></tspan><tspan
+           id="tspan103">la actividad genera. Eso lo </tspan></tspan><tspan
          x="630.2832"
          y="110.01868"
-         id="tspan229"><tspan
+         id="tspan106"><tspan
            dx="0 0 0 0 0 0 0 0 0 0 -1.5 1.5 0 0 0 0 0 0 0 0 0 0 -1.5 1.5 0 0 0 -1.5"
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan228">concebimos actualmente como </tspan></tspan><tspan
+           id="tspan105">concebimos actualmente como </tspan></tspan><tspan
          x="630.2832"
          y="120.84782"
-         id="tspan232"><tspan
+         id="tspan109"><tspan
            style="font-style:italic;line-height:0.9;-inkscape-font-specification:'Arial, sans-serif Italic'"
-           id="tspan230">dinero</tspan><tspan
+           id="tspan107">dinero</tspan><tspan
            dx="0 -1.5 1.5 0 -1.5 1.5 0 -1.5 1.5 0 0 0 -1.5 1.5 0 -1.5 1.5 0 -1.5"
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan231">, es la base de la </tspan></tspan><tspan
+           id="tspan108">, es la base de la </tspan></tspan><tspan
          x="630.2832"
          y="131.64782"
-         id="tspan234"><tspan
+         id="tspan111"><tspan
            dx="0 0 0 0 0 0 0 0 0 0 0 -1.5 1.5 0 0 0 0 0 0 0 0 0 0 -1.5"
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan233">perspectiva financiera. </tspan></tspan></text>
+           id="tspan110">perspectiva financiera. </tspan></tspan></text>
   </g>
   <g
      id="texto-7"
-     transform="matrix(1.0555689,0,0,1.0555689,-433.54963,371.56567)"
+     transform="matrix(1.0555689,0,0,1.0555689,-433.54963,386.95027)"
      style="display:inline">
     <rect
        style="opacity:0.8;fill:#ffeeaa;fill-rule:evenodd;stroke:#800000;stroke-width:1.34326"
@@ -1883,70 +1885,70 @@
        y="0"><tspan
          x="630.2832"
          y="14.589522"
-         id="tspan236"><tspan
+         id="tspan113"><tspan
            dx="0 0 0 -1.5 1.5 0 0 0 0 0 0 0 0 -1.5 1.5 0 0 0 0 0 0 0 0 0 -1.5"
            style="font-weight:bold;line-height:0.8;-inkscape-font-specification:'Arial, sans-serif Bold'"
-           id="tspan235">Las ganancias monetarias
+           id="tspan112">Las ganancias monetarias
 </tspan></tspan><tspan
          x="630.2832"
          y="24.189522"
-         id="tspan238"><tspan
+         id="tspan115"><tspan
            style="font-weight:bold;line-height:0.8;-inkscape-font-specification:'Arial, sans-serif Bold'"
-           id="tspan237">
+           id="tspan114">
 </tspan></tspan><tspan
          x="630.2832"
          y="34.389522"
-         id="tspan242"><tspan
+         id="tspan119"><tspan
            dx="0 0 -1.5"
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan239">La </tspan><tspan
+           id="tspan116">La </tspan><tspan
            dx="1.5 0 0 0 -1.5 1.5"
            style="font-style:italic;-inkscape-font-specification:'Arial, sans-serif Italic'"
-           id="tspan240">mano invisible</tspan><tspan
+           id="tspan117">mano invisible</tspan><tspan
            dx="-1.5 1.5 0 0 -1.5 1.5 0 0 0 0 0 0 -1.5 1.5 0 0 0 -1.5 1.5 0 0 -1.5"
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan241"> del mercado hace que </tspan></tspan><tspan
+           id="tspan118"> del mercado hace que </tspan></tspan><tspan
          x="630.2832"
          y="45.189522"
-         id="tspan244"><tspan
+         id="tspan121"><tspan
            dx="0 0 0 -1.5 1.5 0 0 0 0 0 0 0 -1.5 1.5 0 0 0 0 -1.5 1.5 0 0 0 0 0 0 0 0 -1.5 1.5 -1.5 1.5 0 0 0 0 -1.5"
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan243">las personas estén dispuesta a pagar </tspan></tspan><tspan
+           id="tspan120">las personas estén dispuesta a pagar </tspan></tspan><tspan
          x="630.2832"
          y="55.989521"
-         id="tspan246"><tspan
+         id="tspan123"><tspan
            dx="0 0 0 -1.5 1.5 0 0 0 0 0 0 0 -1.5 1.5 0 -1.5 1.5 0 0 0 0 0 -1.5 1.5 0 0 0 0 0 0 0 0 -1.5 1.5 0 0 0 -1.5 1.5 0 -1.5"
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan245">una cantidad de dinero variable. Aquí no </tspan></tspan><tspan
+           id="tspan122">una cantidad de dinero variable. Aquí no </tspan></tspan><tspan
          x="630.2832"
          y="66.78952"
-         id="tspan248"><tspan
+         id="tspan125"><tspan
            dx="0 0 0 0 0 0 0 0 0 0 0 0 -1.5 1.5 0 0 0 0 -1.5 1.5 0 0 0 0 0 0 -1.5 1.5 0 -1.5 1.5 0 0 0 0 0 -1.5"
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan247">consideramos esto, tomamos un precio </tspan></tspan><tspan
+           id="tspan124">consideramos esto, tomamos un precio </tspan></tspan><tspan
          x="630.2832"
          y="77.589516"
-         id="tspan250"><tspan
+         id="tspan127"><tspan
            dx="0 0 0 0 -1.5 1.5 0 0 0 -1.5 1.5 0 0 -1.5 1.5 0 0 0 0 0 -1.5 1.5 0 -1.5 1.5 0 0 0 0 -1.5 1.5 0 0 0 0 0 0 -1.5"
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan249">fijo para los peces. Lo mismo hacemos </tspan></tspan><tspan
+           id="tspan126">fijo para los peces. Lo mismo hacemos </tspan></tspan><tspan
          x="630.2832"
          y="88.389519"
-         id="tspan252"><tspan
+         id="tspan129"><tspan
            dx="0 0 0 -1.5 1.5 0 0 -1.5 1.5 0 0 0 0 0 -1.5 1.5 0 -1.5 1.5 0 0 0 0 0 0 0 0 -1.5 1.5 -1.5"
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan251">con los costos de operación y </tspan></tspan><tspan
+           id="tspan128">con los costos de operación y </tspan></tspan><tspan
          x="630.2832"
          y="99.189522"
-         id="tspan254"><tspan
+         id="tspan131"><tspan
            dx="0 0 0 0 0 0 0 0 0 0 -1.5 1.5 0 -1.5 1.5 0 -1.5 1.5 0 0 0 0 0 -1.5 1.5 0 0 -1.5 1.5 0 0 -1.5 1.5 0 0 0 -1.5 1.5 0 -1.5"
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan253">renovación de la flota. Eso sí, todo el </tspan></tspan><tspan
+           id="tspan130">renovación de la flota. Eso sí, todo el </tspan></tspan><tspan
          x="630.2832"
          y="109.98952"
-         id="tspan256"><tspan
+         id="tspan133"><tspan
            dx="0 0 0 0 0 0 -1.5 1.5 0 -1.5 1.5 0 0 0 0 0 0 0 0 0 0 -1.5 1.5 0 -1.5 1.5 0 0 0 0 0 -1.5"
            style="line-height:0.9;-inkscape-font-specification:'Arial, sans-serif'"
-           id="tspan255">dinero lo proporciona la pesca. </tspan></tspan></text>
+           id="tspan132">dinero lo proporciona la pesca. </tspan></tspan></text>
   </g>
 </svg>
