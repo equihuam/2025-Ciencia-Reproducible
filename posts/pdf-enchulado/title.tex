@@ -1,0 +1,80 @@
+% ================================
+%  Configuración del “paquete” de portada
+%  (ajusta estos valores una sola vez)
+% ================================
+\providecommand{\OrcidIconFile}{orcid.png}   % archivo del icono ORCID
+\providecommand{\OrcidIconHeight}{1.2ex}     % altura del icono ORCID
+\providecommand{\OrcidIconRaise}{0.5ex}      % desplazamiento vertical ORCID
+\providecommand{\OrcidIconKern}{-0.05em}     % espacio horizontal entre ORCID y nombre
+\providecommand{\AffilidKern}{-0.25em}       % espacio horizontal entre affil id y nombre
+
+\providecommand{\AffilMarkSize}{\scriptsize} % tamaño de los superíndices de afiliación
+
+\providecommand{\EmailIconSize}{\scriptsize} % tamaño del icono de sobre
+\providecommand{\EmailIconRaise}{-0.5ex}     % desplazamiento vertical del sobre
+\providecommand{\EmailIconKern}{0.05em}      % espacio horizontal entre ORCID y sobre
+
+% ================================
+%  Título y subtítulo
+% ================================
+$if(title)$
+\title{$title$$if(thanks)$\thanks{$thanks$}$endif$}
+$endif$
+
+$if(subtitle)$
+\subtitle{$subtitle$}
+$endif$
+
+% ================================
+%  Autores
+%  - Números de afiliación pequeños
+%  - ORCID como icono
+%  - Sobre (mailto) para corresponding author
+% ================================
+$for(by-author)$
+\author[
+  $if(by-author.affiliations)$
+    {\kern\AffilidKern\AffilMarkSize$for(by-author.affiliations)$$it.number$$sep$,$endfor$}
+  $endif$
+]{%
+  % Nombre
+  $by-author.name.literal$
+  %
+  % ORCID icon (opcional)
+  $if(by-author.orcid)$
+    \raisebox{\OrcidIconRaise}{\href{https://orcid.org/$by-author.orcid$}{\kern\OrcidIconKern\includegraphics[height=\OrcidIconHeight]{\OrcidIconFile}}}
+    \!%
+  $endif$
+  %
+  % Sobre para autor de correspondencia (usa attributes.corresponding)
+  $if(by-author.attributes.corresponding)$
+    $if(by-author.email)$
+      \textsuperscript{\,%
+        \kern\EmailIconKern
+        \href{mailto:$by-author.email$}{%
+          \raisebox{\EmailIconRaise}{\EmailIconSize\faIcon{envelope}}%
+        }%
+      }%
+    $else$
+      \textsuperscript{%
+        \kern\EmailIconKern
+        {\raisebox{\EmailIconRaise}{\EmailIconSize\faIcon{envelope}}}%
+      }%
+    $endif$
+  $endif$
+}
+$endfor$
+
+% ================================
+%  Afiliaciones
+% ================================
+$if(by-affiliation)$
+  $for(by-affiliation)$
+    \affil[$it.number$]{$it.name$}
+  $endfor$
+$endif$
+
+% ================================
+%  Fecha
+% ================================
+\date{$date$}
