@@ -103,7 +103,7 @@ $golden:  #f9a800 !default;
 // headings
 $presentation-heading-font: "Quicksand", sans-serif !default;
 
-/*--$presentation-heading-text-transform: uppercase !default;--*/
+// $presentation-heading-text-transform: uppercase !default;--
 $presentation-heading-font-weight: normal !default;
 $presentation-heading-letter-spacing: -0.05em;
 
@@ -2774,6 +2774,16 @@ ul:nth-of-type(15) {
   list-style-type: none;
 }
 
+@keyframes animate {
+  from { 
+    background-position: 0px 10px;
+  }
+  to {
+    background-position: 800px 10px;
+  }
+}
+
+
 .flow {
   background-image: url(https://images.unsplash.com/photo-1532153975070-2e9ab71f1b14?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80);
   background-attachment: fixed;
@@ -2781,16 +2791,6 @@ ul:nth-of-type(15) {
   -webkit-background-clip: text;
 	animation: animate 40s linear infinite;
 	font-weight: 900;
-}
-
-
-@keyframes animate {
-  from {
-    background-position: 0px 10px;
-  }
-  to {
-    background-position: 800px 10px;
-  }
 }
 
 

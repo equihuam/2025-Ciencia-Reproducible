@@ -1,5 +1,8 @@
 ---
 title: "Top Secret"
+author: Miguel
+date: 23/feb/2025
+image: "stevepb-binding-contract-948442.jpg"
 format: html
 ---
 
