@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -10,6 +10,9 @@
 
 <title>Ejemplo de uso de Postgres – Ciencia Abierta</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -22,8 +25,9 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -34,7 +38,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -66,15 +70,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
 <link href="../../images/pluma-escritura.png" rel="icon" type="image/png">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-fd053a38988e21bb3d3b0b617a2084cf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-b5cdc83d754cd650109f5c2e0467249f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -92,7 +97,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "Sin resultados",
+    "search-no-results-text": "No se han encontrado resultados",
     "search-matching-documents-text": "documentos encontrados",
     "search-copy-link-title": "Copiar el enlace en la búsqueda",
     "search-hide-matches-text": "Ocultar resultados adicionales",
@@ -138,7 +143,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta property="og:site_name" content="Ciencia Abierta">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -236,9 +241,9 @@ Figura&nbsp;1: Activar WSL desde el Panel de Control de Windows
 </figure>
 </div>
 <p>&nbsp;</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">wsl</span> <span class="at">--install</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">wsl</span> <span class="at">--install</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">wsl</span> <span class="at">--version</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">wsl</span> <span class="at">--install</span> <span class="at">-d</span> ubuntu</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">wsl</span> <span class="at">--install</span> <span class="at">-d</span> ubuntu</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <p>&nbsp;</p>
 <p>Habrá ahora un ícono con el pingüino de Linux en tu equipo, que es un enlace a una ventana de terminal directamente asociada con <strong>WSL</strong>. Más adelante será una forma de acceso conveniente, pero por lo pronto puedes seguir con la que ya tienes de <strong>Powershell</strong>.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -251,35 +256,35 @@ Figura&nbsp;1: Activar WSL desde el Panel de Control de Windows
 <section id="postgresql" class="level3">
 <h3 class="anchored" data-anchor-id="postgresql">PostgreSQL</h3>
 <p>Una vez activado <strong>WSL</strong>, tendrás, en este ejemplo, un <em>linux Ubuntu</em> en marcha. Ahora puedes instalar <em>PostgreSQL</em> en esa máquina virtual. Lo primero es acceder a <em>linux</em> mediante una consola de sistema. Bastará con que escribas <code>wsl</code> en <strong>Powershell</strong>. Puede ser la misma ventana que usaste para instalar todo, si todavía la tienes abierta, o usar el nuevo ícono del pingüino. Ahora, escribe las siguientes instrucciones en <em>linux</em>. Básicamente le estas diciendo que entre en modo de <em>superusuario</em> (<code>sudo</code>) y que vaya al servicio general de almacenamiento de aplicaciones (<code>apt-get</code>) y conseguir lo necesario para instalar <em>PostgreSQL</em> en la versión que incluye extensiones y adiciones comunes al <em>PostgreSQL</em> básico.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install postgresql postgresql-contrib</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install postgresql postgresql-contrib</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <p>La instalación inicial de <em>PostgreSQL</em> utiliza como usuario de arranque a <code>postgres</code>. Es necesario darle un <em>password</em> para lograr que <em>PostgreSQL</em> nos de acceso. El siguiente comando lo hace. Te generará una línea en la que te pide ingreses la nueva clave que quieras darle al usuario <code>postgres</code>. Escribiras pero no verás lo que escribes, por seguiridad obviamente. Al terminar aprieta la tecla <strong>enter/intro/⏎</strong></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> passwd postgres</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> passwd postgres</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Ahora, desde la misma terminal, tenemos que arrancar a <em>posgtreSQL</em> como un servico activo en el equipo. Esto lo mantendrá en operación hasta que reinicies la máquina, en cuyo caso deberás reiniciar el servicio. La instrucción para hacer esta operación es la siguiente.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">sudo</span> service postgresql start</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">sudo</span> service postgresql start</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Esta mismalínea te sirve para detener el servico (stop en lugar de start), reiniciarlo (restart) o para averiguar si está activo (status).</p>
 <p>Conviene generar un usuario de tu preferencia para interactuar con <em>PostgreSQL</em>, evitando dejar como vulnerabilidad la interacción através del usuario común <code>postgres</code>. Para crear ese nuevo usuario usa el siguiente comando.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> <span class="at">-u</span> postgres psql</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> <span class="at">-u</span> postgres psql</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="va">psql</span><span class="op">=</span># <span class="ex">alter</span> user <span class="op">&lt;</span>username<span class="op">&gt;</span> with encrypted password <span class="st">'&lt;password&gt;'</span><span class="kw">;</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ex">grant</span> all privileges on database <span class="op">&lt;</span>dbname<span class="op">&gt;</span> to <span class="op">&lt;</span>username<span class="op">&gt;</span> <span class="kw">;</span> </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ex">grant</span> all privileges on database <span class="op">&lt;</span>dbname<span class="op">&gt;</span> to <span class="op">&lt;</span>username<span class="op">&gt;</span> <span class="kw">;</span> </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Para iniciar tu interacción con <em>PostgreSQL</em> incialmente necesitará entrar a la interfaz del sistema con el siguiente comando. Puede ser que te presente alguna advertencia, pero por lo pronto no le hagas caso.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> <span class="at">-u</span> postgres createuser <span class="op">&lt;</span>username<span class="op">&gt;</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> <span class="at">-u</span> postgres createuser <span class="op">&lt;</span>username<span class="op">&gt;</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Para seguir con el ejercicio necesitamos crear una base de datos nueva. En este caso usaremos datos de ejemplo que ya se han organizado en bases de datos. Recurriremos al sitio del <a href="https://github.com/neondatabase-labs/postgres-sample-dbs">programa Neon de los Estados Unidos</a>.. Veamos la base de datos de los pasajeros del Titanic en su trágico viaje inaugural. Lo primero es preparar a <em>PostgreSQL</em> para alojarla.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> <span class="at">-u</span> postgres createdb titanic</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> <span class="at">-u</span> postgres createdb titanic</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Ahora vamos por la base de datos. En <em>linux</em> existe para este fin el comando <code>wget</code>. Conviene preparar un directorio para poner estos datos de ejemplo. Un lugar posible podría ser dentro de tu directorio <strong>home</strong>, (asocido al símbolo <strong>) quizás en <em>db-ejemplos</em>. Hay que usar <code>wget</code> con la opción </strong>-P** seguida de la ruta deseada para almacenar el contenido de la URL. Si los directorios involucrados existen, los usa, si no, los crea.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://raw.githubusercontent.com/neondatabase/postgres-sample-dbs/main/titanic.sql <span class="at">-P</span> ~/db-ejemplos</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://raw.githubusercontent.com/neondatabase/postgres-sample-dbs/main/titanic.sql <span class="at">-P</span> ~/db-ejemplos</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <p>En Windows puedes verificar si el archivo solicitado fue cargado en el lugar que quería desde elnavegador de archivos, busca al final de la lista de directorios. Debería estar el pingüino ahí. lo abres y buscas la carpeta <code>home/&lt;tu usuario&gt;/db-ejemplo</code> en la forma usual. Ahí debería estar el archivo <code>titanica.sql</code>.</p>
 <p>Si ya todo está en orden, ahora hay que cargar los datos en la base de datos <code>titanic</code>. El comando para esto es este.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">psql</span> <span class="at">-d</span> titanic <span class="at">-f</span> ~/db-ejemplos/titanic.sql</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">psql</span> <span class="at">-d</span> titanic <span class="at">-f</span> ~/db-ejemplos/titanic.sql</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Si por falta de derechos de acceso en tu linux, falla algo de lo anterior, esta es la manera de darle todos los derechos al usuario. No siempre una buena idea desde el punto de vista de la seguridad. Lo primero es entrar a la consola de <em>PostgreSQL</em> como un usuario administrativo, es decir <code>postgres</code>, por ejemplo. Nota el cambio en el encabezado de línea en tu terminal.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> <span class="at">-u</span> postgres psql</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> <span class="at">-u</span> postgres psql</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Ahora ya estas dentro de <em>PostgreSQL</em> los comandos en su lenguaje, <em>SQL</em>, son los siguientes. Nota también que cada comando es terminado con “;”, si no lo incluyes el interprete de <em>SQL</em> considera que no has terminado de construir la instrucción y por tanto no la procesa.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">alter</span> <span class="fu">user</span> <span class="op">&lt;</span>username<span class="op">&gt;</span> <span class="kw">with</span> encrypted <span class="kw">password</span> <span class="st">'&lt;password&gt;'</span>;</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">grant</span> <span class="kw">all</span> <span class="kw">privileges</span> <span class="kw">on</span> <span class="kw">database</span> <span class="op">&lt;</span>dbname<span class="op">&gt;</span> <span class="kw">to</span> <span class="op">&lt;</span>username<span class="op">&gt;</span> ; </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">alter</span> <span class="fu">user</span> <span class="op">&lt;</span>username<span class="op">&gt;</span> <span class="kw">with</span> encrypted <span class="kw">password</span> <span class="st">'&lt;password&gt;'</span>;</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">grant</span> <span class="kw">all</span> <span class="kw">privileges</span> <span class="kw">on</span> <span class="kw">database</span> <span class="op">&lt;</span>dbname<span class="op">&gt;</span> <span class="kw">to</span> <span class="op">&lt;</span>username<span class="op">&gt;</span> ; </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <p>&nbsp; Para salir de <em>PostgreSQL</em>, usa el comando <code>\q</code>) &nbsp;</p>
 <p>Una vez que todo ha sido configurado podrás tener acceso a <em>PostgreSQL</em> y hacer operaciones de todo tipo. A continuación un ejemplo muy sencillo con la bae de datos de ejemplo “titanic”.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(RPostgres, keyring, flextable, DT, stringr, tibble)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(RPostgres, keyring, flextable, DT, stringr, tibble)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Sys.setenv(psql_eq_ip = "192.168.36.214",</span></span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">#           psql_eq_port = "5432")</span></span>
@@ -300,14 +305,14 @@ Figura&nbsp;1: Activar WSL desde el Panel de Control de Windows
 <span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="at">error=</span><span class="cf">function</span>(cond) {</span>
 <span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(cond)</span>
 <span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"&lt;&lt;&lt;Conexión fallida&gt;&gt;&gt;"</span>)</span>
-<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Conectando con la base de datos…"
 [1] "¡Conexión exitosa!"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbGetQuery</span>(connec, <span class="st">"SELECT name, hometown FROM passenger;"</span>) <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbGetQuery</span>(connec, <span class="st">"SELECT name, hometown FROM passenger;"</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">datatable</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$x
 $x$filter
@@ -4440,18 +4445,18 @@ NULL</code></pre>
 <p>&nbsp; ¿Había algún mexicano en el Titanic? Por supuesto puedes ver esto en los datos que ya transferimos a una tabla en <strong>R</strong> arriba, pero para fines didácticos veamos como puedes hacer lo mismo directamente en <em>PostgreSQL</em> con <strong>SQL</strong>. Usaremos el operador <code>ILIKE</code> que permite buscar patrones de caracteres sin distinguir entre mayúsculas y minúsculas. Cosa que no hace el operado <code>LIKE</code>. <a href="https://docs.getdbt.com/sql-reference/ilike">Más sobre este operador aquí</a></p>
 <p>&nbsp;</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbGetQuery</span>(connec, <span class="st">"SELECT name, hometown FROM passenger</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbGetQuery</span>(connec, <span class="st">"SELECT name, hometown FROM passenger</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="st">                               WHERE hometown ILIKE '%mex%';"</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">flextable</span>() <span class="sc">|&gt;</span> </span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">width</span>(<span class="at">width =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_caption</span>(<span class="st">"Aquí está la respuesta"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_caption</span>(<span class="st">"Aquí está la respuesta"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="tabwid"><style>.cl-9a34fa02{}.cl-9a2fa5ca{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-9a31eccc{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-9a31fd98{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9a31fd99{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9a31fd9a{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9a31fda2{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9a31fda3{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9a31fda4{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-9a34fa02"><thead><tr style="overflow-wrap:break-word;"><th class="cl-9a31fd98"><p class="cl-9a31eccc"><span class="cl-9a2fa5ca">name</span></p></th><th class="cl-9a31fd99"><p class="cl-9a31eccc"><span class="cl-9a2fa5ca">hometown</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-9a31fd9a"><p class="cl-9a31eccc"><span class="cl-9a2fa5ca">Uruchurtu, Don. Manuel E</span></p></td><td class="cl-9a31fda2"><p class="cl-9a31eccc"><span class="cl-9a2fa5ca">Mexico City, Mexico</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9a31fda3"><p class="cl-9a31eccc"><span class="cl-9a2fa5ca">Bracken, Mr. James H</span></p></td><td class="cl-9a31fda4"><p class="cl-9a31eccc"><span class="cl-9a2fa5ca">Lake Arthur, New Mexico, US</span></p></td></tr></tbody></table></div>
 </div>
 </div>
 <p>&nbsp; Al terminar el procesamiento hay que cerrar la conexión, ¡práctica de seguridad estandar! &nbsp;</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbDisconnect</span>(connec)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbDisconnect</span>(connec)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 </section>
@@ -4459,7 +4464,7 @@ NULL</code></pre>
 <h2 class="anchored" data-anchor-id="nuestros-blogs">Nuestros blogs</h2>
 <p>Leo los coentarios que han sido registrados mediante <em>Google forms</em>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(googlesheets4, stringr, dplyr, </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(googlesheets4, stringr, dplyr, </span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>               tidyr, ggplot2, flextable, DT)</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># keyring::key_get(service = "google-sheets", "equihuam")</span></span>
@@ -4473,7 +4478,7 @@ NULL</code></pre>
 <span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>url_gs <span class="ot">&lt;-</span> <span class="st">"https://docs.google.com/spreadsheets/d/1bHAFCwoJToh8VVbfsmqx2GNaBvEiq7RYA4Pt1ljVtD4/edit?resourcekey=&amp;gid=834459562#gid=834459562"</span></span>
 <span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>datos_id <span class="ot">&lt;-</span> <span class="fu">str_extract</span>(url_gs, <span class="st">"(?&lt;=/d/)(.*?)(?=/edit)"</span>)</span>
 <span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>datos_blogs <span class="ot">&lt;-</span> <span class="fu">read_sheet</span>(datos_id)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>datos_blogs <span class="ot">&lt;-</span> <span class="fu">read_sheet</span>(datos_id)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>✔ Reading from "Opinión sobre blogs".</code></pre>
 </div>
@@ -4483,7 +4488,7 @@ NULL</code></pre>
 </div>
 <p>Los datos de valoración de los blogs son los siguientes.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>datos_blogs <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>datos_blogs <span class="sc">|&gt;</span> </span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="st">`</span><span class="at">Blog que revisaste</span><span class="st">`</span>, Comentarios) <span class="sc">|&gt;</span> </span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="st">`</span><span class="at">Blog que revisaste</span><span class="st">`</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">datatable</span>(<span class="at">colnames =</span> <span class="fu">c</span>(<span class="st">"Blog"</span>, <span class="st">"Comentarios"</span>),</span>
@@ -4495,7 +4500,7 @@ NULL</code></pre>
 <span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>                       <span class="at">width =</span> <span class="st">'150px'</span>    <span class="co"># ancho de 200 pixels</span></span>
 <span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>                       ),</span>
 <span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">list</span>(<span class="at">targets =</span> <span class="dv">1</span>,       <span class="co"># Columna 2 comentarios</span></span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>                       <span class="at">width =</span> <span class="st">'4 00px'</span>))))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>                       <span class="at">width =</span> <span class="st">'4 00px'</span>))))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="datatables html-widget html-fill-item" id="htmlwidget-7bebb9274a71f412caa3" style="width:100%;height:auto;"></div>
 <script type="application/json" data-for="htmlwidget-7bebb9274a71f412caa3">{"x":{"filter":"none","vertical":false,"data":[["Cientifi-kt","agrosistemascaf","barrenador","bosques","cientifi-kt","cientifi-kt","ecoeficiencia-en-cafe","eemms","herrameintas-sig","limon-2","moscas-2a","quercus-misteriosos"],["Los visuales son muy atractivos y la información es interesante","Me da gusto ver que has logrado poner tu blog en funcionamiento. Noto fallas de despliegue, lo que atribuyo a un poco de desorden en cómo estás conduciendo la construcción de tu blog. Vas por buen camino.\nOrden: Considero que debes cuidar mucho este aspecto. Recuerda solo agregar contenido de tu blog dentro de la carpeta posts y ahí usar un folder distinto para cada contribución/tema/sección. Tienes que decidir una estrategia de construcción.\nContenido: El contenido está muy poco desarrollado, pero veo que te estás apropiando bien del blog.\nEstética: Me gustan las imágenes que has seleccionado y me gusta tu interés estético con el que quieres colorear el blog. Vas por buen camino.","Qué bueno que el blog está publicado y funcionando. Ahora hay que \"habitarlo\"\n\nOrden: Aprecio que conservas prácticamente la misma estructura que te ofreció RStudio. Te sugiero conservar eso y seguir avanzando ordenadamente conforme agregues contenido.\nContenido: Muy poco contenido todavía, pero aprecio el esfuerzo de expresarse con originalidad. \nEstética: Hay material con potencial estético. Considera cuidar la presentación.","Aprecio que haz logrado que tu blog funcione. Tu desafío ahora es tomar control de él. Lograste publicar lo que has querido, incluso en varios formatos. EL PDF no lo pude desplegar, habrá que revisar qué está pasando.\n\nOrden: Algunas figuras no aparecen y el PDF, aunque parece estar desplegado no tiene contenido. Pienso que puede ser una cosa de orden en la estructura de archivos.\nContenido: Veo que tu contenido se va desarrollando bien. Quedan cosas de la estructura \"base\" que creo RStudio cuando iniciaste el blog\nEstética: Casi nada se aprecia con un ojo artístico. Cuida la presentación del trabajo.","Muy notable avance. Me gusta mucho lo que nos propones con tu blog.\nOrden: Bien cuidado. Sólo no me gusta que todavía esté por ahí el \"Welcom To My Blog\"  \nContenido: Interesantes contribuciones, con buen estilo enganchador.\nEstética: Me encantan tus ilustraciones, gran potencial creativo.","Me gustó mucho el blog, tiene muy buen orden y las imágenes son muy bonitas.","El blog está prácticamente como lo inicia RStudio. Necesitas adaptarlo a tus fines y  desarrollarlo mucho más.\nOrden: Vamos a ver como evoluciona del arreglo default\nContenido: Hay que poblar el blog.\nEstética: No encontré nada para valorar el potencial del autor.","Orden: Me parece que va avanzando bien tu blog. No me gusta que todavía haya residuos del formato inicial.\nContenido: Me gusta lo que has escrito, pero falta desarrollar un poco más el concepto general de blog.\nEstética: Muy bonita ilustración, considero \"potencial de desarrollo\", pero no hay que quedarse aquí.","Está muy bien que el blog ya esté funcionando. Noto que falta algo de orden en el montaje de la propuesta, de ahí que la imagen no despliegue.\nOrden: Más cuidado. Hay un error de dedo en el nombre del blog.   \nContenido: Veo potencial, falta desarrollarlo\nEstética: Muy poco para valorar esto, conviene cuidar la propuesta de diseño de las ilustraciones que se incorporarán.","Se ve prometedor el contenido que haz agregado. No me gusta que mantengas todavía los residuos de lo que te propuso RStudio cuando creo el proyecto. EL PDF no despliega, hay que corregirlo.\n \nOrden: La falla del PDF probablemente tiene que ver con el orden en el trabajo. Hay que revisarlo.\nContenido: Me gustan los textos que pude leer. \nEstética: Muy poco todavía, pero veo potencial.","Orden: Hay que mejorar la estructura de archivos para evitar sorpresas tristes. Algunas imágenes no despliegan, imagino que por falta de orden en el control de archivos.\nContenido: Se ve un buen avance. Quedan restos del contenido de inicio de un proyecto Quarto que hace RStudio. Hay que corregir eso. Todavía no siento que haya suficiente contenido enganchador.\nEstética: hay potencial en las ilustraciones","Qué bueno que lograste publicar tu blog. Eso está funcionando. Lograste cambiar el nombre de tu sitio. Falta todo lo demás. El Blog ya es tuyo, ahora tendrás que habitarlo y hacerlo tuyo. Cuidar la ortografía (disfraces, no disfrazes)\n\nOrden: Muy poco desarrollo para juzgar si estás siguiendo un buen hábito para construir tu blog. Cuida tu proceso de desarrollo.\nContenido: Falta poblar tu blog por completo.\nEstética: No hay nada como para valorar este aspecto."]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Blog<\/th>\n      <th>Comentarios<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"autoWidth":true,"columnDefs":[{"targets":0,"width":"150px"},{"targets":1,"width":"4 00px"},{"name":"Blog que revisaste","targets":0},{"name":"Comentarios","targets":1}],"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
@@ -4504,7 +4509,7 @@ NULL</code></pre>
 <p>Ahora, solo resta actualizar la base de datos con la información recabada. Esto lo haremos con un <code>INSERT</code> de <strong>SQL</strong>.</p>
 <p>Para evitar mostrar datos confidenciales utilicé variables de sistema creadas con la función <code>Sys.setenv(subase_.... = &lt;&lt;valor&gt;&gt;</code>, recupero los valores con <code>Sys.getenv("subase...")</code>. Las claves secretas las protegí con keyring.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sys.setenv(subase_eq_ip = "aws-0-us-east-1.pooler.supabase.com",</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sys.setenv(subase_eq_ip = "aws-0-us-east-1.pooler.supabase.com",</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co">#            subase_eq_port = "6543")</span></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tryCatch</span>({</span>
@@ -4523,12 +4528,12 @@ NULL</code></pre>
 <span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a><span class="at">error=</span><span class="cf">function</span>(cond) {</span>
 <span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(cond)</span>
 <span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"&lt;&lt;&lt;Conexión fallida&gt;&gt;&gt;"</span>)</span>
-<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Conectando con la base de datos…
 ¡Conexión exitosa!</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Instruccióneṡpara insertar los datos</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Instruccióneṡpara insertar los datos</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> (<span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(datos_blogs<span class="sc">$</span><span class="st">`</span><span class="at">Dirección de correo electrónico</span><span class="st">`</span>)))</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>{</span>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  blog <span class="ot">&lt;-</span> datos_blogs<span class="sc">$</span><span class="st">`</span><span class="at">Blog que revisaste</span><span class="st">`</span>[i]</span>
@@ -4541,7 +4546,7 @@ NULL</code></pre>
 <span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dbExecute</span>(connect, blog_insert)</span>
 <span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "ecoeficiencia-en-cafe"
 [1] "moscas-2a"
@@ -4559,16 +4564,16 @@ NULL</code></pre>
 </div>
 <p>Ahora consigo los datos combinados tomados de las dos tablas para conocer el autor del blog y los comentarios que ha recibido.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbGetQuery</span>(connect, <span class="st">"SELECT nombre, comentario </span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbGetQuery</span>(connect, <span class="st">"SELECT nombre, comentario </span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="st">                           FROM </span><span class="sc">\"</span><span class="st">comentarios</span><span class="sc">\"</span><span class="st">, </span><span class="sc">\"</span><span class="st">datosBlogs</span><span class="sc">\"</span></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="st">                           WHERE  </span><span class="sc">\"</span><span class="st">blogId</span><span class="sc">\"</span><span class="st"> = </span><span class="sc">\"</span><span class="st">session_id</span><span class="sc">\"</span><span class="st">;"</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">flextable</span>() <span class="sc">|&gt;</span> </span>
 <span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">width</span>(<span class="at">j =</span> <span class="dv">1</span>, <span class="at">width =</span> <span class="dv">2</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">width</span>(<span class="at">j =</span> <span class="dv">2</span>, <span class="at">width =</span> <span class="dv">5</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">width</span>(<span class="at">j =</span> <span class="dv">2</span>, <span class="at">width =</span> <span class="dv">5</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="tabwid"><style>.cl-9de26c98{}.cl-9dda0530{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-9ddda3e8{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-9dddd200{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9dddd214{width:5in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9dddd215{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9dddd216{width:5in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9dddd21e{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9dddd21f{width:5in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-9de26c98"><thead><tr style="overflow-wrap:break-word;"><th class="cl-9dddd200"><p class="cl-9ddda3e8"><span class="cl-9dda0530">nombre</span></p></th><th class="cl-9dddd214"><p class="cl-9ddda3e8"><span class="cl-9dda0530">comentario</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Adrian Canova Herrandiz</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">El blog está prácticamente como lo inicia RStudio. Necesitas adaptarlo a tus fines y  desarrollarlo mucho más.</span><br><span class="cl-9dda0530">Orden: Vamos a ver como evoluciona del arreglo default</span><br><span class="cl-9dda0530">Contenido: Hay que poblar el blog.</span><br><span class="cl-9dda0530">Estética: No encontré nada para valorar el potencial del autor.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Ana Maria Salazar Suárez </span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Orden: Hay que mejorar la estructura de archivos para evitar sorpresas tristes. Algunas imágenes no despliegan, imagino que por falta de orden en el control de archivos.</span><br><span class="cl-9dda0530">Contenido: Se ve un buen avance. Quedan restos del contenido de inicio de un proyecto Quarto que hace RStudio. Hay que corregir eso. Todavía no siento que haya suficiente contenido enganchador.</span><br><span class="cl-9dda0530">Estética: hay potencial en las ilustraciones</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Andrés De la Rosa Portilla</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Está muy bien que el blog ya esté funcionando. Noto que falta algo de orden en el montaje de la propuesta, de ahí que la imagen no despliegue.</span><br><span class="cl-9dda0530">Orden: Más cuidado. Hay un error de dedo en el nombre del blog.   </span><br><span class="cl-9dda0530">Contenido: Veo potencial, falta desarrollarlo</span><br><span class="cl-9dda0530">Estética: Muy poco para valorar esto, conviene cuidar la propuesta de diseño de las ilustraciones que se incorporarán.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Denisse Alejandra Diaz Romo</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Muy notable avance. Me gusta mucho lo que nos propones con tu blog.</span><br><span class="cl-9dda0530">Orden: Bien cuidado. Sólo no me gusta que todavía esté por ahí el "Welcom To My Blog"  </span><br><span class="cl-9dda0530">Contenido: Interesantes contribuciones, con buen estilo enganchador.</span><br><span class="cl-9dda0530">Estética: Me encantan tus ilustraciones, gran potencial creativo.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Juan José Hernández Viveros</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Qué bueno que el blog está publicado y funcionando. Ahora hay que "habitarlo"</span><br><br><span class="cl-9dda0530">Orden: Aprecio que conservas prácticamente la misma estructura que te ofreció RStudio. Te sugiero conservar eso y seguir avanzando ordenadamente conforme agregues contenido.</span><br><span class="cl-9dda0530">Contenido: Muy poco contenido todavía, pero aprecio el esfuerzo de expresarse con originalidad. </span><br><span class="cl-9dda0530">Estética: Hay material con potencial estético. Considera cuidar la presentación.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Katya Margarita Zaleta Salas</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Se ve prometedor el contenido que haz agregado. No me gusta que mantengas todavía los residuos de lo que te propuso RStudio cuando creo el proyecto. EL PDF no despliega, hay que corregirlo.</span><br><span class="cl-9dda0530"> </span><br><span class="cl-9dda0530">Orden: La falla del PDF probablemente tiene que ver con el orden en el trabajo. Hay que revisarlo.</span><br><span class="cl-9dda0530">Contenido: Me gustan los textos que pude leer. </span><br><span class="cl-9dda0530">Estética: Muy poco todavía, pero veo potencial.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Nohemy Cardona Claros</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Orden: Me parece que va avanzando bien tu blog. No me gusta que todavía haya residuos del formato inicial.</span><br><span class="cl-9dda0530">Contenido: Me gusta lo que has escrito, pero falta desarrollar un poco más el concepto general de blog.</span><br><span class="cl-9dda0530">Estética: Muy bonita ilustración, considero "potencial de desarrollo", pero no hay que quedarse aquí.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Pita</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Aprecio que haz logrado que tu blog funcione. Tu desafío ahora es tomar control de él. Lograste publicar lo que has querido, incluso en varios formatos. EL PDF no lo pude desplegar, habrá que revisar qué está pasando.</span><br><br><span class="cl-9dda0530">Orden: Algunas figuras no aparecen y el PDF, aunque parece estar desplegado no tiene contenido. Pienso que puede ser una cosa de orden en la estructura de archivos.</span><br><span class="cl-9dda0530">Contenido: Veo que tu contenido se va desarrollando bien. Quedan cosas de la estructura "base" que creo RStudio cuando iniciaste el blog</span><br><span class="cl-9dda0530">Estética: Casi nada se aprecia con un ojo artístico. Cuida la presentación del trabajo.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Victoria Carolina</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Qué bueno que lograste publicar tu blog. Eso está funcionando. Lograste cambiar el nombre de tu sitio. Falta todo lo demás. El Blog ya es tuyo, ahora tendrás que habitarlo y hacerlo tuyo. Cuidar la ortografía (disfraces, no disfrazes)</span><br><br><span class="cl-9dda0530">Orden: Muy poco desarrollo para juzgar si estás siguiendo un buen hábito para construir tu blog. Cuida tu proceso de desarrollo.</span><br><span class="cl-9dda0530">Contenido: Falta poblar tu blog por completo.</span><br><span class="cl-9dda0530">Estética: No hay nada como para valorar este aspecto.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Denisse Alejandra Diaz Romo</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Me gustó mucho el blog, tiene muy buen orden y las imágenes son muy bonitas.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Ulises Zarate</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Me da gusto ver que has logrado poner tu blog en funcionamiento. Noto fallas de despliegue, lo que atribuyo a un poco de desorden en cómo estás conduciendo la construcción de tu blog. Vas por buen camino.</span><br><span class="cl-9dda0530">Orden: Considero que debes cuidar mucho este aspecto. Recuerda solo agregar contenido de tu blog dentro de la carpeta posts y ahí usar un folder distinto para cada contribución/tema/sección. Tienes que decidir una estrategia de construcción.</span><br><span class="cl-9dda0530">Contenido: El contenido está muy poco desarrollado, pero veo que te estás apropiando bien del blog.</span><br><span class="cl-9dda0530">Estética: Me gustan las imágenes que has seleccionado y me gusta tu interés estético con el que quieres colorear el blog. Vas por buen camino.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Denisse Alejandra Diaz Romo</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Los visuales son muy atractivos y la información es interesante</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Adrian Canova Herrandiz</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">El blog está prácticamente como lo inicia RStudio. Necesitas adaptarlo a tus fines y  desarrollarlo mucho más.</span><br><span class="cl-9dda0530">Orden: Vamos a ver como evoluciona del arreglo default</span><br><span class="cl-9dda0530">Contenido: Hay que poblar el blog.</span><br><span class="cl-9dda0530">Estética: No encontré nada para valorar el potencial del autor.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Ana Maria Salazar Suárez </span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Orden: Hay que mejorar la estructura de archivos para evitar sorpresas tristes. Algunas imágenes no despliegan, imagino que por falta de orden en el control de archivos.</span><br><span class="cl-9dda0530">Contenido: Se ve un buen avance. Quedan restos del contenido de inicio de un proyecto Quarto que hace RStudio. Hay que corregir eso. Todavía no siento que haya suficiente contenido enganchador.</span><br><span class="cl-9dda0530">Estética: hay potencial en las ilustraciones</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Andrés De la Rosa Portilla</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Está muy bien que el blog ya esté funcionando. Noto que falta algo de orden en el montaje de la propuesta, de ahí que la imagen no despliegue.</span><br><span class="cl-9dda0530">Orden: Más cuidado. Hay un error de dedo en el nombre del blog.   </span><br><span class="cl-9dda0530">Contenido: Veo potencial, falta desarrollarlo</span><br><span class="cl-9dda0530">Estética: Muy poco para valorar esto, conviene cuidar la propuesta de diseño de las ilustraciones que se incorporarán.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Denisse Alejandra Diaz Romo</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Muy notable avance. Me gusta mucho lo que nos propones con tu blog.</span><br><span class="cl-9dda0530">Orden: Bien cuidado. Sólo no me gusta que todavía esté por ahí el "Welcom To My Blog"  </span><br><span class="cl-9dda0530">Contenido: Interesantes contribuciones, con buen estilo enganchador.</span><br><span class="cl-9dda0530">Estética: Me encantan tus ilustraciones, gran potencial creativo.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Juan José Hernández Viveros</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Qué bueno que el blog está publicado y funcionando. Ahora hay que "habitarlo"</span><br><br><span class="cl-9dda0530">Orden: Aprecio que conservas prácticamente la misma estructura que te ofreció RStudio. Te sugiero conservar eso y seguir avanzando ordenadamente conforme agregues contenido.</span><br><span class="cl-9dda0530">Contenido: Muy poco contenido todavía, pero aprecio el esfuerzo de expresarse con originalidad. </span><br><span class="cl-9dda0530">Estética: Hay material con potencial estético. Considera cuidar la presentación.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Katya Margarita Zaleta Salas</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Se ve prometedor el contenido que haz agregado. No me gusta que mantengas todavía los residuos de lo que te propuso RStudio cuando creo el proyecto. EL PDF no despliega, hay que corregirlo.</span><br><span class="cl-9dda0530"> </span><br><span class="cl-9dda0530">Orden: La falla del PDF probablemente tiene que ver con el orden en el trabajo. Hay que revisarlo.</span><br><span class="cl-9dda0530">Contenido: Me gustan los textos que pude leer. </span><br><span class="cl-9dda0530">Estética: Muy poco todavía, pero veo potencial.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Nohemy Cardona Claros</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Orden: Me parece que va avanzando bien tu blog. No me gusta que todavía haya residuos del formato inicial.</span><br><span class="cl-9dda0530">Contenido: Me gusta lo que has escrito, pero falta desarrollar un poco más el concepto general de blog.</span><br><span class="cl-9dda0530">Estética: Muy bonita ilustración, considero "potencial de desarrollo", pero no hay que quedarse aquí.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Pita</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Aprecio que haz logrado que tu blog funcione. Tu desafío ahora es tomar control de él. Lograste publicar lo que has querido, incluso en varios formatos. EL PDF no lo pude desplegar, habrá que revisar qué está pasando.</span><br><br><span class="cl-9dda0530">Orden: Algunas figuras no aparecen y el PDF, aunque parece estar desplegado no tiene contenido. Pienso que puede ser una cosa de orden en la estructura de archivos.</span><br><span class="cl-9dda0530">Contenido: Veo que tu contenido se va desarrollando bien. Quedan cosas de la estructura "base" que creo RStudio cuando iniciaste el blog</span><br><span class="cl-9dda0530">Estética: Casi nada se aprecia con un ojo artístico. Cuida la presentación del trabajo.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Victoria Carolina</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Qué bueno que lograste publicar tu blog. Eso está funcionando. Lograste cambiar el nombre de tu sitio. Falta todo lo demás. El Blog ya es tuyo, ahora tendrás que habitarlo y hacerlo tuyo. Cuidar la ortografía (disfraces, no disfrazes)</span><br><br><span class="cl-9dda0530">Orden: Muy poco desarrollo para juzgar si estás siguiendo un buen hábito para construir tu blog. Cuida tu proceso de desarrollo.</span><br><span class="cl-9dda0530">Contenido: Falta poblar tu blog por completo.</span><br><span class="cl-9dda0530">Estética: No hay nada como para valorar este aspecto.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Denisse Alejandra Diaz Romo</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Me gustó mucho el blog, tiene muy buen orden y las imágenes son muy bonitas.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Ulises Zarate</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Me da gusto ver que has logrado poner tu blog en funcionamiento. Noto fallas de despliegue, lo que atribuyo a un poco de desorden en cómo estás conduciendo la construcción de tu blog. Vas por buen camino.</span><br><span class="cl-9dda0530">Orden: Considero que debes cuidar mucho este aspecto. Recuerda solo agregar contenido de tu blog dentro de la carpeta posts y ahí usar un folder distinto para cada contribución/tema/sección. Tienes que decidir una estrategia de construcción.</span><br><span class="cl-9dda0530">Contenido: El contenido está muy poco desarrollado, pero veo que te estás apropiando bien del blog.</span><br><span class="cl-9dda0530">Estética: Me gustan las imágenes que has seleccionado y me gusta tu interés estético con el que quieres colorear el blog. Vas por buen camino.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Denisse Alejandra Diaz Romo</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Los visuales son muy atractivos y la información es interesante</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Adrian Canova Herrandiz</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">El blog está prácticamente como lo inicia RStudio. Necesitas adaptarlo a tus fines y  desarrollarlo mucho más.</span><br><span class="cl-9dda0530">Orden: Vamos a ver como evoluciona del arreglo default</span><br><span class="cl-9dda0530">Contenido: Hay que poblar el blog.</span><br><span class="cl-9dda0530">Estética: No encontré nada para valorar el potencial del autor.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Ana Maria Salazar Suárez </span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Orden: Hay que mejorar la estructura de archivos para evitar sorpresas tristes. Algunas imágenes no despliegan, imagino que por falta de orden en el control de archivos.</span><br><span class="cl-9dda0530">Contenido: Se ve un buen avance. Quedan restos del contenido de inicio de un proyecto Quarto que hace RStudio. Hay que corregir eso. Todavía no siento que haya suficiente contenido enganchador.</span><br><span class="cl-9dda0530">Estética: hay potencial en las ilustraciones</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Andrés De la Rosa Portilla</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Está muy bien que el blog ya esté funcionando. Noto que falta algo de orden en el montaje de la propuesta, de ahí que la imagen no despliegue.</span><br><span class="cl-9dda0530">Orden: Más cuidado. Hay un error de dedo en el nombre del blog.   </span><br><span class="cl-9dda0530">Contenido: Veo potencial, falta desarrollarlo</span><br><span class="cl-9dda0530">Estética: Muy poco para valorar esto, conviene cuidar la propuesta de diseño de las ilustraciones que se incorporarán.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Denisse Alejandra Diaz Romo</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Muy notable avance. Me gusta mucho lo que nos propones con tu blog.</span><br><span class="cl-9dda0530">Orden: Bien cuidado. Sólo no me gusta que todavía esté por ahí el "Welcom To My Blog"  </span><br><span class="cl-9dda0530">Contenido: Interesantes contribuciones, con buen estilo enganchador.</span><br><span class="cl-9dda0530">Estética: Me encantan tus ilustraciones, gran potencial creativo.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Juan José Hernández Viveros</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Qué bueno que el blog está publicado y funcionando. Ahora hay que "habitarlo"</span><br><br><span class="cl-9dda0530">Orden: Aprecio que conservas prácticamente la misma estructura que te ofreció RStudio. Te sugiero conservar eso y seguir avanzando ordenadamente conforme agregues contenido.</span><br><span class="cl-9dda0530">Contenido: Muy poco contenido todavía, pero aprecio el esfuerzo de expresarse con originalidad. </span><br><span class="cl-9dda0530">Estética: Hay material con potencial estético. Considera cuidar la presentación.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Katya Margarita Zaleta Salas</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Se ve prometedor el contenido que haz agregado. No me gusta que mantengas todavía los residuos de lo que te propuso RStudio cuando creo el proyecto. EL PDF no despliega, hay que corregirlo.</span><br><span class="cl-9dda0530"> </span><br><span class="cl-9dda0530">Orden: La falla del PDF probablemente tiene que ver con el orden en el trabajo. Hay que revisarlo.</span><br><span class="cl-9dda0530">Contenido: Me gustan los textos que pude leer. </span><br><span class="cl-9dda0530">Estética: Muy poco todavía, pero veo potencial.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Nohemy Cardona Claros</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Orden: Me parece que va avanzando bien tu blog. No me gusta que todavía haya residuos del formato inicial.</span><br><span class="cl-9dda0530">Contenido: Me gusta lo que has escrito, pero falta desarrollar un poco más el concepto general de blog.</span><br><span class="cl-9dda0530">Estética: Muy bonita ilustración, considero "potencial de desarrollo", pero no hay que quedarse aquí.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Pita</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Aprecio que haz logrado que tu blog funcione. Tu desafío ahora es tomar control de él. Lograste publicar lo que has querido, incluso en varios formatos. EL PDF no lo pude desplegar, habrá que revisar qué está pasando.</span><br><br><span class="cl-9dda0530">Orden: Algunas figuras no aparecen y el PDF, aunque parece estar desplegado no tiene contenido. Pienso que puede ser una cosa de orden en la estructura de archivos.</span><br><span class="cl-9dda0530">Contenido: Veo que tu contenido se va desarrollando bien. Quedan cosas de la estructura "base" que creo RStudio cuando iniciaste el blog</span><br><span class="cl-9dda0530">Estética: Casi nada se aprecia con un ojo artístico. Cuida la presentación del trabajo.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Victoria Carolina</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Qué bueno que lograste publicar tu blog. Eso está funcionando. Lograste cambiar el nombre de tu sitio. Falta todo lo demás. El Blog ya es tuyo, ahora tendrás que habitarlo y hacerlo tuyo. Cuidar la ortografía (disfraces, no disfrazes)</span><br><br><span class="cl-9dda0530">Orden: Muy poco desarrollo para juzgar si estás siguiendo un buen hábito para construir tu blog. Cuida tu proceso de desarrollo.</span><br><span class="cl-9dda0530">Contenido: Falta poblar tu blog por completo.</span><br><span class="cl-9dda0530">Estética: No hay nada como para valorar este aspecto.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Denisse Alejandra Diaz Romo</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Me gustó mucho el blog, tiene muy buen orden y las imágenes son muy bonitas.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Ulises Zarate</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Me da gusto ver que has logrado poner tu blog en funcionamiento. Noto fallas de despliegue, lo que atribuyo a un poco de desorden en cómo estás conduciendo la construcción de tu blog. Vas por buen camino.</span><br><span class="cl-9dda0530">Orden: Considero que debes cuidar mucho este aspecto. Recuerda solo agregar contenido de tu blog dentro de la carpeta posts y ahí usar un folder distinto para cada contribución/tema/sección. Tienes que decidir una estrategia de construcción.</span><br><span class="cl-9dda0530">Contenido: El contenido está muy poco desarrollado, pero veo que te estás apropiando bien del blog.</span><br><span class="cl-9dda0530">Estética: Me gustan las imágenes que has seleccionado y me gusta tu interés estético con el que quieres colorear el blog. Vas por buen camino.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Denisse Alejandra Diaz Romo</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Los visuales son muy atractivos y la información es interesante</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Adrian Canova Herrandiz</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">El blog está prácticamente como lo inicia RStudio. Necesitas adaptarlo a tus fines y  desarrollarlo mucho más.</span><br><span class="cl-9dda0530">Orden: Vamos a ver como evoluciona del arreglo default</span><br><span class="cl-9dda0530">Contenido: Hay que poblar el blog.</span><br><span class="cl-9dda0530">Estética: No encontré nada para valorar el potencial del autor.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Ana Maria Salazar Suárez </span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Orden: Hay que mejorar la estructura de archivos para evitar sorpresas tristes. Algunas imágenes no despliegan, imagino que por falta de orden en el control de archivos.</span><br><span class="cl-9dda0530">Contenido: Se ve un buen avance. Quedan restos del contenido de inicio de un proyecto Quarto que hace RStudio. Hay que corregir eso. Todavía no siento que haya suficiente contenido enganchador.</span><br><span class="cl-9dda0530">Estética: hay potencial en las ilustraciones</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Andrés De la Rosa Portilla</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Está muy bien que el blog ya esté funcionando. Noto que falta algo de orden en el montaje de la propuesta, de ahí que la imagen no despliegue.</span><br><span class="cl-9dda0530">Orden: Más cuidado. Hay un error de dedo en el nombre del blog.   </span><br><span class="cl-9dda0530">Contenido: Veo potencial, falta desarrollarlo</span><br><span class="cl-9dda0530">Estética: Muy poco para valorar esto, conviene cuidar la propuesta de diseño de las ilustraciones que se incorporarán.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Denisse Alejandra Diaz Romo</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Muy notable avance. Me gusta mucho lo que nos propones con tu blog.</span><br><span class="cl-9dda0530">Orden: Bien cuidado. Sólo no me gusta que todavía esté por ahí el "Welcom To My Blog"  </span><br><span class="cl-9dda0530">Contenido: Interesantes contribuciones, con buen estilo enganchador.</span><br><span class="cl-9dda0530">Estética: Me encantan tus ilustraciones, gran potencial creativo.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Juan José Hernández Viveros</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Qué bueno que el blog está publicado y funcionando. Ahora hay que "habitarlo"</span><br><br><span class="cl-9dda0530">Orden: Aprecio que conservas prácticamente la misma estructura que te ofreció RStudio. Te sugiero conservar eso y seguir avanzando ordenadamente conforme agregues contenido.</span><br><span class="cl-9dda0530">Contenido: Muy poco contenido todavía, pero aprecio el esfuerzo de expresarse con originalidad. </span><br><span class="cl-9dda0530">Estética: Hay material con potencial estético. Considera cuidar la presentación.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Katya Margarita Zaleta Salas</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Se ve prometedor el contenido que haz agregado. No me gusta que mantengas todavía los residuos de lo que te propuso RStudio cuando creo el proyecto. EL PDF no despliega, hay que corregirlo.</span><br><span class="cl-9dda0530"> </span><br><span class="cl-9dda0530">Orden: La falla del PDF probablemente tiene que ver con el orden en el trabajo. Hay que revisarlo.</span><br><span class="cl-9dda0530">Contenido: Me gustan los textos que pude leer. </span><br><span class="cl-9dda0530">Estética: Muy poco todavía, pero veo potencial.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Nohemy Cardona Claros</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Orden: Me parece que va avanzando bien tu blog. No me gusta que todavía haya residuos del formato inicial.</span><br><span class="cl-9dda0530">Contenido: Me gusta lo que has escrito, pero falta desarrollar un poco más el concepto general de blog.</span><br><span class="cl-9dda0530">Estética: Muy bonita ilustración, considero "potencial de desarrollo", pero no hay que quedarse aquí.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Pita</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Aprecio que haz logrado que tu blog funcione. Tu desafío ahora es tomar control de él. Lograste publicar lo que has querido, incluso en varios formatos. EL PDF no lo pude desplegar, habrá que revisar qué está pasando.</span><br><br><span class="cl-9dda0530">Orden: Algunas figuras no aparecen y el PDF, aunque parece estar desplegado no tiene contenido. Pienso que puede ser una cosa de orden en la estructura de archivos.</span><br><span class="cl-9dda0530">Contenido: Veo que tu contenido se va desarrollando bien. Quedan cosas de la estructura "base" que creo RStudio cuando iniciaste el blog</span><br><span class="cl-9dda0530">Estética: Casi nada se aprecia con un ojo artístico. Cuida la presentación del trabajo.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Victoria Carolina</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Qué bueno que lograste publicar tu blog. Eso está funcionando. Lograste cambiar el nombre de tu sitio. Falta todo lo demás. El Blog ya es tuyo, ahora tendrás que habitarlo y hacerlo tuyo. Cuidar la ortografía (disfraces, no disfrazes)</span><br><br><span class="cl-9dda0530">Orden: Muy poco desarrollo para juzgar si estás siguiendo un buen hábito para construir tu blog. Cuida tu proceso de desarrollo.</span><br><span class="cl-9dda0530">Contenido: Falta poblar tu blog por completo.</span><br><span class="cl-9dda0530">Estética: No hay nada como para valorar este aspecto.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Denisse Alejandra Diaz Romo</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Me gustó mucho el blog, tiene muy buen orden y las imágenes son muy bonitas.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Ulises Zarate</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Me da gusto ver que has logrado poner tu blog en funcionamiento. Noto fallas de despliegue, lo que atribuyo a un poco de desorden en cómo estás conduciendo la construcción de tu blog. Vas por buen camino.</span><br><span class="cl-9dda0530">Orden: Considero que debes cuidar mucho este aspecto. Recuerda solo agregar contenido de tu blog dentro de la carpeta posts y ahí usar un folder distinto para cada contribución/tema/sección. Tienes que decidir una estrategia de construcción.</span><br><span class="cl-9dda0530">Contenido: El contenido está muy poco desarrollado, pero veo que te estás apropiando bien del blog.</span><br><span class="cl-9dda0530">Estética: Me gustan las imágenes que has seleccionado y me gusta tu interés estético con el que quieres colorear el blog. Vas por buen camino.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Denisse Alejandra Diaz Romo</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Los visuales son muy atractivos y la información es interesante</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Adrian Canova Herrandiz</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">El blog está prácticamente como lo inicia RStudio. Necesitas adaptarlo a tus fines y  desarrollarlo mucho más.</span><br><span class="cl-9dda0530">Orden: Vamos a ver como evoluciona del arreglo default</span><br><span class="cl-9dda0530">Contenido: Hay que poblar el blog.</span><br><span class="cl-9dda0530">Estética: No encontré nada para valorar el potencial del autor.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Ana Maria Salazar Suárez </span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Orden: Hay que mejorar la estructura de archivos para evitar sorpresas tristes. Algunas imágenes no despliegan, imagino que por falta de orden en el control de archivos.</span><br><span class="cl-9dda0530">Contenido: Se ve un buen avance. Quedan restos del contenido de inicio de un proyecto Quarto que hace RStudio. Hay que corregir eso. Todavía no siento que haya suficiente contenido enganchador.</span><br><span class="cl-9dda0530">Estética: hay potencial en las ilustraciones</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Andrés De la Rosa Portilla</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Está muy bien que el blog ya esté funcionando. Noto que falta algo de orden en el montaje de la propuesta, de ahí que la imagen no despliegue.</span><br><span class="cl-9dda0530">Orden: Más cuidado. Hay un error de dedo en el nombre del blog.   </span><br><span class="cl-9dda0530">Contenido: Veo potencial, falta desarrollarlo</span><br><span class="cl-9dda0530">Estética: Muy poco para valorar esto, conviene cuidar la propuesta de diseño de las ilustraciones que se incorporarán.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Denisse Alejandra Diaz Romo</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Muy notable avance. Me gusta mucho lo que nos propones con tu blog.</span><br><span class="cl-9dda0530">Orden: Bien cuidado. Sólo no me gusta que todavía esté por ahí el "Welcom To My Blog"  </span><br><span class="cl-9dda0530">Contenido: Interesantes contribuciones, con buen estilo enganchador.</span><br><span class="cl-9dda0530">Estética: Me encantan tus ilustraciones, gran potencial creativo.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Juan José Hernández Viveros</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Qué bueno que el blog está publicado y funcionando. Ahora hay que "habitarlo"</span><br><br><span class="cl-9dda0530">Orden: Aprecio que conservas prácticamente la misma estructura que te ofreció RStudio. Te sugiero conservar eso y seguir avanzando ordenadamente conforme agregues contenido.</span><br><span class="cl-9dda0530">Contenido: Muy poco contenido todavía, pero aprecio el esfuerzo de expresarse con originalidad. </span><br><span class="cl-9dda0530">Estética: Hay material con potencial estético. Considera cuidar la presentación.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Katya Margarita Zaleta Salas</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Se ve prometedor el contenido que haz agregado. No me gusta que mantengas todavía los residuos de lo que te propuso RStudio cuando creo el proyecto. EL PDF no despliega, hay que corregirlo.</span><br><span class="cl-9dda0530"> </span><br><span class="cl-9dda0530">Orden: La falla del PDF probablemente tiene que ver con el orden en el trabajo. Hay que revisarlo.</span><br><span class="cl-9dda0530">Contenido: Me gustan los textos que pude leer. </span><br><span class="cl-9dda0530">Estética: Muy poco todavía, pero veo potencial.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Nohemy Cardona Claros</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Orden: Me parece que va avanzando bien tu blog. No me gusta que todavía haya residuos del formato inicial.</span><br><span class="cl-9dda0530">Contenido: Me gusta lo que has escrito, pero falta desarrollar un poco más el concepto general de blog.</span><br><span class="cl-9dda0530">Estética: Muy bonita ilustración, considero "potencial de desarrollo", pero no hay que quedarse aquí.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Pita</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Aprecio que haz logrado que tu blog funcione. Tu desafío ahora es tomar control de él. Lograste publicar lo que has querido, incluso en varios formatos. EL PDF no lo pude desplegar, habrá que revisar qué está pasando.</span><br><br><span class="cl-9dda0530">Orden: Algunas figuras no aparecen y el PDF, aunque parece estar desplegado no tiene contenido. Pienso que puede ser una cosa de orden en la estructura de archivos.</span><br><span class="cl-9dda0530">Contenido: Veo que tu contenido se va desarrollando bien. Quedan cosas de la estructura "base" que creo RStudio cuando iniciaste el blog</span><br><span class="cl-9dda0530">Estética: Casi nada se aprecia con un ojo artístico. Cuida la presentación del trabajo.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Victoria Carolina</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Qué bueno que lograste publicar tu blog. Eso está funcionando. Lograste cambiar el nombre de tu sitio. Falta todo lo demás. El Blog ya es tuyo, ahora tendrás que habitarlo y hacerlo tuyo. Cuidar la ortografía (disfraces, no disfrazes)</span><br><br><span class="cl-9dda0530">Orden: Muy poco desarrollo para juzgar si estás siguiendo un buen hábito para construir tu blog. Cuida tu proceso de desarrollo.</span><br><span class="cl-9dda0530">Contenido: Falta poblar tu blog por completo.</span><br><span class="cl-9dda0530">Estética: No hay nada como para valorar este aspecto.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Denisse Alejandra Diaz Romo</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Me gustó mucho el blog, tiene muy buen orden y las imágenes son muy bonitas.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Ulises Zarate</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Me da gusto ver que has logrado poner tu blog en funcionamiento. Noto fallas de despliegue, lo que atribuyo a un poco de desorden en cómo estás conduciendo la construcción de tu blog. Vas por buen camino.</span><br><span class="cl-9dda0530">Orden: Considero que debes cuidar mucho este aspecto. Recuerda solo agregar contenido de tu blog dentro de la carpeta posts y ahí usar un folder distinto para cada contribución/tema/sección. Tienes que decidir una estrategia de construcción.</span><br><span class="cl-9dda0530">Contenido: El contenido está muy poco desarrollado, pero veo que te estás apropiando bien del blog.</span><br><span class="cl-9dda0530">Estética: Me gustan las imágenes que has seleccionado y me gusta tu interés estético con el que quieres colorear el blog. Vas por buen camino.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Denisse Alejandra Diaz Romo</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Los visuales son muy atractivos y la información es interesante</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Adrian Canova Herrandiz</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">El blog está prácticamente como lo inicia RStudio. Necesitas adaptarlo a tus fines y  desarrollarlo mucho más.</span><br><span class="cl-9dda0530">Orden: Vamos a ver como evoluciona del arreglo default</span><br><span class="cl-9dda0530">Contenido: Hay que poblar el blog.</span><br><span class="cl-9dda0530">Estética: No encontré nada para valorar el potencial del autor.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Ana Maria Salazar Suárez </span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Orden: Hay que mejorar la estructura de archivos para evitar sorpresas tristes. Algunas imágenes no despliegan, imagino que por falta de orden en el control de archivos.</span><br><span class="cl-9dda0530">Contenido: Se ve un buen avance. Quedan restos del contenido de inicio de un proyecto Quarto que hace RStudio. Hay que corregir eso. Todavía no siento que haya suficiente contenido enganchador.</span><br><span class="cl-9dda0530">Estética: hay potencial en las ilustraciones</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Andrés De la Rosa Portilla</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Está muy bien que el blog ya esté funcionando. Noto que falta algo de orden en el montaje de la propuesta, de ahí que la imagen no despliegue.</span><br><span class="cl-9dda0530">Orden: Más cuidado. Hay un error de dedo en el nombre del blog.   </span><br><span class="cl-9dda0530">Contenido: Veo potencial, falta desarrollarlo</span><br><span class="cl-9dda0530">Estética: Muy poco para valorar esto, conviene cuidar la propuesta de diseño de las ilustraciones que se incorporarán.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Denisse Alejandra Diaz Romo</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Muy notable avance. Me gusta mucho lo que nos propones con tu blog.</span><br><span class="cl-9dda0530">Orden: Bien cuidado. Sólo no me gusta que todavía esté por ahí el "Welcom To My Blog"  </span><br><span class="cl-9dda0530">Contenido: Interesantes contribuciones, con buen estilo enganchador.</span><br><span class="cl-9dda0530">Estética: Me encantan tus ilustraciones, gran potencial creativo.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Juan José Hernández Viveros</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Qué bueno que el blog está publicado y funcionando. Ahora hay que "habitarlo"</span><br><br><span class="cl-9dda0530">Orden: Aprecio que conservas prácticamente la misma estructura que te ofreció RStudio. Te sugiero conservar eso y seguir avanzando ordenadamente conforme agregues contenido.</span><br><span class="cl-9dda0530">Contenido: Muy poco contenido todavía, pero aprecio el esfuerzo de expresarse con originalidad. </span><br><span class="cl-9dda0530">Estética: Hay material con potencial estético. Considera cuidar la presentación.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Katya Margarita Zaleta Salas</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Se ve prometedor el contenido que haz agregado. No me gusta que mantengas todavía los residuos de lo que te propuso RStudio cuando creo el proyecto. EL PDF no despliega, hay que corregirlo.</span><br><span class="cl-9dda0530"> </span><br><span class="cl-9dda0530">Orden: La falla del PDF probablemente tiene que ver con el orden en el trabajo. Hay que revisarlo.</span><br><span class="cl-9dda0530">Contenido: Me gustan los textos que pude leer. </span><br><span class="cl-9dda0530">Estética: Muy poco todavía, pero veo potencial.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Nohemy Cardona Claros</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Orden: Me parece que va avanzando bien tu blog. No me gusta que todavía haya residuos del formato inicial.</span><br><span class="cl-9dda0530">Contenido: Me gusta lo que has escrito, pero falta desarrollar un poco más el concepto general de blog.</span><br><span class="cl-9dda0530">Estética: Muy bonita ilustración, considero "potencial de desarrollo", pero no hay que quedarse aquí.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Pita</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Aprecio que haz logrado que tu blog funcione. Tu desafío ahora es tomar control de él. Lograste publicar lo que has querido, incluso en varios formatos. EL PDF no lo pude desplegar, habrá que revisar qué está pasando.</span><br><br><span class="cl-9dda0530">Orden: Algunas figuras no aparecen y el PDF, aunque parece estar desplegado no tiene contenido. Pienso que puede ser una cosa de orden en la estructura de archivos.</span><br><span class="cl-9dda0530">Contenido: Veo que tu contenido se va desarrollando bien. Quedan cosas de la estructura "base" que creo RStudio cuando iniciaste el blog</span><br><span class="cl-9dda0530">Estética: Casi nada se aprecia con un ojo artístico. Cuida la presentación del trabajo.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Victoria Carolina</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Qué bueno que lograste publicar tu blog. Eso está funcionando. Lograste cambiar el nombre de tu sitio. Falta todo lo demás. El Blog ya es tuyo, ahora tendrás que habitarlo y hacerlo tuyo. Cuidar la ortografía (disfraces, no disfrazes)</span><br><br><span class="cl-9dda0530">Orden: Muy poco desarrollo para juzgar si estás siguiendo un buen hábito para construir tu blog. Cuida tu proceso de desarrollo.</span><br><span class="cl-9dda0530">Contenido: Falta poblar tu blog por completo.</span><br><span class="cl-9dda0530">Estética: No hay nada como para valorar este aspecto.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Denisse Alejandra Diaz Romo</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Me gustó mucho el blog, tiene muy buen orden y las imágenes son muy bonitas.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Ulises Zarate</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Me da gusto ver que has logrado poner tu blog en funcionamiento. Noto fallas de despliegue, lo que atribuyo a un poco de desorden en cómo estás conduciendo la construcción de tu blog. Vas por buen camino.</span><br><span class="cl-9dda0530">Orden: Considero que debes cuidar mucho este aspecto. Recuerda solo agregar contenido de tu blog dentro de la carpeta posts y ahí usar un folder distinto para cada contribución/tema/sección. Tienes que decidir una estrategia de construcción.</span><br><span class="cl-9dda0530">Contenido: El contenido está muy poco desarrollado, pero veo que te estás apropiando bien del blog.</span><br><span class="cl-9dda0530">Estética: Me gustan las imágenes que has seleccionado y me gusta tu interés estético con el que quieres colorear el blog. Vas por buen camino.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Denisse Alejandra Diaz Romo</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Los visuales son muy atractivos y la información es interesante</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Adrian Canova Herrandiz</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">El blog está prácticamente como lo inicia RStudio. Necesitas adaptarlo a tus fines y  desarrollarlo mucho más.</span><br><span class="cl-9dda0530">Orden: Vamos a ver como evoluciona del arreglo default</span><br><span class="cl-9dda0530">Contenido: Hay que poblar el blog.</span><br><span class="cl-9dda0530">Estética: No encontré nada para valorar el potencial del autor.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Ana Maria Salazar Suárez </span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Orden: Hay que mejorar la estructura de archivos para evitar sorpresas tristes. Algunas imágenes no despliegan, imagino que por falta de orden en el control de archivos.</span><br><span class="cl-9dda0530">Contenido: Se ve un buen avance. Quedan restos del contenido de inicio de un proyecto Quarto que hace RStudio. Hay que corregir eso. Todavía no siento que haya suficiente contenido enganchador.</span><br><span class="cl-9dda0530">Estética: hay potencial en las ilustraciones</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Andrés De la Rosa Portilla</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Está muy bien que el blog ya esté funcionando. Noto que falta algo de orden en el montaje de la propuesta, de ahí que la imagen no despliegue.</span><br><span class="cl-9dda0530">Orden: Más cuidado. Hay un error de dedo en el nombre del blog.   </span><br><span class="cl-9dda0530">Contenido: Veo potencial, falta desarrollarlo</span><br><span class="cl-9dda0530">Estética: Muy poco para valorar esto, conviene cuidar la propuesta de diseño de las ilustraciones que se incorporarán.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Denisse Alejandra Diaz Romo</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Muy notable avance. Me gusta mucho lo que nos propones con tu blog.</span><br><span class="cl-9dda0530">Orden: Bien cuidado. Sólo no me gusta que todavía esté por ahí el "Welcom To My Blog"  </span><br><span class="cl-9dda0530">Contenido: Interesantes contribuciones, con buen estilo enganchador.</span><br><span class="cl-9dda0530">Estética: Me encantan tus ilustraciones, gran potencial creativo.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Juan José Hernández Viveros</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Qué bueno que el blog está publicado y funcionando. Ahora hay que "habitarlo"</span><br><br><span class="cl-9dda0530">Orden: Aprecio que conservas prácticamente la misma estructura que te ofreció RStudio. Te sugiero conservar eso y seguir avanzando ordenadamente conforme agregues contenido.</span><br><span class="cl-9dda0530">Contenido: Muy poco contenido todavía, pero aprecio el esfuerzo de expresarse con originalidad. </span><br><span class="cl-9dda0530">Estética: Hay material con potencial estético. Considera cuidar la presentación.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Katya Margarita Zaleta Salas</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Se ve prometedor el contenido que haz agregado. No me gusta que mantengas todavía los residuos de lo que te propuso RStudio cuando creo el proyecto. EL PDF no despliega, hay que corregirlo.</span><br><span class="cl-9dda0530"> </span><br><span class="cl-9dda0530">Orden: La falla del PDF probablemente tiene que ver con el orden en el trabajo. Hay que revisarlo.</span><br><span class="cl-9dda0530">Contenido: Me gustan los textos que pude leer. </span><br><span class="cl-9dda0530">Estética: Muy poco todavía, pero veo potencial.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Nohemy Cardona Claros</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Orden: Me parece que va avanzando bien tu blog. No me gusta que todavía haya residuos del formato inicial.</span><br><span class="cl-9dda0530">Contenido: Me gusta lo que has escrito, pero falta desarrollar un poco más el concepto general de blog.</span><br><span class="cl-9dda0530">Estética: Muy bonita ilustración, considero "potencial de desarrollo", pero no hay que quedarse aquí.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Pita</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Aprecio que haz logrado que tu blog funcione. Tu desafío ahora es tomar control de él. Lograste publicar lo que has querido, incluso en varios formatos. EL PDF no lo pude desplegar, habrá que revisar qué está pasando.</span><br><br><span class="cl-9dda0530">Orden: Algunas figuras no aparecen y el PDF, aunque parece estar desplegado no tiene contenido. Pienso que puede ser una cosa de orden en la estructura de archivos.</span><br><span class="cl-9dda0530">Contenido: Veo que tu contenido se va desarrollando bien. Quedan cosas de la estructura "base" que creo RStudio cuando iniciaste el blog</span><br><span class="cl-9dda0530">Estética: Casi nada se aprecia con un ojo artístico. Cuida la presentación del trabajo.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Victoria Carolina</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Qué bueno que lograste publicar tu blog. Eso está funcionando. Lograste cambiar el nombre de tu sitio. Falta todo lo demás. El Blog ya es tuyo, ahora tendrás que habitarlo y hacerlo tuyo. Cuidar la ortografía (disfraces, no disfrazes)</span><br><br><span class="cl-9dda0530">Orden: Muy poco desarrollo para juzgar si estás siguiendo un buen hábito para construir tu blog. Cuida tu proceso de desarrollo.</span><br><span class="cl-9dda0530">Contenido: Falta poblar tu blog por completo.</span><br><span class="cl-9dda0530">Estética: No hay nada como para valorar este aspecto.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Denisse Alejandra Diaz Romo</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Me gustó mucho el blog, tiene muy buen orden y las imágenes son muy bonitas.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Ulises Zarate</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Me da gusto ver que has logrado poner tu blog en funcionamiento. Noto fallas de despliegue, lo que atribuyo a un poco de desorden en cómo estás conduciendo la construcción de tu blog. Vas por buen camino.</span><br><span class="cl-9dda0530">Orden: Considero que debes cuidar mucho este aspecto. Recuerda solo agregar contenido de tu blog dentro de la carpeta posts y ahí usar un folder distinto para cada contribución/tema/sección. Tienes que decidir una estrategia de construcción.</span><br><span class="cl-9dda0530">Contenido: El contenido está muy poco desarrollado, pero veo que te estás apropiando bien del blog.</span><br><span class="cl-9dda0530">Estética: Me gustan las imágenes que has seleccionado y me gusta tu interés estético con el que quieres colorear el blog. Vas por buen camino.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Denisse Alejandra Diaz Romo</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Los visuales son muy atractivos y la información es interesante</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Adrian Canova Herrandiz</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">El blog está prácticamente como lo inicia RStudio. Necesitas adaptarlo a tus fines y  desarrollarlo mucho más.</span><br><span class="cl-9dda0530">Orden: Vamos a ver como evoluciona del arreglo default</span><br><span class="cl-9dda0530">Contenido: Hay que poblar el blog.</span><br><span class="cl-9dda0530">Estética: No encontré nada para valorar el potencial del autor.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Ana Maria Salazar Suárez </span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Orden: Hay que mejorar la estructura de archivos para evitar sorpresas tristes. Algunas imágenes no despliegan, imagino que por falta de orden en el control de archivos.</span><br><span class="cl-9dda0530">Contenido: Se ve un buen avance. Quedan restos del contenido de inicio de un proyecto Quarto que hace RStudio. Hay que corregir eso. Todavía no siento que haya suficiente contenido enganchador.</span><br><span class="cl-9dda0530">Estética: hay potencial en las ilustraciones</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Andrés De la Rosa Portilla</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Está muy bien que el blog ya esté funcionando. Noto que falta algo de orden en el montaje de la propuesta, de ahí que la imagen no despliegue.</span><br><span class="cl-9dda0530">Orden: Más cuidado. Hay un error de dedo en el nombre del blog.   </span><br><span class="cl-9dda0530">Contenido: Veo potencial, falta desarrollarlo</span><br><span class="cl-9dda0530">Estética: Muy poco para valorar esto, conviene cuidar la propuesta de diseño de las ilustraciones que se incorporarán.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Denisse Alejandra Diaz Romo</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Muy notable avance. Me gusta mucho lo que nos propones con tu blog.</span><br><span class="cl-9dda0530">Orden: Bien cuidado. Sólo no me gusta que todavía esté por ahí el "Welcom To My Blog"  </span><br><span class="cl-9dda0530">Contenido: Interesantes contribuciones, con buen estilo enganchador.</span><br><span class="cl-9dda0530">Estética: Me encantan tus ilustraciones, gran potencial creativo.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Juan José Hernández Viveros</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Qué bueno que el blog está publicado y funcionando. Ahora hay que "habitarlo"</span><br><br><span class="cl-9dda0530">Orden: Aprecio que conservas prácticamente la misma estructura que te ofreció RStudio. Te sugiero conservar eso y seguir avanzando ordenadamente conforme agregues contenido.</span><br><span class="cl-9dda0530">Contenido: Muy poco contenido todavía, pero aprecio el esfuerzo de expresarse con originalidad. </span><br><span class="cl-9dda0530">Estética: Hay material con potencial estético. Considera cuidar la presentación.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Katya Margarita Zaleta Salas</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Se ve prometedor el contenido que haz agregado. No me gusta que mantengas todavía los residuos de lo que te propuso RStudio cuando creo el proyecto. EL PDF no despliega, hay que corregirlo.</span><br><span class="cl-9dda0530"> </span><br><span class="cl-9dda0530">Orden: La falla del PDF probablemente tiene que ver con el orden en el trabajo. Hay que revisarlo.</span><br><span class="cl-9dda0530">Contenido: Me gustan los textos que pude leer. </span><br><span class="cl-9dda0530">Estética: Muy poco todavía, pero veo potencial.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Nohemy Cardona Claros</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Orden: Me parece que va avanzando bien tu blog. No me gusta que todavía haya residuos del formato inicial.</span><br><span class="cl-9dda0530">Contenido: Me gusta lo que has escrito, pero falta desarrollar un poco más el concepto general de blog.</span><br><span class="cl-9dda0530">Estética: Muy bonita ilustración, considero "potencial de desarrollo", pero no hay que quedarse aquí.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Pita</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Aprecio que haz logrado que tu blog funcione. Tu desafío ahora es tomar control de él. Lograste publicar lo que has querido, incluso en varios formatos. EL PDF no lo pude desplegar, habrá que revisar qué está pasando.</span><br><br><span class="cl-9dda0530">Orden: Algunas figuras no aparecen y el PDF, aunque parece estar desplegado no tiene contenido. Pienso que puede ser una cosa de orden en la estructura de archivos.</span><br><span class="cl-9dda0530">Contenido: Veo que tu contenido se va desarrollando bien. Quedan cosas de la estructura "base" que creo RStudio cuando iniciaste el blog</span><br><span class="cl-9dda0530">Estética: Casi nada se aprecia con un ojo artístico. Cuida la presentación del trabajo.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Victoria Carolina</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Qué bueno que lograste publicar tu blog. Eso está funcionando. Lograste cambiar el nombre de tu sitio. Falta todo lo demás. El Blog ya es tuyo, ahora tendrás que habitarlo y hacerlo tuyo. Cuidar la ortografía (disfraces, no disfrazes)</span><br><br><span class="cl-9dda0530">Orden: Muy poco desarrollo para juzgar si estás siguiendo un buen hábito para construir tu blog. Cuida tu proceso de desarrollo.</span><br><span class="cl-9dda0530">Contenido: Falta poblar tu blog por completo.</span><br><span class="cl-9dda0530">Estética: No hay nada como para valorar este aspecto.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Denisse Alejandra Diaz Romo</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Me gustó mucho el blog, tiene muy buen orden y las imágenes son muy bonitas.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Ulises Zarate</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Me da gusto ver que has logrado poner tu blog en funcionamiento. Noto fallas de despliegue, lo que atribuyo a un poco de desorden en cómo estás conduciendo la construcción de tu blog. Vas por buen camino.</span><br><span class="cl-9dda0530">Orden: Considero que debes cuidar mucho este aspecto. Recuerda solo agregar contenido de tu blog dentro de la carpeta posts y ahí usar un folder distinto para cada contribución/tema/sección. Tienes que decidir una estrategia de construcción.</span><br><span class="cl-9dda0530">Contenido: El contenido está muy poco desarrollado, pero veo que te estás apropiando bien del blog.</span><br><span class="cl-9dda0530">Estética: Me gustan las imágenes que has seleccionado y me gusta tu interés estético con el que quieres colorear el blog. Vas por buen camino.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Denisse Alejandra Diaz Romo</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Los visuales son muy atractivos y la información es interesante</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Adrian Canova Herrandiz</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">El blog está prácticamente como lo inicia RStudio. Necesitas adaptarlo a tus fines y  desarrollarlo mucho más.</span><br><span class="cl-9dda0530">Orden: Vamos a ver como evoluciona del arreglo default</span><br><span class="cl-9dda0530">Contenido: Hay que poblar el blog.</span><br><span class="cl-9dda0530">Estética: No encontré nada para valorar el potencial del autor.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Ana Maria Salazar Suárez </span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Orden: Hay que mejorar la estructura de archivos para evitar sorpresas tristes. Algunas imágenes no despliegan, imagino que por falta de orden en el control de archivos.</span><br><span class="cl-9dda0530">Contenido: Se ve un buen avance. Quedan restos del contenido de inicio de un proyecto Quarto que hace RStudio. Hay que corregir eso. Todavía no siento que haya suficiente contenido enganchador.</span><br><span class="cl-9dda0530">Estética: hay potencial en las ilustraciones</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Andrés De la Rosa Portilla</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Está muy bien que el blog ya esté funcionando. Noto que falta algo de orden en el montaje de la propuesta, de ahí que la imagen no despliegue.</span><br><span class="cl-9dda0530">Orden: Más cuidado. Hay un error de dedo en el nombre del blog.   </span><br><span class="cl-9dda0530">Contenido: Veo potencial, falta desarrollarlo</span><br><span class="cl-9dda0530">Estética: Muy poco para valorar esto, conviene cuidar la propuesta de diseño de las ilustraciones que se incorporarán.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Denisse Alejandra Diaz Romo</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Muy notable avance. Me gusta mucho lo que nos propones con tu blog.</span><br><span class="cl-9dda0530">Orden: Bien cuidado. Sólo no me gusta que todavía esté por ahí el "Welcom To My Blog"  </span><br><span class="cl-9dda0530">Contenido: Interesantes contribuciones, con buen estilo enganchador.</span><br><span class="cl-9dda0530">Estética: Me encantan tus ilustraciones, gran potencial creativo.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Juan José Hernández Viveros</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Qué bueno que el blog está publicado y funcionando. Ahora hay que "habitarlo"</span><br><br><span class="cl-9dda0530">Orden: Aprecio que conservas prácticamente la misma estructura que te ofreció RStudio. Te sugiero conservar eso y seguir avanzando ordenadamente conforme agregues contenido.</span><br><span class="cl-9dda0530">Contenido: Muy poco contenido todavía, pero aprecio el esfuerzo de expresarse con originalidad. </span><br><span class="cl-9dda0530">Estética: Hay material con potencial estético. Considera cuidar la presentación.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Katya Margarita Zaleta Salas</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Se ve prometedor el contenido que haz agregado. No me gusta que mantengas todavía los residuos de lo que te propuso RStudio cuando creo el proyecto. EL PDF no despliega, hay que corregirlo.</span><br><span class="cl-9dda0530"> </span><br><span class="cl-9dda0530">Orden: La falla del PDF probablemente tiene que ver con el orden en el trabajo. Hay que revisarlo.</span><br><span class="cl-9dda0530">Contenido: Me gustan los textos que pude leer. </span><br><span class="cl-9dda0530">Estética: Muy poco todavía, pero veo potencial.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Nohemy Cardona Claros</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Orden: Me parece que va avanzando bien tu blog. No me gusta que todavía haya residuos del formato inicial.</span><br><span class="cl-9dda0530">Contenido: Me gusta lo que has escrito, pero falta desarrollar un poco más el concepto general de blog.</span><br><span class="cl-9dda0530">Estética: Muy bonita ilustración, considero "potencial de desarrollo", pero no hay que quedarse aquí.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Pita</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Aprecio que haz logrado que tu blog funcione. Tu desafío ahora es tomar control de él. Lograste publicar lo que has querido, incluso en varios formatos. EL PDF no lo pude desplegar, habrá que revisar qué está pasando.</span><br><br><span class="cl-9dda0530">Orden: Algunas figuras no aparecen y el PDF, aunque parece estar desplegado no tiene contenido. Pienso que puede ser una cosa de orden en la estructura de archivos.</span><br><span class="cl-9dda0530">Contenido: Veo que tu contenido se va desarrollando bien. Quedan cosas de la estructura "base" que creo RStudio cuando iniciaste el blog</span><br><span class="cl-9dda0530">Estética: Casi nada se aprecia con un ojo artístico. Cuida la presentación del trabajo.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Victoria Carolina</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Qué bueno que lograste publicar tu blog. Eso está funcionando. Lograste cambiar el nombre de tu sitio. Falta todo lo demás. El Blog ya es tuyo, ahora tendrás que habitarlo y hacerlo tuyo. Cuidar la ortografía (disfraces, no disfrazes)</span><br><br><span class="cl-9dda0530">Orden: Muy poco desarrollo para juzgar si estás siguiendo un buen hábito para construir tu blog. Cuida tu proceso de desarrollo.</span><br><span class="cl-9dda0530">Contenido: Falta poblar tu blog por completo.</span><br><span class="cl-9dda0530">Estética: No hay nada como para valorar este aspecto.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Denisse Alejandra Diaz Romo</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Me gustó mucho el blog, tiene muy buen orden y las imágenes son muy bonitas.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Ulises Zarate</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Me da gusto ver que has logrado poner tu blog en funcionamiento. Noto fallas de despliegue, lo que atribuyo a un poco de desorden en cómo estás conduciendo la construcción de tu blog. Vas por buen camino.</span><br><span class="cl-9dda0530">Orden: Considero que debes cuidar mucho este aspecto. Recuerda solo agregar contenido de tu blog dentro de la carpeta posts y ahí usar un folder distinto para cada contribución/tema/sección. Tienes que decidir una estrategia de construcción.</span><br><span class="cl-9dda0530">Contenido: El contenido está muy poco desarrollado, pero veo que te estás apropiando bien del blog.</span><br><span class="cl-9dda0530">Estética: Me gustan las imágenes que has seleccionado y me gusta tu interés estético con el que quieres colorear el blog. Vas por buen camino.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Denisse Alejandra Diaz Romo</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Los visuales son muy atractivos y la información es interesante</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Adrian Canova Herrandiz</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">El blog está prácticamente como lo inicia RStudio. Necesitas adaptarlo a tus fines y  desarrollarlo mucho más.</span><br><span class="cl-9dda0530">Orden: Vamos a ver como evoluciona del arreglo default</span><br><span class="cl-9dda0530">Contenido: Hay que poblar el blog.</span><br><span class="cl-9dda0530">Estética: No encontré nada para valorar el potencial del autor.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Ana Maria Salazar Suárez </span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Orden: Hay que mejorar la estructura de archivos para evitar sorpresas tristes. Algunas imágenes no despliegan, imagino que por falta de orden en el control de archivos.</span><br><span class="cl-9dda0530">Contenido: Se ve un buen avance. Quedan restos del contenido de inicio de un proyecto Quarto que hace RStudio. Hay que corregir eso. Todavía no siento que haya suficiente contenido enganchador.</span><br><span class="cl-9dda0530">Estética: hay potencial en las ilustraciones</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Andrés De la Rosa Portilla</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Está muy bien que el blog ya esté funcionando. Noto que falta algo de orden en el montaje de la propuesta, de ahí que la imagen no despliegue.</span><br><span class="cl-9dda0530">Orden: Más cuidado. Hay un error de dedo en el nombre del blog.   </span><br><span class="cl-9dda0530">Contenido: Veo potencial, falta desarrollarlo</span><br><span class="cl-9dda0530">Estética: Muy poco para valorar esto, conviene cuidar la propuesta de diseño de las ilustraciones que se incorporarán.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Denisse Alejandra Diaz Romo</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Muy notable avance. Me gusta mucho lo que nos propones con tu blog.</span><br><span class="cl-9dda0530">Orden: Bien cuidado. Sólo no me gusta que todavía esté por ahí el "Welcom To My Blog"  </span><br><span class="cl-9dda0530">Contenido: Interesantes contribuciones, con buen estilo enganchador.</span><br><span class="cl-9dda0530">Estética: Me encantan tus ilustraciones, gran potencial creativo.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Juan José Hernández Viveros</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Qué bueno que el blog está publicado y funcionando. Ahora hay que "habitarlo"</span><br><br><span class="cl-9dda0530">Orden: Aprecio que conservas prácticamente la misma estructura que te ofreció RStudio. Te sugiero conservar eso y seguir avanzando ordenadamente conforme agregues contenido.</span><br><span class="cl-9dda0530">Contenido: Muy poco contenido todavía, pero aprecio el esfuerzo de expresarse con originalidad. </span><br><span class="cl-9dda0530">Estética: Hay material con potencial estético. Considera cuidar la presentación.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Katya Margarita Zaleta Salas</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Se ve prometedor el contenido que haz agregado. No me gusta que mantengas todavía los residuos de lo que te propuso RStudio cuando creo el proyecto. EL PDF no despliega, hay que corregirlo.</span><br><span class="cl-9dda0530"> </span><br><span class="cl-9dda0530">Orden: La falla del PDF probablemente tiene que ver con el orden en el trabajo. Hay que revisarlo.</span><br><span class="cl-9dda0530">Contenido: Me gustan los textos que pude leer. </span><br><span class="cl-9dda0530">Estética: Muy poco todavía, pero veo potencial.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Nohemy Cardona Claros</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Orden: Me parece que va avanzando bien tu blog. No me gusta que todavía haya residuos del formato inicial.</span><br><span class="cl-9dda0530">Contenido: Me gusta lo que has escrito, pero falta desarrollar un poco más el concepto general de blog.</span><br><span class="cl-9dda0530">Estética: Muy bonita ilustración, considero "potencial de desarrollo", pero no hay que quedarse aquí.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Pita</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Aprecio que haz logrado que tu blog funcione. Tu desafío ahora es tomar control de él. Lograste publicar lo que has querido, incluso en varios formatos. EL PDF no lo pude desplegar, habrá que revisar qué está pasando.</span><br><br><span class="cl-9dda0530">Orden: Algunas figuras no aparecen y el PDF, aunque parece estar desplegado no tiene contenido. Pienso que puede ser una cosa de orden en la estructura de archivos.</span><br><span class="cl-9dda0530">Contenido: Veo que tu contenido se va desarrollando bien. Quedan cosas de la estructura "base" que creo RStudio cuando iniciaste el blog</span><br><span class="cl-9dda0530">Estética: Casi nada se aprecia con un ojo artístico. Cuida la presentación del trabajo.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Victoria Carolina</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Qué bueno que lograste publicar tu blog. Eso está funcionando. Lograste cambiar el nombre de tu sitio. Falta todo lo demás. El Blog ya es tuyo, ahora tendrás que habitarlo y hacerlo tuyo. Cuidar la ortografía (disfraces, no disfrazes)</span><br><br><span class="cl-9dda0530">Orden: Muy poco desarrollo para juzgar si estás siguiendo un buen hábito para construir tu blog. Cuida tu proceso de desarrollo.</span><br><span class="cl-9dda0530">Contenido: Falta poblar tu blog por completo.</span><br><span class="cl-9dda0530">Estética: No hay nada como para valorar este aspecto.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Denisse Alejandra Diaz Romo</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Me gustó mucho el blog, tiene muy buen orden y las imágenes son muy bonitas.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Ulises Zarate</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Me da gusto ver que has logrado poner tu blog en funcionamiento. Noto fallas de despliegue, lo que atribuyo a un poco de desorden en cómo estás conduciendo la construcción de tu blog. Vas por buen camino.</span><br><span class="cl-9dda0530">Orden: Considero que debes cuidar mucho este aspecto. Recuerda solo agregar contenido de tu blog dentro de la carpeta posts y ahí usar un folder distinto para cada contribución/tema/sección. Tienes que decidir una estrategia de construcción.</span><br><span class="cl-9dda0530">Contenido: El contenido está muy poco desarrollado, pero veo que te estás apropiando bien del blog.</span><br><span class="cl-9dda0530">Estética: Me gustan las imágenes que has seleccionado y me gusta tu interés estético con el que quieres colorear el blog. Vas por buen camino.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Denisse Alejandra Diaz Romo</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Los visuales son muy atractivos y la información es interesante</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Adrian Canova Herrandiz</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">El blog está prácticamente como lo inicia RStudio. Necesitas adaptarlo a tus fines y  desarrollarlo mucho más.</span><br><span class="cl-9dda0530">Orden: Vamos a ver como evoluciona del arreglo default</span><br><span class="cl-9dda0530">Contenido: Hay que poblar el blog.</span><br><span class="cl-9dda0530">Estética: No encontré nada para valorar el potencial del autor.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Ana Maria Salazar Suárez </span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Orden: Hay que mejorar la estructura de archivos para evitar sorpresas tristes. Algunas imágenes no despliegan, imagino que por falta de orden en el control de archivos.</span><br><span class="cl-9dda0530">Contenido: Se ve un buen avance. Quedan restos del contenido de inicio de un proyecto Quarto que hace RStudio. Hay que corregir eso. Todavía no siento que haya suficiente contenido enganchador.</span><br><span class="cl-9dda0530">Estética: hay potencial en las ilustraciones</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Andrés De la Rosa Portilla</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Está muy bien que el blog ya esté funcionando. Noto que falta algo de orden en el montaje de la propuesta, de ahí que la imagen no despliegue.</span><br><span class="cl-9dda0530">Orden: Más cuidado. Hay un error de dedo en el nombre del blog.   </span><br><span class="cl-9dda0530">Contenido: Veo potencial, falta desarrollarlo</span><br><span class="cl-9dda0530">Estética: Muy poco para valorar esto, conviene cuidar la propuesta de diseño de las ilustraciones que se incorporarán.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Denisse Alejandra Diaz Romo</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Muy notable avance. Me gusta mucho lo que nos propones con tu blog.</span><br><span class="cl-9dda0530">Orden: Bien cuidado. Sólo no me gusta que todavía esté por ahí el "Welcom To My Blog"  </span><br><span class="cl-9dda0530">Contenido: Interesantes contribuciones, con buen estilo enganchador.</span><br><span class="cl-9dda0530">Estética: Me encantan tus ilustraciones, gran potencial creativo.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Juan José Hernández Viveros</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Qué bueno que el blog está publicado y funcionando. Ahora hay que "habitarlo"</span><br><br><span class="cl-9dda0530">Orden: Aprecio que conservas prácticamente la misma estructura que te ofreció RStudio. Te sugiero conservar eso y seguir avanzando ordenadamente conforme agregues contenido.</span><br><span class="cl-9dda0530">Contenido: Muy poco contenido todavía, pero aprecio el esfuerzo de expresarse con originalidad. </span><br><span class="cl-9dda0530">Estética: Hay material con potencial estético. Considera cuidar la presentación.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Katya Margarita Zaleta Salas</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Se ve prometedor el contenido que haz agregado. No me gusta que mantengas todavía los residuos de lo que te propuso RStudio cuando creo el proyecto. EL PDF no despliega, hay que corregirlo.</span><br><span class="cl-9dda0530"> </span><br><span class="cl-9dda0530">Orden: La falla del PDF probablemente tiene que ver con el orden en el trabajo. Hay que revisarlo.</span><br><span class="cl-9dda0530">Contenido: Me gustan los textos que pude leer. </span><br><span class="cl-9dda0530">Estética: Muy poco todavía, pero veo potencial.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Nohemy Cardona Claros</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Orden: Me parece que va avanzando bien tu blog. No me gusta que todavía haya residuos del formato inicial.</span><br><span class="cl-9dda0530">Contenido: Me gusta lo que has escrito, pero falta desarrollar un poco más el concepto general de blog.</span><br><span class="cl-9dda0530">Estética: Muy bonita ilustración, considero "potencial de desarrollo", pero no hay que quedarse aquí.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Pita</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Aprecio que haz logrado que tu blog funcione. Tu desafío ahora es tomar control de él. Lograste publicar lo que has querido, incluso en varios formatos. EL PDF no lo pude desplegar, habrá que revisar qué está pasando.</span><br><br><span class="cl-9dda0530">Orden: Algunas figuras no aparecen y el PDF, aunque parece estar desplegado no tiene contenido. Pienso que puede ser una cosa de orden en la estructura de archivos.</span><br><span class="cl-9dda0530">Contenido: Veo que tu contenido se va desarrollando bien. Quedan cosas de la estructura "base" que creo RStudio cuando iniciaste el blog</span><br><span class="cl-9dda0530">Estética: Casi nada se aprecia con un ojo artístico. Cuida la presentación del trabajo.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Victoria Carolina</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Qué bueno que lograste publicar tu blog. Eso está funcionando. Lograste cambiar el nombre de tu sitio. Falta todo lo demás. El Blog ya es tuyo, ahora tendrás que habitarlo y hacerlo tuyo. Cuidar la ortografía (disfraces, no disfrazes)</span><br><br><span class="cl-9dda0530">Orden: Muy poco desarrollo para juzgar si estás siguiendo un buen hábito para construir tu blog. Cuida tu proceso de desarrollo.</span><br><span class="cl-9dda0530">Contenido: Falta poblar tu blog por completo.</span><br><span class="cl-9dda0530">Estética: No hay nada como para valorar este aspecto.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Denisse Alejandra Diaz Romo</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Me gustó mucho el blog, tiene muy buen orden y las imágenes son muy bonitas.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Ulises Zarate</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Me da gusto ver que has logrado poner tu blog en funcionamiento. Noto fallas de despliegue, lo que atribuyo a un poco de desorden en cómo estás conduciendo la construcción de tu blog. Vas por buen camino.</span><br><span class="cl-9dda0530">Orden: Considero que debes cuidar mucho este aspecto. Recuerda solo agregar contenido de tu blog dentro de la carpeta posts y ahí usar un folder distinto para cada contribución/tema/sección. Tienes que decidir una estrategia de construcción.</span><br><span class="cl-9dda0530">Contenido: El contenido está muy poco desarrollado, pero veo que te estás apropiando bien del blog.</span><br><span class="cl-9dda0530">Estética: Me gustan las imágenes que has seleccionado y me gusta tu interés estético con el que quieres colorear el blog. Vas por buen camino.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Denisse Alejandra Diaz Romo</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Los visuales son muy atractivos y la información es interesante</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Adrian Canova Herrandiz</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">El blog está prácticamente como lo inicia RStudio. Necesitas adaptarlo a tus fines y  desarrollarlo mucho más.</span><br><span class="cl-9dda0530">Orden: Vamos a ver como evoluciona del arreglo default</span><br><span class="cl-9dda0530">Contenido: Hay que poblar el blog.</span><br><span class="cl-9dda0530">Estética: No encontré nada para valorar el potencial del autor.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Ana Maria Salazar Suárez </span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Orden: Hay que mejorar la estructura de archivos para evitar sorpresas tristes. Algunas imágenes no despliegan, imagino que por falta de orden en el control de archivos.</span><br><span class="cl-9dda0530">Contenido: Se ve un buen avance. Quedan restos del contenido de inicio de un proyecto Quarto que hace RStudio. Hay que corregir eso. Todavía no siento que haya suficiente contenido enganchador.</span><br><span class="cl-9dda0530">Estética: hay potencial en las ilustraciones</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Andrés De la Rosa Portilla</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Está muy bien que el blog ya esté funcionando. Noto que falta algo de orden en el montaje de la propuesta, de ahí que la imagen no despliegue.</span><br><span class="cl-9dda0530">Orden: Más cuidado. Hay un error de dedo en el nombre del blog.   </span><br><span class="cl-9dda0530">Contenido: Veo potencial, falta desarrollarlo</span><br><span class="cl-9dda0530">Estética: Muy poco para valorar esto, conviene cuidar la propuesta de diseño de las ilustraciones que se incorporarán.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Denisse Alejandra Diaz Romo</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Muy notable avance. Me gusta mucho lo que nos propones con tu blog.</span><br><span class="cl-9dda0530">Orden: Bien cuidado. Sólo no me gusta que todavía esté por ahí el "Welcom To My Blog"  </span><br><span class="cl-9dda0530">Contenido: Interesantes contribuciones, con buen estilo enganchador.</span><br><span class="cl-9dda0530">Estética: Me encantan tus ilustraciones, gran potencial creativo.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Juan José Hernández Viveros</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Qué bueno que el blog está publicado y funcionando. Ahora hay que "habitarlo"</span><br><br><span class="cl-9dda0530">Orden: Aprecio que conservas prácticamente la misma estructura que te ofreció RStudio. Te sugiero conservar eso y seguir avanzando ordenadamente conforme agregues contenido.</span><br><span class="cl-9dda0530">Contenido: Muy poco contenido todavía, pero aprecio el esfuerzo de expresarse con originalidad. </span><br><span class="cl-9dda0530">Estética: Hay material con potencial estético. Considera cuidar la presentación.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Katya Margarita Zaleta Salas</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Se ve prometedor el contenido que haz agregado. No me gusta que mantengas todavía los residuos de lo que te propuso RStudio cuando creo el proyecto. EL PDF no despliega, hay que corregirlo.</span><br><span class="cl-9dda0530"> </span><br><span class="cl-9dda0530">Orden: La falla del PDF probablemente tiene que ver con el orden en el trabajo. Hay que revisarlo.</span><br><span class="cl-9dda0530">Contenido: Me gustan los textos que pude leer. </span><br><span class="cl-9dda0530">Estética: Muy poco todavía, pero veo potencial.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Nohemy Cardona Claros</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Orden: Me parece que va avanzando bien tu blog. No me gusta que todavía haya residuos del formato inicial.</span><br><span class="cl-9dda0530">Contenido: Me gusta lo que has escrito, pero falta desarrollar un poco más el concepto general de blog.</span><br><span class="cl-9dda0530">Estética: Muy bonita ilustración, considero "potencial de desarrollo", pero no hay que quedarse aquí.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Pita</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Aprecio que haz logrado que tu blog funcione. Tu desafío ahora es tomar control de él. Lograste publicar lo que has querido, incluso en varios formatos. EL PDF no lo pude desplegar, habrá que revisar qué está pasando.</span><br><br><span class="cl-9dda0530">Orden: Algunas figuras no aparecen y el PDF, aunque parece estar desplegado no tiene contenido. Pienso que puede ser una cosa de orden en la estructura de archivos.</span><br><span class="cl-9dda0530">Contenido: Veo que tu contenido se va desarrollando bien. Quedan cosas de la estructura "base" que creo RStudio cuando iniciaste el blog</span><br><span class="cl-9dda0530">Estética: Casi nada se aprecia con un ojo artístico. Cuida la presentación del trabajo.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Victoria Carolina</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Qué bueno que lograste publicar tu blog. Eso está funcionando. Lograste cambiar el nombre de tu sitio. Falta todo lo demás. El Blog ya es tuyo, ahora tendrás que habitarlo y hacerlo tuyo. Cuidar la ortografía (disfraces, no disfrazes)</span><br><br><span class="cl-9dda0530">Orden: Muy poco desarrollo para juzgar si estás siguiendo un buen hábito para construir tu blog. Cuida tu proceso de desarrollo.</span><br><span class="cl-9dda0530">Contenido: Falta poblar tu blog por completo.</span><br><span class="cl-9dda0530">Estética: No hay nada como para valorar este aspecto.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Denisse Alejandra Diaz Romo</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Me gustó mucho el blog, tiene muy buen orden y las imágenes son muy bonitas.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd215"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Ulises Zarate</span></p></td><td class="cl-9dddd216"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Me da gusto ver que has logrado poner tu blog en funcionamiento. Noto fallas de despliegue, lo que atribuyo a un poco de desorden en cómo estás conduciendo la construcción de tu blog. Vas por buen camino.</span><br><span class="cl-9dda0530">Orden: Considero que debes cuidar mucho este aspecto. Recuerda solo agregar contenido de tu blog dentro de la carpeta posts y ahí usar un folder distinto para cada contribución/tema/sección. Tienes que decidir una estrategia de construcción.</span><br><span class="cl-9dda0530">Contenido: El contenido está muy poco desarrollado, pero veo que te estás apropiando bien del blog.</span><br><span class="cl-9dda0530">Estética: Me gustan las imágenes que has seleccionado y me gusta tu interés estético con el que quieres colorear el blog. Vas por buen camino.</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9dddd21e"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Denisse Alejandra Diaz Romo</span></p></td><td class="cl-9dddd21f"><p class="cl-9ddda3e8"><span class="cl-9dda0530">Los visuales son muy atractivos y la información es interesante</span></p></td></tr></tbody></table></div>
 </div>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>   <span class="fu">dbDisconnect</span>(connect)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>   <span class="fu">dbDisconnect</span>(connect)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 
@@ -4576,236 +4581,243 @@ NULL</code></pre>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copiado");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copiado");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
         }
       }
       return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
     }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
-        return container.innerHTML
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -4813,185 +4825,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 </div> <!-- /content -->
 <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
 (function() {

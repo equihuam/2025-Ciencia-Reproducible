@@ -12,3 +12,6 @@
 /_creds/miguel.json
 /_creds
 /_datos
+
+**/*.quarto_ipynb
+.positai

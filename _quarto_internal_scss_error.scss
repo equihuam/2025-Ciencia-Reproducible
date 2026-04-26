@@ -1,4 +1,4 @@
-// quarto-scss-analysis-annotation { "quarto-version": "1.6.42" }
+// quarto-scss-analysis-annotation { "quarto-version": "1.9.36" }
 
 // quarto-scss-analysis-annotation { "origin": "'use' section from format" }
 
@@ -312,7 +312,7 @@ $overlayElementFgColor: 0, 0, 0 !default;
 
 // -- END setting.scss --
 
-$code-copy-selector: "pre.sourceCode:hover > " !default;
+$code-copy-selector: "div.code-copy-outer-scaffold:hover > " !default;
 $code-white-space: pre !default;
 $tbl-cap-location: top !default;
 // main colors
@@ -1061,8 +1061,7 @@ details > summary > p:only-child {
 }
 
 // codeCopy
-pre.sourceCode,
-code.sourceCode {
+div.code-copy-outer-scaffold {
   position: relative;
 }
 
@@ -1543,6 +1542,16 @@ $mermaid-node-fg-color: $primary !default;
   }
 }
 
+// light and dark content
+
+body.quarto-light .dark-content {
+  display: none !important;
+}
+
+body.quarto-dark .light-content {
+  display: none !important;
+}
+
 .code-copy-button {
   position: absolute;
   top: 0;
@@ -1552,10 +1561,6 @@ $mermaid-node-fg-color: $primary !default;
   margin-right: 5px;
   background-color: transparent;
   z-index: 3;
-}
-
-.code-copy-button:focus {
-  outline: none;
 }
 
 .code-copy-button-tooltip {
