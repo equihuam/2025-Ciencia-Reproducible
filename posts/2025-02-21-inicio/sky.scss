@@ -218,7 +218,12 @@ ul:nth-of-type(15) {
 	font-weight: 900;
 }
 
+
 @keyframes animate {
-	0% {background-position: left 0px top 10px;}
-	40% {background-position: left 800px top 10px;}
+  from {
+    background-position: 0px 10px;
+  }
+  to {
+    background-position: 800px 10px;
+  }
 }
