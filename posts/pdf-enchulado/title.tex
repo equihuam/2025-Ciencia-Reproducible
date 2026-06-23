@@ -4,13 +4,23 @@
 % ================================
 \providecommand{\OrcidIconFile}{orcid.png}   % archivo del icono ORCID
 \providecommand{\OrcidIconHeight}{1.2ex}     % altura del icono ORCID
+<<<<<<< HEAD
 \providecommand{\OrcidIconRaise}{0.5ex}     % desplazamiento vertical ORCID
+=======
+\providecommand{\OrcidIconRaise}{0.5ex}      % desplazamiento vertical ORCID
+\providecommand{\OrcidIconKern}{-0.05em}     % espacio horizontal entre ORCID y nombre
+\providecommand{\AffilidKern}{-0.25em}       % espacio horizontal entre affil id y nombre
+>>>>>>> 3e6f21738f0c47103c8b5ce670017a5647618cc0
 
 \providecommand{\AffilMarkSize}{\scriptsize} % tamaño de los superíndices de afiliación
 
 \providecommand{\EmailIconSize}{\scriptsize} % tamaño del icono de sobre
 \providecommand{\EmailIconRaise}{-0.5ex}     % desplazamiento vertical del sobre
+<<<<<<< HEAD
 \providecommand{\EmailIconKern}{0.5em}      % espacio horizontal entre ORCID y sobre
+=======
+\providecommand{\EmailIconKern}{0.05em}      % espacio horizontal entre ORCID y sobre
+>>>>>>> 3e6f21738f0c47103c8b5ce670017a5647618cc0
 
 % ================================
 %  Título y subtítulo
@@ -32,7 +42,11 @@ $endif$
 $for(by-author)$
 \author[
   $if(by-author.affiliations)$
+<<<<<<< HEAD
     {\AffilMarkSize$for(by-author.affiliations)$$it.number$$sep$,$endfor$}
+=======
+    {\kern\AffilidKern\AffilMarkSize$for(by-author.affiliations)$$it.number$$sep$,$endfor$}
+>>>>>>> 3e6f21738f0c47103c8b5ce670017a5647618cc0
   $endif$
 ]{%
   % Nombre
@@ -40,14 +54,22 @@ $for(by-author)$
   %
   % ORCID icon (opcional)
   $if(by-author.orcid)$
+<<<<<<< HEAD
     \raisebox{\OrcidIconRaise}{\includegraphics[height=\OrcidIconHeight]{\OrcidIconFile}}%
+=======
+    \raisebox{\OrcidIconRaise}{\href{https://orcid.org/$by-author.orcid$}{\kern\OrcidIconKern\includegraphics[height=\OrcidIconHeight]{\OrcidIconFile}}}
+>>>>>>> 3e6f21738f0c47103c8b5ce670017a5647618cc0
     \!%
   $endif$
   %
   % Sobre para autor de correspondencia (usa attributes.corresponding)
   $if(by-author.attributes.corresponding)$
     $if(by-author.email)$
+<<<<<<< HEAD
       \textsuperscript{%
+=======
+      \textsuperscript{\,%
+>>>>>>> 3e6f21738f0c47103c8b5ce670017a5647618cc0
         \kern\EmailIconKern
         \href{mailto:$by-author.email$}{%
           \raisebox{\EmailIconRaise}{\EmailIconSize\faIcon{envelope}}%
