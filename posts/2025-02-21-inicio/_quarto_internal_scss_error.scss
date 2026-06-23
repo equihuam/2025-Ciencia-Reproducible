@@ -1,4 +1,4 @@
-// quarto-scss-analysis-annotation { "quarto-version": "1.6.42" }
+// quarto-scss-analysis-annotation { "quarto-version": "1.8.25" }
 
 // quarto-scss-analysis-annotation { "origin": "'use' section from format" }
 
@@ -312,7 +312,7 @@ $overlayElementFgColor: 0, 0, 0 !default;
 
 // -- END setting.scss --
 
-$code-copy-selector: "pre.sourceCode:hover > " !default;
+$code-copy-selector: "div.code-copy-outer-scaffold:hover > " !default;
 $code-white-space: pre !default;
 $tbl-cap-location: top !default;
 // main colors
@@ -1061,8 +1061,7 @@ details > summary > p:only-child {
 }
 
 // codeCopy
-pre.sourceCode,
-code.sourceCode {
+div.code-copy-outer-scaffold {
   position: relative;
 }
 
@@ -1552,10 +1551,6 @@ $mermaid-node-fg-color: $primary !default;
   margin-right: 5px;
   background-color: transparent;
   z-index: 3;
-}
-
-.code-copy-button:focus {
-  outline: none;
 }
 
 .code-copy-button-tooltip {
@@ -2623,13 +2618,14 @@ $presentation-author-block-padding-right: if(
   grid-gap: 0.5em;
   margin: 0;
   padding: 0;
+}
 
   .result {
     max-height: 100%;
     overflow-y: scroll;
     width: 100%;
     border: 1px dashed $headingColor;
-  }
+}
 
   .code {
     text-align: left;
@@ -2641,7 +2637,6 @@ $presentation-author-block-padding-right: if(
     padding: 0.5em;
     border-radius: 0.25em;
     overflow-y: scroll;
-  }
 }
 
 .code-editor {
@@ -2769,8 +2764,6 @@ ul:nth-of-type(15) {
   list-style-type: none;
 }
 
-
-
 .flow {
   background-image: url(https://images.unsplash.com/photo-1532153975070-2e9ab71f1b14?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80);
   background-attachment: fixed;
@@ -2781,12 +2774,8 @@ ul:nth-of-type(15) {
 }
 
 @keyframes animate {
-	0% {
-		background-position: left 0px top 10px;
-	}
-	40% {
-		background-position: left 800px top 10px;
-	}
+	0% {background-position: left 0px top 10px;}
+	40% {background-position: left 800px top 10px;}
 }
 
 

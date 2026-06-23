@@ -2,7 +2,7 @@ project:
   type: website
   execute-dir: file
   output-dir: "./_site/"
-  post-render: encrypt.r
+#  post-render: encrypt.r
   
 lang: es
 date-format: "[Xalapa, Ver.,] D [de] MMMM, YYYY"
@@ -25,8 +25,10 @@ website:
 format:
   html:
     theme: Yeti 
+    include-in-header: _canonical.html
     css: styles.css
     lightbox: true
+    
 
   pdf: 
     toc: false
@@ -36,6 +38,8 @@ format:
     prefer-html: true
 
 editor: source    
+
+#engine: knitr
 
 execute: 
   freeze: true

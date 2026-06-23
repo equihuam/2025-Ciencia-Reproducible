@@ -1,0 +1,221 @@
+---
+title: Modelo del pastel
+format: html
+---
+
+```{r}
+pacman::p_load(dplyr, ggplot2, patchwork)
+```
+
+
+
+Se horneo un delicioso “pie” de nuez para hacer este estudio.
+Al finalizar la cocción se sacó del horno un apetitoso “pie” de color
+dorado intenso, al que se le tomó cuidadosamente la temperatura al instante
+de salir del horno y luego cada minuto durante una hora.  Estos datos son los
+que se anotan a continuación.
+
+
+```{r}
+Temperatura <- c(90.2, 90, 87, 81, 78, 75, 71.5, 68.5, 65, 63.5, 61, 60, 58, 56.5,
+                 55, 54, 52, 50.5, 50, 48.8, 47)
+```
+
+Un tema importante para utilizar datos experimentales en la construcción de modelos es la capacidad de leer y escribir a archivos externos.  A continuación les presento una forma sencilla de como puede hacerse esto. Para escribir la ruta pueden optar por usar la representación "\\" de las diagonal o substituirla po "/", resultan equivalentes en este contexto. El uso de dobles diagonales es el formalismo "oficial", pero la otra diagonal es muy práctica.  También noten que estoy utilizando la notación "punto" para referirme al
+directorio de trabajo como sitio de inicio en la especificación de la ruta.
+
+
+Para guardar imágenes en un archivo hay varias opciones. Sugiero se consulte help(bitmap) para ver como hacerlo.
+
+Los siguientes comandos les serán útiles:
+
++ `getwd()` este es el directorio de trabajo que está activo.
++ `list.files()` para ver los archivos en ese directorio.
+
+```{r}
+datos.guardados <- cbind(sec=seq(from=0, to=100, by=5),
+                           Temperatura)
+
+write.table(datos.guardados, row.names = FALSE,
+            file = "sistemas/datos del pastel.txt")
+
+temp.leida <- read.table(header = TRUE,
+      file="sistemas/datos del pastel.txt")
+
+pastel <- data.frame(tiempo=seq(from=0, to=100, by=5), Temperatura=Temperatura)
+```
+
+
+Gráfica del proceso de enfriamiento. Les sugiero adoptar, en lo posible, el [enfoque de _tubería_ ](https://www.datacamp.com/tutorial/pipe-r-tutorial. Esta metáfora sugiere que el proceso de interés ocurre a lo largo de un recorrido por el _tubo_, así que lo único que hay que especificar son esos procesos. La forma de usar esta metáfora es vincular cada evento con el símbolo `|>` (también puede ser %>% si recurren a las bibliotecas `tidyverse` o `dplyr`, aunque opera con algunas diferencias). En este caso usaremos el que ha adoptado **R** como base. La función `plot` básica es bastante "antigua" en *R* ni incluye un argumento que tome los `datos` en conjunto, opera sobre variables separadas. Por eso usaremos la función `width` que permite agregar esa información de referencia al proceso.
+
+```{r}
+pastel |> 
+  with(plot(tiempo, Temperatura))
+```
+
+La aproximación que usaremos ahora utiliza lo que se llama el "cociente de diferencia central".  Para hacerlo tomaremos dos versiones de los datos desfasados convenientemente para dejar un intervalo que empata pares de temperatura entre t-1 (usaremosla función `lag` de `dplyr`) y t+1 (usaremos la función `lead`) y asegura que la longitud total de los nuevos datos sea congruente, en este caso perdemos dos puntos en la serie. En la metáfora de tubos, utilizaremos la función `mutate` para hacer cambios a los datos.
+
+```{r}
+pastel <- pastel |> 
+  mutate(dif_central = (lead(Temperatura, 1) - lag(Temperatura, 1)) / (lead(tiempo, 1) - lag(tiempo, 1)))
+```
+
+Veamos ahora como se ven estos datos. Usaremos ahora una mejor forma de graficació, que incluye muchas más opciones y por tanto puede resultar algo más compleja. Se trata de la biblioteca `ggplot2`. Por favor observen que el uso de `ggplot` recurre al signo "+" para concatenar los elementos que requerimos para construir la  gráfica que deseamos, componentes que incluyen tipos de gráficas (geoms), etiquetas (labs) y temas (themes), entre otras posibilidades. En el cálculo de la diferencia central aparecieron algunoas celdas sin datos ("na"). Conviene omitir esas filas en el proceso siguiente. Usaremos la función `filter` para indicarle que **no queremos ninguna fila en la que `dif_central`** tenga "na". Lo averiguamos con la función `is.na` e indicamos que queremos la condición contraria anteponiendo el símbolo "!" (suele indicar negación en *R*). 
+
+Esta es la gráfica de la evolución de la temperatura en el tiempo.
+
+```{r}
+pastel |> 
+  filter(!is.na(dif_central)) |> 
+  ggplot(aes(x = tiempo, y = dif_central)) +
+  geom_point() +
+  labs(main = "Diferencia central vs. tiempo") +
+  xlab(label = "tiempo (min)") +
+  ylab(label = "dT/dt")
+```
+
+Esta otra es la comparación de la temperatura en cada momento y la magnitud en la que ha cambiado para llegar a ese momento desde el inmediato anterior. Por cierto el carácter con número hexadecimal "U00B0" es el símbolo de grados en el sistema de codificación **UTF-8**.
+
+```{r}
+pastel |> 
+  filter(!is.na(dif_central)) |> 
+  ggplot(aes(x = Temperatura, y = dif_central)) +
+  geom_point() +
+  labs(main = "Diferencia central vs. temperatura") +
+  xlab(label = paste0("temperatura \U00B0", "C")) +
+  ylab(label = "dT/dt")
+
+```
+
+
+En el caso de nuestros datos la Ec. 7.2 puede convenirnos escribirla como una
+función que nos permita hacer los cálculos respectivos en forma sencilla.
+Utilizaremos los datos siguiente: T0 = 90.2, TAmb= 23.5 con esta información la
+ecuación del pastel toma la forma siguiente. La forma como propongo escribir los
+argumentos de la función es para dar el valor que tomarán cuando se omita
+proporcionar esta información.
+
+```{r}
+ec_pastel <- function (t, alfa, TAmb = 23.5, T0 = 90.2)
+                        {TAmb + exp(t * alfa) * (T0-TAmb)}
+```
+
+que es una ecuación que es función del tiempo "t" y que tiene como
+incógnita a "alfa".  Nuestro interés es ahora encontrar alguna manera de evaluar
+que tanto puede usarse esta ecuación para explicar el caso particular que
+nos interesa. La correspondencia entre la propuesta teórica y los datos obtenidos
+puede valorarse buscando la mejor aproximación que podamos obtener entre los
+valores que produce la ecuación propuesta y los que obtengamos experimentalmente.
+En el caso de nuestro pastel, una aproximación cruda pero interesante se obtiene
+al tomar digamos el dato a los 20 minutos y resolviendo la ecuación para
+tener el valor de "alfa" que corresponde con los datos proporcionados.
+
+
+```{r}
+alfa_1 <- log((78 - 23.5)/66.7) / 20
+```
+
+Sólo resta substituir el dato de "alfa" en la ecuación y ver que tanto empatan los
+valores que produce con los datos derivados de nuestra muestra. La calidad del
+ajuste puede estimarse calculando la suma de las desviaciones absolutas entre el
+valor predicho y el observado.  Una forma de hacer esto es calcular la suma de
+cuadrados de esta diferencia la que guardaremos en "sc_modelo_1".
+
+
+```{r}
+sc_modelo_1 <- with(data = pastel, expr = sum ((Temperatura - ec_pastel (tiempo, alfa_1))^2))
+sc_modelo_1
+```
+
+Otra posible aproximación es considerar que si cambiamos la variable temperatura
+por la diferencia con la temperatura ambiente (23.5 en nuestro ejemplo), tenemos
+una expresión lineal que puede estimarse como una regresión simple.  Esto lo
+haremos para obtener la segunda estimación de alfa que guardaremos en "alfa_2".
+Para hacer esto
+
+
+```{r}
+pastel$dif_temp <- pastel$Temperatura - 23.5
+alfa_2 <- coefficients(lm(dif_central ~ dif_temp - 1, data=pastel))[[1]]
+```
+
+
+¿Cómo se ve el ajuste de esta ecuación?  Podemos ver el ajuste tanto en el espacio
+de la tasa de cambio como en el comportamiento de la temperatura del pastel a lo
+largo del tiempo.  También podemos comparar el grado de ajuste de las dos
+estimaciones de alfa que tenemos.  Será mejor tanto más pequeña sea la suma de
+cuadrados entre los valores ajustados y los observados.
+La diferencia en el ajuste de ambos propuestas se ve claramente en una gráfica.
+
+```{r}
+sc_modelo_2 <- with(pastel, sum((Temperatura - ec_pastel (tiempo, alfa_2))^2))
+c(alfa1=sc_modelo_1, alfa2=sc_modelo_2)
+
+pastel |> 
+  filter(!is.na(dif_central)) |> 
+  ggplot(aes(x = dif_temp, y = dif_central)) +
+  geom_point(colour = "red") +
+  scale_x_continuous(limits = c(20, 100)) +
+  scale_y_continuous(limits = c(-1, 0)) +
+  labs(main = "Diferencia Central vs. Temperatura") +
+  xlab(label = paste0("temperatura \U00B0", "C")) +
+  ylab(label = "dT/dt") +
+  geom_abline(slope = alfa_1, colour = "green", linewidth = 1.5) +
+  geom_abline(slope = alfa_2, colour = "blue", linewidth = 1.5)
+```
+
+
+```{r}
+pastel |> 
+  ggplot(aes(x = tiempo, y = Temperatura)) +
+  geom_point(color = "red") +
+  geom_line(aes(y = ec_pastel(alfa_1, tiempo)), color = "green", linewidth = 1.5) +
+  geom_line(aes(y = ec_pastel(alfa_2, tiempo)), color = "blue", linewidth = 1.5)+
+  scale_x_continuous(limits = c(0,100)) +
+  scale_y_continuous(limits = c(20,100)) +
+  xlab(label = "tiempo (min)")+
+  ylab(label = "temperatura °C")
+```
+
+
+
+Si quiero guardar la gráfica final puedo hacerlo con el comando `ggsave`. Si no generé un 
+*objeto* para conservar el objeto gráfico, entonces el comando buscará en la memoria un objeto apropiado, normalmente encontrará el último que hiciste. La extensión que pongas al nombre del archivo selecciona también el tipo de archivo a guardar.
+
+
+```{r}
+ggsave(filename = "resultados pastel.png")
+```
+
+Si quieren organizar la figura como un conjunto de gráficas, les sugiero utilizar la biblioteca `patchwork`. Con esta función un conjunto de objetos gráficos separados por el símbolo "+" se acomodan en un renglón y para hacer un nuevo renglón basta con poner el símbolo "/"
+
+
+
+```{r}
+
+g1 <- pastel |> 
+  filter(!is.na(dif_central)) |> 
+  ggplot(aes(x = dif_temp, y = dif_central)) +
+  geom_point(colour = "red") +
+  scale_x_continuous(limits = c(20, 100)) +
+  scale_y_continuous(limits = c(-1, 0)) +
+  labs(main = "Diferencia Central vs. Temperatura") +
+  xlab(label = paste0("temperatura \U00B0", "C")) +
+  ylab(label = "dT/dt") +
+  geom_abline(slope = alfa_1, colour = "green", linewidth = 1.5) +
+  geom_abline(slope = alfa_2, colour = "blue", linewidth = 1.5)
+
+g2 <- pastel |> 
+  ggplot(aes(x = tiempo, y = Temperatura)) +
+  geom_point(color = "red") +
+  geom_line(aes(y = ec_pastel(alfa_1, tiempo)), color = "green", linewidth = 1.5) +
+  geom_line(aes(y = ec_pastel(alfa_2, tiempo)), color = "blue", linewidth = 1.5) +
+  scale_x_continuous(limits = c(0,100)) +
+  scale_y_continuous(limits = c(20,100)) +
+  xlab(label = "tiempo (min)")+
+  ylab(label = "temperatura °C") 
+    
+    
+g1 + g2
+
+```
