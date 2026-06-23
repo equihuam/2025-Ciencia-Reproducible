@@ -1,5 +1,8 @@
 ---
 title: "Top Secret"
+author: Miguel
+date: 23/feb/2025
+image: "martinelle-security-6714569.jpg"
 format: html
 ---
 

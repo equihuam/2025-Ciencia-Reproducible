@@ -7,6 +7,7 @@ lang: es
 draft: false
 
 categories: [div, fences, pestañas, cajas, estilo texto, referencias cruzadas, extensiones]
+
 image: img/magnifying-glass-541626_1280.jpg
 
 cap-location: top

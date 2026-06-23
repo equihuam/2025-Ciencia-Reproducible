@@ -30,12 +30,14 @@ format:
     lightbox: true
     
 
-  pdf: 
-    toc: false
-    number-sections: false
-    colorlinks: true
-    papersize: letter
-    prefer-html: true
+
+#  pdf: 
+#    toc: false
+#    number-sections: false
+#    colorlinks: true
+#    papersize: letter
+#    prefer-html: true
+#    documentclass: scrartcl
 
 editor: source    
 
@@ -43,4 +45,6 @@ editor: source
 
 execute: 
   freeze: true
-  
+  execute: file
+
+
