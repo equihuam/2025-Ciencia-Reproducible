@@ -95,6 +95,23 @@ div.csl-indent {
     "search-label": "Buscar"
   }
 }</script>
+<script>
+
+  (function() {
+
+    var link = document.createElement('link');
+
+    link.rel = 'canonical';
+
+    // Replace with your real Netlify production domain
+
+    link.href = 'https://yourdomain.com' + window.location.pathname;
+
+    document.head.appendChild(link);
+
+  })();
+
+</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>

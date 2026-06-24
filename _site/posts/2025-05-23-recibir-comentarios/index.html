@@ -116,6 +116,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     document.body.classList.add('hypothesis-enabled');
   });
 </script>
+<script>
+
+  (function() {
+
+    var link = document.createElement('link');
+
+    link.rel = 'canonical';
+
+    // Replace with your real Netlify production domain
+
+    link.href = 'https://yourdomain.com' + window.location.pathname;
+
+    document.head.appendChild(link);
+
+  })();
+
+</script>
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -201,8 +218,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#comentarios-privados-vs-públicos" id="toc-comentarios-privados-vs-públicos" class="nav-link active" data-scroll-target="#comentarios-privados-vs-públicos">Comentarios privados vs públicos</a></li>
+  <li><a href="#mantener-los-comentarios-entre-versiones" id="toc-mantener-los-comentarios-entre-versiones" class="nav-link" data-scroll-target="#mantener-los-comentarios-entre-versiones">Mantener los comentarios entre versiones</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -219,7 +243,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>¡Qué sería de la vida académica sin una buena polémica! Tu proyecto de posgrado será mucho más interesante y rico si se propicia el debate la factibilidad de las ideas innovadoras que ofrezcas. ¿Será cierta la hipótesis que se te ocurrió?, ¿estará pasando en realidad el fenómeno que describes?, ¿tendrás razón en ver las cosas como propones? Seguramente hablar creativamente sobre asuntos como estos será grato para todos los involucrados. ¡Finalmente, esa es el alma de la ciencia!.</p>
 <p>En la práctica añeja que ya ha establecido el uso de <em>MS Word</em>, se hace algo de esto con el uso de <em>control de cambios</em>. De hecho lo hace muy bien para el caso en el que se está trabajando colaborativamente sobre un texto. Incluye la posibilidad de incluir <em>comentarios</em>, que también resulta muy útil. ¿Podremos hacer algo semejante en el enfoque basado en <em>Quarto</em> que hemos venido desarrollando?</p>
 <p>Dejaré que tu respondas esa pregunta. Desde mi punto de vista, el tema de control de cambios no es otra cosa que una variante adecuadamente acota de <em>control de versiones</em>, es decir <strong>Git</strong> en el mundo <em>Rstudio-Quarto</em>. Quizás te parezca bastante distinto, pues ciertamente <strong>Git</strong> es mucho más amplio y quizás esa potencialidad ampliada, acompañada de une <em>curva de aprendizaje</em>, te genere algo de dudas. Pero, espero que con lo que hemos venido aprendiendo puedas apreciar la semejanza y, eventualmente, las virtudes de <strong>Git</strong>.</p>
-<p>Ahora, ¿qué hay en cuanto a comentarios al texto? Hay algunas opciones que espero encuentres interesanres. Dos de ellas estan asociadas al sistema de comentarios o <em>issues</em> de <em>Github</em> (<code>utterances</code> e <code>giscus</code>). Con ellas se habilita una sección que recibe comentarios de los visitantes a tu <strong>blog</strong>. El tercero es <code>hypothesis</code> usa un sistema basado en el servicio web <a href="http://hypothes.is">hypothes.is</a>, que es el que yo encuentro más práctico. Te permite recibir retroalimentación directamente sobre tu texto. Ya sea alguna indicación sobre una palabra o toda una reflexión sobre un idea. El concepto se basa en marcar el texto de interés y vincular esa marca con el comentario que desee compartir el lector contigo. Te sugiero que lo pongamos a prueba.</p>
+<p>Ahora, ¿qué hay en cuanto a comentarios al texto? Hay algunas opciones que espero encuentres interesantes. Dos de ellas están asociadas al sistema de comentarios o <em>issues</em> de <em>Github</em> (<code>utterances</code> e <code>giscus</code>). Con ellas se habilita una sección que recibe comentarios de los visitantes a tu <strong>blog</strong>. El tercero es <code>hypothesis</code> usa un sistema basado en el servicio web <a href="http://hypothes.is">hypothes.is</a>, que es el que yo encuentro más práctico. Te permite recibir retroalimentación directamente sobre tu texto. Ya sea alguna indicación sobre una palabra o toda una reflexión sobre un idea. El concepto se basa en marcar el texto de interés y vincular esa marca con el comentario que desee compartir el lector contigo. Te sugiero que lo pongamos a prueba.</p>
 <p>Para activarlo hay agregar <code>comments:</code>en el encabezado <strong>YAML</strong> del documento que quieras abrir a la recepción de comentarios, con las indicaciones de tu preferencia. Quedaría algo así para usar <code>hypothes.is</code>:</p>
 <div style="font-weight: bold; background-color: WhiteSmoke;">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
@@ -232,10 +256,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>EL resultado será que el documento ofrecerá al lector la posibilidad de anotar el texto de varias maneras, como se puede apreciar en la figura siguiente.</p>
 <p>&nbsp;</p>
 <p><a href="img/pantalla-hypothesis-menu.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="img/pantalla-hypothesis-menu.png" class="img-fluid"></a></p>
-<p>La pequeña flecha arriba a la derecha abre el espacio de registro de los comentarios. Puedes notar que inicialmente los comentarios se registran en un <em>ambito</em> <strong>público</strong>. Con objeto de que tengas algo más de control sobre el público con el que te interesa interactuar te sugiero usar grupos específicos que requieren invitación. Así que el camino te llevará a registrarte en <code>hypothes.is</code> y desde tu cuenta podrás generar los grupos y las invitaciones.</p>
+<section id="comentarios-privados-vs-públicos" class="level2">
+<h2 class="anchored" data-anchor-id="comentarios-privados-vs-públicos">Comentarios privados vs públicos</h2>
+<p>La pequeña flecha arriba a la derecha abre el espacio de registro de los comentarios. Puedes notar que inicialmente los comentarios se registran en un <em>ámbito</em> <strong>público</strong>. Con objeto de que tengas algo más de control sobre el público con el que te interesa interactuar te sugiero usar grupos específicos que requieren invitación. Así que el camino te llevará a registrarte en <code>hypothes.is</code> y desde tu cuenta podrás generar los grupos y las invitaciones.</p>
 <p><a href="img/pantalla-hypothesis-menu-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="img/pantalla-hypothesis-menu-2.png" class="img-fluid"></a></p>
+</section>
+<section id="mantener-los-comentarios-entre-versiones" class="level2">
+<h2 class="anchored" data-anchor-id="mantener-los-comentarios-entre-versiones">Mantener los comentarios entre versiones</h2>
+<p>El vínculo entre tu documento ya publicado y el <em>servicio hypothes.is</em> se realiza a través de una liga que identifica a tu blog en forma única en el <strong>Ciberespacio</strong>. Este <strong>link</strong> obviamente varía cada vez que haces un <em>Render</em>, pues en realidad produces un nuevo documento cada vez. Para que eso no sea un obstáculo hay que definir una <strong>liga permanente</strong> (<em>persistent canonical URL</em>). A continuación te explico como hacerlo.</p>
+<p>Lo primero es crear un pequeño script que haga la tarea de revisar tu blog y tomar nota del contenido y en donde se necesitan ligas permanentes. Este es el script que hace esa tarea. Créalo como documento de texto simple aquí mismo en <strong>RStudio</strong> y guárdalo con el nombre <code>_canonical.html</code> en la raíz de tu proyecto:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>script<span class="op">&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">function</span>() {</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> link <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">createElement</span>(<span class="st">'link'</span>)<span class="op">;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    link<span class="op">.</span><span class="at">rel</span> <span class="op">=</span> <span class="st">'canonical'</span><span class="op">;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Replace with your real Netlify production domain</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    link<span class="op">.</span><span class="at">href</span> <span class="op">=</span> <span class="st">'https://yourdomain.com'</span> <span class="op">+</span> <span class="bu">window</span><span class="op">.</span><span class="at">location</span><span class="op">.</span><span class="at">pathname</span><span class="op">;</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">document</span><span class="op">.</span><span class="at">head</span><span class="op">.</span><span class="fu">appendChild</span>(link)<span class="op">;</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  })()<span class="op">;</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>script<span class="op">&gt;</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Luego, en tu archivo <code>_quarto.yml</code> agrega la línea <code>include-in-header: _canonical.html</code> siguiendo esta idea:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">website</span><span class="kw">:</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My Team Project"</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">include-in-header</span><span class="kw">:</span><span class="at"> _canonical.html</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">comments</span><span class="kw">:</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">hypothesis</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="at"> </span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

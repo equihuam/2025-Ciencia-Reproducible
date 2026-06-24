@@ -70,6 +70,23 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Buscar"
   }
 }</script>
+<script>
+
+  (function() {
+
+    var link = document.createElement('link');
+
+    link.rel = 'canonical';
+
+    // Replace with your real Netlify production domain
+
+    link.href = 'https://yourdomain.com' + window.location.pathname;
+
+    document.head.appendChild(link);
+
+  })();
+
+</script>
 
 
 <link rel="stylesheet" href="styles.css">

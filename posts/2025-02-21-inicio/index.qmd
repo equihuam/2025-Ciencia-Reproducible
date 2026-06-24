@@ -1,7 +1,7 @@
 ---
 title: "Los primeros pasos"
 author: "Miguel Equihua"
-lang: es
+lang: en
 date: 21/feb/2025
 categories: [taller, inicio, markdown, rstudio, git]
 image: "images/Image by Mojca-Peter from Pixabay - seeds-1217133_1280.jpg"
